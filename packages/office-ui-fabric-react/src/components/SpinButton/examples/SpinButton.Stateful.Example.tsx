@@ -1,49 +1,42 @@
 import * as React from 'react';
 import { SpinButton } from 'office-ui-fabric-react/lib/SpinButton';
 
-// tslint:disable:jsx-no-lambda
+const suffix = ' cm';
+const suffixRegex = / cm$/;
+const step = 2;
+
 export class SpinButtonStatefulExample extends React.Component<any, any> {
   public render(): JSX.Element {
-    const suffix = ' cm';
-
     return (
       <div style={{ width: '400px' }}>
         <SpinButton
           label="SpinButton with custom implementation:"
-          value={'7' + suffix}
-          onValidate={(value: string) => {
-            value = this._removeSuffix(value, suffix);
-            if (value.trim().length === 0 || isNaN(+value)) {
-              return '0' + suffix;
-            }
-
-            return String(value) + suffix;
-          }}
-          onIncrement={(value: string) => {
-            value = this._removeSuffix(value, suffix);
-            return String(+value + 2) + suffix;
-          }}
-          onDecrement={(value: string) => {
-            value = this._removeSuffix(value, suffix);
-            return String(+value - 2) + suffix;
-          }}
-          onFocus={() => console.log('onFocus called')}
-          onBlur={() => console.log('onBlur called')}
+          defaultValue={'7' + suffix}
+          step={step}
+          onValidate={this._onValidate}
+          onIncrement={this._onIncrement}
+          onDecrement={this._onDecrement}
         />
       </div>
     );
   }
 
-  private _hasSuffix(value: string, suffix: string): Boolean {
-    const subString = value.substr(value.length - suffix.length);
-    return subString === suffix;
-  }
+  private _onValidate = (
+    value: string,
+    event: React.SyntheticEvent<HTMLElement>,
+    defaultOnValidate: (value: string, event: React.SyntheticEvent<HTMLElement>) => string | undefined
+  ) => {
+    value = value.replace(suffixRegex, '');
+    return (defaultOnValidate(value, event) || '0') + suffix;
+  };
 
-  private _removeSuffix(value: string, suffix: string): string {
-    if (!this._hasSuffix(value, suffix)) {
-      return value;
-    }
+  private _onIncrement = (value: string, defaultOnIncrement: (value: string) => string | undefined) => {
+    value = value.replace(suffixRegex, '');
+    return (defaultOnIncrement(value) || '0') + suffix;
+  };
 
-    return value.substr(0, value.length - suffix.length);
-  }
+  private _onDecrement = (value: string, defaultOnDecrement: (value: string) => string | undefined) => {
+    value = value.replace(suffixRegex, '');
+    return (defaultOnDecrement(value) || '0') + suffix;
+  };
 }

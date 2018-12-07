@@ -9,10 +9,9 @@ import { IKeytipProps } from '../../Keytip';
 
 export interface ISpinButton {
   /**
-   * The value of the SpinButton. Use this if you intend to pass in a new value as a result of onChange events.
-   * This value is mutually exclusive to defaultValue. Use one or the other.
+   * The current value of the SpinButton.
    */
-  value?: string;
+  value: string | undefined;
 
   /**
    * Sets focus to the spin button.
@@ -28,14 +27,14 @@ export interface ISpinButtonProps {
 
   /**
    * The initial value of the SpinButton. Use this if you intend for the SpinButton to be an uncontrolled component.
-   * This value is mutually exclusive to value. Use one or the other.
+   * This value is mutually exclusive to `value`. Use one or the other.
    * @defaultvalue 0
    */
   defaultValue?: string;
 
   /**
-   * The value of the SpinButton. Use this if you intend to pass in a new value as a result of onChange events.
-   * This value is mutually exclusive to defaultValue. Use one or the other.
+   * The value of the SpinButton. Use this if you intend to pass in a new value as a result of `onChange` events.
+   * This value is mutually exclusive to `defaultValue`. Use one or the other.
    */
   value?: string;
 
@@ -47,7 +46,7 @@ export interface ISpinButtonProps {
 
   /**
    * The max value of the SpinButton.
-   * @defaultvalue 10
+   * @defaultvalue 100
    */
   max?: number;
 
@@ -66,6 +65,16 @@ export interface ISpinButtonProps {
   ariaLabel?: string;
 
   /**
+   * Descriptive label for the SpinButton.
+   */
+  label: string;
+
+  /**
+   * @defaultvalue Left
+   */
+  labelPosition?: Position;
+
+  /**
    * A title for the SpinButton used for a more descriptive name that's also visible on its tooltip.
    */
   title?: string;
@@ -81,41 +90,58 @@ export interface ISpinButtonProps {
   className?: string;
 
   /**
-   * Descriptive label for the SpinButton.
-   */
-  label: string;
-
-  /**
-   * @defaultvalue Left
-   */
-  labelPosition?: Position;
-
-  /**
    * Icon that goes along with the label for the whole SpinButton
    */
   iconProps?: IIconProps;
 
   /**
+   * Prefix shown at the start of the text field (not included in the value).
+   */
+  prefix?: string;
+
+  /**
+   * Suffix shown at the end of the text field (not included in the value).
+   */
+  suffix?: string;
+
+  /**
+   *
+   */
+  onChange?: (event: React.SyntheticEvent<HTMLElement>, newValue: string) => void;
+
+  /**
    * This callback is triggered when the value inside the SpinButton should be validated.
    * @param value - The value entered in the SpinButton to validate
    * @param event - The event that triggered this validate, if any. (For accessibility)
+   * @param defaultOnValidate - The default validation handler.
    * @returns If a string is returned, it will be used as the value of the SpinButton.
+   * @deprecated Use `onChange` and manually update the `value` prop instead.
    */
-  onValidate?: (value: string, event?: React.SyntheticEvent<HTMLElement>) => string | void;
+  onValidate?: (
+    value: string,
+    event: React.SyntheticEvent<HTMLElement>,
+    defaultOnValidate: (value: string, event: React.SyntheticEvent<HTMLElement>) => string | undefined
+  ) => string | undefined;
 
   /**
    * This callback is triggered when the increment button is pressed or if the user presses up arrow
    * with focus on the input of the spinButton
+   * @param value - Current value of the SpinButton (before increment).
+   * @param defaultOnIncrement - The default increment handler.
    * @returns If a string is returned, it will be used as the value of the SpinButton.
+   * @deprecated Use `onChange` and manually update the `value` prop instead.
    */
-  onIncrement?: (value: string) => string | void;
+  onIncrement?: (value: string, defaultOnIncrement: (value: string) => string | undefined) => string | undefined;
 
   /**
    * This callback is triggered when the decrement button is pressed or if the user presses down arrow
    * with focus on the input of the spinButton
+   * @param value - Current value of the SpinButton (before decrement).
+   * @param defaultOnDecrement - The default decrement handler.
    * @returns If a string is returned, it will be used as the value of the SpinButton.
+   * @deprecated Use `onChange` and manually update the `value` prop instead.
    */
-  onDecrement?: (value: string) => string | void;
+  onDecrement?: (value: string, defaultOnDecrement: (value: string) => string | undefined) => string | undefined;
 
   /**
    * A callback for when the user put focus on the picker
