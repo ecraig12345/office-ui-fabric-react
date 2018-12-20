@@ -64,15 +64,15 @@ Callout/  @joschect
 # Check/
 # Checkbox/
 ChoiceGroup/   @srideshpande
-# ColorPicker/
-# ComboBox/
+ColorPicker/ @ecraig12345
+ComboBox/ @ecraig12345
 CommandBar/   @micahgodbolt @JasonGore
 ContextualMenu/  @joschect
 DatePicker/   @OfficeDev/uifabric-calendar
 # DetailsList/
 # Dialog/
 DocumentCard/ @yiminwu @mikewheaton
-# Dropdown/
+Dropdown/ @ecraig12345
 # Fabric/
 # FacePile/
 FolderCover/ @ThomasMichon
@@ -105,12 +105,12 @@ pickers/  @joschect
 ResizeGroup/  @micahgodbolt
 # SearchBox/
 Signals/ @ThomasMichon
-# Slider/
-# SpinButton/
+Slider/ @ecraig12345
+SpinButton/ @ecraig12345
 # Spinner/
 # SwatchColorPicker/
 TeachingBubble/   @micahgodbolt
-# TextField/
+TextField/ @ecraig12345
 # Theme/
 Tile/ @ThomasMichon
 TileList/ @ThomasMichon
