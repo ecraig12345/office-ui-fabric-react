@@ -170,6 +170,16 @@
           "deprecated": false
         },
         {
+          "name": "ariaDescribedBy",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Optional prop to add a string id that can be referenced inside the aria-describedby attribute\n",
+          "deprecated": false
+        },
+        {
           "name": "autoComplete",
           "typeTokens": [
             {
@@ -177,6 +187,16 @@
             }
           ],
           "descriptionHtml": "Whether the ComboBox auto completes. As the user is inputing text, it will be suggested potential matches from the list of options. If the combo box is expanded, this will also scroll to the suggested option, and give it a selected style.\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "autofill",
+          "typeTokens": [
+            {
+              "text": "IAutofillProps"
+            }
+          ],
+          "descriptionHtml": "The AutofillProps to be passed into the Autofill component inside combobox\n",
           "deprecated": false
         },
         {

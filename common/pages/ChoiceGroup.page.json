@@ -235,6 +235,31 @@
           "deprecated": false
         },
         {
+          "name": "styles",
+          "typeTokens": [
+            {
+              "text": "IStyleFunctionOrObject"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "IChoiceGroupOptionStyleProps"
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "IChoiceGroupOptionStyles"
+            },
+            {
+              "text": ">"
+            }
+          ],
+          "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
+          "deprecated": false
+        },
+        {
           "name": "text",
           "typeTokens": [
             {

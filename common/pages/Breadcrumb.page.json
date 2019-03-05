@@ -100,8 +100,7 @@
               "text": "?: "
             },
             {
-              "text": "IBreadcrumbItem",
-              "hyperlinkedPage": "Breadcrumb"
+              "text": "IBreadcrumbItem"
             },
             {
               "text": ") => void"
@@ -209,8 +208,7 @@
           "name": "items",
           "typeTokens": [
             {
-              "text": "IBreadcrumbItem",
-              "hyperlinkedPage": "Breadcrumb"
+              "text": "IBreadcrumbItem"
             },
             {
               "text": "[]"
@@ -267,8 +265,7 @@
               "text": "<"
             },
             {
-              "text": "IBreadcrumbItem",
-              "hyperlinkedPage": "Breadcrumb"
+              "text": "IBreadcrumbItem"
             },
             {
               "text": ">"
@@ -455,8 +452,7 @@
       "name": "IDividerAsProps",
       "extendsTokens": [
         {
-          "text": "IIconProps",
-          "hyperlinkedPage": "Icon"
+          "text": "IIconProps"
         },
         {
           "text": " "
@@ -468,8 +464,7 @@
           "name": "item",
           "typeTokens": [
             {
-              "text": "IBreadcrumbItem",
-              "hyperlinkedPage": "Breadcrumb"
+              "text": "IBreadcrumbItem"
             }
           ],
           "descriptionHtml": "Optional breadcrumb item corresponds to left of the divider to be passed for custom rendering. For overflowed items, it will be last item in the list\n",

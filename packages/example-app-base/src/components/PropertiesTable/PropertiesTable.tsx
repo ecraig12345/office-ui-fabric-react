@@ -53,7 +53,7 @@ const renderCell = (text: string) => {
 
   if (codeBlocks.length === 0) {
     return (
-      <Text variant="medium">
+      <Text variant="small">
         <div dangerouslySetInnerHTML={{ __html: text }} />
       </Text>
     );
@@ -79,7 +79,7 @@ const renderCell = (text: string) => {
     eltChildren.push(<span key={textIndex} dangerouslySetInnerHTML={{ __html: text.substring(textIndex, text.length) }} />);
   }
 
-  return <Text variant="medium">{eltChildren}</Text>;
+  return <Text variant="small">{eltChildren}</Text>;
 };
 
 const renderCellType = (typeTokens: ILinkToken[]) => {
@@ -265,7 +265,6 @@ export class PropertiesTable extends React.Component<IPropertiesTableProps, IPro
           items={properties}
           columns={isEnum ? ENUM_COLUMNS : DEFAULT_COLUMNS}
           onRenderRow={this._onRenderRow}
-          onRenderDetailsHeader={this._onRenderHeader}
         />
       </Stack>
     );
@@ -335,15 +334,5 @@ export class PropertiesTable extends React.Component<IPropertiesTableProps, IPro
     }
 
     return <DetailsRow {...props} styles={rowStyles} />;
-  }
-
-  private _onRenderHeader(props: IDetailsHeaderProps, defaultRender?: IRenderFunction<IDetailsHeaderProps>): JSX.Element {
-    return (
-      <Text variant={'medium'}>
-        {defaultRender!({
-          ...props
-        })}
-      </Text>
-    );
   }
 }
