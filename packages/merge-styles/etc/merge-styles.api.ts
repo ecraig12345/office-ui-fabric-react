@@ -29,16 +29,18 @@ declare function fontFace(font: IFontFace): void;
 declare type IConcatenatedStyleSet<TStyleSet extends IStyleSet<TStyleSet>> = {
     [P in keyof Omit<TStyleSet, 'subComponentStyles'>]: IStyle;
 } & {
-    // (undocumented)
     subComponentStyles?: {
         [P in keyof TStyleSet['subComponentStyles']]: IStyleFunction<any, IStyleSet<any>>;
     };
 };
 
+// Warning: (ae-forgotten-export) The symbol "IRawFontStyle" needs to be exported by the entry point index.d.ts
+// 
 // @public
 interface IFontFace extends IRawFontStyle {
     fontFeatureSettings?: string;
     src?: string;
+    // Warning: (ae-forgotten-export) The symbol "ICSSRule" needs to be exported by the entry point index.d.ts
     unicodeRange?: ICSSRule | string;
 }
 
@@ -47,11 +49,8 @@ declare type IFontWeight = ICSSRule | 'normal' | 'bold' | 'bolder' | 'lighter' |
 
 // @public (undocumented)
 declare const InjectionMode: {
-    // (undocumented)
     none: 0;
-    // (undocumented)
     insertNode: 1;
-    // (undocumented)
     appendChild: 2;
 };
 
@@ -62,21 +61,24 @@ declare type InjectionMode = typeof InjectionMode[keyof typeof InjectionMode];
 declare type IProcessedStyleSet<TStyleSet extends IStyleSet<TStyleSet>> = {
     [P in keyof Omit<TStyleSet, 'subComponentStyles'>]: string;
 } & {
-    // (undocumented)
     subComponentStyles: {
         [P in keyof TStyleSet['subComponentStyles']]: __MapToFunctionType<TStyleSet['subComponentStyles'][P]>;
     };
 };
 
+// Warning: (ae-forgotten-export) The symbol "IRawStyleBase" needs to be exported by the entry point index.d.ts
+// 
 // @public
 interface IRawStyle extends IRawStyleBase {
     displayName?: string;
     selectors?: {
-        // (undocumented)
         [key: string]: IStyle;
     };
 }
 
+// Warning: (ae-forgotten-export) The symbol "IStyleBase" needs to be exported by the entry point index.d.ts
+// Warning: (ae-forgotten-export) The symbol "IStyleBaseArray" needs to be exported by the entry point index.d.ts
+// 
 // @public
 declare type IStyle = IStyleBase | IStyleBaseArray;
 
@@ -86,11 +88,12 @@ declare type IStyleFunction<TStylesProps, TStyleSet extends IStyleSet<TStyleSet>
 // @public
 declare type IStyleFunctionOrObject<TStylesProps, TStyleSet extends IStyleSet<TStyleSet>> = IStyleFunction<TStylesProps, TStyleSet> | Partial<TStyleSet>;
 
+// Warning: (ae-forgotten-export) The symbol "Omit" needs to be exported by the entry point index.d.ts
+// 
 // @public
 declare type IStyleSet<TStyleSet extends IStyleSet<TStyleSet>> = {
     [P in keyof Omit<TStyleSet, 'subComponentStyles'>]: IStyle;
 } & {
-    // (undocumented)
     subComponentStyles?: {
         [P in keyof TStyleSet['subComponentStyles']]: IStyleFunctionOrObject<any, IStyleSet<any>>;
     };
@@ -106,7 +109,6 @@ interface IStyleSheetConfig {
 
 // @public
 declare function keyframes(timeline: {
-    // (undocumented)
     [key: string]: {};
 }): string;
 
@@ -150,5 +152,9 @@ declare class Stylesheet {
     setConfig(config?: IStyleSheetConfig): void;
     }
 
+
+// Warnings were encountered during analysis:
+// 
+// lib/IStyleSet.d.ts:45:5 - (ae-forgotten-export) The symbol "__MapToFunctionType" needs to be exported by the entry point index.d.ts
 
 // (No @packageDocumentation comment for this package)

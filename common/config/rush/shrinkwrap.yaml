@@ -3,7 +3,7 @@ dependencies:
   '@microsoft/load-themed-styles': 1.8.39
   '@microsoft/loader-load-themed-styles': 1.7.107
   '@microsoft/node-core-library': 3.9.0
-  '@microsoft/tsdoc': 0.12.4
+  '@microsoft/tsdoc': 0.12.7
   '@rush-temp/azure-themes': 'file:projects/azure-themes.tgz'
   '@rush-temp/build': 'file:projects/build.tgz'
   '@rush-temp/charting': 'file:projects/charting.tgz'
@@ -268,10 +268,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-SIs4q7RcG7efBbh5Ffrf6V4jVLxWihD4NDRY3+gPiOG8CYawBzE22tTEloZ1yj/FBvBZQkQ0GYwXoPhn6ElYXA==
-  /@microsoft/tsdoc/0.12.4:
-    dev: false
-    resolution:
-      integrity: sha512-nQZVQg3fXygj+9JT/FSPZOz3vqAIVAAR3ZuAuUdU4DSM/ubJq5lbl1hpLtl+REFmEq1rkvDmmPoJAbSoqjcmZQ==
   /@microsoft/tsdoc/0.12.7:
     dev: false
     resolution:
@@ -15207,12 +15203,12 @@ packages:
     dependencies:
       '@microsoft/api-extractor': 7.0.23
       '@microsoft/node-core-library': 3.9.0
-      '@microsoft/tsdoc': 0.12.4
+      '@microsoft/tsdoc': 0.12.7
       '@types/node': 8.10.39
     dev: false
     name: '@rush-temp/page-json-generator'
     resolution:
-      integrity: sha512-EHIbWqdn191ytzZc6egRKatH0n/hbuKBx4ApKhVwlug+Fd0keGuybgcm5jh07E8im0HmVnL9f1zATu1x2gfDkw==
+      integrity: sha512-7hCpay7fWEFaokyGCnoTaENLL/vmdpHq+sN7+6eVfYoEhKeqOOsMBPp/T2MWHO/4DoXNaD9e+91Jl+BjXHw51A==
       tarball: 'file:projects/page-json-generator.tgz'
     version: 0.0.0
   'file:projects/pr-deploy-site.tgz':
@@ -15463,11 +15459,11 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  '@microsoft/api-extractor': ^7.0.17
+  '@microsoft/api-extractor': ^7.0.23
   '@microsoft/load-themed-styles': ^1.7.13
   '@microsoft/loader-load-themed-styles': ^1.6.0
   '@microsoft/node-core-library': ~3.9.0
-  '@microsoft/tsdoc': ^0.12.4
+  '@microsoft/tsdoc': 0.12.7
   '@rush-temp/azure-themes': 'file:./projects/azure-themes.tgz'
   '@rush-temp/build': 'file:./projects/build.tgz'
   '@rush-temp/charting': 'file:./projects/charting.tgz'
