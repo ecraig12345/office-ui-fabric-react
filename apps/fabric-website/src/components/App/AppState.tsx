@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-// Props
 import { INavPage } from '../Nav/Nav.types';
 import { ComponentPage } from '../ComponentPage/ComponentPage';
 import { PageHeader } from '../PageHeader/PageHeader';
@@ -923,21 +922,6 @@ export const AppState: IAppState = {
       className: 'resourcesPage',
       isUhfLink: true,
       getComponent: cb => require.ensure([], require => cb(require<any>('../../pages/ResourcesPage/ResourcesPage').ResourcesPage))
-    },
-    {
-      title: 'Blog',
-      url: '#/blog',
-      className: 'blogPage',
-      isUhfLink: true,
-      isHiddenFromMainNav: true,
-      getComponent: cb => require.ensure([], require => cb(require<any>('../../pages/BlogPage/BlogPage').BlogPage))
-    },
-    {
-      title: 'Blog Post',
-      url: '#/blog/blog-post',
-      className: 'blogPostPage',
-      isHiddenFromMainNav: true,
-      getComponent: cb => require.ensure([], require => cb(require<any>('../../pages/BlogPage/BlogPost').BlogPost))
     },
     {
       title: 'Fabric JS',
