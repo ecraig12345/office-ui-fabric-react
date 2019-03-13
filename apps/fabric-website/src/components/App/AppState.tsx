@@ -4,7 +4,6 @@ import * as React from 'react';
 import { ComponentPage } from '../ComponentPage/ComponentPage';
 import { PageHeader } from '../PageHeader/PageHeader';
 import { ApiReferencesTableSet } from '@uifabric/example-app-base';
-import { IReferencesList } from '@uifabric/fabric-website-resources/lib/AppDefinition';
 const pageStyles: any = require('../../pages/PageStyles.module.scss');
 
 export interface ILegacyNavPage {}
