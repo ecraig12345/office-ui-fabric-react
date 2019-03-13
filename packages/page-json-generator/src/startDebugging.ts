@@ -1,9 +1,8 @@
 import * as path from 'path';
-import { PageJsonGenerator } from './PageJsonGenerator';
+import { generateJson } from './PageJsonGenerator';
 
 // Generate JSON for office-ui-fabric-react
-const pageJsonGenerator: PageJsonGenerator = new PageJsonGenerator();
-pageJsonGenerator.generateJson({
+generateJson({
   apiJsonPath: 'C:\\Users\\naethell\\office-ui-fabric-react\\packages\\office-ui-fabric-react\\dist\\office-ui-fabric-react.api.json',
   pageJsonFolderPath: path.join(__dirname, '../../../common/pages'),
   pageNames: ['Button', 'Breadcrumb', 'Calendar', 'Callout', 'Checkbox', 'ChoiceGroup', 'ComboBox', 'Icon']

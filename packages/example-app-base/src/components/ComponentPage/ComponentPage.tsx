@@ -5,6 +5,7 @@ import { Stack } from 'office-ui-fabric-react/lib/Stack';
 import { MessageBar } from 'office-ui-fabric-react/lib/MessageBar';
 import { EditSection } from '../EditSection/index';
 import './ComponentPage.scss';
+import { MEDIUM_GAP_SIZE } from '../PropertiesTable/PropertiesTable';
 
 export interface IComponentPageSection {
   title: string;
@@ -203,7 +204,7 @@ export class ComponentPage extends React.Component<IComponentPageProps, {}> {
   private _getPropertiesTable(): JSX.Element | undefined {
     if (this.props.propertiesTables) {
       return (
-        <Stack className="ComponentPage-implementationSection">
+        <Stack gap={MEDIUM_GAP_SIZE} className="ComponentPage-implementationSection">
           <h2 className="ComponentPage-subHeading" id="Implementation">
             Implementation
           </h2>
@@ -273,7 +274,7 @@ export class ComponentPage extends React.Component<IComponentPageProps, {}> {
   private _getVariants(): JSX.Element | undefined {
     // We want to show the "Variants" header if the header is present since it has a relative anchor to it
     // or we have more than one example JSX element to render.
-    const hasVariants = this.props.isHeaderVisible || !!this.props.exampleCards!.props.children.length;
+    const hasVariants = this.props.isHeaderVisible || (this.props.exampleCards && !!this.props.exampleCards.props.children.length);
 
     // If only one variant then use its title as the header text, otherwise use "Variants".
     const headerText = hasVariants ? 'Variants' : this.props.title;

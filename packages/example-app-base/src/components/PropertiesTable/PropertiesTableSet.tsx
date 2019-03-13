@@ -1,11 +1,5 @@
 import * as React from 'react';
 import { IProperty, PropertyType, IInterfaceProperty, IEnumProperty } from '../../utilities/parser/index';
-import {
-  CollapsibleSection,
-  ICollapsibleSectionTitleComponent,
-  ICollapsibleSectionTitleStylesReturnType,
-  ICollapsibleSectionTitleProps
-} from '@uifabric/experiments';
 import { ActionButton } from 'office-ui-fabric-react/lib/Button';
 import { Stack } from 'office-ui-fabric-react/lib/Stack';
 import { Text } from 'office-ui-fabric-react/lib/Text';

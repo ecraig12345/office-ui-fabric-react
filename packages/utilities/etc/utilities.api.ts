@@ -5,7 +5,14 @@ declare function addDirectionalKeyCode(which: number): void;
 declare function addElementAtIndex<T>(array: T[], index: number, itemToAdd: T): T[];
 
 // @public
+<<<<<<< HEAD
 declare const allowScrollOnElement: (element: HTMLElement | null, events: EventGroup) => void;
+=======
+export function appendFunction(parent: any, ...functions: (any)[]): () => void;
+
+// @public
+export function arraysEqual<T>(array1: T[], array2: T[]): boolean;
+>>>>>>> master
 
 // @public
 declare const anchorProperties: string[];
@@ -95,6 +102,15 @@ declare class BaseComponent<TProps extends IBaseProps = {}, TState = {}> extends
   protected _warnConditionallyRequiredProps(requiredProps: string[], conditionalPropName: string, condition: boolean): void;
   protected _warnDeprecations(deprecationMap: ISettingsMap<TProps>): void;
   protected _warnMutuallyExclusive(mutuallyExclusiveMap: ISettingsMap<TProps>): void;
+<<<<<<< HEAD
+=======
+  readonly className: string;
+  componentDidMount(): void;
+  componentDidUpdate(prevProps: TProps, prevState: TState): void;
+  componentWillUnmount(): void;
+  // @deprecated (undocumented)
+  static onError: (errorMessage?: string, ex?: any) => void;
+>>>>>>> master
 }
 
 // @public
@@ -127,9 +143,9 @@ declare function customizable(scope: string, fields: string[], concatStyles?: bo
 // @public (undocumented)
 declare class Customizations {
   // (undocumented)
-  static applyScopedSettings(scopeName: string, settings: Settings): void;
+  static applyScopedSettings(scopeName: string, settings: ISettings): void;
   // (undocumented)
-  static applySettings(settings: Settings): void;
+  static applySettings(settings: ISettings): void;
   // (undocumented)
   static getSettings(properties: string[], scopeName?: string, localSettings?: ICustomizations): any;
   // (undocumented)
@@ -217,7 +233,16 @@ declare class EventGroup {
 }
 
 // @public
+<<<<<<< HEAD
 declare class FabricPerformance {
+=======
+export function extendComponent<T extends React.Component>(parent: T, methods: {
+    [key in keyof T]?: T[key];
+}): void;
+
+// @public
+class FabricPerformance {
+>>>>>>> master
   static measure(name: string, func: () => void): void;
   // (undocumented)
   static reset(): void;
@@ -432,11 +457,16 @@ interface ICustomizations {
   inCustomizerContext?: boolean;
   // (undocumented)
   scopedSettings: {
+<<<<<<< HEAD
     // (undocumented)
     [key: string]: Settings;
   };
+=======
+    [key: string]: ISettings;
+  }
+>>>>>>> master
   // (undocumented)
-  settings: Settings;
+  settings: ISettings;
 }
 
 // @public (undocumented)
@@ -522,6 +552,7 @@ interface IFitContentToBoundsOptions {
 }
 
 // @public
+<<<<<<< HEAD
 declare const imageProperties: string[];
 
 // @public
@@ -529,6 +560,12 @@ declare function initializeFocusRects(window?: Window): void;
 
 // @public
 declare const inputProperties: string[];
+=======
+export function initializeComponentRef<TProps extends IBaseProps, TState>(obj: React.Component<TProps, TState>): void;
+
+// @public
+export function initializeFocusRects(window?: Window): void;
+>>>>>>> master
 
 // @internal
 interface IPerfData {
@@ -845,6 +882,18 @@ declare const KeyCodes: {
   singleQuote: 222;
 };
 
+// @public
+export function isVirtualElement(element: HTMLElement | IVirtualElement): element is IVirtualElement;
+
+// @public
+interface IVirtualElement extends HTMLElement {
+  // (undocumented)
+  _virtual: {
+    children: IVirtualElement[];
+    parent?: IVirtualElement;
+  }
+}
+
 // @public (undocumented)
 declare type KeyCodes = number;
 
@@ -871,11 +920,21 @@ declare function mergeAriaAttributeValues(...ariaAttributes: (string | undefined
 // @public
 declare function mergeCustomizations(props: ICustomizerProps, parentContext: ICustomizerContext): ICustomizerContext;
 
+// @public (undocumented)
+export function mergeScopedSettings(oldSettings?: ISettings, newSettings?: ISettings | ISettingsFunction): ISettings;
+
 // @public
+<<<<<<< HEAD
 declare function mergeSettings(oldSettings?: Settings, newSettings?: Settings | SettingsFunction): Settings;
+=======
+export function mergeSettings(oldSettings?: ISettings, newSettings?: ISettings | ISettingsFunction): ISettings;
+>>>>>>> master
 
 // @public
 declare function nullRender(): JSX.Element | null;
+
+// @public (undocumented)
+export function on(element: Element | Window, eventName: string, callback: (ev: Event) => void, options?: boolean): () => void;
 
 // @public
 declare function portalContainsElement(target: HTMLElement, parent?: HTMLElement): boolean;
@@ -887,8 +946,15 @@ declare function precisionRound(value: number, precision: number, base?: number)
 declare function provideContext<TContext, TProps>(contextTypes: PropTypes.ValidationMap<TContext>, mapPropsToContext: (props: TProps) => TContext): React.ComponentType<TProps>;
 
 // @public
+<<<<<<< HEAD
 declare class Rectangle {
   // (undocumented)
+=======
+export function raiseClick(target: Element): void;
+
+// @public
+class Rectangle {
+>>>>>>> master
   constructor(left?: number, right?: number, top?: number, bottom?: number);
   // (undocumented)
   bottom: number;
@@ -968,7 +1034,11 @@ declare function shouldWrapFocus(element: HTMLElement, noWrapDataAttribute: 'dat
 declare function styled<TComponentProps extends IPropsWithStyles<TStyleProps, TStyleSet>, TStyleProps, TStyleSet extends IStyleSet<TStyleSet>>(Component: React.ComponentClass<TComponentProps> | React.StatelessComponent<TComponentProps>, baseStyles: IStyleFunctionOrObject<TStyleProps, TStyleSet>, getProps?: (props: TComponentProps) => Partial<TComponentProps>, customizable?: ICustomizableProps): (props: TComponentProps) => JSX.Element;
 
 // @public
+<<<<<<< HEAD
 declare const textAreaProperties: string[];
+=======
+export function styled<TComponentProps extends IPropsWithStyles<TStyleProps, TStyleSet>, TStyleProps, TStyleSet extends IStyleSet<TStyleSet>>(Component: React.ComponentClass<TComponentProps> | React.StatelessComponent<TComponentProps>, baseStyles: IStyleFunctionOrObject<TStyleProps, TStyleSet>, getProps?: (props: TComponentProps) => Partial<TComponentProps>, customizable?: ICustomizableProps): React.StatelessComponent<TComponentProps>;
+>>>>>>> master
 
 // @public
 declare function toMatrix<T>(items: T[], columnCount: number): T[][];
@@ -992,4 +1062,41 @@ declare function warnDeprecations<P>(componentName: string, props: P, deprecatio
 declare function warnMutuallyExclusive<P>(componentName: string, props: P, exclusiveMap: ISettingsMap<P>): void;
 
 
+<<<<<<< HEAD
 // (No @packageDocumentation comment for this package)
+=======
+// WARNING: Unsupported export: IStyleFunctionOrObject
+// WARNING: Unsupported export: ICancelable
+// WARNING: Unsupported export: IClassNames
+// WARNING: Unsupported export: IComponentAsProps
+// WARNING: Unsupported export: IComponentAs
+// WARNING: Unsupported export: IStyleFunction
+// WARNING: Unsupported export: KeyCodes
+// WARNING: Unsupported export: KeyCodes
+// WARNING: Unsupported export: IRefObject
+// WARNING: Unsupported export: RefObject
+// WARNING: Unsupported export: ICssInput
+// WARNING: Unsupported export: ISettings
+// WARNING: Unsupported export: ISettingsFunction
+// WARNING: Unsupported export: Settings
+// WARNING: Unsupported export: SettingsFunction
+// WARNING: Unsupported export: ICustomizerProps
+// WARNING: Unsupported export: CustomizerContext
+// WARNING: Unsupported export: DATA_PORTAL_ATTRIBUTE
+// WARNING: Unsupported export: IsFocusVisibleClassName
+// WARNING: Unsupported export: FitMode
+// WARNING: Unsupported export: isIOS
+// WARNING: Unsupported export: baseElementEvents
+// WARNING: Unsupported export: baseElementProperties
+// WARNING: Unsupported export: htmlElementProperties
+// WARNING: Unsupported export: anchorProperties
+// WARNING: Unsupported export: buttonProperties
+// WARNING: Unsupported export: divProperties
+// WARNING: Unsupported export: inputProperties
+// WARNING: Unsupported export: textAreaProperties
+// WARNING: Unsupported export: imageProperties
+// WARNING: Unsupported export: DATA_IS_SCROLLABLE_ATTRIBUTE
+// WARNING: Unsupported export: allowScrollOnElement
+// WARNING: Unsupported export: ISettingsMap
+// (No @packagedocumentation comment for this package)
+>>>>>>> master

@@ -22,7 +22,7 @@
   ],
   "devDependencies": {
     "@types/node": "^8.10.29",
-    "@uifabric/tslint-rules": ">=1.0.0 <2.0.0"
+    "@uifabric/tslint-rules": ">=1.0.1 <2.0.0"
   },
   "dependencies": {
     "@microsoft/tsdoc": "0.12.7",

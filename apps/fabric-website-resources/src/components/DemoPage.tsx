@@ -24,21 +24,25 @@ export const DemoPage: React.StatelessComponent<IDemoPageProps> = componentPageP
       }
       related={componentPageProps.related || undefined}
       exampleCards={
-        <div>
-          {componentPageProps.exampleKnobs}
-          {componentPageProps.examples &&
-            componentPageProps.examples.map(example => (
-              <ExampleCard
-                title={example.title}
-                code={example.code}
-                key={example.title}
-                codepenJS={example.codepenJS}
-                isScrollable={example.isScrollable}
-              >
-                {example.view}
-              </ExampleCard>
-            ))}
-        </div>
+        componentPageProps.exampleKnobs || componentPageProps.examples ? (
+          <div>
+            {componentPageProps.exampleKnobs}
+            {componentPageProps.examples &&
+              componentPageProps.examples.map(example => (
+                <ExampleCard
+                  title={example.title}
+                  code={example.code}
+                  key={example.title}
+                  codepenJS={example.codepenJS}
+                  isScrollable={example.isScrollable}
+                >
+                  {example.view}
+                </ExampleCard>
+              ))}
+          </div>
+        ) : (
+          undefined
+        )
       }
       propertiesTables={componentPageProps.propertiesTablesSources && <PropertiesTableSet jsonDocs={componentPageProps.jsonDocs} />}
       overview={componentPageProps.overview ? <PageMarkdown>{componentPageProps.overview}</PageMarkdown> : undefined}

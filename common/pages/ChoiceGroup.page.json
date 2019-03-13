@@ -126,19 +126,19 @@
           "name": "imageSize",
           "typeTokens": [
             {
-              "text": "{\r\n        "
+              "text": "{\n        "
             },
             {
               "text": "width"
             },
             {
-              "text": ": number;\r\n        "
+              "text": ": number;\n        "
             },
             {
               "text": "height"
             },
             {
-              "text": ": number;\r\n    }"
+              "text": ": number;\n    }"
             }
           ],
           "descriptionHtml": "The width and height of the image in px for choice field.\n\n",

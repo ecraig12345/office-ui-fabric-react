@@ -16,6 +16,19 @@ declare class ActivityItem extends BaseComponent<IActivityItemProps, {}> {
 // @public
 declare type Alignment = 'start' | 'end' | 'center' | 'space-between' | 'space-around' | 'space-evenly' | 'baseline' | 'stretch';
 
+// Warning: (ae-forgotten-export) The symbol "React" needs to be exported by the entry point index.d.ts
+// 
+// @public (undocumented)
+declare const Announced: React_2.StatelessComponent<IAnnouncedProps>;
+
+// @public (undocumented)
+declare class AnnouncedBase extends React.Component<IAnnouncedProps> {
+    // (undocumented)
+    static defaultProps: Partial<IAnnouncedProps>;
+    // (undocumented)
+    render(): JSX.Element;
+}
+
 // @public (undocumented)
 declare class Autofill extends BaseComponent<IAutofillProps, IAutofillState> implements IAutofill {
     // (undocumented)
@@ -402,7 +415,7 @@ declare class BreadcrumbBase extends BaseComponent<IBreadcrumbProps, any> {
     }
 
 // @public (undocumented)
-declare function buildColumns(items: any[], canResizeColumns?: boolean, onColumnClick?: (ev: React.MouseEvent<HTMLElement>, column: IColumn) => any, sortedColumnKey?: string, isSortedDescending?: boolean, groupedColumnKey?: string, isMultiline?: boolean): IColumn[];
+declare function buildColumns(items: any[], canResizeColumns?: boolean, onColumnClick?: (ev: React.MouseEvent<HTMLElement>, column: IColumn) => void, sortedColumnKey?: string, isSortedDescending?: boolean, groupedColumnKey?: string, isMultiline?: boolean): IColumn[];
 
 // @public @deprecated
 declare class Button extends BaseComponent<IButtonProps, {}> {
@@ -459,7 +472,7 @@ declare class Callout extends BaseComponent<ICalloutProps, ICalloutState> {
 declare function canAnyMenuItemsCheck(items: IContextualMenuItem[]): boolean;
 
 // @public (undocumented)
-declare const Check: (props: ICheckProps) => JSX.Element;
+declare const Check: React_2.StatelessComponent<ICheckProps>;
 
 // @public (undocumented)
 declare class CheckBase extends BaseComponent<ICheckProps, {}> {
@@ -472,7 +485,7 @@ declare class CheckBase extends BaseComponent<ICheckProps, {}> {
 }
 
 // @public (undocumented)
-declare const Checkbox: (props: ICheckboxProps) => JSX.Element;
+declare const Checkbox: React_2.StatelessComponent<ICheckboxProps>;
 
 // @public (undocumented)
 declare class CheckboxBase extends BaseComponent<ICheckboxProps, ICheckboxState> implements ICheckbox {
@@ -496,7 +509,7 @@ declare enum CheckboxVisibility {
 }
 
 // @public (undocumented)
-declare const ChoiceGroup: (props: IChoiceGroupProps) => JSX.Element;
+declare const ChoiceGroup: React_2.StatelessComponent<IChoiceGroupProps>;
 
 // @public (undocumented)
 declare class ChoiceGroupBase extends BaseComponent<IChoiceGroupProps, IChoiceGroupState> implements IChoiceGroup {
@@ -514,13 +527,13 @@ declare class ChoiceGroupBase extends BaseComponent<IChoiceGroupProps, IChoiceGr
 }
 
 // @public (undocumented)
-declare const ChoiceGroupOption: (props: IChoiceGroupOptionProps) => JSX.Element;
+declare const ChoiceGroupOption: React_2.StatelessComponent<IChoiceGroupOptionProps>;
 
 // @public
 declare function clamp(value: number, max: number, min?: number): number;
 
 // @public (undocumented)
-declare const Coachmark: (props: ICoachmarkProps) => JSX.Element;
+declare const Coachmark: React_2.StatelessComponent<ICoachmarkProps>;
 
 // @public (undocumented)
 declare const COACHMARK_ATTRIBUTE_NAME = "data-coachmarkid";
@@ -554,7 +567,7 @@ declare enum CollapseAllVisibility {
 }
 
 // @public (undocumented)
-declare const ColorPicker: (props: IColorPickerProps) => JSX.Element;
+declare const ColorPicker: React_2.StatelessComponent<IColorPickerProps>;
 
 // @public (undocumented)
 declare class ColorPickerBase extends BaseComponent<IColorPickerProps, IColorPickerState> implements IColorPicker {
@@ -577,7 +590,7 @@ declare class ColorPickerBase extends BaseComponent<IColorPickerProps, IColorPic
     }
 
 // @public (undocumented)
-declare const ColorPickerGridCell: (props: IColorPickerGridCellProps) => JSX.Element;
+declare const ColorPickerGridCell: React_2.StatelessComponent<IColorPickerGridCellProps>;
 
 // @public (undocumented)
 declare class ColorPickerGridCellBase extends React.Component<IColorPickerGridCellProps, {}> {
@@ -623,7 +636,7 @@ declare class ComboBox extends BaseComponent<IComboBoxProps, IComboBoxState> {
     }
 
 // @public (undocumented)
-declare const CommandBar: (props: ICommandBarProps) => JSX.Element;
+declare const CommandBar: React_2.StatelessComponent<ICommandBarProps>;
 
 // @public (undocumented)
 declare class CommandBarBase extends BaseComponent<ICommandBarProps, {}> implements ICommandBar {
@@ -648,7 +661,7 @@ declare class CommandBarButton extends BaseComponent<IButtonProps, {}> {
 declare const CommandButton: typeof ActionButton;
 
 // @public (undocumented)
-declare const CompactPeoplePicker: (props: IPeoplePickerProps) => JSX.Element;
+declare const CompactPeoplePicker: React.StatelessComponent<IPeoplePickerProps>;
 
 // @public
 declare class CompactPeoplePickerBase extends BasePeoplePicker {
@@ -673,7 +686,7 @@ declare enum ConstrainMode {
 }
 
 // @public
-declare const ContextualMenu: (props: IContextualMenuProps) => JSX.Element;
+declare const ContextualMenu: React_2.StatelessComponent<IContextualMenuProps>;
 
 // @public (undocumented)
 declare class ContextualMenuBase extends BaseComponent<IContextualMenuProps, IContextualMenuState> {
@@ -696,7 +709,7 @@ declare class ContextualMenuBase extends BaseComponent<IContextualMenuProps, ICo
     }
 
 // @public
-declare const ContextualMenuItem: (props: IContextualMenuItemProps) => JSX.Element;
+declare const ContextualMenuItem: React_2.StatelessComponent<IContextualMenuItemProps>;
 
 // @public (undocumented)
 declare class ContextualMenuItemBase extends BaseComponent<IContextualMenuItemProps, {}> {
@@ -740,7 +753,7 @@ declare function createItem(name: string, isValid: boolean): ISuggestionModel<IP
 declare function cssColor(color: string): IRGB | undefined;
 
 // @public
-declare const DatePicker: (props: IDatePickerProps) => JSX.Element;
+declare const DatePicker: React_2.StatelessComponent<IDatePickerProps>;
 
 // @public (undocumented)
 declare class DatePickerBase extends BaseComponent<IDatePickerProps, IDatePickerState> implements IDatePicker {
@@ -804,14 +817,14 @@ declare class DefaultButton extends BaseComponent<IButtonProps, {}> {
 declare type DefaultProps = Required<Pick<ISpinButtonProps, 'step' | 'min' | 'max' | 'disabled' | 'labelPosition' | 'label' | 'incrementButtonIcon' | 'decrementButtonIcon'>>;
 
 // @public (undocumented)
-declare const DetailsList: (props: IDetailsListProps) => JSX.Element;
+declare const DetailsList: React_2.StatelessComponent<IDetailsListProps>;
 
 // @public (undocumented)
 declare class DetailsListBase extends BaseComponent<IDetailsListProps, IDetailsListState> implements IDetailsList {
     // (undocumented)
     constructor(props: IDetailsListProps);
     // (undocumented)
-    componentDidUpdate(prevProps: any, prevState: any): void;
+    componentDidUpdate(prevProps: IDetailsListProps, prevState: IDetailsListState): void;
     // (undocumented)
     componentWillReceiveProps(newProps: IDetailsListProps): void;
     // (undocumented)
@@ -835,7 +848,7 @@ declare class DetailsListBase extends BaseComponent<IDetailsListProps, IDetailsL
     // (undocumented)
     getStartItemIndexInView(): number;
     // (undocumented)
-    protected _onRenderRow: (props: IDetailsRowProps, defaultRender?: any) => JSX.Element;
+    protected _onRenderRow: (props: IDetailsRowProps, defaultRender?: IRenderFunction<IDetailsRowProps> | undefined) => JSX.Element;
     // (undocumented)
     render(): JSX.Element;
     // (undocumented)
@@ -849,7 +862,7 @@ declare enum DetailsListLayoutMode {
 }
 
 // @public (undocumented)
-declare const DetailsRow: (props: IDetailsRowBaseProps) => JSX.Element;
+declare const DetailsRow: React_2.StatelessComponent<IDetailsRowBaseProps>;
 
 // @public (undocumented)
 declare class DetailsRowBase extends BaseComponent<IDetailsRowBaseProps, IDetailsRowState> {
@@ -875,10 +888,8 @@ declare class DetailsRowBase extends BaseComponent<IDetailsRowBaseProps, IDetail
     }
 
 // @public (undocumented)
-declare const DetailsRowCheck: (props: IDetailsRowCheckProps) => JSX.Element;
+declare const DetailsRowCheck: React.StatelessComponent<IDetailsRowCheckProps>;
 
-// Warning: (ae-forgotten-export) The symbol "React" needs to be exported by the entry point index.d.ts
-// 
 // @public (undocumented)
 declare const Dialog: React_2.StatelessComponent<IDialogProps>;
 
@@ -893,7 +904,7 @@ declare class DialogBase extends BaseComponent<IDialogProps, {}> {
 }
 
 // @public (undocumented)
-declare const DialogContent: (props: IDialogContentProps) => JSX.Element;
+declare const DialogContent: React_2.StatelessComponent<IDialogContentProps>;
 
 // @public (undocumented)
 declare class DialogContentBase extends BaseComponent<IDialogContentProps, {}> {
@@ -906,7 +917,7 @@ declare class DialogContentBase extends BaseComponent<IDialogContentProps, {}> {
 }
 
 // @public (undocumented)
-declare const DialogFooter: (props: IDialogFooterProps) => JSX.Element;
+declare const DialogFooter: React_2.StatelessComponent<IDialogFooterProps>;
 
 // @public (undocumented)
 declare class DialogFooterBase extends BaseComponent<IDialogFooterProps, {}> {
@@ -943,34 +954,34 @@ declare const DirectionalHint: {
 declare type DirectionalHint = typeof DirectionalHint[keyof typeof DirectionalHint];
 
 // @public (undocumented)
-declare const DocumentCard: (props: IDocumentCardProps) => JSX.Element;
+declare const DocumentCard: React_2.StatelessComponent<IDocumentCardProps>;
 
 // @public (undocumented)
-declare const DocumentCardActions: (props: IDocumentCardActionsProps) => JSX.Element;
+declare const DocumentCardActions: React_2.StatelessComponent<IDocumentCardActionsProps>;
 
 // @public (undocumented)
-declare const DocumentCardActivity: (props: IDocumentCardActivityProps) => JSX.Element;
+declare const DocumentCardActivity: React_2.StatelessComponent<IDocumentCardActivityProps>;
 
 // @public (undocumented)
-declare const DocumentCardDetails: (props: IDocumentCardDetailsProps) => JSX.Element;
+declare const DocumentCardDetails: React_2.StatelessComponent<IDocumentCardDetailsProps>;
 
 // @public (undocumented)
-declare const DocumentCardImage: (props: IDocumentCardImageProps) => JSX.Element;
+declare const DocumentCardImage: React_2.StatelessComponent<IDocumentCardImageProps>;
 
 // @public (undocumented)
-declare const DocumentCardLocation: (props: IDocumentCardLocationProps) => JSX.Element;
+declare const DocumentCardLocation: React_2.StatelessComponent<IDocumentCardLocationProps>;
 
 // @public (undocumented)
-declare const DocumentCardLogo: (props: IDocumentCardLogoProps) => JSX.Element;
+declare const DocumentCardLogo: React_2.StatelessComponent<IDocumentCardLogoProps>;
 
 // @public (undocumented)
-declare const DocumentCardPreview: (props: IDocumentCardPreviewProps) => JSX.Element;
+declare const DocumentCardPreview: React_2.StatelessComponent<IDocumentCardPreviewProps>;
 
 // @public (undocumented)
-declare const DocumentCardStatus: (props: IDocumentCardStatusProps) => JSX.Element;
+declare const DocumentCardStatus: React_2.StatelessComponent<IDocumentCardStatusProps>;
 
 // @public (undocumented)
-declare const DocumentCardTitle: (props: IDocumentCardTitleProps) => JSX.Element;
+declare const DocumentCardTitle: React_2.StatelessComponent<IDocumentCardTitleProps>;
 
 // @public (undocumented)
 declare enum DocumentCardType {
@@ -979,7 +990,7 @@ declare enum DocumentCardType {
 }
 
 // @public (undocumented)
-declare const Dropdown: (props: IDropdownProps) => JSX.Element;
+declare const Dropdown: React_2.StatelessComponent<IDropdownProps>;
 
 // @public (undocumented)
 declare class DropdownBase extends BaseComponent<IDropdownInternalProps, IDropdownState> {
@@ -1008,7 +1019,7 @@ declare enum ElementType {
 }
 
 // @public (undocumented)
-declare const ExpandingCard: (props: IExpandingCardProps) => JSX.Element;
+declare const ExpandingCard: React_2.StatelessComponent<IExpandingCardProps>;
 
 // @public (undocumented)
 declare class ExpandingCardBase extends BaseComponent<IExpandingCardProps, IExpandingCardState> {
@@ -1049,7 +1060,7 @@ declare class ExtendedSelectedItem extends BaseComponent<ISelectedPeopleItemProp
 }
 
 // @public (undocumented)
-declare const Fabric: (props: IFabricProps) => JSX.Element;
+declare const Fabric: React_2.StatelessComponent<IFabricProps>;
 
 // @public (undocumented)
 declare class FabricBase extends BaseComponent<IFabricProps, {
@@ -1112,7 +1123,7 @@ declare enum FabricSlots {
 }
 
 // @public
-declare const Facepile: (props: IFacepileProps) => JSX.Element;
+declare const Facepile: React_2.StatelessComponent<IFacepileProps>;
 
 // @public
 declare class FacepileBase extends BaseComponent<IFacepileProps, {}> {
@@ -1162,7 +1173,7 @@ declare class FocusTrapZone extends BaseComponent<IFocusTrapZoneProps, {}> imple
     }
 
 // @public (undocumented)
-declare class FocusZone extends BaseComponent<IFocusZoneProps, {}> implements IFocusZone {
+declare class FocusZone extends React.Component<IFocusZoneProps, {}> implements IFocusZone {
     // (undocumented)
     constructor(props: IFocusZoneProps);
     // (undocumented)
@@ -1237,7 +1248,7 @@ declare function getShade(color: IColor, shade: Shade, isInverted?: boolean): IC
 declare function getSubmenuItems(item: IContextualMenuItem): IContextualMenuItem[] | undefined;
 
 // @public (undocumented)
-declare const Grid: (props: IGridProps) => JSX.Element;
+declare const Grid: React_2.StatelessComponent<IGridProps>;
 
 // @public (undocumented)
 declare class GridCell<T, P extends IGridCellProps<T>> extends React.Component<P, {}> {
@@ -1251,7 +1262,7 @@ declare class GridCell<T, P extends IGridCellProps<T>> extends React.Component<P
 }
 
 // @public (undocumented)
-declare const GroupedList: (props: IGroupedListProps) => JSX.Element;
+declare const GroupedList: React_2.StatelessComponent<IGroupedListProps>;
 
 // @public (undocumented)
 declare class GroupedListBase extends BaseComponent<IGroupedListProps, IGroupedListState> implements IGroupedList {
@@ -1283,25 +1294,25 @@ declare class GroupedListBase extends BaseComponent<IGroupedListProps, IGroupedL
     }
 
 // @public (undocumented)
-declare const GroupFooter: (props: IGroupFooterProps) => JSX.Element;
+declare const GroupFooter: React_2.StatelessComponent<IGroupFooterProps>;
 
 // @public (undocumented)
-declare const GroupHeader: (props: IGroupHeaderProps) => JSX.Element;
+declare const GroupHeader: React_2.StatelessComponent<IGroupHeaderProps>;
 
 // @public (undocumented)
 declare const groupOne: IExtendedPersonaProps[];
 
 // @public (undocumented)
-declare const GroupShowAll: (props: IGroupShowAllProps) => JSX.Element;
+declare const GroupShowAll: React_2.StatelessComponent<IGroupShowAllProps>;
 
 // @public (undocumented)
-declare const GroupSpacer: (props: IGroupSpacerProps) => JSX.Element;
+declare const GroupSpacer: React.StatelessComponent<IGroupSpacerProps>;
 
 // @public (undocumented)
 declare const groupTwo: IExtendedPersonaProps[];
 
 // @public (undocumented)
-declare const HoverCard: (props: IHoverCardProps) => JSX.Element;
+declare const HoverCard: React_2.StatelessComponent<IHoverCardProps>;
 
 // @public (undocumented)
 declare class HoverCardBase extends BaseComponent<IHoverCardProps, IHoverCardState> {
@@ -1387,6 +1398,22 @@ interface IActivityItemStyles {
     pulsingBeacon?: IStyle;
     root?: IStyle;
     timeStamp?: IStyle;
+}
+
+// @public (undocumented)
+interface IAnnounced {
+}
+
+// @public (undocumented)
+interface IAnnouncedProps extends React.Props<AnnouncedBase>, React.HTMLAttributes<HTMLDivElement> {
+    componentRef?: (component: IAnnounced) => void;
+    message?: string;
+    styles?: IStyleFunctionOrObject<{}, IAnnouncedStyles>;
+}
+
+// @public (undocumented)
+interface IAnnouncedStyles {
+    screenReaderText: IStyle;
 }
 
 // @public (undocumented)
@@ -1697,7 +1724,7 @@ interface IBreadcrumbItem {
 }
 
 // @public (undocumented)
-interface IBreadcrumbProps extends React.ClassAttributes<BreadcrumbBase> {
+interface IBreadcrumbProps extends React.HTMLAttributes<HTMLElement> {
     ariaLabel?: string;
     className?: string;
     componentRef?: IRefObject<IBreadcrumb>;
@@ -2225,7 +2252,7 @@ interface IChoiceGroupStyles {
     root?: IStyle;
 }
 
-// @public (undocumented)
+// @public
 interface ICircle extends IShimmerElement {
     height?: number;
 }
@@ -2532,8 +2559,8 @@ interface IColumn {
     maxWidth?: number;
     minWidth: number;
     name: string;
-    onColumnClick?: (ev: React.MouseEvent<HTMLElement>, column: IColumn) => any;
-    onColumnContextMenu?: (column?: IColumn, ev?: React.MouseEvent<HTMLElement>) => any;
+    onColumnClick?: (ev: React.MouseEvent<HTMLElement>, column: IColumn) => void;
+    onColumnContextMenu?: (column?: IColumn, ev?: React.MouseEvent<HTMLElement>) => void;
     onColumnResize?: (width?: number) => void;
     onRender?: (item?: any, index?: number, column?: IColumn) => any;
     // Warning: (ae-forgotten-export) The symbol "IDetailsColumnProps" needs to be exported by the entry point index.d.ts
@@ -2605,6 +2632,7 @@ interface IComboBoxProps extends ISelectableDroppableTextProps<IComboBox> {
     onResolveOptions?: (options: IComboBoxOption[]) => IComboBoxOption[] | PromiseLike<IComboBoxOption[]>;
     onScrollToItem?: (itemIndex: number) => void;
     options: IComboBoxOption[];
+    persistMenu?: boolean;
     scrollSelectedToTop?: boolean;
     styles?: Partial<IComboBoxStyles>;
     text?: string;
@@ -2712,7 +2740,7 @@ interface ICommandBarStyles {
 }
 
 // @public
-declare const Icon: (props: IIconProps) => JSX.Element;
+declare const Icon: React_2.StatelessComponent<IIconProps>;
 
 // @public (undocumented)
 declare class IconBase extends BaseComponent<IIconProps, IIconState> {
@@ -3165,7 +3193,7 @@ interface IDetailsListProps extends IBaseProps<IDetailsList>, IWithViewportProps
     dragDropEvents?: IDragDropEvents;
     enableShimmer?: boolean;
     enterModalSelectionOnTouch?: boolean;
-    getGroupHeight?: (group: IGroup, groupIndex: number) => number;
+    getGroupHeight?: IGroupedListProps['getGroupHeight'];
     getKey?: (item: any, index?: number) => string;
     getRowAriaDescribedBy?: (item: any) => string;
     getRowAriaLabel?: (item: any) => string;
@@ -3182,7 +3210,7 @@ interface IDetailsListProps extends IBaseProps<IDetailsList>, IWithViewportProps
     onColumnHeaderClick?: (ev?: React.MouseEvent<HTMLElement>, column?: IColumn) => void;
     onColumnHeaderContextMenu?: (column?: IColumn, ev?: React.MouseEvent<HTMLElement>) => void;
     onColumnResize?: (column?: IColumn, newWidth?: number, columnIndex?: number) => void;
-    onDidUpdate?: (detailsList?: DetailsListBase) => any;
+    onDidUpdate?: (detailsList?: DetailsListBase) => void;
     onItemContextMenu?: (item?: any, index?: number, ev?: Event) => void | boolean;
     onItemInvoked?: (item?: any, index?: number, ev?: Event) => void;
     onRenderDetailsFooter?: IRenderFunction<IDetailsFooterProps>;
@@ -3949,7 +3977,7 @@ interface IDropdownProps extends ISelectableDroppableTextProps<IDropdown, HTMLDi
     // @deprecated
     placeHolder?: string;
     responsiveMode?: ResponsiveMode;
-    selectedKeys?: string[] | number[];
+    selectedKeys?: string[] | number[] | null;
     styles?: IStyleFunctionOrObject<IDropdownStyleProps, IDropdownStyles>;
     theme?: ITheme;
 }
@@ -4200,6 +4228,7 @@ interface IFocusZoneProps extends React.HTMLAttributes<HTMLElement | FocusZone> 
     allowTabKey?: boolean;
     ariaDescribedBy?: string;
     ariaLabelledBy?: string;
+    as?: React.ReactType;
     checkForNoWrap?: boolean;
     className?: string;
     componentRef?: IRefObject<IFocusZone>;
@@ -4207,6 +4236,7 @@ interface IFocusZoneProps extends React.HTMLAttributes<HTMLElement | FocusZone> 
     direction?: FocusZoneDirection;
     disabled?: boolean;
     doNotAllowFocusEventToPropagate?: boolean;
+    // @deprecated
     elementType?: keyof React.ReactHTML;
     handleTabKey?: FocusZoneTabbableElements;
     isCircularNavigation?: boolean;
@@ -4219,7 +4249,7 @@ interface IFocusZoneProps extends React.HTMLAttributes<HTMLElement | FocusZone> 
     shouldInputLoseFocusOnArrowKey?: (inputElement: HTMLInputElement) => boolean;
 }
 
-// @public (undocumented)
+// @public
 interface IGap extends IShimmerElement {
     height?: number;
     width?: number | string;
@@ -4806,7 +4836,7 @@ interface ILayerStyles {
     root?: IStyle;
 }
 
-// @public (undocumented)
+// @public
 interface ILine extends IShimmerElement {
     height?: number;
     width?: number | string;
@@ -4926,7 +4956,7 @@ interface IListState {
 }
 
 // @public (undocumented)
-declare const Image: (props: IImageProps) => JSX.Element;
+declare const Image: React_2.StatelessComponent<IImageProps>;
 
 // @public (undocumented)
 declare class ImageBase extends BaseComponent<IImageProps, IImageState> {
@@ -5139,6 +5169,7 @@ interface INavLink {
     altText?: string;
     ariaLabel?: string;
     automationId?: string;
+    disabled?: boolean;
     // @deprecated
     engagementName?: string;
     forceAnchor?: boolean;
@@ -5207,6 +5238,7 @@ interface INavStyleProps {
     className?: string;
     groups: INavLinkGroup[] | null;
     isButtonEntry?: boolean;
+    isDisabled?: boolean;
     isExpanded?: boolean;
     isGroup?: boolean;
     isLink?: boolean;
@@ -5325,7 +5357,7 @@ interface IPage {
     // (undocumented)
     startIndex: number;
     // (undocumented)
-    style: any;
+    style: React.CSSProperties;
     // (undocumented)
     top: number;
 }
@@ -5463,7 +5495,7 @@ interface IPeoplePickerItemSelectedStyles {
 // @public
 interface IPeoplePickerItemSelectedSubComponentStyles {
     persona: IStyleFunctionOrObject<IPersonaStyleProps, any>;
-    personaCoin: IStyleFunctionOrObject<IPersonaCoinStyleProps, any>;
+    personaCoin?: IStyleFunctionOrObject<IPersonaCoinStyleProps, any>;
 }
 
 // @public
@@ -5493,6 +5525,7 @@ declare type IPeoplePickerItemSuggestionStyleProps = Required<Pick<IPeoplePicker
 interface IPeoplePickerItemSuggestionStyles {
     personaWrapper: IStyle;
     root: IStyle;
+    subComponentStyles: IPeoplePickerItemSelectedSubComponentStyles;
 }
 
 // @public @deprecated
@@ -5710,8 +5743,6 @@ interface IPivotProps extends React.ClassAttributes<PivotBase>, React.HTMLAttrib
 // @public (undocumented)
 interface IPivotState {
     // (undocumented)
-    links: IPivotItemProps[];
-    // (undocumented)
     selectedKey: string | undefined;
 }
 
@@ -5827,17 +5858,10 @@ interface IPositioningContainerState {
 declare type IPositioningContainerTypes = IPositioningContainerProps;
 
 // @public (undocumented)
-interface IProgressIndicator {
-    // (undocumented)
-    focus: () => void;
-}
-
-// @public (undocumented)
 interface IProgressIndicatorProps extends React.ClassAttributes<ProgressIndicatorBase> {
     ariaValueText?: string;
     barHeight?: number;
     className?: string;
-    componentRef?: IRefObject<IProgressIndicator>;
     description?: React.ReactNode;
     label?: React.ReactNode;
     onRenderProgress?: IRenderFunction<IProgressIndicatorProps>;
@@ -6133,7 +6157,7 @@ interface ISelectableDroppableTextProps<TComponent, TListenerElement = TComponen
     calloutProps?: ICalloutProps;
     className?: string;
     componentRef?: IRefObject<TComponent>;
-    defaultSelectedKey?: string | number | string[] | number[];
+    defaultSelectedKey?: string | number | string[] | number[] | null;
     disabled?: boolean;
     errorMessage?: string;
     id?: string;
@@ -6146,7 +6170,7 @@ interface ISelectableDroppableTextProps<TComponent, TListenerElement = TComponen
     panelProps?: IPanelProps;
     placeholder?: string;
     required?: boolean;
-    selectedKey?: string | number | string[] | number[];
+    selectedKey?: string | number | string[] | number[] | null;
 }
 
 // @public (undocumented)
@@ -6322,6 +6346,13 @@ interface IShimmerCircleStyles {
 }
 
 // @public
+interface IShimmerColors {
+    background?: string;
+    shimmer?: string;
+    shimmerWave?: string;
+}
+
+// @public
 interface IShimmerElement {
     height?: number;
     type: ShimmerElementType;
@@ -6335,6 +6366,7 @@ interface IShimmerElementsGroup {
 
 // @public
 interface IShimmerElementsGroupProps extends React.AllHTMLAttributes<HTMLElement> {
+    backgroundColor?: string;
     componentRef?: IRefObject<IShimmerElementsGroup>;
     flexWrap?: boolean;
     rowHeight?: number;
@@ -6344,17 +6376,14 @@ interface IShimmerElementsGroupProps extends React.AllHTMLAttributes<HTMLElement
     width?: string;
 }
 
-// @public (undocumented)
+// @public
 interface IShimmerElementsGroupStyleProps {
-    // (undocumented)
     flexWrap?: boolean;
-    // (undocumented)
     theme: ITheme;
 }
 
-// @public (undocumented)
+// @public
 interface IShimmerElementsGroupStyles {
-    // (undocumented)
     root?: IStyle;
 }
 
@@ -6423,6 +6452,7 @@ interface IShimmerProps extends React.AllHTMLAttributes<HTMLElement> {
     componentRef?: IRefObject<IShimmer>;
     customElementsGroup?: React.ReactNode;
     isDataLoaded?: boolean;
+    shimmerColors?: IShimmerColors;
     shimmerElements?: IShimmerElement[];
     styles?: IStyleFunctionOrObject<IShimmerStyleProps, IShimmerStyles>;
     theme?: ITheme;
@@ -6434,27 +6464,21 @@ interface IShimmerState {
     contentLoaded?: boolean;
 }
 
-// @public (undocumented)
+// @public
 interface IShimmerStyleProps {
-    // (undocumented)
     className?: string;
-    // (undocumented)
     isDataLoaded?: boolean;
-    // (undocumented)
+    shimmerColor?: string;
+    shimmerWaveColor?: string;
     theme: ITheme;
-    // (undocumented)
     transitionAnimationInterval?: number;
 }
 
-// @public (undocumented)
+// @public
 interface IShimmerStyles {
-    // (undocumented)
     dataWrapper?: IStyle;
-    // (undocumented)
     root?: IStyle;
-    // (undocumented)
     screenReaderText?: IStyle;
-    // (undocumented)
     shimmerWrapper?: IStyle;
 }
 
@@ -7433,7 +7457,7 @@ declare class KeytipData extends BaseComponent<IKeytipDataProps & IRenderCompone
     }
 
 // @public (undocumented)
-declare const KeytipLayer: (props: IKeytipLayerProps) => JSX.Element;
+declare const KeytipLayer: React_2.StatelessComponent<IKeytipLayerProps>;
 
 // @public
 declare class KeytipLayerBase extends BaseComponent<IKeytipLayerProps, IKeytipLayerState> {
@@ -7459,7 +7483,7 @@ declare class KeytipLayerBase extends BaseComponent<IKeytipLayerProps, IKeytipLa
     }
 
 // @public (undocumented)
-declare const Label: (props: ILabelProps) => JSX.Element;
+declare const Label: React_2.StatelessComponent<ILabelProps>;
 
 // @public (undocumented)
 declare class LabelBase extends BaseComponent<ILabelProps, {}> {
@@ -7468,7 +7492,7 @@ declare class LabelBase extends BaseComponent<ILabelProps, {}> {
 }
 
 // @public (undocumented)
-declare const Layer: (props: ILayerProps) => JSX.Element;
+declare const Layer: React_2.StatelessComponent<ILayerProps>;
 
 // @public (undocumented)
 declare class LayerBase extends BaseComponent<ILayerProps, ILayerBaseState> {
@@ -7546,7 +7570,7 @@ declare class List extends BaseComponent<IListProps, IListState> implements ILis
     }
 
 // @public (undocumented)
-declare const ListPeoplePicker: (props: IPeoplePickerProps) => JSX.Element;
+declare const ListPeoplePicker: React.StatelessComponent<IPeoplePickerProps>;
 
 // @public
 declare class ListPeoplePickerBase extends MemberListPeoplePicker {
@@ -7558,7 +7582,7 @@ declare class ListPeoplePickerBase extends MemberListPeoplePicker {
 }
 
 // @public (undocumented)
-declare const MarqueeSelection: (props: IMarqueeSelectionProps) => JSX.Element;
+declare const MarqueeSelection: React_2.StatelessComponent<IMarqueeSelectionProps>;
 
 // @public (undocumented)
 declare class MaskedTextField extends BaseComponent<ITextFieldProps, IMaskedTextFieldState> implements ITextField {
@@ -7618,7 +7642,7 @@ declare class MemberListPeoplePicker extends BasePickerListBelow<IPersonaProps, 
 }
 
 // @public (undocumented)
-declare const MessageBar: (props: IMessageBarProps) => JSX.Element;
+declare const MessageBar: React_2.StatelessComponent<IMessageBarProps>;
 
 // @public (undocumented)
 declare class MessageBarBase extends BaseComponent<IMessageBarProps, IMessageBarState> {
@@ -7649,7 +7673,7 @@ declare enum MessageBarType {
 }
 
 // @public (undocumented)
-declare const Modal: (props: IModalProps) => JSX.Element;
+declare const Modal: React_2.StatelessComponent<IModalProps>;
 
 // @public (undocumented)
 declare class ModalBase extends BaseComponent<IModalProps, IDialogState> implements IModal {
@@ -7671,7 +7695,7 @@ declare class ModalBase extends BaseComponent<IModalProps, IDialogState> impleme
 declare const mru: IExtendedPersonaProps[];
 
 // @public (undocumented)
-declare const Nav: (props: INavProps) => JSX.Element;
+declare const Nav: React_2.StatelessComponent<INavProps>;
 
 // @public (undocumented)
 declare class NavBase extends BaseComponent<INavProps, INavState> implements INav {
@@ -7688,7 +7712,7 @@ declare class NavBase extends BaseComponent<INavProps, INavState> implements INa
 }
 
 // @public (undocumented)
-declare const NormalPeoplePicker: (props: IPeoplePickerProps) => JSX.Element;
+declare const NormalPeoplePicker: React.StatelessComponent<IPeoplePickerProps>;
 
 // @public
 declare class NormalPeoplePickerBase extends BasePeoplePicker {
@@ -7720,7 +7744,7 @@ declare enum OverflowButtonType {
 }
 
 // @public (undocumented)
-declare const OverflowSet: (props: IOverflowSetProps) => JSX.Element;
+declare const OverflowSet: React_2.StatelessComponent<IOverflowSetProps>;
 
 // @public (undocumented)
 declare class OverflowSetBase extends BaseComponent<IOverflowSetProps, {}> implements IOverflowSet {
@@ -7743,7 +7767,7 @@ declare class OverflowSetBase extends BaseComponent<IOverflowSetProps, {}> imple
     }
 
 // @public (undocumented)
-declare const Overlay: (props: IOverlayProps) => JSX.Element;
+declare const Overlay: React_2.StatelessComponent<IOverlayProps>;
 
 // @public (undocumented)
 declare class OverlayBase extends BaseComponent<IOverlayProps, {}> {
@@ -7756,7 +7780,7 @@ declare class OverlayBase extends BaseComponent<IOverlayProps, {}> {
 }
 
 // @public
-declare const Panel: (props: IPanelProps) => JSX.Element;
+declare const Panel: React_2.StatelessComponent<IPanelProps>;
 
 // @public (undocumented)
 declare enum PanelType {
@@ -7777,19 +7801,19 @@ declare const people: (IExtendedPersonaProps & {
 })[];
 
 // @public (undocumented)
-declare const PeoplePickerItem: (props: IPeoplePickerItemSelectedProps) => JSX.Element;
+declare const PeoplePickerItem: React.StatelessComponent<IPeoplePickerItemSelectedProps>;
 
 // @public (undocumented)
 declare const PeoplePickerItemBase: (props: IPeoplePickerItemSelectedProps) => JSX.Element;
 
 // @public (undocumented)
-declare const PeoplePickerItemSuggestion: (props: IPeoplePickerItemSuggestionProps) => JSX.Element;
+declare const PeoplePickerItemSuggestion: React.StatelessComponent<IPeoplePickerItemSuggestionProps>;
 
 // @public (undocumented)
 declare const PeoplePickerItemSuggestionBase: (props: IPeoplePickerItemSuggestionProps) => JSX.Element;
 
 // @public
-declare const Persona: (props: IPersonaProps) => JSX.Element;
+declare const Persona: React_2.StatelessComponent<IPersonaProps>;
 
 // @public
 declare class PersonaBase extends BaseComponent<IPersonaProps, {}> {
@@ -7802,7 +7826,7 @@ declare class PersonaBase extends BaseComponent<IPersonaProps, {}> {
     }
 
 // @public
-declare const PersonaCoin: (props: IPersonaCoinProps) => JSX.Element;
+declare const PersonaCoin: React_2.StatelessComponent<IPersonaCoinProps>;
 
 // @public
 declare class PersonaCoinBase extends BaseComponent<IPersonaCoinProps, IPersonaState> {
@@ -7944,14 +7968,12 @@ declare namespace personaSize {
 }
 
 // @public
-declare const Pivot: (props: IPivotProps) => JSX.Element;
+declare const Pivot: React_2.StatelessComponent<IPivotProps>;
 
 // @public
 declare class PivotBase extends BaseComponent<IPivotProps, IPivotState> {
     // (undocumented)
     constructor(props: IPivotProps);
-    // (undocumented)
-    componentWillReceiveProps(nextProps: IPivotProps): void;
     focus(): void;
     // (undocumented)
     render(): JSX.Element;
@@ -7978,7 +8000,7 @@ declare enum PivotLinkSize {
 }
 
 // @public (undocumented)
-declare const PlainCard: (props: IPlainCardProps) => JSX.Element;
+declare const PlainCard: React_2.StatelessComponent<IPlainCardProps>;
 
 // @public (undocumented)
 declare class PlainCardBase extends BaseComponent<IPlainCardProps, {}> {
@@ -8054,12 +8076,10 @@ declare class PrimaryButton extends BaseComponent<IButtonProps, {}> {
 }
 
 // @public
-declare const ProgressIndicator: (props: IProgressIndicatorProps) => JSX.Element;
+declare const ProgressIndicator: React_2.StatelessComponent<IProgressIndicatorProps>;
 
 // @public
-declare class ProgressIndicatorBase extends BaseComponent<IProgressIndicatorProps, {}> {
-    // (undocumented)
-    constructor(props: IProgressIndicatorProps);
+declare class ProgressIndicatorBase extends React.Component<IProgressIndicatorProps, {}> {
     // (undocumented)
     static defaultProps: {
         label: string;
@@ -8071,7 +8091,7 @@ declare class ProgressIndicatorBase extends BaseComponent<IProgressIndicatorProp
 }
 
 // @public (undocumented)
-declare const Rating: (props: IRatingProps) => JSX.Element;
+declare const Rating: React_2.StatelessComponent<IRatingProps>;
 
 // @public (undocumented)
 declare class RatingBase extends BaseComponent<IRatingProps, IRatingState> {
@@ -8119,7 +8139,7 @@ declare function rgb2hex(r: number, g: number, b: number): string;
 declare function rgb2hsv(r: number, g: number, b: number): IHSV;
 
 // @public (undocumented)
-declare const ScrollablePane: (props: IScrollablePaneProps) => JSX.Element;
+declare const ScrollablePane: React_2.StatelessComponent<IScrollablePaneProps>;
 
 // @public (undocumented)
 declare class ScrollablePaneBase extends BaseComponent<IScrollablePaneProps, IScrollablePaneState> implements IScrollablePane {
@@ -8192,7 +8212,7 @@ declare const ScrollToMode: {
 declare type ScrollToMode = typeof ScrollToMode[keyof typeof ScrollToMode];
 
 // @public (undocumented)
-declare const SearchBox: (props: ISearchBoxProps) => JSX.Element;
+declare const SearchBox: React_2.StatelessComponent<ISearchBoxProps>;
 
 // @public (undocumented)
 declare class SearchBoxBase extends BaseComponent<ISearchBoxProps, ISearchBoxState> {
@@ -8354,7 +8374,7 @@ declare enum Shade {
 }
 
 // @public (undocumented)
-declare const Shimmer: (props: IShimmerProps) => JSX.Element;
+declare const Shimmer: React_2.StatelessComponent<IShimmerProps>;
 
 // @public (undocumented)
 declare class ShimmerBase extends BaseComponent<IShimmerProps, IShimmerState> {
@@ -8369,7 +8389,7 @@ declare class ShimmerBase extends BaseComponent<IShimmerProps, IShimmerState> {
 }
 
 // @public (undocumented)
-declare const ShimmerCircle: (props: IShimmerCircleProps) => JSX.Element;
+declare const ShimmerCircle: React_2.StatelessComponent<IShimmerCircleProps>;
 
 // @public (undocumented)
 declare class ShimmerCircleBase extends BaseComponent<IShimmerCircleProps, {}> {
@@ -8382,7 +8402,7 @@ declare class ShimmerCircleBase extends BaseComponent<IShimmerCircleProps, {}> {
 // Warning: (ae-forgotten-export) The symbol "IShimmeredDetailsListProps" needs to be exported by the entry point index.d.ts
 // 
 // @public (undocumented)
-declare const ShimmeredDetailsList: (props: IShimmeredDetailsListProps) => JSX.Element;
+declare const ShimmeredDetailsList: React_2.StatelessComponent<IShimmeredDetailsListProps>;
 
 // @public (undocumented)
 declare class ShimmeredDetailsListBase extends BaseComponent<IShimmeredDetailsListProps, {}> {
@@ -8392,7 +8412,7 @@ declare class ShimmeredDetailsListBase extends BaseComponent<IShimmeredDetailsLi
     render(): JSX.Element;
     }
 
-// @public (undocumented)
+// @public
 declare enum ShimmerElementsDefaultHeights {
     circle = 24,
     gap = 16,
@@ -8400,7 +8420,7 @@ declare enum ShimmerElementsDefaultHeights {
 }
 
 // @public (undocumented)
-declare const ShimmerElementsGroup: (props: IShimmerElementsGroupProps) => JSX.Element;
+declare const ShimmerElementsGroup: React_2.StatelessComponent<IShimmerElementsGroupProps>;
 
 // @public (undocumented)
 declare class ShimmerElementsGroupBase extends BaseComponent<IShimmerElementsGroupProps, {}> {
@@ -8412,7 +8432,7 @@ declare class ShimmerElementsGroupBase extends BaseComponent<IShimmerElementsGro
     render(): JSX.Element;
 }
 
-// @public (undocumented)
+// @public
 declare enum ShimmerElementType {
     circle = 2,
     gap = 3,
@@ -8420,7 +8440,7 @@ declare enum ShimmerElementType {
 }
 
 // @public (undocumented)
-declare const ShimmerGap: (props: IShimmerGapProps) => JSX.Element;
+declare const ShimmerGap: React_2.StatelessComponent<IShimmerGapProps>;
 
 // @public (undocumented)
 declare class ShimmerGapBase extends BaseComponent<IShimmerGapProps, {}> {
@@ -8431,7 +8451,7 @@ declare class ShimmerGapBase extends BaseComponent<IShimmerGapProps, {}> {
 }
 
 // @public (undocumented)
-declare const ShimmerLine: (props: IShimmerLineProps) => JSX.Element;
+declare const ShimmerLine: React_2.StatelessComponent<IShimmerLineProps>;
 
 // @public (undocumented)
 declare class ShimmerLineBase extends BaseComponent<IShimmerLineProps, {}> {
@@ -8460,7 +8480,7 @@ declare const sizeToPixels: {
 };
 
 // @public (undocumented)
-declare const Slider: (props: ISliderProps) => JSX.Element;
+declare const Slider: React_2.StatelessComponent<ISliderProps>;
 
 // @public (undocumented)
 declare class SliderBase extends BaseComponent<ISliderProps, ISliderState> implements ISlider {
@@ -8492,7 +8512,7 @@ declare class SpinButton extends BaseComponent<ISpinButtonProps, ISpinButtonStat
     }
 
 // @public (undocumented)
-declare const Spinner: (props: ISpinnerProps) => JSX.Element;
+declare const Spinner: React_2.StatelessComponent<ISpinnerProps>;
 
 // @public (undocumented)
 declare class SpinnerBase extends BaseComponent<ISpinnerProps, any> {
@@ -8786,7 +8806,7 @@ declare class SuggestionsStore<T> {
 }
 
 // @public (undocumented)
-declare const SwatchColorPicker: (props: ISwatchColorPickerProps) => JSX.Element;
+declare const SwatchColorPicker: React_2.StatelessComponent<ISwatchColorPickerProps>;
 
 // @public (undocumented)
 declare class SwatchColorPickerBase extends BaseComponent<ISwatchColorPickerProps, ISwatchColorPickerState> implements ISwatchColorPicker {
@@ -8803,19 +8823,19 @@ declare class SwatchColorPickerBase extends BaseComponent<ISwatchColorPickerProp
     }
 
 // @public (undocumented)
-declare const TagItem: (props: ITagItemProps) => JSX.Element;
+declare const TagItem: React.StatelessComponent<ITagItemProps>;
 
 // @public (undocumented)
 declare const TagItemBase: (props: ITagItemProps) => JSX.Element;
 
 // @public (undocumented)
-declare const TagItemSuggestion: (props: ITagItemSuggestionProps) => JSX.Element;
+declare const TagItemSuggestion: React.StatelessComponent<ITagItemSuggestionProps>;
 
 // @public (undocumented)
 declare const TagItemSuggestionBase: (props: ITagItemSuggestionProps) => JSX.Element;
 
 // @public (undocumented)
-declare const TagPicker: (props: ITagPickerProps) => JSX.Element;
+declare const TagPicker: React.StatelessComponent<ITagPickerProps>;
 
 // @public (undocumented)
 declare class TagPickerBase extends BasePicker<ITag, ITagPickerProps> {
@@ -8827,7 +8847,7 @@ declare class TagPickerBase extends BasePicker<ITag, ITagPickerProps> {
 }
 
 // @public (undocumented)
-declare const TeachingBubble: (props: ITeachingBubbleProps) => JSX.Element;
+declare const TeachingBubble: React_2.StatelessComponent<ITeachingBubbleProps>;
 
 // @public (undocumented)
 declare class TeachingBubbleBase extends BaseComponent<ITeachingBubbleProps, ITeachingBubbleState> {
@@ -8852,7 +8872,7 @@ declare class TeachingBubbleBase extends BaseComponent<ITeachingBubbleProps, ITe
 }
 
 // @public (undocumented)
-declare const TeachingBubbleContent: (props: ITeachingBubbleProps) => JSX.Element;
+declare const TeachingBubbleContent: React_2.StatelessComponent<ITeachingBubbleProps>;
 
 // @public (undocumented)
 declare class TeachingBubbleContentBase extends BaseComponent<ITeachingBubbleProps, ITeachingBubbleState> {
@@ -8883,7 +8903,7 @@ declare class TeachingBubbleContentBase extends BaseComponent<ITeachingBubblePro
 declare const Text: React.StatelessComponent<ITextProps>;
 
 // @public (undocumented)
-declare const TextField: (props: ITextFieldProps) => JSX.Element;
+declare const TextField: React_2.StatelessComponent<ITextFieldProps>;
 
 // @public (undocumented)
 declare class TextFieldBase extends BaseComponent<ITextFieldProps, ITextFieldState> implements ITextField {
@@ -8954,7 +8974,7 @@ declare class ToggleBase extends BaseComponent<IToggleProps, IToggleState> imple
     }
 
 // @public (undocumented)
-declare const Tooltip: (props: ITooltipProps) => JSX.Element;
+declare const Tooltip: React_2.StatelessComponent<ITooltipProps>;
 
 // @public (undocumented)
 declare class TooltipBase extends BaseComponent<ITooltipProps, any> {
@@ -8975,7 +8995,7 @@ declare enum TooltipDelay {
 }
 
 // @public (undocumented)
-declare const TooltipHost: (props: ITooltipHostProps) => JSX.Element;
+declare const TooltipHost: React_2.StatelessComponent<ITooltipHostProps>;
 
 // @public (undocumented)
 declare class TooltipHostBase extends BaseComponent<ITooltipHostProps, ITooltipHostState> implements ITooltipHost {
