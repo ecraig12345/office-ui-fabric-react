@@ -39,12 +39,7 @@ export class IconGrid extends React.Component<IIconGridProps, IIconGridState> {
 
     return (
       <div>
-        <SearchBox
-          placeholder="Search icons"
-          value={searchQuery}
-          onChange={this._onSearchQueryChanged.bind(this)}
-          className={styles.searchBox}
-        />
+        <SearchBox placeholder="Search icons" value={searchQuery} onChange={this._onSearchQueryChanged} className={styles.searchBox} />
         <ul className={styles.grid}>
           {icons
             .filter(icon => icon.name.toLowerCase().indexOf(searchQuery.toLowerCase()) !== -1)
@@ -67,9 +62,9 @@ export class IconGrid extends React.Component<IIconGridProps, IIconGridState> {
     );
   }
 
-  private _onSearchQueryChanged(newValue): void {
+  private _onSearchQueryChanged = (newValue): void => {
     this.setState({
       searchQuery: newValue
     });
-  }
+  };
 }
