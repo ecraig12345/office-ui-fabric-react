@@ -45,5 +45,6 @@ export interface IColorPaletteTheme {
   key?: string;
   name?: string;
   background?: string;
+  notes?: string;
   colors: IColor[];
 }

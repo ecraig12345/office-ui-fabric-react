@@ -27,7 +27,7 @@ export interface IColorsProductsPageState {
 }
 
 export class ColorsProductsPage extends React.Component<IStylesPageProps, IColorsProductsPageState> {
-  public readonly state = {
+  public readonly state: IColorsProductsPageState = {
     activeAppColorPalette: null,
     activeAppDetails: null
   };

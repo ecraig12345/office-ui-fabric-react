@@ -1,10 +1,20 @@
 import * as React from 'react';
 import { AnimationCell } from './AnimationCell/AnimationCell';
-import * as stylesImport from './Table.module.scss';
-const styles: any = stylesImport;
+import * as styles from './Table.module.scss';
+
+export interface ITableCellContent {
+  value?: string;
+  html?: string;
+  className?: string;
+}
+
+export interface ITableContent {
+  headers: string[];
+  data: ITableCellContent[][];
+}
 
 export interface ITableProps {
-  content: any;
+  content: ITableContent;
   isAnimation?: boolean;
   responsive?: boolean;
 }
@@ -37,18 +47,18 @@ export class Table extends React.Component<ITableProps, ITableState> {
   }
 
   // Render Table cell.  Cell content is either cell's value property, or cell's html property (if value is an empty string)
-  private _renderCell(cell, index): JSX.Element {
+  private _renderCell(cell: ITableCellContent): JSX.Element {
     return cell.value.length ? (
-      <td className={cell.className} key={index}>
+      <td className={cell.className} key={cell.value}>
         {cell.value}
       </td>
     ) : (
-      <td className={cell.className} key={index} dangerouslySetInnerHTML={{ __html: cell.html }} />
+      <td className={cell.className} key={cell.html} dangerouslySetInnerHTML={{ __html: cell.html }} />
     );
   }
 
   // Render Desktop view
-  private _renderDesktop(content): JSX.Element {
+  private _renderDesktop(content: ITableContent): JSX.Element {
     return (
       <table className={`${styles.table} ` + (this.props.isAnimation ? 'docs_animationsTable_body' : '')}>
         <thead>
@@ -61,7 +71,7 @@ export class Table extends React.Component<ITableProps, ITableState> {
         <tbody>
           {content.data.map((row, rowIndex) => (
             <tr key={rowIndex}>
-              {row.map((cell, cellIndex) => this._renderCell(cell, cellIndex))}
+              {row.map(cell => this._renderCell(cell))}
               {this.props.isAnimation && (
                 <td className={styles.animCell}>
                   <AnimationCell data={row} />
@@ -75,7 +85,7 @@ export class Table extends React.Component<ITableProps, ITableState> {
   }
 
   // Render Mobile view
-  private _renderMobile(content): JSX.Element {
+  private _renderMobile(content: ITableContent): JSX.Element {
     const headers = this.props.content.headers;
     return (
       <div>
@@ -88,7 +98,7 @@ export class Table extends React.Component<ITableProps, ITableState> {
               {row.map((cell, cellIndex) => (
                 <tr key={cellIndex}>
                   <td>{this._capitalizeFirstLetter(headers[cellIndex])}</td>
-                  {this._renderCell(cell, cellIndex)}
+                  {this._renderCell(cell)}
                 </tr>
               ))}
               {this.props.isAnimation && (

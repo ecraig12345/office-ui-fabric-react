@@ -262,16 +262,16 @@ function _loadReferences(): INavPage[] {
 
   return requireContext.keys().map(pagePath => {
     const pageName = pagePath.match(/(\w+)\.page\.json/)![1];
-    return {
+    const result: INavPage = {
       title: pageName,
       url: '#/controls/web/references/' + pageName.toLowerCase(),
-      isFilterable: true,
       component: () => <LoadingComponent title={pageName} />,
       getComponent: cb =>
         requireContext(pagePath).then((jsonDocs: IPageJson) => {
           cb(() => <ControlsAreaPage jsonDocs={jsonDocs} title={pageName} hideImplementationTitle />);
         })
     };
+    return result;
   });
 }
 

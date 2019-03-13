@@ -9,12 +9,17 @@ import { Platforms } from '../../../interfaces/Platforms';
 import * as styles from './OfficeBrandIconsPage.module.scss';
 import { websiteRepoUrl } from '../../../utilities/index';
 
+interface IIconInfo {
+  name: string;
+  icon?: string;
+}
+
 const baseUrl = websiteRepoUrl + '/src/pages/Styles/OfficeBrandIconsPage/docs';
 const fabricCDN = 'https://static2.sharepointonline.com/files/fabric/assets';
 
-const productIcons = require('@uifabric/fabric-website/lib/data/brand-icons-products.json');
-const documentIcons = require('@uifabric/fabric-website/lib/data/brand-icons-documents.json');
-const monochromeIcons = require('@uifabric/fabric-website/lib/data/brand-icons-monochrome.json');
+const productIcons = require<IIconInfo[]>('@uifabric/fabric-website/lib/data/brand-icons-products.json');
+const documentIcons = require<IIconInfo[]>('@uifabric/fabric-website/lib/data/brand-icons-documents.json');
+const monochromeIcons = require<IIconInfo[]>('@uifabric/fabric-website/lib/data/brand-icons-monochrome.json');
 
 export const OfficeBrandIconsPage: React.StatelessComponent<IStylesPageProps> = props => {
   const { platform } = props;

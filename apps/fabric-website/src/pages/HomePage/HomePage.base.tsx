@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Async, Icon, Image, Link, TooltipHost, classNamesFunction, registerIcons, IProcessedStyleSet } from 'office-ui-fabric-react';
-import { trackEvent, EventNames, getSiteArea } from '@uifabric/example-app-base/lib/index2';
+import { trackEvent, EventNames, getSiteArea, IPlatform } from '@uifabric/example-app-base/lib/index2';
 import { platforms } from '../../SiteDefinition/SiteDefinition.platforms';
 import { AndroidLogo, AppleLogo, WebLogo } from '../../utilities/index';
 import { IHomePageProps, IHomePageStyles, IHomePageStyleProps } from './HomePage.types';
@@ -106,8 +106,8 @@ export class HomePageBase extends React.Component<IHomePageProps, IHomePageState
 
     const platformKeys = Object.keys(platforms);
     const lastPlatform = platformKeys.length - 1;
-    const beforeColor = platforms[platformKeys[0]].color;
-    const afterColor = platforms[platformKeys[lastPlatform]].color;
+    const beforeColor = ((platforms as any)[platformKeys[0]] as IPlatform).color;
+    const afterColor = ((platforms as any)[platformKeys[lastPlatform]] as IPlatform).color;
 
     const classNames = getClassNames(styles, {
       theme,

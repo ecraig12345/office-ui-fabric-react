@@ -6,7 +6,8 @@ import {
   IPageSectionProps,
   Markdown,
   Table,
-  Video
+  Video,
+  ITableRowProps
 } from '@uifabric/example-app-base/lib/index2';
 import { IStylesPageProps, StylesAreaPage } from '../StylesAreaPage';
 import { MotionPageProps } from './MotionPage.doc';
@@ -15,7 +16,11 @@ import { websiteRepoUrl } from '../../../utilities/index';
 
 const baseUrl = websiteRepoUrl + '/src/pages/Styles/MotionPage/docs';
 
-const PatternTable = ({ rows }) => (
+interface IPatternTableProps {
+  rows: ITableRowProps[];
+}
+
+const PatternTable: React.StatelessComponent<IPatternTableProps> = ({ rows }) => (
   <Table
     columns={[
       {

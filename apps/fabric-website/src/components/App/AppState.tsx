@@ -4,9 +4,20 @@ import * as React from 'react';
 import { ComponentPage } from '../ComponentPage/ComponentPage';
 import { PageHeader } from '../PageHeader/PageHeader';
 import { ApiReferencesTableSet } from '@uifabric/example-app-base';
+import { ComponentLike, IRouteProps } from 'office-ui-fabric-react/lib/utilities/router/Route';
 const pageStyles: any = require('../../pages/PageStyles.module.scss');
 
-export interface ILegacyNavPage {}
+export interface ILegacyNavPage extends Pick<IRouteProps, 'component' | 'getComponent'> {
+  title: string;
+  url: string;
+  className?: string;
+  isHomePage?: boolean;
+  isUhfLink?: boolean;
+  isHiddenFromMainNav?: boolean;
+  isFilterable?: boolean;
+  isCategory?: boolean;
+  pages?: ILegacyNavPage[];
+}
 
 export interface IAppState {
   appTitle: string;
@@ -969,14 +980,15 @@ export const AppState: IAppState = {
       url: '#/resources',
       className: 'resourcesPage',
       isUhfLink: true,
-      getComponent: cb => require.ensure([], require => cb(require<any>('../../pages/ResourcesPage/ResourcesPage').ResourcesPage))
+      getComponent: (cb: (component: ComponentLike) => void) =>
+        require.ensure([], require => cb(require<any>('../../pages/ResourcesPage/ResourcesPage').ResourcesPage))
     },
     {
       title: 'Fabric JS',
       url: '#/fabric-js',
       className: 'fabricJsPage',
       isHiddenFromMainNav: true,
-      getComponent: cb => require.ensure([], require => cb(require<any>('../../pages/Interstitials/FabricJSPage').FabricJSPage))
+      getComponent: (cb: Function) => require.ensure([], require => cb(require<any>('../../pages/Interstitials/FabricJSPage').FabricJSPage))
     }
   ]
 };

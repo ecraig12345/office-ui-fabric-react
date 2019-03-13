@@ -2,8 +2,12 @@ import * as React from 'react';
 import { ColorPalette, IColor } from '@uifabric/example-app-base/lib/index2';
 import { SharePointNeutrals, SharePointThemes } from './sharePointThemes';
 
-export class SharePoint extends React.Component<{}, { activeThemeName?: string }> {
-  public readonly state = {
+export interface IColorsSharePointPageState {
+  activeThemeName?: string;
+}
+
+export class SharePoint extends React.Component<{}, IColorsSharePointPageState> {
+  public readonly state: IColorsSharePointPageState = {
     activeThemeName: null
   };
 
