@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Animate } from '../../utilities/animation/Animate';
+import * as Animate from '../../utilities/animation/Animate';
 import WindowWidthUtility from '../../utilities/WindowWidthUtility';
 
 export interface IPageHeaderLink {
