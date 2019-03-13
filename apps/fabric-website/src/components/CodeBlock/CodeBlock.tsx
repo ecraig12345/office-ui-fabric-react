@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from 'office-ui-fabric-react/lib/Utilities';
 import * as stylesImport from './CodeBlock.module.scss';
-import * as Highlight from 'react-highlight';
+import Highlight from 'react-highlight';
 
 const styles: any = stylesImport;
 

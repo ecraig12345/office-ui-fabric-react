@@ -235,7 +235,7 @@ export class Nav extends React.Component<INavProps, INavState> {
     });
   };
 
-  private _onChangeQuery = newValue => {
+  private _onChangeQuery = (newValue: string) => {
     this.setState({
       searchQuery: newValue,
       filterState: false

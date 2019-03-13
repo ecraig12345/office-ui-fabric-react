@@ -2,17 +2,20 @@ import * as React from 'react';
 import { CodeBlock } from '../../../components/CodeBlock/CodeBlock';
 import { css } from 'office-ui-fabric-react/lib/Utilities';
 import { PageHeader } from '../../../components/PageHeader/PageHeader';
-import { Table } from '../../../components/Table/Table';
+import { Table, ITableContent } from '../../../components/Table/Table';
 import { IconGrid } from '../../../components/IconGrid/IconGrid';
-import * as stylesImport from './BrandIconsPage.module.scss';
-const styles: any = stylesImport;
+import * as styles from './BrandIconsPage.module.scss';
 const pageStyles: any = require('../../PageStyles.module.scss');
 
-const svgResolutionData = require('../../../data/brand-icons-svg-resolutions.json');
-const pngResolutionData = require('../../../data/brand-icons-png-resolutions.json');
-const productIconsData = require('../../../data/brand-icons-products.json');
-const documentIconsData = require('../../../data/brand-icons-documents.json');
-const monochromeIconsData = require('../../../data/brand-icons-monochrome.json');
+interface IName {
+  name: string;
+}
+
+const svgResolutionData: ITableContent = require('../../../data/brand-icons-svg-resolutions.json');
+const pngResolutionData: ITableContent = require('../../../data/brand-icons-png-resolutions.json');
+const productIconsData: IName[] = require('../../../data/brand-icons-products.json');
+const documentIconsData: IName[] = require('../../../data/brand-icons-documents.json');
+const monochromeIconsData: IName[] = require('../../../data/brand-icons-monochrome.json');
 
 export class BrandIconsPage extends React.Component<any, any> {
   public render(): JSX.Element {
@@ -316,8 +319,8 @@ https://static2.sharepointonline.com/files/fabric/assets/brand-icons/document/pn
         <h2 id="branded-icon-library">Branded icon library</h2>
         <h3>Product icons</h3>
         <ul className={styles.iconList}>
-          {productIcons.map((icon, iconIndex) => (
-            <li key={iconIndex}>
+          {productIcons.map(icon => (
+            <li key={icon.name}>
               <img
                 src={`https://static2.sharepointonline.com/files/fabric/assets/brand-icons/product/svg/${icon.name}_48x1.svg`}
                 alt={icon.name + 'Brand icon'}
@@ -329,8 +332,8 @@ https://static2.sharepointonline.com/files/fabric/assets/brand-icons/document/pn
 
         <h3>Document icons</h3>
         <ul className={styles.iconList}>
-          {documentIcons.map((icon, iconIndex) => (
-            <li key={iconIndex}>
+          {documentIcons.map(icon => (
+            <li key={icon.name}>
               {/* @todo: Change this back to using SVGs once the CDN has been updated to include the "xsn" icons (issue 252058) */}
               <img
                 src={`https://static2.sharepointonline.com/files/fabric/assets/brand-icons/document/svg/${icon.name}_48x1.svg`}

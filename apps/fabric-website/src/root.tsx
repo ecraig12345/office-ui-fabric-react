@@ -17,6 +17,8 @@ import WindowWidthUtility from './utilities/WindowWidthUtility';
 import { isLocal, hasUHF } from './utilities/location';
 
 import { handleRedirects } from './redirects';
+import { ITopNavProps } from './components/TopNav';
+import { INavPage } from './components/Nav/Nav.types';
 
 // Handle redirects of deprecated URLs to new
 handleRedirects();
@@ -31,8 +33,8 @@ initializeIcons();
 
 const isProduction = process.argv.indexOf('--production') > -1;
 
-declare let Flight; // Contains flight & CDN configuration loaded by manifest
-declare let __webpack_public_path__;
+declare let Flight: any; // Contains flight & CDN configuration loaded by manifest
+declare let __webpack_public_path__: string;
 
 // Final bundle location can be dynamic, so we need to update the public path at runtime to point to the right CDN URL
 if (!isLocal && Flight.baseCDNUrl) {
@@ -45,9 +47,9 @@ if (!isProduction) {
   setBaseUrl(__webpack_public_path__);
 }
 
-let rootElement;
-let currentBreakpoint;
-let scrollDistance;
+let rootElement: HTMLElement;
+let currentBreakpoint: string;
+let scrollDistance: number;
 
 function _routerDidMount(): void {
   if (_hasAnchorLink(window.location.hash)) {
@@ -79,7 +81,7 @@ function _hasAnchorLink(path: string): boolean {
   return (path.match(/#/g) || []).length > 1;
 }
 
-function _extractAnchorLink(path): string {
+function _extractAnchorLink(path: string): string {
   const split = path.split('#');
   const cleanedSplit = split.filter(value => {
     if (value === '') {
@@ -103,7 +105,7 @@ function _onLoad(): void {
   }
 }
 
-function _renderApp(TopNav?) {
+function _renderApp(TopNav?: React.ComponentType<ITopNavProps>) {
   // Load the app into this element.
   rootElement = rootElement || document.getElementById('main');
   _getBreakpoint();
@@ -120,22 +122,19 @@ function _renderApp(TopNav?) {
   );
 }
 
-function _createRoutes(pages: {}[]): {}[] {
-  let routes = [];
-
-  // tslint:disable-next-line:no-any
-  pages.forEach((page: any, pageIndex: number) => {
-    routes.push(<Route key={pageIndex} path={page.url} component={page.component} getComponent={page.getComponent} />);
+function _createRoutes(pages: INavPage[]): JSX.Element[] {
+  const routes: JSX.Element[] = [];
+  pages.forEach(page => {
+    routes.push(<Route key={page.url} path={page.url} component={page.component} getComponent={page.getComponent} />);
     if (page.pages) {
-      routes = routes.concat(_createRoutes(page.pages));
+      routes.push(..._createRoutes(page.pages));
     }
   });
   return routes;
 }
 
 function _getAppRoutes() {
-  let routes = [];
-  routes = _createRoutes(AppState.pages);
+  const routes = _createRoutes(AppState.pages);
 
   // Add the default route
   routes.push(<Route key="home" component={HomePage} />);

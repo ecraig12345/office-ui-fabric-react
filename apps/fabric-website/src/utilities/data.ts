@@ -13,7 +13,7 @@ const DATA = {
 };
 
 export function createListItems(count: number, startIndex = 0): any {
-  return Array.apply(null, Array(count)).map((item, index) => {
+  return Array.apply(null, Array(count)).map((item: any, index: number) => {
     const width = 1000 + Math.round(Math.random() * 2000);
     const height = 1000 + Math.round(Math.random() * 2000);
     const aspectRatio = width / height;
@@ -34,7 +34,7 @@ export function createListItems(count: number, startIndex = 0): any {
 
 export function lorem(wordCount: number): string {
   return Array.apply(null, Array(wordCount))
-    .map(item => _randWord(LOREM_IPSUM))
+    .map(() => _randWord(LOREM_IPSUM))
     .join(' ');
 }
 
@@ -43,6 +43,5 @@ export function isGroupable(key: string): boolean {
 }
 
 function _randWord(array: string[]): string {
-  const index = Math.floor(Math.random() * array.length);
-  return array[index];
+  return array[Math.floor(Math.random() * array.length)];
 }

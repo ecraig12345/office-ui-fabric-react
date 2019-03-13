@@ -1,13 +1,18 @@
 import * as React from 'react';
 import { css } from 'office-ui-fabric-react/lib/Utilities';
-import * as stylesImport from './ColorTable.module.scss';
-const styles: any = stylesImport;
+import * as styles from './ColorTable.module.scss';
+
+export interface IColorTableColor {
+  name: string;
+  value: string;
+  labelColorClass: string;
+}
 
 export interface IColorTableProps {
   /**
    * Content for the table.
    */
-  content: any;
+  content: IColorTableColor[];
 }
 
 export interface IColorTableState {}
@@ -25,8 +30,8 @@ export class ColorTable extends React.Component<IColorTableProps, IColorTableSta
           </tr>
         </thead>
         <tbody>
-          {content.map((row, rowIndex) => (
-            <tr className={css('ms-bgColor-' + row.name, row.labelColorClass)} key={rowIndex}>
+          {content.map(row => (
+            <tr className={css('ms-bgColor-' + row.name, row.labelColorClass)} key={row.name}>
               <td>{row.name}</td>
               <td>{row.value}</td>
             </tr>

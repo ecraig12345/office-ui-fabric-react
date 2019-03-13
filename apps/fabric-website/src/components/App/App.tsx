@@ -21,7 +21,7 @@ export interface IAppState {
 }
 
 // Timer used to throttle resize events.
-let resizeTimer;
+let resizeTimer: any;
 
 export class App extends React.Component<IAppProps, any> {
   private _attachedScrollThreshold: number;

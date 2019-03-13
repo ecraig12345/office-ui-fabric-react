@@ -8,8 +8,8 @@ export interface IPageHeaderLink {
 }
 
 export class PageHeaderLink extends React.Component<IPageHeaderLink, {}> {
-  private currentBreakpoint;
-  private scrollDistance;
+  private currentBreakpoint: string;
+  private scrollDistance: number;
 
   private _els: {
     link?: HTMLAnchorElement;
@@ -49,7 +49,7 @@ export class PageHeaderLink extends React.Component<IPageHeaderLink, {}> {
     }
   }
 
-  private _eventListener(event): void {
+  private _eventListener(event: any): void {
     event.preventDefault();
     history.pushState({}, '', this._els.link.getAttribute('href'));
     const navigatorUserAgent = navigator.userAgent.toLowerCase();
@@ -81,7 +81,7 @@ export class PageHeaderLink extends React.Component<IPageHeaderLink, {}> {
     });
   }
 
-  private _extractAnchorLink(path) {
+  private _extractAnchorLink(path: string) {
     const split = path.split('#');
     const cleanedSplit = split.filter(value => {
       if (value === '') {

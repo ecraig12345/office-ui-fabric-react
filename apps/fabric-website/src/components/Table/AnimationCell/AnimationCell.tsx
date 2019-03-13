@@ -36,7 +36,7 @@ export class AnimationCell extends React.Component<IAnimationCellProps, {}> {
   }
 
   // Apply animation to animation cell
-  private _doAnimation(e): void {
+  private _doAnimation = (e: React.MouseEvent<HTMLElement>): void => {
     const cell = e.currentTarget;
     const panel = cell.getElementsByClassName('animationExample_panel')[0];
     const animClass = cell.getAttribute('data-class');
@@ -44,5 +44,5 @@ export class AnimationCell extends React.Component<IAnimationCellProps, {}> {
     setTimeout(() => {
       panel.classList.remove(animClass);
     }, 1000);
-  }
+  };
 }

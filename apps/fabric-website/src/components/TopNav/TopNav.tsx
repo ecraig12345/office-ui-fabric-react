@@ -14,7 +14,7 @@ export interface ITopNavState {
 }
 
 // Timer used to throttle resize events.
-let resizeTimer;
+let resizeTimer: any;
 
 export class TopNavBase extends React.Component<ITopNavProps, ITopNavState> {
   constructor(props: ITopNavProps) {

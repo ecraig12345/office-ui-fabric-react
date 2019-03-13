@@ -136,7 +136,7 @@ export class PageHeader extends BaseComponent<IPageHeaderProps, IPageHeaderState
     });
   }
 
-  private _getPagePath(link): string {
+  private _getPagePath(link: IPageHeaderLinkProps): string {
     let path = location.hash;
     // This makes sure that location hash changes don't append
     path = getPathMinusLastHash(path);

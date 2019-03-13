@@ -18,9 +18,11 @@ function redirectLegacyUrls(hash: string) {
     '#/examples/announced/bulkoperations': '#/components/announced/bulkoperations'
   };
 
-  Object.keys(redirectMap).forEach(old => {
+  const keys = Object.keys(redirectMap) as (keyof typeof redirectMap)[];
+  for (const old of keys) {
     if (hash === old) {
       window.location.hash = redirectMap[old];
+      break;
     }
-  });
+  }
 }
