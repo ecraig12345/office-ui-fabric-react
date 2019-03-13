@@ -14,9 +14,9 @@ const DATA = {
 
 export function createListItems(count: number, startIndex = 0): any {
   return Array.apply(null, Array(count)).map((item, index) => {
-    let width = 1000 + Math.round(Math.random() * 2000);
-    let height = 1000 + Math.round(Math.random() * 2000);
-    let aspectRatio = width / height;
+    const width = 1000 + Math.round(Math.random() * 2000);
+    const height = 1000 + Math.round(Math.random() * 2000);
+    const aspectRatio = width / height;
 
     return {
       thumbnail: `//placekitten.com/${Math.round(75 * aspectRatio)}/${75}`,
@@ -43,6 +43,6 @@ export function isGroupable(key: string): boolean {
 }
 
 function _randWord(array: string[]): string {
-  let index = Math.floor(Math.random() * array.length);
+  const index = Math.floor(Math.random() * array.length);
   return array[index];
 }

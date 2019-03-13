@@ -79,10 +79,10 @@ export class PageHeader extends BaseComponent<IPageHeaderProps, IPageHeaderState
   }
 
   public render(): JSX.Element {
-    let { pageTitle, links, backgroundColor, backgroundImage } = this.props;
-    let { isAttached } = this.state;
+    const { pageTitle, links, backgroundColor, backgroundImage } = this.props;
+    const { isAttached } = this.state;
     let inPageNav;
-    let backgroundStyle = {
+    const backgroundStyle = {
       bottom: this.state.headerBottom,
       top: this.state.headerTop,
       backgroundColor: backgroundColor,

@@ -80,7 +80,7 @@ export class Animate {
    * @param {number} props.x props.y props.left, props.opacity etc... CSS values to transition to
    */
   public static transition(element: HTMLElement, props: any): void {
-    let obj: ITransitionObj = { element: element, props: props, transformations: {} };
+    const obj: ITransitionObj = { element: element, props: props, transformations: {} };
     Animate._animationObjects.push(obj);
     Animate._parseProperties(obj);
     Animate._createTransition(obj);
@@ -99,7 +99,7 @@ export class Animate {
    * @param {array} props.onEndArgs An array of parameters applied to the onEnd function
    */
   public static animation(element: HTMLElement, keyframes: string, props: any): void {
-    let obj: IAnimationObj = { element: element, keyframes: keyframes, props: props };
+    const obj: IAnimationObj = { element: element, keyframes: keyframes, props: props };
     Animate._animationObjects.push(obj);
     Animate._parseProperties(obj);
     Animate._createAnimation(obj);
@@ -116,7 +116,7 @@ export class Animate {
    * @param {array} props.onEndArgs An array of parameters applied to the onEnd function
    */
   public static scrollTo(element: HTMLElement, props: any): void {
-    let obj: IScrollObj = { element: element, props: props, step: 0 };
+    const obj: IScrollObj = { element: element, props: props, step: 0 };
     Animate._setScrollProperties(obj);
     if (obj.props.delay) {
       setTimeout(Animate._animationObjects, obj.props.delay * 1000, obj);
@@ -135,7 +135,7 @@ export class Animate {
   private static _parseProperties(obj: ITransitionObj | IAnimationObj): void {
     const nonTweenProps: Array<string> = Animate._timeProps.concat(Animate._callbackProps);
     obj.tweenObj = {};
-    for (let key in obj.props) {
+    for (const key in obj.props) {
       if (Animate._contains(nonTweenProps, key)) {
         obj[key] = obj.props[key];
       } else {
@@ -183,9 +183,9 @@ export class Animate {
   private static _getTransitionProperties(obj: ITransitionObj): string {
     let hasTransform: boolean = false;
     let hasFilter: boolean = false;
-    let properties: Array<string> = [];
+    const properties: Array<string> = [];
 
-    for (let key in obj) {
+    for (const key in obj) {
       if (Animate._contains(Animate._transformProps, key)) {
         hasTransform = true;
       } else if (Animate._contains(Animate._filters, key)) {
@@ -207,7 +207,7 @@ export class Animate {
   }
 
   private static _setProperties(obj: ITransitionObj): void {
-    for (let key in obj.tweenObj) {
+    for (const key in obj.tweenObj) {
       if (Animate._contains(Animate._transformProps, key)) {
         Animate._setTransformValues(obj, key);
       } else if (Animate._contains(Animate._filters, key)) {
@@ -252,7 +252,7 @@ export class Animate {
       scale = '',
       skew = '',
       translate = '';
-    let trans: any = obj.transformations;
+    const trans: any = obj.transformations;
     translate += trans.x !== undefined && trans.x ? 'translateX(' + trans.x + 'px) ' : '';
     translate += trans.y !== undefined && trans.y ? 'translateY(' + trans.y + 'px) ' : '';
     translate += trans.z !== undefined && trans.z ? 'translateZ(' + trans.z + 'px) ' : '';
@@ -280,7 +280,7 @@ export class Animate {
     event.target.removeEventListener('transitionend', Animate._complete);
     event.target.removeEventListener('webkitAnimationEnd', Animate._complete);
     event.target.removeEventListener('animationend', Animate._complete);
-    let obj: ITransitionObj | IAnimationObj = Animate._getAnimationObjByElement(<HTMLElement>event.target);
+    const obj: ITransitionObj | IAnimationObj = Animate._getAnimationObjByElement(<HTMLElement>event.target);
     Animate._executeCallback(obj);
     Animate._removeAnimationObject(obj);
   }
@@ -306,7 +306,7 @@ export class Animate {
 
   private static _executeCallback(obj: ITransitionObj | IAnimationObj | IScrollObj): void {
     if (obj.onEnd) {
-      let endArgs: Array<any> = obj.onEndArgs || [];
+      const endArgs: Array<any> = obj.onEndArgs || [];
       obj.onEnd.apply(null, endArgs);
     }
   }

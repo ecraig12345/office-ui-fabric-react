@@ -29,7 +29,7 @@ const corePackageVersion: string = (corePackageData && corePackageData.version) 
 
 initializeIcons();
 
-let isProduction = process.argv.indexOf('--production') > -1;
+const isProduction = process.argv.indexOf('--production') > -1;
 
 declare let Flight; // Contains flight & CDN configuration loaded by manifest
 declare let __webpack_public_path__;
@@ -51,10 +51,10 @@ let scrollDistance;
 
 function _routerDidMount(): void {
   if (_hasAnchorLink(window.location.hash)) {
-    let hash = _extractAnchorLink(window.location.hash);
-    let el = document.getElementById(hash);
-    let elRect = el.getBoundingClientRect();
-    let bodySTop = document.body.scrollTop;
+    const hash = _extractAnchorLink(window.location.hash);
+    const el = document.getElementById(hash);
+    const elRect = el.getBoundingClientRect();
+    const bodySTop = document.body.scrollTop;
     let currentScrollPosition;
     currentScrollPosition = bodySTop + elRect.top;
     document.body.scrollTop = currentScrollPosition - scrollDistance;
@@ -80,8 +80,8 @@ function _hasAnchorLink(path: string): boolean {
 }
 
 function _extractAnchorLink(path): string {
-  let split = path.split('#');
-  let cleanedSplit = split.filter(value => {
+  const split = path.split('#');
+  const cleanedSplit = split.filter(value => {
     if (value === '') {
       return false;
     } else {
@@ -95,7 +95,7 @@ function _onLoad(): void {
   // Don't load the TopNav if viewed on the Office Dev Portal, which uses the UHF.
   if (!hasUHF) {
     require.ensure([], require => {
-      let _topNav = require<any>('./components/TopNav/TopNav').TopNav;
+      const _topNav = require<any>('./components/TopNav/TopNav').TopNav;
       _renderApp(_topNav);
     });
   } else {
@@ -149,7 +149,7 @@ function _onUnload() {
   }
 }
 
-let isReady = document.readyState === 'interactive' || document.readyState === 'complete';
+const isReady = document.readyState === 'interactive' || document.readyState === 'complete';
 
 if (isReady) {
   _onLoad();
@@ -160,8 +160,8 @@ if (isReady) {
 window.onunload = _onUnload;
 
 function addCSSToHeader(fileName: string): void {
-  let headEl = document.head;
-  let linkEl = document.createElement('link');
+  const headEl = document.head;
+  const linkEl = document.createElement('link');
 
   linkEl.type = 'text/css';
   linkEl.rel = 'stylesheet';

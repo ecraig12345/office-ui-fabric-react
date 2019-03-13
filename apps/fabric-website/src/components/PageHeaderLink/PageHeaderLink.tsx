@@ -42,7 +42,7 @@ export class PageHeaderLink extends React.Component<IPageHeaderLink, {}> {
   }
 
   private _getBreakpoint() {
-    let breakpoint = WindowWidthUtility.currentFabricBreakpoint();
+    const breakpoint = WindowWidthUtility.currentFabricBreakpoint();
     if (this.currentBreakpoint !== breakpoint) {
       this.currentBreakpoint = breakpoint;
       this.scrollDistance = this._setScrollDistance();
@@ -52,14 +52,14 @@ export class PageHeaderLink extends React.Component<IPageHeaderLink, {}> {
   private _eventListener(event): void {
     event.preventDefault();
     history.pushState({}, '', this._els.link.getAttribute('href'));
-    let navigatorUserAgent = navigator.userAgent.toLowerCase();
+    const navigatorUserAgent = navigator.userAgent.toLowerCase();
     let hash = this._extractAnchorLink(window.location.hash);
     if (navigatorUserAgent.indexOf('firefox') > -1) {
       hash = decodeURI(hash);
     }
-    let el = document.getElementById(hash);
-    let elRect = el.getBoundingClientRect();
-    let bodySTop = document.body.scrollTop;
+    const el = document.getElementById(hash);
+    const elRect = el.getBoundingClientRect();
+    const bodySTop = document.body.scrollTop;
     let currentScrollPosition = bodySTop + elRect.top;
     let scrollTarget: HTMLBodyElement | HTMLHtmlElement = document.querySelector('body');
 
@@ -82,8 +82,8 @@ export class PageHeaderLink extends React.Component<IPageHeaderLink, {}> {
   }
 
   private _extractAnchorLink(path) {
-    let split = path.split('#');
-    let cleanedSplit = split.filter(value => {
+    const split = path.split('#');
+    const cleanedSplit = split.filter(value => {
       if (value === '') {
         return false;
       } else {

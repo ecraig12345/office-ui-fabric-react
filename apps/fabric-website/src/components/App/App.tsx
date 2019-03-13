@@ -31,7 +31,7 @@ export class App extends React.Component<IAppProps, any> {
   constructor(props: IAppProps) {
     super(props);
 
-    let _currentSection = this._getCurrentSection();
+    const _currentSection = this._getCurrentSection();
 
     this.state = {
       isAttached: false,
@@ -123,7 +123,7 @@ export class App extends React.Component<IAppProps, any> {
    * Gets the title of the current section.
    */
   private _getSectionTitle(): string {
-    let { currentSection } = this.state;
+    const { currentSection } = this.state;
     return currentSection.title;
   }
 
@@ -174,9 +174,9 @@ export class App extends React.Component<IAppProps, any> {
   };
 
   private _renderLeftNav = () => {
-    let { isLeftNavOpen, hasLeftNav, navHeight, isSmallScreen } = this.state;
-    let navPosition: 'fixed' | 'absolute' = this.state.isAttached ? 'fixed' : 'absolute';
-    let navStyle = {
+    const { isLeftNavOpen, hasLeftNav, navHeight, isSmallScreen } = this.state;
+    const navPosition: 'fixed' | 'absolute' = this.state.isAttached ? 'fixed' : 'absolute';
+    const navStyle = {
       height: navHeight,
       position: navPosition
     };

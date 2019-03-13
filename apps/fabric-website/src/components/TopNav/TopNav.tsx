@@ -26,8 +26,8 @@ export class TopNavBase extends React.Component<ITopNavProps, ITopNavState> {
   }
 
   public render() {
-    let { isSmallScreen, isNavOpen } = this.state;
-    let { pages } = this.props;
+    const { isSmallScreen, isNavOpen } = this.state;
+    const { pages } = this.props;
 
     return (
       <FocusZone className={styles.topNavWrapper}>

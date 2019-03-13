@@ -76,7 +76,7 @@ export class Nav extends React.Component<INavProps, INavState> {
   }
 
   public render(): JSX.Element {
-    let { pages } = this.props;
+    const { pages } = this.props;
 
     if (!pages) {
       return null;
