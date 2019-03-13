@@ -37,7 +37,8 @@ export const sizeUsage = [
   {
     size: 42,
     usage:
-      'Full screen hero moments: OneDrive Album Titles, Dates in All Photos View, SharePoint Site Titles, First run hero moments, Greeting moments at the start screen. Recommended line height is 52px.'
+      'Full screen hero moments: OneDrive Album Titles, Dates in All Photos View, SharePoint Site Titles, First run hero moments, ' +
+      'Greeting moments at the start screen. Recommended line height is 52px.'
   },
   {
     size: 32,
@@ -66,16 +67,20 @@ export const sizeUsage = [
   {
     size: 14,
     usage:
-      'Commands and controls (left nav, Team’s channels, command bar, checkbox, dropdown menu, toggle, radio button, button text and links), in file or document titles and as body text. Recommended line height is 20px.'
+      'Commands and controls (left nav, Team’s channels, command bar, checkbox, dropdown menu, toggle, radio button, button text ' +
+      'and links), in file or document titles and as body text. Recommended line height is 20px.'
   },
   {
     size: 12,
     usage:
-      'Metadata in file lists and grid views, denotes any activity on items (number of views, shares or @mentions, timestamps), sharing permissions, persona names and in tooltips. Recommended line height is 16px.'
+      'Metadata in file lists and grid views, denotes any activity on items (number of views, shares or @mentions, timestamps), ' +
+      'sharing permissions, persona names and in tooltips. Recommended line height is 16px.'
   },
   {
     size: 10,
     usage:
-      'Limited usage, use in places where text is mandatory and space is tight. For example, it is used for any disclaimer text that may appear in a purchase flow. It’s also used as the initials in a list of SharePoint sites in the left nav. Recommended line height is 14px.'
+      'Limited usage, use in places where text is mandatory and space is tight. For example, it is used for any disclaimer text ' +
+      'that may appear in a purchase flow. It’s also used as the initials in a list of SharePoint sites in the left nav. ' +
+      'Recommended line height is 14px.'
   }
 ];

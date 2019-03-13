@@ -45,6 +45,7 @@ export const AndroidLogo = (props?: ISVGIconProps) => {
 export const AppleLogo = (props?: ISVGIconProps) => {
   props = props || {};
   const { className = styles.icon, iconColor, iconWidth, iconHeight, iconSize } = props;
+  // tslint:disable:max-line-length
   return (
     <svg
       className={css(className)}

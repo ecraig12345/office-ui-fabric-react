@@ -25,6 +25,7 @@ import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
 import { TeachingBubbleBasicExample } from 'office-ui-fabric-react/lib/components/TeachingBubble/examples/TeachingBubble.Basic.Example';
 import { TextFieldBasicExample } from 'office-ui-fabric-react/lib/components/TextField/examples/TextField.Basic.Example';
 import { ToggleBasicExample } from 'office-ui-fabric-react/lib/components/Toggle/examples/Toggle.Basic.Example';
+// tslint:disable-next-line:max-line-length
 import { ProgressIndicatorBasicExample } from 'office-ui-fabric-react/lib/components/ProgressIndicator/examples/ProgressIndicator.Basic.Example';
 
 export interface IColorsPageState {
@@ -36,11 +37,21 @@ export interface IColorsPageState {
 
 const codeHeader = "import { loadTheme } from 'office-ui-fabric-react';\n\n";
 const codepenHeader = 'const { loadTheme, DefaultButton, PrimaryButton, Toggle, TooltipHost } = Fabric;\n\n';
-const codepenSamples =
-  '\n\nclass Content extends React.Component {\n  public render() {\n    return (<div>' +
-  '<DefaultButton text="DefaultButton"/><PrimaryButton text="PrimaryButton"/><Toggle label="Enabled"/><Toggle label="Disabled" disabled={true}/>' +
-  '</div>);\n  }\n}\n' +
-  "ReactDOM.render(<Content />,document.getElementById('content'));";
+const codepenSamples = `
+
+class Content extends React.Component {
+  public render() {
+    return (<div>
+      <DefaultButton text="DefaultButton"/>
+      <PrimaryButton text="PrimaryButton"/>
+      <Toggle label="Enabled"/>
+      <Toggle label="Disabled" disabled={true}/>
+    </div>);
+  }
+}
+
+ReactDOM.render(<Content />,document.getElementById('content'));
+`;
 
 export class ColorsPage extends BaseComponent<{}, IColorsPageState> {
   private _semanticSlotColorChangeTimeout: number;

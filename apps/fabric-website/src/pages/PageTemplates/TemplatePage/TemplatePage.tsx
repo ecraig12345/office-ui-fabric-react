@@ -30,7 +30,8 @@ const TemplatePageBase: React.StatelessComponent<ITemplatePageProps> = props => 
       {...TemplatePageProps[platform]}
       // Use the getSubTitle helper function to get the page header subtitle from the active platform.
       subTitle={getSubTitle(platform)}
-      // You can define custom sections using the `otherSections` prop. Here it is using a method that takes the platform as an argument to return the correct array of section props.
+      // You can define custom sections using the `otherSections` prop.
+      // Here it is using a method that takes the platform as an argument to return the correct array of section props.
       otherSections={_otherSections(platform)}
 
       // You can hide the side rail by setting `showSideRail` to false.

@@ -14,7 +14,8 @@ const componentUrl =
 const related = require('!raw-loader!@uifabric/fabric-website/src/pages/PageTemplates/TemplatePage/docs/TemplateRelated.md');
 
 // An object containing the page props for each platform. Remove as needed.
-// NOTE: A section won't render if the Markdown file imported here is empty. This is to make it easy to remove sections by just deleting the text instead of removing files and props.
+// NOTE: A section won't render if the Markdown file imported here is empty.
+// This is to make it easy to remove sections by just deleting the text instead of removing files and props.
 export const TemplatePageProps: TFabricPlatformPageProps = {
   default: {
     // Page title.
