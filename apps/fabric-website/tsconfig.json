@@ -10,6 +10,7 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
     "moduleResolution": "node",
     "preserveConstEnums": true,
     "types": ["node", "webpack-env"],

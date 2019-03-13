@@ -113,8 +113,6 @@ export class TopNavBase extends React.Component<ITopNavProps, ITopNavState> {
   }
 
   private _renderHomeLink(pages: INavPage[]): JSX.Element {
-    const home = pages.filter(page => page.isHomePage)[0];
-
     return (
       <div className={styles.isHomePage}>
         {this._renderMicrosoftLogo()}
@@ -126,7 +124,6 @@ export class TopNavBase extends React.Component<ITopNavProps, ITopNavState> {
   }
 
   private _renderLink(page: INavPage, linkIndex: number, isStacked?: boolean): JSX.Element {
-    const { platform } = this.props;
     if (page.isHiddenFromMainNav) {
       return null;
     }

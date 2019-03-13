@@ -3,13 +3,7 @@ import * as React from 'react';
 import { FocusZone } from 'office-ui-fabric-react/lib/FocusZone';
 import { SearchBox, ISearchBoxStyles } from 'office-ui-fabric-react/lib/SearchBox';
 import { IconButton } from 'office-ui-fabric-react/lib/Button';
-import {
-  CollapsibleSection,
-  CollapsibleSectionTitle,
-  ICollapsibleSectionTitleComponent,
-  ICollapsibleSectionTitleStyles,
-  ICollapsibleSectionTitleStylesReturnType
-} from '@uifabric/experiments';
+import { CollapsibleSection, ICollapsibleSectionTitleComponent, ICollapsibleSectionTitleStylesReturnType } from '@uifabric/experiments';
 
 import { getPathMinusLastHash } from '../../utilities/pageroute';
 import * as stylesImport from './Nav.module.scss';
