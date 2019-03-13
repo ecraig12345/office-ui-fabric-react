@@ -32,7 +32,7 @@ export class Table extends React.Component<ITableProps, ITableState> {
   }
 
   public render(): JSX.Element {
-    let { content } = this.props;
+    const { content } = this.props;
     return this.state.currentBreakpoint === 'mobile' && this.props.responsive ? this._renderMobile(content) : this._renderDesktop(content);
   }
 
@@ -113,7 +113,7 @@ export class Table extends React.Component<ITableProps, ITableState> {
 
   // Check current window size and set state if current size is different from state
   private _windowEventHandler(): void {
-    let currSize = this._getWindowSize();
+    const currSize = this._getWindowSize();
     if (this.state.currentBreakpoint !== currSize) {
       this.setState({
         currentBreakpoint: currSize
