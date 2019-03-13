@@ -23,6 +23,20 @@ export class ButtonPage extends React.Component<IButtonDemoPageProps, IButtonDem
     };
   }
 
+  public render() {
+    const { areButtonsDisabled, areButtonsChecked } = this.state;
+
+    return (
+      <DemoPage
+        {...{
+          ...ButtonPageProps({ areButtonsDisabled, areButtonsChecked }),
+          ...this.props,
+          exampleKnobs: this._renderKnobs()
+        }}
+      />
+    );
+  }
+
   private _onDisabledChanged = (ev: React.MouseEvent<HTMLElement>, disabled: boolean): void => {
     this.setState({
       areButtonsDisabled: disabled
@@ -35,7 +49,7 @@ export class ButtonPage extends React.Component<IButtonDemoPageProps, IButtonDem
     });
   };
 
-  renderKnobs() {
+  private _renderKnobs() {
     const { areButtonsDisabled, areButtonsChecked } = this.state;
     return (
       <>
@@ -52,20 +66,6 @@ export class ButtonPage extends React.Component<IButtonDemoPageProps, IButtonDem
           onChange={this._onToggledChanged}
         />
       </>
-    );
-  }
-
-  render() {
-    const { areButtonsDisabled, areButtonsChecked } = this.state;
-
-    return (
-      <DemoPage
-        {...{
-          ...ButtonPageProps({ areButtonsDisabled, areButtonsChecked }),
-          ...this.props,
-          exampleKnobs: this.renderKnobs()
-        }}
-      />
     );
   }
 }

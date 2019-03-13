@@ -45,8 +45,6 @@ export class CodeBlock extends React.Component<ICodeBlockProps, ICodeBlockState>
     this.state = {
       isOpen: false
     };
-
-    this._onToggleClicked = this._onToggleClicked.bind(this);
   }
 
   public render(): JSX.Element {
@@ -56,7 +54,7 @@ export class CodeBlock extends React.Component<ICodeBlockProps, ICodeBlockState>
     let toggleButton;
     if (isCollapsible) {
       toggleButton = (
-        <button className={styles.toggle} onClick={this._onToggleClicked.bind(this)}>
+        <button className={styles.toggle} onClick={this._onToggleClicked}>
           &lt;/&gt;
         </button>
       );
@@ -79,9 +77,9 @@ export class CodeBlock extends React.Component<ICodeBlockProps, ICodeBlockState>
     );
   }
 
-  private _onToggleClicked() {
+  private _onToggleClicked = () => {
     this.setState({
       isOpen: !this.state.isOpen
     });
-  }
+  };
 }

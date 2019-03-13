@@ -4,8 +4,6 @@
     "deprecation": false,
     "jsx-ban-props": false,
     "no-any": false,
-    "typedef": [false],
-    "member-access": false,
-    "member-ordering": false
+    "typedef": [false]
   }
 }
