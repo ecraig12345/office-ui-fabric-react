@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { BaseComponent } from '../../Utilities';
+import { EventGroup } from '../../Utilities';
+import { IRouteProps } from './Route';
 
 export interface IRouterProps {
   /**
@@ -12,12 +13,23 @@ export interface IRouterProps {
   onNewRouteLoaded?: () => void;
 }
 
-export class Router extends BaseComponent<IRouterProps, {}> {
+export class Router extends React.Component<IRouterProps, {}> {
+  private _events: EventGroup;
+
+  constructor(props: IRouterProps) {
+    super(props);
+    this._events = new EventGroup(this);
+  }
+
   public componentDidMount(): void {
     this._events.on(window, 'hashchange', () => this.forceUpdate());
   }
 
-  public render(): JSX.Element | null {
+  public componentWillUnmount() {
+    this._events.dispose();
+  }
+
+  public render() {
     return this._resolveRoute();
   }
 
@@ -38,7 +50,7 @@ export class Router extends BaseComponent<IRouterProps, {}> {
     return path;
   }
 
-  private _resolveRoute(path?: string, children?: React.ReactNode): React.DOMElement<any, Element> | null {
+  private _resolveRoute(path?: string, children?: React.ReactNode): React.ReactNode | null {
     path = path || this._getPath();
     children = children || this.props.children;
 
@@ -48,8 +60,8 @@ export class Router extends BaseComponent<IRouterProps, {}> {
       const route: any = routes[i];
 
       if (_match(path, route)) {
-        const { getComponent } = route.props;
-        let { component } = route.props;
+        // tslint:disable-next-line:prefer-const
+        let { component, getComponent, componentProps }: IRouteProps = route.props;
 
         if (getComponent) {
           let asynchronouslyResolved = false;
@@ -57,8 +69,8 @@ export class Router extends BaseComponent<IRouterProps, {}> {
           if (getComponent.component) {
             component = getComponent.component;
           } else {
-            getComponent((resolved: any) => {
-              component = getComponent.component = resolved;
+            getComponent((resolved: React.ComponentType<any>) => {
+              component = getComponent!.component = resolved;
 
               if (asynchronouslyResolved) {
                 this.forceUpdate();
@@ -71,12 +83,11 @@ export class Router extends BaseComponent<IRouterProps, {}> {
 
         if (component) {
           const componentChildren = this._resolveRoute(path, route.props.children || []);
-
-          if (componentChildren) {
-            return React.createElement(component, { key: route.key }, componentChildren) as React.DOMElement<any, any>;
-          } else {
-            return React.createElement(component, { key: route.key }) as React.DOMElement<any, any>;
-          }
+          componentProps = {
+            key: route.key,
+            ...(componentProps || {})
+          };
+          return React.createElement(component, componentProps, componentChildren);
         } else if (getComponent) {
           // We are asynchronously fetching this component.
           return null;

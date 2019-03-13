@@ -1,19 +1,32 @@
 import * as React from 'react';
 import * as Animate from '../../utilities/animation/Animate';
 import WindowWidthUtility from '../../utilities/WindowWidthUtility';
+import { extractAnchorLink } from '@uifabric/fabric-website-resources/lib/utilities/extractAnchor';
+import { EventGroup } from 'office-ui-fabric-react/lib/Utilities';
 
 export interface IPageHeaderLink {
   text: string;
   href: string;
 }
 
+const SCROLL_DISTANCE = 160;
+
 export class PageHeaderLink extends React.Component<IPageHeaderLink, {}> {
+  private _events: EventGroup;
   private _currentBreakpoint: string;
-  private _scrollDistance: number;
+
+  constructor(props: IPageHeaderLink) {
+    super(props);
+    this._events = new EventGroup(this);
+  }
 
   public componentDidMount(): void {
-    window.addEventListener('resize', this._getBreakpoint);
-    this._getBreakpoint();
+    this._events.on(window, 'resize', this._setBreakpointAndScroll);
+    this._setBreakpointAndScroll();
+  }
+
+  public componentWillUnmount() {
+    this._events.dispose();
   }
 
   public render(): JSX.Element {
@@ -24,15 +37,10 @@ export class PageHeaderLink extends React.Component<IPageHeaderLink, {}> {
     );
   }
 
-  private _setScrollDistance(): number {
-    return 160; // UHF header change the requirement
-  }
-
-  private _getBreakpoint = () => {
+  private _setBreakpointAndScroll = () => {
     const breakpoint = WindowWidthUtility.currentFabricBreakpoint();
     if (this._currentBreakpoint !== breakpoint) {
       this._currentBreakpoint = breakpoint;
-      this._scrollDistance = this._setScrollDistance();
     }
   };
 
@@ -40,7 +48,7 @@ export class PageHeaderLink extends React.Component<IPageHeaderLink, {}> {
     event.preventDefault();
     history.pushState({}, '', event.currentTarget.getAttribute('href'));
     const navigatorUserAgent = navigator.userAgent.toLowerCase();
-    let hash = this._extractAnchorLink(window.location.hash);
+    let hash = extractAnchorLink(window.location.hash);
     if (navigatorUserAgent.indexOf('firefox') > -1) {
       hash = decodeURI(hash);
     }
@@ -64,19 +72,7 @@ export class PageHeaderLink extends React.Component<IPageHeaderLink, {}> {
 
     Animate.scrollTo(scrollTarget, {
       duration: 0.3,
-      top: currentScrollPosition - this._scrollDistance
+      top: currentScrollPosition - SCROLL_DISTANCE
     });
   };
-
-  private _extractAnchorLink(path: string) {
-    const split = path.split('#');
-    const cleanedSplit = split.filter(value => {
-      if (value === '') {
-        return false;
-      } else {
-        return true;
-      }
-    });
-    return cleanedSplit[cleanedSplit.length - 1];
-  }
 }

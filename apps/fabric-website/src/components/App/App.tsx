@@ -30,13 +30,13 @@ export class App extends React.Component<IAppProps, any> {
   constructor(props: IAppProps) {
     super(props);
 
-    const currentSection = this._getCurrentSection()!;
+    const currentSection = this._getCurrentSection();
 
     this.state = {
       isAttached: false,
       isLeftNavOpen: false,
       currentSection: currentSection,
-      hasLeftNav: currentSection.hasOwnProperty('pages')
+      hasLeftNav: currentSection && currentSection.hasOwnProperty('pages')
     };
   }
 
@@ -122,8 +122,7 @@ export class App extends React.Component<IAppProps, any> {
    * Gets the title of the current section.
    */
   private _getSectionTitle(): string {
-    const { currentSection } = this.state;
-    return currentSection.title;
+    return this.state.currentSection.title;
   }
 
   /**
@@ -139,13 +138,9 @@ export class App extends React.Component<IAppProps, any> {
       return pages[0];
     } else {
       // All other pages, e.g. #/styles/
-      for (const page in pages) {
-        if (pages.hasOwnProperty(page)) {
-          const element = pages[page];
-
-          if (element.url.split('/')[1] === hashUrlParts[1]) {
-            return element;
-          }
+      for (const page of pages) {
+        if (page.url.split('/')[1] === hashUrlParts[1]) {
+          return page;
         }
       }
     }
@@ -156,7 +151,6 @@ export class App extends React.Component<IAppProps, any> {
    */
   private _updateCurrentSection = (): void => {
     const currentSection = this._getCurrentSection();
-
     if (currentSection) {
       this.setState({
         currentSection: currentSection,

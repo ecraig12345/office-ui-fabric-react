@@ -51,7 +51,7 @@ export class CodeBlock extends React.Component<ICodeBlockProps, ICodeBlockState>
     const { language, isCollapsible, isLightTheme, children } = this.props;
     const { isOpen } = this.state;
 
-    let toggleButton;
+    let toggleButton: JSX.Element | null = null;
     if (isCollapsible) {
       toggleButton = (
         <button className={styles.toggle} onClick={this._onToggleClicked}>
@@ -64,8 +64,8 @@ export class CodeBlock extends React.Component<ICodeBlockProps, ICodeBlockState>
       <div
         className={css(
           styles.codeBlock,
-          isCollapsible ? styles.isCollapsible : '',
-          isOpen ? styles.isOpen : '',
+          isCollapsible && styles.isCollapsible,
+          isOpen && styles.isOpen,
           isLightTheme ? styles.isLightTheme : styles.isDarkTheme
         )}
       >

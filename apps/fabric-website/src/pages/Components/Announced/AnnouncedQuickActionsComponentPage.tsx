@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { AnnouncedQuickActionsPage } from '@uifabric/fabric-website-resources/lib/components/pages/Announced/AnnouncedQuickActionsPage';
 import { ComponentPage } from '../../../components/ComponentPage/ComponentPage';
-const pageStyles: any = require('../../PageStyles.module.scss');
+import * as pageStyles from '../../PageStyles.module.scss';
 
 export class AnnouncedQuickActionsComponentPage extends React.Component<any, any> {
   public render(): JSX.Element {

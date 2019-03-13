@@ -79,7 +79,7 @@ export class Nav extends React.Component<INavProps, INavState> {
     return (
       <FocusZone>
         <nav className={styles.nav} role="navigation">
-          {pages && this._renderLinkList(pages, false)}
+          {this._renderLinkList(pages, false)}
         </nav>
       </FocusZone>
     );
@@ -90,7 +90,7 @@ export class Nav extends React.Component<INavProps, INavState> {
 
     const links = pages
       // Don't render pages that are explicitly told not to, as well as top-level pages that aren't active.
-      .filter(page => (!page.hasOwnProperty('isHiddenFromMainNav') && !(page.isUhfLink && !_hasActiveChild(page))) || _isPageActive(page))
+      .filter(page => (!page.isHiddenFromMainNav && (!page.isUhfLink || _hasActiveChild(page))) || _isPageActive(page))
       .map(page => {
         if (page.isCategory && !filterState && page.pages) {
           return <>{page.pages.map(innerPage => this._renderLink(innerPage))}</>;
@@ -99,12 +99,10 @@ export class Nav extends React.Component<INavProps, INavState> {
       });
 
     return (
-      <>
-        <ul className={css(styles.links, isSubMenu ? styles.isSubMenu : '')} aria-label="Main website navigation">
-          <li>{title === 'Components' ? this._getSearchBox() : ''}</li>
-          {links}
-        </ul>
-      </>
+      <ul className={css(styles.links, isSubMenu ? styles.isSubMenu : '')} aria-label="Main website navigation">
+        <li>{title === 'Components' ? this._getSearchBox() : ''}</li>
+        {links}
+      </ul>
     );
   }
 
@@ -114,7 +112,7 @@ export class Nav extends React.Component<INavProps, INavState> {
         <li key={page.url + page.title} className={css(styles.category, _hasActiveChild(page) && styles.hasActiveChild)}>
           <CollapsibleSection
             title={{ text: page.title, styles: getTitleStyles }}
-            styles={{ body: [{ marginLeft: '28px' }] }}
+            styles={{ body: { marginLeft: '28px' } }}
             defaultCollapsed={!_hasActiveChild(page)}
           >
             <ul>{page.pages.map(innerPage => this._renderLink(innerPage))}</ul>
@@ -127,12 +125,7 @@ export class Nav extends React.Component<INavProps, INavState> {
   private _renderSortedLinks(pages: INavPage[], title: string): JSX.Element {
     const links = ([] as INavPage[]).concat(...pages.map(page => page.pages || []));
     links.sort((l1, l2) => {
-      if (l1.title > l2.title) {
-        return 1;
-      } else if (l1.title < l2.title) {
-        return -1;
-      }
-      return 0;
+      return l1.title > l2.title ? 1 : l1.title < l2.title ? -1 : 0;
     });
 
     return this._renderLinkList(links, true, title);
@@ -153,17 +146,16 @@ export class Nav extends React.Component<INavProps, INavState> {
     let matchIndex = -1;
 
     // Highlight search query within link.
-    if (!!searchQuery && page.isFilterable) {
+    if (searchQuery && page.isFilterable) {
       matchIndex = text.toLowerCase().indexOf(searchQuery.toLowerCase());
       if (matchIndex >= 0) {
         const before = text.slice(0, matchIndex);
         const match = text.slice(matchIndex, matchIndex + searchQuery.length);
         const after = text.slice(matchIndex + searchQuery.length);
-        const highlightMatch = <span className={styles.matchesFilter}>{match}</span>;
         linkText = (
           <>
             {before}
-            {highlightMatch}
+            <span className={styles.matchesFilter}>{match}</span>
             {after}
           </>
         );
@@ -171,26 +163,24 @@ export class Nav extends React.Component<INavProps, INavState> {
     }
 
     return (
-      <>
-        <li
-          className={css(
-            styles.link,
-            _isPageActive(page) && searchQuery === '' ? styles.isActive : '',
-            _hasActiveChild(page) ? styles.hasActiveChild : '',
-            page.isHomePage ? styles.isHomePage : '',
-            page.className ? styles[page.className] : '',
-            page.isUhfLink ? styles.isUhfLink : ''
-          )}
-          key={page.url}
-        >
-          {!page.isUhfLink && (page.isFilterable && searchQuery !== '' ? matchIndex > -1 : true) && (
-            <a href={page.url} onClick={this._onLinkClick} title={title} aria-label={ariaLabel}>
-              {linkText}
-            </a>
-          )}
-          {childLinks}
-        </li>
-      </>
+      <li
+        className={css(
+          styles.link,
+          _isPageActive(page) && !searchQuery && styles.isActive,
+          _hasActiveChild(page) && styles.hasActiveChild,
+          page.isHomePage && styles.isHomePage,
+          page.className && styles[page.className],
+          page.isUhfLink && styles.isUhfLink
+        )}
+        key={page.url}
+      >
+        {!page.isUhfLink && page.isFilterable && (!searchQuery || matchIndex > -1) && (
+          <a href={page.url} onClick={this._onLinkClick} title={title} aria-label={ariaLabel}>
+            {linkText}
+          </a>
+        )}
+        {childLinks}
+      </li>
     );
   }
 
@@ -232,16 +222,12 @@ export class Nav extends React.Component<INavProps, INavState> {
     });
   };
 
-  private _onChangeQuery = (newValue: string) => {
+  private _onChangeQuery = (newValue?: string) => {
+    newValue = newValue || '';
     this.setState({
       searchQuery: newValue,
-      filterState: false
+      filterState: !!newValue || this.state.defaultFilterState
     });
-    if (newValue === '') {
-      this.setState({
-        filterState: this.state.defaultFilterState
-      });
-    }
   };
 
   private _setCategories = (): void => {

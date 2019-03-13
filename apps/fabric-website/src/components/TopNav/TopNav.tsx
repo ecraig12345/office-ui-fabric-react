@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { css, FocusZone } from 'office-ui-fabric-react';
-import { IconButton } from 'office-ui-fabric-react/lib/Button';
-import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
+import { css, FocusZone, EventGroup, IconButton, Panel, PanelType } from 'office-ui-fabric-react';
 import { UHFBreakPoints } from '../../utilities/WindowWidthUtility';
 import { INavPage } from '../Nav/Nav.types';
 import { ITopNavProps } from './TopNav.types';
@@ -17,9 +15,12 @@ export interface ITopNavState {
 let resizeTimer: any;
 
 export class TopNavBase extends React.Component<ITopNavProps, ITopNavState> {
+  private _events: EventGroup;
+
   constructor(props: ITopNavProps) {
     super(props);
 
+    this._events = new EventGroup(this);
     this.state = {
       isNavOpen: false
     };
@@ -61,7 +62,7 @@ export class TopNavBase extends React.Component<ITopNavProps, ITopNavState> {
 
           {!isSmallScreen && (
             <>
-              <div className={styles.homeLinkSection}>{this._renderHomeLink(pages)}</div>
+              <div className={styles.homeLinkSection}>{this._renderHomeLink()}</div>
               <div className={styles.linkListSection}>{this._renderLinkList(pages)}</div>
             </>
           )}
@@ -71,15 +72,14 @@ export class TopNavBase extends React.Component<ITopNavProps, ITopNavState> {
   }
 
   public componentDidMount(): void {
-    window.addEventListener('resize', this._onWindowResize);
-    window.addEventListener('hashchange', this._onHashChange);
+    this._events.on(window, 'resize', this._onWindowResize);
+    this._events.on(window, 'hashchange', this._closeNavPanel);
 
     this._onWindowResize();
   }
 
   public componentWillUnmount(): void {
-    window.removeEventListener('resize', this._onWindowResize);
-    window.removeEventListener('hashchange', this._onHashChange);
+    this._events.dispose();
   }
 
   private _onWindowResize = (): void => {
@@ -90,10 +90,6 @@ export class TopNavBase extends React.Component<ITopNavProps, ITopNavState> {
         isSmallScreen: window.innerWidth < UHFBreakPoints.mobile
       });
     }, 100);
-  };
-
-  private _onHashChange = (): void => {
-    this.setState({ isNavOpen: false });
   };
 
   private _openNavPanel = (): void => {
@@ -112,7 +108,7 @@ export class TopNavBase extends React.Component<ITopNavProps, ITopNavState> {
     );
   }
 
-  private _renderHomeLink(pages: INavPage[]): JSX.Element {
+  private _renderHomeLink(): JSX.Element {
     return (
       <div className={styles.isHomePage}>
         {this._renderMicrosoftLogo()}

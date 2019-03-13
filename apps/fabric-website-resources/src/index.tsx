@@ -8,13 +8,15 @@ import { GettingStartedPage } from './GettingStartedPage';
 import { setBaseUrl } from 'office-ui-fabric-react/lib/Utilities';
 import { ComponentPage, IAppLink, IAppLinkGroup } from '@uifabric/example-app-base';
 
-import './index.scss';
-import './ColorStyles.scss';
-
+import { applyStyles as applyIndexStyles } from './index.styles';
+import { applyStyles as applyColorStyles } from './color.styles';
 import { initializeIcons } from '@uifabric/icons';
 
 import './version';
+import { extractAnchorLink } from './utilities/extractAnchor';
 
+applyIndexStyles();
+applyColorStyles();
 initializeIcons();
 
 setBaseUrl('./dist/');
@@ -22,18 +24,9 @@ ComponentPage.defaultProps.areBadgesVisible = true;
 
 let rootElement: HTMLElement | null;
 
-// Return the anchor link from the URL without the hash
-function _extractAnchorLink(path: string): string {
-  const index = path.lastIndexOf('#');
-  if (index >= 0) {
-    path = path.substr(index + 1, path.length - index);
-  }
-  return path;
-}
-
 function _scrollAnchorLink(): void {
   if ((window.location.hash.match(/#/g) || []).length > 1) {
-    const anchor = _extractAnchorLink(window.location.hash);
+    const anchor = extractAnchorLink(window.location.hash);
     document.getElementById(anchor)!.scrollIntoView();
   }
 }
@@ -59,7 +52,15 @@ function _getRoutes(): JSX.Element[] {
   });
 
   // Default route.
-  appRoutes.push(<Route key="gettingstarted" component={GettingStartedPage} />);
+  appRoutes.push(
+    <Route
+      key="gettingstarted"
+      component={GettingStartedPage}
+      componentProps={{
+        packageName: 'office-ui-fabric-react'
+      }}
+    />
+  );
 
   routes.push(
     <Route key="app" component={App}>

@@ -2,30 +2,32 @@ import './styles/styles.scss';
 import './version';
 import 'whatwg-fetch';
 
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+
 import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
 import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
 import { setBaseUrl } from 'office-ui-fabric-react/lib/Utilities';
 import { Route, Router } from 'office-ui-fabric-react/lib/utilities/router/index';
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+
+import { extractAnchorLink } from '@uifabric/fabric-website-resources/lib/utilities/extractAnchor';
 
 import { App } from './components/App/App';
 import { AppState } from './components/App/AppState';
 import FluentMessageBar from './components/FluentMessageBar/FluentMessageBar';
 import { HomePage } from './pages/HomePage/HomePage';
+import { INavPage } from './components/Nav/Nav.types';
+import { ITopNavProps } from './components/TopNav';
 import WindowWidthUtility from './utilities/WindowWidthUtility';
 import { isLocal, hasUHF } from './utilities/location';
 
 import { handleRedirects } from './redirects';
-import { ITopNavProps } from './components/TopNav';
-import { INavPage } from './components/Nav/Nav.types';
 
 // Handle redirects of deprecated URLs to new
 handleRedirects();
 
 require('es6-promise').polyfill();
-/* tslint:disable:no-unused-variable */
-/* tslint:enable:no-unused-variable */
+
 const corePackageData = require('../node_modules/office-ui-fabric-core/package.json');
 const corePackageVersion: string = (corePackageData && corePackageData.version) || '9.2.0';
 
@@ -33,7 +35,7 @@ initializeIcons();
 
 const isProduction = process.argv.indexOf('--production') > -1;
 
-declare let Flight: any; // Contains flight & CDN configuration loaded by manifest
+declare const Flight: any; // Contains flight & CDN configuration loaded by manifest
 declare let __webpack_public_path__: string;
 
 // Final bundle location can be dynamic, so we need to update the public path at runtime to point to the right CDN URL
@@ -53,12 +55,11 @@ let scrollDistance: number;
 
 function _routerDidMount(): void {
   if (_hasAnchorLink(window.location.hash)) {
-    const hash = _extractAnchorLink(window.location.hash);
+    const hash = extractAnchorLink(window.location.hash);
     const el = document.getElementById(hash)!;
     const elRect = el.getBoundingClientRect();
     const bodySTop = document.body.scrollTop;
-    let currentScrollPosition;
-    currentScrollPosition = bodySTop + elRect.top;
+    const currentScrollPosition = bodySTop + elRect.top;
     document.body.scrollTop = currentScrollPosition - scrollDistance;
   }
 }
@@ -81,24 +82,11 @@ function _hasAnchorLink(path: string): boolean {
   return (path.match(/#/g) || []).length > 1;
 }
 
-function _extractAnchorLink(path: string): string {
-  const split = path.split('#');
-  const cleanedSplit = split.filter(value => {
-    if (value === '') {
-      return false;
-    } else {
-      return true;
-    }
-  });
-  return cleanedSplit[cleanedSplit.length - 1];
-}
-
 function _onLoad(): void {
   // Don't load the TopNav if viewed on the Office Dev Portal, which uses the UHF.
   if (!hasUHF) {
     require.ensure([], require => {
-      const _topNav = require<any>('./components/TopNav/TopNav').TopNav;
-      _renderApp(_topNav);
+      _renderApp(require<any>('./components/TopNav/TopNav').TopNav);
     });
   } else {
     _renderApp();

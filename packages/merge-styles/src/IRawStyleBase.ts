@@ -288,6 +288,8 @@ export interface IRawStyleBase extends IRawFontStyle {
    */
   WebkitOverflowScrolling?: 'auto' | 'touch';
 
+  WebkitTapHighlightColor?: string;
+
   /**
    * Aligns a flex container's lines within the flex container when there is extra space
    * in the cross-axis, similar to how justify-content aligns individual items within the main-axis.

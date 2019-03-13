@@ -17,11 +17,8 @@ const productIconsData: IName[] = require('../../../data/brand-icons-products.js
 const documentIconsData: IName[] = require('../../../data/brand-icons-documents.json');
 const monochromeIconsData: IName[] = require('../../../data/brand-icons-monochrome.json');
 
-export class BrandIconsPage extends React.Component<any, any> {
+export class BrandIconsPage extends React.PureComponent {
   public render(): JSX.Element {
-    const productIcons = productIconsData;
-    const documentIcons = documentIconsData;
-
     return (
       <div className={css(pageStyles.basePage, styles.brandIconsPage)}>
         <PageHeader
@@ -319,7 +316,7 @@ https://static2.sharepointonline.com/files/fabric/assets/brand-icons/document/pn
         <h2 id="branded-icon-library">Branded icon library</h2>
         <h3>Product icons</h3>
         <ul className={styles.iconList}>
-          {productIcons.map(icon => (
+          {productIconsData.map(icon => (
             <li key={icon.name}>
               <img
                 src={`https://static2.sharepointonline.com/files/fabric/assets/brand-icons/product/svg/${icon.name}_48x1.svg`}
@@ -332,7 +329,7 @@ https://static2.sharepointonline.com/files/fabric/assets/brand-icons/document/pn
 
         <h3>Document icons</h3>
         <ul className={styles.iconList}>
-          {documentIcons.map(icon => (
+          {documentIconsData.map(icon => (
             <li key={icon.name}>
               {/* @todo: Change this back to using SVGs once the CDN has been updated to include the "xsn" icons (issue 252058) */}
               <img

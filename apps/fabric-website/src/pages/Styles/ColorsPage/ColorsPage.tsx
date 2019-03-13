@@ -16,7 +16,7 @@ const colorClassesData: ITableContent = require('../../../data/colors-classes.js
 const neutralColorsData: IColorTableColor[] = require('../../../data/colors-neutral.json');
 const themeColorsData: IColorTableColor[] = require('../../../data/colors-theme.json');
 
-export class ColorsPage extends React.Component<any, any> {
+export class ColorsPage extends React.PureComponent {
   public render(): JSX.Element {
     return (
       <div className={pageStyles.basePage}>

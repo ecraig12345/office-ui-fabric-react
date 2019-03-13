@@ -15,9 +15,7 @@ export interface IColorTableProps {
   content: IColorTableColor[];
 }
 
-export interface IColorTableState {}
-
-export class ColorTable extends React.Component<IColorTableProps, IColorTableState> {
+export class ColorTable extends React.PureComponent<IColorTableProps> {
   public render(): JSX.Element {
     const { content } = this.props;
 

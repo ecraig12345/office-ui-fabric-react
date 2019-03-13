@@ -8,7 +8,7 @@ import * as styles from './LocalizationPage.module.scss';
 const directionalIconsData: [string, string][] = require('../../../data/directional-icons.json');
 const localizedFontsData: ITableContent = require('../../../data/localized-fonts.json');
 
-export class LocalizationPage extends React.Component<any, any> {
+export class LocalizationPage extends React.PureComponent {
   public render(): JSX.Element {
     return (
       <div className={pageStyles.basePage}>
