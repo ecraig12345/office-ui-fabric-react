@@ -11,10 +11,10 @@ const baseUrl = websiteRepoUrl + '/src/pages/Styles/ElevationPage/docs';
 
 export const ElevationPage: React.StatelessComponent<IStylesPageProps> = props => {
   const { platform } = props;
-  return <StylesAreaPage {...props} {...ElevationPageProps[platform]} otherSections={_otherSections(platform)} />;
+  return <StylesAreaPage {...props} {...ElevationPageProps[platform!] || {}} otherSections={_otherSections(platform)} />;
 };
 
-function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
+function _otherSections(platform?: Platforms): IPageSectionProps<Platforms>[] {
   switch (platform) {
     case 'web':
       return [
@@ -93,7 +93,7 @@ function _renderDepthsTable() {
       ]}
       /* tslint:disable-next-line jsx-no-lambda */
       formatter={(column, row) => {
-        const content = row[column.data];
+        const content = row[column.data!];
         const depth = depthUsage.filter(x => x.level === row.level)[0];
         switch (column.title) {
           case 'Core class':

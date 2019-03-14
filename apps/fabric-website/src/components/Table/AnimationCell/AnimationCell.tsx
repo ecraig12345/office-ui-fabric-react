@@ -40,9 +40,11 @@ export class AnimationCell extends React.Component<IAnimationCellProps, {}> {
     const cell = e.currentTarget;
     const panel = cell.getElementsByClassName('animationExample_panel')[0];
     const animClass = cell.getAttribute('data-class');
-    panel.classList.add(animClass);
-    setTimeout(() => {
-      panel.classList.remove(animClass);
-    }, 1000);
+    if (animClass) {
+      panel.classList.add(animClass);
+      setTimeout(() => {
+        panel.classList.remove(animClass);
+      }, 1000);
+    }
   };
 }

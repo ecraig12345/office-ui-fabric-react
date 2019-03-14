@@ -12,10 +12,10 @@ const iconData = require('office-ui-fabric-core/src/data/icons.json');
 
 export const FabricIconsPage: React.StatelessComponent<IStylesPageProps> = props => {
   const { platform } = props;
-  return <StylesAreaPage {...props} {...FabricIconsPageProps[platform]} otherSections={_otherSections(platform)} />;
+  return <StylesAreaPage {...props} {...FabricIconsPageProps[platform!] || {}} otherSections={_otherSections(platform)} />;
 };
 
-function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
+function _otherSections(platform?: Platforms): IPageSectionProps<Platforms>[] {
   switch (platform) {
     case 'web':
       return [

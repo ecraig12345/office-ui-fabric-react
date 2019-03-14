@@ -7,9 +7,7 @@ export interface IColorsSharePointPageState {
 }
 
 export class SharePoint extends React.Component<{}, IColorsSharePointPageState> {
-  public readonly state: IColorsSharePointPageState = {
-    activeThemeName: null
-  };
+  public readonly state: IColorsSharePointPageState = {};
 
   public render() {
     const { activeThemeName } = this.state;
@@ -47,11 +45,13 @@ export class SharePoint extends React.Component<{}, IColorsSharePointPageState> 
   }
 
   private _changeTheme = (theme: IColor) => {
-    this.setState(
-      prevState =>
-        prevState.activeThemeName !== theme.name && {
+    this.setState(prevState => {
+      if (prevState.activeThemeName !== theme.name) {
+        return {
           activeThemeName: theme.name
-        }
-    );
+        };
+      }
+      return null;
+    });
   };
 }

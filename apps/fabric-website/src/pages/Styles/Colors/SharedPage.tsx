@@ -9,10 +9,10 @@ const baseUrl = websiteRepoUrl + '/src/pages/Styles/Colors/docs';
 
 export const ColorsSharedPage: React.StatelessComponent<IStylesPageProps> = props => {
   const { platform } = props;
-  return <StylesAreaPage {...props} {...ColorsSharedPageProps[platform]} otherSections={_otherSections(platform)} />;
+  return <StylesAreaPage {...props} {...ColorsSharedPageProps[platform!] || {}} otherSections={_otherSections(platform)} />;
 };
 
-function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
+function _otherSections(platform?: Platforms): IPageSectionProps<Platforms>[] {
   switch (platform) {
     case 'web':
       return [

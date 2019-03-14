@@ -14,10 +14,10 @@ const localizedFontsData = require<ITableContent>('../../../data/localized-fonts
 
 export const LocalizationPage: React.StatelessComponent<IStylesPageProps> = props => {
   const { platform } = props;
-  return <StylesAreaPage {...props} {...LocalizationPageProps[platform]} otherSections={_otherSections(platform)} />;
+  return <StylesAreaPage {...props} {...LocalizationPageProps[platform!] || {}} otherSections={_otherSections(platform)} />;
 };
 
-function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
+function _otherSections(platform?: Platforms): IPageSectionProps<Platforms>[] | undefined {
   switch (platform) {
     case 'web':
       return [

@@ -66,8 +66,8 @@ export function createSite<TPlatforms extends string>(
       routes.push(<Route key={page.url} path={page.url} component={page.component} getComponent={page.getComponent} />);
       if (page.platforms) {
         Object.keys(page.platforms).forEach((plat: TPlatforms) => {
-          const platformPages: INavPage<TPlatforms>[] = page.platforms && page.platforms[plat];
-          routes = routes.concat(_createRoutes(platformPages || []));
+          const platformPages = (page.platforms && page.platforms[plat]) || [];
+          routes = routes.concat(_createRoutes(platformPages as INavPage<TPlatforms>[]));
         });
       }
       if (page.pages) {

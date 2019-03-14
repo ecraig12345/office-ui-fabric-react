@@ -11,10 +11,10 @@ const breakpointsData = require('../../../data/responsive-breakpoints.json');
 
 export const LayoutPage: React.StatelessComponent<IStylesPageProps> = props => {
   const { platform } = props;
-  return <StylesAreaPage {...props} {...LayoutPageProps[platform]} otherSections={_otherSections(platform)} />;
+  return <StylesAreaPage {...props} {...LayoutPageProps[platform!] || {}} otherSections={_otherSections(platform)} />;
 };
 
-function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
+function _otherSections(platform?: Platforms): IPageSectionProps<Platforms>[] | undefined {
   switch (platform) {
     case 'web':
       return [

@@ -27,22 +27,19 @@ export interface IColorsProductsPageState {
 }
 
 export class ColorsProductsPage extends React.Component<IStylesPageProps, IColorsProductsPageState> {
-  public readonly state: IColorsProductsPageState = {
-    activeAppColorPalette: null,
-    activeAppDetails: null
-  };
+  public readonly state: IColorsProductsPageState = {};
 
   public render() {
     return (
       <StylesAreaPage
         {...this.props}
-        {...ColorsProductsPageProps[this.props.platform]}
+        {...ColorsProductsPageProps[this.props.platform!] || {}}
         otherSections={this._otherSections(this.props.platform)}
       />
     );
   }
 
-  private _otherSections = (platform: Platforms): IPageSectionProps[] => {
+  private _otherSections = (platform?: Platforms): IPageSectionProps[] => {
     const { activeAppColorPalette, activeAppDetails } = this.state;
     switch (platform) {
       case 'web':
@@ -99,7 +96,7 @@ export class ColorsProductsPage extends React.Component<IStylesPageProps, IColor
     }
 
     // Show a custom view for the active app (optional).
-    let appDetails: JSX.Element = null;
+    let appDetails: JSX.Element | undefined;
 
     switch (color.name) {
       case 'Excel':

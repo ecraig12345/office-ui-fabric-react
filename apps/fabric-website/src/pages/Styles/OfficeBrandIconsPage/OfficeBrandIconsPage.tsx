@@ -23,10 +23,10 @@ const monochromeIcons = require<IIconInfo[]>('@uifabric/fabric-website/lib/data/
 
 export const OfficeBrandIconsPage: React.StatelessComponent<IStylesPageProps> = props => {
   const { platform } = props;
-  return <StylesAreaPage {...props} {...OfficeBrandIconsPageProps[platform]} otherSections={_otherSections(platform)} />;
+  return <StylesAreaPage {...props} {...OfficeBrandIconsPageProps[platform!]} otherSections={_otherSections(platform)} />;
 };
 
-function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
+function _otherSections(platform?: Platforms): IPageSectionProps<Platforms>[] {
   switch (platform) {
     case 'web':
       return [
