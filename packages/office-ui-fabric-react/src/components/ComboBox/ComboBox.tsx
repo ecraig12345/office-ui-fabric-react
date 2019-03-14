@@ -1405,24 +1405,33 @@ export class ComboBox extends BaseComponent<IComboBoxProps, IComboBoxState> {
   };
 
   /**
-   * Get the index of the option that is marked as selected
+   * Get the indices of the options that are marked as selected
    * @param options - the comboBox options
-   * @param selectedKeys - the known selected key to find
-   * @returns - the index of the selected option, -1 if not found
+   * @param selectedKeys - the known selected keys to find
+   * @returns - an array of the indices of the selected options, empty array if nothing is selected
    */
   private _getSelectedIndices(options: IComboBoxOption[] | undefined, selectedKeys: (string | number | undefined)[]): number[] {
-    const selectedIndices: any[] = [];
     if (options === undefined || selectedKeys === undefined) {
-      return selectedIndices;
+      return [];
     }
 
+    const selectedIndices: { [key: number]: boolean } = {};
+    options.forEach((option: IComboBoxOption, index: number) => {
+      if (option.selected) {
+        selectedIndices[index] = true;
+      }
+    });
+
     for (const selectedKey of selectedKeys) {
-      const index = findIndex(options, option => option.selected || option.key === selectedKey);
+      const index = findIndex(options, option => option.key === selectedKey);
       if (index > -1) {
-        selectedIndices.push(index);
+        selectedIndices[index] = true;
       }
     }
-    return selectedIndices;
+
+    return Object.keys(selectedIndices)
+      .map(Number)
+      .sort();
   }
 
   /**
@@ -1942,7 +1951,7 @@ export class ComboBox extends BaseComponent<IComboBoxProps, IComboBoxState> {
 
   /**
    * Get the styles for the current option.
-   * @param item Item props for the current option
+   * @param item - Item props for the current option
    */
   private _getCaretButtonStyles(): IButtonStyles {
     const { caretDownButtonStyles: customCaretDownButtonStyles } = this.props;
@@ -1951,7 +1960,7 @@ export class ComboBox extends BaseComponent<IComboBoxProps, IComboBoxState> {
 
   /**
    * Get the styles for the current option.
-   * @param item Item props for the current option
+   * @param item - Item props for the current option
    */
   private _getCurrentOptionStyles(item: IComboBoxOption): Partial<IComboBoxOptionStyles> {
     const { comboBoxOptionStyles: customStylesForAllOptions } = this.props;

@@ -667,7 +667,7 @@ declare const CompactPeoplePicker: React.StatelessComponent<IPeoplePickerProps>;
 declare class CompactPeoplePickerBase extends BasePeoplePicker {
     static defaultProps: {
         onRenderItem: (props: IPeoplePickerItemSelectedProps) => JSX.Element;
-        onRenderSuggestionsItem: (personaProps: IPersonaProps, suggestionsProps?: IBasePickerSuggestionsProps | undefined) => JSX.Element;
+        onRenderSuggestionsItem: (personaProps: IPersonaProps, suggestionsProps?: IBasePickerSuggestionsProps<any> | undefined) => JSX.Element;
         createGenericItem: typeof createGenericItem;
     };
 }
@@ -1646,25 +1646,8 @@ interface IBasePickerStyles {
     text: IStyle;
 }
 
-// @public (undocumented)
-interface IBasePickerSuggestionsProps {
-    className?: string;
-    forceResolveText?: string;
-    loadingText?: string;
-    mostRecentlyUsedHeaderText?: string;
-    noResultsFoundText?: string;
-    onRenderNoResultFound?: IRenderFunction<void>;
-    resultsFooter?: () => JSX.Element;
-    resultsFooterFull?: () => JSX.Element;
-    resultsMaximumNumber?: number;
-    searchForMoreText?: string;
-    searchingText?: string;
-    showRemoveButtons?: boolean;
-    suggestionsAvailableAlertText?: string;
-    suggestionsClassName?: string;
-    suggestionsContainerAriaLabel?: string;
-    suggestionsHeaderText?: string;
-    suggestionsItemClassName?: string;
+// @public
+interface IBasePickerSuggestionsProps<T = any> extends Pick<ISuggestionsProps<T>, 'onRenderNoResultFound' | 'suggestionsHeaderText' | 'mostRecentlyUsedHeaderText' | 'noResultsFoundText' | 'className' | 'suggestionsClassName' | 'suggestionsItemClassName' | 'searchForMoreText' | 'forceResolveText' | 'loadingText' | 'searchingText' | 'resultsFooterFull' | 'resultsFooter' | 'resultsMaximumNumber' | 'showRemoveButtons' | 'suggestionsAvailableAlertText' | 'suggestionsContainerAriaLabel'> {
 }
 
 // @public (undocumented)
@@ -3119,6 +3102,7 @@ interface IDetailsHeaderBaseProps extends React.ClassAttributes<DetailsHeaderBas
     ariaLabel?: string;
     ariaLabelForSelectAllCheckbox?: string;
     ariaLabelForSelectionColumn?: string;
+    ariaLabelForToggleAllGroupsButton?: string;
     className?: string;
     collapseAllVisibility?: CollapseAllVisibility;
     columnReorderOptions?: IColumnReorderOptions;
@@ -3283,6 +3267,9 @@ interface IDetailsRow {
 
 // @public (undocumented)
 interface IDetailsRowBaseProps extends Pick<IDetailsListProps, 'onRenderItemColumn'>, IBaseProps<IDetailsRow>, IDetailsItemProps {
+    cellsByColumn?: {
+        [columnKey: string]: React.ReactNode;
+    };
     checkboxCellClassName?: string;
     checkButtonAriaLabel?: string;
     className?: string;
@@ -3972,7 +3959,7 @@ interface IDropdownProps extends ISelectableDroppableTextProps<IDropdown, HTMLDi
     onDismiss?: () => void;
     onRenderCaretDown?: IRenderFunction<IDropdownProps>;
     onRenderPlaceHolder?: IRenderFunction<IDropdownProps>;
-    onRenderTitle?: IRenderFunction<IDropdownOption | IDropdownOption[]>;
+    onRenderTitle?: IRenderFunction<IDropdownOption[]>;
     options: IDropdownOption[];
     // @deprecated
     placeHolder?: string;
@@ -6579,7 +6566,7 @@ interface ISpinButtonProps {
     incrementButtonAriaLabel?: string;
     incrementButtonIcon?: IIconProps;
     keytipProps?: IKeytipProps;
-    label: string;
+    label?: string;
     // Warning: (ae-forgotten-export) The symbol "Position" needs to be exported by the entry point index.d.ts
     // 
     // (undocumented)
@@ -7576,7 +7563,7 @@ declare const ListPeoplePicker: React.StatelessComponent<IPeoplePickerProps>;
 declare class ListPeoplePickerBase extends MemberListPeoplePicker {
     static defaultProps: {
         onRenderItem: (props: IPeoplePickerItemSelectedProps) => JSX.Element;
-        onRenderSuggestionsItem: (personaProps: IPersonaProps, suggestionsProps?: IBasePickerSuggestionsProps | undefined) => JSX.Element;
+        onRenderSuggestionsItem: (personaProps: IPersonaProps, suggestionsProps?: IBasePickerSuggestionsProps<any> | undefined) => JSX.Element;
         createGenericItem: typeof createGenericItem;
     };
 }
@@ -7718,7 +7705,7 @@ declare const NormalPeoplePicker: React.StatelessComponent<IPeoplePickerProps>;
 declare class NormalPeoplePickerBase extends BasePeoplePicker {
     static defaultProps: {
         onRenderItem: (props: IPeoplePickerItemSelectedProps) => JSX.Element;
-        onRenderSuggestionsItem: (personaProps: IPersonaProps, suggestionsProps?: IBasePickerSuggestionsProps | undefined) => JSX.Element;
+        onRenderSuggestionsItem: (personaProps: IPersonaProps, suggestionsProps?: IBasePickerSuggestionsProps<any> | undefined) => JSX.Element;
         createGenericItem: typeof createGenericItem;
     };
 }

@@ -1,6 +1,6 @@
 {
   "name": "@uifabric/utilities",
-  "version": "6.34.0",
+  "version": "6.35.0",
   "description": "Office UI Fabric utilities for building React components.",
   "main": "lib-commonjs/index.js",
   "module": "lib/index.js",
@@ -24,10 +24,7 @@
   },
   "disabledTasks": [
     "copy",
-    "webpack",
-    "build-codepen-examples",
-    "verify-api-extractor",
-    "update-api-extractor"
+    "webpack"
   ],
   "devDependencies": {
     "@types/enzyme": "3.1.13",

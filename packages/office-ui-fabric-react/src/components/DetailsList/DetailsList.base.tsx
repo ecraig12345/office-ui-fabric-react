@@ -821,8 +821,9 @@ export class DetailsListBase extends BaseComponent<IDetailsListProps, IDetailsLi
       const overflowWidth = totalWidth - availableWidth;
 
       if (column.calculatedWidth! - minWidth >= overflowWidth || !(column.isCollapsable || column.isCollapsible)) {
+        const originalWidth = column.calculatedWidth!;
         column.calculatedWidth = Math.max(column.calculatedWidth! - overflowWidth, minWidth);
-        totalWidth = availableWidth;
+        totalWidth -= originalWidth - column.calculatedWidth;
       } else {
         totalWidth -= getPaddedWidth(column, false, props);
         adjustedColumns.splice(lastIndex, 1);
@@ -884,8 +885,8 @@ export class DetailsListBase extends BaseComponent<IDetailsListProps, IDetailsLi
    * column to the max cell width.
    *
    * @private
-   * @param {IColumn} column (double clicked column definition)
-   * @param {number} columnIndex (double clicked column index)
+   * @param column - double clicked column definition
+   * @param columnIndex - double clicked column index
    * @todo min width 100 should be changed to const value and should be consistent with the
    * value used on _onSizerMove method in DetailsHeader
    */
@@ -913,8 +914,8 @@ export class DetailsListBase extends BaseComponent<IDetailsListProps, IDetailsLi
    * and call onActiveItemChanged callback if specified.
    *
    * @private
-   * @param {el} row element that became active in Focus Zone
-   * @param {ev} focus event from Focus Zone
+   * @param row - element that became active in Focus Zone
+   * @param focus - event from Focus Zone
    */
   private _onActiveRowChanged(el?: HTMLElement, ev?: React.FocusEvent<HTMLElement>): void {
     const { items, onActiveItemChanged } = this.props;

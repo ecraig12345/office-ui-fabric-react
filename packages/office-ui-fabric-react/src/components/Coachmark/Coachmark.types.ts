@@ -329,5 +329,5 @@ export interface ICoachmarkStyles {
   ariaContainer?: IStyle;
 }
 
-/** @deprecated */
+/** @deprecated No longer used. */
 export type ICoachmarkTypes = ICoachmarkProps;
