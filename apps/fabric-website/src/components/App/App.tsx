@@ -25,19 +25,18 @@ let resizeTimer: any;
 
 export class App extends React.Component<IAppProps, any> {
   private _attachedScrollThreshold: number;
-  private _appContent: HTMLDivElement;
-  private _appContentRect: ClientRect;
+  private _appContent = React.createRef<HTMLDivElement>();
 
   constructor(props: IAppProps) {
     super(props);
 
-    const _currentSection = this._getCurrentSection();
+    const currentSection = this._getCurrentSection()!;
 
     this.state = {
       isAttached: false,
       isLeftNavOpen: false,
-      currentSection: _currentSection,
-      hasLeftNav: _currentSection.hasOwnProperty('pages')
+      currentSection: currentSection,
+      hasLeftNav: currentSection.hasOwnProperty('pages')
     };
   }
 
@@ -67,7 +66,7 @@ export class App extends React.Component<IAppProps, any> {
       <Fabric className="App">
         {this._renderLeftNav()}
         <div className="App-wrapper">
-          <div className="App-content" data-is-scrollable="true" ref={el => (this._appContent = el)} data-app-content-div="true">
+          <div className="App-content" data-is-scrollable="true" ref={this._appContent} data-app-content-div="true">
             {this.props.children}
           </div>
         </div>
@@ -81,10 +80,10 @@ export class App extends React.Component<IAppProps, any> {
     // Throttle the positioning/resize events, which can impact performance if unmanaged.
     resizeTimer = setTimeout(() => {
       let { isAttached, navHeight } = this.state;
-      this._appContentRect = this._appContent && this._appContent.getBoundingClientRect();
+      const appContentRect = this._appContent.current && this._appContent.current.getBoundingClientRect();
       const viewPortHeight = window.innerHeight;
       isAttached = AttachedScrollUtility.shouldComponentAttach(isAttached, this._attachedScrollThreshold);
-      navHeight = this._calculateNavHeight(viewPortHeight, this._appContentRect, navHeight);
+      navHeight = this._calculateNavHeight(viewPortHeight, appContentRect, navHeight);
 
       this.setState({
         isAttached: isAttached,
@@ -94,7 +93,7 @@ export class App extends React.Component<IAppProps, any> {
     }, 100);
   };
 
-  private _calculateNavHeight(viewPortHeight: number, appContentRect: ClientRect, height: number): number {
+  private _calculateNavHeight(viewPortHeight: number, appContentRect: ClientRect | null, height: number): number {
     if (!appContentRect) {
       return height;
     }
@@ -131,7 +130,7 @@ export class App extends React.Component<IAppProps, any> {
    * Gets an object representation of the current section (i.e. top-level page)
    * by comparing the first part of the current URL to the URLs of the "section" pages.
    */
-  private _getCurrentSection(): object {
+  private _getCurrentSection() {
     const hashUrlParts = window.location.hash.split('/');
     const pages = AppState.pages;
 
@@ -156,13 +155,15 @@ export class App extends React.Component<IAppProps, any> {
    * Sets the current section object to state.
    */
   private _updateCurrentSection = (): void => {
-    const _currentSection = this._getCurrentSection();
+    const currentSection = this._getCurrentSection();
 
-    this.setState({
-      currentSection: _currentSection,
-      hasLeftNav: _currentSection.hasOwnProperty('pages'),
-      isLeftNavOpen: false
-    });
+    if (currentSection) {
+      this.setState({
+        currentSection: currentSection,
+        hasLeftNav: currentSection.hasOwnProperty('pages'),
+        isLeftNavOpen: false
+      });
+    }
   };
 
   private _openLeftNav = () => {

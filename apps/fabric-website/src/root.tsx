@@ -54,7 +54,7 @@ let scrollDistance: number;
 function _routerDidMount(): void {
   if (_hasAnchorLink(window.location.hash)) {
     const hash = _extractAnchorLink(window.location.hash);
-    const el = document.getElementById(hash);
+    const el = document.getElementById(hash)!;
     const elRect = el.getBoundingClientRect();
     const bodySTop = document.body.scrollTop;
     let currentScrollPosition;

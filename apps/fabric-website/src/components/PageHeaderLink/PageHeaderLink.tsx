@@ -8,30 +8,17 @@ export interface IPageHeaderLink {
 }
 
 export class PageHeaderLink extends React.Component<IPageHeaderLink, {}> {
-  private currentBreakpoint: string;
-  private scrollDistance: number;
-
-  private _els: {
-    link?: HTMLAnchorElement;
-  } = {};
+  private _currentBreakpoint: string;
+  private _scrollDistance: number;
 
   public componentDidMount(): void {
-    this._eventListener = this._eventListener.bind(this);
-    this._getBreakpoint = this._getBreakpoint.bind(this);
-    this._els.link.addEventListener('click', this._eventListener);
     window.addEventListener('resize', this._getBreakpoint);
     this._getBreakpoint();
   }
 
   public render(): JSX.Element {
     return (
-      <a
-        ref={a => {
-          this._els.link = a;
-        }}
-        href={this.props.href}
-        data-title={this.props.text}
-      >
+      <a href={this.props.href} onClick={this._onClick} data-title={this.props.text}>
         {this.props.text}
       </a>
     );
@@ -41,34 +28,34 @@ export class PageHeaderLink extends React.Component<IPageHeaderLink, {}> {
     return 160; // UHF header change the requirement
   }
 
-  private _getBreakpoint() {
+  private _getBreakpoint = () => {
     const breakpoint = WindowWidthUtility.currentFabricBreakpoint();
-    if (this.currentBreakpoint !== breakpoint) {
-      this.currentBreakpoint = breakpoint;
-      this.scrollDistance = this._setScrollDistance();
+    if (this._currentBreakpoint !== breakpoint) {
+      this._currentBreakpoint = breakpoint;
+      this._scrollDistance = this._setScrollDistance();
     }
-  }
+  };
 
-  private _eventListener(event: any): void {
+  private _onClick = (event: React.MouseEvent<HTMLAnchorElement>): void => {
     event.preventDefault();
-    history.pushState({}, '', this._els.link.getAttribute('href'));
+    history.pushState({}, '', event.currentTarget.getAttribute('href'));
     const navigatorUserAgent = navigator.userAgent.toLowerCase();
     let hash = this._extractAnchorLink(window.location.hash);
     if (navigatorUserAgent.indexOf('firefox') > -1) {
       hash = decodeURI(hash);
     }
-    const el = document.getElementById(hash);
+    const el = document.getElementById(hash)!;
     const elRect = el.getBoundingClientRect();
     const bodySTop = document.body.scrollTop;
     let currentScrollPosition = bodySTop + elRect.top;
-    let scrollTarget: HTMLBodyElement | HTMLHtmlElement = document.querySelector('body');
+    let scrollTarget: HTMLBodyElement | HTMLHtmlElement = document.querySelector('body')!;
 
     if (
       navigatorUserAgent.indexOf('firefox') > -1 ||
       (navigatorUserAgent.indexOf('chrome') > -1 && navigatorUserAgent.indexOf('edge') < 0)
     ) {
       currentScrollPosition += window.scrollY;
-      scrollTarget = document.querySelector('html');
+      scrollTarget = document.querySelector('html')!;
     }
 
     if (currentScrollPosition < 0) {
@@ -77,9 +64,9 @@ export class PageHeaderLink extends React.Component<IPageHeaderLink, {}> {
 
     Animate.scrollTo(scrollTarget, {
       duration: 0.3,
-      top: currentScrollPosition - this.scrollDistance
+      top: currentScrollPosition - this._scrollDistance
     });
-  }
+  };
 
   private _extractAnchorLink(path: string) {
     const split = path.split('#');

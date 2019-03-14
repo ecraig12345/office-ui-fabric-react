@@ -48,12 +48,12 @@ export class Table extends React.Component<ITableProps, ITableState> {
 
   // Render Table cell.  Cell content is either cell's value property, or cell's html property (if value is an empty string)
   private _renderCell(cell: ITableCellContent): JSX.Element {
-    return cell.value.length ? (
+    return cell.value ? (
       <td className={cell.className} key={cell.value}>
         {cell.value}
       </td>
     ) : (
-      <td className={cell.className} key={cell.html} dangerouslySetInnerHTML={{ __html: cell.html }} />
+      <td className={cell.className} key={cell.html} dangerouslySetInnerHTML={{ __html: cell.html! }} />
     );
   }
 
@@ -63,8 +63,8 @@ export class Table extends React.Component<ITableProps, ITableState> {
       <table className={`${styles.table} ` + (this.props.isAnimation ? 'docs_animationsTable_body' : '')}>
         <thead>
           <tr>
-            {content.headers.map((heading, headingIndex) => (
-              <th key={headingIndex}>{this._capitalizeFirstLetter(heading)}</th>
+            {content.headers.map(heading => (
+              <th key={heading}>{this._capitalizeFirstLetter(heading)}</th>
             ))}
           </tr>
         </thead>
@@ -96,7 +96,7 @@ export class Table extends React.Component<ITableProps, ITableState> {
           >
             <tbody>
               {row.map((cell, cellIndex) => (
-                <tr key={cellIndex}>
+                <tr key={cell.value || cell.html}>
                   <td>{this._capitalizeFirstLetter(headers[cellIndex])}</td>
                   {this._renderCell(cell)}
                 </tr>

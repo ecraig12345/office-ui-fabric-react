@@ -29,7 +29,7 @@ export interface INavPage {
   className?: string;
 
   /**
-   * Wether this link is filterable
+   * Whether this link is filterable
    */
   isFilterable?: boolean;
 
@@ -39,7 +39,7 @@ export interface INavPage {
   component?: any;
 
   /**
-   * Wether this link is a category subsection
+   * Whether this link is a category subsection
    */
   isCategory?: boolean;
 

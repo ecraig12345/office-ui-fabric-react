@@ -73,7 +73,7 @@ export class PageHeader extends BaseComponent<IPageHeaderProps, IPageHeaderState
     // Only attach the header if there are in-page nav items
     if (this.props.links) {
       this._events.on(window, 'scroll', this._onScroll, true);
-      this._appContent = document.querySelector('[data-app-content-div]');
+      this._appContent = document.querySelector('[data-app-content-div]') as HTMLDivElement;
       this._attachedScrollThreshold = AttachedScrollUtility.calculateAttachedScrollThreshold();
     }
   }
@@ -94,8 +94,8 @@ export class PageHeader extends BaseComponent<IPageHeaderProps, IPageHeaderState
         <FocusZone>
           <nav className={styles.pageNav} aria-label="In page navigation">
             <ul>
-              {links.map((link, linkIndex) => (
-                <li key={linkIndex}>
+              {links.map(link => (
+                <li key={link.text}>
                   <PageHeaderLink href={this._getPagePath(link)} text={link.text} />
                 </li>
               ))}

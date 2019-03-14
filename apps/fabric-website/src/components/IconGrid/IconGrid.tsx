@@ -43,7 +43,7 @@ export class IconGrid extends React.Component<IIconGridProps, IIconGridState> {
         <ul className={styles.grid}>
           {icons
             .filter(icon => icon.name.toLowerCase().indexOf(searchQuery.toLowerCase()) !== -1)
-            .map((icon, iconIndex) => {
+            .map(icon => {
               let iconClassName = `ms-Icon ms-Icon--${icon.name}`;
               const iconRef = this._iconRefs[icon.name];
               if (iconRef.current && iconRef.current.offsetWidth > 80) {
@@ -51,7 +51,7 @@ export class IconGrid extends React.Component<IIconGridProps, IIconGridState> {
               }
 
               return (
-                <li key={iconIndex} aria-label={icon.name + ' icon'}>
+                <li key={icon.name} aria-label={icon.name + ' icon'}>
                   <i ref={iconRef} className={iconClassName} title={icon.name} aria-hidden="true" />
                   <span>{icon.name}</span>
                 </li>

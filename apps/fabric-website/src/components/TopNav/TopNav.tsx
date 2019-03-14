@@ -123,7 +123,7 @@ export class TopNavBase extends React.Component<ITopNavProps, ITopNavState> {
     );
   }
 
-  private _renderLink(page: INavPage, linkIndex: number, isStacked?: boolean): JSX.Element {
+  private _renderLink(page: INavPage, isStacked?: boolean) {
     if (page.isHiddenFromMainNav) {
       return null;
     }
@@ -135,7 +135,7 @@ export class TopNavBase extends React.Component<ITopNavProps, ITopNavState> {
           page.className && styles[page.className],
           isStacked && styles.isStacked
         )}
-        key={linkIndex}
+        key={page.url}
       >
         <a href={page.url} onClick={this.props.onLinkClick} title={page.title}>
           <span className={styles.linkTitle}>{page.title}</span>
@@ -144,16 +144,10 @@ export class TopNavBase extends React.Component<ITopNavProps, ITopNavState> {
     );
   }
 
-  private _renderLinkList(pages: INavPage[], isStacked?: boolean): JSX.Element {
-    const links: JSX.Element[] = pages
-      .filter(page => {
-        if (!page.hasOwnProperty('isHiddenFromMainNav') && page.isHomePage && !isStacked) {
-          return false;
-        }
-
-        return true;
-      })
-      .map((page, pageIndex) => this._renderLink(page, pageIndex, isStacked));
+  private _renderLinkList(pages: INavPage[], isStacked?: boolean) {
+    const links = pages
+      .filter(page => page.isHiddenFromMainNav || !page.isHomePage || isStacked)
+      .map(page => this._renderLink(page, isStacked));
 
     return (
       <ul className={css(styles.links, isStacked && styles.isStacked)} aria-label="Website top-level navigation">

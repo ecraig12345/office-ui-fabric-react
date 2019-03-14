@@ -69,35 +69,33 @@ export class Nav extends React.Component<INavProps, INavState> {
     };
   }
 
-  public render(): JSX.Element {
+  public render() {
     const { pages } = this.props;
 
     if (!pages) {
       return null;
     }
 
-    const links = pages ? this._renderLinkList(pages, false) : null;
-
     return (
       <FocusZone>
         <nav className={styles.nav} role="navigation">
-          {links}
+          {pages && this._renderLinkList(pages, false)}
         </nav>
       </FocusZone>
     );
   }
 
-  private _renderLinkList(pages: INavPage[], isSubMenu: boolean, title?: string): React.ReactElement<{}> {
+  private _renderLinkList(pages: INavPage[], isSubMenu: boolean, title?: string): JSX.Element {
     const { filterState } = this.state;
 
     const links = pages
       // Don't render pages that are explicitly told not to, as well as top-level pages that aren't active.
       .filter(page => (!page.hasOwnProperty('isHiddenFromMainNav') && !(page.isUhfLink && !_hasActiveChild(page))) || _isPageActive(page))
-      .map((page: INavPage, linkIndex: number) => {
-        if (page.isCategory && !filterState) {
-          return <>{page.pages.map((innerPage: INavPage, innerLinkIndex) => this._renderLink(innerPage, innerLinkIndex))}</>;
+      .map(page => {
+        if (page.isCategory && !filterState && page.pages) {
+          return <>{page.pages.map(innerPage => this._renderLink(innerPage))}</>;
         }
-        return page.isCategory && filterState ? this._renderCategory(page, linkIndex) : this._renderLink(page, linkIndex);
+        return page.isCategory && filterState ? this._renderCategory(page) : this._renderLink(page);
       });
 
     return (
@@ -110,25 +108,24 @@ export class Nav extends React.Component<INavProps, INavState> {
     );
   }
 
-  private _renderCategory(page: INavPage, categoryIndex: number): React.ReactElement<{}> {
+  private _renderCategory(page: INavPage) {
     if (page.isCategory && page.pages) {
       return (
-        <li key={categoryIndex} className={css(styles.category, _hasActiveChild(page) && styles.hasActiveChild)}>
+        <li key={page.url + page.title} className={css(styles.category, _hasActiveChild(page) && styles.hasActiveChild)}>
           <CollapsibleSection
             title={{ text: page.title, styles: getTitleStyles }}
             styles={{ body: [{ marginLeft: '28px' }] }}
             defaultCollapsed={!_hasActiveChild(page)}
           >
-            <ul>{page.pages.map((innerPage: INavPage, indexNumber: number) => this._renderLink(innerPage, indexNumber))}</ul>
+            <ul>{page.pages.map(innerPage => this._renderLink(innerPage))}</ul>
           </CollapsibleSection>
         </li>
       );
     }
   }
 
-  private _renderSortedLinks(pages: INavPage[], title: string): React.ReactElement<{}> {
-    const links: INavPage[] = [];
-    pages.map((page: INavPage) => page.pages.map((link: INavPage) => links.push(link)));
+  private _renderSortedLinks(pages: INavPage[], title: string): JSX.Element {
+    const links = ([] as INavPage[]).concat(...pages.map(page => page.pages || []));
     links.sort((l1, l2) => {
       if (l1.title > l2.title) {
         return 1;
@@ -141,7 +138,7 @@ export class Nav extends React.Component<INavProps, INavState> {
     return this._renderLinkList(links, true, title);
   }
 
-  private _renderLink(page: INavPage, linkIndex: number): React.ReactElement<{}> {
+  private _renderLink(page: INavPage) {
     const ariaLabel = page.pages ? 'Hit enter to open sub menu, tab to access sub menu items.' : '';
     const title = page.title === 'Fabric' ? 'Home page' : page.title;
     const childLinks =
@@ -153,7 +150,7 @@ export class Nav extends React.Component<INavProps, INavState> {
     const { searchQuery } = this.state;
     const text = page.title;
     let linkText = <>{text}</>;
-    let matchIndex;
+    let matchIndex = -1;
 
     // Highlight search query within link.
     if (!!searchQuery && page.isFilterable) {
@@ -184,7 +181,7 @@ export class Nav extends React.Component<INavProps, INavState> {
             page.className ? styles[page.className] : '',
             page.isUhfLink ? styles.isUhfLink : ''
           )}
-          key={linkIndex}
+          key={page.url}
         >
           {!page.isUhfLink && (page.isFilterable && searchQuery !== '' ? matchIndex > -1 : true) && (
             <a href={page.url} onClick={this._onLinkClick} title={title} aria-label={ariaLabel}>
