@@ -73,7 +73,8 @@
       "name": "ITheme",
       "extendsTokens": [
         {
-          "text": "IScheme"
+          "text": "IScheme",
+          "hyperlinkedPage": "ITheme"
         },
         {
           "text": " "

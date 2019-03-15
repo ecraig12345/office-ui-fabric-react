@@ -133,7 +133,8 @@
           "name": "checkmarkIconProps",
           "typeTokens": [
             {
-              "text": "IIconProps"
+              "text": "IIconProps",
+              "hyperlinkedPage": "Icon"
             }
           ],
           "descriptionHtml": "Custom icon props for the check mark rendered by the checkbox\n",
@@ -159,7 +160,8 @@
               "text": "<"
             },
             {
-              "text": "ICheckbox"
+              "text": "ICheckbox",
+              "hyperlinkedPage": "Checkbox"
             },
             {
               "text": ">"
@@ -295,7 +297,8 @@
               "text": "<"
             },
             {
-              "text": "ICheckboxProps"
+              "text": "ICheckboxProps",
+              "hyperlinkedPage": "Checkbox"
             },
             {
               "text": ">"
@@ -314,13 +317,15 @@
               "text": "<"
             },
             {
-              "text": "ICheckboxStyleProps"
+              "text": "ICheckboxStyleProps",
+              "hyperlinkedPage": "Checkbox"
             },
             {
               "text": ", "
             },
             {
-              "text": "ICheckboxStyles"
+              "text": "ICheckboxStyles",
+              "hyperlinkedPage": "Checkbox"
             },
             {
               "text": ">"

@@ -10,7 +10,8 @@
           "name": "checkedOption",
           "typeTokens": [
             {
-              "text": "IChoiceGroupOption"
+              "text": "IChoiceGroupOption",
+              "hyperlinkedPage": "ChoiceGroup"
             },
             {
               "text": " | undefined"
@@ -96,7 +97,8 @@
           "name": "iconProps",
           "typeTokens": [
             {
-              "text": "IIconProps"
+              "text": "IIconProps",
+              "hyperlinkedPage": "Icon"
             }
           ],
           "descriptionHtml": "The Icon component props for choice field\n",
@@ -184,7 +186,8 @@
               "text": "<"
             },
             {
-              "text": "IChoiceGroupOption"
+              "text": "IChoiceGroupOption",
+              "hyperlinkedPage": "ChoiceGroup"
             },
             {
               "text": ">"
@@ -206,7 +209,8 @@
               "text": ": "
             },
             {
-              "text": "IChoiceGroupOption"
+              "text": "IChoiceGroupOption",
+              "hyperlinkedPage": "ChoiceGroup"
             },
             {
               "text": ") => "
@@ -322,7 +326,8 @@
               "text": "<"
             },
             {
-              "text": "IChoiceGroup"
+              "text": "IChoiceGroup",
+              "hyperlinkedPage": "ChoiceGroup"
             },
             {
               "text": ">"
@@ -394,7 +399,8 @@
               "text": "?: "
             },
             {
-              "text": "IChoiceGroupOption"
+              "text": "IChoiceGroupOption",
+              "hyperlinkedPage": "ChoiceGroup"
             },
             {
               "text": ") => void"
@@ -416,7 +422,8 @@
               "text": ": "
             },
             {
-              "text": "IChoiceGroupOption"
+              "text": "IChoiceGroupOption",
+              "hyperlinkedPage": "ChoiceGroup"
             },
             {
               "text": ", "
@@ -459,7 +466,8 @@
           "name": "options",
           "typeTokens": [
             {
-              "text": "IChoiceGroupOption"
+              "text": "IChoiceGroupOption",
+              "hyperlinkedPage": "ChoiceGroup"
             },
             {
               "text": "[]"
@@ -488,13 +496,15 @@
               "text": "<"
             },
             {
-              "text": "IChoiceGroupStyleProps"
+              "text": "IChoiceGroupStyleProps",
+              "hyperlinkedPage": "ChoiceGroup"
             },
             {
               "text": ", "
             },
             {
-              "text": "IChoiceGroupStyles"
+              "text": "IChoiceGroupStyles",
+              "hyperlinkedPage": "ChoiceGroup"
             },
             {
               "text": ">"

@@ -204,7 +204,8 @@
           "name": "buttonType",
           "typeTokens": [
             {
-              "text": "ButtonType"
+              "text": "ButtonType",
+              "hyperlinkedPage": "Button"
             }
           ],
           "descriptionHtml": "Deprecated at v1.2.3, to be removed at \\>= v2.0.0. Use specific button component instead.\n\n",
@@ -240,7 +241,8 @@
               "text": "<"
             },
             {
-              "text": "IButton"
+              "text": "IButton",
+              "hyperlinkedPage": "Button"
             },
             {
               "text": ">"
@@ -409,7 +411,8 @@
           "name": "iconProps",
           "typeTokens": [
             {
-              "text": "IIconProps"
+              "text": "IIconProps",
+              "hyperlinkedPage": "Icon"
             }
           ],
           "descriptionHtml": "The props for the icon shown in the button.\n",
@@ -448,7 +451,8 @@
           "name": "menuIconProps",
           "typeTokens": [
             {
-              "text": "IIconProps"
+              "text": "IIconProps",
+              "hyperlinkedPage": "Icon"
             }
           ],
           "descriptionHtml": "The props for the icon shown when providing a menu dropdown.\n",
@@ -542,7 +546,8 @@
               "text": "?: "
             },
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button"
             },
             {
               "text": ") => void"
@@ -561,7 +566,8 @@
               "text": "<"
             },
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button"
             },
             {
               "text": ">"
@@ -580,7 +586,8 @@
               "text": "<"
             },
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button"
             },
             {
               "text": ">"
@@ -599,7 +606,8 @@
               "text": "<"
             },
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button"
             },
             {
               "text": ">"
@@ -618,7 +626,8 @@
               "text": "<"
             },
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button"
             },
             {
               "text": ">"
@@ -656,7 +665,8 @@
               "text": "<"
             },
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button"
             },
             {
               "text": ">"
@@ -675,7 +685,8 @@
               "text": "<"
             },
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button"
             },
             {
               "text": ">"
@@ -791,7 +802,8 @@
           "name": "styles",
           "typeTokens": [
             {
-              "text": "IButtonStyles"
+              "text": "IButtonStyles",
+              "hyperlinkedPage": "Button"
             }
           ],
           "descriptionHtml": "Custom styling for individual elements within the button DOM.\n",

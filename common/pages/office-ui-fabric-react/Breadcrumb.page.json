@@ -100,7 +100,8 @@
               "text": "?: "
             },
             {
-              "text": "IBreadcrumbItem"
+              "text": "IBreadcrumbItem",
+              "hyperlinkedPage": "Breadcrumb"
             },
             {
               "text": ") => void"
@@ -176,7 +177,8 @@
               "text": "<"
             },
             {
-              "text": "IBreadcrumb"
+              "text": "IBreadcrumb",
+              "hyperlinkedPage": "Breadcrumb"
             },
             {
               "text": ">"
@@ -195,7 +197,8 @@
               "text": "<"
             },
             {
-              "text": "IDividerAsProps"
+              "text": "IDividerAsProps",
+              "hyperlinkedPage": "Breadcrumb"
             },
             {
               "text": ">"
@@ -208,7 +211,8 @@
           "name": "items",
           "typeTokens": [
             {
-              "text": "IBreadcrumbItem"
+              "text": "IBreadcrumbItem",
+              "hyperlinkedPage": "Breadcrumb"
             },
             {
               "text": "[]"
@@ -265,7 +269,8 @@
               "text": "<"
             },
             {
-              "text": "IBreadcrumbItem"
+              "text": "IBreadcrumbItem",
+              "hyperlinkedPage": "Breadcrumb"
             },
             {
               "text": ">"
@@ -304,13 +309,15 @@
               "text": "<"
             },
             {
-              "text": "IBreadcrumbStyleProps"
+              "text": "IBreadcrumbStyleProps",
+              "hyperlinkedPage": "Breadcrumb"
             },
             {
               "text": ", "
             },
             {
-              "text": "IBreadcrumbStyles"
+              "text": "IBreadcrumbStyles",
+              "hyperlinkedPage": "Breadcrumb"
             },
             {
               "text": ">"
@@ -452,7 +459,8 @@
       "name": "IDividerAsProps",
       "extendsTokens": [
         {
-          "text": "IIconProps"
+          "text": "IIconProps",
+          "hyperlinkedPage": "Icon"
         },
         {
           "text": " "
@@ -464,7 +472,8 @@
           "name": "item",
           "typeTokens": [
             {
-              "text": "IBreadcrumbItem"
+              "text": "IBreadcrumbItem",
+              "hyperlinkedPage": "Breadcrumb"
             }
           ],
           "descriptionHtml": "Optional breadcrumb item corresponds to left of the divider to be passed for custom rendering. For overflowed items, it will be last item in the list\n",

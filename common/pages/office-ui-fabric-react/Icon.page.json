@@ -121,13 +121,15 @@
               "text": "<"
             },
             {
-              "text": "IIconStyleProps"
+              "text": "IIconStyleProps",
+              "hyperlinkedPage": "Icon"
             },
             {
               "text": ", "
             },
             {
-              "text": "IIconStyles"
+              "text": "IIconStyles",
+              "hyperlinkedPage": "Icon"
             },
             {
               "text": ">"
@@ -204,7 +206,8 @@
               "text": "<"
             },
             {
-              "text": "IIconStyles"
+              "text": "IIconStyles",
+              "hyperlinkedPage": "Icon"
             },
             {
               "text": ">"

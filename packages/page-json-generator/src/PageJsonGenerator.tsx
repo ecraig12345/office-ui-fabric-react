@@ -15,7 +15,8 @@ import {
   ApiPackage,
   ApiProperty,
   ApiPropertySignature,
-  ExcerptToken
+  ExcerptToken,
+  ExcerptTokenKind
 } from '@microsoft/api-extractor';
 import { FileSystem, JsonFile } from '@microsoft/node-core-library';
 import { IPageJson, ITableJson, ITableRowJson, IEnumTableRowJson } from './IPageJson';
@@ -42,11 +43,12 @@ class PageData {
   }
 }
 
-/**
- * Map of page name to PageData
- */
 class CollectedData {
+  /**
+   * Map of page name to PageData
+   */
   public pageDataByPageName: Map<string, PageData> = new Map<string, PageData>();
+  public apiToPageName: Map<string, string> = new Map<string, string>();
 }
 
 /**
@@ -98,7 +100,7 @@ function createPageJsonFiles(collectedData: CollectedData, options: IPageJsonOpt
     for (const apiItem of pageData.apiItems) {
       switch (apiItem.kind) {
         case ApiItemKind.Interface: {
-          pageJson.tables.push(createInterfacePageJson(apiItem as ApiInterface));
+          pageJson.tables.push(createInterfacePageJson(collectedData, apiItem as ApiInterface));
           break;
         }
         case ApiItemKind.Enum: {
@@ -106,7 +108,7 @@ function createPageJsonFiles(collectedData: CollectedData, options: IPageJsonOpt
           break;
         }
         case ApiItemKind.Class: {
-          pageJson.tables.push(createClassPageJson(apiItem as ApiClass));
+          pageJson.tables.push(createClassPageJson(collectedData, apiItem as ApiClass));
           break;
         }
       }
@@ -121,7 +123,7 @@ function createPageJsonFiles(collectedData: CollectedData, options: IPageJsonOpt
  *
  * @param interfaceItem Interface item to search
  */
-function createInterfacePageJson(interfaceItem: ApiInterface): ITableJson {
+function createInterfacePageJson(collectedData: CollectedData, interfaceItem: ApiInterface): ITableJson {
   const interfaceTableRowJson: ITableRowJson[] = [];
 
   const tableJson: ITableJson = {
@@ -140,7 +142,17 @@ function createInterfacePageJson(interfaceItem: ApiInterface): ITableJson {
     // This API could be improved
     for (let i: number = extendsType.excerpt.tokenRange.startIndex; i < extendsType.excerpt.tokenRange.endIndex; ++i) {
       const token: ExcerptToken = extendsType.excerpt.tokens[i];
-      tableJson.extendsTokens.push({ text: token.text });
+      if (token.kind === ExcerptTokenKind.Reference) {
+        // search for reference in collectedData
+        const pageName = collectedData.apiToPageName.get(token.text);
+        if (pageName !== undefined) {
+          tableJson.extendsTokens.push({ text: token.text, hyperlinkedPage: pageName });
+        } else {
+          tableJson.extendsTokens.push({ text: token.text });
+        }
+      } else {
+        tableJson.extendsTokens.push({ text: token.text });
+      }
     }
   }
   for (const member of interfaceItem.members) {
@@ -160,9 +172,17 @@ function createInterfacePageJson(interfaceItem: ApiInterface): ITableJson {
           ++i
         ) {
           const token: ExcerptToken = apiPropertySignature.excerptTokens[i];
-          tableRowJson.typeTokens.push({ text: token.text });
-
-          // TODO: If it's a reference, add the hyperlinkedPage
+          if (token.kind === ExcerptTokenKind.Reference) {
+            // search for reference in collectedData
+            const pageName = collectedData.apiToPageName.get(token.text);
+            if (pageName !== undefined) {
+              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: pageName });
+            } else {
+              tableRowJson.typeTokens.push({ text: token.text });
+            }
+          } else {
+            tableRowJson.typeTokens.push({ text: token.text });
+          }
         }
         if (apiPropertySignature.tsdocComment) {
           if (apiPropertySignature.tsdocComment.deprecatedBlock) {
@@ -185,9 +205,17 @@ function createInterfacePageJson(interfaceItem: ApiInterface): ITableJson {
 
         for (let i: number = apiMethodSignature.excerpt.tokenRange.startIndex; i < apiMethodSignature.excerpt.tokenRange.endIndex; ++i) {
           const token: ExcerptToken = apiMethodSignature.excerptTokens[i];
-          tableRowJson.typeTokens.push({ text: token.text });
-
-          // TODO: If it's a reference, add the hyperlinkedPage
+          if (token.kind === ExcerptTokenKind.Reference) {
+            // search for reference in collectedData
+            const pageName = collectedData.apiToPageName.get(token.text);
+            if (pageName !== undefined) {
+              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: pageName });
+            } else {
+              tableRowJson.typeTokens.push({ text: token.text });
+            }
+          } else {
+            tableRowJson.typeTokens.push({ text: token.text });
+          }
         }
         if (apiMethodSignature.tsdocComment) {
           if (apiMethodSignature.tsdocComment.deprecatedBlock) {
@@ -252,8 +280,6 @@ function createEnumPageJson(enumItem: ApiEnum): ITableJson {
         for (let i: number = apiEnumMember.excerpt.tokenRange.startIndex; i < apiEnumMember.excerpt.tokenRange.endIndex; ++i) {
           const token: ExcerptToken = apiEnumMember.excerptTokens[i];
           tableRowJson.value = token.text;
-
-          // TODO: If it's a reference, add the hyperlinkedPage
         }
         if (apiEnumMember.tsdocComment) {
           tableRowJson.descriptionHtml += renderDocNodeWithoutInlineTag(apiEnumMember.tsdocComment.summarySection);
@@ -274,7 +300,7 @@ function createEnumPageJson(enumItem: ApiEnum): ITableJson {
  *
  * @param classItem Class item to search
  */
-function createClassPageJson(classItem: ApiClass): ITableJson {
+function createClassPageJson(collectedData: CollectedData, classItem: ApiClass): ITableJson {
   const classTableRowJson: ITableRowJson[] = [];
 
   const tableJson: ITableJson = {
@@ -311,9 +337,17 @@ function createClassPageJson(classItem: ApiClass): ITableJson {
           ++i
         ) {
           const token: ExcerptToken = apiProperty.excerptTokens[i];
-          tableRowJson.typeTokens.push({ text: token.text });
-
-          // TODO: If it's a reference, add the hyperlinkedPage
+          if (token.kind === ExcerptTokenKind.Reference) {
+            // search for reference in collectedData
+            const pageName = collectedData.apiToPageName.get(token.text);
+            if (pageName !== undefined) {
+              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: pageName });
+            } else {
+              tableRowJson.typeTokens.push({ text: token.text });
+            }
+          } else {
+            tableRowJson.typeTokens.push({ text: token.text });
+          }
         }
         if (apiProperty.tsdocComment) {
           if (apiProperty.tsdocComment.deprecatedBlock) {
@@ -336,9 +370,17 @@ function createClassPageJson(classItem: ApiClass): ITableJson {
 
         for (let i: number = apiMethod.excerpt.tokenRange.startIndex; i < apiMethod.excerpt.tokenRange.endIndex; ++i) {
           const token: ExcerptToken = apiMethod.excerptTokens[i];
-          tableRowJson.typeTokens.push({ text: token.text });
-
-          // TODO: If it's a reference, add the hyperlinkedPage
+          if (token.kind === ExcerptTokenKind.Reference) {
+            // search for reference in collectedData
+            const pageName = collectedData.apiToPageName.get(token.text);
+            if (pageName !== undefined) {
+              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: pageName });
+            } else {
+              tableRowJson.typeTokens.push({ text: token.text });
+            }
+          } else {
+            tableRowJson.typeTokens.push({ text: token.text });
+          }
         }
         if (apiMethod.tsdocComment) {
           if (apiMethod.tsdocComment.deprecatedBlock) {
@@ -429,6 +471,8 @@ function collectPageData(collectedData: CollectedData, apiItem: ApiItem): void {
               console.log('Warning: Unrecognized page name: ' + pageName);
               return;
             }
+
+            collectedData.apiToPageName.set(apiItem.displayName, pageName);
 
             pageData.apiItems.push(apiItem);
           }

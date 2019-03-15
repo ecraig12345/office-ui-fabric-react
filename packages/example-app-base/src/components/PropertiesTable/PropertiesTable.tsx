@@ -318,7 +318,12 @@ export class PropertiesTable extends React.Component<IPropertiesTableProps, IPro
     if (item.deprecated === true) {
       const deprecatedStyles: Partial<IDetailsRowStyles> = {
         root: {
-          background: '#FFFFCC'
+          background: '#FFFFCC',
+          selectors: {
+            ':hover': {
+              background: '#FFFFCC'
+            }
+          }
         }
       };
 
