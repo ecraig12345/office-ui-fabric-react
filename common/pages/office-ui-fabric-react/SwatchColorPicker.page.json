@@ -1,0 +1,978 @@
+{
+  "tables": [
+    {
+      "kind": "interface",
+      "name": "IColorCellProps",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "color",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "The CSS-compatible string to describe the color\n",
+          "deprecated": false
+        },
+        {
+          "name": "id",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Arbitrary unique string associated with this option\n",
+          "deprecated": false
+        },
+        {
+          "name": "index",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "Index for this option\n",
+          "deprecated": false
+        },
+        {
+          "name": "label",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "The label for this item. Visible text if this item is a header, tooltip if is this item is normal\n",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IColorPickerGridCellProps",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "borderWidth",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "Width of the border that indicates a selected/hovered cell, in pixels. If `cellWidth` is less than 24px, then default value is 2px. Otherwise it defaults to 4px.\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "circle",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Wheter or not colorOption should be rendered as a circle or square.\n",
+          "deprecated": false
+        },
+        {
+          "name": "color",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "The CSS-compatible string to describe the color\n",
+          "deprecated": false
+        },
+        {
+          "name": "disabled",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Optional, if the this option should be disabled\n",
+          "deprecated": false
+        },
+        {
+          "name": "height",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "Height of the cell, in pixels\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "id",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Arbitrary unique string associated with this option\n",
+          "deprecated": false
+        },
+        {
+          "name": "index",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "Index for this option\n",
+          "deprecated": false
+        },
+        {
+          "name": "item",
+          "typeTokens": [
+            {
+              "text": "IColorCellProps",
+              "hyperlinkedPage": "SwatchColorPicker"
+            }
+          ],
+          "descriptionHtml": "Item to render\n",
+          "deprecated": false
+        },
+        {
+          "name": "label",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "The label for this item. Visible text if this item is a header, tooltip if is this item is normal\n",
+          "deprecated": false
+        },
+        {
+          "name": "onClick",
+          "typeTokens": [
+            {
+              "text": "("
+            },
+            {
+              "text": "item"
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "IColorCellProps",
+              "hyperlinkedPage": "SwatchColorPicker"
+            },
+            {
+              "text": ") => void"
+            }
+          ],
+          "descriptionHtml": "The on click handler\n",
+          "deprecated": false
+        },
+        {
+          "name": "onFocus",
+          "typeTokens": [
+            {
+              "text": "("
+            },
+            {
+              "text": "item"
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "IColorCellProps",
+              "hyperlinkedPage": "SwatchColorPicker"
+            },
+            {
+              "text": ") => void"
+            }
+          ],
+          "descriptionHtml": "Optional, the onFocus handler\n",
+          "deprecated": false
+        },
+        {
+          "name": "onHover",
+          "typeTokens": [
+            {
+              "text": "("
+            },
+            {
+              "text": "item"
+            },
+            {
+              "text": "?: "
+            },
+            {
+              "text": "IColorCellProps",
+              "hyperlinkedPage": "SwatchColorPicker"
+            },
+            {
+              "text": ") => void"
+            }
+          ],
+          "descriptionHtml": "Optional, the onHover handler\n",
+          "deprecated": false
+        },
+        {
+          "name": "onKeyDown",
+          "typeTokens": [
+            {
+              "text": "("
+            },
+            {
+              "text": "ev"
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "React"
+            },
+            {
+              "text": "."
+            },
+            {
+              "text": "KeyboardEvent"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "HTMLButtonElement"
+            },
+            {
+              "text": ">) => void"
+            }
+          ],
+          "descriptionHtml": "Optional, onkeydown handler\n",
+          "deprecated": false
+        },
+        {
+          "name": "onMouseEnter",
+          "typeTokens": [
+            {
+              "text": "("
+            },
+            {
+              "text": "ev"
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "React"
+            },
+            {
+              "text": "."
+            },
+            {
+              "text": "MouseEvent"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "HTMLButtonElement"
+            },
+            {
+              "text": ">) => boolean"
+            }
+          ],
+          "descriptionHtml": "Optional, mouseEnter handler.\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "onMouseLeave",
+          "typeTokens": [
+            {
+              "text": "("
+            },
+            {
+              "text": "ev"
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "React"
+            },
+            {
+              "text": "."
+            },
+            {
+              "text": "MouseEvent"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "HTMLButtonElement"
+            },
+            {
+              "text": ">) => void"
+            }
+          ],
+          "descriptionHtml": "Optional, mouseLeave handler\n",
+          "deprecated": false
+        },
+        {
+          "name": "onMouseMove",
+          "typeTokens": [
+            {
+              "text": "("
+            },
+            {
+              "text": "ev"
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "React"
+            },
+            {
+              "text": "."
+            },
+            {
+              "text": "MouseEvent"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "HTMLButtonElement"
+            },
+            {
+              "text": ">) => boolean"
+            }
+          ],
+          "descriptionHtml": "Optional, mouseMove handler\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "onWheel",
+          "typeTokens": [
+            {
+              "text": "("
+            },
+            {
+              "text": "ev"
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "React"
+            },
+            {
+              "text": "."
+            },
+            {
+              "text": "MouseEvent"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "HTMLButtonElement"
+            },
+            {
+              "text": ">) => void"
+            }
+          ],
+          "descriptionHtml": "Optional, onWheel handler\n",
+          "deprecated": false
+        },
+        {
+          "name": "selected",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Optional, if the cell is currently selected\n",
+          "deprecated": false
+        },
+        {
+          "name": "styles",
+          "typeTokens": [
+            {
+              "text": "IStyleFunctionOrObject"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "IColorPickerGridCellStyleProps",
+              "hyperlinkedPage": "SwatchColorPicker"
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "IColorPickerGridCellStyles",
+              "hyperlinkedPage": "SwatchColorPicker"
+            },
+            {
+              "text": ">"
+            }
+          ],
+          "descriptionHtml": "Optional styles for the component.\n",
+          "deprecated": false
+        },
+        {
+          "name": "theme",
+          "typeTokens": [
+            {
+              "text": "ITheme"
+            }
+          ],
+          "descriptionHtml": "The theme object to use for styling.\n",
+          "deprecated": false
+        },
+        {
+          "name": "width",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "Width of the cell, in pixels\n\n",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IColorPickerGridCellStyleProps",
+      "extendsTokens": [],
+      "descriptionHtml": "Properties required to build the styles for the color picker component. \n",
+      "members": [
+        {
+          "name": "borderWidth",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "The width of the border indicating a hovered or selected cell, in pixels.\n",
+          "deprecated": false
+        },
+        {
+          "name": "circle",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Whether the svg color element should be rendered as a circle or not.\n",
+          "deprecated": false
+        },
+        {
+          "name": "disabled",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Whether the component is disabled or not.\n",
+          "deprecated": false
+        },
+        {
+          "name": "height",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "The height of this cell, in pixels.\n",
+          "deprecated": false
+        },
+        {
+          "name": "isWhite",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Whether the color being rendered is white or not. If it is white we show a border around it.\n",
+          "deprecated": false
+        },
+        {
+          "name": "selected",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Whether the cell is currently selected or not.\n",
+          "deprecated": false
+        },
+        {
+          "name": "theme",
+          "typeTokens": [
+            {
+              "text": "ITheme"
+            }
+          ],
+          "descriptionHtml": "Theme to apply to the cell.\n",
+          "deprecated": false
+        },
+        {
+          "name": "width",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "The width of this cell, in pixels.\n",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IColorPickerGridCellStyles",
+      "extendsTokens": [],
+      "descriptionHtml": "Styles for the Color Picker Component. \n",
+      "members": [
+        {
+          "name": "colorCell",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "Style to apply to a colorCell in the color picker.\n",
+          "deprecated": false
+        },
+        {
+          "name": "svg",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "Style to apply to the svg element that renders the color.\n",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "ISwatchColorPicker",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": []
+    },
+    {
+      "kind": "interface",
+      "name": "ISwatchColorPickerProps",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "cellBorderWidth",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "Width of the border indicating a hovered/selected cell, in pixels If `cellWidth` is less than 24px, then default value is 2px. Otherwise it defaults to 4px.\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "cellHeight",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "Height of an individual cell, in pixels\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "cellMargin",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "The distance between cells, in pixels\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "cellShape",
+          "typeTokens": [
+            {
+              "text": "'circle' | 'square'"
+            }
+          ],
+          "descriptionHtml": "The shape of the color cells, defaults to circle\n",
+          "deprecated": false
+        },
+        {
+          "name": "cellWidth",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "Width of an individual cell, in pixels\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "className",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Additional class name to provide on the root element\n",
+          "deprecated": false
+        },
+        {
+          "name": "colorCells",
+          "typeTokens": [
+            {
+              "text": "IColorCellProps",
+              "hyperlinkedPage": "SwatchColorPicker"
+            },
+            {
+              "text": "[]"
+            }
+          ],
+          "descriptionHtml": "The color cells that will be made available to the user\n",
+          "deprecated": false
+        },
+        {
+          "name": "columnCount",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "the number of columns for the swatch color picker\n",
+          "deprecated": false
+        },
+        {
+          "name": "componentRef",
+          "typeTokens": [
+            {
+              "text": "IRefObject"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "ISwatchColorPicker",
+              "hyperlinkedPage": "SwatchColorPicker"
+            },
+            {
+              "text": ">"
+            }
+          ],
+          "descriptionHtml": "Gets the component ref.\n",
+          "deprecated": false
+        },
+        {
+          "name": "disabled",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Is this swatch color picker disabled?\n",
+          "deprecated": false
+        },
+        {
+          "name": "doNotContainWithinFocusZone",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "If true do not contain the grid inside of a FocusZone. If false contain the grid inside of a FocusZone.\n",
+          "deprecated": false
+        },
+        {
+          "name": "focusOnHover",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Optional, whether to update focus when a cell is hovered.\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "getColorGridCellStyles",
+          "typeTokens": [
+            {
+              "text": "IStyleFunctionOrObject"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "IColorPickerGridCellStyleProps",
+              "hyperlinkedPage": "SwatchColorPicker"
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "IColorPickerGridCellStyles",
+              "hyperlinkedPage": "SwatchColorPicker"
+            },
+            {
+              "text": ">"
+            }
+          ],
+          "descriptionHtml": "Optional styles for the component.\n",
+          "deprecated": false
+        },
+        {
+          "name": "id",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "The id for the swatch color picker\n",
+          "deprecated": false
+        },
+        {
+          "name": "mouseLeaveParentSelector",
+          "typeTokens": [
+            {
+              "text": "string | undefined"
+            }
+          ],
+          "descriptionHtml": "Selector to focus on mouseLeave SHOULD ONLY BE USED IN CONJUNCTION WITH focusOnHover\n",
+          "deprecated": false
+        },
+        {
+          "name": "onCellFocused",
+          "typeTokens": [
+            {
+              "text": "("
+            },
+            {
+              "text": "id"
+            },
+            {
+              "text": "?: string, "
+            },
+            {
+              "text": "color"
+            },
+            {
+              "text": "?: string) => void"
+            }
+          ],
+          "descriptionHtml": "Callback issued when the user focuses a color cell. Note, if no id or color is given, cells are not longer being focused\n",
+          "deprecated": false
+        },
+        {
+          "name": "onCellHovered",
+          "typeTokens": [
+            {
+              "text": "("
+            },
+            {
+              "text": "id"
+            },
+            {
+              "text": "?: string, "
+            },
+            {
+              "text": "color"
+            },
+            {
+              "text": "?: string) => void"
+            }
+          ],
+          "descriptionHtml": "Callback issued when the user hovers over a color cell. Note, if no id or color is given, cells are not longer being hovered\n",
+          "deprecated": false
+        },
+        {
+          "name": "onColorChanged",
+          "typeTokens": [
+            {
+              "text": "("
+            },
+            {
+              "text": "id"
+            },
+            {
+              "text": "?: string, "
+            },
+            {
+              "text": "color"
+            },
+            {
+              "text": "?: string) => void"
+            }
+          ],
+          "descriptionHtml": "Callback issued when the user changes the color. Note, if no id or color is given, there is no selected cell (e.g. the user executed the currently selected cell to unselect it)\n",
+          "deprecated": false
+        },
+        {
+          "name": "positionInSet",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "The optional position this grid is in the parent set (index in a parent menu, for example)\n",
+          "deprecated": false
+        },
+        {
+          "name": "selectedId",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "The id of color cell that is currently selected\n",
+          "deprecated": false
+        },
+        {
+          "name": "setSize",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "The optional size of the parent set (size of parent menu, for example)\n",
+          "deprecated": false
+        },
+        {
+          "name": "shouldFocusCircularNavigate",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Should focus cycle to the beginning of once the user navigates past the end (and vice versa). This prop is only relevant if doNotcontainWithinFocusZone is not true\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "styles",
+          "typeTokens": [
+            {
+              "text": "IStyleFunctionOrObject"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "ISwatchColorPickerStyleProps",
+              "hyperlinkedPage": "SwatchColorPicker"
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "ISwatchColorPickerStyles",
+              "hyperlinkedPage": "SwatchColorPicker"
+            },
+            {
+              "text": ">"
+            }
+          ],
+          "descriptionHtml": "Optional styles for the component.\n",
+          "deprecated": false
+        },
+        {
+          "name": "theme",
+          "typeTokens": [
+            {
+              "text": "ITheme"
+            }
+          ],
+          "descriptionHtml": "Theme to apply to the component.\n",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "ISwatchColorPickerStyleProps",
+      "extendsTokens": [],
+      "descriptionHtml": "Properties required to build the styles for the color picker component. \n",
+      "members": [
+        {
+          "name": "cellMargin",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "The distance between cells\n",
+          "deprecated": false
+        },
+        {
+          "name": "className",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Custom className to apply to the container.\n",
+          "deprecated": false
+        },
+        {
+          "name": "theme",
+          "typeTokens": [
+            {
+              "text": "ITheme"
+            }
+          ],
+          "descriptionHtml": "Theme to apply to the container\n",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "ISwatchColorPickerStyles",
+      "extendsTokens": [],
+      "descriptionHtml": "Styles for the Color Picker Component. \n",
+      "members": [
+        {
+          "name": "focusedContainer",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "Optional, style for the FocusZone container for the grid\n",
+          "deprecated": false
+        },
+        {
+          "name": "root",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "Style applied to the container grid of the swatchColorPicker\n",
+          "deprecated": false
+        },
+        {
+          "name": "tableCell",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "Style for the table cells of the grid.\n",
+          "deprecated": false
+        }
+      ]
+    }
+  ]
+}

@@ -74,7 +74,8 @@
               "text": "<"
             },
             {
-              "text": "IImageProps"
+              "text": "IImageProps",
+              "hyperlinkedPage": "Image"
             },
             {
               "text": "> | "
@@ -92,7 +93,8 @@
               "text": "<"
             },
             {
-              "text": "IImageProps"
+              "text": "IImageProps",
+              "hyperlinkedPage": "Image"
             },
             {
               "text": ">"
@@ -105,7 +107,8 @@
           "name": "imageProps",
           "typeTokens": [
             {
-              "text": "IImageProps"
+              "text": "IImageProps",
+              "hyperlinkedPage": "Image"
             }
           ],
           "descriptionHtml": "If rendering an image icon, these props will be passed to the Image component.\n",

@@ -196,7 +196,8 @@
           "name": "autofill",
           "typeTokens": [
             {
-              "text": "IAutofillProps"
+              "text": "IAutofillProps",
+              "hyperlinkedPage": "Autofill"
             }
           ],
           "descriptionHtml": "The AutofillProps to be passed into the Autofill component inside combobox\n",
@@ -374,7 +375,8 @@
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps"
+              "text": "IKeytipProps",
+              "hyperlinkedPage": "Keytip"
             }
           ],
           "descriptionHtml": "Optional keytip for this combo box\n",

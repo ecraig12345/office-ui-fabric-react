@@ -6,6 +6,9 @@ import { TooltipPageProps } from 'office-ui-fabric-react/lib/components/Tooltip/
 
 export const TooltipPage = (props: { isHeaderVisible: boolean }) => (
   <LayerHost>
-    <DemoPage {...{ ...TooltipPageProps, ...props }} />
+    <DemoPage
+      jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/Tooltip.page.json')}
+      {...{ ...TooltipPageProps, ...props }}
+    />
   </LayerHost>
 );

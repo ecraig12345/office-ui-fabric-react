@@ -1,0 +1,665 @@
+{
+  "tables": [
+    {
+      "kind": "enum",
+      "name": "ExpandingCardMode",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "compact",
+          "descriptionHtml": "To have top compact card only\n",
+          "value": "0"
+        },
+        {
+          "name": "expanded",
+          "descriptionHtml": "To have both top compact and bottom expanded card\n",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "kind": "enum",
+      "name": "HoverCardType",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "expanding",
+          "descriptionHtml": "File card consisting of two parts: compact and expanded. Has some default sizes if not specified.\n",
+          "value": "\"ExpandingCard\""
+        },
+        {
+          "name": "plain",
+          "descriptionHtml": "Plain card consisting of one part responsive to the size of content.\n",
+          "value": "\"PlainCard\""
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IExpandingCard",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": []
+    },
+    {
+      "kind": "interface",
+      "name": "IExpandingCardProps",
+      "extendsTokens": [
+        {
+          "text": "IBaseCardProps"
+        },
+        {
+          "text": "<"
+        },
+        {
+          "text": "IExpandingCard",
+          "hyperlinkedPage": "HoverCard"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "IExpandingCardStyles",
+          "hyperlinkedPage": "HoverCard"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "IExpandingCardStyleProps",
+          "hyperlinkedPage": "HoverCard"
+        },
+        {
+          "text": "> "
+        }
+      ],
+      "descriptionHtml": "ExpandingCard component props. \n",
+      "members": [
+        {
+          "name": "compactCardHeight",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "Height of compact card\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "expandedCardHeight",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "Height of expanded card\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "mode",
+          "typeTokens": [
+            {
+              "text": "ExpandingCardMode",
+              "hyperlinkedPage": "HoverCard"
+            }
+          ],
+          "descriptionHtml": "Use to open the card in expanded format and not wait for the delay\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "onRenderCompactCard",
+          "typeTokens": [
+            {
+              "text": "IRenderFunction"
+            },
+            {
+              "text": "<any>"
+            }
+          ],
+          "descriptionHtml": "Render function to populate compact content area\n",
+          "deprecated": false
+        },
+        {
+          "name": "onRenderExpandedCard",
+          "typeTokens": [
+            {
+              "text": "IRenderFunction"
+            },
+            {
+              "text": "<any>"
+            }
+          ],
+          "descriptionHtml": "Render function to populate expanded content area\n",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IExpandingCardStyleProps",
+      "extendsTokens": [
+        {
+          "text": "IBaseCardStyleProps"
+        },
+        {
+          "text": " "
+        }
+      ],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "compactCardHeight",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "Height of the compact section of the card.\n",
+          "deprecated": false
+        },
+        {
+          "name": "expandedCardFirstFrameRendered",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Boolean flag that expanded card is in Expanded.mode === expanded && first frame was rendered.\n",
+          "deprecated": false
+        },
+        {
+          "name": "expandedCardHeight",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "Height of the expanded section of the card.\n",
+          "deprecated": false
+        },
+        {
+          "name": "needsScroll",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Whether the content of the expanded card overflows vertically.\n",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IExpandingCardStyles",
+      "extendsTokens": [
+        {
+          "text": "IBaseCardStyles"
+        },
+        {
+          "text": " "
+        }
+      ],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "compactCard",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "Style for the main card element.\n",
+          "deprecated": false
+        },
+        {
+          "name": "expandedCard",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "Base Style for the expanded card content.\n",
+          "deprecated": false
+        },
+        {
+          "name": "expandedCardScroll",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "Style for the expanded card scroll content.\n",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IHoverCard",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": []
+    },
+    {
+      "kind": "interface",
+      "name": "IHoverCardProps",
+      "extendsTokens": [
+        {
+          "text": "React"
+        },
+        {
+          "text": "."
+        },
+        {
+          "text": "HTMLAttributes"
+        },
+        {
+          "text": "<"
+        },
+        {
+          "text": "HTMLDivElement"
+        },
+        {
+          "text": "> "
+        }
+      ],
+      "descriptionHtml": "HoverCard component props. \n",
+      "members": [
+        {
+          "name": "cardDismissDelay",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "Length of card dismiss delay. A min number is necessary for pointer to hop between target and card\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "cardOpenDelay",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "Length of compact card delay\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "className",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Additional CSS class(es) to apply to the HoverCard root element.\n",
+          "deprecated": false
+        },
+        {
+          "name": "componentRef",
+          "typeTokens": [
+            {
+              "text": "IRefObject"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "IHoverCard",
+              "hyperlinkedPage": "HoverCard"
+            },
+            {
+              "text": ">"
+            }
+          ],
+          "descriptionHtml": "Optional callback to access the IHoverCardHost interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
+          "deprecated": false
+        },
+        {
+          "name": "expandedCardOpenDelay",
+          "typeTokens": [
+            {
+              "text": "number"
+            }
+          ],
+          "descriptionHtml": "Time in ms when expanded card should open after compact card\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "expandingCardProps",
+          "typeTokens": [
+            {
+              "text": "IExpandingCardProps",
+              "hyperlinkedPage": "HoverCard"
+            }
+          ],
+          "descriptionHtml": "Additional ExpandingCard props to pass through HoverCard like renderers, target. gapSpace etc. Used along with 'type' prop set to HoverCardType.expanding. Reference detail properties in ICardProps and IExpandingCardProps.\n",
+          "deprecated": false
+        },
+        {
+          "name": "instantOpenOnClick",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Enables instant open of the full card upon click\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "onCardExpand",
+          "typeTokens": [
+            {
+              "text": "() => void"
+            }
+          ],
+          "descriptionHtml": "Callback when visible card is expanded.\n",
+          "deprecated": false
+        },
+        {
+          "name": "onCardHide",
+          "typeTokens": [
+            {
+              "text": "() => void"
+            }
+          ],
+          "descriptionHtml": "Callback when card hides\n",
+          "deprecated": false
+        },
+        {
+          "name": "onCardVisible",
+          "typeTokens": [
+            {
+              "text": "() => void"
+            }
+          ],
+          "descriptionHtml": "Callback when card becomes visible\n",
+          "deprecated": false
+        },
+        {
+          "name": "openHotKey",
+          "typeTokens": [
+            {
+              "text": "KeyCodes"
+            }
+          ],
+          "descriptionHtml": "HotKey used for opening the HoverCard when tabbed to target.\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "plainCardProps",
+          "typeTokens": [
+            {
+              "text": "IPlainCardProps",
+              "hyperlinkedPage": "HoverCard"
+            }
+          ],
+          "descriptionHtml": "Additional PlainCard props to pass through HoverCard like renderers, target, gapSpace etc. Used along with 'type' prop set to HoverCardType.plain. See for more details ICardProps and IPlainCardProps interfaces.\n",
+          "deprecated": false
+        },
+        {
+          "name": "setAriaDescribedBy",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Whether or not to mark the container as described by the hover card. If not specified, the caller should mark as element as described by the hover card id.\n",
+          "deprecated": false
+        },
+        {
+          "name": "setInitialFocus",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Set to true to set focus on the first focusable element in the card. Works in pair with the 'trapFocus' prop.\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "shouldBlockHoverCard",
+          "typeTokens": [
+            {
+              "text": "() => void"
+            }
+          ],
+          "descriptionHtml": "Should block hover card or not\n",
+          "deprecated": false
+        },
+        {
+          "name": "sticky",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "If true disables Card dismiss upon mouse leave, so that card sticks around.\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "styles",
+          "typeTokens": [
+            {
+              "text": "IStyleFunctionOrObject"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "IHoverCardStyleProps",
+              "hyperlinkedPage": "HoverCard"
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "IHoverCardStyles",
+              "hyperlinkedPage": "HoverCard"
+            },
+            {
+              "text": ">"
+            }
+          ],
+          "descriptionHtml": "Custom styles for this component\n",
+          "deprecated": false
+        },
+        {
+          "name": "target",
+          "typeTokens": [
+            {
+              "text": "HTMLElement"
+            },
+            {
+              "text": " | string"
+            }
+          ],
+          "descriptionHtml": "Optional target element to tag hover card on. If not provided and using HoverCard as a wrapper, don't set 'data-is-focusable=true' attribute to the root of the wrapped child. When no target given, HoverCard will use it's root as a target and become the focusable element with a focus listener attached to it.\n",
+          "deprecated": false
+        },
+        {
+          "name": "theme",
+          "typeTokens": [
+            {
+              "text": "ITheme"
+            }
+          ],
+          "descriptionHtml": "Theme provided by higher order component.\n",
+          "deprecated": false
+        },
+        {
+          "name": "trapFocus",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Set to true if you want to render the content of the HoverCard in a FocusTrapZone for accessibility reasons. Optionally 'setInitialFocus' prop can be set to true to move focus inside the FocusTrapZone.\n",
+          "deprecated": false
+        },
+        {
+          "name": "type",
+          "typeTokens": [
+            {
+              "text": "HoverCardType",
+              "hyperlinkedPage": "HoverCard"
+            }
+          ],
+          "descriptionHtml": "Type of the hover card to render.\n\n",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IHoverCardStyleProps",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "className",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Optional className(s) for the host div of HoverCard.\n",
+          "deprecated": false
+        },
+        {
+          "name": "theme",
+          "typeTokens": [
+            {
+              "text": "ITheme"
+            }
+          ],
+          "descriptionHtml": "Theme provided by High-Order Component.\n",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IHoverCardStyles",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "host",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "Style for the host element in the default enabled, non-toggled state.\n",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IPlainCard",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": []
+    },
+    {
+      "kind": "interface",
+      "name": "IPlainCardProps",
+      "extendsTokens": [
+        {
+          "text": "IBaseCardProps"
+        },
+        {
+          "text": "<"
+        },
+        {
+          "text": "IPlainCard",
+          "hyperlinkedPage": "HoverCard"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "IPlainCardStyles",
+          "hyperlinkedPage": "HoverCard"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "IPlainCardStyleProps",
+          "hyperlinkedPage": "HoverCard"
+        },
+        {
+          "text": "> "
+        }
+      ],
+      "descriptionHtml": "PlainCard component props. \n",
+      "members": [
+        {
+          "name": "onRenderPlainCard",
+          "typeTokens": [
+            {
+              "text": "IRenderFunction"
+            },
+            {
+              "text": "<any>"
+            }
+          ],
+          "descriptionHtml": "Render function to populate compact content area\n",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IPlainCardStyleProps",
+      "extendsTokens": [
+        {
+          "text": "IBaseCardStyleProps"
+        },
+        {
+          "text": " "
+        }
+      ],
+      "descriptionHtml": "\n",
+      "members": []
+    },
+    {
+      "kind": "interface",
+      "name": "IPlainCardStyles",
+      "extendsTokens": [
+        {
+          "text": "IBaseCardStyles"
+        },
+        {
+          "text": " "
+        }
+      ],
+      "descriptionHtml": "\n",
+      "members": []
+    },
+    {
+      "kind": "enum",
+      "name": "OpenCardMode",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "hotKey",
+          "descriptionHtml": "Open card by hot key\n",
+          "value": "1"
+        },
+        {
+          "name": "hover",
+          "descriptionHtml": "Open card by hover\n",
+          "value": "0"
+        }
+      ]
+    }
+  ]
+}

@@ -422,7 +422,8 @@
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps"
+              "text": "IKeytipProps",
+              "hyperlinkedPage": "Keytip"
             }
           ],
           "descriptionHtml": "Optional keytip for this button\n",
@@ -438,7 +439,8 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuProps"
+              "text": "IContextualMenuProps",
+              "hyperlinkedPage": "ContextualMenu"
             },
             {
               "text": ">"
@@ -462,7 +464,8 @@
           "name": "menuProps",
           "typeTokens": [
             {
-              "text": "IContextualMenuProps"
+              "text": "IContextualMenuProps",
+              "hyperlinkedPage": "ContextualMenu"
             }
           ],
           "descriptionHtml": "Props for button menu. Providing this will default to showing the menu icon. See menuIconProps for overriding how the default icon looks. Providing this in addition of onClick and setting the split property to true will render a SplitButton.\n",
@@ -646,7 +649,8 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuProps"
+              "text": "IContextualMenuProps",
+              "hyperlinkedPage": "ContextualMenu"
             },
             {
               "text": ">"

@@ -11,6 +11,9 @@ import { IContextualMenuItem } from '../../../ContextualMenu';
 import { IBaseFloatingPickerProps } from '../../../FloatingPicker';
 import { EditingItem } from './Items/EditingItem';
 
+/**
+ * {@docCategory SelectedPeopleList}
+ */
 export interface IExtendedPersonaProps extends IPersonaProps {
   isValid: boolean;
   blockRecipientRemoval?: boolean;
@@ -19,12 +22,18 @@ export interface IExtendedPersonaProps extends IPersonaProps {
   isEditing?: boolean;
 }
 
+/**
+ * {@docCategory SelectedPeopleList}
+ */
 export interface ISelectedPeopleItemProps extends ISelectedItemProps<IExtendedPersonaProps> {
   onExpandItem?: () => void;
   renderPersonaCoin?: IRenderFunction<IPersonaProps>;
   renderPrimaryText?: IRenderFunction<IPersonaProps>;
 }
 
+/**
+ * {@docCategory SelectedPeopleList}
+ */
 export interface ISelectedPeopleProps extends IBaseSelectedItemsListProps<IExtendedPersonaProps> {
   onExpandGroup?: (item: IExtendedPersonaProps) => void;
   removeMenuItemText?: string;
@@ -35,6 +44,9 @@ export interface ISelectedPeopleProps extends IBaseSelectedItemsListProps<IExten
   floatingPickerProps?: IBaseFloatingPickerProps<IPersonaProps>;
 }
 
+/**
+ * {@docCategory SelectedPeopleList}
+ */
 export class BasePeopleSelectedItemsList extends BaseSelectedItemsList<IExtendedPersonaProps, ISelectedPeopleProps> {}
 
 /**

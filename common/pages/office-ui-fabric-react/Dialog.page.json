@@ -1,0 +1,1067 @@
+{
+  "tables": [
+    {
+      "kind": "enum",
+      "name": "DialogType",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "close",
+          "descriptionHtml": "Dialog with an 'x' close button in the upper-right corner\n",
+          "value": "2"
+        },
+        {
+          "name": "largeHeader",
+          "descriptionHtml": "Dialog with large header banner\n",
+          "value": "1"
+        },
+        {
+          "name": "normal",
+          "descriptionHtml": "Standard dialog\n",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IDialog",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": []
+    },
+    {
+      "kind": "interface",
+      "name": "IDialogContent",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": []
+    },
+    {
+      "kind": "interface",
+      "name": "IDialogContentProps",
+      "extendsTokens": [
+        {
+          "text": "React"
+        },
+        {
+          "text": "."
+        },
+        {
+          "text": "ClassAttributes"
+        },
+        {
+          "text": "<"
+        },
+        {
+          "text": "DialogContentBase"
+        },
+        {
+          "text": "> "
+        }
+      ],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "className",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Optional override class name\n",
+          "deprecated": false
+        },
+        {
+          "name": "closeButtonAriaLabel",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Label to be passed to to aria-label of close button\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "componentRef",
+          "typeTokens": [
+            {
+              "text": "IRefObject"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "IDialogContent",
+              "hyperlinkedPage": "Dialog"
+            },
+            {
+              "text": ">"
+            }
+          ],
+          "descriptionHtml": "Optional callback to access the IDialogContent interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
+          "deprecated": false
+        },
+        {
+          "name": "isMultiline",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Is inside a multiline wrapper\n",
+          "deprecated": false
+        },
+        {
+          "name": "onDismiss",
+          "typeTokens": [
+            {
+              "text": "("
+            },
+            {
+              "text": "ev"
+            },
+            {
+              "text": "?: "
+            },
+            {
+              "text": "React"
+            },
+            {
+              "text": "."
+            },
+            {
+              "text": "MouseEvent"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "HTMLButtonElement"
+            },
+            {
+              "text": ">) => any"
+            }
+          ],
+          "descriptionHtml": "A callback function for when the Dialog is dismissed from the close button or light dismiss, before the animation completes.\n",
+          "deprecated": false
+        },
+        {
+          "name": "responsiveMode",
+          "typeTokens": [
+            {
+              "text": "ResponsiveMode"
+            }
+          ],
+          "descriptionHtml": "Responsive mode passed in from decorator.\n",
+          "deprecated": false
+        },
+        {
+          "name": "showCloseButton",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Show an 'x' close button in the upper-right corner\n",
+          "deprecated": false
+        },
+        {
+          "name": "styles",
+          "typeTokens": [
+            {
+              "text": "IStyleFunctionOrObject"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "IDialogContentStyleProps",
+              "hyperlinkedPage": "Dialog"
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "IDialogContentStyles",
+              "hyperlinkedPage": "Dialog"
+            },
+            {
+              "text": ">"
+            }
+          ],
+          "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules\n",
+          "deprecated": false
+        },
+        {
+          "name": "subText",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "The subtext to display in the dialog\n",
+          "deprecated": false
+        },
+        {
+          "name": "subTextId",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "The Id for subText container\n",
+          "deprecated": false
+        },
+        {
+          "name": "theme",
+          "typeTokens": [
+            {
+              "text": "ITheme"
+            }
+          ],
+          "descriptionHtml": "Theme provided by HOC.\n",
+          "deprecated": false
+        },
+        {
+          "name": "title",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "The title text to display at the top of the dialog.\n",
+          "deprecated": false
+        },
+        {
+          "name": "titleId",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "The Id for title container\n",
+          "deprecated": false
+        },
+        {
+          "name": "topButtonsProps",
+          "typeTokens": [
+            {
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button"
+            },
+            {
+              "text": "[]"
+            }
+          ],
+          "descriptionHtml": "Other top buttons that will show up next to the close button\n",
+          "deprecated": false
+        },
+        {
+          "name": "type",
+          "typeTokens": [
+            {
+              "text": "DialogType",
+              "hyperlinkedPage": "Dialog"
+            }
+          ],
+          "descriptionHtml": "The type of Dialog to display.\n\n",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IDialogContentStyleProps",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "className",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Accept custom classNames\n",
+          "deprecated": false
+        },
+        {
+          "name": "hidden",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "",
+          "deprecated": false
+        },
+        {
+          "name": "isClose",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "",
+          "deprecated": false
+        },
+        {
+          "name": "isLargeHeader",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "",
+          "deprecated": false
+        },
+        {
+          "name": "isMultiline",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Is inside a multiline wrapper\n",
+          "deprecated": false
+        },
+        {
+          "name": "theme",
+          "typeTokens": [
+            {
+              "text": "ITheme"
+            }
+          ],
+          "descriptionHtml": "Accept theme prop.\n",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IDialogContentStyles",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "button",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "",
+          "deprecated": false
+        },
+        {
+          "name": "content",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "Style for the content element.\n",
+          "deprecated": false
+        },
+        {
+          "name": "header",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "",
+          "deprecated": false
+        },
+        {
+          "name": "inner",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "",
+          "deprecated": false
+        },
+        {
+          "name": "innerContent",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "",
+          "deprecated": false
+        },
+        {
+          "name": "subText",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "",
+          "deprecated": false
+        },
+        {
+          "name": "title",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "",
+          "deprecated": false
+        },
+        {
+          "name": "topButton",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IDialogFooter",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": []
+    },
+    {
+      "kind": "interface",
+      "name": "IDialogFooterProps",
+      "extendsTokens": [
+        {
+          "text": "React"
+        },
+        {
+          "text": "."
+        },
+        {
+          "text": "Props"
+        },
+        {
+          "text": "<"
+        },
+        {
+          "text": "DialogFooterBase"
+        },
+        {
+          "text": "> "
+        }
+      ],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "className",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Optional override class name\n",
+          "deprecated": false
+        },
+        {
+          "name": "componentRef",
+          "typeTokens": [
+            {
+              "text": "IRefObject"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "IDialogFooter",
+              "hyperlinkedPage": "Dialog"
+            },
+            {
+              "text": ">"
+            }
+          ],
+          "descriptionHtml": "Gets the component ref.\n",
+          "deprecated": false
+        },
+        {
+          "name": "styles",
+          "typeTokens": [
+            {
+              "text": "IStyleFunctionOrObject"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "IDialogFooterStyleProps",
+              "hyperlinkedPage": "Dialog"
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "IDialogFooterStyles",
+              "hyperlinkedPage": "Dialog"
+            },
+            {
+              "text": ">"
+            }
+          ],
+          "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules\n",
+          "deprecated": false
+        },
+        {
+          "name": "theme",
+          "typeTokens": [
+            {
+              "text": "ITheme"
+            }
+          ],
+          "descriptionHtml": "Theme provided by HOC.\n",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IDialogFooterStyleProps",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "className",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Optional override class name\n",
+          "deprecated": false
+        },
+        {
+          "name": "theme",
+          "typeTokens": [
+            {
+              "text": "ITheme"
+            }
+          ],
+          "descriptionHtml": "Accept theme prop.\n",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IDialogFooterStyles",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "action",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "",
+          "deprecated": false
+        },
+        {
+          "name": "actions",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "Style for the actions element.\n",
+          "deprecated": false
+        },
+        {
+          "name": "actionsRight",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IDialogProps",
+      "extendsTokens": [
+        {
+          "text": "React"
+        },
+        {
+          "text": "."
+        },
+        {
+          "text": "ClassAttributes"
+        },
+        {
+          "text": "<"
+        },
+        {
+          "text": "DialogBase"
+        },
+        {
+          "text": ">"
+        },
+        {
+          "text": "IWithResponsiveModeState"
+        },
+        {
+          "text": "IAccessiblePopupProps"
+        },
+        {
+          "text": " "
+        }
+      ],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "ariaDescribedById",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Optional id for aria-DescribedBy\n\n",
+          "deprecated": true
+        },
+        {
+          "name": "ariaLabelledById",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Optional id for aria-LabelledBy\n\n",
+          "deprecated": true
+        },
+        {
+          "name": "className",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Optional class name to be added to the root class\n\n",
+          "deprecated": true
+        },
+        {
+          "name": "componentRef",
+          "typeTokens": [
+            {
+              "text": "IRefObject"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "IDialog",
+              "hyperlinkedPage": "Dialog"
+            },
+            {
+              "text": ">"
+            }
+          ],
+          "descriptionHtml": "Optional callback to access the IDialog interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
+          "deprecated": false
+        },
+        {
+          "name": "containerClassName",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Optional override for container class\n\n",
+          "deprecated": true
+        },
+        {
+          "name": "contentClassName",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Optional override content class\n\n",
+          "deprecated": true
+        },
+        {
+          "name": "dialogContentProps",
+          "typeTokens": [
+            {
+              "text": "IDialogContentProps",
+              "hyperlinkedPage": "Dialog"
+            }
+          ],
+          "descriptionHtml": "Props to be passed through to Dialog Content\n",
+          "deprecated": false
+        },
+        {
+          "name": "hidden",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Whether the dialog is hidden.\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "isBlocking",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Whether the dialog can be light dismissed by clicking outside the dialog (on the overlay).\n\n",
+          "deprecated": true
+        },
+        {
+          "name": "isDarkOverlay",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Whether the overlay is dark themed.\n\n",
+          "deprecated": true
+        },
+        {
+          "name": "isOpen",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Whether the dialog is displayed. Deprecated, use `hidden` instead.\n\n",
+          "deprecated": true
+        },
+        {
+          "name": "maxWidth",
+          "typeTokens": [
+            {
+              "text": "ICSSRule"
+            },
+            {
+              "text": " | "
+            },
+            {
+              "text": "ICSSPixelUnitRule"
+            }
+          ],
+          "descriptionHtml": "Sets the maximum width for the dialog. It limits the width property to be larger than the value specified in max-width.\n",
+          "deprecated": false
+        },
+        {
+          "name": "minWidth",
+          "typeTokens": [
+            {
+              "text": "ICSSRule"
+            },
+            {
+              "text": " | "
+            },
+            {
+              "text": "ICSSPixelUnitRule"
+            }
+          ],
+          "descriptionHtml": "Sets the minimum width of the dialog. It limits the width property to be not smaller than the value specified in min-width.\n",
+          "deprecated": false
+        },
+        {
+          "name": "modalProps",
+          "typeTokens": [
+            {
+              "text": "IModalProps",
+              "hyperlinkedPage": "Modal"
+            }
+          ],
+          "descriptionHtml": "Props to be passed through to Modal\n",
+          "deprecated": false
+        },
+        {
+          "name": "onDismiss",
+          "typeTokens": [
+            {
+              "text": "("
+            },
+            {
+              "text": "ev"
+            },
+            {
+              "text": "?: "
+            },
+            {
+              "text": "React"
+            },
+            {
+              "text": "."
+            },
+            {
+              "text": "MouseEvent"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "HTMLButtonElement"
+            },
+            {
+              "text": ">) => any"
+            }
+          ],
+          "descriptionHtml": "A callback function for when the Dialog is dismissed from the close button or light dismiss. Can also be specified separately in content and modal.\n",
+          "deprecated": false
+        },
+        {
+          "name": "onDismissed",
+          "typeTokens": [
+            {
+              "text": "() => any"
+            }
+          ],
+          "descriptionHtml": "A callback function which is called after the Dialog is dismissed and the animation is complete.\n\n",
+          "deprecated": true
+        },
+        {
+          "name": "onLayerDidMount",
+          "typeTokens": [
+            {
+              "text": "() => void"
+            }
+          ],
+          "descriptionHtml": "A callback function for when the Dialog content is mounted on the overlay layer\n\n",
+          "deprecated": true
+        },
+        {
+          "name": "onLayerMounted",
+          "typeTokens": [
+            {
+              "text": "() => void"
+            }
+          ],
+          "descriptionHtml": "Deprecated at 0.81.2, use `onLayerDidMount` instead.\n\n",
+          "deprecated": true
+        },
+        {
+          "name": "styles",
+          "typeTokens": [
+            {
+              "text": "IStyleFunctionOrObject"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "IDialogStyleProps",
+              "hyperlinkedPage": "Dialog"
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "IDialogStyles",
+              "hyperlinkedPage": "Dialog"
+            },
+            {
+              "text": ">"
+            }
+          ],
+          "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules\n",
+          "deprecated": false
+        },
+        {
+          "name": "subText",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "The subtext to display in the dialog.\n\n",
+          "deprecated": true
+        },
+        {
+          "name": "theme",
+          "typeTokens": [
+            {
+              "text": "ITheme"
+            }
+          ],
+          "descriptionHtml": "Theme provided by HOC.\n",
+          "deprecated": false
+        },
+        {
+          "name": "title",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "The title text to display at the top of the dialog.\n\n",
+          "deprecated": true
+        },
+        {
+          "name": "topButtonsProps",
+          "typeTokens": [
+            {
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button"
+            },
+            {
+              "text": "[]"
+            }
+          ],
+          "descriptionHtml": "Other top buttons that will show up next to the close button\n\n",
+          "deprecated": true
+        },
+        {
+          "name": "type",
+          "typeTokens": [
+            {
+              "text": "DialogType",
+              "hyperlinkedPage": "Dialog"
+            }
+          ],
+          "descriptionHtml": "The type of Dialog to display.\n\n",
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IDialogStyleProps",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "className",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Accept custom classNames\n",
+          "deprecated": false
+        },
+        {
+          "name": "containerClassName",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Optional override for container class\n\n",
+          "deprecated": true
+        },
+        {
+          "name": "contentClassName",
+          "typeTokens": [
+            {
+              "text": "string"
+            }
+          ],
+          "descriptionHtml": "Optional override content class\n\n",
+          "deprecated": true
+        },
+        {
+          "name": "dialogDefaultMaxWidth",
+          "typeTokens": [
+            {
+              "text": "string | "
+            },
+            {
+              "text": "ICSSRule"
+            },
+            {
+              "text": " | "
+            },
+            {
+              "text": "ICSSPixelUnitRule"
+            }
+          ],
+          "descriptionHtml": "Default max-width for the dialog box.\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "dialogDefaultMinWidth",
+          "typeTokens": [
+            {
+              "text": "string | "
+            },
+            {
+              "text": "ICSSRule"
+            },
+            {
+              "text": " | "
+            },
+            {
+              "text": "ICSSPixelUnitRule"
+            }
+          ],
+          "descriptionHtml": "Default min-width for the dialog box.\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "hidden",
+          "typeTokens": [
+            {
+              "text": "boolean"
+            }
+          ],
+          "descriptionHtml": "Whether the dialog is hidden.\n\n",
+          "deprecated": false
+        },
+        {
+          "name": "theme",
+          "typeTokens": [
+            {
+              "text": "ITheme"
+            }
+          ],
+          "descriptionHtml": "Accept theme prop.\n",
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "kind": "interface",
+      "name": "IDialogStyles",
+      "extendsTokens": [],
+      "descriptionHtml": "\n",
+      "members": [
+        {
+          "name": "main",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "",
+          "deprecated": false
+        },
+        {
+          "name": "root",
+          "typeTokens": [
+            {
+              "text": "IStyle"
+            }
+          ],
+          "descriptionHtml": "Style for the root element.\n",
+          "deprecated": false
+        }
+      ]
+    }
+  ]
+}

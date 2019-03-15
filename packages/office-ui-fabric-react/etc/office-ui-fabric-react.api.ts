@@ -1868,12 +1868,12 @@ interface IButtonStyles {
     textContainer?: IStyle;
 }
 
-// @public
+// @public (undocumented)
 interface ICalendar {
     focus: () => void;
 }
 
-// @public
+// @public (undocumented)
 interface ICalendarFormatDateCallbacks {
     formatDay: (date: Date) => string;
     formatMonthDayYear: (date: Date, strings?: ICalendarStrings) => string;
@@ -1881,14 +1881,14 @@ interface ICalendarFormatDateCallbacks {
     formatYear: (date: Date) => string;
 }
 
-// @public
+// @public (undocumented)
 interface ICalendarIconStrings {
     closeIcon?: string;
     leftNavigation?: string;
     rightNavigation?: string;
 }
 
-// @public
+// @public (undocumented)
 interface ICalendarProps extends IBaseProps<ICalendar>, React_2.HTMLAttributes<HTMLElement> {
     allFocusable?: boolean;
     autoNavigateOnSelection?: boolean;
@@ -1932,7 +1932,7 @@ interface ICalendarState {
     selectedDate?: Date;
 }
 
-// @public
+// @public (undocumented)
 interface ICalendarStrings {
     closeButtonAriaLabel?: string;
     days: string[];
@@ -1947,11 +1947,11 @@ interface ICalendarStrings {
     weekNumberFormatString?: string;
 }
 
-// @public
+// @public (undocumented)
 interface ICallout {
 }
 
-// @public
+// @public (undocumented)
 interface ICalloutContentStyleProps {
     backgroundColor?: string;
     beakWidth?: number;
@@ -1964,7 +1964,7 @@ interface ICalloutContentStyleProps {
     theme: ITheme;
 }
 
-// @public
+// @public (undocumented)
 interface ICalloutContentStyles {
     beak: IStyle;
     beakCurtain: IStyle;
@@ -1973,7 +1973,7 @@ interface ICalloutContentStyles {
     root: IStyle;
 }
 
-// @public
+// @public (undocumented)
 interface ICalloutProps extends React_2.HTMLAttributes<HTMLDivElement> {
     alignTargetEdge?: boolean;
     ariaDescribedBy?: string;
@@ -2674,7 +2674,7 @@ interface ICommandBarData {
     primaryItems: ICommandBarItemProps[];
 }
 
-// @public (undocumented)
+// @public
 interface ICommandBarItemProps extends IContextualMenuItem {
     buttonStyles?: IButtonStyles;
     cacheKey?: string;
@@ -7213,7 +7213,7 @@ interface ITextFieldSubComponentStyles {
     label: IStyleFunctionOrObject<any, any>;
 }
 
-// @public (undocumented)
+// @public
 interface ITextProps extends ITextSlots, IStyleableComponentProps<ITextProps, ITextTokens, ITextStyles>, React_2.HTMLAttributes<HTMLElement> {
     as?: React_2.ReactType<React_2.HTMLAttributes<HTMLElement>>;
     block?: boolean;
@@ -9059,6 +9059,6 @@ export * from "@uifabric/utilities";
 
 // Warnings were encountered during analysis:
 // 
-// lib/components/DetailsList/DetailsList.types.d.ts:104:9 - (ae-forgotten-export) The symbol "IDragDropContext" needs to be exported by the entry point index.d.ts
+// lib/components/DetailsList/DetailsList.types.d.ts:110:9 - (ae-forgotten-export) The symbol "IDragDropContext" needs to be exported by the entry point index.d.ts
 
 // (No @packageDocumentation comment for this package)

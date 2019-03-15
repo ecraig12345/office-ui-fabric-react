@@ -4,5 +4,8 @@ import { DemoPage } from '../DemoPage';
 import { SwatchColorPickerPageProps } from 'office-ui-fabric-react/lib/components/SwatchColorPicker/SwatchColorPicker.doc';
 
 export const SwatchColorPickerPage = (props: { isHeaderVisible: boolean }) => (
-  <DemoPage {...{ ...SwatchColorPickerPageProps, ...props }} />
+  <DemoPage
+    jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/SwatchColorPicker.page.json')}
+    {...{ ...SwatchColorPickerPageProps, ...props }}
+  />
 );
