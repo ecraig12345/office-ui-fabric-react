@@ -2,7 +2,7 @@ import * as path from 'path';
 import { generateJson } from './PageJsonGenerator';
 
 // Generate JSON for office-ui-fabric-react
-// TODO: this could potentially pull from the index.ts file
+// TODO: this could potentially pull from the index.ts file or list of page files in fabric-website-resources/src/components/pages
 
 generateJson({
   apiJsonPath: 'C:\\Users\\naethell\\office-ui-fabric-react\\packages\\office-ui-fabric-react\\dist\\office-ui-fabric-react.api.json',
@@ -28,8 +28,10 @@ generateJson({
     'Divider',
     'DocumentCard',
     'Dropdown',
+    'ExtendedPeoplePicker',
     'ExtendedPicker',
     'Facepile',
+    'FloatingPeoplePicker',
     'FloatingPicker',
     'FocusTrapZone',
     'FocusZone',
@@ -49,6 +51,7 @@ generateJson({
     'OverflowSet',
     'Overlay',
     'Panel',
+    'PeoplePicker',
     'Persona',
     'Pickers',
     'Pivot',
@@ -57,6 +60,7 @@ generateJson({
     'ProgressIndicator',
     'Rating',
     'ResizeGroup',
+    'SelectedPeopleList',
     'ScrollablePane',
     'SearchBox',
     'SelectableOption',
