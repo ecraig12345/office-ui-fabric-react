@@ -5,10 +5,14 @@ import { IStyle, ITheme } from '../../Styling';
 import { IRefObject, IStyleFunctionOrObject, KeyCodes } from '../../Utilities';
 import { IPlainCardProps } from './PlainCard/PlainCard.types';
 
+/**
+ * {@docCategory HoverCard}
+ */
 export interface IHoverCard {}
 
 /**
  * HoverCard component props.
+ * {@docCategory HoverCard}
  */
 export interface IHoverCardProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
@@ -134,6 +138,9 @@ export interface IHoverCardProps extends React.HTMLAttributes<HTMLDivElement> {
   type?: HoverCardType;
 }
 
+/**
+ * {@docCategory HoverCard}
+ */
 export enum OpenCardMode {
   /**
    * Open card by hover
@@ -146,6 +153,9 @@ export enum OpenCardMode {
   hotKey = 1
 }
 
+/**
+ * {@docCategory HoverCard}
+ */
 export enum HoverCardType {
   /**
    * Plain card consisting of one part responsive to the size of content.
@@ -158,6 +168,9 @@ export enum HoverCardType {
   expanding = 'ExpandingCard'
 }
 
+/**
+ * {@docCategory HoverCard}
+ */
 export interface IHoverCardStyleProps {
   /**
    * Theme provided by High-Order Component.
@@ -170,6 +183,9 @@ export interface IHoverCardStyleProps {
   className?: string;
 }
 
+/**
+ * {@docCategory HoverCard}
+ */
 export interface IHoverCardStyles {
   /**
    * Style for the host element in the default enabled, non-toggled state.

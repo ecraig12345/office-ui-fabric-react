@@ -3,7 +3,7 @@ import { IRefObject, IBaseProps } from '../../Utilities';
 export { DayOfWeek, DateRangeType, FirstWeekOfYear };
 
 /**
- * @docCategory Calendar
+ * {@docCategory Calendar}
  */
 export interface ICalendar {
   /** Sets focus to the selected date. */
@@ -11,7 +11,7 @@ export interface ICalendar {
 }
 
 /**
- * @docCategory Calendar
+ * {@docCategory Calendar}
  */
 export interface ICalendarProps extends IBaseProps<ICalendar>, React.HTMLAttributes<HTMLElement> {
   /**
@@ -191,7 +191,7 @@ export interface ICalendarProps extends IBaseProps<ICalendar>, React.HTMLAttribu
 }
 
 /**
- * @docCategory Calendar
+ * {@docCategory Calendar}
  */
 export interface ICalendarStrings {
   /**
@@ -255,7 +255,7 @@ export interface ICalendarStrings {
 }
 
 /**
- * @docCategory Calendar
+ * {@docCategory Calendar}
  */
 export interface ICalendarIconStrings {
   /**
@@ -278,7 +278,7 @@ export interface ICalendarIconStrings {
 }
 
 /**
- * @docCategory Calendar
+ * {@docCategory Calendar}
  */
 export interface ICalendarFormatDateCallbacks {
   /**

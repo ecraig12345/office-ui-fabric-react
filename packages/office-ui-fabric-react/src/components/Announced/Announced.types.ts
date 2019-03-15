@@ -3,8 +3,14 @@ import { AnnouncedBase } from './Announced.base';
 import { IStyle } from '../../Styling';
 import { IStyleFunctionOrObject } from '../../Utilities';
 
+/**
+ * {@docCategory Announced}
+ */
 export interface IAnnounced {}
 
+/**
+ * {@docCategory Announced}
+ */
 export interface IAnnouncedProps extends React.Props<AnnouncedBase>, React.HTMLAttributes<HTMLDivElement> {
   /** Call to provide customized styling that will layer on top of the variant rules. */
   styles?: IStyleFunctionOrObject<{}, IAnnouncedStyles>;
@@ -21,6 +27,9 @@ export interface IAnnouncedProps extends React.Props<AnnouncedBase>, React.HTMLA
   message?: string;
 }
 
+/**
+ * {@docCategory Announced}
+ */
 export interface IAnnouncedStyles {
   /**
    * Style override for the screen reader text.

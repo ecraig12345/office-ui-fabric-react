@@ -52,11 +52,7 @@ const renderCell = (text: string) => {
   }
 
   if (codeBlocks.length === 0) {
-    return (
-      <Text variant="small">
-        <div dangerouslySetInnerHTML={{ __html: text }} />
-      </Text>
-    );
+    return <Text variant="small">{text}</Text>;
   }
 
   const eltChildren: JSX.Element[] = [];

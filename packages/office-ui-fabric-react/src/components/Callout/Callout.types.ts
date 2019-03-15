@@ -5,12 +5,12 @@ import { ICalloutPositionedInfo } from '../../utilities/positioning';
 import { ILayerProps } from '../../Layer';
 
 /**
- * @docCategory Callout
+ * {@docCategory Callout}
  */
 export interface ICallout {}
 
 /**
- * @docCategory Callout
+ * {@docCategory Callout}
  */
 export interface ICalloutProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
@@ -235,7 +235,7 @@ export interface ICalloutProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 /**
- * @docCategory Callout
+ * {@docCategory Callout}
  */
 export interface ICalloutContentStyleProps {
   /**
@@ -281,7 +281,7 @@ export interface ICalloutContentStyleProps {
 }
 
 /**
- * @docCategory Callout
+ * {@docCategory Callout}
  */
 export interface ICalloutContentStyles {
   /**

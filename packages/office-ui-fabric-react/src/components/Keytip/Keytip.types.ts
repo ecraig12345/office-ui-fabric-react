@@ -2,8 +2,14 @@ import { ICalloutProps } from '../../Callout';
 import { IStyle, ITheme } from '../../Styling';
 import { IRefObject, IStyleFunctionOrObject, IPoint } from '../../Utilities';
 
+/**
+ * {@docCategory Keytip}
+ */
 export interface IKeytip {}
 
+/**
+ * {@docCategory Keytip}
+ */
 export interface IKeytipProps {
   /**
    * Optional callback to access the Keytip component. Use this instead of ref for accessing
@@ -87,6 +93,7 @@ export interface IKeytipProps {
 
 /**
  * Props to style Keytip component
+ * {@docCategory Keytip}
  */
 export interface IKeytipStyleProps {
   /**
@@ -105,6 +112,9 @@ export interface IKeytipStyleProps {
   visible?: boolean;
 }
 
+/**
+ * {@docCategory Keytip}
+ */
 export interface IKeytipStyles {
   /**
    * Style for the div container surrounding the keytip content.

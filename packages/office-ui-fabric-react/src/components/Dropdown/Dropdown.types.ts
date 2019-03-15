@@ -10,10 +10,16 @@ import { IPanelStyleProps } from '../Panel/Panel.types';
 
 export { SelectableOptionMenuItemType as DropdownMenuItemType } from '../../utilities/selectableOption/SelectableOption.types';
 
+/**
+ * {@docCategory Dropdown}
+ */
 export interface IDropdown {
   focus: (shouldOpenOnFocus?: boolean) => void;
 }
 
+/**
+ * {@docCategory Dropdown}
+ */
 export interface IDropdownProps extends ISelectableDroppableTextProps<IDropdown, HTMLDivElement> {
   /**
    * Input placeholder text. Displayed until option is selected.
@@ -125,6 +131,9 @@ export interface IDropdownProps extends ISelectableDroppableTextProps<IDropdown,
   styles?: IStyleFunctionOrObject<IDropdownStyleProps, IDropdownStyles>;
 }
 
+/**
+ * {@docCategory Dropdown}
+ */
 export interface IDropdownOption extends ISelectableOption {
   /**
    * Deprecated at v.65.1, use `selected` instead.
@@ -135,6 +144,7 @@ export interface IDropdownOption extends ISelectableOption {
 
 /**
  * The props needed to construct styles. This represents the simplified set of immutable things which control the class names.
+ * {@docCategory Dropdown}
  */
 export type IDropdownStyleProps = Pick<IDropdownProps, 'theme' | 'className' | 'disabled' | 'required'> & {
   /**
@@ -172,6 +182,7 @@ export type IDropdownStyleProps = Pick<IDropdownProps, 'theme' | 'className' | '
 
 /**
  * Represents the stylable areas of the control.
+ * {@docCategory Dropdown}
  */
 export interface IDropdownStyles {
   /** Root element of the Dropdown (includes Label and the actual Dropdown). */
@@ -238,6 +249,9 @@ export interface IDropdownStyles {
   subComponentStyles: IDropdownSubComponentStyles;
 }
 
+/**
+ * {@docCategory Dropdown}
+ */
 export interface IDropdownSubComponentStyles {
   /** Refers to the panel that hosts the Dropdown options in small viewports. */
   panel: IStyleFunctionOrObject<IPanelStyleProps, any>;

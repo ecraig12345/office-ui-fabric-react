@@ -1,6 +1,9 @@
 import { IStyle, ITheme } from '../../Styling';
 import { IStyleFunctionOrObject } from '../../Utilities';
 
+/**
+ * {@docCategory GroupedList}
+ */
 export interface IGroupSpacerProps {
   /**
    * Theme from Higher Order Component
@@ -19,10 +22,16 @@ export interface IGroupSpacerProps {
   indentWidth?: number;
 }
 
+/**
+ * {@docCategory GroupedList}
+ */
 export type IGroupSpacerStyleProps = Required<Pick<IGroupSpacerProps, 'theme'>> & {
   width?: number;
 };
 
+/**
+ * {@docCategory GroupedList}
+ */
 export interface IGroupSpacerStyles {
   root: IStyle;
 }
