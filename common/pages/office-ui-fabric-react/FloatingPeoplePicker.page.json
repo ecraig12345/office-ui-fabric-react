@@ -1,3 +1,60 @@
 {
-  "tables": []
+  "tables": [
+    {
+      "kind": "class",
+      "name": "BaseFloatingPeoplePicker",
+      "extendsTokens": [
+        {
+          "text": "export declare class "
+        },
+        {
+          "text": "BaseFloatingPeoplePicker"
+        },
+        {
+          "text": " extends "
+        },
+        {
+          "text": "BaseFloatingPicker"
+        },
+        {
+          "text": "<"
+        },
+        {
+          "text": "IPersonaProps"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "IPeopleFloatingPickerProps"
+        },
+        {
+          "text": "> "
+        }
+      ],
+      "descriptionHtml": "\n",
+      "members": []
+    },
+    {
+      "kind": "interface",
+      "name": "IPeopleFloatingPickerProps",
+      "extendsTokens": [
+        {
+          "text": "IBaseFloatingPickerProps"
+        },
+        {
+          "text": "<"
+        },
+        {
+          "text": "IPersonaProps",
+          "hyperlinkedPage": "Persona"
+        },
+        {
+          "text": "> "
+        }
+      ],
+      "descriptionHtml": "\n",
+      "members": []
+    }
+  ]
 }

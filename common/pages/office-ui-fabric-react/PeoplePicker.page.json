@@ -1,3 +1,95 @@
 {
-  "tables": []
+  "tables": [
+    {
+      "kind": "class",
+      "name": "BasePeoplePicker",
+      "extendsTokens": [
+        {
+          "text": "export declare class "
+        },
+        {
+          "text": "BasePeoplePicker"
+        },
+        {
+          "text": " extends "
+        },
+        {
+          "text": "BasePicker"
+        },
+        {
+          "text": "<"
+        },
+        {
+          "text": "IPersonaProps"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "IPeoplePickerProps"
+        },
+        {
+          "text": "> "
+        }
+      ],
+      "descriptionHtml": "\n",
+      "members": []
+    },
+    {
+      "kind": "interface",
+      "name": "IPeoplePickerProps",
+      "extendsTokens": [
+        {
+          "text": "IBasePickerProps"
+        },
+        {
+          "text": "<"
+        },
+        {
+          "text": "IPersonaProps",
+          "hyperlinkedPage": "Persona"
+        },
+        {
+          "text": "> "
+        }
+      ],
+      "descriptionHtml": "PeoplePicker props interface which renders Personas as items. \n",
+      "members": []
+    },
+    {
+      "kind": "class",
+      "name": "MemberListPeoplePicker",
+      "extendsTokens": [
+        {
+          "text": "export declare class "
+        },
+        {
+          "text": "MemberListPeoplePicker"
+        },
+        {
+          "text": " extends "
+        },
+        {
+          "text": "BasePickerListBelow"
+        },
+        {
+          "text": "<"
+        },
+        {
+          "text": "IPersonaProps"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "IPeoplePickerProps"
+        },
+        {
+          "text": "> "
+        }
+      ],
+      "descriptionHtml": "\n",
+      "members": []
+    }
+  ]
 }

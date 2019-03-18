@@ -20,6 +20,7 @@ import {
 } from '@microsoft/api-extractor';
 import { FileSystem, JsonFile } from '@microsoft/node-core-library';
 import { IPageJson, ITableJson, ITableRowJson, IEnumTableRowJson } from './IPageJson';
+import { generateTsxFile } from './TsxFileGenerator';
 
 /**
  * Options that define the information necessary to find the api.json file
@@ -29,6 +30,22 @@ export interface IPageJsonOptions {
   apiJsonPath: string;
   pageJsonFolderPath: string;
   pageNames: string[];
+}
+
+/**
+ * The name of the page and what kind of page it is
+ */
+export interface IPage {
+  pageName?: string;
+  kind?: PageKind;
+}
+
+/**
+ * Used to keep track of where the page will live on the site
+ */
+export enum PageKind {
+  Reference = 0,
+  Component = 1
 }
 
 /**
@@ -48,7 +65,7 @@ class CollectedData {
    * Map of page name to PageData
    */
   public pageDataByPageName: Map<string, PageData> = new Map<string, PageData>();
-  public apiToPageName: Map<string, string> = new Map<string, string>();
+  public apiToPage: Map<string, IPage> = new Map<string, IPage>();
 }
 
 /**
@@ -57,7 +74,7 @@ class CollectedData {
  * @param options - The options for the page, including the path of the api.json file,
  * where to create the api page jsons, and the name of the pages to create.
  */
-export function generateJson(options: IPageJsonOptions): void {
+export function generateJson(options: IPageJsonOptions, kind: PageKind, createTsxFiles?: boolean): void {
   // Create the folder if it doesn't already exist
   FileSystem.ensureFolder(options.pageJsonFolderPath);
 
@@ -80,9 +97,19 @@ export function generateJson(options: IPageJsonOptions): void {
     collectedData.pageDataByPageName.set(pageName, new PageData(pageName));
   }
 
-  collectPageData(collectedData, apiEntryPoint);
+  collectPageData(collectedData, apiEntryPoint, kind);
 
   createPageJsonFiles(collectedData, options);
+
+  generateTsxFiles(collectedData, createTsxFiles);
+}
+
+function generateTsxFiles(collectedData: CollectedData, createTsxFiles?: boolean): void {
+  if (createTsxFiles) {
+    collectedData.pageDataByPageName.forEach((value: PageData, pageName: string) => {
+      generateTsxFile(pageName);
+    });
+  }
 }
 
 /**
@@ -90,7 +117,7 @@ export function generateJson(options: IPageJsonOptions): void {
  * @param options Page json options
  */
 function createPageJsonFiles(collectedData: CollectedData, options: IPageJsonOptions): void {
-  for (const pageName of options.pageNames) {
+  collectedData.pageDataByPageName.forEach((value: PageData, pageName: string) => {
     const pageJsonPath: string = path.join(options.pageJsonFolderPath, pageName + '.page.json');
     console.log('Writing ' + pageJsonPath);
 
@@ -115,7 +142,7 @@ function createPageJsonFiles(collectedData: CollectedData, options: IPageJsonOpt
     }
 
     JsonFile.save(pageJson, pageJsonPath);
-  }
+  });
 }
 
 /**
@@ -144,9 +171,9 @@ function createInterfacePageJson(collectedData: CollectedData, interfaceItem: Ap
       const token: ExcerptToken = extendsType.excerpt.tokens[i];
       if (token.kind === ExcerptTokenKind.Reference) {
         // search for reference in collectedData
-        const pageName = collectedData.apiToPageName.get(token.text);
+        const pageName = collectedData.apiToPage.get(token.text);
         if (pageName !== undefined) {
-          tableJson.extendsTokens.push({ text: token.text, hyperlinkedPage: pageName });
+          tableJson.extendsTokens.push({ text: token.text, hyperlinkedPage: pageName.pageName });
         } else {
           tableJson.extendsTokens.push({ text: token.text });
         }
@@ -174,9 +201,9 @@ function createInterfacePageJson(collectedData: CollectedData, interfaceItem: Ap
           const token: ExcerptToken = apiPropertySignature.excerptTokens[i];
           if (token.kind === ExcerptTokenKind.Reference) {
             // search for reference in collectedData
-            const pageName = collectedData.apiToPageName.get(token.text);
-            if (pageName !== undefined) {
-              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: pageName });
+            const apiPage = collectedData.apiToPage.get(token.text);
+            if (apiPage !== undefined) {
+              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName });
             } else {
               tableRowJson.typeTokens.push({ text: token.text });
             }
@@ -207,9 +234,9 @@ function createInterfacePageJson(collectedData: CollectedData, interfaceItem: Ap
           const token: ExcerptToken = apiMethodSignature.excerptTokens[i];
           if (token.kind === ExcerptTokenKind.Reference) {
             // search for reference in collectedData
-            const pageName = collectedData.apiToPageName.get(token.text);
-            if (pageName !== undefined) {
-              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: pageName });
+            const apiPage = collectedData.apiToPage.get(token.text);
+            if (apiPage !== undefined) {
+              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName });
             } else {
               tableRowJson.typeTokens.push({ text: token.text });
             }
@@ -339,9 +366,9 @@ function createClassPageJson(collectedData: CollectedData, classItem: ApiClass):
           const token: ExcerptToken = apiProperty.excerptTokens[i];
           if (token.kind === ExcerptTokenKind.Reference) {
             // search for reference in collectedData
-            const pageName = collectedData.apiToPageName.get(token.text);
-            if (pageName !== undefined) {
-              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: pageName });
+            const apiPage = collectedData.apiToPage.get(token.text);
+            if (apiPage !== undefined) {
+              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName });
             } else {
               tableRowJson.typeTokens.push({ text: token.text });
             }
@@ -372,9 +399,9 @@ function createClassPageJson(collectedData: CollectedData, classItem: ApiClass):
           const token: ExcerptToken = apiMethod.excerptTokens[i];
           if (token.kind === ExcerptTokenKind.Reference) {
             // search for reference in collectedData
-            const pageName = collectedData.apiToPageName.get(token.text);
-            if (pageName !== undefined) {
-              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: pageName });
+            const apiPage = collectedData.apiToPage.get(token.text);
+            if (apiPage !== undefined) {
+              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName });
             } else {
               tableRowJson.typeTokens.push({ text: token.text });
             }
@@ -450,7 +477,7 @@ function findInlineTagByName(tagName: string, docComment: DocComment): DocInline
  * @param collectedData Map of strings to PageData
  * @param apiItem The apiItem to inspect
  */
-function collectPageData(collectedData: CollectedData, apiItem: ApiItem): void {
+function collectPageData(collectedData: CollectedData, apiItem: ApiItem, kind: PageKind): void {
   if (apiItem instanceof ApiDocumentedItem) {
     switch (apiItem.kind) {
       case ApiItemKind.Interface:
@@ -465,16 +492,17 @@ function collectPageData(collectedData: CollectedData, apiItem: ApiItem): void {
             console.log('FOUND TAG: ' + JSON.stringify(docCategoryTag.tagContent));
 
             const pageName: string = docCategoryTag.tagContent.trim();
-            const pageData: PageData | undefined = collectedData.pageDataByPageName.get(pageName);
+            let pageData: PageData | undefined = collectedData.pageDataByPageName.get(pageName);
 
             if (pageData === undefined) {
               console.log('Warning: Unrecognized page name: ' + pageName);
-              return;
+              collectedData.pageDataByPageName.set(pageName, new PageData(pageName));
+              pageData = collectedData.pageDataByPageName.get(pageName);
             }
 
-            collectedData.apiToPageName.set(apiItem.displayName, pageName);
+            collectedData.apiToPage.set(apiItem.displayName, { pageName, kind });
 
-            pageData.apiItems.push(apiItem);
+            pageData!.apiItems.push(apiItem);
           }
         }
         break;
@@ -483,6 +511,6 @@ function collectPageData(collectedData: CollectedData, apiItem: ApiItem): void {
   }
 
   for (const memberApiItem of apiItem.members) {
-    collectPageData(collectedData, memberApiItem);
+    collectPageData(collectedData, memberApiItem, kind);
   }
 }

@@ -10,11 +10,12 @@ import { IRawStyle } from '@uifabric/merge-styles';
  * Predefined scheme identifiers.
  * Schemes are is still in an experimental phase.
  * This interface's naming and values are not finalized and are subject to change.
+ * {@docCategory IScheme}
  */
 export type ISchemeNames = 'default' | 'neutral' | 'soft' | 'strong';
 
 /**
- * {@docCategory ITheme}
+ * {@docCategory IScheme}
  */
 export interface IScheme {
   palette: IPalette;

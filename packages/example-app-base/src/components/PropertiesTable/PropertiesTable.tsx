@@ -166,6 +166,7 @@ function _parseILinkTokens(extend: boolean, linkTokens?: ILinkToken[]): JSX.Elem
           {'Extends '}
           {linkTokens.map((token: ILinkToken, index: number) => {
             if (token.hyperlinkedPage) {
+              // TODO: change this for local builds
               const href = '#/components/' + token.hyperlinkedPage.toLowerCase() + '#' + token.text;
               return (
                 <Link href={href} key={token.text + index}>

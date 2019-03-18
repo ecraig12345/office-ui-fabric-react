@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { readdir } from 'fs';
 
 // Props
 import { INavPage } from '../Nav/Nav.types';
@@ -927,7 +928,7 @@ export const AppState: IAppState = {
               isFilterable: true,
               component: () => <LoadingComponent title="IScheme" />,
               getComponent: cb =>
-                require.ensure([], require => cb(require<any>('../../pages/Styling/ISchemeComponentPage').ISchemeComponentPage))
+                require.ensure([], require => cb(require<any>('../../pages/References/ISchemeComponentPage').ISchemeComponentPage))
             },
             {
               title: 'ITheme',
@@ -935,7 +936,7 @@ export const AppState: IAppState = {
               isFilterable: true,
               component: () => <LoadingComponent title="ITheme" />,
               getComponent: cb =>
-                require.ensure([], require => cb(require<any>('../../pages/Styling/IThemeComponentPage').IThemeComponentPage))
+                require.ensure([], require => cb(require<any>('../../pages/References/IThemeComponentPage').IThemeComponentPage))
             }
           ]
         }

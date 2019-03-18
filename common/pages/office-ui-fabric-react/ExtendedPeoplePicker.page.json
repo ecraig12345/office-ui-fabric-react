@@ -1,3 +1,105 @@
 {
-  "tables": []
+  "tables": [
+    {
+      "kind": "class",
+      "name": "BaseExtendedPeoplePicker",
+      "extendsTokens": [
+        {
+          "text": "export declare class "
+        },
+        {
+          "text": "BaseExtendedPeoplePicker"
+        },
+        {
+          "text": " extends "
+        },
+        {
+          "text": "BaseExtendedPicker"
+        },
+        {
+          "text": "<"
+        },
+        {
+          "text": "IPersonaProps"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "IExtendedPeoplePickerProps"
+        },
+        {
+          "text": "> "
+        }
+      ],
+      "descriptionHtml": "\n",
+      "members": []
+    },
+    {
+      "kind": "class",
+      "name": "ExtendedPeoplePicker",
+      "extendsTokens": [
+        {
+          "text": "export declare class "
+        },
+        {
+          "text": "ExtendedPeoplePicker"
+        },
+        {
+          "text": " extends "
+        },
+        {
+          "text": "BaseExtendedPeoplePicker"
+        },
+        {
+          "text": " "
+        }
+      ],
+      "descriptionHtml": "\n",
+      "members": []
+    },
+    {
+      "kind": "interface",
+      "name": "IExtendedPeoplePickerProps",
+      "extendsTokens": [
+        {
+          "text": "IBaseExtendedPickerProps"
+        },
+        {
+          "text": "<"
+        },
+        {
+          "text": "IPersonaProps",
+          "hyperlinkedPage": "Persona"
+        },
+        {
+          "text": "> "
+        }
+      ],
+      "descriptionHtml": "\n",
+      "members": []
+    },
+    {
+      "kind": "interface",
+      "name": "IPeoplePickerItemProps",
+      "extendsTokens": [
+        {
+          "text": "IPickerItemProps",
+          "hyperlinkedPage": "Pickers"
+        },
+        {
+          "text": "<"
+        },
+        {
+          "text": "IExtendedPersonaProps",
+          "hyperlinkedPage": "SelectedPeopleList"
+        },
+        {
+          "text": "> "
+        }
+      ],
+      "descriptionHtml": "\n",
+      "members": []
+    }
+  ]
 }
