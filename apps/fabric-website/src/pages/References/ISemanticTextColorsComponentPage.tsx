@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ISemanticTextColorsPage } from '@uifabric/fabric-website-resources/lib/components/pages/ISemanticTextColorsPage';
+import { ISemanticTextColorsPage } from '@uifabric/fabric-website-resources/lib/components/pages/References/ISemanticTextColorsPage';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { ComponentPage } from '../../components/ComponentPage/ComponentPage';
 const pageStyles: any = require('../PageStyles.module.scss');

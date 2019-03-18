@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { readdir } from 'fs';
 
 // Props
 import { INavPage } from '../Nav/Nav.types';
@@ -921,6 +920,7 @@ export const AppState: IAppState = {
           url: '#/components/references',
           className: 'componentsPage',
           isCategory: true,
+          // pull these pages from pages/References/
           pages: [
             {
               title: 'IScheme',

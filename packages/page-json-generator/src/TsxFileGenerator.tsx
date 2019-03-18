@@ -16,7 +16,7 @@ export function generateTsxFile(pageName: string): void {
 
   // write ComponentPage.tsx for fabric-website
   const componentPageContent = `import * as React from 'react';
-  import { ${pageName}Page } from '@uifabric/fabric-website-resources/lib/components/pages/${pageName}Page';
+  import { ${pageName}Page } from '@uifabric/fabric-website-resources/lib/components/pages/References/${pageName}Page';
   import { PageHeader } from '../../components/PageHeader/PageHeader';
   import { ComponentPage } from '../../components/ComponentPage/ComponentPage';
   const pageStyles: any = require('../PageStyles.module.scss');
