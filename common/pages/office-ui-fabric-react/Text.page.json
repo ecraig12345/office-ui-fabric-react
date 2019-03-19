@@ -9,6 +9,9 @@
           "hyperlinkedPage": "Text"
         },
         {
+          "text": ", "
+        },
+        {
           "text": "IStyleableComponentProps"
         },
         {
@@ -33,6 +36,9 @@
         },
         {
           "text": ">"
+        },
+        {
+          "text": ", "
         },
         {
           "text": "React"

@@ -5,15 +5,6 @@
       "name": "BaseFloatingPeoplePicker",
       "extendsTokens": [
         {
-          "text": "export declare class "
-        },
-        {
-          "text": "BaseFloatingPeoplePicker"
-        },
-        {
-          "text": " extends "
-        },
-        {
           "text": "BaseFloatingPicker"
         },
         {

@@ -5,15 +5,6 @@
       "name": "BasePeopleSelectedItemsList",
       "extendsTokens": [
         {
-          "text": "export declare class "
-        },
-        {
-          "text": "BasePeopleSelectedItemsList"
-        },
-        {
-          "text": " extends "
-        },
-        {
           "text": "BaseSelectedItemsList"
         },
         {

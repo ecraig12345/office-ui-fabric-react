@@ -5,15 +5,6 @@
       "name": "BasePeoplePicker",
       "extendsTokens": [
         {
-          "text": "export declare class "
-        },
-        {
-          "text": "BasePeoplePicker"
-        },
-        {
-          "text": " extends "
-        },
-        {
           "text": "BasePicker"
         },
         {
@@ -60,15 +51,6 @@
       "kind": "class",
       "name": "MemberListPeoplePicker",
       "extendsTokens": [
-        {
-          "text": "export declare class "
-        },
-        {
-          "text": "MemberListPeoplePicker"
-        },
-        {
-          "text": " extends "
-        },
         {
           "text": "BasePickerListBelow"
         },

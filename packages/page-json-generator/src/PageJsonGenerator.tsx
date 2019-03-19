@@ -165,7 +165,12 @@ function createInterfacePageJson(collectedData: CollectedData, interfaceItem: Ap
     tableJson.descriptionHtml += renderDocNodeWithoutInlineTag(interfaceItem.tsdocComment.summarySection);
   }
 
+  let numOfExtendsType = 0;
   for (const extendsType of interfaceItem.extendsTypes) {
+    // if there are multiple extends types, we should separate them with a comma
+    if (numOfExtendsType > 0) {
+      tableJson.extendsTokens.push({ text: ', ' });
+    }
     // This API could be improved
     for (let i: number = extendsType.excerpt.tokenRange.startIndex; i < extendsType.excerpt.tokenRange.endIndex; ++i) {
       const token: ExcerptToken = extendsType.excerpt.tokens[i];
@@ -181,6 +186,7 @@ function createInterfacePageJson(collectedData: CollectedData, interfaceItem: Ap
         tableJson.extendsTokens.push({ text: token.text });
       }
     }
+    numOfExtendsType++;
   }
   for (const member of interfaceItem.members) {
     switch (member.kind) {
@@ -342,9 +348,11 @@ function createClassPageJson(collectedData: CollectedData, classItem: ApiClass):
     tableJson.descriptionHtml += renderDocNodeWithoutInlineTag(classItem.tsdocComment.summarySection);
   }
 
-  for (let i: number = classItem.excerpt.tokenRange.startIndex; i < classItem.excerpt.tokenRange.endIndex; ++i) {
-    const token: ExcerptToken = classItem.excerpt.tokens[i];
-    tableJson.extendsTokens.push({ text: token.text });
+  if (classItem.extendsType) {
+    for (let i: number = classItem.extendsType.excerpt.tokenRange.startIndex; i < classItem.extendsType.excerpt.tokenRange.endIndex; ++i) {
+      const token: ExcerptToken = classItem.extendsType.excerpt.tokens[i];
+      tableJson.extendsTokens.push({ text: token.text });
+    }
   }
 
   for (const member of classItem.members) {

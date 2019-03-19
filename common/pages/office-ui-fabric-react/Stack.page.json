@@ -9,6 +9,9 @@
           "hyperlinkedPage": "Stack"
         },
         {
+          "text": ", "
+        },
+        {
           "text": "IStyleableComponentProps"
         },
         {
@@ -133,6 +136,9 @@
           "hyperlinkedPage": "Stack"
         },
         {
+          "text": ", "
+        },
+        {
           "text": "IStyleableComponentProps"
         },
         {
@@ -157,6 +163,9 @@
         },
         {
           "text": ">"
+        },
+        {
+          "text": ", "
         },
         {
           "text": "React"

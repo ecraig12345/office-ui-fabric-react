@@ -616,7 +616,13 @@
           "text": ">"
         },
         {
+          "text": ", "
+        },
+        {
           "text": "IWithResponsiveModeState"
+        },
+        {
+          "text": ", "
         },
         {
           "text": "IAccessiblePopupProps"

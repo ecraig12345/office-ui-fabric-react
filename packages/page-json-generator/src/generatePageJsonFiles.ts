@@ -100,5 +100,6 @@ generateJson(
     pageJsonFolderPath: path.join(__dirname, '../../../common/pages/utilities'),
     pageNames: []
   },
-  PageKind.Reference
+  PageKind.Reference,
+  true
 );

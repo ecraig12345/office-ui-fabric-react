@@ -830,6 +830,9 @@
           "hyperlinkedPage": "GroupedList"
         },
         {
+          "text": ", "
+        },
+        {
           "text": "IDetailsItemProps",
           "hyperlinkedPage": "DetailsList"
         },
@@ -917,6 +920,9 @@
         },
         {
           "text": ">"
+        },
+        {
+          "text": ", "
         },
         {
           "text": "IDetailsItemProps",
@@ -1583,6 +1589,9 @@
         },
         {
           "text": ">"
+        },
+        {
+          "text": ", "
         },
         {
           "text": "IWithViewportProps"
@@ -2681,6 +2690,9 @@
           "text": ", 'onRenderItemColumn'>"
         },
         {
+          "text": ", "
+        },
+        {
           "text": "IBaseProps"
         },
         {
@@ -2692,6 +2704,9 @@
         },
         {
           "text": ">"
+        },
+        {
+          "text": ", "
         },
         {
           "text": "IDetailsItemProps",
