@@ -165,9 +165,9 @@ function _parseILinkTokens(extend: boolean, linkTokens?: ILinkToken[]): JSX.Elem
         <Text variant={'small'} className="PropertiesTable-extends">
           {'Extends '}
           {linkTokens.map((token: ILinkToken, index: number) => {
-            if (token.hyperlinkedPage) {
+            if (token.pageKind && token.hyperlinkedPage) {
               // TODO: change this for local builds
-              const href = '#/components/' + token.hyperlinkedPage.toLowerCase() + '#' + token.text;
+              const href = '#/' + token.pageKind.toLowerCase() + '/' + token.hyperlinkedPage.toLowerCase() + '#' + token.text;
               return (
                 <Link href={href} key={token.text + index}>
                   {token.text}
@@ -185,8 +185,9 @@ function _parseILinkTokens(extend: boolean, linkTokens?: ILinkToken[]): JSX.Elem
       return (
         <Text variant={'small'} className="PropertiesTable-extends">
           {linkTokens.map((token: ILinkToken, index: number) => {
-            if (token.hyperlinkedPage) {
-              const href = '#/components/' + token.hyperlinkedPage.toLowerCase() + '#' + token.text;
+            if (token.pageKind && token.hyperlinkedPage) {
+              // TODO: change this for local builds
+              const href = '#/' + token.pageKind.toLowerCase() + '/' + token.hyperlinkedPage.toLowerCase() + '#' + token.text;
               return (
                 <Link href={href} key={token.text + index}>
                   {token.text}

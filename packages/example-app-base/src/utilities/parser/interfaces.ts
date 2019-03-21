@@ -8,9 +8,18 @@ export interface IProperty {
   property: IInterfaceProperty[] | IEnumProperty[];
 }
 
+/**
+ * Used to keep track of where the page will live on the site
+ */
+export enum PageKind {
+  References = 'References',
+  Components = 'Components'
+}
+
 export interface ILinkToken {
   text: string;
   hyperlinkedPage?: string;
+  pageKind?: PageKind;
 }
 
 export interface IInterfaceProperty {

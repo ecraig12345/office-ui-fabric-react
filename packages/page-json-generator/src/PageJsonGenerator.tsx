@@ -30,22 +30,24 @@ export interface IPageJsonOptions {
   apiJsonPath: string;
   pageJsonFolderPath: string;
   pageNames: string[];
+  kind: PageKind;
+  createTsxFiles?: boolean;
 }
 
 /**
  * The name of the page and what kind of page it is
  */
 export interface IPage {
-  pageName?: string;
-  kind?: PageKind;
+  pageName: string;
+  kind: PageKind;
 }
 
 /**
  * Used to keep track of where the page will live on the site
  */
 export enum PageKind {
-  Reference = 0,
-  Component = 1
+  References = 'References',
+  Components = 'Components'
 }
 
 /**
@@ -74,34 +76,42 @@ class CollectedData {
  * @param options - The options for the page, including the path of the api.json file,
  * where to create the api page jsons, and the name of the pages to create.
  */
-export function generateJson(options: IPageJsonOptions, kind: PageKind, createTsxFiles?: boolean): void {
-  // Create the folder if it doesn't already exist
-  FileSystem.ensureFolder(options.pageJsonFolderPath);
-
-  console.log('Deleting contents of ' + options.pageJsonFolderPath);
-  FileSystem.ensureEmptyFolder(options.pageJsonFolderPath);
-
-  console.log('Loading ' + options.apiJsonPath);
-
-  const apiModel: ApiModel = new ApiModel();
-  // NOTE: later you can load other packages into the model and process them together
-  const apiPackage: ApiPackage = apiModel.loadPackage(options.apiJsonPath);
-
-  console.log('Successfully loaded ' + options.apiJsonPath);
-
-  const apiEntryPoint: ApiEntryPoint = apiPackage.entryPoints[0]; // assume there is only one entry point
-
+export function generateJson(options: IPageJsonOptions[], kind: PageKind, createTsxFiles?: boolean): void {
   const collectedData: CollectedData = new CollectedData();
-  // Store the data for each page in a map
-  for (const pageName of options.pageNames) {
-    collectedData.pageDataByPageName.set(pageName, new PageData(pageName));
+
+  // collect page data
+  for (const option of options) {
+    // Create the folder if it doesn't already exist
+    FileSystem.ensureFolder(option.pageJsonFolderPath);
+
+    console.log('Deleting contents of ' + option.pageJsonFolderPath);
+    FileSystem.ensureEmptyFolder(option.pageJsonFolderPath);
+
+    console.log('Loading ' + option.apiJsonPath);
+
+    const apiModel: ApiModel = new ApiModel();
+    // NOTE: later you can load other packages into the model and process them together
+    const apiPackage: ApiPackage = apiModel.loadPackage(option.apiJsonPath);
+
+    console.log('Successfully loaded ' + option.apiJsonPath);
+
+    const apiEntryPoint: ApiEntryPoint = apiPackage.entryPoints[0]; // assume there is only one entry point
+
+    // const collectedData: CollectedData = new CollectedData();
+    // Store the data for each page in a map
+    for (const pageName of option.pageNames) {
+      collectedData.pageDataByPageName.set(pageName, new PageData(pageName));
+    }
+
+    collectPageData(collectedData, apiEntryPoint, option.kind);
   }
 
-  collectPageData(collectedData, apiEntryPoint, kind);
+  // create files
+  for (const option of options) {
+    createPageJsonFiles(collectedData, option);
 
-  createPageJsonFiles(collectedData, options);
-
-  generateTsxFiles(collectedData, createTsxFiles);
+    generateTsxFiles(collectedData, option.createTsxFiles);
+  }
 }
 
 function generateTsxFiles(collectedData: CollectedData, createTsxFiles?: boolean): void {
@@ -176,9 +186,9 @@ function createInterfacePageJson(collectedData: CollectedData, interfaceItem: Ap
       const token: ExcerptToken = extendsType.excerpt.tokens[i];
       if (token.kind === ExcerptTokenKind.Reference) {
         // search for reference in collectedData
-        const pageName = collectedData.apiToPage.get(token.text);
-        if (pageName !== undefined) {
-          tableJson.extendsTokens.push({ text: token.text, hyperlinkedPage: pageName.pageName });
+        const apiPage = collectedData.apiToPage.get(token.text);
+        if (apiPage) {
+          tableJson.extendsTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName, pageKind: apiPage.kind });
         } else {
           tableJson.extendsTokens.push({ text: token.text });
         }
@@ -209,7 +219,7 @@ function createInterfacePageJson(collectedData: CollectedData, interfaceItem: Ap
             // search for reference in collectedData
             const apiPage = collectedData.apiToPage.get(token.text);
             if (apiPage !== undefined) {
-              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName });
+              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName, pageKind: apiPage.kind });
             } else {
               tableRowJson.typeTokens.push({ text: token.text });
             }
@@ -242,7 +252,7 @@ function createInterfacePageJson(collectedData: CollectedData, interfaceItem: Ap
             // search for reference in collectedData
             const apiPage = collectedData.apiToPage.get(token.text);
             if (apiPage !== undefined) {
-              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName });
+              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName, pageKind: apiPage.kind });
             } else {
               tableRowJson.typeTokens.push({ text: token.text });
             }
@@ -376,7 +386,7 @@ function createClassPageJson(collectedData: CollectedData, classItem: ApiClass):
             // search for reference in collectedData
             const apiPage = collectedData.apiToPage.get(token.text);
             if (apiPage !== undefined) {
-              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName });
+              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName, pageKind: apiPage.kind });
             } else {
               tableRowJson.typeTokens.push({ text: token.text });
             }
@@ -409,7 +419,7 @@ function createClassPageJson(collectedData: CollectedData, classItem: ApiClass):
             // search for reference in collectedData
             const apiPage = collectedData.apiToPage.get(token.text);
             if (apiPage !== undefined) {
-              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName });
+              tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName, pageKind: apiPage.kind });
             } else {
               tableRowJson.typeTokens.push({ text: token.text });
             }

@@ -1,6 +1,8 @@
+import { PageKind } from './PageJsonGenerator';
 export interface ITokenJson {
   text: string;
   hyperlinkedPage?: string;
+  pageKind?: PageKind;
 }
 
 export interface ITableRowJson {
