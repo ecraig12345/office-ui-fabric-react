@@ -8,13 +8,15 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
     "strictNullChecks": true,
     "moduleResolution": "node",
     "preserveConstEnums": true,
     "outDir": "lib",
     "lib": ["es2017", "dom"],
-    "types": ["webpack-env", "jest"]
+    "types": ["webpack-env", "jest", "markdown-to-jsx"],
+    "typeRoots": ["./typings", "node_modules/@types"]
   },
   "include": ["src"]
 }
