@@ -431,9 +431,7 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme",
-              "hyperlinkedPage": "ITheme",
-              "pageKind": "References"
+              "text": "ITheme"
             }
           ],
           "descriptionHtml": "The theme object to use for styling.\n",
@@ -521,9 +519,7 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme",
-              "hyperlinkedPage": "ITheme",
-              "pageKind": "References"
+              "text": "ITheme"
             }
           ],
           "descriptionHtml": "Theme to apply to the cell.\n",
@@ -906,9 +902,7 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme",
-              "hyperlinkedPage": "ITheme",
-              "pageKind": "References"
+              "text": "ITheme"
             }
           ],
           "descriptionHtml": "Theme to apply to the component.\n",
@@ -946,9 +940,7 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme",
-              "hyperlinkedPage": "ITheme",
-              "pageKind": "References"
+              "text": "ITheme"
             }
           ],
           "descriptionHtml": "Theme to apply to the container\n",

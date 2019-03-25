@@ -1350,9 +1350,7 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme",
-              "hyperlinkedPage": "ITheme",
-              "pageKind": "References"
+              "text": "ITheme"
             }
           ],
           "descriptionHtml": "Theme from the Higher Order Component\n",
@@ -2632,9 +2630,7 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme",
-              "hyperlinkedPage": "ITheme",
-              "pageKind": "References"
+              "text": "ITheme"
             }
           ],
           "descriptionHtml": "Theme provided by the Higher Order Component\n",
@@ -3150,9 +3146,7 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme",
-              "hyperlinkedPage": "ITheme",
-              "pageKind": "References"
+              "text": "ITheme"
             }
           ],
           "descriptionHtml": "Theme provided by styled() function\n",
@@ -3316,9 +3310,7 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme",
-              "hyperlinkedPage": "ITheme",
-              "pageKind": "References"
+              "text": "ITheme"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",

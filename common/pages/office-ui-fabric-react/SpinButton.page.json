@@ -201,9 +201,7 @@
               "text": ": "
             },
             {
-              "text": "ITheme",
-              "hyperlinkedPage": "ITheme",
-              "pageKind": "References"
+              "text": "ITheme"
             },
             {
               "text": ", "
@@ -510,9 +508,7 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme",
-              "hyperlinkedPage": "ITheme",
-              "pageKind": "References"
+              "text": "ITheme"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",

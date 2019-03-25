@@ -220,9 +220,7 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme",
-              "hyperlinkedPage": "ITheme",
-              "pageKind": "References"
+              "text": "ITheme"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -337,9 +335,7 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme",
-              "hyperlinkedPage": "ITheme",
-              "pageKind": "References"
+              "text": "ITheme"
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",
@@ -531,9 +527,7 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme",
-              "hyperlinkedPage": "ITheme",
-              "pageKind": "References"
+              "text": "ITheme"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -561,9 +555,7 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme",
-              "hyperlinkedPage": "ITheme",
-              "pageKind": "References"
+              "text": "ITheme"
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",
@@ -923,9 +915,7 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme",
-              "hyperlinkedPage": "ITheme",
-              "pageKind": "References"
+              "text": "ITheme"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -1058,9 +1048,7 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme",
-              "hyperlinkedPage": "ITheme",
-              "pageKind": "References"
+              "text": "ITheme"
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",

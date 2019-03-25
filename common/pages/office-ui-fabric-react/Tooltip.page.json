@@ -187,9 +187,7 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme",
-              "hyperlinkedPage": "ITheme",
-              "pageKind": "References"
+              "text": "ITheme"
             }
           ],
           "descriptionHtml": "Theme to apply to the component.\n",
@@ -239,9 +237,7 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme",
-              "hyperlinkedPage": "ITheme",
-              "pageKind": "References"
+              "text": "ITheme"
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",

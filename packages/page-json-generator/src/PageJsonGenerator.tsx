@@ -76,42 +76,38 @@ class CollectedData {
  * @param options - The options for the page, including the path of the api.json file,
  * where to create the api page jsons, and the name of the pages to create.
  */
-export function generateJson(options: IPageJsonOptions[]): void {
+export function generateJson(option: IPageJsonOptions): void {
   const collectedData: CollectedData = new CollectedData();
 
   // collect page data
-  for (const option of options) {
-    // Create the folder if it doesn't already exist
-    FileSystem.ensureFolder(option.pageJsonFolderPath);
+  // Create the folder if it doesn't already exist
+  FileSystem.ensureFolder(option.pageJsonFolderPath);
 
-    console.log('Deleting contents of ' + option.pageJsonFolderPath);
-    FileSystem.ensureEmptyFolder(option.pageJsonFolderPath);
+  console.log('Deleting contents of ' + option.pageJsonFolderPath);
+  FileSystem.ensureEmptyFolder(option.pageJsonFolderPath);
 
-    console.log('Loading ' + option.apiJsonPath);
+  console.log('Loading ' + option.apiJsonPath);
 
-    const apiModel: ApiModel = new ApiModel();
-    // NOTE: later you can load other packages into the model and process them together
-    const apiPackage: ApiPackage = apiModel.loadPackage(option.apiJsonPath);
+  const apiModel: ApiModel = new ApiModel();
+  // NOTE: later you can load other packages into the model and process them together
+  const apiPackage: ApiPackage = apiModel.loadPackage(option.apiJsonPath);
 
-    console.log('Successfully loaded ' + option.apiJsonPath);
+  console.log('Successfully loaded ' + option.apiJsonPath);
 
-    const apiEntryPoint: ApiEntryPoint = apiPackage.entryPoints[0]; // assume there is only one entry point
+  const apiEntryPoint: ApiEntryPoint = apiPackage.entryPoints[0]; // assume there is only one entry point
 
-    // const collectedData: CollectedData = new CollectedData();
-    // Store the data for each page in a map
-    for (const pageName of option.pageNames) {
-      collectedData.pageDataByPageName.set(pageName, new PageData(pageName));
-    }
-
-    collectPageData(collectedData, apiEntryPoint, option.kind);
+  // const collectedData: CollectedData = new CollectedData();
+  // Store the data for each page in a map
+  for (const pageName of option.pageNames) {
+    collectedData.pageDataByPageName.set(pageName, new PageData(pageName));
   }
+
+  collectPageData(collectedData, apiEntryPoint, option.kind);
 
   // create files
-  for (const option of options) {
-    createPageJsonFiles(collectedData, option);
+  createPageJsonFiles(collectedData, option);
 
-    generateTsxFiles(collectedData, option.createTsxFiles);
-  }
+  generateTsxFiles(collectedData, option.createTsxFiles);
 }
 
 function generateTsxFiles(collectedData: CollectedData, createTsxFiles?: boolean): void {

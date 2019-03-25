@@ -128,9 +128,7 @@
               "text": "keyof "
             },
             {
-              "text": "IFontStyles",
-              "hyperlinkedPage": "IFontStyles",
-              "pageKind": "References"
+              "text": "IFontStyles"
             }
           ],
           "descriptionHtml": "Optional font type for Text.\n",
