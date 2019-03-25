@@ -30,4 +30,24 @@
   .FeedbackList-timeStamp {
     font-size: 10pt;
   }
+
+  .FeedbackList-itemCell {
+    @include focus-border();
+
+    min-height: 54px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid $bodyDividerColor;
+    display: flex;
+    &:hover {
+      background: #EEE;
+    }
+  }
+
+  .FeedbackList-itemName {
+    @include ms-font-xl;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
