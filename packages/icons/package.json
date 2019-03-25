@@ -22,7 +22,8 @@
   "disabledTasks": [
     "sass",
     "jest",
-    "verify-api-extractor"
+    "verify-api-extractor",
+    "generate-reference-pages"
   ],
   "devDependencies": {
     "@uifabric/prettier-rules": ">=1.0.1 <2.0.0",

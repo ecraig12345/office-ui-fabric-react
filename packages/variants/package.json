@@ -23,7 +23,8 @@
   "disabledTasks": [
     "copy",
     "sass",
-    "verify-api-extractor"
+    "verify-api-extractor",
+    "generate-reference-pages"
   ],
   "devDependencies": {
     "@types/jest": "23.0.0",

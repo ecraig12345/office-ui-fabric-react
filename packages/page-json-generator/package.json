@@ -18,7 +18,9 @@
     "webpack",
     "build-codepen-examples",
     "verify-api-extractor",
-    "update-api-extractor"
+    "update-api-extractor",
+    "generate-reference-pages",
+    "jest"
   ],
   "devDependencies": {
     "@types/node": "^8.10.29",

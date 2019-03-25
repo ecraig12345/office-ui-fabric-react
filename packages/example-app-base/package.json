@@ -21,7 +21,8 @@
     "start": "node ../../scripts/just.js dev"
   },
   "disabledTasks": [
-    "verify-api-extractor"
+    "verify-api-extractor",
+    "generate-reference-pages"
   ],
   "devDependencies": {
     "@types/es6-promise": "0.0.32",

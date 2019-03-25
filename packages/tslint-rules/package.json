@@ -9,7 +9,8 @@
     "code-style": "node -v"
   },
   "disabledTasks": [
-    "verify-api-extractor"
+    "verify-api-extractor",
+    "generate-reference-pages"
   ],
   "dependencies": {
     "tslint-react": "^3.2.0"

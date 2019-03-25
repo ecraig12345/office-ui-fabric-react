@@ -20,7 +20,8 @@
   "disabledTasks": [
     "webpack",
     "build-codepen-examples",
-    "verify-api-extractor"
+    "verify-api-extractor",
+    "generate-reference-pages"
   ],
   "devDependencies": {
     "@types/babylon": "^6.16.5",

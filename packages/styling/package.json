@@ -21,6 +21,7 @@
     "update-snapshots": "node ../../scripts/just.js jest -u"
   },
   "disabledTasks": [
+    "generate-reference-pages"
   ],
   "devDependencies": {
     "@types/jest": "23.0.0",

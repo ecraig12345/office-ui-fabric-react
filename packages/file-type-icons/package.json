@@ -22,7 +22,8 @@
   "disabledTasks": [
     "sass",
     "jest",
-    "verify-api-extractor"
+    "verify-api-extractor",
+    "generate-reference-pages"
   ],
   "devDependencies": {
     "@types/react": "16.3.16",

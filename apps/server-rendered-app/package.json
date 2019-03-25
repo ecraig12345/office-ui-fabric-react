@@ -15,7 +15,8 @@
   "disabledTasks": [
     "tslint",
     "verify-api-extractor",
-    "jest"
+    "jest",
+    "generate-reference-pages"
   ],
   "devDependencies": {
     "@types/es6-promise": "0.0.32",

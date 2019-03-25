@@ -22,6 +22,7 @@
     "update-api": "node ../../scripts/update-api.js"
   },
   "disabledTasks": [
+    "generate-reference-pages"
   ],
   "devDependencies": {
     "@types/enzyme": "3.1.13",

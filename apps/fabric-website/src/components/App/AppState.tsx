@@ -4,6 +4,7 @@ import * as React from 'react';
 import { INavPage } from '../Nav/Nav.types';
 import { ComponentPage } from '../ComponentPage/ComponentPage';
 import { PageHeader } from '../PageHeader/PageHeader';
+import { referencePages } from './referencePage';
 
 export interface IAppState {
   appTitle: string;
@@ -28,6 +29,8 @@ const StylesLoadingComponent = (props: any): JSX.Element => {
     </div>
   );
 };
+
+// const referencePages: any = require('../../../src/components/App/referencePage.js') || [];
 
 export const AppState: IAppState = {
   appTitle: 'Office UI Fabric',
@@ -937,7 +940,8 @@ export const AppState: IAppState = {
               component: () => <LoadingComponent title="ITheme" />,
               getComponent: cb =>
                 require.ensure([], require => cb(require<any>('../../pages/References/IThemeComponentPage').IThemeComponentPage))
-            }
+            },
+            ...referencePages
           ]
         }
       ]

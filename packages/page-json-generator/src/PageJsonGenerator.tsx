@@ -76,7 +76,7 @@ class CollectedData {
  * @param options - The options for the page, including the path of the api.json file,
  * where to create the api page jsons, and the name of the pages to create.
  */
-export function generateJson(options: IPageJsonOptions[], kind: PageKind, createTsxFiles?: boolean): void {
+export function generateJson(options: IPageJsonOptions[]): void {
   const collectedData: CollectedData = new CollectedData();
 
   // collect page data

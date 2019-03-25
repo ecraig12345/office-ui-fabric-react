@@ -24,7 +24,8 @@
   },
   "disabledTasks": [
     "copy",
-    "webpack"
+    "webpack",
+    "generate-reference-pages"
   ],
   "devDependencies": {
     "@types/enzyme": "3.1.13",
