@@ -133,9 +133,7 @@
           "name": "checkmarkIconProps",
           "typeTokens": [
             {
-              "text": "IIconProps",
-              "hyperlinkedPage": "Icon",
-              "pageKind": "Components"
+              "text": "IIconProps"
             }
           ],
           "descriptionHtml": "Custom icon props for the check mark rendered by the checkbox\n",
@@ -161,9 +159,7 @@
               "text": "<"
             },
             {
-              "text": "ICheckbox",
-              "hyperlinkedPage": "Checkbox",
-              "pageKind": "Components"
+              "text": "ICheckbox"
             },
             {
               "text": ">"
@@ -227,9 +223,7 @@
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps",
-              "hyperlinkedPage": "Keytip",
-              "pageKind": "Components"
+              "text": "IKeytipProps"
             }
           ],
           "descriptionHtml": "Optional keytip for this checkbox\n",
@@ -295,15 +289,15 @@
           "name": "onRenderLabel",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "ICheckboxProps",
-              "hyperlinkedPage": "Checkbox",
-              "pageKind": "Components"
+              "text": "ICheckboxProps"
             },
             {
               "text": ">"
@@ -322,17 +316,13 @@
               "text": "<"
             },
             {
-              "text": "ICheckboxStyleProps",
-              "hyperlinkedPage": "Checkbox",
-              "pageKind": "Components"
+              "text": "ICheckboxStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "ICheckboxStyles",
-              "hyperlinkedPage": "Checkbox",
-              "pageKind": "Components"
+              "text": "ICheckboxStyles"
             },
             {
               "text": ">"
@@ -345,7 +335,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -413,7 +405,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "",

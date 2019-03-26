@@ -5,9 +5,7 @@
       "name": "ITextProps",
       "extendsTokens": [
         {
-          "text": "ITextSlots",
-          "hyperlinkedPage": "Text",
-          "pageKind": "Components"
+          "text": "ITextSlots"
         },
         {
           "text": ", "
@@ -19,17 +17,13 @@
           "text": "<"
         },
         {
-          "text": "ITextProps",
-          "hyperlinkedPage": "Text",
-          "pageKind": "Components"
+          "text": "ITextProps"
         },
         {
           "text": ", "
         },
         {
-          "text": "ITextTokens",
-          "hyperlinkedPage": "Text",
-          "pageKind": "Components"
+          "text": "ITextTokens"
         },
         {
           "text": ", "
@@ -128,7 +122,9 @@
               "text": "keyof "
             },
             {
-              "text": "IFontStyles"
+              "text": "IFontStyles",
+              "hyperlinkedPage": "IFontStyles",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Optional font type for Text.\n",

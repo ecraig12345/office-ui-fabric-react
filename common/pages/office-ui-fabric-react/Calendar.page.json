@@ -71,9 +71,7 @@
               "text": "?: "
             },
             {
-              "text": "ICalendarStrings",
-              "hyperlinkedPage": "Calendar",
-              "pageKind": "Components"
+              "text": "ICalendarStrings"
             },
             {
               "text": ") => string"
@@ -107,9 +105,7 @@
               "text": "?: "
             },
             {
-              "text": "ICalendarStrings",
-              "hyperlinkedPage": "Calendar",
-              "pageKind": "Components"
+              "text": "ICalendarStrings"
             },
             {
               "text": ") => string"
@@ -185,15 +181,15 @@
       "name": "ICalendarProps",
       "extendsTokens": [
         {
-          "text": "IBaseProps"
+          "text": "IBaseProps",
+          "hyperlinkedPage": "IBaseProps",
+          "pageKind": "References"
         },
         {
           "text": "<"
         },
         {
-          "text": "ICalendar",
-          "hyperlinkedPage": "Calendar",
-          "pageKind": "Components"
+          "text": "ICalendar"
         },
         {
           "text": ">"
@@ -262,9 +258,7 @@
               "text": "<"
             },
             {
-              "text": "ICalendar",
-              "hyperlinkedPage": "Calendar",
-              "pageKind": "Components"
+              "text": "ICalendar"
             },
             {
               "text": ">"
@@ -289,9 +283,7 @@
           "name": "dateTimeFormatter",
           "typeTokens": [
             {
-              "text": "ICalendarFormatDateCallbacks",
-              "hyperlinkedPage": "Calendar",
-              "pageKind": "Components"
+              "text": "ICalendarFormatDateCallbacks"
             }
           ],
           "descriptionHtml": "Apply additional formating to dates, for example localized date formatting.\n",
@@ -385,9 +377,7 @@
           "name": "navigationIcons",
           "typeTokens": [
             {
-              "text": "ICalendarIconStrings",
-              "hyperlinkedPage": "Calendar",
-              "pageKind": "Components"
+              "text": "ICalendarIconStrings"
             }
           ],
           "descriptionHtml": "Customize navigation icons using ICalendarIconStrings\n",
@@ -524,9 +514,7 @@
           "name": "strings",
           "typeTokens": [
             {
-              "text": "ICalendarStrings",
-              "hyperlinkedPage": "Calendar",
-              "pageKind": "Components"
+              "text": "ICalendarStrings"
             },
             {
               "text": " | null"

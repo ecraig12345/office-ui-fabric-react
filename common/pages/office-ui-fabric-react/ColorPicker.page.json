@@ -23,15 +23,15 @@
       "name": "IColorPickerProps",
       "extendsTokens": [
         {
-          "text": "IBaseProps"
+          "text": "IBaseProps",
+          "hyperlinkedPage": "IBaseProps",
+          "pageKind": "References"
         },
         {
           "text": "<"
         },
         {
-          "text": "IColorPicker",
-          "hyperlinkedPage": "ColorPicker",
-          "pageKind": "Components"
+          "text": "IColorPicker"
         },
         {
           "text": "> "
@@ -102,9 +102,7 @@
               "text": "<"
             },
             {
-              "text": "IColorPicker",
-              "hyperlinkedPage": "ColorPicker",
-              "pageKind": "Components"
+              "text": "IColorPicker"
             },
             {
               "text": ">"
@@ -227,17 +225,13 @@
               "text": "<"
             },
             {
-              "text": "IColorPickerStyleProps",
-              "hyperlinkedPage": "ColorPicker",
-              "pageKind": "Components"
+              "text": "IColorPickerStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IColorPickerStyles",
-              "hyperlinkedPage": "ColorPicker",
-              "pageKind": "Components"
+              "text": "IColorPickerStyles"
             },
             {
               "text": ">"
@@ -250,7 +244,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme (provided through customization).\n",
@@ -278,7 +274,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme (provided through customization).\n",

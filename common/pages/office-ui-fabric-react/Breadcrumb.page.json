@@ -100,9 +100,7 @@
               "text": "?: "
             },
             {
-              "text": "IBreadcrumbItem",
-              "hyperlinkedPage": "Breadcrumb",
-              "pageKind": "Components"
+              "text": "IBreadcrumbItem"
             },
             {
               "text": ") => void"
@@ -178,9 +176,7 @@
               "text": "<"
             },
             {
-              "text": "IBreadcrumb",
-              "hyperlinkedPage": "Breadcrumb",
-              "pageKind": "Components"
+              "text": "IBreadcrumb"
             },
             {
               "text": ">"
@@ -199,9 +195,7 @@
               "text": "<"
             },
             {
-              "text": "IDividerAsProps",
-              "hyperlinkedPage": "Breadcrumb",
-              "pageKind": "Components"
+              "text": "IDividerAsProps"
             },
             {
               "text": ">"
@@ -214,9 +208,7 @@
           "name": "items",
           "typeTokens": [
             {
-              "text": "IBreadcrumbItem",
-              "hyperlinkedPage": "Breadcrumb",
-              "pageKind": "Components"
+              "text": "IBreadcrumbItem"
             },
             {
               "text": "[]"
@@ -267,15 +259,15 @@
           "name": "onRenderItem",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IBreadcrumbItem",
-              "hyperlinkedPage": "Breadcrumb",
-              "pageKind": "Components"
+              "text": "IBreadcrumbItem"
             },
             {
               "text": ">"
@@ -314,17 +306,13 @@
               "text": "<"
             },
             {
-              "text": "IBreadcrumbStyleProps",
-              "hyperlinkedPage": "Breadcrumb",
-              "pageKind": "Components"
+              "text": "IBreadcrumbStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IBreadcrumbStyles",
-              "hyperlinkedPage": "Breadcrumb",
-              "pageKind": "Components"
+              "text": "IBreadcrumbStyles"
             },
             {
               "text": ">"
@@ -337,7 +325,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "",
@@ -365,7 +355,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "",
@@ -466,9 +458,7 @@
       "name": "IDividerAsProps",
       "extendsTokens": [
         {
-          "text": "IIconProps",
-          "hyperlinkedPage": "Icon",
-          "pageKind": "Components"
+          "text": "IIconProps"
         },
         {
           "text": " "
@@ -480,9 +470,7 @@
           "name": "item",
           "typeTokens": [
             {
-              "text": "IBreadcrumbItem",
-              "hyperlinkedPage": "Breadcrumb",
-              "pageKind": "Components"
+              "text": "IBreadcrumbItem"
             }
           ],
           "descriptionHtml": "Optional breadcrumb item corresponds to left of the divider to be passed for custom rendering. For overflowed items, it will be last item in the list\n",

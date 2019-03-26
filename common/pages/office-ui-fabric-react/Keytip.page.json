@@ -17,9 +17,7 @@
           "name": "calloutProps",
           "typeTokens": [
             {
-              "text": "ICalloutProps",
-              "hyperlinkedPage": "Callout",
-              "pageKind": "Components"
+              "text": "ICalloutProps"
             }
           ],
           "descriptionHtml": "ICalloutProps to pass to the callout element\n",
@@ -35,9 +33,7 @@
               "text": "<"
             },
             {
-              "text": "IKeytip",
-              "hyperlinkedPage": "Keytip",
-              "pageKind": "Components"
+              "text": "IKeytip"
             },
             {
               "text": ">"
@@ -194,17 +190,13 @@
               "text": "<"
             },
             {
-              "text": "IKeytipStyleProps",
-              "hyperlinkedPage": "Keytip",
-              "pageKind": "Components"
+              "text": "IKeytipStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IKeytipStyles",
-              "hyperlinkedPage": "Keytip",
-              "pageKind": "Components"
+              "text": "IKeytipStyles"
             },
             {
               "text": ">"
@@ -217,7 +209,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme for the component\n",
@@ -255,7 +249,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "The theme for the keytip.\n",

@@ -82,9 +82,7 @@
           "name": "initialsColor",
           "typeTokens": [
             {
-              "text": "PersonaInitialsColor",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "PersonaInitialsColor"
             }
           ],
           "descriptionHtml": "The background color when the user's initials are displayed.\n\n",
@@ -94,9 +92,7 @@
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps",
-              "hyperlinkedPage": "Keytip",
-              "pageKind": "Components"
+              "text": "IKeytipProps"
             }
           ],
           "descriptionHtml": "Optional keytip for this button that is only added when 'onClick' is defined for the persona\n",
@@ -139,9 +135,7 @@
               "text": "?: "
             },
             {
-              "text": "IFacepilePersona",
-              "hyperlinkedPage": "Facepile",
-              "pageKind": "Components"
+              "text": "IFacepilePersona"
             },
             {
               "text": ") => void"
@@ -187,9 +181,7 @@
               "text": "?: "
             },
             {
-              "text": "IFacepilePersona",
-              "hyperlinkedPage": "Facepile",
-              "pageKind": "Components"
+              "text": "IFacepilePersona"
             },
             {
               "text": ") => void"
@@ -235,9 +227,7 @@
               "text": "?: "
             },
             {
-              "text": "IFacepilePersona",
-              "hyperlinkedPage": "Facepile",
-              "pageKind": "Components"
+              "text": "IFacepilePersona"
             },
             {
               "text": ") => void"
@@ -287,9 +277,7 @@
           "name": "addButtonProps",
           "typeTokens": [
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             }
           ],
           "descriptionHtml": "Button properties for the add face button\n",
@@ -309,9 +297,7 @@
           "name": "chevronButtonProps",
           "typeTokens": [
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             }
           ],
           "descriptionHtml": "Deprecated at v0.70, use `overflowButtonProps` instead.\n\n",
@@ -337,9 +323,7 @@
               "text": "<"
             },
             {
-              "text": "IFacepile",
-              "hyperlinkedPage": "Facepile",
-              "pageKind": "Components"
+              "text": "IFacepile"
             },
             {
               "text": ">"
@@ -361,17 +345,13 @@
               "text": ": "
             },
             {
-              "text": "IFacepilePersona",
-              "hyperlinkedPage": "Facepile",
-              "pageKind": "Components"
+              "text": "IFacepilePersona"
             },
             {
               "text": ") => "
             },
             {
-              "text": "IPersonaSharedProps",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaSharedProps"
             }
           ],
           "descriptionHtml": "Method to access properties on the underlying Persona control\n",
@@ -391,9 +371,7 @@
           "name": "overflowButtonProps",
           "typeTokens": [
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             }
           ],
           "descriptionHtml": "Properties for the overflow icon\n",
@@ -403,9 +381,7 @@
           "name": "overflowButtonType",
           "typeTokens": [
             {
-              "text": "OverflowButtonType",
-              "hyperlinkedPage": "Facepile",
-              "pageKind": "Components"
+              "text": "OverflowButtonType"
             }
           ],
           "descriptionHtml": "Type of overflow icon to use\n",
@@ -415,9 +391,7 @@
           "name": "overflowPersonas",
           "typeTokens": [
             {
-              "text": "IFacepilePersona",
-              "hyperlinkedPage": "Facepile",
-              "pageKind": "Components"
+              "text": "IFacepilePersona"
             },
             {
               "text": "[]"
@@ -430,9 +404,7 @@
           "name": "personas",
           "typeTokens": [
             {
-              "text": "IFacepilePersona",
-              "hyperlinkedPage": "Facepile",
-              "pageKind": "Components"
+              "text": "IFacepilePersona"
             },
             {
               "text": "[]"
@@ -445,9 +417,7 @@
           "name": "personaSize",
           "typeTokens": [
             {
-              "text": "PersonaSize",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "PersonaSize"
             }
           ],
           "descriptionHtml": "Size to display the personas\n",
@@ -473,17 +443,13 @@
               "text": "<"
             },
             {
-              "text": "IFacepileStyleProps",
-              "hyperlinkedPage": "Facepile",
-              "pageKind": "Components"
+              "text": "IFacepileStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IFacepileStyles",
-              "hyperlinkedPage": "Facepile",
-              "pageKind": "Components"
+              "text": "IFacepileStyles"
             },
             {
               "text": ">"
@@ -496,7 +462,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
@@ -534,7 +502,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",

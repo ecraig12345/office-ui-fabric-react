@@ -91,9 +91,7 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuRenderItem",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuRenderItem"
             },
             {
               "text": ">"
@@ -145,7 +143,9 @@
               "text": ": "
             },
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             },
             {
               "text": ", "
@@ -230,7 +230,9 @@
               "text": ": "
             },
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             },
             {
               "text": ") => "
@@ -256,9 +258,7 @@
           "name": "iconProps",
           "typeTokens": [
             {
-              "text": "IIconProps",
-              "hyperlinkedPage": "Icon",
-              "pageKind": "Components"
+              "text": "IIconProps"
             }
           ],
           "descriptionHtml": "Props that go to the IconComponent\n",
@@ -284,9 +284,7 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuItemProps",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuItemProps"
             },
             {
               "text": ">"
@@ -299,9 +297,7 @@
           "name": "itemType",
           "typeTokens": [
             {
-              "text": "ContextualMenuItemType",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "ContextualMenuItemType"
             }
           ],
           "descriptionHtml": "",
@@ -321,9 +317,7 @@
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps",
-              "hyperlinkedPage": "Keytip",
-              "pageKind": "Components"
+              "text": "IKeytipProps"
             }
           ],
           "descriptionHtml": "Keytip for this contextual menu item\n",
@@ -394,9 +388,7 @@
               "text": "?: "
             },
             {
-              "text": "IContextualMenuItem",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuItem"
             },
             {
               "text": ") => boolean | void"
@@ -418,9 +410,7 @@
               "text": ": "
             },
             {
-              "text": "IContextualMenuItem",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuItem"
             },
             {
               "text": ", "
@@ -482,15 +472,15 @@
           "name": "onRenderIcon",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IContextualMenuItemProps",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuItemProps"
             },
             {
               "text": ">"
@@ -543,9 +533,7 @@
           "name": "sectionProps",
           "typeTokens": [
             {
-              "text": "IContextualMenuSection",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuSection"
             }
           ],
           "descriptionHtml": "Properties to apply to render this item as a section. This prop is mutually exclusive with subMenuProps.\n",
@@ -591,9 +579,7 @@
           "name": "submenuIconProps",
           "typeTokens": [
             {
-              "text": "IIconProps",
-              "hyperlinkedPage": "Icon",
-              "pageKind": "Components"
+              "text": "IIconProps"
             }
           ],
           "descriptionHtml": "Props that go to the IconComponent used for the chevron.\n",
@@ -603,9 +589,7 @@
           "name": "subMenuProps",
           "typeTokens": [
             {
-              "text": "IContextualMenuProps",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuProps"
             }
           ],
           "descriptionHtml": "Properties to apply to a submenu to this item.\n\nThe ContextualMenu will provide default values for `target`, `onDismiss`, `isSubMenu`, `id`, `shouldFocusOnMount`, `directionalHint`, `className`, and `gapSpace`, all of which can be overridden.\n",
@@ -660,9 +644,7 @@
           "text": "<"
         },
         {
-          "text": "IContextualMenuItemProps",
-          "hyperlinkedPage": "ContextualMenu",
-          "pageKind": "Components"
+          "text": "IContextualMenuItemProps"
         },
         {
           "text": "> "
@@ -700,9 +682,7 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuRenderItem",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuRenderItem"
             },
             {
               "text": ">"
@@ -783,9 +763,7 @@
           "name": "item",
           "typeTokens": [
             {
-              "text": "IContextualMenuItem",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuItem"
             }
           ],
           "descriptionHtml": "The item to display\n",
@@ -804,9 +782,7 @@
               "text": ": "
             },
             {
-              "text": "IContextualMenuItem",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuItem"
             },
             {
               "text": ", "
@@ -877,17 +853,13 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuItemStyleProps",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuItemStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IContextualMenuItemStyles",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuItemStyles"
             },
             {
               "text": ">"
@@ -900,7 +872,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
@@ -1028,7 +1002,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
@@ -1041,9 +1017,7 @@
       "name": "IContextualMenuItemStyles",
       "extendsTokens": [
         {
-          "text": "IButtonStyles",
-          "hyperlinkedPage": "Button",
-          "pageKind": "Components"
+          "text": "IButtonStyles"
         },
         {
           "text": " "
@@ -1233,9 +1207,7 @@
           "name": "items",
           "typeTokens": [
             {
-              "text": "IContextualMenuItem",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuItem"
             },
             {
               "text": "[]"
@@ -1261,15 +1233,15 @@
       "name": "IContextualMenuProps",
       "extendsTokens": [
         {
-          "text": "IBaseProps"
+          "text": "IBaseProps",
+          "hyperlinkedPage": "IBaseProps",
+          "pageKind": "References"
         },
         {
           "text": "<"
         },
         {
-          "text": "IContextualMenu",
-          "hyperlinkedPage": "ContextualMenu",
-          "pageKind": "Components"
+          "text": "IContextualMenu"
         },
         {
           "text": ">"
@@ -1330,9 +1302,7 @@
           "name": "calloutProps",
           "typeTokens": [
             {
-              "text": "ICalloutProps",
-              "hyperlinkedPage": "Callout",
-              "pageKind": "Components"
+              "text": "ICalloutProps"
             }
           ],
           "descriptionHtml": "Pass in custom callout props\n",
@@ -1358,9 +1328,7 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenu",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenu"
             },
             {
               "text": ">"
@@ -1385,9 +1353,7 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuItemProps",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuItemProps"
             },
             {
               "text": "> | "
@@ -1405,9 +1371,7 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuItemProps",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuItemProps"
             },
             {
               "text": ">"
@@ -1480,9 +1444,7 @@
           "name": "focusZoneProps",
           "typeTokens": [
             {
-              "text": "IFocusZoneProps",
-              "hyperlinkedPage": "FocusZone",
-              "pageKind": "Components"
+              "text": "IFocusZoneProps"
             }
           ],
           "descriptionHtml": "Props to pass down to the FocusZone. NOTE: the default FocusZoneDirection will be used unless a direction is specified in the focusZoneProps (even if other focusZoneProps are defined)\n\n",
@@ -1511,7 +1473,9 @@
               "text": ": "
             },
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             },
             {
               "text": ", "
@@ -1573,9 +1537,7 @@
           "name": "items",
           "typeTokens": [
             {
-              "text": "IContextualMenuItem",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuItem"
             },
             {
               "text": "[]"
@@ -1671,9 +1633,7 @@
               "text": "?: "
             },
             {
-              "text": "IContextualMenuItem",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuItem"
             },
             {
               "text": ") => boolean | void"
@@ -1695,9 +1655,7 @@
               "text": "?: "
             },
             {
-              "text": "IContextualMenuProps",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuProps"
             },
             {
               "text": ") => void"
@@ -1719,9 +1677,7 @@
               "text": "?: "
             },
             {
-              "text": "IContextualMenuProps",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuProps"
             },
             {
               "text": ") => void"
@@ -1734,15 +1690,15 @@
           "name": "onRenderMenuList",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IContextualMenuListProps",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuListProps"
             },
             {
               "text": ">"
@@ -1755,15 +1711,15 @@
           "name": "onRenderSubMenu",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IContextualMenuProps",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuProps"
             },
             {
               "text": ">"
@@ -1802,17 +1758,13 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuStyleProps",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IContextualMenuStyles",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuStyles"
             },
             {
               "text": ">"
@@ -1860,7 +1812,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
@@ -1975,9 +1929,7 @@
           "name": "items",
           "typeTokens": [
             {
-              "text": "IContextualMenuItem",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuItem"
             },
             {
               "text": "[]"
@@ -2028,7 +1980,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
@@ -2086,9 +2040,7 @@
           "name": "subComponentStyles",
           "typeTokens": [
             {
-              "text": "IContextualMenuSubComponentStyles",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuSubComponentStyles"
             }
           ],
           "descriptionHtml": "SubComponent styles.\n",
@@ -2122,9 +2074,7 @@
               "text": "<"
             },
             {
-              "text": "ICalloutContentStyleProps",
-              "hyperlinkedPage": "Callout",
-              "pageKind": "Components"
+              "text": "ICalloutContentStyleProps"
             },
             {
               "text": ", any>"
@@ -2143,9 +2093,7 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuItemStyleProps",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuItemStyleProps"
             },
             {
               "text": ", any>"
@@ -2161,9 +2109,7 @@
       "name": "IMenuItemStyles",
       "extendsTokens": [
         {
-          "text": "IButtonStyles",
-          "hyperlinkedPage": "Button",
-          "pageKind": "Components"
+          "text": "IButtonStyles"
         },
         {
           "text": " "

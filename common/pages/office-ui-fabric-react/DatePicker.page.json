@@ -51,15 +51,15 @@
       "name": "IDatePickerProps",
       "extendsTokens": [
         {
-          "text": "IBaseProps"
+          "text": "IBaseProps",
+          "hyperlinkedPage": "IBaseProps",
+          "pageKind": "References"
         },
         {
           "text": "<"
         },
         {
-          "text": "IDatePicker",
-          "hyperlinkedPage": "DatePicker",
-          "pageKind": "Components"
+          "text": "IDatePicker"
         },
         {
           "text": ">"
@@ -138,9 +138,7 @@
               "text": "<"
             },
             {
-              "text": "ICalendarProps",
-              "hyperlinkedPage": "Calendar",
-              "pageKind": "Components"
+              "text": "ICalendarProps"
             },
             {
               "text": ">"
@@ -153,9 +151,7 @@
           "name": "calendarProps",
           "typeTokens": [
             {
-              "text": "ICalendarProps",
-              "hyperlinkedPage": "Calendar",
-              "pageKind": "Components"
+              "text": "ICalendarProps"
             }
           ],
           "descriptionHtml": "Pass calendar props to calendar component\n",
@@ -165,9 +161,7 @@
           "name": "calloutProps",
           "typeTokens": [
             {
-              "text": "ICalloutProps",
-              "hyperlinkedPage": "Callout",
-              "pageKind": "Components"
+              "text": "ICalloutProps"
             }
           ],
           "descriptionHtml": "Pass callout props to callout component\n",
@@ -193,9 +187,7 @@
               "text": "<"
             },
             {
-              "text": "IDatePicker",
-              "hyperlinkedPage": "DatePicker",
-              "pageKind": "Components"
+              "text": "IDatePicker"
             },
             {
               "text": ">"
@@ -208,9 +200,7 @@
           "name": "dateTimeFormatter",
           "typeTokens": [
             {
-              "text": "ICalendarFormatDateCallbacks",
-              "hyperlinkedPage": "Calendar",
-              "pageKind": "Components"
+              "text": "ICalendarFormatDateCallbacks"
             }
           ],
           "descriptionHtml": "Apply additional formating to dates, for example localized date formatting.\n",
@@ -480,9 +470,7 @@
           "name": "strings",
           "typeTokens": [
             {
-              "text": "IDatePickerStrings",
-              "hyperlinkedPage": "DatePicker",
-              "pageKind": "Components"
+              "text": "IDatePickerStrings"
             }
           ],
           "descriptionHtml": "Localized strings to use in the DatePicker\n",
@@ -498,17 +486,13 @@
               "text": "<"
             },
             {
-              "text": "IDatePickerStyleProps",
-              "hyperlinkedPage": "DatePicker",
-              "pageKind": "Components"
+              "text": "IDatePickerStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IDatePickerStyles",
-              "hyperlinkedPage": "DatePicker",
-              "pageKind": "Components"
+              "text": "IDatePickerStyles"
             },
             {
               "text": ">"
@@ -531,9 +515,7 @@
           "name": "textField",
           "typeTokens": [
             {
-              "text": "ITextFieldProps",
-              "hyperlinkedPage": "TextField",
-              "pageKind": "Components"
+              "text": "ITextFieldProps"
             }
           ],
           "descriptionHtml": "Pass textField props to textField component. Prop name is \"textField\" for compatiblity with upcoming slots work.\n",
@@ -543,7 +525,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
@@ -769,7 +753,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",

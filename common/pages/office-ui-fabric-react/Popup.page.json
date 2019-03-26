@@ -24,7 +24,9 @@
           "text": "<"
         },
         {
-          "text": "Popup"
+          "text": "Popup",
+          "hyperlinkedPage": "Popup",
+          "pageKind": "Components"
         },
         {
           "text": "> "
@@ -82,9 +84,7 @@
               "text": "<"
             },
             {
-              "text": "IPopup",
-              "hyperlinkedPage": "Popup",
-              "pageKind": "Components"
+              "text": "IPopup"
             },
             {
               "text": ">"

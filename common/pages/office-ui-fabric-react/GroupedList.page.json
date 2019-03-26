@@ -38,9 +38,7 @@
           "name": "children",
           "typeTokens": [
             {
-              "text": "IGroup",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroup"
             },
             {
               "text": "[]"
@@ -239,9 +237,7 @@
           "name": "group",
           "typeTokens": [
             {
-              "text": "IGroup",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroup"
             }
           ],
           "descriptionHtml": "The group to be rendered by the header.\n",
@@ -271,9 +267,7 @@
           "name": "groups",
           "typeTokens": [
             {
-              "text": "IGroup",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroup"
             },
             {
               "text": "[]"
@@ -315,9 +309,7 @@
               "text": ": "
             },
             {
-              "text": "IGroup",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroup"
             },
             {
               "text": ") => boolean"
@@ -359,9 +351,7 @@
               "text": ": "
             },
             {
-              "text": "IGroup",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroup"
             },
             {
               "text": ") => void"
@@ -374,15 +364,15 @@
           "name": "onRenderTitle",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IGroupHeaderProps",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroupHeaderProps"
             },
             {
               "text": ">"
@@ -404,9 +394,7 @@
               "text": ": "
             },
             {
-              "text": "IGroup",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroup"
             },
             {
               "text": ") => void"
@@ -428,9 +416,7 @@
               "text": ": "
             },
             {
-              "text": "IGroup",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroup"
             },
             {
               "text": ") => void"
@@ -452,9 +438,7 @@
               "text": ": "
             },
             {
-              "text": "IGroup",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroup"
             },
             {
               "text": ") => void"
@@ -497,7 +481,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by the Higher Order Component\n",
@@ -520,9 +506,7 @@
       "name": "IGroupedList",
       "extendsTokens": [
         {
-          "text": "IList",
-          "hyperlinkedPage": "List",
-          "pageKind": "Components"
+          "text": "IList"
         },
         {
           "text": " "
@@ -613,9 +597,7 @@
               "text": "<"
             },
             {
-              "text": "IGroupedList",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroupedList"
             },
             {
               "text": ">"
@@ -697,9 +679,7 @@
               "text": ": "
             },
             {
-              "text": "IGroup",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroup"
             },
             {
               "text": ", "
@@ -718,9 +698,7 @@
           "name": "groupProps",
           "typeTokens": [
             {
-              "text": "IGroupRenderProps",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroupRenderProps"
             }
           ],
           "descriptionHtml": "Optional override properties to render groups.\n",
@@ -730,9 +708,7 @@
           "name": "groups",
           "typeTokens": [
             {
-              "text": "IGroup",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroup"
             },
             {
               "text": "[]"
@@ -755,9 +731,7 @@
           "name": "listProps",
           "typeTokens": [
             {
-              "text": "IListProps",
-              "hyperlinkedPage": "List",
-              "pageKind": "Components"
+              "text": "IListProps"
             }
           ],
           "descriptionHtml": "Optional properties to pass through to the list components being rendered.\n",
@@ -829,9 +803,7 @@
               "text": ": "
             },
             {
-              "text": "IListProps",
-              "hyperlinkedPage": "List",
-              "pageKind": "Components"
+              "text": "IListProps"
             },
             {
               "text": ") => boolean"
@@ -876,9 +848,7 @@
               "text": ", "
             },
             {
-              "text": "IGroupedListStyles",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroupedListStyles"
             },
             {
               "text": ">"
@@ -891,7 +861,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme that is passed in from Higher Order Component\n",
@@ -962,9 +934,7 @@
       "name": "IGroupFooterProps",
       "extendsTokens": [
         {
-          "text": "IGroupDividerProps",
-          "hyperlinkedPage": "GroupedList",
-          "pageKind": "Components"
+          "text": "IGroupDividerProps"
         },
         {
           "text": " "
@@ -988,9 +958,7 @@
               "text": ", "
             },
             {
-              "text": "IGroupFooterStyles",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroupFooterStyles"
             },
             {
               "text": ">"
@@ -1024,9 +992,7 @@
       "name": "IGroupHeaderProps",
       "extendsTokens": [
         {
-          "text": "IGroupDividerProps",
-          "hyperlinkedPage": "GroupedList",
-          "pageKind": "Components"
+          "text": "IGroupDividerProps"
         },
         {
           "text": " "
@@ -1110,9 +1076,7 @@
               "text": ", "
             },
             {
-              "text": "IGroupHeaderStyles",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroupHeaderStyles"
             },
             {
               "text": ">"
@@ -1221,9 +1185,7 @@
           "name": "collapseAllVisibility",
           "typeTokens": [
             {
-              "text": "CollapseAllVisibility",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "CollapseAllVisibility"
             }
           ],
           "descriptionHtml": "Flag to indicate whether to ignore the collapsing icon on header.\n\n",
@@ -1233,9 +1195,7 @@
           "name": "footerProps",
           "typeTokens": [
             {
-              "text": "IGroupFooterProps",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroupFooterProps"
             }
           ],
           "descriptionHtml": "Information to pass in to the group footer.\n",
@@ -1254,9 +1214,7 @@
               "text": ": "
             },
             {
-              "text": "IGroup",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroup"
             },
             {
               "text": ") => number"
@@ -1269,9 +1227,7 @@
           "name": "headerProps",
           "typeTokens": [
             {
-              "text": "IGroupHeaderProps",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroupHeaderProps"
             }
           ],
           "descriptionHtml": "Information to pass in to the group header.\n",
@@ -1291,15 +1247,15 @@
           "name": "onRenderFooter",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IGroupFooterProps",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroupFooterProps"
             },
             {
               "text": ">"
@@ -1312,15 +1268,15 @@
           "name": "onRenderHeader",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IGroupHeaderProps",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroupHeaderProps"
             },
             {
               "text": ">"
@@ -1333,15 +1289,15 @@
           "name": "onRenderShowAll",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IGroupShowAllProps",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroupShowAllProps"
             },
             {
               "text": ">"
@@ -1370,9 +1326,7 @@
           "name": "showAllProps",
           "typeTokens": [
             {
-              "text": "IGroupShowAllProps",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroupShowAllProps"
             }
           ],
           "descriptionHtml": "Information to pass in to the group Show all footer.\n",
@@ -1395,9 +1349,7 @@
       "name": "IGroupShowAllProps",
       "extendsTokens": [
         {
-          "text": "IGroupDividerProps",
-          "hyperlinkedPage": "GroupedList",
-          "pageKind": "Components"
+          "text": "IGroupDividerProps"
         },
         {
           "text": " "
@@ -1431,9 +1383,7 @@
               "text": ", "
             },
             {
-              "text": "IGroupShowAllStyles",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroupShowAllStyles"
             },
             {
               "text": ">"
@@ -1504,9 +1454,7 @@
               "text": ", "
             },
             {
-              "text": "IGroupSpacerStyles",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroupSpacerStyles"
             },
             {
               "text": ">"
@@ -1519,7 +1467,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme from Higher Order Component\n",

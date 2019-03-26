@@ -90,9 +90,7 @@
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps",
-              "hyperlinkedPage": "Keytip",
-              "pageKind": "Components"
+              "text": "IKeytipProps"
             }
           ],
           "descriptionHtml": "Optional keytip for the overflowSetItem.\n",
@@ -145,9 +143,7 @@
               "text": "<"
             },
             {
-              "text": "IOverflowSet",
-              "hyperlinkedPage": "OverflowSet",
-              "pageKind": "Components"
+              "text": "IOverflowSet"
             },
             {
               "text": ">"
@@ -170,9 +166,7 @@
           "name": "focusZoneProps",
           "typeTokens": [
             {
-              "text": "IFocusZoneProps",
-              "hyperlinkedPage": "FocusZone",
-              "pageKind": "Components"
+              "text": "IFocusZoneProps"
             }
           ],
           "descriptionHtml": "Custom properties for OverflowSet's FocusZone. If doNotContainWithinFocusZone is set to true focusZoneProps will be ignored. Use one or the other.\n",
@@ -182,9 +176,7 @@
           "name": "items",
           "typeTokens": [
             {
-              "text": "IOverflowSetItemProps",
-              "hyperlinkedPage": "OverflowSet",
-              "pageKind": "Components"
+              "text": "IOverflowSetItemProps"
             },
             {
               "text": "[]"
@@ -206,9 +198,7 @@
               "text": ": "
             },
             {
-              "text": "IOverflowSetItemProps",
-              "hyperlinkedPage": "OverflowSet",
-              "pageKind": "Components"
+              "text": "IOverflowSetItemProps"
             },
             {
               "text": ") => any[] | undefined"
@@ -240,9 +230,7 @@
               "text": ": "
             },
             {
-              "text": "IOverflowSetItemProps",
-              "hyperlinkedPage": "OverflowSet",
-              "pageKind": "Components"
+              "text": "IOverflowSetItemProps"
             },
             {
               "text": ") => any"
@@ -255,7 +243,9 @@
           "name": "onRenderOverflowButton",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<any[]>"
@@ -268,9 +258,7 @@
           "name": "overflowItems",
           "typeTokens": [
             {
-              "text": "IOverflowSetItemProps",
-              "hyperlinkedPage": "OverflowSet",
-              "pageKind": "Components"
+              "text": "IOverflowSetItemProps"
             },
             {
               "text": "[]"
@@ -299,17 +287,13 @@
               "text": "<"
             },
             {
-              "text": "IOverflowSetProps",
-              "hyperlinkedPage": "OverflowSet",
-              "pageKind": "Components"
+              "text": "IOverflowSetProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IOverflowSetStyles",
-              "hyperlinkedPage": "OverflowSet",
-              "pageKind": "Components"
+              "text": "IOverflowSetStyles"
             },
             {
               "text": ">"

@@ -52,9 +52,7 @@
               "text": "<"
             },
             {
-              "text": "IOverlay",
-              "hyperlinkedPage": "Overlay",
-              "pageKind": "Components"
+              "text": "IOverlay"
             },
             {
               "text": ">"
@@ -93,17 +91,13 @@
               "text": "<"
             },
             {
-              "text": "IOverlayStyleProps",
-              "hyperlinkedPage": "Overlay",
-              "pageKind": "Components"
+              "text": "IOverlayStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IOverlayStyles",
-              "hyperlinkedPage": "Overlay",
-              "pageKind": "Components"
+              "text": "IOverlayStyles"
             },
             {
               "text": ">"
@@ -116,7 +110,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -164,7 +160,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",

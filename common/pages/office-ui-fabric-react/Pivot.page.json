@@ -135,9 +135,7 @@
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps",
-              "hyperlinkedPage": "Keytip",
-              "pageKind": "Components"
+              "text": "IKeytipProps"
             }
           ],
           "descriptionHtml": "Optional keytip for this PivotItem\n",
@@ -157,15 +155,15 @@
           "name": "onRenderItemLink",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPivotItemProps",
-              "hyperlinkedPage": "Pivot",
-              "pageKind": "Components"
+              "text": "IPivotItemProps"
             },
             {
               "text": ">"
@@ -242,9 +240,7 @@
               "text": "<"
             },
             {
-              "text": "IPivot",
-              "hyperlinkedPage": "Pivot",
-              "pageKind": "Components"
+              "text": "IPivot"
             },
             {
               "text": ">"
@@ -329,9 +325,7 @@
           "name": "linkFormat",
           "typeTokens": [
             {
-              "text": "PivotLinkFormat",
-              "hyperlinkedPage": "Pivot",
-              "pageKind": "Components"
+              "text": "PivotLinkFormat"
             }
           ],
           "descriptionHtml": "PivotLinkFormat to use (links, tabs)\n",
@@ -341,9 +335,7 @@
           "name": "linkSize",
           "typeTokens": [
             {
-              "text": "PivotLinkSize",
-              "hyperlinkedPage": "Pivot",
-              "pageKind": "Components"
+              "text": "PivotLinkSize"
             }
           ],
           "descriptionHtml": "PivotLinkSize to use (normal, large)\n",
@@ -421,9 +413,7 @@
               "text": ", "
             },
             {
-              "text": "IPivotStyles",
-              "hyperlinkedPage": "Pivot",
-              "pageKind": "Components"
+              "text": "IPivotStyles"
             },
             {
               "text": ">"
@@ -436,7 +426,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",

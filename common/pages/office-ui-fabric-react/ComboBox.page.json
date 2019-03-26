@@ -84,9 +84,7 @@
               "text": "<"
             },
             {
-              "text": "IComboBoxOptionStyles",
-              "hyperlinkedPage": "ComboBox",
-              "pageKind": "Components"
+              "text": "IComboBoxOptionStyles"
             },
             {
               "text": ">"
@@ -112,9 +110,7 @@
       "name": "IComboBoxOptionStyles",
       "extendsTokens": [
         {
-          "text": "IButtonStyles",
-          "hyperlinkedPage": "Button",
-          "pageKind": "Components"
+          "text": "IButtonStyles"
         },
         {
           "text": " "
@@ -155,9 +151,7 @@
           "text": "<"
         },
         {
-          "text": "IComboBox",
-          "hyperlinkedPage": "ComboBox",
-          "pageKind": "Components"
+          "text": "IComboBox"
         },
         {
           "text": "> "
@@ -199,9 +193,7 @@
           "name": "autofill",
           "typeTokens": [
             {
-              "text": "IAutofillProps",
-              "hyperlinkedPage": "Autofill",
-              "pageKind": "Components"
+              "text": "IAutofillProps"
             }
           ],
           "descriptionHtml": "The AutofillProps to be passed into the Autofill component inside combobox\n",
@@ -211,9 +203,7 @@
           "name": "buttonIconProps",
           "typeTokens": [
             {
-              "text": "IIconProps",
-              "hyperlinkedPage": "Icon",
-              "pageKind": "Components"
+              "text": "IIconProps"
             }
           ],
           "descriptionHtml": "The IconProps to use for the button aspect of the combobox\n",
@@ -229,9 +219,7 @@
               "text": "<"
             },
             {
-              "text": "IButtonStyles",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonStyles"
             },
             {
               "text": ">"
@@ -250,9 +238,7 @@
               "text": "<"
             },
             {
-              "text": "IComboBoxOptionStyles",
-              "hyperlinkedPage": "ComboBox",
-              "pageKind": "Components"
+              "text": "IComboBoxOptionStyles"
             },
             {
               "text": ">"
@@ -271,9 +257,7 @@
               "text": "<"
             },
             {
-              "text": "IComboBox",
-              "hyperlinkedPage": "ComboBox",
-              "pageKind": "Components"
+              "text": "IComboBox"
             },
             {
               "text": ">"
@@ -315,7 +299,9 @@
               "text": ": "
             },
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             },
             {
               "text": ", "
@@ -383,9 +369,7 @@
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps",
-              "hyperlinkedPage": "Keytip",
-              "pageKind": "Components"
+              "text": "IKeytipProps"
             }
           ],
           "descriptionHtml": "Optional keytip for this combo box\n",
@@ -426,9 +410,7 @@
               "text": "<"
             },
             {
-              "text": "IComboBox",
-              "hyperlinkedPage": "ComboBox",
-              "pageKind": "Components"
+              "text": "IComboBox"
             },
             {
               "text": ">, "
@@ -440,9 +422,7 @@
               "text": "?: "
             },
             {
-              "text": "IComboBoxOption",
-              "hyperlinkedPage": "ComboBox",
-              "pageKind": "Components"
+              "text": "IComboBoxOption"
             },
             {
               "text": ", "
@@ -476,9 +456,7 @@
               "text": "?: "
             },
             {
-              "text": "IComboBoxOption",
-              "hyperlinkedPage": "ComboBox",
-              "pageKind": "Components"
+              "text": "IComboBoxOption"
             },
             {
               "text": ", "
@@ -530,9 +508,7 @@
               "text": "<"
             },
             {
-              "text": "IComboBox",
-              "hyperlinkedPage": "ComboBox",
-              "pageKind": "Components"
+              "text": "IComboBox"
             },
             {
               "text": ">, "
@@ -544,9 +520,7 @@
               "text": "?: "
             },
             {
-              "text": "IComboBoxOption",
-              "hyperlinkedPage": "ComboBox",
-              "pageKind": "Components"
+              "text": "IComboBoxOption"
             },
             {
               "text": ", "
@@ -594,9 +568,7 @@
               "text": "?: "
             },
             {
-              "text": "IComboBoxOption",
-              "hyperlinkedPage": "ComboBox",
-              "pageKind": "Components"
+              "text": "IComboBoxOption"
             },
             {
               "text": ", "
@@ -621,15 +593,15 @@
           "name": "onRenderLowerContent",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IComboBoxProps",
-              "hyperlinkedPage": "ComboBox",
-              "pageKind": "Components"
+              "text": "IComboBoxProps"
             },
             {
               "text": ">"
@@ -651,17 +623,13 @@
               "text": ": "
             },
             {
-              "text": "IComboBoxOption",
-              "hyperlinkedPage": "ComboBox",
-              "pageKind": "Components"
+              "text": "IComboBoxOption"
             },
             {
               "text": "[]) => "
             },
             {
-              "text": "IComboBoxOption",
-              "hyperlinkedPage": "ComboBox",
-              "pageKind": "Components"
+              "text": "IComboBoxOption"
             },
             {
               "text": "[] | "
@@ -673,9 +641,7 @@
               "text": "<"
             },
             {
-              "text": "IComboBoxOption",
-              "hyperlinkedPage": "ComboBox",
-              "pageKind": "Components"
+              "text": "IComboBoxOption"
             },
             {
               "text": "[]>"
@@ -704,9 +670,7 @@
           "name": "options",
           "typeTokens": [
             {
-              "text": "IComboBoxOption",
-              "hyperlinkedPage": "ComboBox",
-              "pageKind": "Components"
+              "text": "IComboBoxOption"
             },
             {
               "text": "[]"
@@ -745,9 +709,7 @@
               "text": "<"
             },
             {
-              "text": "IComboBoxStyles",
-              "hyperlinkedPage": "ComboBox",
-              "pageKind": "Components"
+              "text": "IComboBoxStyles"
             },
             {
               "text": ">"
@@ -770,7 +732,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",

@@ -229,9 +229,7 @@
       "name": "ILinkProps",
       "extendsTokens": [
         {
-          "text": "ILinkHTMLAttributes",
-          "hyperlinkedPage": "Link",
-          "pageKind": "Components"
+          "text": "ILinkHTMLAttributes"
         },
         {
           "text": "<"
@@ -304,9 +302,7 @@
               "text": "<"
             },
             {
-              "text": "ILink",
-              "hyperlinkedPage": "Link",
-              "pageKind": "Components"
+              "text": "ILink"
             },
             {
               "text": ">"
@@ -329,9 +325,7 @@
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps",
-              "hyperlinkedPage": "Keytip",
-              "pageKind": "Components"
+              "text": "IKeytipProps"
             }
           ],
           "descriptionHtml": "Optional keytip for this Link\n",
@@ -347,17 +341,13 @@
               "text": "<"
             },
             {
-              "text": "ILinkStyleProps",
-              "hyperlinkedPage": "Link",
-              "pageKind": "Components"
+              "text": "ILinkStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "ILinkStyles",
-              "hyperlinkedPage": "Link",
-              "pageKind": "Components"
+              "text": "ILinkStyles"
             },
             {
               "text": ">"
@@ -370,7 +360,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme (provided through customization.)\n",
@@ -418,7 +410,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "",

@@ -51,9 +51,7 @@
           "text": "<"
         },
         {
-          "text": "IPersonaProps",
-          "hyperlinkedPage": "Persona",
-          "pageKind": "Components"
+          "text": "IPersonaProps"
         },
         {
           "text": "> "
@@ -67,17 +65,13 @@
       "name": "IPeoplePickerItemProps",
       "extendsTokens": [
         {
-          "text": "IPickerItemProps",
-          "hyperlinkedPage": "Pickers",
-          "pageKind": "Components"
+          "text": "IPickerItemProps"
         },
         {
           "text": "<"
         },
         {
-          "text": "IExtendedPersonaProps",
-          "hyperlinkedPage": "SelectedPeopleList",
-          "pageKind": "Components"
+          "text": "IExtendedPersonaProps"
         },
         {
           "text": "> "

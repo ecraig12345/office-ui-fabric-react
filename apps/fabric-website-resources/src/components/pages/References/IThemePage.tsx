@@ -3,5 +3,5 @@ import * as React from 'react';
 import { PropertiesTableSet } from '@uifabric/example-app-base';
 
 export const IThemePage = (props: { isHeaderVisible: boolean }) => (
-  <PropertiesTableSet jsonDocs={require('../../../../../../common/pages/styling/ITheme.page.json')} />
+  <PropertiesTableSet jsonDocs={require('../../../../../../common/pages/references/ITheme.page.json')} />
 );

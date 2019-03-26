@@ -31,9 +31,7 @@
       "name": "IExtendedPersonaProps",
       "extendsTokens": [
         {
-          "text": "IPersonaProps",
-          "hyperlinkedPage": "Persona",
-          "pageKind": "Components"
+          "text": "IPersonaProps"
         },
         {
           "text": " "
@@ -104,9 +102,7 @@
           "text": "<"
         },
         {
-          "text": "IExtendedPersonaProps",
-          "hyperlinkedPage": "SelectedPeopleList",
-          "pageKind": "Components"
+          "text": "IExtendedPersonaProps"
         },
         {
           "text": "> "
@@ -128,15 +124,15 @@
           "name": "renderPersonaCoin",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPersonaProps",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaProps"
             },
             {
               "text": ">"
@@ -149,15 +145,15 @@
           "name": "renderPrimaryText",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPersonaProps",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaProps"
             },
             {
               "text": ">"
@@ -179,9 +175,7 @@
           "text": "<"
         },
         {
-          "text": "IExtendedPersonaProps",
-          "hyperlinkedPage": "SelectedPeopleList",
-          "pageKind": "Components"
+          "text": "IExtendedPersonaProps"
         },
         {
           "text": "> "
@@ -219,9 +213,7 @@
               "text": "<"
             },
             {
-              "text": "IPersonaProps",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaProps"
             },
             {
               "text": ">"
@@ -243,9 +235,7 @@
               "text": ": "
             },
             {
-              "text": "IExtendedPersonaProps",
-              "hyperlinkedPage": "SelectedPeopleList",
-              "pageKind": "Components"
+              "text": "IExtendedPersonaProps"
             },
             {
               "text": ") => string"
@@ -267,9 +257,7 @@
               "text": ": "
             },
             {
-              "text": "IExtendedPersonaProps",
-              "hyperlinkedPage": "SelectedPeopleList",
-              "pageKind": "Components"
+              "text": "IExtendedPersonaProps"
             },
             {
               "text": ") => void"
@@ -300,9 +288,7 @@
               "text": "<"
             },
             {
-              "text": "IPersonaProps",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaProps"
             },
             {
               "text": ">>"

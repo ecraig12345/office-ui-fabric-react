@@ -132,7 +132,9 @@
           "text": " | "
         },
         {
-          "text": "Autofill"
+          "text": "Autofill",
+          "hyperlinkedPage": "Autofill",
+          "pageKind": "Components"
         },
         {
           "text": "> "
@@ -150,9 +152,7 @@
               "text": "<"
             },
             {
-              "text": "IAutofill",
-              "hyperlinkedPage": "Autofill",
-              "pageKind": "Components"
+              "text": "IAutofill"
             },
             {
               "text": ">"
@@ -263,9 +263,7 @@
       "name": "IBaseAutoFill",
       "extendsTokens": [
         {
-          "text": "IAutofill",
-          "hyperlinkedPage": "Autofill",
-          "pageKind": "Components"
+          "text": "IAutofill"
         },
         {
           "text": " "
@@ -279,9 +277,7 @@
       "name": "IBaseAutoFillProps",
       "extendsTokens": [
         {
-          "text": "IAutofillProps",
-          "hyperlinkedPage": "Autofill",
-          "pageKind": "Components"
+          "text": "IAutofillProps"
         },
         {
           "text": " "

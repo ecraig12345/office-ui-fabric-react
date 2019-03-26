@@ -52,9 +52,7 @@
               "text": "<"
             },
             {
-              "text": "IImage",
-              "hyperlinkedPage": "Image",
-              "pageKind": "Components"
+              "text": "IImage"
             },
             {
               "text": ">"
@@ -67,9 +65,7 @@
           "name": "coverStyle",
           "typeTokens": [
             {
-              "text": "ImageCoverStyle",
-              "hyperlinkedPage": "Image",
-              "pageKind": "Components"
+              "text": "ImageCoverStyle"
             }
           ],
           "descriptionHtml": "Specifies the cover style to be used for this image. If not specified, this will be dynamically calculated based on the aspect ratio for the image.\n",
@@ -89,9 +85,7 @@
           "name": "imageFit",
           "typeTokens": [
             {
-              "text": "ImageFit",
-              "hyperlinkedPage": "Image",
-              "pageKind": "Components"
+              "text": "ImageFit"
             }
           ],
           "descriptionHtml": "Used to determine how the image is scaled and cropped to fit the frame.\n\n",
@@ -120,9 +114,7 @@
               "text": ": "
             },
             {
-              "text": "ImageLoadState",
-              "hyperlinkedPage": "Image",
-              "pageKind": "Components"
+              "text": "ImageLoadState"
             },
             {
               "text": ") => void"
@@ -161,17 +153,13 @@
               "text": "<"
             },
             {
-              "text": "IImageStyleProps",
-              "hyperlinkedPage": "Image",
-              "pageKind": "Components"
+              "text": "IImageStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IImageStyles",
-              "hyperlinkedPage": "Image",
-              "pageKind": "Components"
+              "text": "IImageStyles"
             },
             {
               "text": ">"
@@ -184,7 +172,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -342,7 +332,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",

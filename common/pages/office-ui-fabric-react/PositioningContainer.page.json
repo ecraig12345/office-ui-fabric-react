@@ -12,15 +12,15 @@
       "name": "IPositioningContainerProps",
       "extendsTokens": [
         {
-          "text": "IBaseProps"
+          "text": "IBaseProps",
+          "hyperlinkedPage": "IBaseProps",
+          "pageKind": "References"
         },
         {
           "text": "<"
         },
         {
-          "text": "IPositioningContainer",
-          "hyperlinkedPage": "PositioningContainer",
-          "pageKind": "Components"
+          "text": "IPositioningContainer"
         },
         {
           "text": "> "
@@ -98,9 +98,7 @@
               "text": "<"
             },
             {
-              "text": "IPositioningContainer",
-              "hyperlinkedPage": "PositioningContainer",
-              "pageKind": "Components"
+              "text": "IPositioningContainer"
             },
             {
               "text": ">"

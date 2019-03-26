@@ -73,9 +73,7 @@
               "text": "<"
             },
             {
-              "text": "ILabel",
-              "hyperlinkedPage": "Label",
-              "pageKind": "Components"
+              "text": "ILabel"
             },
             {
               "text": ">"
@@ -114,17 +112,13 @@
               "text": "<"
             },
             {
-              "text": "ILabelStyleProps",
-              "hyperlinkedPage": "Label",
-              "pageKind": "Components"
+              "text": "ILabelStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "ILabelStyles",
-              "hyperlinkedPage": "Label",
-              "pageKind": "Components"
+              "text": "ILabelStyles"
             },
             {
               "text": ">"
@@ -137,7 +131,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -185,7 +181,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "",

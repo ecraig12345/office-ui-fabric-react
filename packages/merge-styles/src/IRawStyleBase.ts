@@ -134,6 +134,7 @@ export type IMixBlendModes =
 
 /**
  * The base font style.
+ * {@docCategory IRawFontStyle}
  */
 export interface IRawFontStyle {
   /**
@@ -242,6 +243,7 @@ export interface IRawFontStyle {
  * Font face definition.
  *
  * @public
+ * {@docCategory IFontFace}
  */
 export interface IFontFace extends IRawFontStyle {
   /**
@@ -266,6 +268,7 @@ export interface IFontFace extends IRawFontStyle {
  * All raw style properties.
  *
  * @public
+ * {@docCategory IRawStyleBase}
  */
 export interface IRawStyleBase extends IRawFontStyle {
   /**

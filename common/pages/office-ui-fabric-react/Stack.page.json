@@ -5,9 +5,7 @@
       "name": "IStackItemProps",
       "extendsTokens": [
         {
-          "text": "IStackItemSlots",
-          "hyperlinkedPage": "Stack",
-          "pageKind": "Components"
+          "text": "IStackItemSlots"
         },
         {
           "text": ", "
@@ -19,17 +17,13 @@
           "text": "<"
         },
         {
-          "text": "IStackItemProps",
-          "hyperlinkedPage": "Stack",
-          "pageKind": "Components"
+          "text": "IStackItemProps"
         },
         {
           "text": ", "
         },
         {
-          "text": "IStackItemTokens",
-          "hyperlinkedPage": "Stack",
-          "pageKind": "Components"
+          "text": "IStackItemTokens"
         },
         {
           "text": ", "
@@ -135,9 +129,7 @@
       "name": "IStackProps",
       "extendsTokens": [
         {
-          "text": "IStackSlots",
-          "hyperlinkedPage": "Stack",
-          "pageKind": "Components"
+          "text": "IStackSlots"
         },
         {
           "text": ", "
@@ -149,9 +141,7 @@
           "text": "<"
         },
         {
-          "text": "IStackProps",
-          "hyperlinkedPage": "Stack",
-          "pageKind": "Components"
+          "text": "IStackProps"
         },
         {
           "text": ", "
@@ -163,9 +153,7 @@
           "text": ", "
         },
         {
-          "text": "IStackTokens",
-          "hyperlinkedPage": "Stack",
-          "pageKind": "Components"
+          "text": "IStackTokens"
         },
         {
           "text": ">"

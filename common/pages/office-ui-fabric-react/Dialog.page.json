@@ -92,9 +92,7 @@
               "text": "<"
             },
             {
-              "text": "IDialogContent",
-              "hyperlinkedPage": "Dialog",
-              "pageKind": "Components"
+              "text": "IDialogContent"
             },
             {
               "text": ">"
@@ -177,17 +175,13 @@
               "text": "<"
             },
             {
-              "text": "IDialogContentStyleProps",
-              "hyperlinkedPage": "Dialog",
-              "pageKind": "Components"
+              "text": "IDialogContentStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IDialogContentStyles",
-              "hyperlinkedPage": "Dialog",
-              "pageKind": "Components"
+              "text": "IDialogContentStyles"
             },
             {
               "text": ">"
@@ -220,7 +214,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -250,9 +246,7 @@
           "name": "topButtonsProps",
           "typeTokens": [
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             },
             {
               "text": "[]"
@@ -265,9 +259,7 @@
           "name": "type",
           "typeTokens": [
             {
-              "text": "DialogType",
-              "hyperlinkedPage": "Dialog",
-              "pageKind": "Components"
+              "text": "DialogType"
             }
           ],
           "descriptionHtml": "The type of Dialog to display.\n\n",
@@ -335,7 +327,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",
@@ -483,9 +477,7 @@
               "text": "<"
             },
             {
-              "text": "IDialogFooter",
-              "hyperlinkedPage": "Dialog",
-              "pageKind": "Components"
+              "text": "IDialogFooter"
             },
             {
               "text": ">"
@@ -504,17 +496,13 @@
               "text": "<"
             },
             {
-              "text": "IDialogFooterStyleProps",
-              "hyperlinkedPage": "Dialog",
-              "pageKind": "Components"
+              "text": "IDialogFooterStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IDialogFooterStyles",
-              "hyperlinkedPage": "Dialog",
-              "pageKind": "Components"
+              "text": "IDialogFooterStyles"
             },
             {
               "text": ">"
@@ -527,7 +515,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -555,7 +545,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",
@@ -681,9 +673,7 @@
               "text": "<"
             },
             {
-              "text": "IDialog",
-              "hyperlinkedPage": "Dialog",
-              "pageKind": "Components"
+              "text": "IDialog"
             },
             {
               "text": ">"
@@ -716,9 +706,7 @@
           "name": "dialogContentProps",
           "typeTokens": [
             {
-              "text": "IDialogContentProps",
-              "hyperlinkedPage": "Dialog",
-              "pageKind": "Components"
+              "text": "IDialogContentProps"
             }
           ],
           "descriptionHtml": "Props to be passed through to Dialog Content\n",
@@ -800,9 +788,7 @@
           "name": "modalProps",
           "typeTokens": [
             {
-              "text": "IModalProps",
-              "hyperlinkedPage": "Modal",
-              "pageKind": "Components"
+              "text": "IModalProps"
             }
           ],
           "descriptionHtml": "Props to be passed through to Modal\n",
@@ -882,17 +868,13 @@
               "text": "<"
             },
             {
-              "text": "IDialogStyleProps",
-              "hyperlinkedPage": "Dialog",
-              "pageKind": "Components"
+              "text": "IDialogStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IDialogStyles",
-              "hyperlinkedPage": "Dialog",
-              "pageKind": "Components"
+              "text": "IDialogStyles"
             },
             {
               "text": ">"
@@ -915,7 +897,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -935,9 +919,7 @@
           "name": "topButtonsProps",
           "typeTokens": [
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             },
             {
               "text": "[]"
@@ -950,9 +932,7 @@
           "name": "type",
           "typeTokens": [
             {
-              "text": "DialogType",
-              "hyperlinkedPage": "Dialog",
-              "pageKind": "Components"
+              "text": "DialogType"
             }
           ],
           "descriptionHtml": "The type of Dialog to display.\n\n",
@@ -1048,7 +1028,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",

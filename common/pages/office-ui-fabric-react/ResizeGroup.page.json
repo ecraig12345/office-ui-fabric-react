@@ -78,9 +78,7 @@
               "text": "<"
             },
             {
-              "text": "IResizeGroup",
-              "hyperlinkedPage": "ResizeGroup",
-              "pageKind": "Components"
+              "text": "IResizeGroup"
             },
             {
               "text": ">"
@@ -182,17 +180,13 @@
               "text": "<"
             },
             {
-              "text": "IResizeGroupStyleProps",
-              "hyperlinkedPage": "ResizeGroup",
-              "pageKind": "Components"
+              "text": "IResizeGroupStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IResizeGroupStyles",
-              "hyperlinkedPage": "ResizeGroup",
-              "pageKind": "Components"
+              "text": "IResizeGroupStyles"
             },
             {
               "text": ">"
@@ -205,7 +199,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -233,7 +229,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",

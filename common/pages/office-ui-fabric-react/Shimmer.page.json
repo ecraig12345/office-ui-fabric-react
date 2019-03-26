@@ -5,9 +5,7 @@
       "name": "ICircle",
       "extendsTokens": [
         {
-          "text": "IShimmerElement",
-          "hyperlinkedPage": "Shimmer",
-          "pageKind": "Components"
+          "text": "IShimmerElement"
         },
         {
           "text": " "
@@ -32,9 +30,7 @@
       "name": "IGap",
       "extendsTokens": [
         {
-          "text": "IShimmerElement",
-          "hyperlinkedPage": "Shimmer",
-          "pageKind": "Components"
+          "text": "IShimmerElement"
         },
         {
           "text": " "
@@ -69,9 +65,7 @@
       "name": "ILine",
       "extendsTokens": [
         {
-          "text": "IShimmerElement",
-          "hyperlinkedPage": "Shimmer",
-          "pageKind": "Components"
+          "text": "IShimmerElement"
         },
         {
           "text": " "
@@ -166,9 +160,7 @@
           "name": "type",
           "typeTokens": [
             {
-              "text": "ShimmerElementType",
-              "hyperlinkedPage": "Shimmer",
-              "pageKind": "Components"
+              "text": "ShimmerElementType"
             }
           ],
           "descriptionHtml": "Represents the possible type of the shimmer elements: Gap, Circle, Line. Required for every element you intend to use.\n",
@@ -251,9 +243,7 @@
               "text": "<"
             },
             {
-              "text": "IShimmer",
-              "hyperlinkedPage": "Shimmer",
-              "pageKind": "Components"
+              "text": "IShimmer"
             },
             {
               "text": ">"
@@ -292,9 +282,7 @@
           "name": "shimmerColors",
           "typeTokens": [
             {
-              "text": "IShimmerColors",
-              "hyperlinkedPage": "Shimmer",
-              "pageKind": "Components"
+              "text": "IShimmerColors"
             }
           ],
           "descriptionHtml": "Defines an object with possible colors to pass for Shimmer customization used on different backgrounds.\n",
@@ -304,9 +292,7 @@
           "name": "shimmerElements",
           "typeTokens": [
             {
-              "text": "IShimmerElement",
-              "hyperlinkedPage": "Shimmer",
-              "pageKind": "Components"
+              "text": "IShimmerElement"
             },
             {
               "text": "[]"
@@ -325,17 +311,13 @@
               "text": "<"
             },
             {
-              "text": "IShimmerStyleProps",
-              "hyperlinkedPage": "Shimmer",
-              "pageKind": "Components"
+              "text": "IShimmerStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IShimmerStyles",
-              "hyperlinkedPage": "Shimmer",
-              "pageKind": "Components"
+              "text": "IShimmerStyles"
             },
             {
               "text": ">"
@@ -348,7 +330,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
@@ -416,7 +400,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",

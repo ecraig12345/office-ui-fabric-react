@@ -10,9 +10,7 @@
           "name": "checkedOption",
           "typeTokens": [
             {
-              "text": "IChoiceGroupOption",
-              "hyperlinkedPage": "ChoiceGroup",
-              "pageKind": "Components"
+              "text": "IChoiceGroupOption"
             },
             {
               "text": " | undefined"
@@ -98,9 +96,7 @@
           "name": "iconProps",
           "typeTokens": [
             {
-              "text": "IIconProps",
-              "hyperlinkedPage": "Icon",
-              "pageKind": "Components"
+              "text": "IIconProps"
             }
           ],
           "descriptionHtml": "The Icon component props for choice field\n",
@@ -182,15 +178,15 @@
           "name": "onRenderField",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IChoiceGroupOption",
-              "hyperlinkedPage": "ChoiceGroup",
-              "pageKind": "Components"
+              "text": "IChoiceGroupOption"
             },
             {
               "text": ">"
@@ -212,9 +208,7 @@
               "text": ": "
             },
             {
-              "text": "IChoiceGroupOption",
-              "hyperlinkedPage": "ChoiceGroup",
-              "pageKind": "Components"
+              "text": "IChoiceGroupOption"
             },
             {
               "text": ") => "
@@ -330,9 +324,7 @@
               "text": "<"
             },
             {
-              "text": "IChoiceGroup",
-              "hyperlinkedPage": "ChoiceGroup",
-              "pageKind": "Components"
+              "text": "IChoiceGroup"
             },
             {
               "text": ">"
@@ -404,9 +396,7 @@
               "text": "?: "
             },
             {
-              "text": "IChoiceGroupOption",
-              "hyperlinkedPage": "ChoiceGroup",
-              "pageKind": "Components"
+              "text": "IChoiceGroupOption"
             },
             {
               "text": ") => void"
@@ -428,9 +418,7 @@
               "text": ": "
             },
             {
-              "text": "IChoiceGroupOption",
-              "hyperlinkedPage": "ChoiceGroup",
-              "pageKind": "Components"
+              "text": "IChoiceGroupOption"
             },
             {
               "text": ", "
@@ -473,9 +461,7 @@
           "name": "options",
           "typeTokens": [
             {
-              "text": "IChoiceGroupOption",
-              "hyperlinkedPage": "ChoiceGroup",
-              "pageKind": "Components"
+              "text": "IChoiceGroupOption"
             },
             {
               "text": "[]"
@@ -504,17 +490,13 @@
               "text": "<"
             },
             {
-              "text": "IChoiceGroupStyleProps",
-              "hyperlinkedPage": "ChoiceGroup",
-              "pageKind": "Components"
+              "text": "IChoiceGroupStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IChoiceGroupStyles",
-              "hyperlinkedPage": "ChoiceGroup",
-              "pageKind": "Components"
+              "text": "IChoiceGroupStyles"
             },
             {
               "text": ">"
@@ -527,7 +509,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme (provided through customization.)\n",
@@ -565,7 +549,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "",

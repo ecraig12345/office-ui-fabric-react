@@ -51,9 +51,7 @@
       "name": "ICommandBarItemProps",
       "extendsTokens": [
         {
-          "text": "IContextualMenuItem",
-          "hyperlinkedPage": "ContextualMenu",
-          "pageKind": "Components"
+          "text": "IContextualMenuItem"
         },
         {
           "text": " "
@@ -65,9 +63,7 @@
           "name": "buttonStyles",
           "typeTokens": [
             {
-              "text": "IButtonStyles",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonStyles"
             }
           ],
           "descriptionHtml": "Custom styles for individual button\n",
@@ -93,9 +89,7 @@
               "text": "<"
             },
             {
-              "text": "ICommandBarItemProps",
-              "hyperlinkedPage": "CommandBar",
-              "pageKind": "Components"
+              "text": "ICommandBarItemProps"
             },
             {
               "text": ">"
@@ -181,9 +175,7 @@
               "text": "<"
             },
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             },
             {
               "text": ">"
@@ -212,9 +204,7 @@
               "text": "<"
             },
             {
-              "text": "ICommandBar",
-              "hyperlinkedPage": "CommandBar",
-              "pageKind": "Components"
+              "text": "ICommandBar"
             },
             {
               "text": ">"
@@ -227,9 +217,7 @@
           "name": "farItems",
           "typeTokens": [
             {
-              "text": "ICommandBarItemProps",
-              "hyperlinkedPage": "CommandBar",
-              "pageKind": "Components"
+              "text": "ICommandBarItemProps"
             },
             {
               "text": "[]"
@@ -242,9 +230,7 @@
           "name": "items",
           "typeTokens": [
             {
-              "text": "ICommandBarItemProps",
-              "hyperlinkedPage": "CommandBar",
-              "pageKind": "Components"
+              "text": "ICommandBarItemProps"
             },
             {
               "text": "[]"
@@ -266,9 +252,7 @@
               "text": ": "
             },
             {
-              "text": "ICommandBarItemProps",
-              "hyperlinkedPage": "CommandBar",
-              "pageKind": "Components"
+              "text": "ICommandBarItemProps"
             },
             {
               "text": ") => void"
@@ -290,9 +274,7 @@
               "text": ": "
             },
             {
-              "text": "ICommandBarItemProps",
-              "hyperlinkedPage": "CommandBar",
-              "pageKind": "Components"
+              "text": "ICommandBarItemProps"
             },
             {
               "text": ") => void"
@@ -361,9 +343,7 @@
               "text": "<"
             },
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             },
             {
               "text": ">"
@@ -376,9 +356,7 @@
           "name": "overflowButtonProps",
           "typeTokens": [
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             }
           ],
           "descriptionHtml": "Props to be passed to overflow button. If menuProps are passed through this prop, any items provided will be prepended to the top of the existing menu.\n",
@@ -388,9 +366,7 @@
           "name": "overflowItems",
           "typeTokens": [
             {
-              "text": "ICommandBarItemProps",
-              "hyperlinkedPage": "CommandBar",
-              "pageKind": "Components"
+              "text": "ICommandBarItemProps"
             },
             {
               "text": "[]"
@@ -419,17 +395,13 @@
               "text": "<"
             },
             {
-              "text": "ICommandBarStyleProps",
-              "hyperlinkedPage": "CommandBar",
-              "pageKind": "Components"
+              "text": "ICommandBarStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "ICommandBarStyles",
-              "hyperlinkedPage": "CommandBar",
-              "pageKind": "Components"
+              "text": "ICommandBarStyles"
             },
             {
               "text": ">"
@@ -442,7 +414,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -470,7 +444,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "",

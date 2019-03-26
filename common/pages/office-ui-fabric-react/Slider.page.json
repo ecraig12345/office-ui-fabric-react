@@ -124,9 +124,7 @@
               "text": "<"
             },
             {
-              "text": "ISlider",
-              "hyperlinkedPage": "Slider",
-              "pageKind": "Components"
+              "text": "ISlider"
             },
             {
               "text": ">"
@@ -271,9 +269,7 @@
               "text": ", "
             },
             {
-              "text": "ISliderStyles",
-              "hyperlinkedPage": "Slider",
-              "pageKind": "Components"
+              "text": "ISliderStyles"
             },
             {
               "text": ">"
@@ -286,7 +282,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",

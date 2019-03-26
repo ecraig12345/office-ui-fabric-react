@@ -91,9 +91,7 @@
           "name": "calloutProps",
           "typeTokens": [
             {
-              "text": "ICalloutProps",
-              "hyperlinkedPage": "Callout",
-              "pageKind": "Components"
+              "text": "ICalloutProps"
             }
           ],
           "descriptionHtml": "Properties to pass through for Callout, reference detail properties in ICalloutProps\n",
@@ -109,9 +107,7 @@
               "text": "<"
             },
             {
-              "text": "ITeachingBubble",
-              "hyperlinkedPage": "TeachingBubble",
-              "pageKind": "Components"
+              "text": "ITeachingBubble"
             },
             {
               "text": ">"
@@ -164,9 +160,7 @@
           "name": "illustrationImage",
           "typeTokens": [
             {
-              "text": "IImageProps",
-              "hyperlinkedPage": "Image",
-              "pageKind": "Components"
+              "text": "IImageProps"
             }
           ],
           "descriptionHtml": "An Image for the Teaching Bubble.\n",
@@ -202,9 +196,7 @@
           "name": "primaryButtonProps",
           "typeTokens": [
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             }
           ],
           "descriptionHtml": "The Primary interaction button\n",
@@ -214,9 +206,7 @@
           "name": "secondaryButtonProps",
           "typeTokens": [
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             }
           ],
           "descriptionHtml": "The Secondary interaction button\n",
@@ -238,9 +228,7 @@
               "text": ", "
             },
             {
-              "text": "ITeachingBubbleStyles",
-              "hyperlinkedPage": "TeachingBubble",
-              "pageKind": "Components"
+              "text": "ITeachingBubbleStyles"
             },
             {
               "text": ">"
@@ -263,7 +251,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
@@ -391,9 +381,7 @@
           "name": "subComponentStyles",
           "typeTokens": [
             {
-              "text": "ITeachingBubbleSubComponentStyles",
-              "hyperlinkedPage": "TeachingBubble",
-              "pageKind": "Components"
+              "text": "ITeachingBubbleSubComponentStyles"
             }
           ],
           "descriptionHtml": "",

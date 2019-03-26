@@ -66,9 +66,7 @@
               "text": ": "
             },
             {
-              "text": "IAnnounced",
-              "hyperlinkedPage": "Announced",
-              "pageKind": "Components"
+              "text": "IAnnounced"
             },
             {
               "text": ") => void"
@@ -97,9 +95,7 @@
               "text": "<{}, "
             },
             {
-              "text": "IAnnouncedStyles",
-              "hyperlinkedPage": "Announced",
-              "pageKind": "Components"
+              "text": "IAnnouncedStyles"
             },
             {
               "text": ">"

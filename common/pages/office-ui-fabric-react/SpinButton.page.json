@@ -114,9 +114,7 @@
               "text": "<"
             },
             {
-              "text": "ISpinButton",
-              "hyperlinkedPage": "SpinButton",
-              "pageKind": "Components"
+              "text": "ISpinButton"
             },
             {
               "text": ">"
@@ -139,9 +137,7 @@
           "name": "decrementButtonIcon",
           "typeTokens": [
             {
-              "text": "IIconProps",
-              "hyperlinkedPage": "Icon",
-              "pageKind": "Components"
+              "text": "IIconProps"
             }
           ],
           "descriptionHtml": "Icon for the decrement button of the spinButton\n",
@@ -177,9 +173,7 @@
               "text": "<"
             },
             {
-              "text": "IButtonStyles",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonStyles"
             },
             {
               "text": ">"
@@ -201,7 +195,9 @@
               "text": ": "
             },
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             },
             {
               "text": ", "
@@ -259,9 +255,7 @@
           "name": "iconProps",
           "typeTokens": [
             {
-              "text": "IIconProps",
-              "hyperlinkedPage": "Icon",
-              "pageKind": "Components"
+              "text": "IIconProps"
             }
           ],
           "descriptionHtml": "Icon that goes along with the label for the whole SpinButton\n",
@@ -281,9 +275,7 @@
           "name": "incrementButtonIcon",
           "typeTokens": [
             {
-              "text": "IIconProps",
-              "hyperlinkedPage": "Icon",
-              "pageKind": "Components"
+              "text": "IIconProps"
             }
           ],
           "descriptionHtml": "Icon for the increment button of the spinButton\n",
@@ -293,9 +285,7 @@
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps",
-              "hyperlinkedPage": "Keytip",
-              "pageKind": "Components"
+              "text": "IKeytipProps"
             }
           ],
           "descriptionHtml": "Optional keytip for this spin button\n",
@@ -493,9 +483,7 @@
               "text": "<"
             },
             {
-              "text": "ISpinButtonStyles",
-              "hyperlinkedPage": "SpinButton",
-              "pageKind": "Components"
+              "text": "ISpinButtonStyles"
             },
             {
               "text": ">"
@@ -508,7 +496,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -534,9 +524,7 @@
               "text": "<"
             },
             {
-              "text": "IButtonStyles",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonStyles"
             },
             {
               "text": ">"

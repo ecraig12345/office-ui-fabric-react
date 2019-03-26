@@ -116,7 +116,9 @@
           "text": " | "
         },
         {
-          "text": "FocusZone"
+          "text": "FocusZone",
+          "hyperlinkedPage": "FocusZone",
+          "pageKind": "Components"
         },
         {
           "text": "> "
@@ -210,9 +212,7 @@
               "text": "<"
             },
             {
-              "text": "IFocusZone",
-              "hyperlinkedPage": "FocusZone",
-              "pageKind": "Components"
+              "text": "IFocusZone"
             },
             {
               "text": ">"
@@ -235,9 +235,7 @@
           "name": "direction",
           "typeTokens": [
             {
-              "text": "FocusZoneDirection",
-              "hyperlinkedPage": "FocusZone",
-              "pageKind": "Components"
+              "text": "FocusZoneDirection"
             }
           ],
           "descriptionHtml": "Defines which arrows to react to.\n\n",

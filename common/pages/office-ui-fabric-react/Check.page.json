@@ -65,9 +65,7 @@
               "text": "<"
             },
             {
-              "text": "ICheckProps",
-              "hyperlinkedPage": "Check",
-              "pageKind": "Components"
+              "text": "ICheckProps"
             },
             {
               "text": ">"
@@ -86,17 +84,13 @@
               "text": "<"
             },
             {
-              "text": "ICheckStyleProps",
-              "hyperlinkedPage": "Check",
-              "pageKind": "Components"
+              "text": "ICheckStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "ICheckStyles",
-              "hyperlinkedPage": "Check",
-              "pageKind": "Components"
+              "text": "ICheckStyles"
             },
             {
               "text": ">"
@@ -109,7 +103,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -157,7 +153,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",

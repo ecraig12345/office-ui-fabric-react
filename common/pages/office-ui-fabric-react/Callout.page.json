@@ -87,7 +87,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme to apply to the calloutContent.\n",
@@ -298,9 +300,7 @@
               "text": "<"
             },
             {
-              "text": "ICallout",
-              "hyperlinkedPage": "Callout",
-              "pageKind": "Components"
+              "text": "ICallout"
             },
             {
               "text": ">"
@@ -413,9 +413,7 @@
           "name": "layerProps",
           "typeTokens": [
             {
-              "text": "ILayerProps",
-              "hyperlinkedPage": "Layer",
-              "pageKind": "Components"
+              "text": "ILayerProps"
             }
           ],
           "descriptionHtml": "Optional props to pass to the Layer component hosting the panel.\n",
@@ -565,17 +563,13 @@
               "text": "<"
             },
             {
-              "text": "ICalloutContentStyleProps",
-              "hyperlinkedPage": "Callout",
-              "pageKind": "Components"
+              "text": "ICalloutContentStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "ICalloutContentStyles",
-              "hyperlinkedPage": "Callout",
-              "pageKind": "Components"
+              "text": "ICalloutContentStyles"
             },
             {
               "text": ">"
@@ -613,7 +607,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Optional theme for component\n",

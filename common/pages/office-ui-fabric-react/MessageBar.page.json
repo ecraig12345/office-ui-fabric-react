@@ -78,9 +78,7 @@
               "text": "<"
             },
             {
-              "text": "IMessageBar",
-              "hyperlinkedPage": "MessageBar",
-              "pageKind": "Components"
+              "text": "IMessageBar"
             },
             {
               "text": ">"
@@ -113,9 +111,7 @@
           "name": "messageBarType",
           "typeTokens": [
             {
-              "text": "MessageBarType",
-              "hyperlinkedPage": "MessageBar",
-              "pageKind": "Components"
+              "text": "MessageBarType"
             }
           ],
           "descriptionHtml": "The type of MessageBar to render.\n\n",
@@ -170,7 +166,9 @@
               "text": " | "
             },
             {
-              "text": "Button"
+              "text": "Button",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             },
             {
               "text": ">) => any"
@@ -199,17 +197,13 @@
               "text": "<"
             },
             {
-              "text": "IMessageBarStyleProps",
-              "hyperlinkedPage": "MessageBar",
-              "pageKind": "Components"
+              "text": "IMessageBarStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IMessageBarStyles",
-              "hyperlinkedPage": "MessageBar",
-              "pageKind": "Components"
+              "text": "IMessageBarStyles"
             },
             {
               "text": ">"
@@ -222,7 +216,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme (provided through customization.)\n",
@@ -290,9 +286,7 @@
           "name": "messageBarType",
           "typeTokens": [
             {
-              "text": "MessageBarType",
-              "hyperlinkedPage": "MessageBar",
-              "pageKind": "Components"
+              "text": "MessageBarType"
             }
           ],
           "descriptionHtml": "Type of the MessageBar.\n",
@@ -312,7 +306,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme (provided through customization).\n",

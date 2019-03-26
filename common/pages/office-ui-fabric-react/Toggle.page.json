@@ -104,9 +104,7 @@
               "text": "<"
             },
             {
-              "text": "IToggle",
-              "hyperlinkedPage": "Toggle",
-              "pageKind": "Components"
+              "text": "IToggle"
             },
             {
               "text": ">"
@@ -149,9 +147,7 @@
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps",
-              "hyperlinkedPage": "Keytip",
-              "pageKind": "Components"
+              "text": "IKeytipProps"
             }
           ],
           "descriptionHtml": "Optional keytip for this toggle\n",
@@ -273,17 +269,13 @@
               "text": "<"
             },
             {
-              "text": "IToggleStyleProps",
-              "hyperlinkedPage": "Toggle",
-              "pageKind": "Components"
+              "text": "IToggleStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IToggleStyles",
-              "hyperlinkedPage": "Toggle",
-              "pageKind": "Components"
+              "text": "IToggleStyles"
             },
             {
               "text": ">"
@@ -296,7 +288,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -364,7 +358,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme values.\n",

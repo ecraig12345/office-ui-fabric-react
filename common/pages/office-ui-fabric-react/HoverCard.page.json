@@ -54,25 +54,19 @@
           "text": "<"
         },
         {
-          "text": "IExpandingCard",
-          "hyperlinkedPage": "HoverCard",
-          "pageKind": "Components"
+          "text": "IExpandingCard"
         },
         {
           "text": ", "
         },
         {
-          "text": "IExpandingCardStyles",
-          "hyperlinkedPage": "HoverCard",
-          "pageKind": "Components"
+          "text": "IExpandingCardStyles"
         },
         {
           "text": ", "
         },
         {
-          "text": "IExpandingCardStyleProps",
-          "hyperlinkedPage": "HoverCard",
-          "pageKind": "Components"
+          "text": "IExpandingCardStyleProps"
         },
         {
           "text": "> "
@@ -104,9 +98,7 @@
           "name": "mode",
           "typeTokens": [
             {
-              "text": "ExpandingCardMode",
-              "hyperlinkedPage": "HoverCard",
-              "pageKind": "Components"
+              "text": "ExpandingCardMode"
             }
           ],
           "descriptionHtml": "Use to open the card in expanded format and not wait for the delay\n\n",
@@ -116,7 +108,9 @@
           "name": "onRenderCompactCard",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<any>"
@@ -129,7 +123,9 @@
           "name": "onRenderExpandedCard",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<any>"
@@ -312,9 +308,7 @@
               "text": "<"
             },
             {
-              "text": "IHoverCard",
-              "hyperlinkedPage": "HoverCard",
-              "pageKind": "Components"
+              "text": "IHoverCard"
             },
             {
               "text": ">"
@@ -337,9 +331,7 @@
           "name": "expandingCardProps",
           "typeTokens": [
             {
-              "text": "IExpandingCardProps",
-              "hyperlinkedPage": "HoverCard",
-              "pageKind": "Components"
+              "text": "IExpandingCardProps"
             }
           ],
           "descriptionHtml": "Additional ExpandingCard props to pass through HoverCard like renderers, target. gapSpace etc. Used along with 'type' prop set to HoverCardType.expanding. Reference detail properties in ICardProps and IExpandingCardProps.\n",
@@ -399,9 +391,7 @@
           "name": "plainCardProps",
           "typeTokens": [
             {
-              "text": "IPlainCardProps",
-              "hyperlinkedPage": "HoverCard",
-              "pageKind": "Components"
+              "text": "IPlainCardProps"
             }
           ],
           "descriptionHtml": "Additional PlainCard props to pass through HoverCard like renderers, target, gapSpace etc. Used along with 'type' prop set to HoverCardType.plain. See for more details ICardProps and IPlainCardProps interfaces.\n",
@@ -457,17 +447,13 @@
               "text": "<"
             },
             {
-              "text": "IHoverCardStyleProps",
-              "hyperlinkedPage": "HoverCard",
-              "pageKind": "Components"
+              "text": "IHoverCardStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IHoverCardStyles",
-              "hyperlinkedPage": "HoverCard",
-              "pageKind": "Components"
+              "text": "IHoverCardStyles"
             },
             {
               "text": ">"
@@ -493,7 +479,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by higher order component.\n",
@@ -513,9 +501,7 @@
           "name": "type",
           "typeTokens": [
             {
-              "text": "HoverCardType",
-              "hyperlinkedPage": "HoverCard",
-              "pageKind": "Components"
+              "text": "HoverCardType"
             }
           ],
           "descriptionHtml": "Type of the hover card to render.\n\n",
@@ -543,7 +529,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
@@ -587,25 +575,19 @@
           "text": "<"
         },
         {
-          "text": "IPlainCard",
-          "hyperlinkedPage": "HoverCard",
-          "pageKind": "Components"
+          "text": "IPlainCard"
         },
         {
           "text": ", "
         },
         {
-          "text": "IPlainCardStyles",
-          "hyperlinkedPage": "HoverCard",
-          "pageKind": "Components"
+          "text": "IPlainCardStyles"
         },
         {
           "text": ", "
         },
         {
-          "text": "IPlainCardStyleProps",
-          "hyperlinkedPage": "HoverCard",
-          "pageKind": "Components"
+          "text": "IPlainCardStyleProps"
         },
         {
           "text": "> "
@@ -617,7 +599,9 @@
           "name": "onRenderPlainCard",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<any>"

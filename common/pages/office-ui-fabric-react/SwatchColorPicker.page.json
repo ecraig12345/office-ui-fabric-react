@@ -128,9 +128,7 @@
           "name": "item",
           "typeTokens": [
             {
-              "text": "IColorCellProps",
-              "hyperlinkedPage": "SwatchColorPicker",
-              "pageKind": "Components"
+              "text": "IColorCellProps"
             }
           ],
           "descriptionHtml": "Item to render\n",
@@ -159,9 +157,7 @@
               "text": ": "
             },
             {
-              "text": "IColorCellProps",
-              "hyperlinkedPage": "SwatchColorPicker",
-              "pageKind": "Components"
+              "text": "IColorCellProps"
             },
             {
               "text": ") => void"
@@ -183,9 +179,7 @@
               "text": ": "
             },
             {
-              "text": "IColorCellProps",
-              "hyperlinkedPage": "SwatchColorPicker",
-              "pageKind": "Components"
+              "text": "IColorCellProps"
             },
             {
               "text": ") => void"
@@ -207,9 +201,7 @@
               "text": "?: "
             },
             {
-              "text": "IColorCellProps",
-              "hyperlinkedPage": "SwatchColorPicker",
-              "pageKind": "Components"
+              "text": "IColorCellProps"
             },
             {
               "text": ") => void"
@@ -408,17 +400,13 @@
               "text": "<"
             },
             {
-              "text": "IColorPickerGridCellStyleProps",
-              "hyperlinkedPage": "SwatchColorPicker",
-              "pageKind": "Components"
+              "text": "IColorPickerGridCellStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IColorPickerGridCellStyles",
-              "hyperlinkedPage": "SwatchColorPicker",
-              "pageKind": "Components"
+              "text": "IColorPickerGridCellStyles"
             },
             {
               "text": ">"
@@ -431,7 +419,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "The theme object to use for styling.\n",
@@ -519,7 +509,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme to apply to the cell.\n",
@@ -642,9 +634,7 @@
           "name": "colorCells",
           "typeTokens": [
             {
-              "text": "IColorCellProps",
-              "hyperlinkedPage": "SwatchColorPicker",
-              "pageKind": "Components"
+              "text": "IColorCellProps"
             },
             {
               "text": "[]"
@@ -673,9 +663,7 @@
               "text": "<"
             },
             {
-              "text": "ISwatchColorPicker",
-              "hyperlinkedPage": "SwatchColorPicker",
-              "pageKind": "Components"
+              "text": "ISwatchColorPicker"
             },
             {
               "text": ">"
@@ -724,17 +712,13 @@
               "text": "<"
             },
             {
-              "text": "IColorPickerGridCellStyleProps",
-              "hyperlinkedPage": "SwatchColorPicker",
-              "pageKind": "Components"
+              "text": "IColorPickerGridCellStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IColorPickerGridCellStyles",
-              "hyperlinkedPage": "SwatchColorPicker",
-              "pageKind": "Components"
+              "text": "IColorPickerGridCellStyles"
             },
             {
               "text": ">"
@@ -879,17 +863,13 @@
               "text": "<"
             },
             {
-              "text": "ISwatchColorPickerStyleProps",
-              "hyperlinkedPage": "SwatchColorPicker",
-              "pageKind": "Components"
+              "text": "ISwatchColorPickerStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "ISwatchColorPickerStyles",
-              "hyperlinkedPage": "SwatchColorPicker",
-              "pageKind": "Components"
+              "text": "ISwatchColorPickerStyles"
             },
             {
               "text": ">"
@@ -902,7 +882,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme to apply to the component.\n",
@@ -940,7 +922,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme to apply to the container\n",

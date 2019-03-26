@@ -152,7 +152,9 @@
           "text": " | "
         },
         {
-          "text": "Button"
+          "text": "Button",
+          "hyperlinkedPage": "Button",
+          "pageKind": "Components"
         },
         {
           "text": "> "
@@ -204,9 +206,7 @@
           "name": "buttonType",
           "typeTokens": [
             {
-              "text": "ButtonType",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "ButtonType"
             }
           ],
           "descriptionHtml": "Deprecated at v1.2.3, to be removed at \\>= v2.0.0. Use specific button component instead.\n\n",
@@ -242,9 +242,7 @@
               "text": "<"
             },
             {
-              "text": "IButton",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButton"
             },
             {
               "text": ">"
@@ -296,7 +294,9 @@
               "text": ": "
             },
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             },
             {
               "text": ", "
@@ -413,9 +413,7 @@
           "name": "iconProps",
           "typeTokens": [
             {
-              "text": "IIconProps",
-              "hyperlinkedPage": "Icon",
-              "pageKind": "Components"
+              "text": "IIconProps"
             }
           ],
           "descriptionHtml": "The props for the icon shown in the button.\n",
@@ -425,9 +423,7 @@
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps",
-              "hyperlinkedPage": "Keytip",
-              "pageKind": "Components"
+              "text": "IKeytipProps"
             }
           ],
           "descriptionHtml": "Optional keytip for this button\n",
@@ -443,9 +439,7 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuProps",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuProps"
             },
             {
               "text": ">"
@@ -458,9 +452,7 @@
           "name": "menuIconProps",
           "typeTokens": [
             {
-              "text": "IIconProps",
-              "hyperlinkedPage": "Icon",
-              "pageKind": "Components"
+              "text": "IIconProps"
             }
           ],
           "descriptionHtml": "The props for the icon shown when providing a menu dropdown.\n",
@@ -470,9 +462,7 @@
           "name": "menuProps",
           "typeTokens": [
             {
-              "text": "IContextualMenuProps",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuProps"
             }
           ],
           "descriptionHtml": "Props for button menu. Providing this will default to showing the menu icon. See menuIconProps for overriding how the default icon looks. Providing this in addition of onClick and setting the split property to true will render a SplitButton.\n",
@@ -556,9 +546,7 @@
               "text": "?: "
             },
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             },
             {
               "text": ") => void"
@@ -571,15 +559,15 @@
           "name": "onRenderAriaDescription",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             },
             {
               "text": ">"
@@ -592,15 +580,15 @@
           "name": "onRenderChildren",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             },
             {
               "text": ">"
@@ -613,15 +601,15 @@
           "name": "onRenderDescription",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             },
             {
               "text": ">"
@@ -634,15 +622,15 @@
           "name": "onRenderIcon",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             },
             {
               "text": ">"
@@ -655,15 +643,15 @@
           "name": "onRenderMenu",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IContextualMenuProps",
-              "hyperlinkedPage": "ContextualMenu",
-              "pageKind": "Components"
+              "text": "IContextualMenuProps"
             },
             {
               "text": ">"
@@ -676,15 +664,15 @@
           "name": "onRenderMenuIcon",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             },
             {
               "text": ">"
@@ -697,15 +685,15 @@
           "name": "onRenderText",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             },
             {
               "text": ">"
@@ -821,9 +809,7 @@
           "name": "styles",
           "typeTokens": [
             {
-              "text": "IButtonStyles",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonStyles"
             }
           ],
           "descriptionHtml": "Custom styling for individual elements within the button DOM.\n",
@@ -843,7 +829,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",

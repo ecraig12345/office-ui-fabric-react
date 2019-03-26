@@ -91,15 +91,15 @@
           "name": "onRenderProgress",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IProgressIndicatorProps",
-              "hyperlinkedPage": "ProgressIndicator",
-              "pageKind": "Components"
+              "text": "IProgressIndicatorProps"
             },
             {
               "text": ">"
@@ -138,17 +138,13 @@
               "text": "<"
             },
             {
-              "text": "IProgressIndicatorStyleProps",
-              "hyperlinkedPage": "ProgressIndicator",
-              "pageKind": "Components"
+              "text": "IProgressIndicatorStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IProgressIndicatorStyles",
-              "hyperlinkedPage": "ProgressIndicator",
-              "pageKind": "Components"
+              "text": "IProgressIndicatorStyles"
             },
             {
               "text": ">"
@@ -161,7 +157,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
@@ -219,7 +217,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",

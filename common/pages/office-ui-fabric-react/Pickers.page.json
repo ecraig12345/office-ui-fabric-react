@@ -214,9 +214,7 @@
               "text": "<"
             },
             {
-              "text": "IPickerItem",
-              "hyperlinkedPage": "Pickers",
-              "pageKind": "Components"
+              "text": "IPickerItem"
             },
             {
               "text": ">"

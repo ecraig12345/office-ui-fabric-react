@@ -27,11 +27,10 @@ import { generateTsxFile } from './TsxFileGenerator';
  * and create individual page json files out of it
  */
 export interface IPageJsonOptions {
-  apiJsonPath: string;
+  apiJsonPaths: string[];
   pageJsonFolderPath: string;
   pageNames: string[];
   kind: PageKind;
-  createTsxFiles?: boolean;
 }
 
 /**
@@ -55,10 +54,12 @@ export enum PageKind {
  */
 class PageData {
   public readonly pageName: string;
+  public kind: PageKind;
   public apiItems: ApiItem[] = [];
 
-  public constructor(pageName: string) {
+  public constructor(pageName: string, kind: PageKind) {
     this.pageName = pageName;
+    this.kind = kind;
   }
 }
 
@@ -67,7 +68,7 @@ class CollectedData {
    * Map of page name to PageData
    */
   public pageDataByPageName: Map<string, PageData> = new Map<string, PageData>();
-  public apiToPage: Map<string, IPage> = new Map<string, IPage>();
+  // public apiToPage: Map<string, IPage> = new Map<string, IPage>();
 }
 
 /**
@@ -76,46 +77,51 @@ class CollectedData {
  * @param options - The options for the page, including the path of the api.json file,
  * where to create the api page jsons, and the name of the pages to create.
  */
-export function generateJson(option: IPageJsonOptions): void {
+export function generateJson(options: IPageJsonOptions[]): void {
   const collectedData: CollectedData = new CollectedData();
 
-  // collect page data
-  // Create the folder if it doesn't already exist
-  FileSystem.ensureFolder(option.pageJsonFolderPath);
+  for (const option of options) {
+    // collect page data
+    // Create the folder if it doesn't already exist
+    FileSystem.ensureFolder(option.pageJsonFolderPath);
 
-  console.log('Deleting contents of ' + option.pageJsonFolderPath);
-  FileSystem.ensureEmptyFolder(option.pageJsonFolderPath);
+    console.log('Deleting contents of ' + option.pageJsonFolderPath);
+    FileSystem.ensureEmptyFolder(option.pageJsonFolderPath);
 
-  console.log('Loading ' + option.apiJsonPath);
+    for (const apiJsonPath of option.apiJsonPaths) {
+      console.log('Loading ' + apiJsonPath);
 
-  const apiModel: ApiModel = new ApiModel();
-  // NOTE: later you can load other packages into the model and process them together
-  const apiPackage: ApiPackage = apiModel.loadPackage(option.apiJsonPath);
+      const apiModel: ApiModel = new ApiModel();
+      // NOTE: later you can load other packages into the model and process them together
+      const apiPackage: ApiPackage = apiModel.loadPackage(apiJsonPath);
 
-  console.log('Successfully loaded ' + option.apiJsonPath);
+      console.log('Successfully loaded ' + apiJsonPath);
 
-  const apiEntryPoint: ApiEntryPoint = apiPackage.entryPoints[0]; // assume there is only one entry point
+      const apiEntryPoint: ApiEntryPoint = apiPackage.entryPoints[0]; // assume there is only one entry point
 
-  // const collectedData: CollectedData = new CollectedData();
-  // Store the data for each page in a map
-  for (const pageName of option.pageNames) {
-    collectedData.pageDataByPageName.set(pageName, new PageData(pageName));
+      // const collectedData: CollectedData = new CollectedData();
+      // Store the data for each page in a map
+      for (const pageName of option.pageNames) {
+        collectedData.pageDataByPageName.set(pageName, new PageData(pageName, option.kind));
+      }
+
+      collectPageData(collectedData, apiEntryPoint, option.kind);
+    }
   }
-
-  collectPageData(collectedData, apiEntryPoint, option.kind);
 
   // create files
-  createPageJsonFiles(collectedData, option);
-
-  generateTsxFiles(collectedData, option.createTsxFiles);
+  for (const option of options) {
+    createPageJsonFiles(collectedData, option);
+    generateTsxFiles(collectedData);
+  }
 }
 
-function generateTsxFiles(collectedData: CollectedData, createTsxFiles?: boolean): void {
-  if (createTsxFiles) {
-    collectedData.pageDataByPageName.forEach((value: PageData, pageName: string) => {
+function generateTsxFiles(collectedData: CollectedData): void {
+  collectedData.pageDataByPageName.forEach((value: PageData, pageName: string) => {
+    if (value.kind === PageKind.References) {
       generateTsxFile(pageName);
-    });
-  }
+    }
+  });
 }
 
 /**
@@ -123,32 +129,65 @@ function generateTsxFiles(collectedData: CollectedData, createTsxFiles?: boolean
  * @param options Page json options
  */
 function createPageJsonFiles(collectedData: CollectedData, options: IPageJsonOptions): void {
-  collectedData.pageDataByPageName.forEach((value: PageData, pageName: string) => {
-    const pageJsonPath: string = path.join(options.pageJsonFolderPath, pageName + '.page.json');
-    console.log('Writing ' + pageJsonPath);
+  if (options.kind === PageKind.Components) {
+    collectedData.pageDataByPageName.forEach((value: PageData, pageName: string) => {
+      if (value.kind === PageKind.Components) {
+        const pageJsonPath: string = path.join(options.pageJsonFolderPath, pageName + '.page.json');
+        console.log('Writing ' + pageJsonPath);
 
-    const pageData: PageData = collectedData.pageDataByPageName.get(pageName)!;
+        const pageData: PageData = collectedData.pageDataByPageName.get(pageName)!;
 
-    const pageJson: IPageJson = { tables: [] };
-    for (const apiItem of pageData.apiItems) {
-      switch (apiItem.kind) {
-        case ApiItemKind.Interface: {
-          pageJson.tables.push(createInterfacePageJson(collectedData, apiItem as ApiInterface));
-          break;
+        const pageJson: IPageJson = { tables: [] };
+        for (const apiItem of pageData.apiItems) {
+          switch (apiItem.kind) {
+            case ApiItemKind.Interface: {
+              pageJson.tables.push(createInterfacePageJson(collectedData, apiItem as ApiInterface));
+              break;
+            }
+            case ApiItemKind.Enum: {
+              pageJson.tables.push(createEnumPageJson(apiItem as ApiEnum));
+              break;
+            }
+            case ApiItemKind.Class: {
+              pageJson.tables.push(createClassPageJson(collectedData, apiItem as ApiClass));
+              break;
+            }
+          }
         }
-        case ApiItemKind.Enum: {
-          pageJson.tables.push(createEnumPageJson(apiItem as ApiEnum));
-          break;
-        }
-        case ApiItemKind.Class: {
-          pageJson.tables.push(createClassPageJson(collectedData, apiItem as ApiClass));
-          break;
-        }
+
+        JsonFile.save(pageJson, pageJsonPath);
       }
-    }
+    });
+  } else if (options.kind === PageKind.References) {
+    collectedData.pageDataByPageName.forEach((value: PageData, pageName: string) => {
+      if (value.kind === PageKind.References) {
+        const pageJsonPath: string = path.join(options.pageJsonFolderPath, pageName + '.page.json');
+        console.log('Writing ' + pageJsonPath);
 
-    JsonFile.save(pageJson, pageJsonPath);
-  });
+        const pageData: PageData = collectedData.pageDataByPageName.get(pageName)!;
+
+        const pageJson: IPageJson = { tables: [] };
+        for (const apiItem of pageData.apiItems) {
+          switch (apiItem.kind) {
+            case ApiItemKind.Interface: {
+              pageJson.tables.push(createInterfacePageJson(collectedData, apiItem as ApiInterface));
+              break;
+            }
+            case ApiItemKind.Enum: {
+              pageJson.tables.push(createEnumPageJson(apiItem as ApiEnum));
+              break;
+            }
+            case ApiItemKind.Class: {
+              pageJson.tables.push(createClassPageJson(collectedData, apiItem as ApiClass));
+              break;
+            }
+          }
+        }
+
+        JsonFile.save(pageJson, pageJsonPath);
+      }
+    });
+  }
 }
 
 /**
@@ -182,7 +221,7 @@ function createInterfacePageJson(collectedData: CollectedData, interfaceItem: Ap
       const token: ExcerptToken = extendsType.excerpt.tokens[i];
       if (token.kind === ExcerptTokenKind.Reference) {
         // search for reference in collectedData
-        const apiPage = collectedData.apiToPage.get(token.text);
+        const apiPage = collectedData.pageDataByPageName.get(token.text);
         if (apiPage) {
           tableJson.extendsTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName, pageKind: apiPage.kind });
         } else {
@@ -213,7 +252,7 @@ function createInterfacePageJson(collectedData: CollectedData, interfaceItem: Ap
           const token: ExcerptToken = apiPropertySignature.excerptTokens[i];
           if (token.kind === ExcerptTokenKind.Reference) {
             // search for reference in collectedData
-            const apiPage = collectedData.apiToPage.get(token.text);
+            const apiPage = collectedData.pageDataByPageName.get(token.text);
             if (apiPage !== undefined) {
               tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName, pageKind: apiPage.kind });
             } else {
@@ -246,7 +285,7 @@ function createInterfacePageJson(collectedData: CollectedData, interfaceItem: Ap
           const token: ExcerptToken = apiMethodSignature.excerptTokens[i];
           if (token.kind === ExcerptTokenKind.Reference) {
             // search for reference in collectedData
-            const apiPage = collectedData.apiToPage.get(token.text);
+            const apiPage = collectedData.pageDataByPageName.get(token.text);
             if (apiPage !== undefined) {
               tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName, pageKind: apiPage.kind });
             } else {
@@ -380,7 +419,7 @@ function createClassPageJson(collectedData: CollectedData, classItem: ApiClass):
           const token: ExcerptToken = apiProperty.excerptTokens[i];
           if (token.kind === ExcerptTokenKind.Reference) {
             // search for reference in collectedData
-            const apiPage = collectedData.apiToPage.get(token.text);
+            const apiPage = collectedData.pageDataByPageName.get(token.text);
             if (apiPage !== undefined) {
               tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName, pageKind: apiPage.kind });
             } else {
@@ -413,7 +452,7 @@ function createClassPageJson(collectedData: CollectedData, classItem: ApiClass):
           const token: ExcerptToken = apiMethod.excerptTokens[i];
           if (token.kind === ExcerptTokenKind.Reference) {
             // search for reference in collectedData
-            const apiPage = collectedData.apiToPage.get(token.text);
+            const apiPage = collectedData.pageDataByPageName.get(token.text);
             if (apiPage !== undefined) {
               tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName, pageKind: apiPage.kind });
             } else {
@@ -510,11 +549,11 @@ function collectPageData(collectedData: CollectedData, apiItem: ApiItem, kind: P
 
             if (pageData === undefined) {
               console.log('Warning: Unrecognized page name: ' + pageName);
-              collectedData.pageDataByPageName.set(pageName, new PageData(pageName));
+              collectedData.pageDataByPageName.set(pageName, new PageData(pageName, kind));
               pageData = collectedData.pageDataByPageName.get(pageName);
             }
 
-            collectedData.apiToPage.set(apiItem.displayName, { pageName, kind });
+            // collectedData.apiToPage.set(apiItem.displayName, { pageName, kind });
 
             pageData!.apiItems.push(apiItem);
           }

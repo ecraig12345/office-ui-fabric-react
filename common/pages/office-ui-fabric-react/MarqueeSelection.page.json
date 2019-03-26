@@ -52,9 +52,7 @@
               "text": "<"
             },
             {
-              "text": "IMarqueeSelection",
-              "hyperlinkedPage": "MarqueeSelection",
-              "pageKind": "Components"
+              "text": "IMarqueeSelection"
             },
             {
               "text": ">"
@@ -150,17 +148,13 @@
               "text": "<"
             },
             {
-              "text": "IMarqueeSelectionStyleProps",
-              "hyperlinkedPage": "MarqueeSelection",
-              "pageKind": "Components"
+              "text": "IMarqueeSelectionStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IMarqueeSelectionStyles",
-              "hyperlinkedPage": "MarqueeSelection",
-              "pageKind": "Components"
+              "text": "IMarqueeSelectionStyles"
             },
             {
               "text": ">"
@@ -173,7 +167,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme (provided through customization.)\n",
@@ -201,7 +197,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "",

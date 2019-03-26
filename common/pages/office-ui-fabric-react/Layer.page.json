@@ -58,9 +58,7 @@
               "text": "<"
             },
             {
-              "text": "ILayer",
-              "hyperlinkedPage": "Layer",
-              "pageKind": "Components"
+              "text": "ILayer"
             },
             {
               "text": ">"
@@ -139,17 +137,13 @@
               "text": "<"
             },
             {
-              "text": "ILayerStyleProps",
-              "hyperlinkedPage": "Layer",
-              "pageKind": "Components"
+              "text": "ILayerStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "ILayerStyles",
-              "hyperlinkedPage": "Layer",
-              "pageKind": "Components"
+              "text": "ILayerStyles"
             },
             {
               "text": ">"
@@ -162,7 +156,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -200,7 +196,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",

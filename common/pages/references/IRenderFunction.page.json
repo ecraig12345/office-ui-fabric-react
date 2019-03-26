@@ -1,0 +1,11 @@
+{
+  "tables": [
+    {
+      "kind": "interface",
+      "name": "IRenderFunction",
+      "extendsTokens": [],
+      "descriptionHtml": "Render function interface for providing overrideable render callbacks.\n\n\n\n\n",
+      "members": []
+    }
+  ]
+}

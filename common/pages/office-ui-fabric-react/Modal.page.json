@@ -78,9 +78,7 @@
               "text": "<"
             },
             {
-              "text": "IModal",
-              "hyperlinkedPage": "Modal",
-              "pageKind": "Components"
+              "text": "IModal"
             },
             {
               "text": ">"
@@ -143,9 +141,7 @@
           "name": "layerProps",
           "typeTokens": [
             {
-              "text": "ILayerProps",
-              "hyperlinkedPage": "Layer",
-              "pageKind": "Components"
+              "text": "ILayerProps"
             }
           ],
           "descriptionHtml": "Props to be passed through to Layer\n",
@@ -231,9 +227,7 @@
               "text": ", "
             },
             {
-              "text": "IModalStyles",
-              "hyperlinkedPage": "Modal",
-              "pageKind": "Components"
+              "text": "IModalStyles"
             },
             {
               "text": ">"
@@ -256,7 +250,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",

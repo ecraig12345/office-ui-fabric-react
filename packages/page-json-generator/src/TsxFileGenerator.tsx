@@ -7,7 +7,7 @@ export function generateTsxFile(pageName: string): void {
   import { PropertiesTableSet } from '@uifabric/example-app-base';
 
   export const ${pageName}Page = (props: { isHeaderVisible: boolean }) => (
-    <PropertiesTableSet jsonDocs={require('../../../../../../common/pages/styling/${pageName}.page.json')} />
+    <PropertiesTableSet jsonDocs={require('../../../../../../common/pages/references/${pageName}.page.json')} />
   );`;
 
   console.log(`Writing ${pageName}Page.tsx`);

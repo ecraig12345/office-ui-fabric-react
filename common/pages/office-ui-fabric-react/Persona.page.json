@@ -12,9 +12,7 @@
       "name": "IPersonaCoinProps",
       "extendsTokens": [
         {
-          "text": "IPersonaSharedProps",
-          "hyperlinkedPage": "Persona",
-          "pageKind": "Components"
+          "text": "IPersonaSharedProps"
         },
         {
           "text": " "
@@ -55,17 +53,13 @@
               "text": "<"
             },
             {
-              "text": "IPersonaCoinStyleProps",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaCoinStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IPersonaCoinStyles",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaCoinStyles"
             },
             {
               "text": ">"
@@ -116,9 +110,7 @@
           "name": "size",
           "typeTokens": [
             {
-              "text": "PersonaSize",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "PersonaSize"
             }
           ],
           "descriptionHtml": "Decides the size of the control.\n\n",
@@ -128,7 +120,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
@@ -199,9 +193,7 @@
       "name": "IPersonaPresenceProps",
       "extendsTokens": [
         {
-          "text": "IPersonaSharedProps",
-          "hyperlinkedPage": "Persona",
-          "pageKind": "Components"
+          "text": "IPersonaSharedProps"
         },
         {
           "text": " "
@@ -232,17 +224,13 @@
               "text": "<"
             },
             {
-              "text": "IPersonaPresenceStyleProps",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaPresenceStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IPersonaPresenceStyles",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaPresenceStyles"
             },
             {
               "text": ">"
@@ -273,9 +261,7 @@
           "name": "presence",
           "typeTokens": [
             {
-              "text": "PersonaPresence",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "PersonaPresence"
             }
           ],
           "descriptionHtml": "Presence of the person to display - will not display presence if undefined.\n\n",
@@ -285,9 +271,7 @@
           "name": "size",
           "typeTokens": [
             {
-              "text": "PersonaSize",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "PersonaSize"
             }
           ],
           "descriptionHtml": "Decides the size of the control.\n\n",
@@ -297,7 +281,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
@@ -338,9 +324,7 @@
       "name": "IPersonaProps",
       "extendsTokens": [
         {
-          "text": "IPersonaSharedProps",
-          "hyperlinkedPage": "Persona",
-          "pageKind": "Components"
+          "text": "IPersonaSharedProps"
         },
         {
           "text": " "
@@ -368,9 +352,7 @@
               "text": "<"
             },
             {
-              "text": "IPersona",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersona"
             },
             {
               "text": ">"
@@ -383,15 +365,15 @@
           "name": "onRenderOptionalText",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPersonaProps",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaProps"
             },
             {
               "text": ">"
@@ -404,15 +386,15 @@
           "name": "onRenderPrimaryText",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPersonaProps",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaProps"
             },
             {
               "text": ">"
@@ -425,15 +407,15 @@
           "name": "onRenderSecondaryText",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPersonaProps",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaProps"
             },
             {
               "text": ">"
@@ -446,15 +428,15 @@
           "name": "onRenderTertiaryText",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPersonaProps",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaProps"
             },
             {
               "text": ">"
@@ -473,17 +455,13 @@
               "text": "<"
             },
             {
-              "text": "IPersonaStyleProps",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IPersonaStyles",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaStyles"
             },
             {
               "text": ">"
@@ -545,9 +523,7 @@
           "name": "coinProps",
           "typeTokens": [
             {
-              "text": "IPersonaCoinProps",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaCoinProps"
             }
           ],
           "descriptionHtml": "Optional HTML element props for Persona coin.\n",
@@ -627,9 +603,7 @@
           "name": "initialsColor",
           "typeTokens": [
             {
-              "text": "PersonaInitialsColor",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "PersonaInitialsColor"
             },
             {
               "text": " | string"
@@ -651,9 +625,7 @@
               "text": ": "
             },
             {
-              "text": "ImageLoadState",
-              "hyperlinkedPage": "Image",
-              "pageKind": "Components"
+              "text": "ImageLoadState"
             },
             {
               "text": ") => void"
@@ -666,15 +638,15 @@
           "name": "onRenderCoin",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPersonaSharedProps",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaSharedProps"
             },
             {
               "text": ">"
@@ -687,15 +659,15 @@
           "name": "onRenderInitials",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPersonaSharedProps",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaSharedProps"
             },
             {
               "text": ">"
@@ -718,9 +690,7 @@
           "name": "presence",
           "typeTokens": [
             {
-              "text": "PersonaPresence",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "PersonaPresence"
             }
           ],
           "descriptionHtml": "Presence of the person to display - will not display presence if undefined.\n\n",
@@ -780,9 +750,7 @@
           "name": "size",
           "typeTokens": [
             {
-              "text": "PersonaSize",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "PersonaSize"
             }
           ],
           "descriptionHtml": "Decides the size of the control.\n\n",
@@ -812,7 +780,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
@@ -850,9 +820,7 @@
           "name": "presence",
           "typeTokens": [
             {
-              "text": "PersonaPresence",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "PersonaPresence"
             }
           ],
           "descriptionHtml": "Presence of the person to display - will not display presence if undefined.\n\n",
@@ -872,9 +840,7 @@
           "name": "size",
           "typeTokens": [
             {
-              "text": "PersonaSize",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "PersonaSize"
             }
           ],
           "descriptionHtml": "Decides the size of the control.\n\n",
@@ -884,7 +850,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",

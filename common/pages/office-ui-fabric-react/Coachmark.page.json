@@ -179,9 +179,7 @@
               "text": "<"
             },
             {
-              "text": "ICoachmark",
-              "hyperlinkedPage": "Coachmark",
-              "pageKind": "Components"
+              "text": "ICoachmark"
             },
             {
               "text": ">"
@@ -312,9 +310,7 @@
           "name": "positioningContainerProps",
           "typeTokens": [
             {
-              "text": "IPositioningContainerProps",
-              "hyperlinkedPage": "PositioningContainer",
-              "pageKind": "Components"
+              "text": "IPositioningContainerProps"
             }
           ],
           "descriptionHtml": "Props to pass to the PositioningContainer component. Specify the `directionalHint` to indicate on which edge the Coachmark/TeachingBubble should be positioned.\n\n",
@@ -350,17 +346,13 @@
               "text": "<"
             },
             {
-              "text": "ICoachmarkStyleProps",
-              "hyperlinkedPage": "Coachmark",
-              "pageKind": "Components"
+              "text": "ICoachmarkStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "ICoachmarkStyles",
-              "hyperlinkedPage": "Coachmark",
-              "pageKind": "Components"
+              "text": "ICoachmarkStyles"
             },
             {
               "text": ">"
@@ -386,9 +378,7 @@
           "name": "teachingBubbleRef",
           "typeTokens": [
             {
-              "text": "ITeachingBubble",
-              "hyperlinkedPage": "TeachingBubble",
-              "pageKind": "Components"
+              "text": "ITeachingBubble"
             }
           ],
           "descriptionHtml": "Ref for TeachingBubble\n\n",
@@ -398,7 +388,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by higher order component.\n",
@@ -556,7 +548,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Current theme.\n",

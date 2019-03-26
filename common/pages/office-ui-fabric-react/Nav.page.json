@@ -108,9 +108,7 @@
           "name": "iconProps",
           "typeTokens": [
             {
-              "text": "IIconProps",
-              "hyperlinkedPage": "Icon",
-              "pageKind": "Components"
+              "text": "IIconProps"
             }
           ],
           "descriptionHtml": "Props for an icon to render next to the link button.\n",
@@ -140,9 +138,7 @@
           "name": "links",
           "typeTokens": [
             {
-              "text": "INavLink",
-              "hyperlinkedPage": "Nav",
-              "pageKind": "Components"
+              "text": "INavLink"
             },
             {
               "text": "[]"
@@ -198,9 +194,7 @@
               "text": "?: "
             },
             {
-              "text": "INavLink",
-              "hyperlinkedPage": "Nav",
-              "pageKind": "Components"
+              "text": "INavLink"
             },
             {
               "text": ") => void"
@@ -281,9 +275,7 @@
           "name": "links",
           "typeTokens": [
             {
-              "text": "INavLink",
-              "hyperlinkedPage": "Nav",
-              "pageKind": "Components"
+              "text": "INavLink"
             },
             {
               "text": "[]"
@@ -390,9 +382,7 @@
               "text": "<"
             },
             {
-              "text": "INav",
-              "hyperlinkedPage": "Nav",
-              "pageKind": "Components"
+              "text": "INav"
             },
             {
               "text": ">"
@@ -425,9 +415,7 @@
           "name": "groups",
           "typeTokens": [
             {
-              "text": "INavLinkGroup",
-              "hyperlinkedPage": "Nav",
-              "pageKind": "Components"
+              "text": "INavLinkGroup"
             },
             {
               "text": "[] | null"
@@ -466,9 +454,7 @@
               "text": "<"
             },
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             },
             {
               "text": ">"
@@ -514,9 +500,7 @@
               "text": "?: "
             },
             {
-              "text": "INavLink",
-              "hyperlinkedPage": "Nav",
-              "pageKind": "Components"
+              "text": "INavLink"
             },
             {
               "text": ") => void"
@@ -562,9 +546,7 @@
               "text": "?: "
             },
             {
-              "text": "INavLink",
-              "hyperlinkedPage": "Nav",
-              "pageKind": "Components"
+              "text": "INavLink"
             },
             {
               "text": ") => void"
@@ -577,15 +559,15 @@
           "name": "onRenderGroupHeader",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "INavLinkGroup",
-              "hyperlinkedPage": "Nav",
-              "pageKind": "Components"
+              "text": "INavLinkGroup"
             },
             {
               "text": ">"
@@ -598,15 +580,15 @@
           "name": "onRenderLink",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "INavLink",
-              "hyperlinkedPage": "Nav",
-              "pageKind": "Components"
+              "text": "INavLink"
             },
             {
               "text": ">"
@@ -635,17 +617,13 @@
               "text": "<"
             },
             {
-              "text": "INavStyleProps",
-              "hyperlinkedPage": "Nav",
-              "pageKind": "Components"
+              "text": "INavStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "INavStyles",
-              "hyperlinkedPage": "Nav",
-              "pageKind": "Components"
+              "text": "INavStyles"
             },
             {
               "text": ">"
@@ -658,7 +636,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -686,9 +666,7 @@
           "name": "groups",
           "typeTokens": [
             {
-              "text": "INavLinkGroup",
-              "hyperlinkedPage": "Nav",
-              "pageKind": "Components"
+              "text": "INavLinkGroup"
             },
             {
               "text": "[] | null"
@@ -821,7 +799,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",

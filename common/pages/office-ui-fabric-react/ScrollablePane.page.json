@@ -97,9 +97,7 @@
               "text": "<"
             },
             {
-              "text": "IScrollablePane",
-              "hyperlinkedPage": "ScrollablePane",
-              "pageKind": "Components"
+              "text": "IScrollablePane"
             },
             {
               "text": ">"
@@ -138,17 +136,13 @@
               "text": "<"
             },
             {
-              "text": "IScrollablePaneStyleProps",
-              "hyperlinkedPage": "ScrollablePane",
-              "pageKind": "Components"
+              "text": "IScrollablePaneStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IScrollablePaneStyles",
-              "hyperlinkedPage": "ScrollablePane",
-              "pageKind": "Components"
+              "text": "IScrollablePaneStyles"
             },
             {
               "text": ">"
@@ -161,7 +155,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -189,9 +185,7 @@
           "name": "scrollbarVisibility",
           "typeTokens": [
             {
-              "text": "IScrollablePaneProps",
-              "hyperlinkedPage": "ScrollablePane",
-              "pageKind": "Components"
+              "text": "IScrollablePaneProps"
             },
             {
               "text": "['scrollbarVisibility']"
@@ -204,7 +198,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",

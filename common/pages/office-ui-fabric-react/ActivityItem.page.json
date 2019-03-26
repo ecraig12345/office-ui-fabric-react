@@ -89,9 +89,7 @@
               "text": "<"
             },
             {
-              "text": "IPersonaSharedProps",
-              "hyperlinkedPage": "Persona",
-              "pageKind": "Components"
+              "text": "IPersonaSharedProps"
             },
             {
               "text": ">"
@@ -195,15 +193,15 @@
           "name": "onRenderActivityDescription",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IActivityItemProps",
-              "hyperlinkedPage": "ActivityItem",
-              "pageKind": "Components"
+              "text": "IActivityItemProps"
             },
             {
               "text": ">"
@@ -216,15 +214,15 @@
           "name": "onRenderComments",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IActivityItemProps",
-              "hyperlinkedPage": "ActivityItem",
-              "pageKind": "Components"
+              "text": "IActivityItemProps"
             },
             {
               "text": ">"
@@ -237,15 +235,15 @@
           "name": "onRenderIcon",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IActivityItemProps",
-              "hyperlinkedPage": "ActivityItem",
-              "pageKind": "Components"
+              "text": "IActivityItemProps"
             },
             {
               "text": ">"
@@ -258,15 +256,15 @@
           "name": "onRenderTimeStamp",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IActivityItemProps",
-              "hyperlinkedPage": "ActivityItem",
-              "pageKind": "Components"
+              "text": "IActivityItemProps"
             },
             {
               "text": ">"
@@ -279,9 +277,7 @@
           "name": "styles",
           "typeTokens": [
             {
-              "text": "IActivityItemStyles",
-              "hyperlinkedPage": "ActivityItem",
-              "pageKind": "Components"
+              "text": "IActivityItemStyles"
             }
           ],
           "descriptionHtml": "Optional styling for the elements within the Activity Item.\n",

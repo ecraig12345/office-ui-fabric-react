@@ -60,9 +60,7 @@
           "text": "<"
         },
         {
-          "text": "IDropdown",
-          "hyperlinkedPage": "Dropdown",
-          "pageKind": "Components"
+          "text": "IDropdown"
         },
         {
           "text": ", "
@@ -110,9 +108,7 @@
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps",
-              "hyperlinkedPage": "Keytip",
-              "pageKind": "Components"
+              "text": "IKeytipProps"
             }
           ],
           "descriptionHtml": "Optional keytip for this dropdown\n",
@@ -185,9 +181,7 @@
               "text": "?: "
             },
             {
-              "text": "IDropdownOption",
-              "hyperlinkedPage": "Dropdown",
-              "pageKind": "Components"
+              "text": "IDropdownOption"
             },
             {
               "text": ", "
@@ -215,9 +209,7 @@
               "text": ": "
             },
             {
-              "text": "IDropdownOption",
-              "hyperlinkedPage": "Dropdown",
-              "pageKind": "Components"
+              "text": "IDropdownOption"
             },
             {
               "text": ", "
@@ -246,15 +238,15 @@
           "name": "onRenderCaretDown",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IDropdownProps",
-              "hyperlinkedPage": "Dropdown",
-              "pageKind": "Components"
+              "text": "IDropdownProps"
             },
             {
               "text": ">"
@@ -267,15 +259,15 @@
           "name": "onRenderPlaceHolder",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IDropdownProps",
-              "hyperlinkedPage": "Dropdown",
-              "pageKind": "Components"
+              "text": "IDropdownProps"
             },
             {
               "text": ">"
@@ -288,15 +280,15 @@
           "name": "onRenderTitle",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IDropdownOption",
-              "hyperlinkedPage": "Dropdown",
-              "pageKind": "Components"
+              "text": "IDropdownOption"
             },
             {
               "text": "[]>"
@@ -309,9 +301,7 @@
           "name": "options",
           "typeTokens": [
             {
-              "text": "IDropdownOption",
-              "hyperlinkedPage": "Dropdown",
-              "pageKind": "Components"
+              "text": "IDropdownOption"
             },
             {
               "text": "[]"
@@ -366,9 +356,7 @@
               "text": ", "
             },
             {
-              "text": "IDropdownStyles",
-              "hyperlinkedPage": "Dropdown",
-              "pageKind": "Components"
+              "text": "IDropdownStyles"
             },
             {
               "text": ">"
@@ -381,7 +369,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by higher order component.\n",
@@ -569,9 +559,7 @@
           "name": "subComponentStyles",
           "typeTokens": [
             {
-              "text": "IDropdownSubComponentStyles",
-              "hyperlinkedPage": "Dropdown",
-              "pageKind": "Components"
+              "text": "IDropdownSubComponentStyles"
             }
           ],
           "descriptionHtml": "Subcomponent styles.\n",
@@ -605,9 +593,7 @@
               "text": "<"
             },
             {
-              "text": "ILabelStyleProps",
-              "hyperlinkedPage": "Label",
-              "pageKind": "Components"
+              "text": "ILabelStyleProps"
             },
             {
               "text": ", any>"
@@ -626,9 +612,7 @@
               "text": "<"
             },
             {
-              "text": "IPanelStyleProps",
-              "hyperlinkedPage": "Panel",
-              "pageKind": "Components"
+              "text": "IPanelStyleProps"
             },
             {
               "text": ", any>"

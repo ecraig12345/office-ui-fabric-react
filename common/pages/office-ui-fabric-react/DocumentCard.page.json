@@ -41,15 +41,15 @@
       "name": "IDocumentCardProps",
       "extendsTokens": [
         {
-          "text": "IBaseProps"
+          "text": "IBaseProps",
+          "hyperlinkedPage": "IBaseProps",
+          "pageKind": "References"
         },
         {
           "text": "<"
         },
         {
-          "text": "IDocumentCard",
-          "hyperlinkedPage": "DocumentCard",
-          "pageKind": "Components"
+          "text": "IDocumentCard"
         },
         {
           "text": ">"
@@ -124,9 +124,7 @@
               "text": "<"
             },
             {
-              "text": "IDocumentCard",
-              "hyperlinkedPage": "DocumentCard",
-              "pageKind": "Components"
+              "text": "IDocumentCard"
             },
             {
               "text": ">"
@@ -199,17 +197,13 @@
               "text": "<"
             },
             {
-              "text": "IDocumentCardStyleProps",
-              "hyperlinkedPage": "DocumentCard",
-              "pageKind": "Components"
+              "text": "IDocumentCardStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "IDocumentCardStyles",
-              "hyperlinkedPage": "DocumentCard",
-              "pageKind": "Components"
+              "text": "IDocumentCardStyles"
             },
             {
               "text": ">"
@@ -222,7 +216,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
@@ -232,9 +228,7 @@
           "name": "type",
           "typeTokens": [
             {
-              "text": "DocumentCardType",
-              "hyperlinkedPage": "DocumentCard",
-              "pageKind": "Components"
+              "text": "DocumentCardType"
             }
           ],
           "descriptionHtml": "The type of DocumentCard to display.\n\n",
@@ -282,7 +276,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",

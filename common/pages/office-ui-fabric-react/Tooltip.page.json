@@ -42,9 +42,7 @@
           "name": "calloutProps",
           "typeTokens": [
             {
-              "text": "ICalloutProps",
-              "hyperlinkedPage": "Callout",
-              "pageKind": "Components"
+              "text": "ICalloutProps"
             }
           ],
           "descriptionHtml": "Properties to pass through for Callout, reference detail properties in ICalloutProps\n\n",
@@ -60,9 +58,7 @@
               "text": "<"
             },
             {
-              "text": "ITooltip",
-              "hyperlinkedPage": "Tooltip",
-              "pageKind": "Components"
+              "text": "ITooltip"
             },
             {
               "text": ">"
@@ -85,9 +81,7 @@
           "name": "delay",
           "typeTokens": [
             {
-              "text": "TooltipDelay",
-              "hyperlinkedPage": "Tooltip",
-              "pageKind": "Components"
+              "text": "TooltipDelay"
             }
           ],
           "descriptionHtml": "Length of delay. Can be set to zero if you do not want a delay.\n\n",
@@ -127,15 +121,15 @@
           "name": "onRenderContent",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "ITooltipProps",
-              "hyperlinkedPage": "Tooltip",
-              "pageKind": "Components"
+              "text": "ITooltipProps"
             },
             {
               "text": ">"
@@ -154,17 +148,13 @@
               "text": "<"
             },
             {
-              "text": "ITooltipStyleProps",
-              "hyperlinkedPage": "Tooltip",
-              "pageKind": "Components"
+              "text": "ITooltipStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "ITooltipStyles",
-              "hyperlinkedPage": "Tooltip",
-              "pageKind": "Components"
+              "text": "ITooltipStyles"
             },
             {
               "text": ">"
@@ -187,7 +177,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme to apply to the component.\n",
@@ -215,9 +207,7 @@
           "name": "delay",
           "typeTokens": [
             {
-              "text": "TooltipDelay",
-              "hyperlinkedPage": "Tooltip",
-              "pageKind": "Components"
+              "text": "TooltipDelay"
             }
           ],
           "descriptionHtml": "Delay before tooltip appears.\n",
@@ -237,7 +227,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",

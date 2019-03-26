@@ -19,12 +19,36 @@ const LoadingComponent = (props: any): JSX.Element => {
 
 export const referencePages: INavPage[] = [
   {
+    title: 'BaseComponent',
+    url: '#/references/basecomponent',
+    isFilterable: true,
+    component: () => <LoadingComponent title="BaseComponent" />,
+    getComponent: cb =>
+      require.ensure([], require => cb(require<any>('../../pages/References/BaseComponentComponentPage').BaseComponentComponentPage))
+  },
+  {
     title: 'IAnimationStyles',
     url: '#/references/ianimationstyles',
     isFilterable: true,
     component: () => <LoadingComponent title="IAnimationStyles" />,
     getComponent: cb =>
       require.ensure([], require => cb(require<any>('../../pages/References/IAnimationStylesComponentPage').IAnimationStylesComponentPage))
+  },
+  {
+    title: 'IBaseProps',
+    url: '#/references/ibaseprops',
+    isFilterable: true,
+    component: () => <LoadingComponent title="IBaseProps" />,
+    getComponent: cb =>
+      require.ensure([], require => cb(require<any>('../../pages/References/IBasePropsComponentPage').IBasePropsComponentPage))
+  },
+  {
+    title: 'IFontFace',
+    url: '#/references/ifontface',
+    isFilterable: true,
+    component: () => <LoadingComponent title="IFontFace" />,
+    getComponent: cb =>
+      require.ensure([], require => cb(require<any>('../../pages/References/IFontFaceComponentPage').IFontFaceComponentPage))
   },
   {
     title: 'IFontStyles',
@@ -41,6 +65,22 @@ export const referencePages: INavPage[] = [
     component: () => <LoadingComponent title="IPalette" />,
     getComponent: cb =>
       require.ensure([], require => cb(require<any>('../../pages/References/IPaletteComponentPage').IPaletteComponentPage))
+  },
+  {
+    title: 'IRawStyle',
+    url: '#/references/irawstyle',
+    isFilterable: true,
+    component: () => <LoadingComponent title="IRawStyle" />,
+    getComponent: cb =>
+      require.ensure([], require => cb(require<any>('../../pages/References/IRawStyleComponentPage').IRawStyleComponentPage))
+  },
+  {
+    title: 'IRenderFunction',
+    url: '#/references/irenderfunction',
+    isFilterable: true,
+    component: () => <LoadingComponent title="IRenderFunction" />,
+    getComponent: cb =>
+      require.ensure([], require => cb(require<any>('../../pages/References/IRenderFunctionComponentPage').IRenderFunctionComponentPage))
   },
   {
     title: 'IScheme',

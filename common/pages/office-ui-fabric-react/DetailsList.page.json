@@ -183,9 +183,7 @@
           "name": "columnActionsMode",
           "typeTokens": [
             {
-              "text": "ColumnActionsMode",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "ColumnActionsMode"
             }
           ],
           "descriptionHtml": "Defines how the column's header should render.\n\n",
@@ -468,9 +466,7 @@
               "text": ": "
             },
             {
-              "text": "IColumn",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumn"
             },
             {
               "text": ") => void"
@@ -492,9 +488,7 @@
               "text": "?: "
             },
             {
-              "text": "IColumn",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumn"
             },
             {
               "text": ", "
@@ -568,9 +562,7 @@
               "text": "?: "
             },
             {
-              "text": "IColumn",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumn"
             },
             {
               "text": ") => any"
@@ -583,7 +575,9 @@
           "name": "onRenderDivider",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
@@ -725,9 +719,7 @@
               "text": ": "
             },
             {
-              "text": "IColumnDragDropDetails",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumnDragDropDetails"
             },
             {
               "text": ") => void"
@@ -749,9 +741,7 @@
               "text": ": "
             },
             {
-              "text": "ColumnDragEndLocation",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "ColumnDragEndLocation"
             },
             {
               "text": ") => void"
@@ -767,9 +757,7 @@
       "name": "IDetailsFooterBaseProps",
       "extendsTokens": [
         {
-          "text": "IDetailsItemProps",
-          "hyperlinkedPage": "DetailsList",
-          "pageKind": "Components"
+          "text": "IDetailsItemProps"
         },
         {
           "text": " "
@@ -783,9 +771,7 @@
       "name": "IDetailsFooterProps",
       "extendsTokens": [
         {
-          "text": "IDetailsFooterBaseProps",
-          "hyperlinkedPage": "DetailsList",
-          "pageKind": "Components"
+          "text": "IDetailsFooterBaseProps"
         },
         {
           "text": " "
@@ -797,9 +783,7 @@
           "name": "columns",
           "typeTokens": [
             {
-              "text": "IColumn",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumn"
             },
             {
               "text": "[]"
@@ -835,17 +819,13 @@
       "name": "IDetailsGroupDividerProps",
       "extendsTokens": [
         {
-          "text": "IGroupDividerProps",
-          "hyperlinkedPage": "GroupedList",
-          "pageKind": "Components"
+          "text": "IGroupDividerProps"
         },
         {
           "text": ", "
         },
         {
-          "text": "IDetailsItemProps",
-          "hyperlinkedPage": "DetailsList",
-          "pageKind": "Components"
+          "text": "IDetailsItemProps"
         },
         {
           "text": " "
@@ -859,9 +839,7 @@
       "name": "IDetailsGroupRenderProps",
       "extendsTokens": [
         {
-          "text": "IGroupRenderProps",
-          "hyperlinkedPage": "GroupedList",
-          "pageKind": "Components"
+          "text": "IGroupRenderProps"
         },
         {
           "text": " "
@@ -873,15 +851,15 @@
           "name": "onRenderFooter",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IDetailsGroupDividerProps",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IDetailsGroupDividerProps"
             },
             {
               "text": ">"
@@ -894,15 +872,15 @@
           "name": "onRenderHeader",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IDetailsGroupDividerProps",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IDetailsGroupDividerProps"
             },
             {
               "text": ">"
@@ -939,9 +917,7 @@
           "text": ", "
         },
         {
-          "text": "IDetailsItemProps",
-          "hyperlinkedPage": "DetailsList",
-          "pageKind": "Components"
+          "text": "IDetailsItemProps"
         },
         {
           "text": " "
@@ -1003,9 +979,7 @@
           "name": "collapseAllVisibility",
           "typeTokens": [
             {
-              "text": "CollapseAllVisibility",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "CollapseAllVisibility"
             }
           ],
           "descriptionHtml": "Whether to collapse for all visibility\n",
@@ -1015,9 +989,7 @@
           "name": "columnReorderOptions",
           "typeTokens": [
             {
-              "text": "IColumnReorderOptions",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumnReorderOptions"
             }
           ],
           "descriptionHtml": "Column reordering options\n",
@@ -1066,9 +1038,7 @@
           "name": "layoutMode",
           "typeTokens": [
             {
-              "text": "DetailsListLayoutMode",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "DetailsListLayoutMode"
             }
           ],
           "descriptionHtml": "Layout mode - fixedColumns or justified\n",
@@ -1097,9 +1067,7 @@
               "text": ": "
             },
             {
-              "text": "IColumn",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumn"
             },
             {
               "text": ", "
@@ -1151,9 +1119,7 @@
               "text": ": "
             },
             {
-              "text": "IColumn",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumn"
             },
             {
               "text": ") => void"
@@ -1175,9 +1141,7 @@
               "text": ": "
             },
             {
-              "text": "IColumn",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumn"
             },
             {
               "text": ", "
@@ -1223,9 +1187,7 @@
               "text": ": "
             },
             {
-              "text": "IColumn",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumn"
             },
             {
               "text": ", "
@@ -1253,9 +1215,7 @@
               "text": ": "
             },
             {
-              "text": "IColumn",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumn"
             },
             {
               "text": ", "
@@ -1280,7 +1240,9 @@
           "name": "onRenderColumnHeaderTooltip",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
@@ -1350,7 +1312,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme from the Higher Order Component\n",
@@ -1363,9 +1327,7 @@
       "name": "IDetailsHeaderProps",
       "extendsTokens": [
         {
-          "text": "IDetailsHeaderBaseProps",
-          "hyperlinkedPage": "DetailsList",
-          "pageKind": "Components"
+          "text": "IDetailsHeaderBaseProps"
         },
         {
           "text": " "
@@ -1377,9 +1339,7 @@
           "name": "columns",
           "typeTokens": [
             {
-              "text": "IColumn",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumn"
             },
             {
               "text": "[]"
@@ -1420,9 +1380,7 @@
           "name": "cellStyleProps",
           "typeTokens": [
             {
-              "text": "ICellStyleProps",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "ICellStyleProps"
             }
           ],
           "descriptionHtml": "Rules for rendering column cells.\n",
@@ -1432,9 +1390,7 @@
           "name": "checkboxVisibility",
           "typeTokens": [
             {
-              "text": "CheckboxVisibility",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "CheckboxVisibility"
             },
             {
               "text": " | undefined"
@@ -1447,9 +1403,7 @@
           "name": "columns",
           "typeTokens": [
             {
-              "text": "IColumn",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumn"
             },
             {
               "text": "[]"
@@ -1524,9 +1478,7 @@
       "name": "IDetailsList",
       "extendsTokens": [
         {
-          "text": "IList",
-          "hyperlinkedPage": "List",
-          "pageKind": "Components"
+          "text": "IList"
         },
         {
           "text": " "
@@ -1607,15 +1559,15 @@
       "name": "IDetailsListProps",
       "extendsTokens": [
         {
-          "text": "IBaseProps"
+          "text": "IBaseProps",
+          "hyperlinkedPage": "IBaseProps",
+          "pageKind": "References"
         },
         {
           "text": "<"
         },
         {
-          "text": "IDetailsList",
-          "hyperlinkedPage": "DetailsList",
-          "pageKind": "Components"
+          "text": "IDetailsList"
         },
         {
           "text": ">"
@@ -1686,9 +1638,7 @@
           "name": "cellStyleProps",
           "typeTokens": [
             {
-              "text": "ICellStyleProps",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "ICellStyleProps"
             }
           ],
           "descriptionHtml": "Props impacting the render style of cells. Since these have an impact on calculated column widths, they are handled separately from normal theme styling, but they are passed to the styling system.\n",
@@ -1708,9 +1658,7 @@
           "name": "checkboxVisibility",
           "typeTokens": [
             {
-              "text": "CheckboxVisibility",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "CheckboxVisibility"
             }
           ],
           "descriptionHtml": "Controls the visibility of selection check box.\n\n",
@@ -1740,9 +1688,7 @@
           "name": "columnReorderOptions",
           "typeTokens": [
             {
-              "text": "IColumnReorderOptions",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumnReorderOptions"
             }
           ],
           "descriptionHtml": "Options for column re-order using drag and drop\n",
@@ -1752,9 +1698,7 @@
           "name": "columns",
           "typeTokens": [
             {
-              "text": "IColumn",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumn"
             },
             {
               "text": "[]"
@@ -1783,9 +1727,7 @@
               "text": "<"
             },
             {
-              "text": "IDetailsList",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IDetailsList"
             },
             {
               "text": ">"
@@ -1798,9 +1740,7 @@
           "name": "constrainMode",
           "typeTokens": [
             {
-              "text": "ConstrainMode",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "ConstrainMode"
             }
           ],
           "descriptionHtml": "Controls how the list contrains overflow.\n",
@@ -1850,9 +1790,7 @@
           "name": "getGroupHeight",
           "typeTokens": [
             {
-              "text": "IGroupedListProps",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroupedListProps"
             },
             {
               "text": "['getGroupHeight']"
@@ -1919,9 +1857,7 @@
           "name": "groupProps",
           "typeTokens": [
             {
-              "text": "IDetailsGroupRenderProps",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IDetailsGroupRenderProps"
             }
           ],
           "descriptionHtml": "Optional override properties to render groups. The definition for IGroupRenderProps can be found under the GroupedList component.\n",
@@ -1931,9 +1867,7 @@
           "name": "groups",
           "typeTokens": [
             {
-              "text": "IGroup",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "IGroup"
             },
             {
               "text": "[]"
@@ -1986,9 +1920,7 @@
           "name": "layoutMode",
           "typeTokens": [
             {
-              "text": "DetailsListLayoutMode",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "DetailsListLayoutMode"
             }
           ],
           "descriptionHtml": "Controls how the columns are adjusted.\n",
@@ -1998,9 +1930,7 @@
           "name": "listProps",
           "typeTokens": [
             {
-              "text": "IListProps",
-              "hyperlinkedPage": "List",
-              "pageKind": "Components"
+              "text": "IListProps"
             }
           ],
           "descriptionHtml": "Optional properties to pass through to the list components being rendered.\n",
@@ -2099,9 +2029,7 @@
               "text": "?: "
             },
             {
-              "text": "IColumn",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumn"
             },
             {
               "text": ") => void"
@@ -2123,9 +2051,7 @@
               "text": "?: "
             },
             {
-              "text": "IColumn",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumn"
             },
             {
               "text": ", "
@@ -2171,9 +2097,7 @@
               "text": "?: "
             },
             {
-              "text": "IColumn",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumn"
             },
             {
               "text": ", "
@@ -2288,15 +2212,15 @@
           "name": "onRenderDetailsFooter",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IDetailsFooterProps",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IDetailsFooterProps"
             },
             {
               "text": ">"
@@ -2309,15 +2233,15 @@
           "name": "onRenderDetailsHeader",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IDetailsHeaderProps",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IDetailsHeaderProps"
             },
             {
               "text": ">"
@@ -2351,9 +2275,7 @@
               "text": "?: "
             },
             {
-              "text": "IColumn",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumn"
             },
             {
               "text": ") => "
@@ -2390,9 +2312,7 @@
               "text": "?: "
             },
             {
-              "text": "IDetailsRowProps",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IDetailsRowProps"
             },
             {
               "text": ") => "
@@ -2414,15 +2334,15 @@
           "name": "onRenderRow",
           "typeTokens": [
             {
-              "text": "IRenderFunction"
+              "text": "IRenderFunction",
+              "hyperlinkedPage": "IRenderFunction",
+              "pageKind": "References"
             },
             {
               "text": "<"
             },
             {
-              "text": "IDetailsRowProps",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IDetailsRowProps"
             },
             {
               "text": ">"
@@ -2488,9 +2408,7 @@
               "text": ": "
             },
             {
-              "text": "IListProps",
-              "hyperlinkedPage": "List",
-              "pageKind": "Components"
+              "text": "IListProps"
             },
             {
               "text": ") => boolean"
@@ -2615,9 +2533,7 @@
               "text": ", "
             },
             {
-              "text": "IDetailsListStyles",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IDetailsListStyles"
             },
             {
               "text": ">"
@@ -2630,7 +2546,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by the Higher Order Component\n",
@@ -2734,9 +2652,7 @@
           "text": "<"
         },
         {
-          "text": "IDetailsListProps",
-          "hyperlinkedPage": "DetailsList",
-          "pageKind": "Components"
+          "text": "IDetailsListProps"
         },
         {
           "text": ", 'onRenderItemColumn'>"
@@ -2745,15 +2661,15 @@
           "text": ", "
         },
         {
-          "text": "IBaseProps"
+          "text": "IBaseProps",
+          "hyperlinkedPage": "IBaseProps",
+          "pageKind": "References"
         },
         {
           "text": "<"
         },
         {
-          "text": "IDetailsRow",
-          "hyperlinkedPage": "DetailsList",
-          "pageKind": "Components"
+          "text": "IDetailsRow"
         },
         {
           "text": ">"
@@ -2762,9 +2678,7 @@
           "text": ", "
         },
         {
-          "text": "IDetailsItemProps",
-          "hyperlinkedPage": "DetailsList",
-          "pageKind": "Components"
+          "text": "IDetailsItemProps"
         },
         {
           "text": " "
@@ -2834,9 +2748,7 @@
           "name": "collapseAllVisibility",
           "typeTokens": [
             {
-              "text": "CollapseAllVisibility",
-              "hyperlinkedPage": "GroupedList",
-              "pageKind": "Components"
+              "text": "CollapseAllVisibility"
             }
           ],
           "descriptionHtml": "Collapse all visibility\n",
@@ -2862,9 +2774,7 @@
               "text": "<"
             },
             {
-              "text": "IDetailsRow",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IDetailsRow"
             },
             {
               "text": ">"
@@ -3020,9 +2930,7 @@
               "text": ": "
             },
             {
-              "text": "IDetailsRowCheckProps",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IDetailsRowCheckProps"
             },
             {
               "text": ") => "
@@ -3131,9 +3039,7 @@
               "text": ", "
             },
             {
-              "text": "IDetailsRowStyles",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IDetailsRowStyles"
             },
             {
               "text": ">"
@@ -3146,7 +3052,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by styled() function\n",
@@ -3295,9 +3203,7 @@
               "text": ", "
             },
             {
-              "text": "IDetailsRowCheckStyles",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IDetailsRowCheckStyles"
             },
             {
               "text": ">"
@@ -3310,7 +3216,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
@@ -3361,9 +3269,7 @@
       "name": "IDetailsRowProps",
       "extendsTokens": [
         {
-          "text": "IDetailsRowBaseProps",
-          "hyperlinkedPage": "DetailsList",
-          "pageKind": "Components"
+          "text": "IDetailsRowBaseProps"
         },
         {
           "text": " "
@@ -3375,9 +3281,7 @@
           "name": "columns",
           "typeTokens": [
             {
-              "text": "IColumn",
-              "hyperlinkedPage": "DetailsList",
-              "pageKind": "Components"
+              "text": "IColumn"
             },
             {
               "text": "[]"

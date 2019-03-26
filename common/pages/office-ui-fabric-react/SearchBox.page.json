@@ -95,9 +95,7 @@
           "name": "clearButtonProps",
           "typeTokens": [
             {
-              "text": "IButtonProps",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "IButtonProps"
             }
           ],
           "descriptionHtml": "The props for the clear button.\n",
@@ -113,9 +111,7 @@
               "text": "<"
             },
             {
-              "text": "ISearchBox",
-              "hyperlinkedPage": "SearchBox",
-              "pageKind": "Components"
+              "text": "ISearchBox"
             },
             {
               "text": ">"
@@ -154,9 +150,7 @@
               "text": "<"
             },
             {
-              "text": "IIconProps",
-              "hyperlinkedPage": "Icon",
-              "pageKind": "Components"
+              "text": "IIconProps"
             },
             {
               "text": ", "
@@ -168,9 +162,7 @@
               "text": "<keyof "
             },
             {
-              "text": "IIconProps",
-              "hyperlinkedPage": "Icon",
-              "pageKind": "Components"
+              "text": "IIconProps"
             },
             {
               "text": ", 'className'>>"
@@ -289,17 +281,13 @@
               "text": "<"
             },
             {
-              "text": "ISearchBoxStyleProps",
-              "hyperlinkedPage": "SearchBox",
-              "pageKind": "Components"
+              "text": "ISearchBoxStyleProps"
             },
             {
               "text": ", "
             },
             {
-              "text": "ISearchBoxStyles",
-              "hyperlinkedPage": "SearchBox",
-              "pageKind": "Components"
+              "text": "ISearchBoxStyles"
             },
             {
               "text": ">"
@@ -312,7 +300,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Theme (provided through customization).\n",
@@ -400,7 +390,9 @@
           "name": "theme",
           "typeTokens": [
             {
-              "text": "ITheme"
+              "text": "ITheme",
+              "hyperlinkedPage": "ITheme",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "",
