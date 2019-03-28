@@ -2,7 +2,6 @@ import { shallow } from 'enzyme';
 import { ReactWrapper, mount } from 'enzyme';
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import * as sinon from 'sinon';
 
 import { CommandBarButton } from '../../Button';
 import { IKeytipProps } from '../../Keytip';
@@ -29,16 +28,16 @@ function getPersistedKeytip(keytipManager: KeytipManager, keySequences: string[]
 describe('OverflowSet', () => {
   describe('snapshot tests', () => {
     test('basicSnapshot', () => {
-      const onRenderItem = sinon.spy();
-      const onRenderOverflowButton = sinon.spy();
+      const onRenderItem = jest.fn();
+      const onRenderOverflowButton = jest.fn();
       const component = renderer.create(<OverflowSet onRenderItem={onRenderItem} onRenderOverflowButton={onRenderOverflowButton} />);
       const tree = component.toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     test('snapshot with classname', () => {
-      const onRenderItem = sinon.spy();
-      const onRenderOverflowButton = sinon.spy();
+      const onRenderItem = jest.fn();
+      const onRenderOverflowButton = jest.fn();
       const component = renderer.create(
         <OverflowSet className="foobar" onRenderItem={onRenderItem} onRenderOverflowButton={onRenderOverflowButton} />
       );
@@ -47,8 +46,8 @@ describe('OverflowSet', () => {
     });
 
     test('snapshot with classname and vertical layout', () => {
-      const onRenderItem = sinon.spy();
-      const onRenderOverflowButton = sinon.spy();
+      const onRenderItem = jest.fn();
+      const onRenderOverflowButton = jest.fn();
       const component = renderer.create(
         <OverflowSet className="foobar" vertical={true} onRenderItem={onRenderItem} onRenderOverflowButton={onRenderOverflowButton} />
       );
@@ -58,19 +57,19 @@ describe('OverflowSet', () => {
   });
 
   it('does not render overflow when there are no overflow items', () => {
-    const onRenderItem = sinon.spy();
-    const onRenderOverflowButton = sinon.spy();
+    const onRenderItem = jest.fn();
+    const onRenderOverflowButton = jest.fn();
     shallow(<OverflowSet onRenderItem={onRenderItem} onRenderOverflowButton={onRenderOverflowButton} />);
 
-    expect(onRenderOverflowButton.called).toEqual(false);
+    expect(onRenderOverflowButton).toHaveBeenCalledTimes(0);
   });
 
   it('does not render overflow when overflow items is an empty array', () => {
-    const onRenderItem = sinon.spy();
-    const onRenderOverflowButton = sinon.spy();
+    const onRenderItem = jest.fn();
+    const onRenderOverflowButton = jest.fn();
     shallow(<OverflowSet onRenderItem={onRenderItem} onRenderOverflowButton={onRenderOverflowButton} overflowItems={[]} />);
 
-    expect(onRenderOverflowButton.called).toEqual(false);
+    expect(onRenderOverflowButton).toHaveBeenCalledTimes(0);
   });
 
   function delay(millisecond: number): Promise<void> {

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
 import * as renderer from 'react-test-renderer';
-import * as sinon from 'sinon';
 
 import { Toggle } from './Toggle';
 
@@ -118,7 +117,7 @@ describe('Toggle', () => {
 
   it(`doesn't trigger onSubmit when placed inside a form`, () => {
     let component: any;
-    const onSubmit = sinon.spy();
+    const onSubmit = jest.fn();
 
     const wrapper = mount(
       <form
@@ -140,6 +139,6 @@ describe('Toggle', () => {
     // simulate to change toggle state
     button.simulate('click');
     expect((component as React.Component<any, any>).state.checked).toEqual(true);
-    expect(onSubmit.called).toEqual(false);
+    expect(onSubmit).toHaveBeenCalledTimes(0);
   });
 });
