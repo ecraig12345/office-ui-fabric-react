@@ -90,7 +90,13 @@
           "pageKind": "Components"
         },
         {
-          "text": " | "
+          "text": "<"
+        },
+        {
+          "text": "T"
+        },
+        {
+          "text": "> | "
         },
         {
           "text": "HTMLDivElement"
@@ -168,7 +174,13 @@
               "text": "item"
             },
             {
-              "text": ": any, "
+              "text": ": "
+            },
+            {
+              "text": "T"
+            },
+            {
+              "text": ", "
             },
             {
               "text": "index"
@@ -255,7 +267,13 @@
               "text": "IPage"
             },
             {
-              "text": ") => any"
+              "text": "<"
+            },
+            {
+              "text": "T"
+            },
+            {
+              "text": ">) => any"
             }
           ],
           "descriptionHtml": "Method called by the list to derive the page style object. For spacer pages, the list will derive the height and passed in heights will be ignored.\n",
@@ -265,7 +283,10 @@
           "name": "items",
           "typeTokens": [
             {
-              "text": "any[]"
+              "text": "T"
+            },
+            {
+              "text": "[]"
             }
           ],
           "descriptionHtml": "Items to render.\n",
@@ -287,7 +308,13 @@
               "text": "IPage"
             },
             {
-              "text": ") => void"
+              "text": "<"
+            },
+            {
+              "text": "T"
+            },
+            {
+              "text": ">) => void"
             }
           ],
           "descriptionHtml": "Optional callback for monitoring when a page is added.\n",
@@ -309,7 +336,13 @@
               "text": "IPage"
             },
             {
-              "text": ") => void"
+              "text": "<"
+            },
+            {
+              "text": "T"
+            },
+            {
+              "text": ">) => void"
             }
           ],
           "descriptionHtml": "Optional callback for monitoring when a page is removed.\n",
@@ -331,7 +364,13 @@
               "text": "IPage"
             },
             {
-              "text": "[]) => void"
+              "text": "<"
+            },
+            {
+              "text": "T"
+            },
+            {
+              "text": ">[]) => void"
             }
           ],
           "descriptionHtml": "Optional callback invoked when List rendering completed. This can be on initial mount or on re-render due to scrolling. This method will be called as a result of changes in List pages (added or removed), and after ALL the changes complete. To track individual page Add / Remove use onPageAdded / onPageRemoved instead.\n\n",
@@ -347,7 +386,13 @@
               "text": "item"
             },
             {
-              "text": "?: any, "
+              "text": "?: "
+            },
+            {
+              "text": "T"
+            },
+            {
+              "text": ", "
             },
             {
               "text": "index"
@@ -390,7 +435,13 @@
               "text": "IPageProps"
             },
             {
-              "text": ", "
+              "text": "<"
+            },
+            {
+              "text": "T"
+            },
+            {
+              "text": ">, "
             },
             {
               "text": "defaultRender"
@@ -410,7 +461,13 @@
               "text": "IPageProps"
             },
             {
-              "text": ">) => "
+              "text": "<"
+            },
+            {
+              "text": "T"
+            },
+            {
+              "text": ">>) => "
             },
             {
               "text": "React"
@@ -441,7 +498,13 @@
               "text": "IListProps"
             },
             {
-              "text": ") => boolean"
+              "text": "<"
+            },
+            {
+              "text": "T"
+            },
+            {
+              "text": ">) => boolean"
             }
           ],
           "descriptionHtml": "Optional callback to determine whether the list should be rendered in full, or virtualized. Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists. The default implementation will virtualize when this callback is not provided.\n",
@@ -559,7 +622,10 @@
           "name": "items",
           "typeTokens": [
             {
-              "text": "any[] | undefined"
+              "text": "T"
+            },
+            {
+              "text": "[] | undefined"
             }
           ],
           "descriptionHtml": "",
@@ -664,6 +730,15 @@
           "typeTokens": [
             {
               "text": "IPage"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "T"
+            },
+            {
+              "text": ">"
             }
           ],
           "descriptionHtml": "The allocation data for the page.\n",

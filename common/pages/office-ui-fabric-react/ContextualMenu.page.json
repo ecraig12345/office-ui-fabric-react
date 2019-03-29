@@ -419,7 +419,25 @@
               "text": "event"
             },
             {
-              "text": ": any) => void"
+              "text": ": "
+            },
+            {
+              "text": "React"
+            },
+            {
+              "text": "."
+            },
+            {
+              "text": "MouseEvent"
+            },
+            {
+              "text": "<"
+            },
+            {
+              "text": "HTMLElement"
+            },
+            {
+              "text": ">) => void"
             }
           ],
           "descriptionHtml": "A function to be executed onMouseDown. This is executed before an onClick event and can be used to interrupt native on click events as well. The click event should still handle the commands. This should only be used in special cases when react and non-react are mixed.\n",

@@ -1,6 +1,48 @@
 # Change Log - @uifabric/dashboard
 
-This log was last generated on Wed, 13 Mar 2019 00:42:29 GMT and should not be manually modified.
+This log was last generated on Tue, 26 Mar 2019 12:32:51 GMT and should not be manually modified.
+
+## 0.58.0
+Tue, 26 Mar 2019 12:32:51 GMT
+
+### Minor changes
+
+- Remove IE 11-incompatible constructs
+
+## 0.57.2
+Mon, 25 Mar 2019 12:33:48 GMT
+
+### Patches
+
+- expose FocuseZone component props in dashboard Card component
+
+## 0.57.1
+Thu, 21 Mar 2019 17:21:42 GMT
+
+### Patches
+
+- Fix issue with add card from panel using drag and drop
+
+## 0.57.0
+Thu, 21 Mar 2019 12:36:30 GMT
+
+### Minor changes
+
+- Add title native tool-tip for the refresh icon and close icon in DetailPanel with pivot
+
+## 0.56.0
+Tue, 19 Mar 2019 12:36:45 GMT
+
+### Minor changes
+
+- Dashboard Card Header ellipsis border issue resolved.
+
+## 0.55.2
+Mon, 18 Mar 2019 17:04:23 GMT
+
+### Patches
+
+- DetailPanel: Enable overflow handling on Tiles
 
 ## 0.55.1
 Wed, 13 Mar 2019 00:42:29 GMT

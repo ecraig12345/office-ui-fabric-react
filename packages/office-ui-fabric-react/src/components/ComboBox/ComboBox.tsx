@@ -971,7 +971,7 @@ export class ComboBox extends BaseComponent<IComboBoxProps, IComboBoxState> {
 
     if (this.state.focused) {
       this.setState({ focused: false });
-      if (!this.props.multiSelect) {
+      if (!this.props.multiSelect || this.props.allowFreeform) {
         this._submitPendingValue(event);
       }
     }
@@ -1411,7 +1411,7 @@ export class ComboBox extends BaseComponent<IComboBoxProps, IComboBoxState> {
    * @returns - an array of the indices of the selected options, empty array if nothing is selected
    */
   private _getSelectedIndices(options: IComboBoxOption[] | undefined, selectedKeys: (string | number | undefined)[]): number[] {
-    if (options === undefined || selectedKeys === undefined) {
+    if (!options || !selectedKeys) {
       return [];
     }
 

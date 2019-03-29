@@ -80,6 +80,22 @@
           "deprecated": false
         },
         {
+          "name": "key",
+          "typeTokens": [
+            {
+              "text": "React"
+            },
+            {
+              "text": "."
+            },
+            {
+              "text": "Key"
+            }
+          ],
+          "descriptionHtml": "",
+          "deprecated": false
+        },
+        {
           "name": "shouldBlockSelection",
           "typeTokens": [
             {

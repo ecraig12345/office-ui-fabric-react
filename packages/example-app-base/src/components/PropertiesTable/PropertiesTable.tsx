@@ -5,18 +5,15 @@ import {
   DetailsRow,
   IDetailsRowProps,
   IDetailsRowStyles,
-  IDetailsHeaderProps,
   DetailsListLayoutMode,
-  IColumn,
-  IGroup
+  IColumn
 } from 'office-ui-fabric-react/lib/DetailsList';
 import { Link } from 'office-ui-fabric-react/lib/Link';
 import { SelectionMode } from 'office-ui-fabric-react/lib/Selection';
 import { Stack } from 'office-ui-fabric-react/lib/Stack';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import './PropertiesTable.scss';
-import { IInterfaceProperty, IEnumProperty, InterfacePropertyType, ILinkToken } from '../../utilities/parser/index';
-import { FontClassNames, ITheme } from 'office-ui-fabric-react/lib/Styling';
+import { IInterfaceProperty, IEnumProperty, ILinkToken } from '../../utilities/parser/index';
 
 export interface IPropertiesTableProps {
   title?: string;
@@ -43,7 +40,7 @@ const renderCell = (text: string) => {
   // so this regex will match backtick sequences that span multiple lines.
   const regex = new RegExp('`[^`]*`', 'g');
   let regexResult: RegExpExecArray | null;
-  let codeBlocks: { index: number; text: string }[] = [];
+  const codeBlocks: { index: number; text: string }[] = [];
   while ((regexResult = regex.exec(text)) !== null) {
     codeBlocks.push({
       index: regexResult.index,
@@ -82,11 +79,11 @@ const renderCellType = (typeTokens: ILinkToken[]) => {
   return _parseILinkTokens(false, typeTokens);
 };
 
-const createRenderCell = (propertyName: keyof IInterfaceProperty | keyof IEnumProperty) => (item: IInterfaceProperty | IEnumProperty) =>
-  renderCell(item[propertyName]);
+const createRenderCellEnum = (propertyName: keyof IEnumProperty) => (item: IEnumProperty) => renderCell(item[propertyName]);
 
-const createRenderCellType = (propertyName: keyof IInterfaceProperty | keyof IEnumProperty) => (item: IInterfaceProperty | IEnumProperty) =>
-  renderCellType(item[propertyName]);
+const createRenderCellInterface = (propertyName: 'name' | 'description') => (item: IInterfaceProperty) => renderCell(item[propertyName]);
+
+const createRenderCellType = (propertyName: 'typeTokens') => (item: IInterfaceProperty) => renderCellType(item[propertyName]);
 
 const DEFAULT_COLUMNS: IColumn[] = [
   {
@@ -98,7 +95,7 @@ const DEFAULT_COLUMNS: IColumn[] = [
     isCollapsible: false,
     isRowHeader: true,
     isResizable: true,
-    onRender: createRenderCell('name')
+    onRender: createRenderCellInterface('name')
   },
   {
     key: 'type',
@@ -120,7 +117,7 @@ const DEFAULT_COLUMNS: IColumn[] = [
     isCollapsible: false,
     isResizable: true,
     isMultiline: true,
-    onRender: createRenderCell('description')
+    onRender: createRenderCellInterface('description')
   }
 ];
 
@@ -134,7 +131,7 @@ const ENUM_COLUMNS: IColumn[] = [
     isCollapsible: false,
     isRowHeader: true,
     isResizable: true,
-    onRender: createRenderCell('name')
+    onRender: createRenderCellEnum('name')
   },
   {
     key: 'value',
@@ -144,7 +141,7 @@ const ENUM_COLUMNS: IColumn[] = [
     maxWidth: 200,
     isCollapsible: false,
     isResizable: true,
-    onRender: createRenderCell('value')
+    onRender: createRenderCellEnum('value')
   },
   {
     key: 'description',
@@ -154,7 +151,7 @@ const ENUM_COLUMNS: IColumn[] = [
     maxWidth: 400,
     isCollapsible: false,
     isResizable: true,
-    onRender: createRenderCell('description')
+    onRender: createRenderCellEnum('description')
   }
 ];
 
@@ -216,7 +213,7 @@ export class PropertiesTable extends React.Component<IPropertiesTableProps, IPro
     super(props);
 
     if (props.renderAsEnum) {
-      let properties = (props.properties as IEnumProperty[])
+      const properties = (props.properties as IEnumProperty[])
         .sort((a: IEnumProperty, b: IEnumProperty) => (a.value < b.value ? -1 : a.value > b.value ? 1 : 0))
         .map((prop: IEnumProperty, index: number) => assign({}, prop, { key: index }));
 
@@ -225,7 +222,7 @@ export class PropertiesTable extends React.Component<IPropertiesTableProps, IPro
         isEnum: !!props.renderAsEnum
       };
     } else {
-      let properties = (props.properties as IInterfaceProperty[])
+      const properties = (props.properties as IInterfaceProperty[])
         .sort((a: IInterfaceProperty, b: IInterfaceProperty) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0))
         .map((prop: IInterfaceProperty, index: number) => assign({}, prop, { key: index }));
 
@@ -237,7 +234,7 @@ export class PropertiesTable extends React.Component<IPropertiesTableProps, IPro
   }
 
   public render(): JSX.Element | null {
-    const { title, description, extendsTokens } = this.props;
+    const { description, extendsTokens } = this.props;
     const { properties, isEnum } = this.state;
 
     return (

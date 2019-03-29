@@ -5,8 +5,6 @@ import { Stack } from 'office-ui-fabric-react/lib/Stack';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { PropertiesTable, MEDIUM_GAP_SIZE, LARGE_GAP_SIZE } from './PropertiesTable';
 import { IPropertiesTableSetProps, IEnumTableRowJson, ITableRowJson } from './PropertiesTableSet.types';
-import { InterfacePropertyType } from '../../utilities/parser/index';
-import { ITheme } from 'office-ui-fabric-react/lib/Styling';
 
 export interface IPropertiesTableSetState {
   properties: Array<IProperty>;
@@ -27,7 +25,7 @@ export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps
 
   public renderFirst(): JSX.Element | undefined {
     if (this.state.properties.length >= 1) {
-      let item = this.state.properties[0];
+      const item = this.state.properties[0];
       return (
         <PropertiesTable
           key={item.propertyName}
@@ -101,8 +99,8 @@ export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps
 
   private _generatePropertyArray(): Array<IProperty> {
     let results: Array<IProperty> = [];
-    let iComponentProps: Array<IProperty> = [];
-    let preResults: Array<IProperty> = [];
+    const iComponentProps: Array<IProperty> = [];
+    const preResults: Array<IProperty> = [];
     const pattern: RegExp = /(I.*?Props)/;
 
     const { jsonDocs } = this.props;
@@ -111,7 +109,7 @@ export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps
       for (let j = 0; j < jsonDocs.tables.length; j++) {
         switch (jsonDocs.tables[j].kind) {
           case 'enum': {
-            let enumMembers: IEnumProperty[] = [];
+            const enumMembers: IEnumProperty[] = [];
 
             const members: IEnumTableRowJson[] = jsonDocs.tables[j].members as IEnumTableRowJson[];
             for (let k = 0; k < members.length; k++) {
@@ -135,7 +133,7 @@ export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps
             break;
           }
           case 'interface': {
-            let interfaceMembers: IInterfaceProperty[] = [];
+            const interfaceMembers: IInterfaceProperty[] = [];
 
             const members: ITableRowJson[] = jsonDocs.tables[j].members as ITableRowJson[];
             for (let k = 0; k < members.length; k++) {
@@ -176,7 +174,7 @@ export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps
     }
 
     results = iComponentProps;
-    for (let result of preResults) {
+    for (const result of preResults) {
       results.push(result);
     }
 

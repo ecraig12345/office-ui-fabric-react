@@ -226,7 +226,16 @@
           "name": "title",
           "typeTokens": [
             {
-              "text": "string"
+              "text": "string | "
+            },
+            {
+              "text": "JSX"
+            },
+            {
+              "text": "."
+            },
+            {
+              "text": "Element"
             }
           ],
           "descriptionHtml": "The title text to display at the top of the dialog.\n",
@@ -909,7 +918,16 @@
           "name": "title",
           "typeTokens": [
             {
-              "text": "string"
+              "text": "string | "
+            },
+            {
+              "text": "JSX"
+            },
+            {
+              "text": "."
+            },
+            {
+              "text": "Element"
             }
           ],
           "descriptionHtml": "The title text to display at the top of the dialog.\n\n",

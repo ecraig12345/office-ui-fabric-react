@@ -1460,8 +1460,8 @@
               "text": ">"
             }
           ],
-          "descriptionHtml": "Style function to be passed in to override the themed or default styles\n",
-          "deprecated": false
+          "descriptionHtml": "Style function to be passed in to override the themed or default styles\n\n",
+          "deprecated": true
         },
         {
           "name": "theme",
@@ -1472,8 +1472,8 @@
               "pageKind": "References"
             }
           ],
-          "descriptionHtml": "Theme from Higher Order Component\n",
-          "deprecated": false
+          "descriptionHtml": "Theme from Higher Order Component\n\n",
+          "deprecated": true
         }
       ]
     },
@@ -1481,7 +1481,7 @@
       "kind": "interface",
       "name": "IGroupSpacerStyles",
       "extendsTokens": [],
-      "descriptionHtml": "\n",
+      "descriptionHtml": "\n\n",
       "members": [
         {
           "name": "root",
