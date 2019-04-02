@@ -3,6 +3,7 @@ import { IProperty, PropertyType, IInterfaceProperty, IEnumProperty } from '../.
 import { ActionButton } from 'office-ui-fabric-react/lib/Button';
 import { Stack } from 'office-ui-fabric-react/lib/Stack';
 import { Text } from 'office-ui-fabric-react/lib/Text';
+import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import { PropertiesTable, MEDIUM_GAP_SIZE, LARGE_GAP_SIZE } from './PropertiesTable';
 import { IPropertiesTableSetProps, IEnumTableRowJson, ITableRowJson } from './PropertiesTableSet.types';
 
@@ -10,6 +11,10 @@ export interface IPropertiesTableSetState {
   properties: Array<IProperty>;
   showSeeMore: boolean;
 }
+
+const propertiesTableTopMargin = mergeStyles({
+  marginTop: '40px'
+});
 
 export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps, IPropertiesTableSetState> {
   constructor(props: IPropertiesTableSetProps) {
@@ -80,7 +85,7 @@ export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps
 
   public render(): JSX.Element {
     return (
-      <Stack gap={LARGE_GAP_SIZE}>
+      <Stack gap={LARGE_GAP_SIZE} className={propertiesTableTopMargin}>
         {this.renderFirst()}
         {this.renderEach()}
       </Stack>

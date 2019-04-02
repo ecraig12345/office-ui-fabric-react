@@ -1,10 +1,8 @@
 import * as React from 'react';
 import { css, getDocument } from 'office-ui-fabric-react/lib/Utilities';
 import { Link } from 'office-ui-fabric-react/lib/Link';
-import { Stack } from 'office-ui-fabric-react/lib/Stack';
 import { EditSection } from '../EditSection/index';
 import './ComponentPage.scss';
-import { MEDIUM_GAP_SIZE } from '../PropertiesTable/PropertiesTable';
 
 export interface IComponentPageSection {
   title: string;
@@ -203,12 +201,12 @@ export class ComponentPage extends React.Component<IComponentPageProps, {}> {
   private _getPropertiesTable(): JSX.Element | undefined {
     if (this.props.propertiesTables) {
       return (
-        <Stack gap={MEDIUM_GAP_SIZE} className="ComponentPage-implementationSection">
+        <div className="ComponentPage-implementationSection">
           <h2 className="ComponentPage-subHeading" id="Implementation">
             Implementation
           </h2>
           {this.props.propertiesTables}
-        </Stack>
+        </div>
       );
     }
   }
