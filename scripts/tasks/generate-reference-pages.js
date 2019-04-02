@@ -1,50 +1,90 @@
-const fs = require('fs');
 const path = require('path');
+const generateJson = require('@uifabric/page-json-generator').generateJson;
 
-module.exports = function generateReferencePages() {
-  fs.readdir(path.resolve(__dirname, '../../apps/fabric-website/src/pages/References'), (err, files) => {
-    if (err) {
-      console.log('read dir error: ' + err);
-    }
-
-    let pageNames = files;
-    let referencePages = [];
-    for (let file of files) {
-      let reference = file.replace('ComponentPage.tsx', '');
-      referencePages.push(`
-    {
-      title: '${reference}',
-      url: '#/references/${reference.toLowerCase()}',
-      isFilterable: true,
-      component: () => <LoadingComponent title="${reference}" />,
-      getComponent: cb =>
-        require.ensure([], require => cb(require<any>('../../pages/References/${reference}ComponentPage').${reference}ComponentPage))
-    }`);
-    }
-    const content =
-      `
-    import * as React from 'react';
-
-// Props
-import { INavPage } from '../Nav/Nav.types';
-import { ComponentPage } from '../ComponentPage/ComponentPage';
-import { PageHeader } from '../PageHeader/PageHeader';
-
-// Giving the loading component a height so that the left nav loads in full screen and there is less flashing as the component page loads.
-const loadingPageHeight: string = 'calc(100vh - 100px)';
-const LoadingComponent = (props: any): JSX.Element => {
-  return (
-    <div style={{ height: loadingPageHeight }}>
-      <ComponentPage>
-        <PageHeader pageTitle={props.title} backgroundColor="#038387" />
-      </ComponentPage>
-    </div>
-  );
-};
-
-export const referencePages: INavPage[] = [` +
-      referencePages.toString() +
-      '];';
-    fs.writeFileSync(path.resolve(__dirname, '../../apps/fabric-website/src/components/App/referencePage.tsx'), content);
-  });
-};
+generateJson([
+  {
+    apiJsonPaths: [
+      path.join(__dirname, '../../packages/styling/dist/styling.api.json'),
+      path.join(__dirname, '../../packages/utilities/dist/utilities.api.json'),
+      path.join(__dirname, '../../packages/merge-styles/dist/merge-styles.api.json')
+    ],
+    pageJsonFolderPath: path.join(__dirname, '../../common/pages/references'),
+    pageNames: [],
+    kind: 'References'
+  },
+  {
+    apiJsonPaths: [path.join(__dirname, '../../packages/office-ui-fabric-react/dist/office-ui-fabric-react.api.json')],
+    pageJsonFolderPath: path.join(__dirname, '../../common/pages/office-ui-fabric-react'),
+    pageNames: [
+      'ActivityItem',
+      'Autofill',
+      'Announced',
+      'Breadcrumb',
+      'Button',
+      'Calendar',
+      'Callout',
+      'Checkbox',
+      'ChoiceGroup',
+      'Coachmark',
+      'ColorPicker',
+      'ComboBox',
+      'CommandBar',
+      'ContextualMenu',
+      'DatePicker',
+      'DetailsList',
+      'Dialog',
+      'Divider',
+      'DocumentCard',
+      'Dropdown',
+      'ExtendedPeoplePicker',
+      'ExtendedPicker',
+      'Facepile',
+      'FloatingPeoplePicker',
+      'FloatingPicker',
+      'FocusTrapZone',
+      'FocusZone',
+      'GroupedList',
+      'HoverCard',
+      'Icon',
+      'Image',
+      'Keytip',
+      'Label',
+      'Layer',
+      'Link',
+      'List',
+      'MarqueeSelection',
+      'MessageBar',
+      'Modal',
+      'Nav',
+      'OverflowSet',
+      'Overlay',
+      'Panel',
+      'PeoplePicker',
+      'Persona',
+      'Pickers',
+      'Pivot',
+      'Popup',
+      'PositioningContainer',
+      'ProgressIndicator',
+      'Rating',
+      'ResizeGroup',
+      'SelectedPeopleList',
+      'ScrollablePane',
+      'SearchBox',
+      'SelectableOption',
+      'SelectedItemsList',
+      'Shimmer',
+      'Slider',
+      'SpinButton',
+      'Spinner',
+      'Stack',
+      'SwatchColorPicker',
+      'TeachingBubble',
+      'Text',
+      'TextField',
+      'Toggle',
+      'Tooltip'
+    ],
+    kind: 'References'
+  }
+]);

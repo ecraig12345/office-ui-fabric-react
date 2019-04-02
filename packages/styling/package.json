@@ -20,9 +20,7 @@
     "update-api": "node ../../scripts/update-api.js",
     "update-snapshots": "node ../../scripts/just.js jest -u"
   },
-  "disabledTasks": [
-    "generate-reference-pages"
-  ],
+  "disabledTasks": [],
   "devDependencies": {
     "@types/jest": "23.0.0",
     "@types/react": "16.3.16",

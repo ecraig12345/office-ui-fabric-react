@@ -56,7 +56,6 @@
   },
   "disabledTasks": [
     "verify-api-extractor",
-    "jest",
-    "generate-reference-pages"
+    "jest"
   ]
 }

@@ -19,7 +19,6 @@
     "build-codepen-examples",
     "verify-api-extractor",
     "update-api-extractor",
-    "generate-reference-pages",
     "jest"
   ],
   "devDependencies": {

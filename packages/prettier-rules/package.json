@@ -9,7 +9,6 @@
     "code-style": "node -v"
   },
   "disabledTasks": [
-    "verify-api-extractor",
-    "generate-reference-pages"
+    "verify-api-extractor"
   ]
 }

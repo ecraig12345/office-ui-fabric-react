@@ -44,7 +44,6 @@
     "typescript": "2.8.4"
   },
   "disabledTasks": [
-    "verify-api-extractor",
-    "generate-reference-pages"
+    "verify-api-extractor"
   ]
 }

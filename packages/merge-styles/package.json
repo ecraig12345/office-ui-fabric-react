@@ -23,8 +23,7 @@
   },
   "disabledTasks": [
     "copy",
-    "sass",
-    "generate-reference-pages"
+    "sass"
   ],
   "devDependencies": {
     "@types/jest": "23.0.0",

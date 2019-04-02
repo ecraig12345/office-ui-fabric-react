@@ -23,8 +23,7 @@
   },
   "disabledTasks": [
     "verify-api-extractor",
-    "jest",
-    "generate-reference-pages"
+    "jest"
   ],
   "devDependencies": {
     "@types/react": "16.3.16",
