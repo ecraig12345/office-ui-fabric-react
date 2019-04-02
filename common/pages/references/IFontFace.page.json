@@ -5,7 +5,9 @@
       "name": "IFontFace",
       "extendsTokens": [
         {
-          "text": "IRawFontStyle"
+          "text": "IRawFontStyle",
+          "hyperlinkedPage": "IRawFontStyle",
+          "pageKind": "References"
         },
         {
           "text": " "

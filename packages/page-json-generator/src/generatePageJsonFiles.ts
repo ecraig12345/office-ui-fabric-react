@@ -7,16 +7,16 @@ import { generateJson, PageKind } from './PageJsonGenerator';
 generateJson([
   {
     apiJsonPaths: [
-      'C:\\Users\\naethell\\office-ui-fabric-react\\packages\\styling\\dist\\styling.api.json',
-      'C:\\Users\\naethell\\office-ui-fabric-react\\packages\\utilities\\dist\\utilities.api.json',
-      'C:\\Users\\naethell\\office-ui-fabric-react\\packages\\merge-styles\\dist\\merge-styles.api.json'
+      path.join(__dirname, '../../../packages/styling/dist/styling.api.json'),
+      path.join(__dirname, '../../../packages/utilities/dist/utilities.api.json'),
+      path.join(__dirname, '../../../packages/merge-styles/dist/merge-styles.api.json')
     ],
     pageJsonFolderPath: path.join(__dirname, '../../../common/pages/references'),
     pageNames: [],
     kind: PageKind.References
   },
   {
-    apiJsonPaths: ['C:\\Users\\naethell\\office-ui-fabric-react\\packages\\office-ui-fabric-react\\dist\\office-ui-fabric-react.api.json'],
+    apiJsonPaths: [path.join(__dirname, '../../../packages/office-ui-fabric-react/dist/office-ui-fabric-react.api.json')],
     pageJsonFolderPath: path.join(__dirname, '../../../common/pages/office-ui-fabric-react'),
     pageNames: [
       'ActivityItem',

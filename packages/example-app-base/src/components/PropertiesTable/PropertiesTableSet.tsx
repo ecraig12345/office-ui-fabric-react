@@ -132,12 +132,13 @@ export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps
 
             break;
           }
-          case 'interface': {
+          case 'interface':
+          case 'class': {
             const interfaceMembers: IInterfaceProperty[] = [];
 
             const members: ITableRowJson[] = jsonDocs.tables[j].members as ITableRowJson[];
             for (let k = 0; k < members.length; k++) {
-              // each member within the interface
+              // each member within the interface or class
               interfaceMembers.push({
                 description: members[k].descriptionHtml,
                 name: members[k].name,
@@ -147,7 +148,7 @@ export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps
               });
             }
 
-            // the interface
+            // the interface or class
             if (pattern.test(jsonDocs.tables[j].name)) {
               iComponentProps.push({
                 propertyName: jsonDocs.tables[j].name,

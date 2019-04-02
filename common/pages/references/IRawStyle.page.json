@@ -5,7 +5,9 @@
       "name": "IRawStyle",
       "extendsTokens": [
         {
-          "text": "IRawStyleBase"
+          "text": "IRawStyleBase",
+          "hyperlinkedPage": "IRawStyleBase",
+          "pageKind": "References"
         },
         {
           "text": " "

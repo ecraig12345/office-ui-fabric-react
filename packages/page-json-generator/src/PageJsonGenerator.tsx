@@ -136,68 +136,46 @@ function generateTsxFiles(collectedData: CollectedData): void {
 
 /**
  * Create file for each page
+ *
+ * @param collectedData - Collected data
  * @param options - Page json options
  */
 function createPageJsonFiles(collectedData: CollectedData, options: IPageJsonOptions): void {
-  if (options.kind === PageKind.Components) {
-    collectedData.pageDataByPageName.forEach((value: PageData, pageName: string) => {
-      if (value.kind === PageKind.Components) {
-        const pageJsonPath: string = path.join(options.pageJsonFolderPath, pageName + '.page.json');
-        console.log('Writing ' + pageJsonPath);
+  const kind = options.kind;
 
-        const pageData: PageData = collectedData.pageDataByPageName.get(pageName)!;
+  collectedData.pageDataByPageName.forEach((value: PageData, pageName: string) => {
+    if (value.kind === kind) {
+      const pageJsonPath: string = path.join(options.pageJsonFolderPath, pageName + '.page.json');
+      console.log('Writing ' + pageJsonPath);
 
-        const pageJson: IPageJson = { tables: [] };
-        for (const apiItem of pageData.apiItems) {
-          switch (apiItem.kind) {
-            case ApiItemKind.Interface: {
-              pageJson.tables.push(createInterfacePageJson(collectedData, apiItem as ApiInterface));
-              break;
-            }
-            case ApiItemKind.Enum: {
-              pageJson.tables.push(createEnumPageJson(apiItem as ApiEnum));
-              break;
-            }
-            case ApiItemKind.Class: {
-              pageJson.tables.push(createClassPageJson(collectedData, apiItem as ApiClass));
-              break;
-            }
+      const pageData: PageData = collectedData.pageDataByPageName.get(pageName)!;
+
+      const pageJson: IPageJson = { tables: [] };
+      for (const apiItem of pageData.apiItems) {
+        switch (apiItem.kind) {
+          case ApiItemKind.Interface: {
+            pageJson.tables.push(createInterfacePageJson(collectedData, apiItem as ApiInterface));
+            break;
+          }
+          case ApiItemKind.Enum: {
+            pageJson.tables.push(createEnumPageJson(apiItem as ApiEnum));
+            break;
+          }
+          case ApiItemKind.Class: {
+            pageJson.tables.push(createClassPageJson(collectedData, apiItem as ApiClass));
+            break;
+          }
+          case ApiItemKind.TypeAlias: {
+            // TODO: handle typealias
+            console.log('Type alias');
+            break;
           }
         }
-
-        JsonFile.save(pageJson, pageJsonPath);
       }
-    });
-  } else if (options.kind === PageKind.References) {
-    collectedData.pageDataByPageName.forEach((value: PageData, pageName: string) => {
-      if (value.kind === PageKind.References) {
-        const pageJsonPath: string = path.join(options.pageJsonFolderPath, pageName + '.page.json');
-        console.log('Writing ' + pageJsonPath);
 
-        const pageData: PageData = collectedData.pageDataByPageName.get(pageName)!;
-
-        const pageJson: IPageJson = { tables: [] };
-        for (const apiItem of pageData.apiItems) {
-          switch (apiItem.kind) {
-            case ApiItemKind.Interface: {
-              pageJson.tables.push(createInterfacePageJson(collectedData, apiItem as ApiInterface));
-              break;
-            }
-            case ApiItemKind.Enum: {
-              pageJson.tables.push(createEnumPageJson(apiItem as ApiEnum));
-              break;
-            }
-            case ApiItemKind.Class: {
-              pageJson.tables.push(createClassPageJson(collectedData, apiItem as ApiClass));
-              break;
-            }
-          }
-        }
-
-        JsonFile.save(pageJson, pageJsonPath);
-      }
-    });
-  }
+      JsonFile.save(pageJson, pageJsonPath);
+    }
+  });
 }
 
 function renderDefaultValue(section: DocNodeContainer): string {
@@ -231,6 +209,7 @@ function extractText(node: DocNode): string {
 /**
  * Creates the interface page json object
  *
+ * @param collectedData - Collected data to use for linking
  * @param interfaceItem - Interface item to search
  */
 function createInterfacePageJson(collectedData: CollectedData, interfaceItem: ApiInterface): ITableJson {
@@ -395,12 +374,6 @@ function createEnumPageJson(enumItem: ApiEnum): ITableJson {
     tableJson.descriptionHtml += renderDocNodeWithoutInlineTag(enumItem.tsdocComment.summarySection);
   }
 
-  // TODO: figure out issue with excerpt token range for enums
-  // for (let i: number = enumItem.excerpt.tokenRange.startIndex; i < enumItem.excerpt.tokenRange.endIndex; ++i) {
-  //   const token: ExcerptToken = enumItem.excerpt.tokens[i];
-  //   tableJson.extendsTokens.push({ text: token.text });
-  // }
-
   for (const member of enumItem.members) {
     switch (member.kind) {
       case ApiItemKind.EnumMember: {
@@ -432,6 +405,7 @@ function createEnumPageJson(enumItem: ApiEnum): ITableJson {
 /**
  * Creates a class table json object
  *
+ * @param collectedData - Collected data to use for linking
  * @param classItem - Class item to search
  */
 function createClassPageJson(collectedData: CollectedData, classItem: ApiClass): ITableJson {
