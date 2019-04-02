@@ -38,7 +38,8 @@
             }
           ],
           "descriptionHtml": "Forces the panel to dismiss.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "open",
@@ -48,7 +49,8 @@
             }
           ],
           "descriptionHtml": "Forces the panel to open.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -57,15 +59,15 @@
       "name": "IPanelHeaderRenderer",
       "extendsTokens": [
         {
-          "text": "IRenderFunction",
-          "hyperlinkedPage": "IRenderFunction",
-          "pageKind": "References"
+          "text": "IRenderFunction"
         },
         {
           "text": "<"
         },
         {
-          "text": "IPanelProps"
+          "text": "IPanelProps",
+          "hyperlinkedPage": "Panel",
+          "pageKind": "Components"
         },
         {
           "text": "> "
@@ -107,7 +109,8 @@
             }
           ],
           "descriptionHtml": "Additional css class to apply to the Panel\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "undefined"
         },
         {
           "name": "closeButtonAriaLabel",
@@ -117,7 +120,8 @@
             }
           ],
           "descriptionHtml": "Aria label on close button\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentId",
@@ -127,7 +131,8 @@
             }
           ],
           "descriptionHtml": "Deprecated property. Serves no function.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -139,14 +144,17 @@
               "text": "<"
             },
             {
-              "text": "IPanel"
+              "text": "IPanel",
+              "hyperlinkedPage": "Panel",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IPanel interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "customWidth",
@@ -156,7 +164,8 @@
             }
           ],
           "descriptionHtml": "Custom panel width, used only when `type` is set to `PanelType.custom`.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "elementToFocusOnDismiss",
@@ -166,7 +175,8 @@
             }
           ],
           "descriptionHtml": "Sets the HTMLElement to focus on when exiting the FocusTrapZone.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "The element.target that triggered the Panel."
         },
         {
           "name": "firstFocusableSelector",
@@ -176,17 +186,21 @@
             }
           ],
           "descriptionHtml": "Indicates the selector for first focusable item. Deprecated, use `focusTrapZoneProps`.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "focusTrapZoneProps",
           "typeTokens": [
             {
-              "text": "IFocusTrapZoneProps"
+              "text": "IFocusTrapZoneProps",
+              "hyperlinkedPage": "FocusTrapZone",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Optional props to pass to the FocusTrapZone component to manage focus in the panel.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "forceFocusInsideTrap",
@@ -196,7 +210,8 @@
             }
           ],
           "descriptionHtml": "Indicates whether Panel should force focus inside the focus trap zone. If not explicitly specified, behavior aligns with FocusTrapZone's default behavior. Deprecated, use `focusTrapZoneProps`.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "hasCloseButton",
@@ -206,7 +221,8 @@
             }
           ],
           "descriptionHtml": "Has the close button visible.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "true"
         },
         {
           "name": "headerClassName",
@@ -216,7 +232,8 @@
             }
           ],
           "descriptionHtml": "Optional parameter to provider the class name for header text\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "headerText",
@@ -226,7 +243,8 @@
             }
           ],
           "descriptionHtml": "Header text for the Panel.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "\"\""
         },
         {
           "name": "ignoreExternalFocusing",
@@ -236,7 +254,8 @@
             }
           ],
           "descriptionHtml": "Indicates if this Panel will ignore keeping track of HTMLElement that activated the Zone. Deprecated, use `focusTrapZoneProps`.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": "false"
         },
         {
           "name": "isBlocking",
@@ -246,7 +265,8 @@
             }
           ],
           "descriptionHtml": "Whether the panel uses a modal overlay or not\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "true"
         },
         {
           "name": "isFooterAtBottom",
@@ -256,7 +276,8 @@
             }
           ],
           "descriptionHtml": "Determines if content should stretch to fill available space putting footer at the bottom of the page\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "isHiddenOnDismiss",
@@ -266,7 +287,8 @@
             }
           ],
           "descriptionHtml": "Whether the panel is hidden on dismiss, instead of destroyed in the DOM. Protects the contents from being destroyed when the panel is dismissed.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "isLightDismiss",
@@ -276,7 +298,8 @@
             }
           ],
           "descriptionHtml": "Whether the panel can be light dismissed.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "isOpen",
@@ -286,17 +309,21 @@
             }
           ],
           "descriptionHtml": "Whether the panel is displayed.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "layerProps",
           "typeTokens": [
             {
-              "text": "ILayerProps"
+              "text": "ILayerProps",
+              "hyperlinkedPage": "Layer",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Optional props to pass to the Layer component hosting the panel.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onDismiss",
@@ -330,7 +357,8 @@
             }
           ],
           "descriptionHtml": "A callback function for when the panel is closed, before the animation completes. If the panel should NOT be dismissed based on some keyboard event, then simply call ev.preventDefault() on it\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onDismissed",
@@ -340,7 +368,8 @@
             }
           ],
           "descriptionHtml": "A callback function which is called after the Panel is dismissed and the animation is complete.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onLightDismissClick",
@@ -350,7 +379,8 @@
             }
           ],
           "descriptionHtml": "Optional custom function to handle clicks outside the panel in lightdismiss mode\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onOuterClick",
@@ -360,122 +390,131 @@
             }
           ],
           "descriptionHtml": "Optional custom function to handle clicks outside this component\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderBody",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPanelProps"
+              "text": "IPanelProps",
+              "hyperlinkedPage": "Panel",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional custom renderer for body region. Replaces any children passed into the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderFooter",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPanelProps"
+              "text": "IPanelProps",
+              "hyperlinkedPage": "Panel",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional custom renderer for footer region. Replaces sticky footer.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderFooterContent",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPanelProps"
+              "text": "IPanelProps",
+              "hyperlinkedPage": "Panel",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Custom renderer for content in the sticky footer\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderHeader",
           "typeTokens": [
             {
-              "text": "IPanelHeaderRenderer"
+              "text": "IPanelHeaderRenderer",
+              "hyperlinkedPage": "Panel",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Optional custom renderer for header region. Replaces current title\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderNavigation",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPanelProps"
+              "text": "IPanelProps",
+              "hyperlinkedPage": "Panel",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional custom renderer navigation region. Replaces the region that contains the close button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderNavigationContent",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPanelProps"
+              "text": "IPanelProps",
+              "hyperlinkedPage": "Panel",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional custom renderer for content in the navigation region. Replaces current close button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -487,20 +526,25 @@
               "text": "<"
             },
             {
-              "text": "IPanelStyleProps"
+              "text": "IPanelStyleProps",
+              "hyperlinkedPage": "Panel",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IPanelStyles"
+              "text": "IPanelStyles",
+              "hyperlinkedPage": "Panel",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -512,17 +556,21 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "type",
           "typeTokens": [
             {
-              "text": "PanelType"
+              "text": "PanelType",
+              "hyperlinkedPage": "Panel",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Type of the panel.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "PanelType.smallFixedRight"
         }
       ]
     },
@@ -540,7 +588,8 @@
             }
           ],
           "descriptionHtml": "Accept custom classNames\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "focusTrapZoneClassName",
@@ -550,7 +599,8 @@
             }
           ],
           "descriptionHtml": "Classname for FocusTrapZone element\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "hasCloseButton",
@@ -560,7 +610,8 @@
             }
           ],
           "descriptionHtml": "Panel has close button\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "headerClassName",
@@ -570,7 +621,8 @@
             }
           ],
           "descriptionHtml": "Optional parameter to provider the class name for header text\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isAnimating",
@@ -580,7 +632,8 @@
             }
           ],
           "descriptionHtml": "Is animation currently running\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isFooterAtBottom",
@@ -590,7 +643,8 @@
             }
           ],
           "descriptionHtml": "Determines if content should stretch to fill available space putting footer at the bottom of the page\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isFooterSticky",
@@ -600,7 +654,8 @@
             }
           ],
           "descriptionHtml": "Based on state value setting footer to sticky or not\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isHiddenOnDismiss",
@@ -610,7 +665,8 @@
             }
           ],
           "descriptionHtml": "Is panel hidden on dismiss\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isOnRightSide",
@@ -620,7 +676,8 @@
             }
           ],
           "descriptionHtml": "Is panel on right side\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isOpen",
@@ -630,7 +687,8 @@
             }
           ],
           "descriptionHtml": "Is Panel open\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -642,17 +700,21 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "type",
           "typeTokens": [
             {
-              "text": "PanelType"
+              "text": "PanelType",
+              "hyperlinkedPage": "Panel",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Type of the panel.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -670,7 +732,8 @@
             }
           ],
           "descriptionHtml": "Style for the close button IconButton element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "commands",
@@ -680,7 +743,8 @@
             }
           ],
           "descriptionHtml": "Style for the navigation container element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "content",
@@ -690,7 +754,8 @@
             }
           ],
           "descriptionHtml": "Style for the body div element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "contentInner",
@@ -700,7 +765,8 @@
             }
           ],
           "descriptionHtml": "Style for the Body and Footer container element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "footer",
@@ -710,7 +776,8 @@
             }
           ],
           "descriptionHtml": "Style for the footer div element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "footerInner",
@@ -720,7 +787,8 @@
             }
           ],
           "descriptionHtml": "Style for the inner footer div element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "header",
@@ -730,7 +798,8 @@
             }
           ],
           "descriptionHtml": "Style for the header container div element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "headerText",
@@ -740,7 +809,8 @@
             }
           ],
           "descriptionHtml": "Style for the header inner p element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "hiddenPanel",
@@ -750,7 +820,8 @@
             }
           ],
           "descriptionHtml": "Style for the hidden element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "main",
@@ -760,7 +831,8 @@
             }
           ],
           "descriptionHtml": "Style for the main section element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "navigation",
@@ -770,7 +842,8 @@
             }
           ],
           "descriptionHtml": "Style for the close button container element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "overlay",
@@ -780,7 +853,8 @@
             }
           ],
           "descriptionHtml": "Style for the overlay element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -790,7 +864,8 @@
             }
           ],
           "descriptionHtml": "Style for the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "scrollableContent",
@@ -800,7 +875,8 @@
             }
           ],
           "descriptionHtml": "Style for the scrollable content area container element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },

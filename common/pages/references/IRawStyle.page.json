@@ -21,7 +21,8 @@
             }
           ],
           "descriptionHtml": "Display name for the style.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "selectors",
@@ -43,7 +44,8 @@
             }
           ],
           "descriptionHtml": "Custom selectors for the style.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

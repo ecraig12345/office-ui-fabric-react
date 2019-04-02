@@ -75,7 +75,8 @@
             }
           ],
           "descriptionHtml": "If there is a menu associated with this button and it is visible, this will dismiss the menu\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "focus",
@@ -85,7 +86,8 @@
             }
           ],
           "descriptionHtml": "Sets focus to the button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "openMenu",
@@ -107,7 +109,8 @@
             }
           ],
           "descriptionHtml": "If there is a menu associated with this button and it is visible, this will open the menu. Params are optional overrides to the ones defined in 'menuProps' to apply to just this instance of opening the menu.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -152,9 +155,7 @@
           "text": " | "
         },
         {
-          "text": "Button",
-          "hyperlinkedPage": "Button",
-          "pageKind": "Components"
+          "text": "Button"
         },
         {
           "text": "> "
@@ -170,7 +171,8 @@
             }
           ],
           "descriptionHtml": "Whether the button can have focus in disabled mode\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaDescription",
@@ -180,7 +182,8 @@
             }
           ],
           "descriptionHtml": "Detailed description of the button for the benefit of screen readers.\n\nBesides the compound button, other button types will need more information provided to screen reader.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaHidden",
@@ -190,7 +193,8 @@
             }
           ],
           "descriptionHtml": "If provided and is true it adds an 'aria-hidden' attribute instructing screen readers to ignore the element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabel",
@@ -200,17 +204,21 @@
             }
           ],
           "descriptionHtml": "The aria label of the button for the benefit of screen readers.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "buttonType",
           "typeTokens": [
             {
-              "text": "ButtonType"
+              "text": "ButtonType",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Deprecated at v1.2.3, to be removed at \\>= v2.0.0. Use specific button component instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": "ButtonType.default"
         },
         {
           "name": "checked",
@@ -220,7 +228,8 @@
             }
           ],
           "descriptionHtml": "Whether the button is checked\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -230,7 +239,8 @@
             }
           ],
           "descriptionHtml": "If provided, additional class name to provide on the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -242,14 +252,17 @@
               "text": "<"
             },
             {
-              "text": "IButton"
+              "text": "IButton",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IButton interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "data",
@@ -259,7 +272,8 @@
             }
           ],
           "descriptionHtml": "Any custom data the developer wishes to associate with the menu item.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "description",
@@ -269,7 +283,8 @@
             }
           ],
           "descriptionHtml": "Style for the description text if applicable (for compound buttons.) Deprecated, use `secondaryText` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "disabled",
@@ -279,7 +294,8 @@
             }
           ],
           "descriptionHtml": "Whether the button is disabled\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getClassNames",
@@ -360,7 +376,8 @@
             }
           ],
           "descriptionHtml": "Method to provide the classnames to style a button. The default value for this prop is the getClassnames func defined in BaseButton.classnames.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "getBaseButtonClassNames"
         },
         {
           "name": "getSplitButtonClassNames",
@@ -397,7 +414,8 @@
             }
           ],
           "descriptionHtml": "Method to provide the classnames to style a button. The default value for this prop is the getClassnames func defined in BaseButton.classnames.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "getBaseSplitButtonClassNames"
         },
         {
           "name": "href",
@@ -407,27 +425,34 @@
             }
           ],
           "descriptionHtml": "If provided, this component will be rendered as an anchor.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "ElementType.anchor"
         },
         {
           "name": "iconProps",
           "typeTokens": [
             {
-              "text": "IIconProps"
+              "text": "IIconProps",
+              "hyperlinkedPage": "Icon",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "The props for the icon shown in the button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps"
+              "text": "IKeytipProps",
+              "hyperlinkedPage": "Keytip",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Optional keytip for this button\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "menuAs",
@@ -439,34 +464,43 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuProps"
+              "text": "IContextualMenuProps",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Render a custom menu in place of the normal one.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "menuIconProps",
           "typeTokens": [
             {
-              "text": "IIconProps"
+              "text": "IIconProps",
+              "hyperlinkedPage": "Icon",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "The props for the icon shown when providing a menu dropdown.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "menuProps",
           "typeTokens": [
             {
-              "text": "IContextualMenuProps"
+              "text": "IContextualMenuProps",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Props for button menu. Providing this will default to showing the menu icon. See menuIconProps for overriding how the default icon looks. Providing this in addition of onClick and setting the split property to true will render a SplitButton.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "menuTriggerKeyCode",
@@ -479,7 +513,8 @@
             }
           ],
           "descriptionHtml": "Provides a custom KeyCode that can be used to open the button menu. The default KeyCode is the down arrow. A value of null can be provided to disable the key codes for opening the button menu.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onAfterMenuDismiss",
@@ -489,7 +524,8 @@
             }
           ],
           "descriptionHtml": "Callback that runs after Button's contextualmenu was closed (removed from the DOM)\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onMenuClick",
@@ -546,161 +582,171 @@
               "text": "?: "
             },
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             },
             {
               "text": ") => void"
             }
           ],
           "descriptionHtml": "Optional callback when menu is clicked.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderAriaDescription",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Custom render function for the aria description element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderChildren",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Custom render function for rendering the button children.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderDescription",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Custom render function for the desciption text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderIcon",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Custom render function for the icon\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderMenu",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IContextualMenuProps"
+              "text": "IContextualMenuProps",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Deprecated at v6.3.2, to be removed at \\>= v7.0.0. Use `menuAs` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "onRenderMenuIcon",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Custom render function for button menu icon\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderText",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Custom render function for the label text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "persistMenu",
@@ -710,7 +756,8 @@
             }
           ],
           "descriptionHtml": "Menu will not be created or destroyed when opened or closed, instead it will be hidden. This will improve perf of the menu opening but could potentially impact overall perf by having more elemnts in the dom. Should only be used when perf is important. Note: This may increase the amount of time it takes for the button itself to mount.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "primary",
@@ -720,7 +767,8 @@
             }
           ],
           "descriptionHtml": "Changes the visual presentation of the button to be emphasized (if defined)\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "primaryDisabled",
@@ -730,7 +778,8 @@
             }
           ],
           "descriptionHtml": "If set to true and if this is a splitButton (split == true) then the primary action of a split button is disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rootProps",
@@ -773,7 +822,8 @@
             }
           ],
           "descriptionHtml": "Deprecated at v0.56.2, to be removed at \\>= v1.0.0. Just pass in button props instead. they will be mixed into the button/anchor element rendered by the component.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "secondaryText",
@@ -783,7 +833,8 @@
             }
           ],
           "descriptionHtml": "Description of the action this button takes. Only used for compound buttons\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "split",
@@ -793,7 +844,8 @@
             }
           ],
           "descriptionHtml": "If set to true, and if menuProps and onClick are provided, the button will render as a SplitButton. Defaults to false.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "splitButtonAriaLabel",
@@ -803,17 +855,21 @@
             }
           ],
           "descriptionHtml": "Accessible label for the dropdown chevron button if this button is split.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
           "typeTokens": [
             {
-              "text": "IButtonStyles"
+              "text": "IButtonStyles",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Custom styling for individual elements within the button DOM.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "text",
@@ -823,7 +879,8 @@
             }
           ],
           "descriptionHtml": "Text to render button label. If text is supplied, it will override any string in button children. Other children components will be passed through after the text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -835,7 +892,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "toggle",
@@ -845,7 +903,8 @@
             }
           ],
           "descriptionHtml": "Whether button is a toggle button with distinct on and off states. This should be true for buttons that permanently change state when a press event finishes, such as a volume mute button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "toggled",
@@ -855,7 +914,8 @@
             }
           ],
           "descriptionHtml": "Any custom data the developer wishes to associate with the menu item. Deprecated, use `checked` if setting state.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "uniqueId",
@@ -865,7 +925,8 @@
             }
           ],
           "descriptionHtml": "Unique id to identify the item. Typically a duplicate of key value.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -883,7 +944,8 @@
             }
           ],
           "descriptionHtml": "Style for the description text if applicable (for compound buttons.)\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "descriptionChecked",
@@ -893,7 +955,8 @@
             }
           ],
           "descriptionHtml": "Style override for the description text when the button is checked.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "descriptionDisabled",
@@ -903,7 +966,8 @@
             }
           ],
           "descriptionHtml": "Style override for the description text when the button is disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "descriptionHovered",
@@ -913,7 +977,8 @@
             }
           ],
           "descriptionHtml": "Style override for the description text when the button is hovered.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "descriptionPressed",
@@ -923,7 +988,8 @@
             }
           ],
           "descriptionHtml": "Style for the description text when the button is pressed.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "flexContainer",
@@ -933,7 +999,8 @@
             }
           ],
           "descriptionHtml": "Style for the flexbox container within the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "icon",
@@ -943,7 +1010,8 @@
             }
           ],
           "descriptionHtml": "Style for the icon on the near side of the label.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "iconChecked",
@@ -953,7 +1021,8 @@
             }
           ],
           "descriptionHtml": "Style override for the icon when the button is checked.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "iconDisabled",
@@ -963,7 +1032,8 @@
             }
           ],
           "descriptionHtml": "Style override for the icon when the button is disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "iconExpanded",
@@ -973,7 +1043,8 @@
             }
           ],
           "descriptionHtml": "Style for the icon on the near side of the label when expanded.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "iconExpandedHovered",
@@ -983,7 +1054,8 @@
             }
           ],
           "descriptionHtml": "Style for the icon on the near side of the label when expanded and hovered.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "iconHovered",
@@ -993,7 +1065,8 @@
             }
           ],
           "descriptionHtml": "Style for the icon on the near side of the label on hover.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "iconPressed",
@@ -1003,7 +1076,8 @@
             }
           ],
           "descriptionHtml": "Style for the icon on the near side of the label when pressed.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "label",
@@ -1013,7 +1087,8 @@
             }
           ],
           "descriptionHtml": "Style for the text content of the button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "labelChecked",
@@ -1023,7 +1098,8 @@
             }
           ],
           "descriptionHtml": "Style override for the text content when the button is checked.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "labelDisabled",
@@ -1033,7 +1109,8 @@
             }
           ],
           "descriptionHtml": "Style override for the text content when the button is disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "labelHovered",
@@ -1043,7 +1120,8 @@
             }
           ],
           "descriptionHtml": "Style override for the text content when the button is hovered.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "menuIcon",
@@ -1053,7 +1131,8 @@
             }
           ],
           "descriptionHtml": "Style for the menu chevron.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "menuIconChecked",
@@ -1063,7 +1142,8 @@
             }
           ],
           "descriptionHtml": "Style override for the menu chevron when the button is checked.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "menuIconDisabled",
@@ -1073,7 +1153,8 @@
             }
           ],
           "descriptionHtml": "Style override for the menu chevron when the button is disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "menuIconExpanded",
@@ -1083,7 +1164,8 @@
             }
           ],
           "descriptionHtml": "Style for the menu chevron when expanded.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "menuIconExpandedHovered",
@@ -1093,7 +1175,8 @@
             }
           ],
           "descriptionHtml": "Style for the menu chevron when expanded and hovered.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "menuIconHovered",
@@ -1103,7 +1186,8 @@
             }
           ],
           "descriptionHtml": "Style for the menu chevron on hover.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "menuIconPressed",
@@ -1113,7 +1197,8 @@
             }
           ],
           "descriptionHtml": "Style for the menu chevron when pressed.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -1123,7 +1208,8 @@
             }
           ],
           "descriptionHtml": "Style for the root element in the default enabled, non-toggled state.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rootChecked",
@@ -1133,7 +1219,8 @@
             }
           ],
           "descriptionHtml": "Style override for the root element in a checked state, layered on top of the root style.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rootCheckedDisabled",
@@ -1143,7 +1230,8 @@
             }
           ],
           "descriptionHtml": "Style override applied to the root on hover in a checked, disabled state\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rootCheckedHovered",
@@ -1153,7 +1241,8 @@
             }
           ],
           "descriptionHtml": "Style override applied to the root on hover in a checked, enabled state\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rootCheckedPressed",
@@ -1163,7 +1252,8 @@
             }
           ],
           "descriptionHtml": "Style override applied to the root on pressed in a checked, enabled state\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rootDisabled",
@@ -1173,7 +1263,8 @@
             }
           ],
           "descriptionHtml": "Style override for the root element in a disabled state, layered on top of the root style.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rootExpanded",
@@ -1183,7 +1274,8 @@
             }
           ],
           "descriptionHtml": "Style override applied to the root on when menu is expanded in the default, enabled, non-toggled state.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rootExpandedHovered",
@@ -1193,7 +1285,8 @@
             }
           ],
           "descriptionHtml": "Style override applied to the root on hover in a expanded state on hover\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rootFocused",
@@ -1203,7 +1296,8 @@
             }
           ],
           "descriptionHtml": "Style override applied to the root on focus in the default, enabled, non-toggled state.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rootHovered",
@@ -1213,7 +1307,8 @@
             }
           ],
           "descriptionHtml": "Style override applied to the root on hover in the default, enabled, non-toggled state.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rootPressed",
@@ -1223,7 +1318,8 @@
             }
           ],
           "descriptionHtml": "Style override applied to the root on pressed in the default, enabled, non-toggled state.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "screenReaderText",
@@ -1233,7 +1329,8 @@
             }
           ],
           "descriptionHtml": "Style override for the screen reader text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "secondaryText",
@@ -1243,7 +1340,8 @@
             }
           ],
           "descriptionHtml": "Style for the description text if applicable (for compound buttons.)\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "splitButtonContainer",
@@ -1253,7 +1351,8 @@
             }
           ],
           "descriptionHtml": "Style override for the container div around a SplitButton element\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "splitButtonContainerChecked",
@@ -1263,7 +1362,8 @@
             }
           ],
           "descriptionHtml": "Style for container div around a SplitButton element when the button is checked.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "splitButtonContainerCheckedHovered",
@@ -1273,7 +1373,8 @@
             }
           ],
           "descriptionHtml": "Style for container div around a SplitButton element when the button is checked and hovered.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "splitButtonContainerDisabled",
@@ -1283,7 +1384,8 @@
             }
           ],
           "descriptionHtml": "Style override for the container div around a SplitButton element in a disabled state\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "splitButtonContainerFocused",
@@ -1293,7 +1395,8 @@
             }
           ],
           "descriptionHtml": "Style for container div around a SplitButton element when the button is focused.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "splitButtonContainerHovered",
@@ -1303,7 +1406,8 @@
             }
           ],
           "descriptionHtml": "Style for container div around a SplitButton element when the button is hovered.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "splitButtonDivider",
@@ -1313,7 +1417,8 @@
             }
           ],
           "descriptionHtml": "Style override for the divider element that appears between the button and menu button for a split button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "splitButtonFlexContainer",
@@ -1323,7 +1428,8 @@
             }
           ],
           "descriptionHtml": "Style override for the SplitButton FlexContainer.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "splitButtonMenuButton",
@@ -1333,7 +1439,8 @@
             }
           ],
           "descriptionHtml": "Style override for the SplitButton menu button\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "splitButtonMenuButtonChecked",
@@ -1343,7 +1450,8 @@
             }
           ],
           "descriptionHtml": "Style override for the SplitButton menu button element in a checked state\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "splitButtonMenuButtonDisabled",
@@ -1353,7 +1461,8 @@
             }
           ],
           "descriptionHtml": "Style override for the SplitButton menu button element in a disabled state.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "splitButtonMenuButtonExpanded",
@@ -1363,7 +1472,8 @@
             }
           ],
           "descriptionHtml": "Style override for the SplitButton menu button element in an expanded state\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "splitButtonMenuIcon",
@@ -1373,7 +1483,8 @@
             }
           ],
           "descriptionHtml": "Style override for the SplitButton menu icon element\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "splitButtonMenuIconDisabled",
@@ -1383,7 +1494,8 @@
             }
           ],
           "descriptionHtml": "Style override for the SplitButton menu icon element in a disabled state\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "textContainer",
@@ -1393,7 +1505,8 @@
             }
           ],
           "descriptionHtml": "Style for the text container within the flexbox container element (and contains the text and description).\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

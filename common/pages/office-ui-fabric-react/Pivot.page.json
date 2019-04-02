@@ -60,7 +60,8 @@
             }
           ],
           "descriptionHtml": "The aria label of each pivot link which will read by screen reader instead of linkText.\n\nNote that unless you have compelling requirements you should not override aria-label.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -73,7 +74,8 @@
             }
           ],
           "descriptionHtml": "Gets the component ref.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "headerButtonProps",
@@ -89,7 +91,8 @@
             }
           ],
           "descriptionHtml": "Props for the header command button supporting native props - data-* and aria-* - for each pivot header/link element\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "headerText",
@@ -99,7 +102,8 @@
             }
           ],
           "descriptionHtml": "The text displayed of each pivot link.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "itemCount",
@@ -109,7 +113,8 @@
             }
           ],
           "descriptionHtml": "Defines an optional item count displayed in parentheses just after the `linkText`.\n\nExamples: completed (4), Unread (99+)\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "itemIcon",
@@ -119,7 +124,8 @@
             }
           ],
           "descriptionHtml": "An optional icon to show next to the pivot link.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "itemKey",
@@ -129,17 +135,21 @@
             }
           ],
           "descriptionHtml": "An required key to uniquely identify a pivot item.\n\nNote: The 'key' from react props cannot be used inside component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps"
+              "text": "IKeytipProps",
+              "hyperlinkedPage": "Keytip",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Optional keytip for this PivotItem\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "linkText",
@@ -149,28 +159,30 @@
             }
           ],
           "descriptionHtml": "The text displayed of each pivot link - renaming to `headerText`.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "onRenderItemLink",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPivotItemProps"
+              "text": "IPivotItemProps",
+              "hyperlinkedPage": "Pivot",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional custom renderer for the pivot item link\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -228,7 +240,8 @@
             }
           ],
           "descriptionHtml": "Additional css class to apply to the Pivot\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "undefined"
         },
         {
           "name": "componentRef",
@@ -240,14 +253,17 @@
               "text": "<"
             },
             {
-              "text": "IPivot"
+              "text": "IPivot",
+              "hyperlinkedPage": "Pivot",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IPivot interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "defaultSelectedIndex",
@@ -257,7 +273,8 @@
             }
           ],
           "descriptionHtml": "Default selected index for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the `selectedKey` property.\n\nThis property is also mutually exclusive with `defaultSelectedKey`.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "defaultSelectedKey",
@@ -267,7 +284,8 @@
             }
           ],
           "descriptionHtml": "Default selected key for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the `selectedKey` property.\n\nThis property is also mutually exclusive with `defaultSelectedIndex`.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getTabId",
@@ -289,7 +307,8 @@
             }
           ],
           "descriptionHtml": "Callback to customize how IDs are generated for each tab header. Useful if you're rendering content outside and need to connect aria-labelledby.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "headersOnly",
@@ -299,7 +318,8 @@
             }
           ],
           "descriptionHtml": "Whether to skip rendering the tabpanel with the content of the selected tab. Use this prop if you plan to separately render the tab content and don't want to leave an empty tabpanel in the page that may confuse Screen Readers.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "initialSelectedIndex",
@@ -309,7 +329,8 @@
             }
           ],
           "descriptionHtml": "Index of the pivot item initially selected. Mutually exclusive with `initialSelectedKey`. Only provide this if the pivot is an uncontrolled component; otherwise, use `selectedKey`.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "initialSelectedKey",
@@ -319,27 +340,34 @@
             }
           ],
           "descriptionHtml": "Key of the pivot item initially selected. Mutually exclusive with `initialSelectedIndex`. Only provide this if the pivot is an uncontrolled component; otherwise, use `selectedKey`.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "linkFormat",
           "typeTokens": [
             {
-              "text": "PivotLinkFormat"
+              "text": "PivotLinkFormat",
+              "hyperlinkedPage": "Pivot",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "PivotLinkFormat to use (links, tabs)\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "linkSize",
           "typeTokens": [
             {
-              "text": "PivotLinkSize"
+              "text": "PivotLinkSize",
+              "hyperlinkedPage": "Pivot",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "PivotLinkSize to use (normal, large)\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onLinkClick",
@@ -385,7 +413,8 @@
             }
           ],
           "descriptionHtml": "Callback for when the selected pivot item is changed.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "selectedKey",
@@ -395,7 +424,8 @@
             }
           ],
           "descriptionHtml": "Key of the selected pivot item. Updating this will override the Pivot's selected item state. Only provide this if the pivot is a controlled component where you are maintaining the current state; otherwise, use `defaultSelectedKey`.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -413,14 +443,17 @@
               "text": ", "
             },
             {
-              "text": "IPivotStyles"
+              "text": "IPivotStyles",
+              "hyperlinkedPage": "Pivot",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -432,7 +465,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -510,7 +544,8 @@
             }
           ],
           "descriptionHtml": "Style for the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "text",

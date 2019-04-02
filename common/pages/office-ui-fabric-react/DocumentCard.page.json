@@ -32,7 +32,8 @@
             }
           ],
           "descriptionHtml": "Sets focus to the DocumentCard.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -49,7 +50,9 @@
           "text": "<"
         },
         {
-          "text": "IDocumentCard"
+          "text": "IDocumentCard",
+          "hyperlinkedPage": "DocumentCard",
+          "pageKind": "Components"
         },
         {
           "text": ">"
@@ -86,7 +89,8 @@
             }
           ],
           "descriptionHtml": "Hex color value of the line below the card, which should correspond to the document type. This should only be supplied when using the 'compact' card layout.\n\nDeprecated at v4.17.1, to be removed at \\>= v5.0.0.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "children",
@@ -102,7 +106,8 @@
             }
           ],
           "descriptionHtml": "Child components to render within the card.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -112,7 +117,8 @@
             }
           ],
           "descriptionHtml": "Optional override class name\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -124,14 +130,17 @@
               "text": "<"
             },
             {
-              "text": "IDocumentCard"
+              "text": "IDocumentCard",
+              "hyperlinkedPage": "DocumentCard",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IDocumentCard interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onClick",
@@ -165,7 +174,8 @@
             }
           ],
           "descriptionHtml": "Function to call when the card is clicked or keyboard Enter/Space is pushed.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onClickHref",
@@ -175,7 +185,8 @@
             }
           ],
           "descriptionHtml": "A URL to navigate to when the card is clicked. If a function has also been provided, it will be used instead of the URL.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "role",
@@ -185,7 +196,8 @@
             }
           ],
           "descriptionHtml": "Aria role assigned to the documentCard (Eg. button, link). Use this to override the default assignment.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "When undefined is provided, default role will be 'button'. When undefined is provided, default role will be 'link'."
         },
         {
           "name": "styles",
@@ -197,20 +209,25 @@
               "text": "<"
             },
             {
-              "text": "IDocumentCardStyleProps"
+              "text": "IDocumentCardStyleProps",
+              "hyperlinkedPage": "DocumentCard",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IDocumentCardStyles"
+              "text": "IDocumentCardStyles",
+              "hyperlinkedPage": "DocumentCard",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -222,17 +239,21 @@
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "type",
           "typeTokens": [
             {
-              "text": "DocumentCardType"
+              "text": "DocumentCardType",
+              "hyperlinkedPage": "DocumentCard",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "The type of DocumentCard to display.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "DocumentCardType.normal"
         }
       ]
     },
@@ -250,7 +271,8 @@
             }
           ],
           "descriptionHtml": "True when the card has a click action.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -260,7 +282,8 @@
             }
           ],
           "descriptionHtml": "Optional override class name\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "compact",
@@ -270,7 +293,8 @@
             }
           ],
           "descriptionHtml": "Compact variant of the card.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -282,7 +306,8 @@
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },

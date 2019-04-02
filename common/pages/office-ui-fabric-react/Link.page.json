@@ -229,7 +229,9 @@
       "name": "ILinkProps",
       "extendsTokens": [
         {
-          "text": "ILinkHTMLAttributes"
+          "text": "ILinkHTMLAttributes",
+          "hyperlinkedPage": "Link",
+          "pageKind": "Components"
         },
         {
           "text": "<"
@@ -290,7 +292,8 @@
             }
           ],
           "descriptionHtml": "A component that should be used as the root element of the link returned from the Link component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -302,14 +305,17 @@
               "text": "<"
             },
             {
-              "text": "ILink"
+              "text": "ILink",
+              "hyperlinkedPage": "Link",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the ILink interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "disabled",
@@ -319,17 +325,21 @@
             }
           ],
           "descriptionHtml": "Whether the link is disabled\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps"
+              "text": "IKeytipProps",
+              "hyperlinkedPage": "Keytip",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Optional keytip for this Link\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -341,20 +351,25 @@
               "text": "<"
             },
             {
-              "text": "ILinkStyleProps"
+              "text": "ILinkStyleProps",
+              "hyperlinkedPage": "Link",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "ILinkStyles"
+              "text": "ILinkStyles",
+              "hyperlinkedPage": "Link",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -366,7 +381,8 @@
             }
           ],
           "descriptionHtml": "Theme (provided through customization.)\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },

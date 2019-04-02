@@ -14,7 +14,8 @@
             }
           ],
           "descriptionHtml": "Gets the current checked state.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "focus",
@@ -24,7 +25,8 @@
             }
           ],
           "descriptionHtml": "Sets focus to the checkbox.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -67,7 +69,8 @@
             }
           ],
           "descriptionHtml": "ID for element that provides extended information for the checkbox.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabel",
@@ -77,7 +80,8 @@
             }
           ],
           "descriptionHtml": "Accessible label for the checkbox.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabelledBy",
@@ -87,7 +91,8 @@
             }
           ],
           "descriptionHtml": "ID for element that contains label information for the checkbox.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaPositionInSet",
@@ -97,7 +102,8 @@
             }
           ],
           "descriptionHtml": "The position in the parent set (if in a set) for aria-posinset.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaSetSize",
@@ -107,7 +113,8 @@
             }
           ],
           "descriptionHtml": "The total size of the parent set (if in a set) for aria-setsize.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "boxSide",
@@ -117,7 +124,8 @@
             }
           ],
           "descriptionHtml": "Allows you to set the checkbox to be at the before (start) or after (end) the label.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "'start'"
         },
         {
           "name": "checked",
@@ -127,17 +135,21 @@
             }
           ],
           "descriptionHtml": "Checked state. Mutually exclusive to \"defaultChecked\". Use this if you control the checked state at a higher level and plan to pass in the correct value based on handling onChange events and re-rendering.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "checkmarkIconProps",
           "typeTokens": [
             {
-              "text": "IIconProps"
+              "text": "IIconProps",
+              "hyperlinkedPage": "Icon",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Custom icon props for the check mark rendered by the checkbox\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -147,7 +159,8 @@
             }
           ],
           "descriptionHtml": "Additional class name to provide on the root element, in addition to the ms-Checkbox class.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -159,14 +172,17 @@
               "text": "<"
             },
             {
-              "text": "ICheckbox"
+              "text": "ICheckbox",
+              "hyperlinkedPage": "Checkbox",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the ICheckbox interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "defaultChecked",
@@ -176,7 +192,8 @@
             }
           ],
           "descriptionHtml": "Default checked state. Mutually exclusive to \"checked\". Use this if you want an uncontrolled component, and want the Checkbox instance to maintain its own state.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "disabled",
@@ -186,7 +203,8 @@
             }
           ],
           "descriptionHtml": "Disabled state of the checkbox.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "inputProps",
@@ -217,17 +235,21 @@
             }
           ],
           "descriptionHtml": "Optional input props that will be mixed into the input element, *before* other props are applied. This allows you to extend the input element with additional attributes, such as data-automation-id needed for automation. Note that if you provide, for example, \"disabled\" as well as \"inputProps.disabled\", the former will take precedence over the later.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps"
+              "text": "IKeytipProps",
+              "hyperlinkedPage": "Keytip",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Optional keytip for this checkbox\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "label",
@@ -237,7 +259,8 @@
             }
           ],
           "descriptionHtml": "Label to display next to the checkbox.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onChange",
@@ -283,28 +306,30 @@
             }
           ],
           "descriptionHtml": "Callback that is called when the checked value has changed.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderLabel",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "ICheckboxProps"
+              "text": "ICheckboxProps",
+              "hyperlinkedPage": "Checkbox",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Custom render function for the label.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -316,20 +341,25 @@
               "text": "<"
             },
             {
-              "text": "ICheckboxStyleProps"
+              "text": "ICheckboxStyleProps",
+              "hyperlinkedPage": "Checkbox",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "ICheckboxStyles"
+              "text": "ICheckboxStyles",
+              "hyperlinkedPage": "Checkbox",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -341,7 +371,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -429,7 +460,8 @@
             }
           ],
           "descriptionHtml": "Style for checkbox in its default unchecked/enabled state.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "checkmark",
@@ -439,7 +471,8 @@
             }
           ],
           "descriptionHtml": "Style for the checkmark in the default enabled/unchecked state.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "input",
@@ -449,7 +482,8 @@
             }
           ],
           "descriptionHtml": "INTERNAL: This is mostly an internal implementation detail which you should avoid styling. This refers to the <input type=\"checkbox\"> element that is typically hidden and not rendered on screen.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "label",
@@ -459,7 +493,8 @@
             }
           ],
           "descriptionHtml": "Style for the label part (contains the customized checkbox + text) when enabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -469,7 +504,8 @@
             }
           ],
           "descriptionHtml": "Style for the root element (a button) of the checkbox component in the default enabled/unchecked state.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "text",
@@ -479,7 +515,8 @@
             }
           ],
           "descriptionHtml": "Style for text appearing with the checkbox in its default enabled state.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

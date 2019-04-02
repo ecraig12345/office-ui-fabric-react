@@ -46,7 +46,8 @@
             }
           ],
           "descriptionHtml": "Whether initials are calculated for phone numbers and number sequences. Example: Set property to true to get initials for project names consisting of numbers only.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "data",
@@ -56,7 +57,8 @@
             }
           ],
           "descriptionHtml": "Extra data - not used directly but can be handy for passing additional data to custom event handlers.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "imageInitials",
@@ -66,7 +68,8 @@
             }
           ],
           "descriptionHtml": "The user's initials to display in the image area when there is no image.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "[Derived from personaName]"
         },
         {
           "name": "imageUrl",
@@ -76,27 +79,34 @@
             }
           ],
           "descriptionHtml": "Url to the image to use, should be a square aspect ratio and big enough to fit in the image area.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "initialsColor",
           "typeTokens": [
             {
-              "text": "PersonaInitialsColor"
+              "text": "PersonaInitialsColor",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "The background color when the user's initials are displayed.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "[Derived from personaName]"
         },
         {
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps"
+              "text": "IKeytipProps",
+              "hyperlinkedPage": "Keytip",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Optional keytip for this button that is only added when 'onClick' is defined for the persona\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onClick",
@@ -135,14 +145,17 @@
               "text": "?: "
             },
             {
-              "text": "IFacepilePersona"
+              "text": "IFacepilePersona",
+              "hyperlinkedPage": "Facepile",
+              "pageKind": "Components"
             },
             {
               "text": ") => void"
             }
           ],
           "descriptionHtml": "If provided, persona will be rendered with cursor:pointer and the handler will be called on click.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onMouseMove",
@@ -181,14 +194,17 @@
               "text": "?: "
             },
             {
-              "text": "IFacepilePersona"
+              "text": "IFacepilePersona",
+              "hyperlinkedPage": "Facepile",
+              "pageKind": "Components"
             },
             {
               "text": ") => void"
             }
           ],
           "descriptionHtml": "If provided, the handler will be called on mouse move.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onMouseOut",
@@ -227,14 +243,17 @@
               "text": "?: "
             },
             {
-              "text": "IFacepilePersona"
+              "text": "IFacepilePersona",
+              "hyperlinkedPage": "Facepile",
+              "pageKind": "Components"
             },
             {
               "text": ") => void"
             }
           ],
           "descriptionHtml": "If provided, the handler will be called when mouse moves out of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "personaName",
@@ -244,7 +263,8 @@
             }
           ],
           "descriptionHtml": "Name of the person.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -277,11 +297,14 @@
           "name": "addButtonProps",
           "typeTokens": [
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Button properties for the add face button\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaDescription",
@@ -291,17 +314,21 @@
             }
           ],
           "descriptionHtml": "ARIA label for persona list\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "chevronButtonProps",
           "typeTokens": [
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Deprecated at v0.70, use `overflowButtonProps` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -311,7 +338,8 @@
             }
           ],
           "descriptionHtml": "Additional css class to apply to the Facepile\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "undefined"
         },
         {
           "name": "componentRef",
@@ -323,14 +351,17 @@
               "text": "<"
             },
             {
-              "text": "IFacepile"
+              "text": "IFacepile",
+              "hyperlinkedPage": "Facepile",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IFacepile interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getPersonaProps",
@@ -345,17 +376,22 @@
               "text": ": "
             },
             {
-              "text": "IFacepilePersona"
+              "text": "IFacepilePersona",
+              "hyperlinkedPage": "Facepile",
+              "pageKind": "Components"
             },
             {
               "text": ") => "
             },
             {
-              "text": "IPersonaSharedProps"
+              "text": "IPersonaSharedProps",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Method to access properties on the underlying Persona control\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "maxDisplayablePersonas",
@@ -365,63 +401,79 @@
             }
           ],
           "descriptionHtml": "Maximum number of personas to show\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "overflowButtonProps",
           "typeTokens": [
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Properties for the overflow icon\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "overflowButtonType",
           "typeTokens": [
             {
-              "text": "OverflowButtonType"
+              "text": "OverflowButtonType",
+              "hyperlinkedPage": "Facepile",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Type of overflow icon to use\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "overflowPersonas",
           "typeTokens": [
             {
-              "text": "IFacepilePersona"
+              "text": "IFacepilePersona",
+              "hyperlinkedPage": "Facepile",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "Personas to place in the overflow\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "personas",
           "typeTokens": [
             {
-              "text": "IFacepilePersona"
+              "text": "IFacepilePersona",
+              "hyperlinkedPage": "Facepile",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "Array of IPersonaProps that define each Persona.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "personaSize",
           "typeTokens": [
             {
-              "text": "PersonaSize"
+              "text": "PersonaSize",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Size to display the personas\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "showAddButton",
@@ -431,7 +483,8 @@
             }
           ],
           "descriptionHtml": "Show add person button\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -443,20 +496,25 @@
               "text": "<"
             },
             {
-              "text": "IFacepileStyleProps"
+              "text": "IFacepileStyleProps",
+              "hyperlinkedPage": "Facepile",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IFacepileStyles"
+              "text": "IFacepileStyles",
+              "hyperlinkedPage": "Facepile",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -468,7 +526,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -486,7 +545,8 @@
             }
           ],
           "descriptionHtml": "Accept custom classNames\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "spacingAroundItemButton",
@@ -496,7 +556,8 @@
             }
           ],
           "descriptionHtml": "Pixel value for spacing around button. Number value set in pixels\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -508,7 +569,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -606,7 +668,8 @@
             }
           ],
           "descriptionHtml": "Style for the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "screenReaderOnly",

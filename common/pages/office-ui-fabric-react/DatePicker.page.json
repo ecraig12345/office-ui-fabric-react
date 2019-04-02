@@ -59,7 +59,9 @@
           "text": "<"
         },
         {
-          "text": "IDatePicker"
+          "text": "IDatePicker",
+          "hyperlinkedPage": "DatePicker",
+          "pageKind": "Components"
         },
         {
           "text": ">"
@@ -96,7 +98,8 @@
             }
           ],
           "descriptionHtml": "Allows all elements to be focused, including disabled ones\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "allowTextInput",
@@ -106,7 +109,8 @@
             }
           ],
           "descriptionHtml": "Whether the DatePicker allows input a date string directly or not\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "ariaLabel",
@@ -116,7 +120,8 @@
             }
           ],
           "descriptionHtml": "Aria Label for TextField of the DatePicker for screen reader users.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "borderless",
@@ -126,7 +131,8 @@
             }
           ],
           "descriptionHtml": "Determines if DatePicker has a border.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "calendarAs",
@@ -138,34 +144,43 @@
               "text": "<"
             },
             {
-              "text": "ICalendarProps"
+              "text": "ICalendarProps",
+              "hyperlinkedPage": "Calendar",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Custom Calendar to be used for date picking\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "calendarProps",
           "typeTokens": [
             {
-              "text": "ICalendarProps"
+              "text": "ICalendarProps",
+              "hyperlinkedPage": "Calendar",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Pass calendar props to calendar component\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "calloutProps",
           "typeTokens": [
             {
-              "text": "ICalloutProps"
+              "text": "ICalloutProps",
+              "hyperlinkedPage": "Callout",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Pass callout props to callout component\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -175,7 +190,8 @@
             }
           ],
           "descriptionHtml": "Optional Classname for datepicker root element .\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -187,24 +203,30 @@
               "text": "<"
             },
             {
-              "text": "IDatePicker"
+              "text": "IDatePicker",
+              "hyperlinkedPage": "DatePicker",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IDatePicker interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dateTimeFormatter",
           "typeTokens": [
             {
-              "text": "ICalendarFormatDateCallbacks"
+              "text": "ICalendarFormatDateCallbacks",
+              "hyperlinkedPage": "Calendar",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Apply additional formating to dates, for example localized date formatting.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "disableAutoFocus",
@@ -214,7 +236,8 @@
             }
           ],
           "descriptionHtml": "Whether the DatePicker should open automatically when the control is focused\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "disabled",
@@ -224,7 +247,8 @@
             }
           ],
           "descriptionHtml": "Disabled state of the DatePicker.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "firstDayOfWeek",
@@ -236,7 +260,8 @@
             }
           ],
           "descriptionHtml": "The first day of the week for your locale.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "DayOfWeek.Sunday"
         },
         {
           "name": "firstWeekOfYear",
@@ -248,7 +273,8 @@
             }
           ],
           "descriptionHtml": "Defines when the first week of the year should start, FirstWeekOfYear.FirstDay, FirstWeekOfYear.FirstFullWeek or FirstWeekOfYear.FirstFourDayWeek are the possible values\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "FirstWeekOfYear.FirstFullWeek"
         },
         {
           "name": "formatDate",
@@ -270,7 +296,8 @@
             }
           ],
           "descriptionHtml": "Optional method to format the chosen date to a string to display in the DatePicker\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "date.toString()"
         },
         {
           "name": "highlightCurrentMonth",
@@ -280,7 +307,8 @@
             }
           ],
           "descriptionHtml": "Whether the month picker should highlight the current month\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "highlightSelectedMonth",
@@ -290,7 +318,8 @@
             }
           ],
           "descriptionHtml": "Whether the month picker should highlight the selected month\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "initialPickerDate",
@@ -300,7 +329,8 @@
             }
           ],
           "descriptionHtml": "The initially highlighted date in the calendar picker\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isMonthPickerVisible",
@@ -310,7 +340,8 @@
             }
           ],
           "descriptionHtml": "Whether the month picker is shown beside the day picker or hidden.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "true"
         },
         {
           "name": "isRequired",
@@ -320,7 +351,8 @@
             }
           ],
           "descriptionHtml": "Whether the DatePicker is a required field or not\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "label",
@@ -330,7 +362,8 @@
             }
           ],
           "descriptionHtml": "Label for the DatePicker\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "maxDate",
@@ -340,7 +373,8 @@
             }
           ],
           "descriptionHtml": "The maximum allowable date.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "minDate",
@@ -350,7 +384,8 @@
             }
           ],
           "descriptionHtml": "The minimum allowable date.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onAfterMenuDismiss",
@@ -360,7 +395,8 @@
             }
           ],
           "descriptionHtml": "Callback that runs after DatePicker's menu (Calendar) is closed\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onSelectDate",
@@ -382,7 +418,8 @@
             }
           ],
           "descriptionHtml": "Callback issued when a date is selected\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "parseDateFromString",
@@ -404,7 +441,8 @@
             }
           ],
           "descriptionHtml": "Optional method to parse the text input value to date, it is only useful when allowTextInput is set to true\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "new Date(Date.parse(dateStr))"
         },
         {
           "name": "pickerAriaLabel",
@@ -414,7 +452,8 @@
             }
           ],
           "descriptionHtml": "Aria label for date picker popup for screen reader users.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "Calendar"
         },
         {
           "name": "placeholder",
@@ -424,7 +463,8 @@
             }
           ],
           "descriptionHtml": "Placeholder text for the DatePicker\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "showCloseButton",
@@ -434,7 +474,8 @@
             }
           ],
           "descriptionHtml": "Whether the CalendarDay close button should be shown or not.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "showGoToToday",
@@ -444,7 +485,8 @@
             }
           ],
           "descriptionHtml": "Whether the \"Go to today\" link should be shown or not\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "showMonthPickerAsOverlay",
@@ -454,7 +496,8 @@
             }
           ],
           "descriptionHtml": "Show month picker on top of date picker when visible.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "showWeekNumbers",
@@ -464,17 +507,21 @@
             }
           ],
           "descriptionHtml": "Whether the calendar should show the week number (weeks 1 to 53) before each week row\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "strings",
           "typeTokens": [
             {
-              "text": "IDatePickerStrings"
+              "text": "IDatePickerStrings",
+              "hyperlinkedPage": "DatePicker",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Localized strings to use in the DatePicker\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -486,20 +533,25 @@
               "text": "<"
             },
             {
-              "text": "IDatePickerStyleProps"
+              "text": "IDatePickerStyleProps",
+              "hyperlinkedPage": "DatePicker",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IDatePickerStyles"
+              "text": "IDatePickerStyles",
+              "hyperlinkedPage": "DatePicker",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "tabIndex",
@@ -509,17 +561,21 @@
             }
           ],
           "descriptionHtml": "The tabIndex of the TextField\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "textField",
           "typeTokens": [
             {
-              "text": "ITextFieldProps"
+              "text": "ITextFieldProps",
+              "hyperlinkedPage": "TextField",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Pass textField props to textField component. Prop name is \"textField\" for compatiblity with upcoming slots work.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -531,7 +587,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "today",
@@ -541,7 +598,8 @@
             }
           ],
           "descriptionHtml": "Value of today. If null, current time in client machine will be used.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "underlined",
@@ -551,7 +609,8 @@
             }
           ],
           "descriptionHtml": "Whether or not the Textfield of the DatePicker is underlined.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "value",
@@ -561,7 +620,8 @@
             }
           ],
           "descriptionHtml": "Default value of the DatePicker, if any\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -579,7 +639,8 @@
             }
           ],
           "descriptionHtml": "Aria-label for the \"close\" button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "days",
@@ -589,7 +650,8 @@
             }
           ],
           "descriptionHtml": "An array of strings for the full names of days of the week. The array is 0-based, so days[0] should be the full name of Sunday.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "goToToday",
@@ -599,7 +661,8 @@
             }
           ],
           "descriptionHtml": "String to render for button to direct the user to today's date.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "invalidInputErrorMessage",
@@ -609,7 +672,8 @@
             }
           ],
           "descriptionHtml": "Error message to render for TextField if input date string parsing fails.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isOutOfBoundsErrorMessage",
@@ -619,7 +683,8 @@
             }
           ],
           "descriptionHtml": "Error message to render for TextField if date boundary (minDate, maxDate) validation fails.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isRequiredErrorMessage",
@@ -629,7 +694,8 @@
             }
           ],
           "descriptionHtml": "Error message to render for TextField if isRequired validation fails.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "months",
@@ -639,7 +705,8 @@
             }
           ],
           "descriptionHtml": "An array of strings for the full names of months. The array is 0-based, so months[0] should be the full name of January.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "nextMonthAriaLabel",
@@ -649,7 +716,8 @@
             }
           ],
           "descriptionHtml": "Aria-label for the \"next month\" button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "nextYearAriaLabel",
@@ -659,7 +727,8 @@
             }
           ],
           "descriptionHtml": "Aria-label for the \"next year\" button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "prevMonthAriaLabel",
@@ -669,7 +738,8 @@
             }
           ],
           "descriptionHtml": "Aria-label for the \"previous month\" button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "prevYearAriaLabel",
@@ -679,7 +749,8 @@
             }
           ],
           "descriptionHtml": "Aria-label for the \"previous year\" button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "shortDays",
@@ -689,7 +760,8 @@
             }
           ],
           "descriptionHtml": "An array of strings for the initials of the days of the week. The array is 0-based, so days[0] should be the initial of Sunday.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "shortMonths",
@@ -699,7 +771,8 @@
             }
           ],
           "descriptionHtml": "An array of strings for the short names of months. The array is 0-based, so shortMonths[0] should be the short name of January.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -717,7 +790,8 @@
             }
           ],
           "descriptionHtml": "Accept custom classNames\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "disabled",
@@ -759,7 +833,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -797,7 +872,8 @@
             }
           ],
           "descriptionHtml": "Style for the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "textField",

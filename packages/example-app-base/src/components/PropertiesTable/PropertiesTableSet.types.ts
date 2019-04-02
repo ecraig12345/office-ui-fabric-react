@@ -33,6 +33,7 @@ export interface ITokenJson {
 export interface ITableRowJson {
   name: string;
   typeTokens: ITokenJson[];
+  defaultValue?: string;
   descriptionHtml: string;
   deprecated: boolean;
   deprecatedMessage?: string;

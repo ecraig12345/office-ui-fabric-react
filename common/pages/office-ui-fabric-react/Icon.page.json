@@ -41,7 +41,8 @@
             }
           ],
           "descriptionHtml": "The aria label of the button for the benefit of screen readers.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "iconName",
@@ -51,7 +52,8 @@
             }
           ],
           "descriptionHtml": "The name of the icon to use from the icon font. If string is empty, a placeholder icon will be rendered the same width as an icon\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "iconType",
@@ -61,7 +63,8 @@
             }
           ],
           "descriptionHtml": "The type of icon to render (image or icon font).\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "imageErrorAs",
@@ -79,7 +82,9 @@
               "text": "<"
             },
             {
-              "text": "IImageProps"
+              "text": "IImageProps",
+              "hyperlinkedPage": "Image",
+              "pageKind": "Components"
             },
             {
               "text": "> | "
@@ -97,24 +102,30 @@
               "text": "<"
             },
             {
-              "text": "IImageProps"
+              "text": "IImageProps",
+              "hyperlinkedPage": "Image",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "If rendering an image icon, this function callback will be invoked in the event loading the image errors.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "imageProps",
           "typeTokens": [
             {
-              "text": "IImageProps"
+              "text": "IImageProps",
+              "hyperlinkedPage": "Image",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "If rendering an image icon, these props will be passed to the Image component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -126,20 +137,25 @@
               "text": "<"
             },
             {
-              "text": "IIconStyleProps"
+              "text": "IIconStyleProps",
+              "hyperlinkedPage": "Icon",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IIconStyles"
+              "text": "IIconStyles",
+              "hyperlinkedPage": "Icon",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Gets the styles for an Icon.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -211,7 +227,9 @@
               "text": "<"
             },
             {
-              "text": "IIconStyles"
+              "text": "IIconStyles",
+              "hyperlinkedPage": "Icon",
+              "pageKind": "Components"
             },
             {
               "text": ">"
@@ -248,7 +266,8 @@
             }
           ],
           "descriptionHtml": "Deprecated. Use `root`.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "root",

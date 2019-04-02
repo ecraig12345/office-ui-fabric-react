@@ -79,7 +79,8 @@
             }
           ],
           "descriptionHtml": "The aria label of the SearchBox for the benefit of screen readers.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "placeholder"
         },
         {
           "name": "className",
@@ -89,17 +90,21 @@
             }
           ],
           "descriptionHtml": "CSS class to apply to the SearchBox.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "clearButtonProps",
           "typeTokens": [
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "The props for the clear button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -111,14 +116,17 @@
               "text": "<"
             },
             {
-              "text": "ISearchBox"
+              "text": "ISearchBox",
+              "hyperlinkedPage": "SearchBox",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the ISearchBox interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "defaultValue",
@@ -128,7 +136,8 @@
             }
           ],
           "descriptionHtml": "The default value of the text in the SearchBox, in the case of an uncontrolled component. This prop is being deprecated since so far, uncontrolled behavior has not been implemented.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "disableAnimation",
@@ -138,7 +147,8 @@
             }
           ],
           "descriptionHtml": "Whether or not to animate the SearchBox icon on focus.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "iconProps",
@@ -150,7 +160,9 @@
               "text": "<"
             },
             {
-              "text": "IIconProps"
+              "text": "IIconProps",
+              "hyperlinkedPage": "Icon",
+              "pageKind": "Components"
             },
             {
               "text": ", "
@@ -162,14 +174,17 @@
               "text": "<keyof "
             },
             {
-              "text": "IIconProps"
+              "text": "IIconProps",
+              "hyperlinkedPage": "Icon",
+              "pageKind": "Components"
             },
             {
               "text": ", 'className'>>"
             }
           ],
           "descriptionHtml": "The props for the icon.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "labelText",
@@ -179,7 +194,8 @@
             }
           ],
           "descriptionHtml": "Deprecated. Use `placeholder` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "onChange",
@@ -195,7 +211,8 @@
             }
           ],
           "descriptionHtml": "Callback function for when the typed input for the SearchBox has changed.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onChanged",
@@ -211,7 +228,8 @@
             }
           ],
           "descriptionHtml": "Deprecated at v0.52.2, use `onChange` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "onClear",
@@ -227,7 +245,8 @@
             }
           ],
           "descriptionHtml": "Callback executed when the user clears the search box by either clicking 'X' or hitting escape.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onEscape",
@@ -243,7 +262,8 @@
             }
           ],
           "descriptionHtml": "Callback executed when the user presses escape in the search box.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onSearch",
@@ -259,7 +279,8 @@
             }
           ],
           "descriptionHtml": "Callback executed when the user presses enter in the search box.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "placeholder",
@@ -269,7 +290,8 @@
             }
           ],
           "descriptionHtml": "Placeholder for the search box.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -281,20 +303,25 @@
               "text": "<"
             },
             {
-              "text": "ISearchBoxStyleProps"
+              "text": "ISearchBoxStyleProps",
+              "hyperlinkedPage": "SearchBox",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "ISearchBoxStyles"
+              "text": "ISearchBoxStyles",
+              "hyperlinkedPage": "SearchBox",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -306,7 +333,8 @@
             }
           ],
           "descriptionHtml": "Theme (provided through customization).\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "underlined",
@@ -316,7 +344,8 @@
             }
           ],
           "descriptionHtml": "Whether or not the SearchBox is underlined.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "value",
@@ -326,7 +355,8 @@
             }
           ],
           "descriptionHtml": "The value of the text in the SearchBox.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },

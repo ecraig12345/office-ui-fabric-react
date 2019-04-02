@@ -49,7 +49,8 @@
             }
           ],
           "descriptionHtml": "Optional accessibility label (aria-label) attribute that will be stamped on to the element. If none is specified, the aria-label attribute will contain the item name\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "canCheck",
@@ -59,7 +60,8 @@
             }
           ],
           "descriptionHtml": "Whether or not this menu item can be checked\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "checked",
@@ -69,7 +71,8 @@
             }
           ],
           "descriptionHtml": "Whether or not this menu item is currently checked.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "className",
@@ -79,7 +82,8 @@
             }
           ],
           "descriptionHtml": "Additional css class to apply to the menu item\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "undefined"
         },
         {
           "name": "componentRef",
@@ -91,14 +95,17 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuRenderItem"
+              "text": "IContextualMenuRenderItem",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IContextualMenuRenderItem interface. This will get passed down to ContextualMenuItem.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "customOnRenderListLength",
@@ -108,7 +115,8 @@
             }
           ],
           "descriptionHtml": "When rendering a custom component that is passed in, the component might also be a list of elements. We want to keep track of the correct index our menu is using based off of the length of the custom list. It is up to the user to increment the count for their list.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "data",
@@ -118,7 +126,8 @@
             }
           ],
           "descriptionHtml": "Any custom data the developer wishes to associate with the menu item.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "disabled",
@@ -128,7 +137,8 @@
             }
           ],
           "descriptionHtml": "Whether the menu item is disabled\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "getItemClassNames",
@@ -215,7 +225,8 @@
             }
           ],
           "descriptionHtml": "Method to provide the classnames to style the individual items inside a menu. Deprecated, use `styles` prop of `IContextualMenuItemProps` to leverage mergeStyles API.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "getSplitButtonVerticalDividerClassNames",
@@ -242,7 +253,8 @@
             }
           ],
           "descriptionHtml": "Method to provide the classnames to style the Vertical Divider of a split button inside a menu. Default value is the getVerticalDividerClassnames func defined in ContextualMenu.classnames\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "getSplitButtonVerticalDividerClassNames"
         },
         {
           "name": "href",
@@ -252,17 +264,21 @@
             }
           ],
           "descriptionHtml": "An optional URL to navigate to upon selection\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "iconProps",
           "typeTokens": [
             {
-              "text": "IIconProps"
+              "text": "IIconProps",
+              "hyperlinkedPage": "Icon",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Props that go to the IconComponent\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "inactive",
@@ -272,7 +288,8 @@
             }
           ],
           "descriptionHtml": "This prop is no longer used. All contextual menu items are now focusable when disabled.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "itemProps",
@@ -284,20 +301,25 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuItemProps"
+              "text": "IContextualMenuItemProps",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional IContextualMenuItemProps overrides to customize behaviors such as item styling via `styles`.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "itemType",
           "typeTokens": [
             {
-              "text": "ContextualMenuItemType"
+              "text": "ContextualMenuItemType",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "",
@@ -311,17 +333,21 @@
             }
           ],
           "descriptionHtml": "Unique id to identify the item\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps"
+              "text": "IKeytipProps",
+              "hyperlinkedPage": "Keytip",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Keytip for this contextual menu item\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "name",
@@ -331,7 +357,8 @@
             }
           ],
           "descriptionHtml": "Text description for the menu item to display Deprecated, use `text` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "onClick",
@@ -388,14 +415,17 @@
               "text": "?: "
             },
             {
-              "text": "IContextualMenuItem"
+              "text": "IContextualMenuItem",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ") => boolean | void"
             }
           ],
           "descriptionHtml": "Callback issued when the menu item is invoked. If ev.preventDefault() is called in onClick, click will not close menu. Returning true will dismiss the menu even if ev.preventDefault() was called.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onMouseDown",
@@ -410,7 +440,9 @@
               "text": ": "
             },
             {
-              "text": "IContextualMenuItem"
+              "text": "IContextualMenuItem",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ", "
@@ -441,7 +473,8 @@
             }
           ],
           "descriptionHtml": "A function to be executed onMouseDown. This is executed before an onClick event and can be used to interrupt native on click events as well. The click event should still handle the commands. This should only be used in special cases when react and non-react are mixed.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRender",
@@ -484,28 +517,30 @@
             }
           ],
           "descriptionHtml": "Method to custom render this menu item. For keyboard accessibility, the top-level rendered item should be a focusable element (like an anchor or a button) or have the `data-is-focusable` property set to true.\n\nThe function receives a function that can be called to dismiss the menu as a second argument. This can be used to make sure that a custom menu item click dismisses the menu.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "undefined"
         },
         {
           "name": "onRenderIcon",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IContextualMenuItemProps"
+              "text": "IContextualMenuItemProps",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Custom render function for the menu item icon\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "primaryDisabled",
@@ -515,7 +550,8 @@
             }
           ],
           "descriptionHtml": "If the menu item is a split button, this prop disables purely the primary action of the button.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "rel",
@@ -525,7 +561,8 @@
             }
           ],
           "descriptionHtml": "An optional rel when using href. If target is _blank rel is defaulted to a value to prevent clickjacking.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "role",
@@ -535,7 +572,8 @@
             }
           ],
           "descriptionHtml": "Optional override for the role attribute on the menu button. If one is not provided, it will have a value of menuitem or menuitemcheckbox.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "secondaryText",
@@ -545,17 +583,21 @@
             }
           ],
           "descriptionHtml": "Seconday description for the menu item to display\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "sectionProps",
           "typeTokens": [
             {
-              "text": "IContextualMenuSection"
+              "text": "IContextualMenuSection",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Properties to apply to render this item as a section. This prop is mutually exclusive with subMenuProps.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "shortCut",
@@ -565,7 +607,8 @@
             }
           ],
           "descriptionHtml": "[TODO] Not Yet Implemented\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "split",
@@ -575,7 +618,8 @@
             }
           ],
           "descriptionHtml": "Whether or not this menu item is a splitButton.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "style",
@@ -591,27 +635,34 @@
             }
           ],
           "descriptionHtml": "Additional styles to apply to the menu item Deprecated, use `styles` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": "undefined"
         },
         {
           "name": "submenuIconProps",
           "typeTokens": [
             {
-              "text": "IIconProps"
+              "text": "IIconProps",
+              "hyperlinkedPage": "Icon",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Props that go to the IconComponent used for the chevron.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "subMenuProps",
           "typeTokens": [
             {
-              "text": "IContextualMenuProps"
+              "text": "IContextualMenuProps",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Properties to apply to a submenu to this item.\n\nThe ContextualMenu will provide default values for `target`, `onDismiss`, `isSubMenu`, `id`, `shouldFocusOnMount`, `directionalHint`, `className`, and `gapSpace`, all of which can be overridden.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "target",
@@ -621,7 +672,8 @@
             }
           ],
           "descriptionHtml": "An optional target when using href\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "text",
@@ -631,7 +683,8 @@
             }
           ],
           "descriptionHtml": "Text description for the menu item to display\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "title",
@@ -641,7 +694,8 @@
             }
           ],
           "descriptionHtml": "Optional title for displaying text when hovering over an item.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -662,7 +716,9 @@
           "text": "<"
         },
         {
-          "text": "IContextualMenuItemProps"
+          "text": "IContextualMenuItemProps",
+          "hyperlinkedPage": "ContextualMenu",
+          "pageKind": "Components"
         },
         {
           "text": "> "
@@ -678,7 +734,8 @@
             }
           ],
           "descriptionHtml": "Additional css class to apply to the ContextualMenuItem\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "undefined"
         },
         {
           "name": "classNames",
@@ -688,7 +745,8 @@
             }
           ],
           "descriptionHtml": "Classnames for different aspects of a menu item\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -700,14 +758,17 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuRenderItem"
+              "text": "IContextualMenuRenderItem",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IContextualMenuRenderItem interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dismissMenu",
@@ -729,7 +790,8 @@
             }
           ],
           "descriptionHtml": "This prop will get set by ContextualMenu and can be called to close the menu this item belongs to. If dismissAll is true, all menus will be closed.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dismissSubMenu",
@@ -739,7 +801,8 @@
             }
           ],
           "descriptionHtml": "This prop will get set by ContextualMenu and can be called to close this item's subMenu, if present.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getSubmenuTarget",
@@ -755,7 +818,8 @@
             }
           ],
           "descriptionHtml": "This prop will get set by the wrapping component and will return the element that wraps this ContextualMenuItem. Used for openSubMenu.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "hasIcons",
@@ -765,7 +829,8 @@
             }
           ],
           "descriptionHtml": "If this item has icons\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "index",
@@ -775,17 +840,21 @@
             }
           ],
           "descriptionHtml": "Index of the item\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "item",
           "typeTokens": [
             {
-              "text": "IContextualMenuItem"
+              "text": "IContextualMenuItem",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "The item to display\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onCheckmarkClick",
@@ -800,7 +869,9 @@
               "text": ": "
             },
             {
-              "text": "IContextualMenuItem"
+              "text": "IContextualMenuItem",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ", "
@@ -831,7 +902,8 @@
             }
           ],
           "descriptionHtml": "Click handler for the checkmark\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "openSubMenu",
@@ -859,7 +931,8 @@
             }
           ],
           "descriptionHtml": "This prop will get set by ContextualMenu and can be called to open this item's subMenu, if present.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -871,20 +944,25 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuItemStyleProps"
+              "text": "IContextualMenuItemStyleProps",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IContextualMenuItemStyles"
+              "text": "IContextualMenuItemStyles",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -896,7 +974,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -914,7 +993,8 @@
             }
           ],
           "descriptionHtml": "Whether or not the menu item is checked.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -924,7 +1004,8 @@
             }
           ],
           "descriptionHtml": "Accept custom classNames\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "disabled",
@@ -934,7 +1015,8 @@
             }
           ],
           "descriptionHtml": "Whether or not the menu item is disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dividerClassName",
@@ -944,7 +1026,8 @@
             }
           ],
           "descriptionHtml": "The optional class name to apply to the divider element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "expanded",
@@ -954,7 +1037,8 @@
             }
           ],
           "descriptionHtml": "Whether or not the menu item is expanded.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "iconClassName",
@@ -964,7 +1048,8 @@
             }
           ],
           "descriptionHtml": "The optional class name to apply to the icon element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isAnchorLink",
@@ -974,7 +1059,8 @@
             }
           ],
           "descriptionHtml": "Indicates if a menu item is an anchor link.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "itemClassName",
@@ -984,7 +1070,8 @@
             }
           ],
           "descriptionHtml": "The optional class name to apply to the item element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "knownIcon",
@@ -994,7 +1081,8 @@
             }
           ],
           "descriptionHtml": "Indicates if the icon used is of the known set of icons.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "primaryDisabled",
@@ -1004,7 +1092,8 @@
             }
           ],
           "descriptionHtml": "Whether or not the primary section of a split menu item is disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "subMenuClassName",
@@ -1014,7 +1103,8 @@
             }
           ],
           "descriptionHtml": "The optional class name to apply to the sub-menu if present.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -1026,7 +1116,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -1035,7 +1126,9 @@
       "name": "IContextualMenuItemStyles",
       "extendsTokens": [
         {
-          "text": "IButtonStyles"
+          "text": "IButtonStyles",
+          "hyperlinkedPage": "Button",
+          "pageKind": "Components"
         },
         {
           "text": " "
@@ -1051,7 +1144,8 @@
             }
           ],
           "descriptionHtml": "Styles for a menu item that is an anchor link.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "checkmarkIcon",
@@ -1061,7 +1155,8 @@
             }
           ],
           "descriptionHtml": "Default style for checkmark icons.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "divider",
@@ -1071,7 +1166,8 @@
             }
           ],
           "descriptionHtml": "Styles for a divider item of a ContextualMenu.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "icon",
@@ -1081,7 +1177,8 @@
             }
           ],
           "descriptionHtml": "Styles for the icon element of a menu item.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "iconColor",
@@ -1091,7 +1188,8 @@
             }
           ],
           "descriptionHtml": "Default icon color style for known icons.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "item",
@@ -1101,7 +1199,8 @@
             }
           ],
           "descriptionHtml": "Styles for a menu item that is an anchor link.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "label",
@@ -1111,7 +1210,8 @@
             }
           ],
           "descriptionHtml": "Styles for the label of a menu item.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "linkContent",
@@ -1121,7 +1221,8 @@
             }
           ],
           "descriptionHtml": "Styles for the content inside the button/link of the menuItem.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "linkContentMenu",
@@ -1131,7 +1232,8 @@
             }
           ],
           "descriptionHtml": "Styles for a menu item that is a link.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -1141,7 +1243,8 @@
             }
           ],
           "descriptionHtml": "Style for the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "secondaryText",
@@ -1151,7 +1254,8 @@
             }
           ],
           "descriptionHtml": "Styles for the secondary text of a menu item.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "splitContainer",
@@ -1161,7 +1265,8 @@
             }
           ],
           "descriptionHtml": "Styles for the container of a split menu item.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "splitMenu",
@@ -1171,7 +1276,8 @@
             }
           ],
           "descriptionHtml": "Styles for the menu portion of a split menu item.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "splitPrimary",
@@ -1181,7 +1287,8 @@
             }
           ],
           "descriptionHtml": "Styles for the primary portion of a split menu item.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "subMenuIcon",
@@ -1191,7 +1298,8 @@
             }
           ],
           "descriptionHtml": "Styles for the submenu icon of a menu item.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -1225,7 +1333,9 @@
           "name": "items",
           "typeTokens": [
             {
-              "text": "IContextualMenuItem"
+              "text": "IContextualMenuItem",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
@@ -1259,7 +1369,9 @@
           "text": "<"
         },
         {
-          "text": "IContextualMenu"
+          "text": "IContextualMenu",
+          "hyperlinkedPage": "ContextualMenu",
+          "pageKind": "Components"
         },
         {
           "text": ">"
@@ -1284,7 +1396,8 @@
             }
           ],
           "descriptionHtml": "If true the positioning logic will prefer to flip edges rather than to nudge the rectangle to fit within bounds, thus making sure the element aligns perfectly with target's alignment edge\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabel",
@@ -1294,7 +1407,8 @@
             }
           ],
           "descriptionHtml": "Aria label for accessibility for the ContextualMenu. If none specified no aria label will be applied to the ContextualMenu.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "beakWidth",
@@ -1304,27 +1418,34 @@
             }
           ],
           "descriptionHtml": "The width of the beak.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "16"
         },
         {
           "name": "bounds",
           "typeTokens": [
             {
-              "text": "IRectangle"
+              "text": "IRectangle",
+              "hyperlinkedPage": "IRectangle",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "The bounding rectangle for which the contextual menu can appear in.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "calloutProps",
           "typeTokens": [
             {
-              "text": "ICalloutProps"
+              "text": "ICalloutProps",
+              "hyperlinkedPage": "Callout",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Pass in custom callout props\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -1334,7 +1455,8 @@
             }
           ],
           "descriptionHtml": "Additional css class to apply to the ContextualMenu\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "undefined"
         },
         {
           "name": "componentRef",
@@ -1346,14 +1468,17 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenu"
+              "text": "IContextualMenu",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IContextualMenu interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "contextualMenuItemAs",
@@ -1371,7 +1496,9 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuItemProps"
+              "text": "IContextualMenuItemProps",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": "> | "
@@ -1389,14 +1516,17 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuItemProps"
+              "text": "IContextualMenuItemProps",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Method to override the render of the individual menu items\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "ContextualMenuItem"
         },
         {
           "name": "coverTarget",
@@ -1406,7 +1536,8 @@
             }
           ],
           "descriptionHtml": "If true the position returned will have the menu element cover the target. If false then it will position next to the target;\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "delayUpdateFocusOnHover",
@@ -1416,7 +1547,8 @@
             }
           ],
           "descriptionHtml": "If true, the contextual menu will not be updated until focus enters the menu via other means. This will only result in different behavior when shouldFocusOnMount = false\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "null"
         },
         {
           "name": "directionalHint",
@@ -1426,7 +1558,8 @@
             }
           ],
           "descriptionHtml": "How the element should be positioned\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "DirectionalHint.bottomAutoEdge"
         },
         {
           "name": "directionalHintFixed",
@@ -1436,7 +1569,8 @@
             }
           ],
           "descriptionHtml": "If true the position will not change sides in an attempt to fit the ContextualMenu within bounds. It will still attempt to align it to whatever bounds are given.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "directionalHintForRTL",
@@ -1446,7 +1580,8 @@
             }
           ],
           "descriptionHtml": "How the element should be positioned in RTL layouts. If not specified, a mirror of `directionalHint` will be used instead\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "doNotLayer",
@@ -1456,17 +1591,21 @@
             }
           ],
           "descriptionHtml": "If true do not render on a new layer. If false render on a new layer.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "focusZoneProps",
           "typeTokens": [
             {
-              "text": "IFocusZoneProps"
+              "text": "IFocusZoneProps",
+              "hyperlinkedPage": "FocusZone",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Props to pass down to the FocusZone. NOTE: the default FocusZoneDirection will be used unless a direction is specified in the focusZoneProps (even if other focusZoneProps are defined)\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "direction: FocusZoneDirection.vertical"
         },
         {
           "name": "gapSpace",
@@ -1476,7 +1615,8 @@
             }
           ],
           "descriptionHtml": "The gap between the ContextualMenu and the target\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "0"
         },
         {
           "name": "getMenuClassNames",
@@ -1509,7 +1649,8 @@
             }
           ],
           "descriptionHtml": "Method to provide the classnames to style the contextual menu. Default value is the getMenuClassnames func defined in ContextualMenu.classnames. Deprecated, use `styles` prop of `IContextualMenuProps` to leverage mergeStyles API.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "hidden",
@@ -1519,7 +1660,8 @@
             }
           ],
           "descriptionHtml": "If specified, renders the ContextualMenu in a hidden state. Use this flag, rather than rendering a ContextualMenu conditionally based on visibility, to improve rendering performance when it becomes visible. Note: When ContextualMenu is hidden its content will not be rendered. It will only render once the ContextualMenu is visible.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "id",
@@ -1529,7 +1671,8 @@
             }
           ],
           "descriptionHtml": "DOM id to tag the ContextualMenu with, for reference. Should be used for 'aria-owns' and other such uses, rather than direct reference for programmatic purposes.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isBeakVisible",
@@ -1539,7 +1682,8 @@
             }
           ],
           "descriptionHtml": "If true then the beak is visible. If false it will not be shown.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isSubMenu",
@@ -1549,20 +1693,24 @@
             }
           ],
           "descriptionHtml": "Whether this menu is a submenu of another menu or not.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "items",
           "typeTokens": [
             {
-              "text": "IContextualMenuItem"
+              "text": "IContextualMenuItem",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "Collection of menu items.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "[]"
         },
         {
           "name": "labelElementId",
@@ -1572,7 +1720,8 @@
             }
           ],
           "descriptionHtml": "Aria Labelled by labelElementId\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "null"
         },
         {
           "name": "onDismiss",
@@ -1594,7 +1743,8 @@
             }
           ],
           "descriptionHtml": "Callback when the ContextualMenu tries to close. If dismissAll is true then all submenus will be dismissed.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onItemClick",
@@ -1651,14 +1801,17 @@
               "text": "?: "
             },
             {
-              "text": "IContextualMenuItem"
+              "text": "IContextualMenuItem",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ") => boolean | void"
             }
           ],
           "descriptionHtml": "Click handler which is invoked if onClick is not passed for individual contextual menu item. Returning true will dismiss the menu even if ev.preventDefault() was called.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onMenuDismissed",
@@ -1673,14 +1826,17 @@
               "text": "?: "
             },
             {
-              "text": "IContextualMenuProps"
+              "text": "IContextualMenuProps",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ") => void"
             }
           ],
           "descriptionHtml": "Callback for when the contextualmenu is being closed (removing from the DOM)\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onMenuOpened",
@@ -1695,56 +1851,61 @@
               "text": "?: "
             },
             {
-              "text": "IContextualMenuProps"
+              "text": "IContextualMenuProps",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ") => void"
             }
           ],
           "descriptionHtml": "Callback for when the contextualmenu has been opened.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderMenuList",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IContextualMenuListProps"
+              "text": "IContextualMenuListProps",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Method to override the render of the list of menu items.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderSubMenu",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IContextualMenuProps"
+              "text": "IContextualMenuProps",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Method to call when trying to render a submenu.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "shouldFocusOnContainer",
@@ -1754,7 +1915,8 @@
             }
           ],
           "descriptionHtml": "Whether to focus on the contextual menu container (as opposed to the first menu item).\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "null"
         },
         {
           "name": "shouldFocusOnMount",
@@ -1764,7 +1926,8 @@
             }
           ],
           "descriptionHtml": "Whether to focus on the menu when mounted.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "true"
         },
         {
           "name": "styles",
@@ -1776,20 +1939,25 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuStyleProps"
+              "text": "IContextualMenuStyleProps",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IContextualMenuStyles"
+              "text": "IContextualMenuStyles",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "subMenuHoverDelay",
@@ -1799,7 +1967,8 @@
             }
           ],
           "descriptionHtml": "Delay (in milliseconds) to wait before expanding / dismissing a submenu on mouseEnter or mouseLeave\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "target",
@@ -1817,14 +1986,17 @@
               "text": " | "
             },
             {
-              "text": "IPoint"
+              "text": "IPoint",
+              "hyperlinkedPage": "IPoint",
+              "pageKind": "References"
             },
             {
               "text": " | null"
             }
           ],
           "descriptionHtml": "The target that the ContextualMenu should try to position itself based on. It can be either an Element a querySelector string of a valid Element or a MouseEvent. If MouseEvent is given then the origin point of the event will be used.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -1836,7 +2008,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "title",
@@ -1846,7 +2019,8 @@
             }
           ],
           "descriptionHtml": "Optional title to be displayed on top of the menu.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "useTargetAsMinWidth",
@@ -1856,7 +2030,8 @@
             }
           ],
           "descriptionHtml": "If true the context menu will have a minimum width equal to the width of the target element\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "useTargetWidth",
@@ -1866,7 +2041,8 @@
             }
           ],
           "descriptionHtml": "If true the context menu will render as the same width as the target element\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         }
       ]
     },
@@ -1890,7 +2066,8 @@
             }
           ],
           "descriptionHtml": "Dismiss the menu this item belongs to.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dismissSubMenu",
@@ -1900,7 +2077,8 @@
             }
           ],
           "descriptionHtml": "Function to close this item's subMenu, if present.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "openSubMenu",
@@ -1910,7 +2088,8 @@
             }
           ],
           "descriptionHtml": "Function to open this item's subMenu, if present.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -1941,20 +2120,24 @@
             }
           ],
           "descriptionHtml": "If set to true, the section will display a divider at the bottom of the section.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "items",
           "typeTokens": [
             {
-              "text": "IContextualMenuItem"
+              "text": "IContextualMenuItem",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "The items to include inside the section.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "title",
@@ -1964,7 +2147,8 @@
             }
           ],
           "descriptionHtml": "The optional section title.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "topDivider",
@@ -1974,7 +2158,8 @@
             }
           ],
           "descriptionHtml": "If set to true, the section will display a divider at the top of the section.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -1992,7 +2177,8 @@
             }
           ],
           "descriptionHtml": "Accept custom classNames\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -2004,7 +2190,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -2022,7 +2209,8 @@
             }
           ],
           "descriptionHtml": "Style for the container which parents all menu items.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "header",
@@ -2032,7 +2220,8 @@
             }
           ],
           "descriptionHtml": "Styles for the header item of a ContextualMenu\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "list",
@@ -2042,7 +2231,8 @@
             }
           ],
           "descriptionHtml": "Styles for the list that contains all menuItems.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -2052,17 +2242,21 @@
             }
           ],
           "descriptionHtml": "Base styles for the root element of all ContextualMenus.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "subComponentStyles",
           "typeTokens": [
             {
-              "text": "IContextualMenuSubComponentStyles"
+              "text": "IContextualMenuSubComponentStyles",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "SubComponent styles.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "title",
@@ -2072,7 +2266,8 @@
             }
           ],
           "descriptionHtml": "Style override for the contextual menu title.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -2092,14 +2287,17 @@
               "text": "<"
             },
             {
-              "text": "ICalloutContentStyleProps"
+              "text": "ICalloutContentStyleProps",
+              "hyperlinkedPage": "Callout",
+              "pageKind": "Components"
             },
             {
               "text": ", any>"
             }
           ],
           "descriptionHtml": "Refers to the callout that hosts the ContextualMenu options\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "menuItem",
@@ -2111,14 +2309,17 @@
               "text": "<"
             },
             {
-              "text": "IContextualMenuItemStyleProps"
+              "text": "IContextualMenuItemStyleProps",
+              "hyperlinkedPage": "ContextualMenu",
+              "pageKind": "Components"
             },
             {
               "text": ", any>"
             }
           ],
           "descriptionHtml": "Refers to the item in the list\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -2127,7 +2328,9 @@
       "name": "IMenuItemStyles",
       "extendsTokens": [
         {
-          "text": "IButtonStyles"
+          "text": "IButtonStyles",
+          "hyperlinkedPage": "Button",
+          "pageKind": "Components"
         },
         {
           "text": " "
@@ -2143,7 +2346,8 @@
             }
           ],
           "descriptionHtml": "Styles for a menu item that is an anchor link.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "checkmarkIcon",
@@ -2153,7 +2357,8 @@
             }
           ],
           "descriptionHtml": "Default style for checkmark icons.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "divider",
@@ -2163,7 +2368,8 @@
             }
           ],
           "descriptionHtml": "Styles for a divider item of a ConextualMenu.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "iconColor",
@@ -2173,7 +2379,8 @@
             }
           ],
           "descriptionHtml": "Default icon color style for known icons.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "item",
@@ -2183,7 +2390,8 @@
             }
           ],
           "descriptionHtml": "Styles for a menu item that is an anchor link.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "linkContent",
@@ -2193,7 +2401,8 @@
             }
           ],
           "descriptionHtml": "Styles for the content inside the button/link of the menuItem.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "subMenuIcon",
@@ -2203,7 +2412,8 @@
             }
           ],
           "descriptionHtml": "Styles for the submenu icon of a menu item.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

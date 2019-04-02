@@ -37,7 +37,9 @@
           "text": "<"
         },
         {
-          "text": "IPersonaProps"
+          "text": "IPersonaProps",
+          "hyperlinkedPage": "Persona",
+          "pageKind": "Components"
         },
         {
           "text": "> "

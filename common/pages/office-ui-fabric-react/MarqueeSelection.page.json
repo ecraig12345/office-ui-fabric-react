@@ -40,7 +40,8 @@
             }
           ],
           "descriptionHtml": "Additional CSS class(es) to apply to the MarqueeSelection.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -52,14 +53,17 @@
               "text": "<"
             },
             {
-              "text": "IMarqueeSelection"
+              "text": "IMarqueeSelection",
+              "hyperlinkedPage": "MarqueeSelection",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IMarqueeSelection interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isDraggingConstrainedToRoot",
@@ -69,7 +73,8 @@
             }
           ],
           "descriptionHtml": "Optional flag to restrict the drag rect to the root element, instead of allowing the drag rect to start outside of the root element boundaries.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "isEnabled",
@@ -79,7 +84,8 @@
             }
           ],
           "descriptionHtml": "Optional flag to control the enabled state of marquee selection. This allows you to render it and have events all ready to go, but conditionally disable it. That way transitioning between enabled/disabled generate no difference in the DOM.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "true"
         },
         {
           "name": "onShouldStartSelection",
@@ -101,7 +107,8 @@
             }
           ],
           "descriptionHtml": "Optional callback that is called, when the mouse down event occurs, in order to determine if we should start a marquee selection. If true is returned, we will cancel the mousedown event to prevent upstream mousedown handlers from executing.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rootProps",
@@ -126,7 +133,8 @@
             }
           ],
           "descriptionHtml": "Optional props to mix into the root DIV element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "selection",
@@ -136,7 +144,8 @@
             }
           ],
           "descriptionHtml": "The selection object to interact with when updating selection changes.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -148,20 +157,25 @@
               "text": "<"
             },
             {
-              "text": "IMarqueeSelectionStyleProps"
+              "text": "IMarqueeSelectionStyleProps",
+              "hyperlinkedPage": "MarqueeSelection",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IMarqueeSelectionStyles"
+              "text": "IMarqueeSelectionStyles",
+              "hyperlinkedPage": "MarqueeSelection",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -173,7 +187,8 @@
             }
           ],
           "descriptionHtml": "Theme (provided through customization.)\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },

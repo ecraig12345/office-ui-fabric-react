@@ -5,7 +5,9 @@
       "name": "IStackItemProps",
       "extendsTokens": [
         {
-          "text": "IStackItemSlots"
+          "text": "IStackItemSlots",
+          "hyperlinkedPage": "Stack",
+          "pageKind": "Components"
         },
         {
           "text": ", "
@@ -17,13 +19,17 @@
           "text": "<"
         },
         {
-          "text": "IStackItemProps"
+          "text": "IStackItemProps",
+          "hyperlinkedPage": "Stack",
+          "pageKind": "Components"
         },
         {
           "text": ", "
         },
         {
-          "text": "IStackItemTokens"
+          "text": "IStackItemTokens",
+          "hyperlinkedPage": "Stack",
+          "pageKind": "Components"
         },
         {
           "text": ", "
@@ -45,7 +51,8 @@
             }
           ],
           "descriptionHtml": "Defines how to align the StackItem along the x-axis (for vertical Stacks) or the y-axis (for horizontal Stacks).\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -55,7 +62,8 @@
             }
           ],
           "descriptionHtml": "Defines a CSS class name used to style the StackItem.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "disableShrink",
@@ -65,7 +73,8 @@
             }
           ],
           "descriptionHtml": "Defines whether the StackItem should be prevented from shrinking. This can be used to prevent a StackItem from shrinking when it is inside of a Stack that has shrinking items.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "grow",
@@ -75,7 +84,8 @@
             }
           ],
           "descriptionHtml": "Defines how much to grow the StackItem in proportion to its siblings.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "shrink",
@@ -85,7 +95,8 @@
             }
           ],
           "descriptionHtml": "Defines at what ratio should the StackItem shrink to fit the available space.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "verticalFill",
@@ -95,7 +106,8 @@
             }
           ],
           "descriptionHtml": "Defines whether the StackItem should take up 100% of the height of its parent.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "true"
         }
       ]
     },
@@ -129,7 +141,9 @@
       "name": "IStackProps",
       "extendsTokens": [
         {
-          "text": "IStackSlots"
+          "text": "IStackSlots",
+          "hyperlinkedPage": "Stack",
+          "pageKind": "Components"
         },
         {
           "text": ", "
@@ -141,7 +155,9 @@
           "text": "<"
         },
         {
-          "text": "IStackProps"
+          "text": "IStackProps",
+          "hyperlinkedPage": "Stack",
+          "pageKind": "Components"
         },
         {
           "text": ", "
@@ -153,7 +169,9 @@
           "text": ", "
         },
         {
-          "text": "IStackTokens"
+          "text": "IStackTokens",
+          "hyperlinkedPage": "Stack",
+          "pageKind": "Components"
         },
         {
           "text": ">"
@@ -217,7 +235,8 @@
             }
           ],
           "descriptionHtml": "Defines how to render the Stack.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "disableShrink",
@@ -227,7 +246,8 @@
             }
           ],
           "descriptionHtml": "Defines whether Stack children should not shrink to fit the available space.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "gap",
@@ -237,7 +257,8 @@
             }
           ],
           "descriptionHtml": "Defines the spacing between Stack children. The property is specified as a value for 'row gap', followed optionally by a value for 'column gap'. If 'column gap' is omitted, it's set to the same value as 'row gap'.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "grow",
@@ -247,7 +268,8 @@
             }
           ],
           "descriptionHtml": "Defines how much to grow the Stack in proportion to its siblings.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "horizontal",
@@ -257,7 +279,8 @@
             }
           ],
           "descriptionHtml": "Defines whether to render Stack children horizontally.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "horizontalAlign",
@@ -267,7 +290,8 @@
             }
           ],
           "descriptionHtml": "Defines how to align Stack children horizontally (along the x-axis).\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "maxHeight",
@@ -277,7 +301,8 @@
             }
           ],
           "descriptionHtml": "Defines the maximum height that the Stack can take.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "maxWidth",
@@ -287,7 +312,8 @@
             }
           ],
           "descriptionHtml": "Defines the maximum width that the Stack can take.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "padding",
@@ -297,7 +323,8 @@
             }
           ],
           "descriptionHtml": "Defines the inner padding of the Stack.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "reversed",
@@ -307,7 +334,8 @@
             }
           ],
           "descriptionHtml": "Defines whether to render Stack children in the opposite direction (bottom-to-top if it's a vertical Stack and right-to-left if it's a horizontal Stack).\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "verticalAlign",
@@ -317,7 +345,8 @@
             }
           ],
           "descriptionHtml": "Defines how to align Stack children vertically (along the y-axis).\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "verticalFill",
@@ -327,7 +356,8 @@
             }
           ],
           "descriptionHtml": "Defines whether the Stack should take up 100% of the height of its parent. This property is required to be set to true when using the `grow` flag on children in vertical oriented Stacks. Stacks are rendered as block elements and grow horizontally to the container already.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "wrap",
@@ -337,7 +367,8 @@
             }
           ],
           "descriptionHtml": "Defines whether Stack children should wrap onto multiple rows or columns when they are about to overflow the size of the Stack.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         }
       ]
     },
@@ -355,7 +386,8 @@
             }
           ],
           "descriptionHtml": "Defines a slot that is placed inside the root slot in order to achieve wrapping. Only used when the wrap property is set to true.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -365,7 +397,8 @@
             }
           ],
           "descriptionHtml": "Defines root slot of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },

@@ -61,7 +61,8 @@
             }
           ],
           "descriptionHtml": "Render the root element as another type.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -73,14 +74,17 @@
               "text": "<"
             },
             {
-              "text": "ILabel"
+              "text": "ILabel",
+              "hyperlinkedPage": "Label",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the ILabel interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "disabled",
@@ -90,7 +94,8 @@
             }
           ],
           "descriptionHtml": "Renders the label as disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "required",
@@ -100,7 +105,8 @@
             }
           ],
           "descriptionHtml": "Whether the associated form field is required or not\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "styles",
@@ -112,20 +118,25 @@
               "text": "<"
             },
             {
-              "text": "ILabelStyleProps"
+              "text": "ILabelStyleProps",
+              "hyperlinkedPage": "Label",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "ILabelStyles"
+              "text": "ILabelStyles",
+              "hyperlinkedPage": "Label",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Styles for the label.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -137,7 +148,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -205,7 +217,8 @@
             }
           ],
           "descriptionHtml": "Styles for the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

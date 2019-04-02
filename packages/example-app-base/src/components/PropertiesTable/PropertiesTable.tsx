@@ -81,7 +81,8 @@ const renderCellType = (typeTokens: ILinkToken[]) => {
 
 const createRenderCellEnum = (propertyName: keyof IEnumProperty) => (item: IEnumProperty) => renderCell(item[propertyName]);
 
-const createRenderCellInterface = (propertyName: 'name' | 'description') => (item: IInterfaceProperty) => renderCell(item[propertyName]);
+const createRenderCellInterface = (propertyName: 'name' | 'description' | 'defaultValue') => (item: IInterfaceProperty) =>
+  renderCell(item[propertyName]);
 
 const createRenderCellType = (propertyName: 'typeTokens') => (item: IInterfaceProperty) => renderCellType(item[propertyName]);
 
@@ -107,6 +108,17 @@ const DEFAULT_COLUMNS: IColumn[] = [
     isResizable: true,
     isMultiline: true,
     onRender: createRenderCellType('typeTokens')
+  },
+  {
+    key: 'defaultValue',
+    name: 'Default value',
+    fieldName: 'defaultValue',
+    minWidth: 130,
+    maxWidth: 150,
+    isCollapsible: false,
+    isResizable: true,
+    isMultiline: true,
+    onRender: createRenderCellInterface('defaultValue')
   },
   {
     key: 'description',

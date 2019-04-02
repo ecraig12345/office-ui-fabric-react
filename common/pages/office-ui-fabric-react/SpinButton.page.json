@@ -14,7 +14,8 @@
             }
           ],
           "descriptionHtml": "Sets focus to the spin button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "value",
@@ -24,7 +25,8 @@
             }
           ],
           "descriptionHtml": "The value of the SpinButton. Use this if you intend to pass in a new value as a result of onChange events. This value is mutually exclusive to defaultValue. Use one or the other.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -42,7 +44,8 @@
             }
           ],
           "descriptionHtml": "Optional prop to add a string id that can be referenced inside the aria-describedby attribute\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabel",
@@ -52,7 +55,8 @@
             }
           ],
           "descriptionHtml": "A description of the SpinButton for the benefit of screen readers.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaPositionInSet",
@@ -62,7 +66,8 @@
             }
           ],
           "descriptionHtml": "The position in the parent set (if in a set) for aria-posinset.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaSetSize",
@@ -72,7 +77,8 @@
             }
           ],
           "descriptionHtml": "The total size of the parent set (if in a set) for aria-setsize.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaValueNow",
@@ -82,7 +88,8 @@
             }
           ],
           "descriptionHtml": "Sets the aria-valuenow of the spin button. The component must be controlled by the creator who controls the value externally. ariaValueNow would be the numeric form of value.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaValueText",
@@ -102,7 +109,8 @@
             }
           ],
           "descriptionHtml": "Optional className for SpinButton.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -114,14 +122,17 @@
               "text": "<"
             },
             {
-              "text": "ISpinButton"
+              "text": "ISpinButton",
+              "hyperlinkedPage": "SpinButton",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Gets the component ref.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "decrementButtonAriaLabel",
@@ -131,17 +142,21 @@
             }
           ],
           "descriptionHtml": "Accessibile label text for the decrement button for the benefit of the screen reader.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "decrementButtonIcon",
           "typeTokens": [
             {
-              "text": "IIconProps"
+              "text": "IIconProps",
+              "hyperlinkedPage": "Icon",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Icon for the decrement button of the spinButton\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "defaultValue",
@@ -151,7 +166,8 @@
             }
           ],
           "descriptionHtml": "The initial value of the SpinButton. Use this if you intend for the SpinButton to be an uncontrolled component. This value is mutually exclusive to value. Use one or the other.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "0"
         },
         {
           "name": "disabled",
@@ -161,7 +177,8 @@
             }
           ],
           "descriptionHtml": "Whether or not the SpinButton is disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "downArrowButtonStyles",
@@ -173,14 +190,17 @@
               "text": "<"
             },
             {
-              "text": "IButtonStyles"
+              "text": "IButtonStyles",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Custom styles for the downArrow button.\n\nNote: The buttons are in a checked state when arrow keys are used to incremenent/decrement the spinButton. Use rootChecked instead of rootPressed for styling when that is the case.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getClassNames",
@@ -249,17 +269,21 @@
             }
           ],
           "descriptionHtml": "Custom function for providing the classNames for the spinbutton. Can be used to provide all styles for the component instead of applying them on top of the default styles.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "iconProps",
           "typeTokens": [
             {
-              "text": "IIconProps"
+              "text": "IIconProps",
+              "hyperlinkedPage": "Icon",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Icon that goes along with the label for the whole SpinButton\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "incrementButtonAriaLabel",
@@ -269,27 +293,34 @@
             }
           ],
           "descriptionHtml": "Accessibile label text for the increment button for the benefit of the screen reader.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "incrementButtonIcon",
           "typeTokens": [
             {
-              "text": "IIconProps"
+              "text": "IIconProps",
+              "hyperlinkedPage": "Icon",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Icon for the increment button of the spinButton\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps"
+              "text": "IKeytipProps",
+              "hyperlinkedPage": "Keytip",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Optional keytip for this spin button\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "label",
@@ -299,7 +330,8 @@
             }
           ],
           "descriptionHtml": "Descriptive label for the SpinButton.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "labelPosition",
@@ -309,7 +341,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "Left"
         },
         {
           "name": "max",
@@ -319,7 +352,8 @@
             }
           ],
           "descriptionHtml": "The max value of the SpinButton.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "10"
         },
         {
           "name": "min",
@@ -329,7 +363,8 @@
             }
           ],
           "descriptionHtml": "The min value of the SpinButton.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "0"
         },
         {
           "name": "onBlur",
@@ -354,7 +389,8 @@
             }
           ],
           "descriptionHtml": "A callback for when the user moves the focus away from the picker\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onDecrement",
@@ -370,7 +406,8 @@
             }
           ],
           "descriptionHtml": "This callback is triggered when the decrement button is pressed or if the user presses down arrow with focus on the input of the spinButton\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onFocus",
@@ -395,7 +432,8 @@
             }
           ],
           "descriptionHtml": "A callback for when the user put focus on the picker\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onIncrement",
@@ -411,7 +449,8 @@
             }
           ],
           "descriptionHtml": "This callback is triggered when the increment button is pressed or if the user presses up arrow with focus on the input of the spinButton\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onValidate",
@@ -451,7 +490,8 @@
             }
           ],
           "descriptionHtml": "This callback is triggered when the value inside the SpinButton should be validated.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "precision",
@@ -461,7 +501,8 @@
             }
           ],
           "descriptionHtml": "To how many decimal places the value should be rounded to. The default value is calculated based on the precision of step. IE: if step = 1, precision = 0. step = 0.0089, precision = 4. step = 300, precision = 2. step = 23.00, precision = 2.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "step",
@@ -471,7 +512,8 @@
             }
           ],
           "descriptionHtml": "The difference between the two adjacent values of the SpinButton. This value is sued to calculate the precision of the input if no precision is given. The precision calculated this way will always be \\>= 0.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "1"
         },
         {
           "name": "styles",
@@ -483,14 +525,17 @@
               "text": "<"
             },
             {
-              "text": "ISpinButtonStyles"
+              "text": "ISpinButtonStyles",
+              "hyperlinkedPage": "SpinButton",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Custom styling for individual elements within the button DOM.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -502,7 +547,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "title",
@@ -512,7 +558,8 @@
             }
           ],
           "descriptionHtml": "A title for the SpinButton used for a more descriptive name that's also visible on its tooltip.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "upArrowButtonStyles",
@@ -524,14 +571,17 @@
               "text": "<"
             },
             {
-              "text": "IButtonStyles"
+              "text": "IButtonStyles",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Custom styles for the upArrow button.\n\nNote: The buttons are in a checked state when arrow keys are used to incremenent/decrement the spinButton. Use rootChecked instead of rootPressed for styling when that is the case.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "value",
@@ -541,7 +591,8 @@
             }
           ],
           "descriptionHtml": "The value of the SpinButton. Use this if you intend to pass in a new value as a result of onChange events. This value is mutually exclusive to defaultValue. Use one or the other.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -559,7 +610,8 @@
             }
           ],
           "descriptionHtml": "Styles for the arrowButtonsContainer\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "arrowButtonsContainerDisabled",
@@ -569,7 +621,8 @@
             }
           ],
           "descriptionHtml": "Style override for the arrowButtonsContainer when spin button is disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "icon",
@@ -579,7 +632,8 @@
             }
           ],
           "descriptionHtml": "Style for the icon.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "iconDisabled",
@@ -589,7 +643,8 @@
             }
           ],
           "descriptionHtml": "Style for the icon.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "input",
@@ -599,7 +654,8 @@
             }
           ],
           "descriptionHtml": "Styles for the input.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "inputDisabled",
@@ -609,7 +665,8 @@
             }
           ],
           "descriptionHtml": "Style override when spinButton is disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "inputTextSelected",
@@ -619,7 +676,8 @@
             }
           ],
           "descriptionHtml": "Style override for ::selection\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "label",
@@ -629,7 +687,8 @@
             }
           ],
           "descriptionHtml": "Style for the label text\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "labelDisabled",
@@ -639,7 +698,8 @@
             }
           ],
           "descriptionHtml": "Style for the label text\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "labelWrapper",
@@ -649,7 +709,8 @@
             }
           ],
           "descriptionHtml": "Style for the label wrapper element of the component The label wrapper contains the icon and the label.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "labelWrapperBottom",
@@ -659,7 +720,8 @@
             }
           ],
           "descriptionHtml": "Style override when the label is positioned at the bottom.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "labelWrapperEnd",
@@ -669,7 +731,8 @@
             }
           ],
           "descriptionHtml": "Style override when the label is positioned at the end.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "labelWrapperStart",
@@ -679,7 +742,8 @@
             }
           ],
           "descriptionHtml": "Style override when the label is positioned at the start.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "labelWrapperTop",
@@ -689,7 +753,8 @@
             }
           ],
           "descriptionHtml": "Style override when the label is positioned at the top.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -699,7 +764,8 @@
             }
           ],
           "descriptionHtml": "Styles for the root of the spin button component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "spinButtonWrapper",
@@ -709,7 +775,8 @@
             }
           ],
           "descriptionHtml": "Style for spinButtonWrapper when enabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "spinButtonWrapperDisabled",
@@ -719,7 +786,8 @@
             }
           ],
           "descriptionHtml": "Style override when spinButton is disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "spinButtonWrapperFocused",
@@ -729,7 +797,8 @@
             }
           ],
           "descriptionHtml": "Style override when spinButton is enabled/focused.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "spinButtonWrapperHovered",
@@ -739,7 +808,8 @@
             }
           ],
           "descriptionHtml": "Style override when spinButton is enabled/hovered.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "spinButtonWrapperTopBottom",
@@ -749,7 +819,8 @@
             }
           ],
           "descriptionHtml": "Style override when label is positioned at the top/bottom.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

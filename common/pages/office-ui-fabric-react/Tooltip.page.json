@@ -42,11 +42,14 @@
           "name": "calloutProps",
           "typeTokens": [
             {
-              "text": "ICalloutProps"
+              "text": "ICalloutProps",
+              "hyperlinkedPage": "Callout",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Properties to pass through for Callout, reference detail properties in ICalloutProps\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "isBeakVisible: true, beakWidth: 16, gapSpace: 0, setInitialFocus: true, doNotLayer: false"
         },
         {
           "name": "componentRef",
@@ -58,14 +61,17 @@
               "text": "<"
             },
             {
-              "text": "ITooltip"
+              "text": "ITooltip",
+              "hyperlinkedPage": "Tooltip",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the ITooltip interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "content",
@@ -75,17 +81,21 @@
             }
           ],
           "descriptionHtml": "String to be passed to the tooltip\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "delay",
           "typeTokens": [
             {
-              "text": "TooltipDelay"
+              "text": "TooltipDelay",
+              "hyperlinkedPage": "Tooltip",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Length of delay. Can be set to zero if you do not want a delay.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "medium"
         },
         {
           "name": "directionalHint",
@@ -95,7 +105,8 @@
             }
           ],
           "descriptionHtml": "Indicator of how the tooltip should be anchored to its targetElement.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "DirectionalHint.topCenter"
         },
         {
           "name": "directionalHintForRTL",
@@ -105,7 +116,8 @@
             }
           ],
           "descriptionHtml": "How the element should be positioned in RTL layouts. If not specified, a mirror of `directionalHint` will be used instead\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "maxWidth",
@@ -115,28 +127,30 @@
             }
           ],
           "descriptionHtml": "Max width of tooltip\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "364px"
         },
         {
           "name": "onRenderContent",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "ITooltipProps"
+              "text": "ITooltipProps",
+              "hyperlinkedPage": "Tooltip",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Render function to populate content area\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -148,20 +162,25 @@
               "text": "<"
             },
             {
-              "text": "ITooltipStyleProps"
+              "text": "ITooltipStyleProps",
+              "hyperlinkedPage": "Tooltip",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "ITooltipStyles"
+              "text": "ITooltipStyles",
+              "hyperlinkedPage": "Tooltip",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "targetElement",
@@ -171,7 +190,8 @@
             }
           ],
           "descriptionHtml": "Element to anchor the Tooltip to.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -183,7 +203,8 @@
             }
           ],
           "descriptionHtml": "Theme to apply to the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -201,17 +222,21 @@
             }
           ],
           "descriptionHtml": "Accept custom classNames\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "delay",
           "typeTokens": [
             {
-              "text": "TooltipDelay"
+              "text": "TooltipDelay",
+              "hyperlinkedPage": "Tooltip",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Delay before tooltip appears.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "maxWidth",
@@ -221,7 +246,8 @@
             }
           ],
           "descriptionHtml": "Maximum width of tooltip.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -233,7 +259,8 @@
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -251,7 +278,8 @@
             }
           ],
           "descriptionHtml": "Style for the content element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -261,7 +289,8 @@
             }
           ],
           "descriptionHtml": "Style for the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "subText",
@@ -271,7 +300,8 @@
             }
           ],
           "descriptionHtml": "Style for the subtext element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },

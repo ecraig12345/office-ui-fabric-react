@@ -5,7 +5,9 @@
       "name": "ITextProps",
       "extendsTokens": [
         {
-          "text": "ITextSlots"
+          "text": "ITextSlots",
+          "hyperlinkedPage": "Text",
+          "pageKind": "Components"
         },
         {
           "text": ", "
@@ -17,13 +19,17 @@
           "text": "<"
         },
         {
-          "text": "ITextProps"
+          "text": "ITextProps",
+          "hyperlinkedPage": "Text",
+          "pageKind": "Components"
         },
         {
           "text": ", "
         },
         {
-          "text": "ITextTokens"
+          "text": "ITextTokens",
+          "hyperlinkedPage": "Text",
+          "pageKind": "Components"
         },
         {
           "text": ", "
@@ -93,7 +99,8 @@
             }
           ],
           "descriptionHtml": "Optionally render the component as another component type or primitive.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "block",
@@ -103,7 +110,8 @@
             }
           ],
           "descriptionHtml": "Whether the text is displayed as a block element.\n\nNote that in order for ellipsis on overflow to work properly, `block` and `nowrap` should be set to true.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "nowrap",
@@ -113,7 +121,8 @@
             }
           ],
           "descriptionHtml": "Whether the text is not wrapped.\n\nNote that in order for ellipsis on overflow to work properly, `block` and `nowrap` should be set to true.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "variant",
@@ -128,7 +137,8 @@
             }
           ],
           "descriptionHtml": "Optional font type for Text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },

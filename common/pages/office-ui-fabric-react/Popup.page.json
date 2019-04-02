@@ -24,9 +24,7 @@
           "text": "<"
         },
         {
-          "text": "Popup",
-          "hyperlinkedPage": "Popup",
-          "pageKind": "Components"
+          "text": "Popup"
         },
         {
           "text": "> "
@@ -42,7 +40,8 @@
             }
           ],
           "descriptionHtml": "Defines the element id referencing the element containing the description for the popup.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabel",
@@ -52,7 +51,8 @@
             }
           ],
           "descriptionHtml": "Accessible label text for the popup.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabelledBy",
@@ -62,7 +62,8 @@
             }
           ],
           "descriptionHtml": "Defines the element id referencing the element containing label text for popup.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -72,7 +73,8 @@
             }
           ],
           "descriptionHtml": "Optional class name for the root popup div.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -84,14 +86,17 @@
               "text": "<"
             },
             {
-              "text": "IPopup"
+              "text": "IPopup",
+              "hyperlinkedPage": "Popup",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IPopup interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onDismiss",
@@ -143,7 +148,8 @@
             }
           ],
           "descriptionHtml": "A callback function for when the popup is dismissed from the close button or light dismiss. If provided, will handle escape keypresses and call this. The event will be stopped/canceled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "role",
@@ -153,7 +159,8 @@
             }
           ],
           "descriptionHtml": "Aria role for popup\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "shouldRestoreFocus",
@@ -163,7 +170,8 @@
             }
           ],
           "descriptionHtml": "If true, the unmounting of this component will cause focus to be restored to the element that had focus when first mounted.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "true"
         }
       ]
     }

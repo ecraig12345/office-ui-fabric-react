@@ -14,30 +14,37 @@
             }
           ],
           "descriptionHtml": "Gets the async instance associated with the component, created on demand. The async instance gives subclasses a way to execute setTimeout/setInterval async calls safely, where the callbacks will be cleared/ignored automatically after unmounting. The helpers within the async object also preserve the this pointer so that you don't need to \"bind\" the callbacks.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "_disposables",
           "typeTokens": [
             {
-              "text": "IDisposable"
+              "text": "IDisposable",
+              "hyperlinkedPage": "IDisposable",
+              "pageKind": "References"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "Allows subclasses to push things to this._disposables to be auto disposed.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "_events",
           "typeTokens": [
             {
-              "text": "EventGroup"
+              "text": "EventGroup",
+              "hyperlinkedPage": "EventGroup",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "Gets the event group instance assocaited with the component, created on demand. The event instance provides on/off methods for listening to DOM (or regular javascript object) events. The event callbacks will be automatically disconnected after unmounting. The helpers within the events object also preserve the this reference so that you don't need to \"bind\" the callbacks.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "_resolveRef",
@@ -108,7 +115,8 @@
             }
           ],
           "descriptionHtml": "Controls whether the componentRef prop will be resolved by this component instance. If you are implementing a passthrough (higher-order component), you would set this to false and pass through the props to the inner component, allowing it to resolve the componentRef.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "_updateComponentRef",
@@ -312,7 +320,8 @@
             }
           ],
           "descriptionHtml": "Gets the object's class name.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentDidMount",
@@ -415,7 +424,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         }
       ]
     }

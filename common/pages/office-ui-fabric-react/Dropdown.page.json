@@ -45,7 +45,8 @@
             }
           ],
           "descriptionHtml": "Deprecated at v.65.1, use `selected` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         }
       ]
     },
@@ -60,7 +61,9 @@
           "text": "<"
         },
         {
-          "text": "IDropdown"
+          "text": "IDropdown",
+          "hyperlinkedPage": "Dropdown",
+          "pageKind": "Components"
         },
         {
           "text": ", "
@@ -82,7 +85,8 @@
             }
           ],
           "descriptionHtml": "Keys that will be initially used to set selected items. This prop is used for `multiSelect` scenarios. In other cases, `defaultSelectedKey` should be used.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dropdownWidth",
@@ -92,7 +96,8 @@
             }
           ],
           "descriptionHtml": "Custom width for dropdown. If value is 0, width of the input field is used.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "0"
         },
         {
           "name": "isDisabled",
@@ -102,17 +107,21 @@
             }
           ],
           "descriptionHtml": "Deprecated at v0.52.0, use `disabled` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps"
+              "text": "IKeytipProps",
+              "hyperlinkedPage": "Keytip",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Optional keytip for this dropdown\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "multiSelect",
@@ -122,7 +131,8 @@
             }
           ],
           "descriptionHtml": "Optional mode indicates if multi-choice selections is allowed. Default to false\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "multiSelectDelimiter",
@@ -132,7 +142,8 @@
             }
           ],
           "descriptionHtml": "When multiple items are selected, this still will be used to separate values in the dropdown title.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "\", \""
         },
         {
           "name": "notifyOnReselect",
@@ -142,7 +153,8 @@
             }
           ],
           "descriptionHtml": "Optional preference to have onChanged still be called when an already selected item is clicked in single select mode. Default to false\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onChange",
@@ -181,7 +193,9 @@
               "text": "?: "
             },
             {
-              "text": "IDropdownOption"
+              "text": "IDropdownOption",
+              "hyperlinkedPage": "Dropdown",
+              "pageKind": "Components"
             },
             {
               "text": ", "
@@ -194,7 +208,8 @@
             }
           ],
           "descriptionHtml": "Callback issued when the selected option changes.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onChanged",
@@ -209,7 +224,9 @@
               "text": ": "
             },
             {
-              "text": "IDropdownOption"
+              "text": "IDropdownOption",
+              "hyperlinkedPage": "Dropdown",
+              "pageKind": "Components"
             },
             {
               "text": ", "
@@ -222,7 +239,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "onDismiss",
@@ -232,83 +250,90 @@
             }
           ],
           "descriptionHtml": "Callback issues when the options callout is dismissed\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderCaretDown",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IDropdownProps"
+              "text": "IDropdownProps",
+              "hyperlinkedPage": "Dropdown",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional custom renderer for chevron icon\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderPlaceHolder",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IDropdownProps"
+              "text": "IDropdownProps",
+              "hyperlinkedPage": "Dropdown",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional custom renderer for placeholder text\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderTitle",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IDropdownOption"
+              "text": "IDropdownOption",
+              "hyperlinkedPage": "Dropdown",
+              "pageKind": "Components"
             },
             {
               "text": "[]>"
             }
           ],
           "descriptionHtml": "Optional custom renderer for selected option displayed in input\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "options",
           "typeTokens": [
             {
-              "text": "IDropdownOption"
+              "text": "IDropdownOption",
+              "hyperlinkedPage": "Dropdown",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "Options for the dropdown. If using `defaultSelectedKey` or `defaultSelectedKeys`, options must be pure for correct behavior.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "placeHolder",
@@ -318,7 +343,8 @@
             }
           ],
           "descriptionHtml": "Input placeholder text. Displayed until option is selected.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "responsiveMode",
@@ -328,7 +354,8 @@
             }
           ],
           "descriptionHtml": "Pass in ResponsiveMode to manually overwrite the way the Dropdown renders. ResponsiveMode.Large would, for instance, disable the behavior where Dropdown options get rendered into a Panel while ResponsiveMode.Small would result in the Dropdown options always getting rendered in a Panel.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "selectedKeys",
@@ -338,7 +365,8 @@
             }
           ],
           "descriptionHtml": "Keys of the selected items. If you provide this, you must maintain selection state by observing onChange events and passing a new value in when changed. Passing null in will clear the selection.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -356,14 +384,17 @@
               "text": ", "
             },
             {
-              "text": "IDropdownStyles"
+              "text": "IDropdownStyles",
+              "hyperlinkedPage": "Dropdown",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -375,7 +406,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by higher order component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -393,7 +425,8 @@
             }
           ],
           "descriptionHtml": "Refers to the callout that hosts Dropdown options in larger viewports.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "caretDown",
@@ -403,7 +436,8 @@
             }
           ],
           "descriptionHtml": "Refers to the downward pointing caret icon users click on to expand the Dropdown.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "caretDownWrapper",
@@ -413,7 +447,8 @@
             }
           ],
           "descriptionHtml": "Refers to the wrapping container around the downward pointing caret users click on to expand the Dropdown.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dropdown",
@@ -423,7 +458,8 @@
             }
           ],
           "descriptionHtml": "Refers to the actual Dropdown element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dropdownDivider",
@@ -433,7 +469,8 @@
             }
           ],
           "descriptionHtml": "Refers to the dropdown separator.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dropdownItem",
@@ -443,7 +480,8 @@
             }
           ],
           "descriptionHtml": "Refers to the individual dropdown item.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dropdownItemDisabled",
@@ -453,7 +491,8 @@
             }
           ],
           "descriptionHtml": "Style for a dropdown item when it is disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dropdownItemHeader",
@@ -463,7 +502,8 @@
             }
           ],
           "descriptionHtml": "Refers to the individual dropdown items that are being rendered as a header.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dropdownItems",
@@ -473,7 +513,8 @@
             }
           ],
           "descriptionHtml": "Refers to the FocusZone wrapping the individual dropdown items.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dropdownItemSelected",
@@ -483,7 +524,8 @@
             }
           ],
           "descriptionHtml": "Style for a dropdown item when it is being selected.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dropdownItemSelectedAndDisabled",
@@ -493,7 +535,8 @@
             }
           ],
           "descriptionHtml": "Style for a dropdown item when it is both selected and disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dropdownItemsWrapper",
@@ -503,7 +546,8 @@
             }
           ],
           "descriptionHtml": "Refers to the element that wraps `dropdownItems`.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dropdownOptionText",
@@ -513,7 +557,8 @@
             }
           ],
           "descriptionHtml": "Refers to the text element that renders the actual dropdown item/option text. This would be wrapped by the element referred to by `dropdownItem`.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "errorMessage",
@@ -523,7 +568,8 @@
             }
           ],
           "descriptionHtml": "Refers to the error message being rendered under the Dropdown (if any).\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "label",
@@ -533,7 +579,8 @@
             }
           ],
           "descriptionHtml": "Refers to the label associated with the dropdown. This is enclosed by the root.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "panel",
@@ -543,7 +590,8 @@
             }
           ],
           "descriptionHtml": "Refers to the panel that hosts the Dropdown options in small viewports. Note: This will be deprecated when Panel supports JS Styling.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -553,17 +601,21 @@
             }
           ],
           "descriptionHtml": "Root element of the Dropdown (includes Label and the actual Dropdown).\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "subComponentStyles",
           "typeTokens": [
             {
-              "text": "IDropdownSubComponentStyles"
+              "text": "IDropdownSubComponentStyles",
+              "hyperlinkedPage": "Dropdown",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Subcomponent styles.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "title",
@@ -573,7 +625,8 @@
             }
           ],
           "descriptionHtml": "Refers to the primary title of the Dropdown (rendering the selected options/placeholder/etc.).\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -593,14 +646,17 @@
               "text": "<"
             },
             {
-              "text": "ILabelStyleProps"
+              "text": "ILabelStyleProps",
+              "hyperlinkedPage": "Label",
+              "pageKind": "Components"
             },
             {
               "text": ", any>"
             }
           ],
           "descriptionHtml": "Refers to the primary label for the Dropdown.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "panel",
@@ -612,14 +668,17 @@
               "text": "<"
             },
             {
-              "text": "IPanelStyleProps"
+              "text": "IPanelStyleProps",
+              "hyperlinkedPage": "Panel",
+              "pageKind": "Components"
             },
             {
               "text": ", any>"
             }
           ],
           "descriptionHtml": "Refers to the panel that hosts the Dropdown options in small viewports.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

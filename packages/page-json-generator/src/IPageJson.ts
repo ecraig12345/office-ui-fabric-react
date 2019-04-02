@@ -1,4 +1,5 @@
 import { PageKind } from './PageJsonGenerator';
+
 export interface ITokenJson {
   text: string;
   hyperlinkedPage?: string;
@@ -8,6 +9,7 @@ export interface ITokenJson {
 export interface ITableRowJson {
   name: string;
   typeTokens: ITokenJson[];
+  defaultValue?: string;
   descriptionHtml: string;
   deprecated: boolean;
   deprecatedMessage?: string;
@@ -22,8 +24,8 @@ export interface IEnumTableRowJson {
 export interface ITableJson {
   kind: 'interface' | 'enum' | 'class';
   name: string;
-  extendsTokens: ITokenJson[];
   descriptionHtml: string;
+  extendsTokens: ITokenJson[];
   members: ITableRowJson[] | IEnumTableRowJson[];
 }
 

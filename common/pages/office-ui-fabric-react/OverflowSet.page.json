@@ -84,17 +84,21 @@
             }
           ],
           "descriptionHtml": "Unique id to identify the item.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps"
+              "text": "IKeytipProps",
+              "hyperlinkedPage": "Keytip",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Optional keytip for the overflowSetItem.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -131,7 +135,8 @@
             }
           ],
           "descriptionHtml": "Class name\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -143,14 +148,17 @@
               "text": "<"
             },
             {
-              "text": "IOverflowSet"
+              "text": "IOverflowSet",
+              "hyperlinkedPage": "OverflowSet",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Gets the component ref.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "doNotContainWithinFocusZone",
@@ -160,30 +168,37 @@
             }
           ],
           "descriptionHtml": "If true do not contain the OverflowSet inside of a FocusZone, otherwise the OverflowSet will contain a FocusZone. If this is set to true focusZoneProps will be ignored. Use one or the other.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "focusZoneProps",
           "typeTokens": [
             {
-              "text": "IFocusZoneProps"
+              "text": "IFocusZoneProps",
+              "hyperlinkedPage": "FocusZone",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Custom properties for OverflowSet's FocusZone. If doNotContainWithinFocusZone is set to true focusZoneProps will be ignored. Use one or the other.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "items",
           "typeTokens": [
             {
-              "text": "IOverflowSetItemProps"
+              "text": "IOverflowSetItemProps",
+              "hyperlinkedPage": "OverflowSet",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "An array of items to be rendered by your onRenderItem function in the primary content area\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "itemSubMenuProvider",
@@ -198,14 +213,17 @@
               "text": ": "
             },
             {
-              "text": "IOverflowSetItemProps"
+              "text": "IOverflowSetItemProps",
+              "hyperlinkedPage": "OverflowSet",
+              "pageKind": "Components"
             },
             {
               "text": ") => any[] | undefined"
             }
           ],
           "descriptionHtml": "Function that will take in an IOverflowSetItemProps and return the subMenu for that item. If not provided, will use 'item.subMenuProps.items' by default. This is only used if your overflow set has keytips.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "keytipSequences",
@@ -215,7 +233,8 @@
             }
           ],
           "descriptionHtml": "Optional full keytip sequence for the overflow button, if it will have a keytip.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderItem",
@@ -230,42 +249,47 @@
               "text": ": "
             },
             {
-              "text": "IOverflowSetItemProps"
+              "text": "IOverflowSetItemProps",
+              "hyperlinkedPage": "OverflowSet",
+              "pageKind": "Components"
             },
             {
               "text": ") => any"
             }
           ],
           "descriptionHtml": "Method to call when trying to render an item.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderOverflowButton",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<any[]>"
             }
           ],
           "descriptionHtml": "Rendering method for overflow button and contextual menu. The argument to the function is the overflowItems passed in as props to this function.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "overflowItems",
           "typeTokens": [
             {
-              "text": "IOverflowSetItemProps"
+              "text": "IOverflowSetItemProps",
+              "hyperlinkedPage": "OverflowSet",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "An array of items to be passed to overflow contextual menu\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "role",
@@ -275,7 +299,8 @@
             }
           ],
           "descriptionHtml": "The role for the OverflowSet.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "'menubar'"
         },
         {
           "name": "styles",
@@ -287,20 +312,25 @@
               "text": "<"
             },
             {
-              "text": "IOverflowSetProps"
+              "text": "IOverflowSetProps",
+              "hyperlinkedPage": "OverflowSet",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IOverflowSetStyles"
+              "text": "IOverflowSetStyles",
+              "hyperlinkedPage": "OverflowSet",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "vertical",
@@ -310,7 +340,8 @@
             }
           ],
           "descriptionHtml": "Change item layout direction to vertical/stacked.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         }
       ]
     },
@@ -328,7 +359,8 @@
             }
           ],
           "descriptionHtml": "The style that is layered onto each individual item in the overflow set.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "overflowButton",
@@ -338,7 +370,8 @@
             }
           ],
           "descriptionHtml": "The style that is layered onto the overflow button for the overflow set.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -348,7 +381,8 @@
             }
           ],
           "descriptionHtml": "The style that is layered onto the root element of OverflowSet.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

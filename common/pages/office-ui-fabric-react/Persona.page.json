@@ -12,7 +12,9 @@
       "name": "IPersonaCoinProps",
       "extendsTokens": [
         {
-          "text": "IPersonaSharedProps"
+          "text": "IPersonaSharedProps",
+          "hyperlinkedPage": "Persona",
+          "pageKind": "Components"
         },
         {
           "text": " "
@@ -28,7 +30,8 @@
             }
           ],
           "descriptionHtml": "Additional css class to apply to the PersonaCoin\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "undefined"
         },
         {
           "name": "componentRef",
@@ -41,7 +44,8 @@
             }
           ],
           "descriptionHtml": "Gets the component ref.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -53,20 +57,25 @@
               "text": "<"
             },
             {
-              "text": "IPersonaCoinStyleProps"
+              "text": "IPersonaCoinStyleProps",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IPersonaCoinStyles"
+              "text": "IPersonaCoinStyles",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -84,7 +93,8 @@
             }
           ],
           "descriptionHtml": "Custom class name.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "coinSize",
@@ -94,7 +104,8 @@
             }
           ],
           "descriptionHtml": "Optional custom persona coin size in pixel.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "showUnknownPersonaCoin",
@@ -104,17 +115,21 @@
             }
           ],
           "descriptionHtml": "Decides whether to display coin for unknown persona\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "size",
           "typeTokens": [
             {
-              "text": "PersonaSize"
+              "text": "PersonaSize",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Decides the size of the control.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "PersonaSize.size48"
         },
         {
           "name": "theme",
@@ -126,7 +141,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -193,7 +209,9 @@
       "name": "IPersonaPresenceProps",
       "extendsTokens": [
         {
-          "text": "IPersonaSharedProps"
+          "text": "IPersonaSharedProps",
+          "hyperlinkedPage": "Persona",
+          "pageKind": "Components"
         },
         {
           "text": " "
@@ -212,7 +230,8 @@
             }
           ],
           "descriptionHtml": "Gets the component ref.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -224,20 +243,25 @@
               "text": "<"
             },
             {
-              "text": "IPersonaPresenceStyleProps"
+              "text": "IPersonaPresenceStyleProps",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IPersonaPresenceStyles"
+              "text": "IPersonaPresenceStyles",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -255,27 +279,34 @@
             }
           ],
           "descriptionHtml": "Custom class name.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "presence",
           "typeTokens": [
             {
-              "text": "PersonaPresence"
+              "text": "PersonaPresence",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Presence of the person to display - will not display presence if undefined.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "PersonaPresence.none"
         },
         {
           "name": "size",
           "typeTokens": [
             {
-              "text": "PersonaSize"
+              "text": "PersonaSize",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Decides the size of the control.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "PersonaSize.size48"
         },
         {
           "name": "theme",
@@ -287,7 +318,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -324,7 +356,9 @@
       "name": "IPersonaProps",
       "extendsTokens": [
         {
-          "text": "IPersonaSharedProps"
+          "text": "IPersonaSharedProps",
+          "hyperlinkedPage": "Persona",
+          "pageKind": "Components"
         },
         {
           "text": " "
@@ -340,7 +374,8 @@
             }
           ],
           "descriptionHtml": "Additional CSS class(es) to apply to the Persona\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -352,98 +387,105 @@
               "text": "<"
             },
             {
-              "text": "IPersona"
+              "text": "IPersona",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IPersona interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderOptionalText",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPersonaProps"
+              "text": "IPersonaProps",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional custom renderer for the optional text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderPrimaryText",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPersonaProps"
+              "text": "IPersonaProps",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional custom renderer for the primary text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderSecondaryText",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPersonaProps"
+              "text": "IPersonaProps",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional custom renderer for the secondary text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderTertiaryText",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPersonaProps"
+              "text": "IPersonaProps",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional custom renderer for the tertiary text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -455,20 +497,25 @@
               "text": "<"
             },
             {
-              "text": "IPersonaStyleProps"
+              "text": "IPersonaStyleProps",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IPersonaStyles"
+              "text": "IPersonaStyles",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of variant rules\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -517,17 +564,21 @@
             }
           ],
           "descriptionHtml": "Whether initials are calculated for phone numbers and number sequences. Example: Set property to true to get initials for project names consisting of numbers only.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "coinProps",
           "typeTokens": [
             {
-              "text": "IPersonaCoinProps"
+              "text": "IPersonaCoinProps",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Optional HTML element props for Persona coin.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "coinSize",
@@ -537,7 +588,8 @@
             }
           ],
           "descriptionHtml": "Optional custom persona coin size in pixel.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "hidePersonaDetails",
@@ -547,7 +599,8 @@
             }
           ],
           "descriptionHtml": "Whether to not render persona details, and just render the persona image/initials.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "imageAlt",
@@ -557,7 +610,8 @@
             }
           ],
           "descriptionHtml": "Alt text for the image to use. Defaults to an empty string.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "imageInitials",
@@ -567,7 +621,8 @@
             }
           ],
           "descriptionHtml": "The user's initials to display in the image area when there is no image.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "[Derived from text]"
         },
         {
           "name": "imageShouldFadeIn",
@@ -577,7 +632,8 @@
             }
           ],
           "descriptionHtml": "If true, adds the css class 'is-fadeIn' to the image.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "imageShouldStartVisible",
@@ -587,7 +643,8 @@
             }
           ],
           "descriptionHtml": "If true, the image starts as visible and is hidden on error. Otherwise, the image is hidden until it is successfully loaded. This disables imageShouldFadeIn.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "imageUrl",
@@ -597,20 +654,24 @@
             }
           ],
           "descriptionHtml": "Url to the image to use, should be a square aspect ratio and big enough to fit in the image area.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "initialsColor",
           "typeTokens": [
             {
-              "text": "PersonaInitialsColor"
+              "text": "PersonaInitialsColor",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             },
             {
               "text": " | string"
             }
           ],
           "descriptionHtml": "The background color when the user's initials are displayed.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "[Derived from text]"
         },
         {
           "name": "onPhotoLoadingStateChange",
@@ -625,56 +686,61 @@
               "text": ": "
             },
             {
-              "text": "ImageLoadState"
+              "text": "ImageLoadState",
+              "hyperlinkedPage": "Image",
+              "pageKind": "Components"
             },
             {
               "text": ") => void"
             }
           ],
           "descriptionHtml": "Optional callback for when loading state of the photo changes\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderCoin",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPersonaSharedProps"
+              "text": "IPersonaSharedProps",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional custom renderer for the coin\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderInitials",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPersonaSharedProps"
+              "text": "IPersonaSharedProps",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional custom renderer for the initials\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "optionalText",
@@ -684,17 +750,21 @@
             }
           ],
           "descriptionHtml": "Optional text to display, usually a custom message set. The optional text will only be shown when using Size100.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "presence",
           "typeTokens": [
             {
-              "text": "PersonaPresence"
+              "text": "PersonaPresence",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Presence of the person to display - will not display presence if undefined.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "PersonaPresence.none"
         },
         {
           "name": "primaryText",
@@ -704,7 +774,8 @@
             }
           ],
           "descriptionHtml": "Primary text to display, usually the name of the person.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "secondaryText",
@@ -714,7 +785,8 @@
             }
           ],
           "descriptionHtml": "Secondary text to display, usually the role of the user.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "showInitialsUntilImageLoads",
@@ -724,7 +796,8 @@
             }
           ],
           "descriptionHtml": "If true renders the initials while the image is loading. This only applies when an imageUrl is provided.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "showSecondaryText",
@@ -744,17 +817,21 @@
             }
           ],
           "descriptionHtml": "If true, show the special coin for unknown persona. It has '?' in place of initials, with static font and background colors\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "size",
           "typeTokens": [
             {
-              "text": "PersonaSize"
+              "text": "PersonaSize",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Decides the size of the control.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "PersonaSize.size48"
         },
         {
           "name": "tertiaryText",
@@ -764,7 +841,8 @@
             }
           ],
           "descriptionHtml": "Tertiary text to display, usually the status of the user. The tertiary text will only be shown when using Size72 or Size100.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "text",
@@ -774,7 +852,8 @@
             }
           ],
           "descriptionHtml": "Primary text to display, usually the name of the person.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -786,7 +865,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -804,7 +884,8 @@
             }
           ],
           "descriptionHtml": "Custom class name.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "coinSize",
@@ -814,17 +895,21 @@
             }
           ],
           "descriptionHtml": "Optional custom persona coin size in pixel.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "presence",
           "typeTokens": [
             {
-              "text": "PersonaPresence"
+              "text": "PersonaPresence",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Presence of the person to display - will not display presence if undefined.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "PersonaPresence.none"
         },
         {
           "name": "showSecondaryText",
@@ -840,11 +925,14 @@
           "name": "size",
           "typeTokens": [
             {
-              "text": "PersonaSize"
+              "text": "PersonaSize",
+              "hyperlinkedPage": "Persona",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Decides the size of the control.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "PersonaSize.size48"
         },
         {
           "name": "theme",
@@ -856,7 +944,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },

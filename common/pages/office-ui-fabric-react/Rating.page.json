@@ -40,7 +40,8 @@
             }
           ],
           "descriptionHtml": "Allow the rating value to be set to 0 instead of a minimum of 1.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabelFormat",
@@ -50,7 +51,8 @@
             }
           ],
           "descriptionHtml": "Optional label format for star ratings, will be read by screen readers, defaults to ''. Can be used like \"\\{0\\} of \\{1\\} stars selected\". Where \\{0\\} will be subsituted by the current rating and \\{1\\} will be subsituted by the max rating.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabelId",
@@ -60,7 +62,8 @@
             }
           ],
           "descriptionHtml": "Deprecated: Optional id of label describing this instance of Rating. Use `getAriaLabel` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -72,14 +75,17 @@
               "text": "<"
             },
             {
-              "text": "IRating"
+              "text": "IRating",
+              "hyperlinkedPage": "Rating",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IRating interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getAriaLabel",
@@ -111,7 +117,8 @@
             }
           ],
           "descriptionHtml": "Custom icon\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "FavoriteStarFill"
         },
         {
           "name": "max",
@@ -121,7 +128,8 @@
             }
           ],
           "descriptionHtml": "Maximum rating, defaults to 5, has to be \\>= min\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "min",
@@ -131,7 +139,8 @@
             }
           ],
           "descriptionHtml": "Minimum rating, defaults to 1, has to be \\>= 0\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "onChange",
@@ -171,7 +180,8 @@
             }
           ],
           "descriptionHtml": "Callback issued when the rating changes.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onChanged",
@@ -187,7 +197,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "rating",
@@ -197,7 +208,8 @@
             }
           ],
           "descriptionHtml": "Selected rating, has to be an integer between min and max\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "readOnly",
@@ -207,17 +219,21 @@
             }
           ],
           "descriptionHtml": "Optional flag to mark rating control as readOnly\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "size",
           "typeTokens": [
             {
-              "text": "RatingSize"
+              "text": "RatingSize",
+              "hyperlinkedPage": "Rating",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Size of rating, defaults to small\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -229,20 +245,25 @@
               "text": "<"
             },
             {
-              "text": "IRatingStyleProps"
+              "text": "IRatingStyleProps",
+              "hyperlinkedPage": "Rating",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IRatingStyles"
+              "text": "IRatingStyles",
+              "hyperlinkedPage": "Rating",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -254,7 +275,8 @@
             }
           ],
           "descriptionHtml": "Theme (provided through customization.)\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "unselectedIcon",
@@ -264,7 +286,8 @@
             }
           ],
           "descriptionHtml": "Custom icon for unselected rating elements.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "FavoriteStar"
         }
       ]
     },

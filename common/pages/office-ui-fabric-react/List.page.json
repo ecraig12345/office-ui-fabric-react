@@ -14,7 +14,8 @@
             }
           ],
           "descriptionHtml": "Force the component to update.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getStartItemIndexInView",
@@ -24,7 +25,8 @@
             }
           ],
           "descriptionHtml": "Get the start index of the page that is currently in view\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "scrollToIndex",
@@ -64,7 +66,8 @@
             }
           ],
           "descriptionHtml": "Scroll to the given index. By default will bring the page the specified item is on into the view. If a callback to measure the height of an individual item is specified, will only scroll to bring the specific item into view.\n\nNote: with items of variable height and no passed in `getPageHeight` method, the list might jump after scrolling when windows before/ahead are being rendered, and the estimated height is replaced using actual elements.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -85,9 +88,7 @@
           "text": "<"
         },
         {
-          "text": "List",
-          "hyperlinkedPage": "List",
-          "pageKind": "Components"
+          "text": "List"
         },
         {
           "text": "<"
@@ -115,7 +116,8 @@
             }
           ],
           "descriptionHtml": "Optional classname to append to root list.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -127,14 +129,17 @@
               "text": "<"
             },
             {
-              "text": "IList"
+              "text": "IList",
+              "hyperlinkedPage": "List",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IList interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getItemCountForPage",
@@ -155,14 +160,17 @@
               "text": "?: "
             },
             {
-              "text": "IRectangle"
+              "text": "IRectangle",
+              "hyperlinkedPage": "IRectangle",
+              "pageKind": "References"
             },
             {
               "text": ") => number"
             }
           ],
           "descriptionHtml": "Method called by the list to get how many items to render per page from specified index. In general, use `getPageSpecification` instead.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getKey",
@@ -190,7 +198,8 @@
             }
           ],
           "descriptionHtml": "Optional callback to get the item key, to be used on render.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getPageHeight",
@@ -211,14 +220,17 @@
               "text": "?: "
             },
             {
-              "text": "IRectangle"
+              "text": "IRectangle",
+              "hyperlinkedPage": "IRectangle",
+              "pageKind": "References"
             },
             {
               "text": ") => number"
             }
           ],
           "descriptionHtml": "Method called by the list to get the pixel height for a given page. By default, we measure the first page's height and default all other pages to that height when calculating the surface space. It is ideal to be able to adequately predict page heights in order to keep the surface space from jumping in pixels, which has been seen to cause browser performance issues. In general, use `getPageSpecification` instead.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getPageSpecification",
@@ -239,17 +251,22 @@
               "text": "?: "
             },
             {
-              "text": "IRectangle"
+              "text": "IRectangle",
+              "hyperlinkedPage": "IRectangle",
+              "pageKind": "References"
             },
             {
               "text": ") => "
             },
             {
-              "text": "IPageSpecification"
+              "text": "IPageSpecification",
+              "hyperlinkedPage": "List",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Called by the list to get the specification for a page. Use this method to provide an allocation of items per page, as well as an estimated rendered height for the page. The list will use this to optimize virtualization.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getPageStyle",
@@ -264,7 +281,9 @@
               "text": ": "
             },
             {
-              "text": "IPage"
+              "text": "IPage",
+              "hyperlinkedPage": "List",
+              "pageKind": "Components"
             },
             {
               "text": "<"
@@ -277,7 +296,8 @@
             }
           ],
           "descriptionHtml": "Method called by the list to derive the page style object. For spacer pages, the list will derive the height and passed in heights will be ignored.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "items",
@@ -290,7 +310,8 @@
             }
           ],
           "descriptionHtml": "Items to render.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onPageAdded",
@@ -305,7 +326,9 @@
               "text": ": "
             },
             {
-              "text": "IPage"
+              "text": "IPage",
+              "hyperlinkedPage": "List",
+              "pageKind": "Components"
             },
             {
               "text": "<"
@@ -318,7 +341,8 @@
             }
           ],
           "descriptionHtml": "Optional callback for monitoring when a page is added.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onPageRemoved",
@@ -333,7 +357,9 @@
               "text": ": "
             },
             {
-              "text": "IPage"
+              "text": "IPage",
+              "hyperlinkedPage": "List",
+              "pageKind": "Components"
             },
             {
               "text": "<"
@@ -346,7 +372,8 @@
             }
           ],
           "descriptionHtml": "Optional callback for monitoring when a page is removed.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onPagesUpdated",
@@ -361,7 +388,9 @@
               "text": ": "
             },
             {
-              "text": "IPage"
+              "text": "IPage",
+              "hyperlinkedPage": "List",
+              "pageKind": "Components"
             },
             {
               "text": "<"
@@ -374,7 +403,8 @@
             }
           ],
           "descriptionHtml": "Optional callback invoked when List rendering completed. This can be on initial mount or on re-render due to scrolling. This method will be called as a result of changes in List pages (added or removed), and after ALL the changes complete. To track individual page Add / Remove use onPageAdded / onPageRemoved instead.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderCell",
@@ -417,7 +447,8 @@
             }
           ],
           "descriptionHtml": "Method to call when trying to render an item.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderPage",
@@ -432,7 +463,9 @@
               "text": ": "
             },
             {
-              "text": "IPageProps"
+              "text": "IPageProps",
+              "hyperlinkedPage": "List",
+              "pageKind": "Components"
             },
             {
               "text": "<"
@@ -450,15 +483,15 @@
               "text": "?: "
             },
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IPageProps"
+              "text": "IPageProps",
+              "hyperlinkedPage": "List",
+              "pageKind": "Components"
             },
             {
               "text": "<"
@@ -480,7 +513,8 @@
             }
           ],
           "descriptionHtml": "Called when the List will render a page. Override this to control how cells are rendered within a page.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onShouldVirtualize",
@@ -495,7 +529,9 @@
               "text": ": "
             },
             {
-              "text": "IListProps"
+              "text": "IListProps",
+              "hyperlinkedPage": "List",
+              "pageKind": "Components"
             },
             {
               "text": "<"
@@ -508,7 +544,8 @@
             }
           ],
           "descriptionHtml": "Optional callback to determine whether the list should be rendered in full, or virtualized. Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists. The default implementation will virtualize when this callback is not provided.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "renderCount",
@@ -518,7 +555,8 @@
             }
           ],
           "descriptionHtml": "Number of items to render. Defaults to items.length.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "renderedWindowsAhead",
@@ -528,7 +566,8 @@
             }
           ],
           "descriptionHtml": "In addition to the visible window, how many windowHeights should we render ahead.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "2"
         },
         {
           "name": "renderedWindowsBehind",
@@ -538,7 +577,8 @@
             }
           ],
           "descriptionHtml": "In addition to the visible window, how many windowHeights should we render behind.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "2"
         },
         {
           "name": "role",
@@ -548,7 +588,8 @@
             }
           ],
           "descriptionHtml": "The role to assign to the list root element. Use this to override the default assignment of 'list' to the root and 'listitem' to the cells.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "startIndex",
@@ -558,7 +599,8 @@
             }
           ],
           "descriptionHtml": "Index in items array to start rendering from. Defaults to 0.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "usePageCache",
@@ -568,7 +610,8 @@
             }
           ],
           "descriptionHtml": "Boolean value to enable render page caching. This is an experimental performance optimization that is off by default.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         }
       ]
     },
@@ -729,7 +772,9 @@
           "name": "page",
           "typeTokens": [
             {
-              "text": "IPage"
+              "text": "IPage",
+              "hyperlinkedPage": "List",
+              "pageKind": "Components"
             },
             {
               "text": "<"
@@ -742,7 +787,8 @@
             }
           ],
           "descriptionHtml": "The allocation data for the page.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "role",
@@ -752,7 +798,8 @@
             }
           ],
           "descriptionHtml": "The role being assigned to the rendered page element by the list.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -770,7 +817,8 @@
             }
           ],
           "descriptionHtml": "Data to pass through to the page when rendering.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "height",
@@ -780,7 +828,8 @@
             }
           ],
           "descriptionHtml": "The estimated pixel height of the page.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "itemCount",
@@ -790,7 +839,8 @@
             }
           ],
           "descriptionHtml": "The number of items to allocate to the page.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "key",
@@ -800,7 +850,8 @@
             }
           ],
           "descriptionHtml": "The key to use when creating the page.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

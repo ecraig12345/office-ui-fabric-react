@@ -54,19 +54,25 @@
           "text": "<"
         },
         {
-          "text": "IExpandingCard"
+          "text": "IExpandingCard",
+          "hyperlinkedPage": "HoverCard",
+          "pageKind": "Components"
         },
         {
           "text": ", "
         },
         {
-          "text": "IExpandingCardStyles"
+          "text": "IExpandingCardStyles",
+          "hyperlinkedPage": "HoverCard",
+          "pageKind": "Components"
         },
         {
           "text": ", "
         },
         {
-          "text": "IExpandingCardStyleProps"
+          "text": "IExpandingCardStyleProps",
+          "hyperlinkedPage": "HoverCard",
+          "pageKind": "Components"
         },
         {
           "text": "> "
@@ -82,7 +88,8 @@
             }
           ],
           "descriptionHtml": "Height of compact card\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "156"
         },
         {
           "name": "expandedCardHeight",
@@ -92,47 +99,49 @@
             }
           ],
           "descriptionHtml": "Height of expanded card\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "384"
         },
         {
           "name": "mode",
           "typeTokens": [
             {
-              "text": "ExpandingCardMode"
+              "text": "ExpandingCardMode",
+              "hyperlinkedPage": "HoverCard",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Use to open the card in expanded format and not wait for the delay\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "ExpandingCardMode.compact"
         },
         {
           "name": "onRenderCompactCard",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<any>"
             }
           ],
           "descriptionHtml": "Render function to populate compact content area\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderExpandedCard",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<any>"
             }
           ],
           "descriptionHtml": "Render function to populate expanded content area\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -157,7 +166,8 @@
             }
           ],
           "descriptionHtml": "Height of the compact section of the card.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "expandedCardFirstFrameRendered",
@@ -167,7 +177,8 @@
             }
           ],
           "descriptionHtml": "Boolean flag that expanded card is in Expanded.mode === expanded && first frame was rendered.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "expandedCardHeight",
@@ -177,7 +188,8 @@
             }
           ],
           "descriptionHtml": "Height of the expanded section of the card.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "needsScroll",
@@ -187,7 +199,8 @@
             }
           ],
           "descriptionHtml": "Whether the content of the expanded card overflows vertically.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -212,7 +225,8 @@
             }
           ],
           "descriptionHtml": "Style for the main card element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "expandedCard",
@@ -222,7 +236,8 @@
             }
           ],
           "descriptionHtml": "Base Style for the expanded card content.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "expandedCardScroll",
@@ -232,7 +247,8 @@
             }
           ],
           "descriptionHtml": "Style for the expanded card scroll content.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -276,7 +292,8 @@
             }
           ],
           "descriptionHtml": "Length of card dismiss delay. A min number is necessary for pointer to hop between target and card\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "100"
         },
         {
           "name": "cardOpenDelay",
@@ -286,7 +303,8 @@
             }
           ],
           "descriptionHtml": "Length of compact card delay\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "500"
         },
         {
           "name": "className",
@@ -296,7 +314,8 @@
             }
           ],
           "descriptionHtml": "Additional CSS class(es) to apply to the HoverCard root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -308,14 +327,17 @@
               "text": "<"
             },
             {
-              "text": "IHoverCard"
+              "text": "IHoverCard",
+              "hyperlinkedPage": "HoverCard",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IHoverCardHost interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "expandedCardOpenDelay",
@@ -325,17 +347,21 @@
             }
           ],
           "descriptionHtml": "Time in ms when expanded card should open after compact card\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "1500"
         },
         {
           "name": "expandingCardProps",
           "typeTokens": [
             {
-              "text": "IExpandingCardProps"
+              "text": "IExpandingCardProps",
+              "hyperlinkedPage": "HoverCard",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Additional ExpandingCard props to pass through HoverCard like renderers, target. gapSpace etc. Used along with 'type' prop set to HoverCardType.expanding. Reference detail properties in ICardProps and IExpandingCardProps.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "instantOpenOnClick",
@@ -345,7 +371,8 @@
             }
           ],
           "descriptionHtml": "Enables instant open of the full card upon click\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "onCardExpand",
@@ -355,7 +382,8 @@
             }
           ],
           "descriptionHtml": "Callback when visible card is expanded.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onCardHide",
@@ -365,7 +393,8 @@
             }
           ],
           "descriptionHtml": "Callback when card hides\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onCardVisible",
@@ -375,7 +404,8 @@
             }
           ],
           "descriptionHtml": "Callback when card becomes visible\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "openHotKey",
@@ -385,17 +415,21 @@
             }
           ],
           "descriptionHtml": "HotKey used for opening the HoverCard when tabbed to target.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "'KeyCodes.c'"
         },
         {
           "name": "plainCardProps",
           "typeTokens": [
             {
-              "text": "IPlainCardProps"
+              "text": "IPlainCardProps",
+              "hyperlinkedPage": "HoverCard",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Additional PlainCard props to pass through HoverCard like renderers, target, gapSpace etc. Used along with 'type' prop set to HoverCardType.plain. See for more details ICardProps and IPlainCardProps interfaces.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "setAriaDescribedBy",
@@ -405,7 +439,8 @@
             }
           ],
           "descriptionHtml": "Whether or not to mark the container as described by the hover card. If not specified, the caller should mark as element as described by the hover card id.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "setInitialFocus",
@@ -415,7 +450,8 @@
             }
           ],
           "descriptionHtml": "Set to true to set focus on the first focusable element in the card. Works in pair with the 'trapFocus' prop.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "shouldBlockHoverCard",
@@ -425,7 +461,8 @@
             }
           ],
           "descriptionHtml": "Should block hover card or not\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "sticky",
@@ -435,7 +472,8 @@
             }
           ],
           "descriptionHtml": "If true disables Card dismiss upon mouse leave, so that card sticks around.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "styles",
@@ -447,20 +485,25 @@
               "text": "<"
             },
             {
-              "text": "IHoverCardStyleProps"
+              "text": "IHoverCardStyleProps",
+              "hyperlinkedPage": "HoverCard",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IHoverCardStyles"
+              "text": "IHoverCardStyles",
+              "hyperlinkedPage": "HoverCard",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Custom styles for this component\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "target",
@@ -473,7 +516,8 @@
             }
           ],
           "descriptionHtml": "Optional target element to tag hover card on. If not provided and using HoverCard as a wrapper, don't set 'data-is-focusable=true' attribute to the root of the wrapped child. When no target given, HoverCard will use it's root as a target and become the focusable element with a focus listener attached to it.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -485,7 +529,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by higher order component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "trapFocus",
@@ -495,17 +540,21 @@
             }
           ],
           "descriptionHtml": "Set to true if you want to render the content of the HoverCard in a FocusTrapZone for accessibility reasons. Optionally 'setInitialFocus' prop can be set to true to move focus inside the FocusTrapZone.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "type",
           "typeTokens": [
             {
-              "text": "HoverCardType"
+              "text": "HoverCardType",
+              "hyperlinkedPage": "HoverCard",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Type of the hover card to render.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "HoverCardType.expanding"
         }
       ]
     },
@@ -523,7 +572,8 @@
             }
           ],
           "descriptionHtml": "Optional className(s) for the host div of HoverCard.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -535,7 +585,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -553,7 +604,8 @@
             }
           ],
           "descriptionHtml": "Style for the host element in the default enabled, non-toggled state.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -575,19 +627,25 @@
           "text": "<"
         },
         {
-          "text": "IPlainCard"
+          "text": "IPlainCard",
+          "hyperlinkedPage": "HoverCard",
+          "pageKind": "Components"
         },
         {
           "text": ", "
         },
         {
-          "text": "IPlainCardStyles"
+          "text": "IPlainCardStyles",
+          "hyperlinkedPage": "HoverCard",
+          "pageKind": "Components"
         },
         {
           "text": ", "
         },
         {
-          "text": "IPlainCardStyleProps"
+          "text": "IPlainCardStyleProps",
+          "hyperlinkedPage": "HoverCard",
+          "pageKind": "Components"
         },
         {
           "text": "> "
@@ -599,16 +657,15 @@
           "name": "onRenderPlainCard",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<any>"
             }
           ],
           "descriptionHtml": "Render function to populate compact content area\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },

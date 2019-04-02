@@ -46,7 +46,8 @@
             }
           ],
           "descriptionHtml": "Additional css class to apply to the Layer\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "undefined"
         },
         {
           "name": "componentRef",
@@ -58,14 +59,17 @@
               "text": "<"
             },
             {
-              "text": "ILayer"
+              "text": "ILayer",
+              "hyperlinkedPage": "Layer",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the ILayer interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "eventBubblingEnabled",
@@ -75,7 +79,8 @@
             }
           ],
           "descriptionHtml": "When enabled, Layer allows events to bubble up from Layer content. Traditionally Layer has not had this behavior. This prop preserves backwards compatibility by default while allowing users to opt in to the new event bubbling functionality.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "hostId",
@@ -85,7 +90,8 @@
             }
           ],
           "descriptionHtml": "The optional id property provided on a LayerHost that this Layer should render within. The LayerHost does not need to be immediately available but once has been rendered, and if missing, we'll avoid trying to render the Layer content until the host is available. If an id is not provided, we will render the Layer content in a fixed position element rendered at the end of the document.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "insertFirst",
@@ -95,7 +101,8 @@
             }
           ],
           "descriptionHtml": "Whether the layer should be added as the first child of the host. If true, the layer will be inserted as the first child of the host By default, the layer will be appended at the end to the host\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onLayerDidMount",
@@ -105,7 +112,8 @@
             }
           ],
           "descriptionHtml": "Callback for when the layer is mounted.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onLayerMounted",
@@ -115,7 +123,8 @@
             }
           ],
           "descriptionHtml": "Callback for when the layer is mounted.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onLayerWillUnmount",
@@ -125,7 +134,8 @@
             }
           ],
           "descriptionHtml": "Callback for when the layer is unmounted.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -137,20 +147,25 @@
               "text": "<"
             },
             {
-              "text": "ILayerStyleProps"
+              "text": "ILayerStyleProps",
+              "hyperlinkedPage": "Layer",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "ILayerStyles"
+              "text": "ILayerStyles",
+              "hyperlinkedPage": "Layer",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -162,7 +177,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -180,7 +196,8 @@
             }
           ],
           "descriptionHtml": "Accept custom classNames\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isNotHost",
@@ -190,7 +207,8 @@
             }
           ],
           "descriptionHtml": "Check if Host\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -202,7 +220,8 @@
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -220,7 +239,8 @@
             }
           ],
           "descriptionHtml": "Style for the Fabric component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -230,7 +250,8 @@
             }
           ],
           "descriptionHtml": "Style for the root element when fixed.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

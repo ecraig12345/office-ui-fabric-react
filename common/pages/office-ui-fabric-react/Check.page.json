@@ -33,7 +33,8 @@
             }
           ],
           "descriptionHtml": "Flag to always show the check icon. Not currently working.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "checked",
@@ -43,7 +44,8 @@
             }
           ],
           "descriptionHtml": "Whether or not this menu item is currently checked.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "className",
@@ -53,7 +55,8 @@
             }
           ],
           "descriptionHtml": "Additional css class to apply to the Check\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "undefined"
         },
         {
           "name": "componentRef",
@@ -65,14 +68,17 @@
               "text": "<"
             },
             {
-              "text": "ICheckProps"
+              "text": "ICheckProps",
+              "hyperlinkedPage": "Check",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Gets the component ref.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -84,20 +90,25 @@
               "text": "<"
             },
             {
-              "text": "ICheckStyleProps"
+              "text": "ICheckStyleProps",
+              "hyperlinkedPage": "Check",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "ICheckStyles"
+              "text": "ICheckStyles",
+              "hyperlinkedPage": "Check",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -109,7 +120,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -127,7 +139,8 @@
             }
           ],
           "descriptionHtml": "Accept custom checkBox size in pixels.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "'18px'"
         },
         {
           "name": "checked",
@@ -147,7 +160,8 @@
             }
           ],
           "descriptionHtml": "Accept custom classNames\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -159,7 +173,8 @@
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -177,7 +192,8 @@
             }
           ],
           "descriptionHtml": "The 'check' icon styles.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "checkHost",
@@ -187,7 +203,8 @@
             }
           ],
           "descriptionHtml": "Check host style\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "circle",
@@ -197,7 +214,8 @@
             }
           ],
           "descriptionHtml": "The 'circle' icon styles.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -207,7 +225,8 @@
             }
           ],
           "descriptionHtml": "Style for the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

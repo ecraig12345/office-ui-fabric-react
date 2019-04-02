@@ -14,7 +14,8 @@
             }
           ],
           "descriptionHtml": "The meta 'key' property of the currently selected NavItem of the Nav. Can return undefined if the currently selected nav item has no populated key property. Be aware that in order for Nav to properly understand which key is selected all NavItems in all groups of the Nav must have populated key properties.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -32,7 +33,8 @@
             }
           ],
           "descriptionHtml": "Deprecated at v0.68.1 and will be removed at \\>= v1.0.0.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabel",
@@ -42,7 +44,8 @@
             }
           ],
           "descriptionHtml": "Aria label for nav link\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "automationId",
@@ -52,7 +55,8 @@
             }
           ],
           "descriptionHtml": "The name to use for functional automation tests\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "disabled",
@@ -62,7 +66,8 @@
             }
           ],
           "descriptionHtml": "Whether or not the link is disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "engagementName",
@@ -72,7 +77,8 @@
             }
           ],
           "descriptionHtml": "Deprecated at v0.68.1 and will be removed at \\>= v1.0.0.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "forceAnchor",
@@ -82,7 +88,8 @@
             }
           ],
           "descriptionHtml": "(Optional) By default, any link with onClick defined will render as a button. Set this property to true to override that behavior. (Links without onClick defined will render as anchors by default.)\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "icon",
@@ -92,7 +99,8 @@
             }
           ],
           "descriptionHtml": "Name of an icon to render next to the link button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "iconClassName",
@@ -102,17 +110,21 @@
             }
           ],
           "descriptionHtml": "Deprecated. Use `iconProps.className` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "iconProps",
           "typeTokens": [
             {
-              "text": "IIconProps"
+              "text": "IIconProps",
+              "hyperlinkedPage": "Icon",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Props for an icon to render next to the link button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isExpanded",
@@ -122,7 +134,8 @@
             }
           ],
           "descriptionHtml": "Whether or not the link is in an expanded state\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "key",
@@ -132,20 +145,24 @@
             }
           ],
           "descriptionHtml": "Unique, stable key for the link, used when rendering the list of links and for tracking the currently selected link.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "links",
           "typeTokens": [
             {
-              "text": "INavLink"
+              "text": "INavLink",
+              "hyperlinkedPage": "Nav",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "Child links to this link, if any\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "name",
@@ -155,7 +172,8 @@
             }
           ],
           "descriptionHtml": "Text to render for this link\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onClick",
@@ -194,14 +212,17 @@
               "text": "?: "
             },
             {
-              "text": "INavLink"
+              "text": "INavLink",
+              "hyperlinkedPage": "Nav",
+              "pageKind": "Components"
             },
             {
               "text": ") => void"
             }
           ],
           "descriptionHtml": "Callback invoked when this link is clicked. Providing this callback will cause the link to render as a button (rather than an anchor) unless forceAnchor is set to true.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "parentId",
@@ -211,7 +232,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "target",
@@ -221,7 +243,8 @@
             }
           ],
           "descriptionHtml": "Link <a> target.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "title",
@@ -231,7 +254,8 @@
             }
           ],
           "descriptionHtml": "Text for title tooltip and ARIA description.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "url",
@@ -241,7 +265,8 @@
             }
           ],
           "descriptionHtml": "URL to navigate to for this link\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -259,7 +284,8 @@
             }
           ],
           "descriptionHtml": "The name to use for functional automation tests\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "collapseByDefault",
@@ -269,20 +295,24 @@
             }
           ],
           "descriptionHtml": "If true, the group should render collapsed by default\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "links",
           "typeTokens": [
             {
-              "text": "INavLink"
+              "text": "INavLink",
+              "hyperlinkedPage": "Nav",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "Links to render within this group\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "name",
@@ -292,7 +322,8 @@
             }
           ],
           "descriptionHtml": "Text to render as the header of a group\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onHeaderClick",
@@ -332,7 +363,8 @@
             }
           ],
           "descriptionHtml": "Callback invoked when a group header is clicked\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -350,7 +382,8 @@
             }
           ],
           "descriptionHtml": "(Optional) The nav container aria label.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -360,7 +393,8 @@
             }
           ],
           "descriptionHtml": "Additional css class to apply to the Nav\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "undefined"
         },
         {
           "name": "collapsedStateText",
@@ -370,7 +404,8 @@
             }
           ],
           "descriptionHtml": "Deprecated at v0.68.1 and will be removed at \\>= v1.0.0.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -382,14 +417,17 @@
               "text": "<"
             },
             {
-              "text": "INav"
+              "text": "INav",
+              "hyperlinkedPage": "Nav",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the INav interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "expandButtonAriaLabel",
@@ -399,7 +437,8 @@
             }
           ],
           "descriptionHtml": "(Optional) The nav container aria label.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "expandedStateText",
@@ -409,20 +448,24 @@
             }
           ],
           "descriptionHtml": "Deprecated at v0.68.1 and will be removed at \\>= v1.0.0.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "groups",
           "typeTokens": [
             {
-              "text": "INavLinkGroup"
+              "text": "INavLinkGroup",
+              "hyperlinkedPage": "Nav",
+              "pageKind": "Components"
             },
             {
               "text": "[] | null"
             }
           ],
           "descriptionHtml": "A collection of link groups to display in the navigation bar\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "initialSelectedKey",
@@ -432,7 +475,8 @@
             }
           ],
           "descriptionHtml": "(Optional) The key of the nav item initially selected.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isOnTop",
@@ -442,7 +486,8 @@
             }
           ],
           "descriptionHtml": "Indicates whether the navigation component renders on top of other content in the UI\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "linkAs",
@@ -454,14 +499,17 @@
               "text": "<"
             },
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Render a custom link in place of the normal one. This replaces the entire button rather than simply button content\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onLinkClick",
@@ -500,14 +548,17 @@
               "text": "?: "
             },
             {
-              "text": "INavLink"
+              "text": "INavLink",
+              "hyperlinkedPage": "Nav",
+              "pageKind": "Components"
             },
             {
               "text": ") => void"
             }
           ],
           "descriptionHtml": "Function callback invoked when a link in the navigation is clicked\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onLinkExpandClick",
@@ -546,56 +597,61 @@
               "text": "?: "
             },
             {
-              "text": "INavLink"
+              "text": "INavLink",
+              "hyperlinkedPage": "Nav",
+              "pageKind": "Components"
             },
             {
               "text": ") => void"
             }
           ],
           "descriptionHtml": "Function callback invoked when the chevron on a link is clicked\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderGroupHeader",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "INavLinkGroup"
+              "text": "INavLinkGroup",
+              "hyperlinkedPage": "Nav",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Used to customize how content inside the group header is rendered\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "Default group header rendering"
         },
         {
           "name": "onRenderLink",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "INavLink"
+              "text": "INavLink",
+              "hyperlinkedPage": "Nav",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Used to customize how content inside the link tag is rendered\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "Default link rendering"
         },
         {
           "name": "selectedKey",
@@ -605,7 +661,8 @@
             }
           ],
           "descriptionHtml": "(Optional) The key of the nav item selected by caller.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -617,20 +674,25 @@
               "text": "<"
             },
             {
-              "text": "INavStyleProps"
+              "text": "INavStyleProps",
+              "hyperlinkedPage": "Nav",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "INavStyles"
+              "text": "INavStyles",
+              "hyperlinkedPage": "Nav",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -642,7 +704,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -660,20 +723,24 @@
             }
           ],
           "descriptionHtml": "Accept custom classNames\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "groups",
           "typeTokens": [
             {
-              "text": "INavLinkGroup"
+              "text": "INavLinkGroup",
+              "hyperlinkedPage": "Nav",
+              "pageKind": "Components"
             },
             {
               "text": "[] | null"
             }
           ],
           "descriptionHtml": "Inherited from INavProps A collection of link groups to display in the navigation bar\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isButtonEntry",
@@ -683,7 +750,8 @@
             }
           ],
           "descriptionHtml": "is button\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isDisabled",
@@ -693,7 +761,8 @@
             }
           ],
           "descriptionHtml": "is element disabled\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isExpanded",
@@ -703,7 +772,8 @@
             }
           ],
           "descriptionHtml": "is element expanded boolean\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isGroup",
@@ -713,7 +783,8 @@
             }
           ],
           "descriptionHtml": "is element a group boolean\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isLink",
@@ -723,7 +794,8 @@
             }
           ],
           "descriptionHtml": "is element a link boolean\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isOnTop",
@@ -733,7 +805,8 @@
             }
           ],
           "descriptionHtml": "is element on top boolean\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isSelected",
@@ -743,7 +816,8 @@
             }
           ],
           "descriptionHtml": "is element selected boolean\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "leftPadding",
@@ -753,7 +827,8 @@
             }
           ],
           "descriptionHtml": "left padding value\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "leftPaddingExpanded",
@@ -763,7 +838,8 @@
             }
           ],
           "descriptionHtml": "left padding when expanded value\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "navHeight",
@@ -773,7 +849,8 @@
             }
           ],
           "descriptionHtml": "Nav height value\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "position",
@@ -783,7 +860,8 @@
             }
           ],
           "descriptionHtml": "position value\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rightPadding",
@@ -793,7 +871,8 @@
             }
           ],
           "descriptionHtml": "right padding value\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -805,7 +884,8 @@
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -823,7 +903,8 @@
             }
           ],
           "descriptionHtml": "Style set for the chevron button inside the composite link and group elements.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "chevronIcon",
@@ -833,7 +914,8 @@
             }
           ],
           "descriptionHtml": "Style set for the chevron icon inside the composite link and group elements.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "compositeLink",
@@ -843,7 +925,8 @@
             }
           ],
           "descriptionHtml": "Style set for the composite link container div element\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "group",
@@ -853,7 +936,8 @@
             }
           ],
           "descriptionHtml": "Style set for the group root div.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "groupContent",
@@ -863,7 +947,8 @@
             }
           ],
           "descriptionHtml": "Style set for the group content div inside group.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "link",
@@ -873,7 +958,8 @@
             }
           ],
           "descriptionHtml": "Style set for the link element extending the root style set for ActionButton component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "linkText",
@@ -883,7 +969,8 @@
             }
           ],
           "descriptionHtml": "Style set for the link text container div element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "navItem",
@@ -893,7 +980,8 @@
             }
           ],
           "descriptionHtml": "Style set for the nav links li element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "navItems",
@@ -903,7 +991,8 @@
             }
           ],
           "descriptionHtml": "Style set for the nav links ul element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -913,7 +1002,8 @@
             }
           ],
           "descriptionHtml": "Style set for the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

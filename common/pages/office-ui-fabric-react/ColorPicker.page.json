@@ -14,7 +14,8 @@
             }
           ],
           "descriptionHtml": "The currently selected color.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -31,7 +32,9 @@
           "text": "<"
         },
         {
-          "text": "IColorPicker"
+          "text": "IColorPicker",
+          "hyperlinkedPage": "ColorPicker",
+          "pageKind": "Components"
         },
         {
           "text": "> "
@@ -47,7 +50,8 @@
             }
           ],
           "descriptionHtml": "Label for the alpha textfield.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "Alpha"
         },
         {
           "name": "alphaSliderHidden",
@@ -57,7 +61,8 @@
             }
           ],
           "descriptionHtml": "Whether to hide the alpha control slider.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "blueLabel",
@@ -67,7 +72,8 @@
             }
           ],
           "descriptionHtml": "Label for the blue text field.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "Blue"
         },
         {
           "name": "className",
@@ -77,7 +83,8 @@
             }
           ],
           "descriptionHtml": "Additional CSS class(es) to apply to the ColorPicker.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "color",
@@ -90,7 +97,8 @@
             }
           ],
           "descriptionHtml": "Object or CSS-compatible string to describe the color.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -102,14 +110,17 @@
               "text": "<"
             },
             {
-              "text": "IColorPicker"
+              "text": "IColorPicker",
+              "hyperlinkedPage": "ColorPicker",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Gets the component ref.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "greenLabel",
@@ -119,7 +130,8 @@
             }
           ],
           "descriptionHtml": "Label for the green text field.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "Green"
         },
         {
           "name": "hexLabel",
@@ -129,7 +141,8 @@
             }
           ],
           "descriptionHtml": "Label for the hex text field.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "Hex"
         },
         {
           "name": "onChange",
@@ -175,7 +188,8 @@
             }
           ],
           "descriptionHtml": "Callback for when the user changes the color. (Not called when the color is changed via props.)\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onColorChanged",
@@ -203,7 +217,8 @@
             }
           ],
           "descriptionHtml": "Callback for when the user changes the color. (To preserve existing behavior, this is also called when the color changes via props.)\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "redLabel",
@@ -213,7 +228,8 @@
             }
           ],
           "descriptionHtml": "Label for the red text field.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "Red"
         },
         {
           "name": "styles",
@@ -225,20 +241,25 @@
               "text": "<"
             },
             {
-              "text": "IColorPickerStyleProps"
+              "text": "IColorPickerStyleProps",
+              "hyperlinkedPage": "ColorPicker",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IColorPickerStyles"
+              "text": "IColorPickerStyles",
+              "hyperlinkedPage": "ColorPicker",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -250,7 +271,8 @@
             }
           ],
           "descriptionHtml": "Theme (provided through customization).\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -268,7 +290,8 @@
             }
           ],
           "descriptionHtml": "Additional CSS class(es) to apply to the ColorPicker.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -280,7 +303,8 @@
             }
           ],
           "descriptionHtml": "Theme (provided through customization).\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -298,7 +322,8 @@
             }
           ],
           "descriptionHtml": "Style set for each text field input.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "panel",
@@ -308,7 +333,8 @@
             }
           ],
           "descriptionHtml": "Style set for the panel element that contains the color rectangle.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -318,7 +344,8 @@
             }
           ],
           "descriptionHtml": "Style set for the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "table",
@@ -328,7 +355,8 @@
             }
           ],
           "descriptionHtml": "Style set for the table element that contains the color sliders and inputs.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "tableHeader",
@@ -338,7 +366,8 @@
             }
           ],
           "descriptionHtml": "Style set for the table header that contains the labels.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "tableHexCell",
@@ -348,7 +377,8 @@
             }
           ],
           "descriptionHtml": "Style set for the table cell that contains the hex label.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

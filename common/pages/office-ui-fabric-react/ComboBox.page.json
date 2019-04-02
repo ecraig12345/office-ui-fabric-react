@@ -57,7 +57,8 @@
             }
           ],
           "descriptionHtml": "If there is a menu open this will dismiss the menu\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -84,14 +85,17 @@
               "text": "<"
             },
             {
-              "text": "IComboBoxOptionStyles"
+              "text": "IComboBoxOptionStyles",
+              "hyperlinkedPage": "ComboBox",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Specific styles for each comboBox option. If you intend to give common styles to all comboBox option please use the prop comboBoxOptionStyles\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "useAriaLabelAsText",
@@ -101,7 +105,8 @@
             }
           ],
           "descriptionHtml": "In scenarios where embedded data is used at the text prop, we will use the ariaLabel prop to set the aria-label and preview text. Default to false\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false;"
         }
       ]
     },
@@ -110,7 +115,9 @@
       "name": "IComboBoxOptionStyles",
       "extendsTokens": [
         {
-          "text": "IButtonStyles"
+          "text": "IButtonStyles",
+          "hyperlinkedPage": "Button",
+          "pageKind": "Components"
         },
         {
           "text": " "
@@ -126,7 +133,8 @@
             }
           ],
           "descriptionHtml": "Styles for the text inside the comboBox option. This should be used instead of the description inside IButtonStyles because we custom render the text in the comboBox options.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "optionTextWrapper",
@@ -136,7 +144,8 @@
             }
           ],
           "descriptionHtml": "Styles for the comboBox option text's wrapper.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -151,7 +160,9 @@
           "text": "<"
         },
         {
-          "text": "IComboBox"
+          "text": "IComboBox",
+          "hyperlinkedPage": "ComboBox",
+          "pageKind": "Components"
         },
         {
           "text": "> "
@@ -167,7 +178,8 @@
             }
           ],
           "descriptionHtml": "Whether the ComboBox is free form, meaning that the user input is not bound to provided options. Defaults to false.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaDescribedBy",
@@ -177,7 +189,8 @@
             }
           ],
           "descriptionHtml": "Optional prop to add a string id that can be referenced inside the aria-describedby attribute\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "autoComplete",
@@ -187,27 +200,34 @@
             }
           ],
           "descriptionHtml": "Whether the ComboBox auto completes. As the user is inputing text, it will be suggested potential matches from the list of options. If the combo box is expanded, this will also scroll to the suggested option, and give it a selected style.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "\"on\""
         },
         {
           "name": "autofill",
           "typeTokens": [
             {
-              "text": "IAutofillProps"
+              "text": "IAutofillProps",
+              "hyperlinkedPage": "Autofill",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "The AutofillProps to be passed into the Autofill component inside combobox\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "buttonIconProps",
           "typeTokens": [
             {
-              "text": "IIconProps"
+              "text": "IIconProps",
+              "hyperlinkedPage": "Icon",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "The IconProps to use for the button aspect of the combobox\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "caretDownButtonStyles",
@@ -219,14 +239,17 @@
               "text": "<"
             },
             {
-              "text": "IButtonStyles"
+              "text": "IButtonStyles",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Styles for the caret down button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "comboBoxOptionStyles",
@@ -238,14 +261,17 @@
               "text": "<"
             },
             {
-              "text": "IComboBoxOptionStyles"
+              "text": "IComboBoxOptionStyles",
+              "hyperlinkedPage": "ComboBox",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Default styles that should be applied to ComboBox options, in case an option does not come with user-defined custom styles\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -257,14 +283,17 @@
               "text": "<"
             },
             {
-              "text": "IComboBox"
+              "text": "IComboBox",
+              "hyperlinkedPage": "ComboBox",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IComboBox interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dropdownMaxWidth",
@@ -274,7 +303,8 @@
             }
           ],
           "descriptionHtml": "Custom max width for dropdown\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dropdownWidth",
@@ -284,7 +314,8 @@
             }
           ],
           "descriptionHtml": "Custom width for dropdown (unless useComboBoxAsMenuWidth is undefined or false)\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getClassNames",
@@ -353,7 +384,8 @@
             }
           ],
           "descriptionHtml": "Custom function for providing the classNames for the ComboBox. Can be used to provide all styles for the component instead of applying them on top of the default styles.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isButtonAriaHidden",
@@ -363,17 +395,21 @@
             }
           ],
           "descriptionHtml": "Sets the 'aria-hidden' attribute on the ComboBox's button element instructing screen readers how to handle the element. This element is hidden by default because all functionality is handled by the input element and the arrow button is only meant to be decorative.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "true"
         },
         {
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps"
+              "text": "IKeytipProps",
+              "hyperlinkedPage": "Keytip",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Optional keytip for this combo box\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "multiSelect",
@@ -383,7 +419,8 @@
             }
           ],
           "descriptionHtml": "Optional mode indicates if multi-choice selections is allowed. Default to false\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onChange",
@@ -410,7 +447,9 @@
               "text": "<"
             },
             {
-              "text": "IComboBox"
+              "text": "IComboBox",
+              "hyperlinkedPage": "ComboBox",
+              "pageKind": "Components"
             },
             {
               "text": ">, "
@@ -422,7 +461,9 @@
               "text": "?: "
             },
             {
-              "text": "IComboBoxOption"
+              "text": "IComboBoxOption",
+              "hyperlinkedPage": "ComboBox",
+              "pageKind": "Components"
             },
             {
               "text": ", "
@@ -441,7 +482,8 @@
             }
           ],
           "descriptionHtml": "Callback issued when either: 1) the selected option changes 2) a manually edited value is submitted. In this case there may not be a matched option if allowFreeform is also true (and hence only value would be true, the other parameter would be null in this case)\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onChanged",
@@ -456,7 +498,9 @@
               "text": "?: "
             },
             {
-              "text": "IComboBoxOption"
+              "text": "IComboBoxOption",
+              "hyperlinkedPage": "ComboBox",
+              "pageKind": "Components"
             },
             {
               "text": ", "
@@ -481,7 +525,8 @@
             }
           ],
           "descriptionHtml": "Deprecated, use `onChange` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "onItemClick",
@@ -508,7 +553,9 @@
               "text": "<"
             },
             {
-              "text": "IComboBox"
+              "text": "IComboBox",
+              "hyperlinkedPage": "ComboBox",
+              "pageKind": "Components"
             },
             {
               "text": ">, "
@@ -520,7 +567,9 @@
               "text": "?: "
             },
             {
-              "text": "IComboBoxOption"
+              "text": "IComboBoxOption",
+              "hyperlinkedPage": "ComboBox",
+              "pageKind": "Components"
             },
             {
               "text": ", "
@@ -533,7 +582,8 @@
             }
           ],
           "descriptionHtml": "Callback issued when a ComboBox item is clicked.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onMenuDismissed",
@@ -543,7 +593,8 @@
             }
           ],
           "descriptionHtml": "Function that gets invoked when the ComboBox menu is dismissed\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onMenuOpen",
@@ -553,7 +604,8 @@
             }
           ],
           "descriptionHtml": "Function that gets invoked when the ComboBox menu is launched\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onPendingValueChanged",
@@ -568,7 +620,9 @@
               "text": "?: "
             },
             {
-              "text": "IComboBoxOption"
+              "text": "IComboBoxOption",
+              "hyperlinkedPage": "ComboBox",
+              "pageKind": "Components"
             },
             {
               "text": ", "
@@ -587,28 +641,30 @@
             }
           ],
           "descriptionHtml": "Callback issued when the user changes the pending value in ComboBox\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderLowerContent",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IComboBoxProps"
+              "text": "IComboBoxProps",
+              "hyperlinkedPage": "ComboBox",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Add additional content below the callout list.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onResolveOptions",
@@ -623,13 +679,17 @@
               "text": ": "
             },
             {
-              "text": "IComboBoxOption"
+              "text": "IComboBoxOption",
+              "hyperlinkedPage": "ComboBox",
+              "pageKind": "Components"
             },
             {
               "text": "[]) => "
             },
             {
-              "text": "IComboBoxOption"
+              "text": "IComboBoxOption",
+              "hyperlinkedPage": "ComboBox",
+              "pageKind": "Components"
             },
             {
               "text": "[] | "
@@ -641,14 +701,17 @@
               "text": "<"
             },
             {
-              "text": "IComboBoxOption"
+              "text": "IComboBoxOption",
+              "hyperlinkedPage": "ComboBox",
+              "pageKind": "Components"
             },
             {
               "text": "[]>"
             }
           ],
           "descriptionHtml": "Callback issued when the options should be resolved, if they have been updated or if they need to be passed in the first time\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onScrollToItem",
@@ -664,20 +727,24 @@
             }
           ],
           "descriptionHtml": "Callback issued when the ComboBox requests the list to scroll to a specific element\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "options",
           "typeTokens": [
             {
-              "text": "IComboBoxOption"
+              "text": "IComboBoxOption",
+              "hyperlinkedPage": "ComboBox",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "Collection of options for this ComboBox\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "persistMenu",
@@ -687,7 +754,8 @@
             }
           ],
           "descriptionHtml": "Menu will not be created or destroyed when opened or closed, instead it will be hidden. This will improve perf of the menu opening but could potentially impact overall perf by having more elemnts in the dom. Should only be used when perf is important. Note: This may increase the amount of time it takes for the comboBox itself to mount.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "scrollSelectedToTop",
@@ -697,7 +765,8 @@
             }
           ],
           "descriptionHtml": "When options are scrollable the selected option is positioned at the top of the callout when it is opened (unless it has reached the end of the scrollbar).\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false;"
         },
         {
           "name": "styles",
@@ -709,14 +778,17 @@
               "text": "<"
             },
             {
-              "text": "IComboBoxStyles"
+              "text": "IComboBoxStyles",
+              "hyperlinkedPage": "ComboBox",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Custom styles for this component\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "text",
@@ -726,7 +798,8 @@
             }
           ],
           "descriptionHtml": "Value to show in the input, does not have to map to a combobox option\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -738,7 +811,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "useComboBoxAsMenuWidth",
@@ -748,7 +822,8 @@
             }
           ],
           "descriptionHtml": "Whether to use the ComboBoxes width as the menu's width\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "value",
@@ -758,7 +833,8 @@
             }
           ],
           "descriptionHtml": "Value to show in the input, does not have to map to a combobox option Deprecated, use `text` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         }
       ]
     },
@@ -776,7 +852,8 @@
             }
           ],
           "descriptionHtml": "Styles for the callout.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "container",
@@ -786,7 +863,8 @@
             }
           ],
           "descriptionHtml": "Style for the container which has the ComboBox and the label\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "divider",
@@ -796,7 +874,8 @@
             }
           ],
           "descriptionHtml": "Styles for a divider in the options.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "errorMessage",
@@ -806,7 +885,8 @@
             }
           ],
           "descriptionHtml": "Styles for the error Message text of the comboBox.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "header",
@@ -816,7 +896,8 @@
             }
           ],
           "descriptionHtml": "Styles for a header in the options.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "input",
@@ -826,7 +907,8 @@
             }
           ],
           "descriptionHtml": "Base styles for the input element - which contains the currently selected option.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "inputDisabled",
@@ -836,7 +918,8 @@
             }
           ],
           "descriptionHtml": "Style override for the input element when comboBox is disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "label",
@@ -846,7 +929,8 @@
             }
           ],
           "descriptionHtml": "Style for the label element of the ComboBox.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "labelDisabled",
@@ -856,7 +940,8 @@
             }
           ],
           "descriptionHtml": "Style for the label element of the ComboBox in the disabled state.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "optionsContainer",
@@ -866,7 +951,8 @@
             }
           ],
           "descriptionHtml": "Styles for the container of all the Combobox options Includes the headers and dividers.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "optionsContainerWrapper",
@@ -876,7 +962,8 @@
             }
           ],
           "descriptionHtml": "Styles for the optionsContainerWrapper.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -886,7 +973,8 @@
             }
           ],
           "descriptionHtml": "Base styles for the root element of all ComboBoxes.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rootDisabled",
@@ -896,7 +984,8 @@
             }
           ],
           "descriptionHtml": "Styles for when the comboBox is disabled. These styles override all the other styles. NOTE : Hover (or) Focused (or) active styles are not applied for disabled comboBoxes.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rootDisallowFreeForm",
@@ -906,7 +995,8 @@
             }
           ],
           "descriptionHtml": "Styles for variant of ComboBox where allowFreeForm is false in the props.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rootError",
@@ -916,7 +1006,8 @@
             }
           ],
           "descriptionHtml": "Styles for the root element for variant of ComboBox with an errorMessage in the props.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rootFocused",
@@ -926,7 +1017,8 @@
             }
           ],
           "descriptionHtml": "Styles for when the ComboBox is focused. These styles are applied for all comboBoxes except when the comboBox is disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rootHovered",
@@ -936,7 +1028,8 @@
             }
           ],
           "descriptionHtml": "Styles for when the ComboBox is hovered. These styles are applied for all comboBoxes except when the comboBox is disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rootPressed",
@@ -946,7 +1039,8 @@
             }
           ],
           "descriptionHtml": "Styles for when the ComboBox is active. These styles are applied for all comboBoxes except when the comboBox is disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

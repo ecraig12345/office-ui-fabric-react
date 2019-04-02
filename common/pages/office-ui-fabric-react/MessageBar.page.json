@@ -46,7 +46,8 @@
             }
           ],
           "descriptionHtml": "The actions you want to show on the other side.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabel",
@@ -56,7 +57,8 @@
             }
           ],
           "descriptionHtml": "A description of the message bar for the benefit of screen readers.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -66,7 +68,8 @@
             }
           ],
           "descriptionHtml": "Additional CSS class(es) to apply to the MessageBar.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -78,14 +81,17 @@
               "text": "<"
             },
             {
-              "text": "IMessageBar"
+              "text": "IMessageBar",
+              "hyperlinkedPage": "MessageBar",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IMessageBar interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dismissButtonAriaLabel",
@@ -95,7 +101,8 @@
             }
           ],
           "descriptionHtml": "Aria label on dismiss button if onDismiss is defined.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isMultiline",
@@ -105,17 +112,21 @@
             }
           ],
           "descriptionHtml": "Determines if the message bar is multi lined. If false, and the text overflows over buttons or to another line, it is clipped.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "true"
         },
         {
           "name": "messageBarType",
           "typeTokens": [
             {
-              "text": "MessageBarType"
+              "text": "MessageBarType",
+              "hyperlinkedPage": "MessageBar",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "The type of MessageBar to render.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "MessageBarType.info"
         },
         {
           "name": "onDismiss",
@@ -166,16 +177,15 @@
               "text": " | "
             },
             {
-              "text": "Button",
-              "hyperlinkedPage": "Button",
-              "pageKind": "Components"
+              "text": "Button"
             },
             {
               "text": ">) => any"
             }
           ],
           "descriptionHtml": "Whether the message bar has a dismiss button and its callback. If null, we don't show a dismiss button.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "null"
         },
         {
           "name": "overflowButtonAriaLabel",
@@ -185,7 +195,8 @@
             }
           ],
           "descriptionHtml": "Aria label on overflow button if truncated is defined.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -197,20 +208,25 @@
               "text": "<"
             },
             {
-              "text": "IMessageBarStyleProps"
+              "text": "IMessageBarStyleProps",
+              "hyperlinkedPage": "MessageBar",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IMessageBarStyles"
+              "text": "IMessageBarStyles",
+              "hyperlinkedPage": "MessageBar",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -222,7 +238,8 @@
             }
           ],
           "descriptionHtml": "Theme (provided through customization.)\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "truncated",
@@ -232,7 +249,8 @@
             }
           ],
           "descriptionHtml": "Determines if the message bar text is truncated. If true, a button will render to toggle between a single line view and multiline view. This prop is for single line message bars with no buttons only in a limited space scenario.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         }
       ]
     },
@@ -250,7 +268,8 @@
             }
           ],
           "descriptionHtml": "Whether the MessageBar contains any action elements.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -260,7 +279,8 @@
             }
           ],
           "descriptionHtml": "Additional CSS class(es).\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "expandSingleLine",
@@ -270,7 +290,8 @@
             }
           ],
           "descriptionHtml": "Whether the single line MessageBar is being expanded.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isMultiline",
@@ -280,17 +301,21 @@
             }
           ],
           "descriptionHtml": "Whether the MessageBar is rendered in multi line (as opposed to single line) mode.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "messageBarType",
           "typeTokens": [
             {
-              "text": "MessageBarType"
+              "text": "MessageBarType",
+              "hyperlinkedPage": "MessageBar",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Type of the MessageBar.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onDismiss",
@@ -300,7 +325,8 @@
             }
           ],
           "descriptionHtml": "Whether the MessageBar contains a dismiss button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -312,7 +338,8 @@
             }
           ],
           "descriptionHtml": "Theme (provided through customization).\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "truncated",
@@ -322,7 +349,8 @@
             }
           ],
           "descriptionHtml": "Whether the text is truncated.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -340,7 +368,8 @@
             }
           ],
           "descriptionHtml": "Style set for the optional element containing the action elements.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "content",
@@ -350,7 +379,8 @@
             }
           ],
           "descriptionHtml": "Style set for the element containing the icon, text, and optional dismiss button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dismissal",
@@ -360,7 +390,8 @@
             }
           ],
           "descriptionHtml": "Style set for the optional dismiss button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dismissSingleLine",
@@ -370,7 +401,8 @@
             }
           ],
           "descriptionHtml": "Style set for the element containing the dismiss button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "expand",
@@ -380,7 +412,8 @@
             }
           ],
           "descriptionHtml": "Style set for the icon used to expand and collapse the MessageBar.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "expandSingleLine",
@@ -390,7 +423,8 @@
             }
           ],
           "descriptionHtml": "Style set for the element containing the expand icon.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "icon",
@@ -400,7 +434,8 @@
             }
           ],
           "descriptionHtml": "Style set for the icon.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "iconContainer",
@@ -410,7 +445,8 @@
             }
           ],
           "descriptionHtml": "Style set for the element containing the icon.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "innerText",
@@ -420,7 +456,8 @@
             }
           ],
           "descriptionHtml": "Style set for the text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -430,7 +467,8 @@
             }
           ],
           "descriptionHtml": "Style set for the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "text",
@@ -440,7 +478,8 @@
             }
           ],
           "descriptionHtml": "Style set for the element containing the text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },

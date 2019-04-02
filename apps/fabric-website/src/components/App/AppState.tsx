@@ -924,25 +924,7 @@ export const AppState: IAppState = {
           className: 'componentsPage',
           isCategory: true,
           // pull these pages from pages/References/
-          pages: [
-            {
-              title: 'IScheme',
-              url: '#/references/ischeme',
-              isFilterable: true,
-              component: () => <LoadingComponent title="IScheme" />,
-              getComponent: cb =>
-                require.ensure([], require => cb(require<any>('../../pages/References/ISchemeComponentPage').ISchemeComponentPage))
-            },
-            {
-              title: 'ITheme',
-              url: '#/references/itheme',
-              isFilterable: true,
-              component: () => <LoadingComponent title="ITheme" />,
-              getComponent: cb =>
-                require.ensure([], require => cb(require<any>('../../pages/References/IThemeComponentPage').IThemeComponentPage))
-            },
-            ...referencePages
-          ]
+          pages: [...referencePages]
         }
       ]
     },

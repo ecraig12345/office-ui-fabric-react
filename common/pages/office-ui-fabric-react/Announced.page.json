@@ -66,14 +66,17 @@
               "text": ": "
             },
             {
-              "text": "IAnnounced"
+              "text": "IAnnounced",
+              "hyperlinkedPage": "Announced",
+              "pageKind": "Components"
             },
             {
               "text": ") => void"
             }
           ],
           "descriptionHtml": "Optional callback to access the IAnnounced interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "message",
@@ -83,7 +86,8 @@
             }
           ],
           "descriptionHtml": "The status message provided as screen reader output\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -95,14 +99,17 @@
               "text": "<{}, "
             },
             {
-              "text": "IAnnouncedStyles"
+              "text": "IAnnouncedStyles",
+              "hyperlinkedPage": "Announced",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -120,7 +127,8 @@
             }
           ],
           "descriptionHtml": "Style override for the screen reader text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

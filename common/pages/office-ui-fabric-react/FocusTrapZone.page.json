@@ -14,7 +14,8 @@
             }
           ],
           "descriptionHtml": "Sets focus to a descendant in the Trap Zone. See firstFocusableSelector and focusPreviouslyFocusedInnerElement for details.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -51,7 +52,8 @@
             }
           ],
           "descriptionHtml": "Sets the aria-labelledby attribute.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -63,14 +65,17 @@
               "text": "<"
             },
             {
-              "text": "IFocusTrapZone"
+              "text": "IFocusTrapZone",
+              "hyperlinkedPage": "FocusTrapZone",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IFocusTrapZone interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "disableFirstFocus",
@@ -80,7 +85,8 @@
             }
           ],
           "descriptionHtml": "Do not put focus onto first element when render focus trap zone\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "elementToFocusOnDismiss",
@@ -90,7 +96,8 @@
             }
           ],
           "descriptionHtml": "Sets the HTMLElement to focus on when exiting the FocusTrapZone.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "The element.target that triggered the FTZ."
         },
         {
           "name": "firstFocusableSelector",
@@ -100,7 +107,8 @@
             }
           ],
           "descriptionHtml": "Indicates the selector for first focusable item. Only applies if focusPreviouslyFocusedInnerElement == false.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "focusPreviouslyFocusedInnerElement",
@@ -110,7 +118,8 @@
             }
           ],
           "descriptionHtml": "Specifies the algorithm used to determine which descendant element to focus when focus() is called. If false, the first focusable descendant, filtered by the firstFocusableSelector property if present, is chosen. If true, the element that was focused when the Trap Zone last had a focused descendant is chosen. If it has never had a focused descendant before, behavior falls back to the first focused descendant.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "forceFocusInsideTrap",
@@ -120,7 +129,8 @@
             }
           ],
           "descriptionHtml": "Indicates whether focus trap zone should force focus inside the focus trap zone\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "true"
         },
         {
           "name": "ignoreExternalFocusing",
@@ -130,7 +140,8 @@
             }
           ],
           "descriptionHtml": "Indicates if this Trap Zone will ignore keeping track of HTMLElement that activated the Zone.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "isClickableOutsideFocusTrap",
@@ -140,7 +151,8 @@
             }
           ],
           "descriptionHtml": "Indicates if this Trap Zone will allow clicks outside the FocusTrapZone\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         }
       ]
     }

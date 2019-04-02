@@ -14,7 +14,8 @@
             }
           ],
           "descriptionHtml": "Color of text for accent button (kicker)\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "actionLink",
@@ -24,7 +25,8 @@
             }
           ],
           "descriptionHtml": "Neutral colored links and links for action buttons.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "actionLinkHovered",
@@ -34,7 +36,8 @@
             }
           ],
           "descriptionHtml": "Hover state for neutral colored links and links for action buttons.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "bodySubtext",
@@ -44,7 +47,8 @@
             }
           ],
           "descriptionHtml": "De-emphasized text; e.g. metadata, captions, placeholder text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "bodyText",
@@ -54,7 +58,8 @@
             }
           ],
           "descriptionHtml": "The default color for text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "bodyTextChecked",
@@ -64,7 +69,8 @@
             }
           ],
           "descriptionHtml": "Checked text color, e.g. selected menu item text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "buttonText",
@@ -74,7 +80,8 @@
             }
           ],
           "descriptionHtml": "Color of text in a standard button\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "buttonTextChecked",
@@ -84,7 +91,8 @@
             }
           ],
           "descriptionHtml": "Color of text in a checked standard button\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "buttonTextCheckedHovered",
@@ -94,7 +102,8 @@
             }
           ],
           "descriptionHtml": "Color of text in a checked and hovered standard button\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "buttonTextDisabled",
@@ -104,7 +113,8 @@
             }
           ],
           "descriptionHtml": "Color of text in a disabled standard button\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "buttonTextHovered",
@@ -114,7 +124,8 @@
             }
           ],
           "descriptionHtml": "Color of text in a hovered standard button\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "buttonTextPressed",
@@ -124,7 +135,8 @@
             }
           ],
           "descriptionHtml": "Color of text in a pressed standard button; i.e. currently being clicked by mouse\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "disabledBodySubtext",
@@ -134,7 +146,8 @@
             }
           ],
           "descriptionHtml": "Disabled de-emphasized text, for use on the default background (bodyBackground).\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "disabledBodyText",
@@ -144,7 +157,8 @@
             }
           ],
           "descriptionHtml": "The default color for disabled text on the default background (bodyBackground).\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "disabledSubtext",
@@ -154,7 +168,8 @@
             }
           ],
           "descriptionHtml": "Disabled de-emphasized text, for use on disabledBackground.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "disabledText",
@@ -164,7 +179,8 @@
             }
           ],
           "descriptionHtml": "The default color for disabled text on top of disabledBackground; e.g. text in a disabled text field, disabled button text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "errorText",
@@ -174,7 +190,8 @@
             }
           ],
           "descriptionHtml": "The default color of error text, used on bodyBackground.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "inputPlaceholderText",
@@ -184,7 +201,8 @@
             }
           ],
           "descriptionHtml": "The color of placeholder text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "inputText",
@@ -194,7 +212,8 @@
             }
           ],
           "descriptionHtml": "The color of input text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "inputTextHovered",
@@ -204,7 +223,8 @@
             }
           ],
           "descriptionHtml": "The color of input text on hover.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "link",
@@ -214,7 +234,8 @@
             }
           ],
           "descriptionHtml": "The color of a link.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "linkHovered",
@@ -224,7 +245,8 @@
             }
           ],
           "descriptionHtml": "The color of a hovered link. Also used when the link is active.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "listText",
@@ -234,7 +256,8 @@
             }
           ],
           "descriptionHtml": "The default text color for list item titles and text in column fields.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "listTextColor",
@@ -244,7 +267,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "primaryButtonText",
@@ -254,7 +278,8 @@
             }
           ],
           "descriptionHtml": "Color of text in a primary button\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "primaryButtonTextDisabled",
@@ -264,7 +289,8 @@
             }
           ],
           "descriptionHtml": "Color of text in a disabled primary button\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "primaryButtonTextHovered",
@@ -274,7 +300,8 @@
             }
           ],
           "descriptionHtml": "Color of text in a hovered primary button\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "primaryButtonTextPressed",
@@ -284,7 +311,8 @@
             }
           ],
           "descriptionHtml": "Color of text in a pressed primary button; i.e. currently being clicked by mouse\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "warningText",
@@ -294,7 +322,8 @@
             }
           ],
           "descriptionHtml": "The color of text on errorBackground, warningBackground, blockingBackground, or successBackground.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

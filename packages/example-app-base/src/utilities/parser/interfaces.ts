@@ -25,7 +25,7 @@ export interface ILinkToken {
 export interface IInterfaceProperty {
   name: string;
   typeTokens: ILinkToken[];
-  // defaultValue: string;
+  defaultValue: string;
   description: string;
   interfacePropertyType?: InterfacePropertyType;
   deprecatedMessage?: string;

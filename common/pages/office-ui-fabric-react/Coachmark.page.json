@@ -20,7 +20,8 @@
             }
           ],
           "descriptionHtml": "Forces the Coachmark to dismiss\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -57,7 +58,8 @@
             }
           ],
           "descriptionHtml": "Text to announce to screen reader / narrator when Coachmark is displayed\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaDescribedBy",
@@ -67,7 +69,8 @@
             }
           ],
           "descriptionHtml": "Defines the element id referencing the element containing the description for the Coachmark.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaDescribedByText",
@@ -77,7 +80,8 @@
             }
           ],
           "descriptionHtml": "Defines the text content for the ariaDescribedBy element\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabelledBy",
@@ -87,7 +91,8 @@
             }
           ],
           "descriptionHtml": "Defines the element id referencing the element containing label text for Coachmark.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabelledByText",
@@ -97,7 +102,8 @@
             }
           ],
           "descriptionHtml": "Defines the text content for the ariaLabelledBy element\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "beaconColorOne",
@@ -107,7 +113,8 @@
             }
           ],
           "descriptionHtml": "Beacon color one.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "beaconColorTwo",
@@ -117,7 +124,8 @@
             }
           ],
           "descriptionHtml": "Beacon color two.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "beakHeight",
@@ -127,7 +135,8 @@
             }
           ],
           "descriptionHtml": "The height of the Beak component.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "beakWidth",
@@ -137,7 +146,8 @@
             }
           ],
           "descriptionHtml": "The width of the Beak component.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -147,7 +157,8 @@
             }
           ],
           "descriptionHtml": "If provided, additional class name to provide on the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "collapsed",
@@ -157,7 +168,8 @@
             }
           ],
           "descriptionHtml": "The starting collapsed state for the Coachmark. Use `isCollapsed` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": "true"
         },
         {
           "name": "color",
@@ -167,7 +179,8 @@
             }
           ],
           "descriptionHtml": "Color of the Coachmark/TeachingBubble.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -179,14 +192,17 @@
               "text": "<"
             },
             {
-              "text": "ICoachmark"
+              "text": "ICoachmark",
+              "hyperlinkedPage": "Coachmark",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the ICoachmark interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "delayBeforeCoachmarkAnimation",
@@ -196,7 +212,8 @@
             }
           ],
           "descriptionHtml": "Delay in milliseconds before Coachmark animation appears.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "0"
         },
         {
           "name": "delayBeforeMouseOpen",
@@ -206,7 +223,8 @@
             }
           ],
           "descriptionHtml": "Delay before allowing mouse movements to open the Coachmark.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "3600"
         },
         {
           "name": "height",
@@ -216,7 +234,8 @@
             }
           ],
           "descriptionHtml": "The height of the Coachmark.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "isCollapsed",
@@ -226,7 +245,8 @@
             }
           ],
           "descriptionHtml": "The starting collapsed state for the Coachmark.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "true"
         },
         {
           "name": "isPositionForced",
@@ -236,7 +256,8 @@
             }
           ],
           "descriptionHtml": "Whether or not to force the Coachmark/TeachingBubble content to fit within the window bounds.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "true"
         },
         {
           "name": "mouseProximityOffset",
@@ -246,7 +267,8 @@
             }
           ],
           "descriptionHtml": "The distance in pixels the mouse is located before opening up the Coachmark.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "10"
         },
         {
           "name": "onAnimationOpenEnd",
@@ -256,7 +278,8 @@
             }
           ],
           "descriptionHtml": "Callback when the opening animation completes.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onAnimationOpenStart",
@@ -266,7 +289,8 @@
             }
           ],
           "descriptionHtml": "Callback when the opening animation begins.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onDismiss",
@@ -282,7 +306,8 @@
             }
           ],
           "descriptionHtml": "Callback when the Coachmark tries to close.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onMouseMove",
@@ -304,17 +329,21 @@
             }
           ],
           "descriptionHtml": "Callback to run when the mouse moves.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "positioningContainerProps",
           "typeTokens": [
             {
-              "text": "IPositioningContainerProps"
+              "text": "IPositioningContainerProps",
+              "hyperlinkedPage": "PositioningContainer",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Props to pass to the PositioningContainer component. Specify the `directionalHint` to indicate on which edge the Coachmark/TeachingBubble should be positioned.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "directionalHint: DirectionalHint.bottomAutoEdge"
         },
         {
           "name": "preventDismissOnLostFocus",
@@ -324,7 +353,8 @@
             }
           ],
           "descriptionHtml": "If true then the Coachmark will not dismiss when it loses focus\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "preventFocusOnMount",
@@ -334,7 +364,8 @@
             }
           ],
           "descriptionHtml": "If true then focus will not be set to the Coachmark when it mounts. Useful in cases where focus on coachmark is causing other components in page to dismiss upon losing focus.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "styles",
@@ -346,20 +377,25 @@
               "text": "<"
             },
             {
-              "text": "ICoachmarkStyleProps"
+              "text": "ICoachmarkStyleProps",
+              "hyperlinkedPage": "Coachmark",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "ICoachmarkStyles"
+              "text": "ICoachmarkStyles",
+              "hyperlinkedPage": "Coachmark",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "target",
@@ -372,17 +408,21 @@
             }
           ],
           "descriptionHtml": "The target that the Coachmark should try to position itself based on.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "teachingBubbleRef",
           "typeTokens": [
             {
-              "text": "ITeachingBubble"
+              "text": "ITeachingBubble",
+              "hyperlinkedPage": "TeachingBubble",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Ref for TeachingBubble\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -394,7 +434,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by higher order component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "width",
@@ -404,7 +445,8 @@
             }
           ],
           "descriptionHtml": "The width of the Coachmark.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         }
       ]
     },
@@ -422,7 +464,8 @@
             }
           ],
           "descriptionHtml": "Beacon color one\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "beaconColorTwo",
@@ -432,7 +475,8 @@
             }
           ],
           "descriptionHtml": "Beacon color two\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -442,7 +486,8 @@
             }
           ],
           "descriptionHtml": "ClassName to provide on the root style area.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "collapsed",
@@ -452,7 +497,8 @@
             }
           ],
           "descriptionHtml": "Is the Coachmark collapsed. Deprecated, use `isCollapsed` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "color",
@@ -462,7 +508,8 @@
             }
           ],
           "descriptionHtml": "Color\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "delayBeforeCoachmarkAnimation",
@@ -472,7 +519,8 @@
             }
           ],
           "descriptionHtml": "Delay time for the animation to start\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "entityHostHeight",
@@ -482,7 +530,8 @@
             }
           ],
           "descriptionHtml": "The height measured before the component has been mounted in pixels\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "entityHostWidth",
@@ -492,7 +541,8 @@
             }
           ],
           "descriptionHtml": "The width measured in pixels\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "height",
@@ -502,7 +552,8 @@
             }
           ],
           "descriptionHtml": "Height of the coachmark\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isBeaconAnimating",
@@ -512,7 +563,8 @@
             }
           ],
           "descriptionHtml": "Is the beacon currently animating.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isCollapsed",
@@ -522,7 +574,8 @@
             }
           ],
           "descriptionHtml": "Is the Coachmark collapsed\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isMeasured",
@@ -532,7 +585,8 @@
             }
           ],
           "descriptionHtml": "Is the Coachmark finished measuring the dimensions of innerHostElement\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isMeasuring",
@@ -542,7 +596,8 @@
             }
           ],
           "descriptionHtml": "Is the component taking measurements\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -554,7 +609,8 @@
             }
           ],
           "descriptionHtml": "Current theme.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "transformOrigin",
@@ -564,7 +620,8 @@
             }
           ],
           "descriptionHtml": "Transform origin for teaching bubble content\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "width",
@@ -574,7 +631,8 @@
             }
           ],
           "descriptionHtml": "Width of the coachmark\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -592,7 +650,8 @@
             }
           ],
           "descriptionHtml": "The styles applied to the ARIA attribute container\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "childrenContainer",
@@ -602,7 +661,8 @@
             }
           ],
           "descriptionHtml": "The layer that directly contains the TeachingBubbleContent\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "collapsed",
@@ -612,7 +672,8 @@
             }
           ],
           "descriptionHtml": "The styles applied when the Coachmark has collapsed.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "entityHost",
@@ -622,7 +683,8 @@
             }
           ],
           "descriptionHtml": "The layer that content/components/elements will be hosted in.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "entityInnerHost",
@@ -632,7 +694,8 @@
             }
           ],
           "descriptionHtml": "The inner layer that components will be hosted in and primary purpose is scaling the layer down while the Coachmark collapsed.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "pulsingBeacon",
@@ -642,7 +705,8 @@
             }
           ],
           "descriptionHtml": "The pulsing beacon that animates when the Coachmark is collapsed.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -652,7 +716,8 @@
             }
           ],
           "descriptionHtml": "Style for the root element in the default enabled/unchecked state.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rotateAnimationLayer",
@@ -662,7 +727,8 @@
             }
           ],
           "descriptionHtml": "The layer the Rotate animation will be applied to.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "scaleAnimationLayer",
@@ -672,7 +738,8 @@
             }
           ],
           "descriptionHtml": "The layer the Scale animation will be applied to.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "translateAnimationContainer",
@@ -682,7 +749,8 @@
             }
           ],
           "descriptionHtml": "The layer, or div, that the translate animation will be applied to.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

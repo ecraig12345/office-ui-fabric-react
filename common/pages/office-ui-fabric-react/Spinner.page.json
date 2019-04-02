@@ -40,7 +40,8 @@
             }
           ],
           "descriptionHtml": "Alternative status label for screen reader\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLive",
@@ -50,7 +51,8 @@
             }
           ],
           "descriptionHtml": "Politeness setting for label update announcement.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "polite"
         },
         {
           "name": "className",
@@ -60,7 +62,8 @@
             }
           ],
           "descriptionHtml": "Additional CSS class(es) to apply to the Spinner.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -72,14 +75,17 @@
               "text": "<"
             },
             {
-              "text": "ISpinner"
+              "text": "ISpinner",
+              "hyperlinkedPage": "Spinner",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the ISpinner interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "label",
@@ -89,7 +95,8 @@
             }
           ],
           "descriptionHtml": "The label to show next to the Spinner. Label updates will be announced to the screen readers. Use ariaLive to control politeness level.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "labelPosition",
@@ -99,17 +106,21 @@
             }
           ],
           "descriptionHtml": "The position of the label in regards of the spinner animation.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "SpinnerLabelPosition.bottom"
         },
         {
           "name": "size",
           "typeTokens": [
             {
-              "text": "SpinnerSize"
+              "text": "SpinnerSize",
+              "hyperlinkedPage": "Spinner",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "The size of Spinner to render. \\{ extraSmall, small, medium, large \\}\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "SpinnerType.medium"
         },
         {
           "name": "styles",
@@ -121,20 +132,25 @@
               "text": "<"
             },
             {
-              "text": "ISpinnerStyleProps"
+              "text": "ISpinnerStyleProps",
+              "hyperlinkedPage": "Spinner",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "ISpinnerStyles"
+              "text": "ISpinnerStyles",
+              "hyperlinkedPage": "Spinner",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -146,17 +162,21 @@
             }
           ],
           "descriptionHtml": "Theme (provided through customization.)\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "type",
           "typeTokens": [
             {
-              "text": "SpinnerType"
+              "text": "SpinnerType",
+              "hyperlinkedPage": "Spinner",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Deprecated and will be removed at \\>= 2.0.0. Use `SpinnerSize` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         }
       ]
     },
@@ -174,7 +194,8 @@
             }
           ],
           "descriptionHtml": "CSS class name for the component attached to the root stylable area.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "labelPosition",
@@ -184,17 +205,21 @@
             }
           ],
           "descriptionHtml": "Position of the label in regards to the spinner animation.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "size",
           "typeTokens": [
             {
-              "text": "SpinnerSize"
+              "text": "SpinnerSize",
+              "hyperlinkedPage": "Spinner",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Size of the spinner animation.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -206,7 +231,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -224,7 +250,8 @@
             }
           ],
           "descriptionHtml": "Styles for the spinner circle animation.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "label",
@@ -234,7 +261,8 @@
             }
           ],
           "descriptionHtml": "Styles for the label accompanying the circle.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -244,7 +272,8 @@
             }
           ],
           "descriptionHtml": "Styles for the root element. Refers to the wrapper containing both the circle and the label.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "screenReaderText",
@@ -254,7 +283,8 @@
             }
           ],
           "descriptionHtml": "Styles for the hidden helper element to aid with screen readers.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },

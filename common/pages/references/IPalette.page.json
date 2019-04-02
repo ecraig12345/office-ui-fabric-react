@@ -14,7 +14,8 @@
             }
           ],
           "descriptionHtml": "Color code for the accent.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "black",
@@ -24,7 +25,8 @@
             }
           ],
           "descriptionHtml": "Color code for the strongest color, which is black in the default theme. This is a very light color in inverted themes.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "blackTranslucent40",
@@ -34,7 +36,8 @@
             }
           ],
           "descriptionHtml": "Color code for blackTranslucent40.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "blue",
@@ -44,7 +47,8 @@
             }
           ],
           "descriptionHtml": "Color code for blue.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "blueDark",
@@ -54,7 +58,8 @@
             }
           ],
           "descriptionHtml": "Color code for blueDark.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "blueLight",
@@ -64,7 +69,8 @@
             }
           ],
           "descriptionHtml": "Color code for blueLight.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "blueMid",
@@ -74,7 +80,8 @@
             }
           ],
           "descriptionHtml": "Color code for blueMid.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "green",
@@ -84,7 +91,8 @@
             }
           ],
           "descriptionHtml": "Color code for green.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "greenDark",
@@ -94,7 +102,8 @@
             }
           ],
           "descriptionHtml": "Color code for greenDark.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "greenLight",
@@ -104,7 +113,8 @@
             }
           ],
           "descriptionHtml": "Color code for greenLight.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "magenta",
@@ -114,7 +124,8 @@
             }
           ],
           "descriptionHtml": "Color code for magenta.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "magentaDark",
@@ -124,7 +135,8 @@
             }
           ],
           "descriptionHtml": "Color code for magentaDark.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "magentaLight",
@@ -134,7 +146,8 @@
             }
           ],
           "descriptionHtml": "Color code for magentaLight.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "neutralDark",
@@ -144,7 +157,8 @@
             }
           ],
           "descriptionHtml": "Color code for neutralDark.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "neutralLight",
@@ -154,7 +168,8 @@
             }
           ],
           "descriptionHtml": "Color code for neutralLight.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "neutralLighter",
@@ -164,7 +179,8 @@
             }
           ],
           "descriptionHtml": "Color code for neutralLighter.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "neutralLighterAlt",
@@ -174,7 +190,8 @@
             }
           ],
           "descriptionHtml": "Color code for neutralLighterAlt.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "neutralPrimary",
@@ -184,7 +201,8 @@
             }
           ],
           "descriptionHtml": "Color code for neutralPrimary.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "neutralPrimaryAlt",
@@ -194,7 +212,8 @@
             }
           ],
           "descriptionHtml": "Color code for neutralPrimaryAlt.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "neutralQuaternary",
@@ -204,7 +223,8 @@
             }
           ],
           "descriptionHtml": "Color code for neutralQuaternary.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "neutralQuaternaryAlt",
@@ -214,7 +234,8 @@
             }
           ],
           "descriptionHtml": "Color code for neutralQuaternaryAlt.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "neutralSecondary",
@@ -224,7 +245,8 @@
             }
           ],
           "descriptionHtml": "Color code for neutralSecondary.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "neutralSecondaryAlt",
@@ -234,7 +256,8 @@
             }
           ],
           "descriptionHtml": "Color code for neutralSecondaryAlt.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "neutralTertiary",
@@ -244,7 +267,8 @@
             }
           ],
           "descriptionHtml": "Color code for neutralTertiary.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "neutralTertiaryAlt",
@@ -254,7 +278,8 @@
             }
           ],
           "descriptionHtml": "Color code for neutralTertiaryAlt.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "orange",
@@ -264,7 +289,8 @@
             }
           ],
           "descriptionHtml": "Color code for orange.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "orangeLight",
@@ -274,7 +300,8 @@
             }
           ],
           "descriptionHtml": "Color code for orangeLight.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "orangeLighter",
@@ -284,7 +311,8 @@
             }
           ],
           "descriptionHtml": "Color code for orangeLighter.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "purple",
@@ -294,7 +322,8 @@
             }
           ],
           "descriptionHtml": "Color code for purple.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "purpleDark",
@@ -304,7 +333,8 @@
             }
           ],
           "descriptionHtml": "Color code for purpleDark.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "purpleLight",
@@ -314,7 +344,8 @@
             }
           ],
           "descriptionHtml": "Color code for purpleLight.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "red",
@@ -324,7 +355,8 @@
             }
           ],
           "descriptionHtml": "Color code for red.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "redDark",
@@ -334,7 +366,8 @@
             }
           ],
           "descriptionHtml": "Color code for redDark.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "teal",
@@ -344,7 +377,8 @@
             }
           ],
           "descriptionHtml": "Color code for teal.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "tealDark",
@@ -354,7 +388,8 @@
             }
           ],
           "descriptionHtml": "Color code for tealDark.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "tealLight",
@@ -364,7 +399,8 @@
             }
           ],
           "descriptionHtml": "Color code for tealLight.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "themeDark",
@@ -374,7 +410,8 @@
             }
           ],
           "descriptionHtml": "Color code for themeDark.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "themeDarkAlt",
@@ -384,7 +421,8 @@
             }
           ],
           "descriptionHtml": "Color code for themeDarkAlt.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "themeDarker",
@@ -394,7 +432,8 @@
             }
           ],
           "descriptionHtml": "Color code for themeDarker.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "themeLight",
@@ -404,7 +443,8 @@
             }
           ],
           "descriptionHtml": "Color code for themeLight.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "themeLighter",
@@ -414,7 +454,8 @@
             }
           ],
           "descriptionHtml": "Color code for themeLighter.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "themeLighterAlt",
@@ -424,7 +465,8 @@
             }
           ],
           "descriptionHtml": "Color code for themeLighterAlt.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "themePrimary",
@@ -434,7 +476,8 @@
             }
           ],
           "descriptionHtml": "Color code for themePrimary.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "themeSecondary",
@@ -444,7 +487,8 @@
             }
           ],
           "descriptionHtml": "Color code for themeSecondary.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "themeTertiary",
@@ -454,7 +498,8 @@
             }
           ],
           "descriptionHtml": "Color code for themeTertiary.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "white",
@@ -464,7 +509,8 @@
             }
           ],
           "descriptionHtml": "Color code for the softest color, which is white in the default theme. This is a very dark color in dark themes. This is the page background.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "whiteTranslucent40",
@@ -474,7 +520,8 @@
             }
           ],
           "descriptionHtml": "Color code for whiteTranslucent40\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "yellow",
@@ -484,7 +531,8 @@
             }
           ],
           "descriptionHtml": "Color code for yellow.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "yellowDark",
@@ -494,7 +542,8 @@
             }
           ],
           "descriptionHtml": "Color code for yellowDark.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "yellowLight",
@@ -504,7 +553,8 @@
             }
           ],
           "descriptionHtml": "Color code for yellowLight.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

@@ -21,7 +21,8 @@
             }
           ],
           "descriptionHtml": "Feature settings for the font.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "src",
@@ -31,7 +32,8 @@
             }
           ],
           "descriptionHtml": "Specifies the src of the font.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "unicodeRange",
@@ -44,7 +46,8 @@
             }
           ],
           "descriptionHtml": "unicode-range allows you to set a specific range of characters to be downloaded from a font (embedded using \\@font-face) and made available for use on the current page.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

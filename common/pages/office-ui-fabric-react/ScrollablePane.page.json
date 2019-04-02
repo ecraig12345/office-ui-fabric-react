@@ -85,7 +85,8 @@
             }
           ],
           "descriptionHtml": "Additional css class to apply to the ScrollablePane\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "undefined"
         },
         {
           "name": "componentRef",
@@ -97,14 +98,17 @@
               "text": "<"
             },
             {
-              "text": "IScrollablePane"
+              "text": "IScrollablePane",
+              "hyperlinkedPage": "ScrollablePane",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IScrollablePane interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "initialScrollPosition",
@@ -114,7 +118,8 @@
             }
           ],
           "descriptionHtml": "Sets the initial scroll position of the ScrollablePane\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "scrollbarVisibility",
@@ -136,20 +141,25 @@
               "text": "<"
             },
             {
-              "text": "IScrollablePaneStyleProps"
+              "text": "IScrollablePaneStyleProps",
+              "hyperlinkedPage": "ScrollablePane",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IScrollablePaneStyles"
+              "text": "IScrollablePaneStyles",
+              "hyperlinkedPage": "ScrollablePane",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -161,7 +171,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -179,13 +190,16 @@
             }
           ],
           "descriptionHtml": "Accept custom classNames\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "scrollbarVisibility",
           "typeTokens": [
             {
-              "text": "IScrollablePaneProps"
+              "text": "IScrollablePaneProps",
+              "hyperlinkedPage": "ScrollablePane",
+              "pageKind": "Components"
             },
             {
               "text": "['scrollbarVisibility']"
@@ -204,7 +218,8 @@
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -222,7 +237,8 @@
             }
           ],
           "descriptionHtml": "Style set for the contentContainer element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -232,7 +248,8 @@
             }
           ],
           "descriptionHtml": "Style set for the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "stickyAbove",
@@ -242,7 +259,8 @@
             }
           ],
           "descriptionHtml": "Style set for the stickyAbove element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "stickyBelow",
@@ -252,7 +270,8 @@
             }
           ],
           "descriptionHtml": "Style set for the stickyBelow element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "stickyBelowItems",
@@ -262,7 +281,8 @@
             }
           ],
           "descriptionHtml": "Style set for the stickyBelowItems element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

@@ -40,7 +40,8 @@
             }
           ],
           "descriptionHtml": "Additional css class to apply to the Overlay\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "undefined"
         },
         {
           "name": "componentRef",
@@ -52,14 +53,17 @@
               "text": "<"
             },
             {
-              "text": "IOverlay"
+              "text": "IOverlay",
+              "hyperlinkedPage": "Overlay",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Gets the component ref.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isDarkThemed",
@@ -69,7 +73,8 @@
             }
           ],
           "descriptionHtml": "Whether to use the dark-themed overlay.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "onClick",
@@ -91,20 +96,25 @@
               "text": "<"
             },
             {
-              "text": "IOverlayStyleProps"
+              "text": "IOverlayStyleProps",
+              "hyperlinkedPage": "Overlay",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IOverlayStyles"
+              "text": "IOverlayStyles",
+              "hyperlinkedPage": "Overlay",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -116,7 +126,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -134,7 +145,8 @@
             }
           ],
           "descriptionHtml": "Accept custom classNames\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isDark",
@@ -144,7 +156,8 @@
             }
           ],
           "descriptionHtml": "Is overlay dark themed\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isNone",
@@ -154,7 +167,8 @@
             }
           ],
           "descriptionHtml": "Is overlay visible\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -166,7 +180,8 @@
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -184,7 +199,8 @@
             }
           ],
           "descriptionHtml": "Style for the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

@@ -21,7 +21,8 @@
             }
           ],
           "descriptionHtml": "Background color for the beak and callout.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "beakWidth",
@@ -31,7 +32,8 @@
             }
           ],
           "descriptionHtml": "Width of Callout beak\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "calloutMaxWidth",
@@ -41,7 +43,8 @@
             }
           ],
           "descriptionHtml": "Max width for callout including borders.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "calloutWidth",
@@ -51,7 +54,8 @@
             }
           ],
           "descriptionHtml": "Width for callout including borders.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -61,7 +65,8 @@
             }
           ],
           "descriptionHtml": "CSS class to apply to the callout.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "overflowYHidden",
@@ -71,7 +76,8 @@
             }
           ],
           "descriptionHtml": "Whether or not to clip content of the callout, if it overflows vertically.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "positions",
@@ -81,7 +87,8 @@
             }
           ],
           "descriptionHtml": "Callout positioning data\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -93,7 +100,8 @@
             }
           ],
           "descriptionHtml": "Theme to apply to the calloutContent.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -111,7 +119,8 @@
             }
           ],
           "descriptionHtml": "Style for callout beak.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "beakCurtain",
@@ -121,7 +130,8 @@
             }
           ],
           "descriptionHtml": "Style for callout beak curtain.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "calloutMain",
@@ -131,7 +141,8 @@
             }
           ],
           "descriptionHtml": "Style for content component of the callout.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "container",
@@ -141,7 +152,8 @@
             }
           ],
           "descriptionHtml": "Style for wrapper of Callout component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -151,7 +163,8 @@
             }
           ],
           "descriptionHtml": "Style for callout container root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -188,7 +201,8 @@
             }
           ],
           "descriptionHtml": "If true the positioning logic will prefer to flip edges rather than to nudge the rectangle to fit within bounds, thus making sure the element aligns perfectly with target's alignment edge\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaDescribedBy",
@@ -198,7 +212,8 @@
             }
           ],
           "descriptionHtml": "Defines the element id referencing the element containing the description for the callout.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabel",
@@ -208,7 +223,8 @@
             }
           ],
           "descriptionHtml": "Accessible label text for callout.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabelledBy",
@@ -218,7 +234,8 @@
             }
           ],
           "descriptionHtml": "Defines the element id referencing the element containing label text for callout.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "backgroundColor",
@@ -228,7 +245,8 @@
             }
           ],
           "descriptionHtml": "The background color of the Callout in hex format ie. #ffffff.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "$ms-color-white"
         },
         {
           "name": "beakWidth",
@@ -238,17 +256,21 @@
             }
           ],
           "descriptionHtml": "The width of the beak.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "16"
         },
         {
           "name": "bounds",
           "typeTokens": [
             {
-              "text": "IRectangle"
+              "text": "IRectangle",
+              "hyperlinkedPage": "IRectangle",
+              "pageKind": "References"
             }
           ],
           "descriptionHtml": "The bounding rectangle for which the contextual menu can appear in.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "calloutMaxHeight",
@@ -258,7 +280,8 @@
             }
           ],
           "descriptionHtml": "Set max height of callout When not set the callout will expand with contents up to the bottom of the screen\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "calloutMaxWidth",
@@ -268,7 +291,8 @@
             }
           ],
           "descriptionHtml": "Custom width for callout including borders. If value is 0, no width is applied.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "0"
         },
         {
           "name": "calloutWidth",
@@ -278,7 +302,8 @@
             }
           ],
           "descriptionHtml": "Custom width for callout including borders. If value is 0, no width is applied.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "0"
         },
         {
           "name": "className",
@@ -288,7 +313,8 @@
             }
           ],
           "descriptionHtml": "CSS class to apply to the callout.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "null"
         },
         {
           "name": "componentRef",
@@ -300,14 +326,17 @@
               "text": "<"
             },
             {
-              "text": "ICallout"
+              "text": "ICallout",
+              "hyperlinkedPage": "Callout",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the ICallout interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "coverTarget",
@@ -317,7 +346,8 @@
             }
           ],
           "descriptionHtml": "If true the position returned will have the menu element cover the target. If false then it will position next to the target;\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "directionalHint",
@@ -327,7 +357,8 @@
             }
           ],
           "descriptionHtml": "How the element should be positioned\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "DirectionalHint.BottomAutoEdge"
         },
         {
           "name": "directionalHintFixed",
@@ -337,7 +368,8 @@
             }
           ],
           "descriptionHtml": "If true the position will not change sides in an attempt to fit the callout within bounds. It will still attempt to align it to whatever bounds are given.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "directionalHintForRTL",
@@ -347,7 +379,8 @@
             }
           ],
           "descriptionHtml": "How the element should be positioned in RTL layouts. If not specified, a mirror of `directionalHint` will be used instead\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "doNotLayer",
@@ -357,7 +390,8 @@
             }
           ],
           "descriptionHtml": "If true do not render on a new layer. If false render on a new layer.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "finalHeight",
@@ -367,7 +401,8 @@
             }
           ],
           "descriptionHtml": "Specify the final height of the content. To be used when expanding the content dynamically so that callout can adjust its position.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "gapSpace",
@@ -377,7 +412,8 @@
             }
           ],
           "descriptionHtml": "The gap between the Callout and the target\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "0"
         },
         {
           "name": "hidden",
@@ -387,7 +423,8 @@
             }
           ],
           "descriptionHtml": "If specified, renders the Callout in a hidden state. Use this flag, rather than rendering a callout conditionally based on visibility, to improve rendering performance when it becomes visible. Note: When callout is hidden its content will not be rendered. It will only render once the callout is visible.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "hideOverflow",
@@ -397,7 +434,8 @@
             }
           ],
           "descriptionHtml": "Manually set OverflowYHidden style prop to true on calloutMain element A variety of callout load animations will need this to hide the scollbar that can appear\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isBeakVisible",
@@ -407,17 +445,21 @@
             }
           ],
           "descriptionHtml": "If true then the beak is visible. If false it will not be shown.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "true"
         },
         {
           "name": "layerProps",
           "typeTokens": [
             {
-              "text": "ILayerProps"
+              "text": "ILayerProps",
+              "hyperlinkedPage": "Layer",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Optional props to pass to the Layer component hosting the panel.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "minPagePadding",
@@ -427,7 +469,8 @@
             }
           ],
           "descriptionHtml": "The minimum distance the callout will be away from the edge of the screen.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "8"
         },
         {
           "name": "onDismiss",
@@ -443,7 +486,8 @@
             }
           ],
           "descriptionHtml": "Callback when the Callout tries to close.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onLayerMounted",
@@ -453,7 +497,8 @@
             }
           ],
           "descriptionHtml": "Optional callback when the layer content has mounted.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onPositioned",
@@ -475,7 +520,8 @@
             }
           ],
           "descriptionHtml": "Optional callback that is called once the callout has been correctly positioned.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onScroll",
@@ -485,7 +531,8 @@
             }
           ],
           "descriptionHtml": "Callback when the Callout body is scrolled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "preventDismissOnLostFocus",
@@ -495,7 +542,8 @@
             }
           ],
           "descriptionHtml": "If true then the callout will not dismiss when it loses focus\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "preventDismissOnResize",
@@ -505,7 +553,8 @@
             }
           ],
           "descriptionHtml": "If true then the callout will not dismiss on resize\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "preventDismissOnScroll",
@@ -515,7 +564,8 @@
             }
           ],
           "descriptionHtml": "If true then the callout will not dismiss on scroll\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "role",
@@ -525,7 +575,8 @@
             }
           ],
           "descriptionHtml": "Aria role assigned to the callout (Eg. dialog, alertdialog).\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "setInitialFocus",
@@ -535,7 +586,8 @@
             }
           ],
           "descriptionHtml": "If true then the callout will attempt to focus the first focusable element that it contains. If it doesn't find an element, no focus will be set and the method will return false. This means that it's the contents responsibility to either set focus or have focusable items.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "style",
@@ -551,7 +603,8 @@
             }
           ],
           "descriptionHtml": "CSS style to apply to the callout.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -563,20 +616,25 @@
               "text": "<"
             },
             {
-              "text": "ICalloutContentStyleProps"
+              "text": "ICalloutContentStyleProps",
+              "hyperlinkedPage": "Callout",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "ICalloutContentStyles"
+              "text": "ICalloutContentStyles",
+              "hyperlinkedPage": "Callout",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional styles for the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "target",
@@ -594,14 +652,17 @@
               "text": " | "
             },
             {
-              "text": "IPoint"
+              "text": "IPoint",
+              "hyperlinkedPage": "IPoint",
+              "pageKind": "References"
             },
             {
               "text": " | null"
             }
           ],
           "descriptionHtml": "The target that the Callout should try to position itself based on. It can be either an Element a querySelector string of a valid Element or a MouseEvent. If MouseEvent is given then the origin point of the event will be used.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -613,7 +674,8 @@
             }
           ],
           "descriptionHtml": "Optional theme for component\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

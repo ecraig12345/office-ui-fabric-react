@@ -142,7 +142,8 @@ export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps
                 description: members[k].descriptionHtml,
                 name: members[k].name,
                 typeTokens: members[k].typeTokens,
-                deprecated: members[k].deprecated
+                deprecated: members[k].deprecated,
+                defaultValue: members[k].defaultValue || ''
               });
             }
 

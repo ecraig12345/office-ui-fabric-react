@@ -33,7 +33,8 @@
             }
           ],
           "descriptionHtml": "Text alternative of the progress status, used by screen readers for reading the value of the progress.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "barHeight",
@@ -43,7 +44,8 @@
             }
           ],
           "descriptionHtml": "Height of the ProgressIndicator\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "2"
         },
         {
           "name": "className",
@@ -53,7 +55,8 @@
             }
           ],
           "descriptionHtml": "Additional css class to apply to the ProgressIndicator\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "undefined"
         },
         {
           "name": "description",
@@ -69,7 +72,8 @@
             }
           ],
           "descriptionHtml": "Text describing or supplementing the operation. May be a string or React virtual elements.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "label",
@@ -85,28 +89,30 @@
             }
           ],
           "descriptionHtml": "Label to display above the control. May be a string or React virtual elements.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderProgress",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IProgressIndicatorProps"
+              "text": "IProgressIndicatorProps",
+              "hyperlinkedPage": "ProgressIndicator",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "A render override for the progress track.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "percentComplete",
@@ -116,7 +122,8 @@
             }
           ],
           "descriptionHtml": "Percentage of the operation's completeness, numerically between 0 and 1. If this is not set, the indeterminate progress animation will be shown instead.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "progressHidden",
@@ -126,7 +133,8 @@
             }
           ],
           "descriptionHtml": "Whether or not to hide the progress state.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -138,20 +146,25 @@
               "text": "<"
             },
             {
-              "text": "IProgressIndicatorStyleProps"
+              "text": "IProgressIndicatorStyleProps",
+              "hyperlinkedPage": "ProgressIndicator",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IProgressIndicatorStyles"
+              "text": "IProgressIndicatorStyles",
+              "hyperlinkedPage": "ProgressIndicator",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -163,7 +176,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "title",
@@ -173,7 +187,8 @@
             }
           ],
           "descriptionHtml": "Deprecated at v0.43.0, to be removed at \\>= v0.53.0. Use `label` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         }
       ]
     },
@@ -201,7 +216,8 @@
             }
           ],
           "descriptionHtml": "Accept custom classNames\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "indeterminate",
@@ -223,7 +239,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -291,7 +308,8 @@
             }
           ],
           "descriptionHtml": "Style for the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

@@ -1,5 +1,16 @@
 import * as path from 'path';
-import { DocExcerpt, DocInlineTag, DocNodeKind, DocSection, DocComment } from '@microsoft/tsdoc';
+import {
+  DocExcerpt,
+  DocInlineTag,
+  DocNodeKind,
+  DocSection,
+  DocComment,
+  DocPlainText,
+  DocParagraph,
+  DocNode,
+  DocNodeTransforms,
+  DocNodeContainer
+} from '@microsoft/tsdoc';
 import {
   ApiClass,
   ApiEntryPoint,
@@ -68,7 +79,7 @@ class CollectedData {
    * Map of page name to PageData
    */
   public pageDataByPageName: Map<string, PageData> = new Map<string, PageData>();
-  // public apiToPage: Map<string, IPage> = new Map<string, IPage>();
+  public apiToPage: Map<string, IPage> = new Map<string, IPage>();
 }
 
 /**
@@ -99,7 +110,6 @@ export function generateJson(options: IPageJsonOptions[]): void {
 
       const apiEntryPoint: ApiEntryPoint = apiPackage.entryPoints[0]; // assume there is only one entry point
 
-      // const collectedData: CollectedData = new CollectedData();
       // Store the data for each page in a map
       for (const pageName of option.pageNames) {
         collectedData.pageDataByPageName.set(pageName, new PageData(pageName, option.kind));
@@ -126,7 +136,7 @@ function generateTsxFiles(collectedData: CollectedData): void {
 
 /**
  * Create file for each page
- * @param options Page json options
+ * @param options - Page json options
  */
 function createPageJsonFiles(collectedData: CollectedData, options: IPageJsonOptions): void {
   if (options.kind === PageKind.Components) {
@@ -190,10 +200,38 @@ function createPageJsonFiles(collectedData: CollectedData, options: IPageJsonOpt
   }
 }
 
+function renderDefaultValue(section: DocNodeContainer): string {
+  let defaultValueAsString = '';
+  for (const node of section.nodes) {
+    defaultValueAsString += extractText(node);
+  }
+  return defaultValueAsString;
+}
+
+/**
+ * Extracts text from a doc node
+ *
+ * @param node - Node from which to extract text
+ */
+function extractText(node: DocNode): string {
+  switch (node.kind) {
+    case 'Paragraph':
+      const transformedParagraph: DocParagraph = DocNodeTransforms.trimSpacesInParagraph(node as DocParagraph);
+      return renderDefaultValue(transformedParagraph);
+    case 'CodeSpan':
+    case 'PlainText':
+      return (node as DocPlainText).text;
+    case 'SoftBreak':
+      return ' ';
+    default:
+      return '';
+  }
+}
+
 /**
  * Creates the interface page json object
  *
- * @param interfaceItem Interface item to search
+ * @param interfaceItem - Interface item to search
  */
 function createInterfacePageJson(collectedData: CollectedData, interfaceItem: ApiInterface): ITableJson {
   const interfaceTableRowJson: ITableRowJson[] = [];
@@ -221,7 +259,7 @@ function createInterfacePageJson(collectedData: CollectedData, interfaceItem: Ap
       const token: ExcerptToken = extendsType.excerpt.tokens[i];
       if (token.kind === ExcerptTokenKind.Reference) {
         // search for reference in collectedData
-        const apiPage = collectedData.pageDataByPageName.get(token.text);
+        const apiPage = collectedData.apiToPage.get(token.text);
         if (apiPage) {
           tableJson.extendsTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName, pageKind: apiPage.kind });
         } else {
@@ -244,6 +282,24 @@ function createInterfacePageJson(collectedData: CollectedData, interfaceItem: Ap
           deprecated: false
         };
 
+        if (apiPropertySignature.tsdocComment) {
+          let defaultValue = getBlockTagByName('@defaultValue', apiPropertySignature.tsdocComment);
+
+          if (defaultValue === undefined) {
+            defaultValue = getBlockTagByName('@defaultvalue', apiPropertySignature.tsdocComment);
+          }
+
+          if (defaultValue === undefined) {
+            defaultValue = getBlockTagByName('@default', apiPropertySignature.tsdocComment);
+          }
+
+          let defaultValueAsString = '';
+          if (defaultValue) {
+            defaultValueAsString = renderDefaultValue(defaultValue);
+          }
+          tableRowJson.defaultValue = defaultValueAsString;
+        }
+
         for (
           let i: number = apiPropertySignature.propertyTypeExcerpt.tokenRange.startIndex;
           i < apiPropertySignature.propertyTypeExcerpt.tokenRange.endIndex;
@@ -252,7 +308,7 @@ function createInterfacePageJson(collectedData: CollectedData, interfaceItem: Ap
           const token: ExcerptToken = apiPropertySignature.excerptTokens[i];
           if (token.kind === ExcerptTokenKind.Reference) {
             // search for reference in collectedData
-            const apiPage = collectedData.pageDataByPageName.get(token.text);
+            const apiPage = collectedData.apiToPage.get(token.text);
             if (apiPage !== undefined) {
               tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName, pageKind: apiPage.kind });
             } else {
@@ -285,7 +341,7 @@ function createInterfacePageJson(collectedData: CollectedData, interfaceItem: Ap
           const token: ExcerptToken = apiMethodSignature.excerptTokens[i];
           if (token.kind === ExcerptTokenKind.Reference) {
             // search for reference in collectedData
-            const apiPage = collectedData.pageDataByPageName.get(token.text);
+            const apiPage = collectedData.apiToPage.get(token.text);
             if (apiPage !== undefined) {
               tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName, pageKind: apiPage.kind });
             } else {
@@ -322,7 +378,7 @@ function createInterfacePageJson(collectedData: CollectedData, interfaceItem: Ap
 /**
  * Creates an enum table json object
  *
- * @param enumItem Enum item to search
+ * @param enumItem - Enum item to search
  */
 function createEnumPageJson(enumItem: ApiEnum): ITableJson {
   const enumTableRowJson: IEnumTableRowJson[] = [];
@@ -376,7 +432,7 @@ function createEnumPageJson(enumItem: ApiEnum): ITableJson {
 /**
  * Creates a class table json object
  *
- * @param classItem Class item to search
+ * @param classItem - Class item to search
  */
 function createClassPageJson(collectedData: CollectedData, classItem: ApiClass): ITableJson {
   const classTableRowJson: ITableRowJson[] = [];
@@ -411,6 +467,24 @@ function createClassPageJson(collectedData: CollectedData, classItem: ApiClass):
           deprecated: false
         };
 
+        if (classItem.tsdocComment) {
+          let defaultValue = getBlockTagByName('@defaultValue', classItem.tsdocComment);
+
+          if (defaultValue === undefined) {
+            defaultValue = getBlockTagByName('@defaultvalue', classItem.tsdocComment);
+          }
+
+          if (defaultValue === undefined) {
+            defaultValue = getBlockTagByName('@default', classItem.tsdocComment);
+          }
+
+          let defaultValueAsString = '';
+          if (defaultValue) {
+            defaultValueAsString = renderDefaultValue(defaultValue);
+          }
+          tableRowJson.defaultValue = defaultValueAsString;
+        }
+
         for (
           let i: number = apiProperty.propertyTypeExcerpt.tokenRange.startIndex;
           i < apiProperty.propertyTypeExcerpt.tokenRange.endIndex;
@@ -419,7 +493,7 @@ function createClassPageJson(collectedData: CollectedData, classItem: ApiClass):
           const token: ExcerptToken = apiProperty.excerptTokens[i];
           if (token.kind === ExcerptTokenKind.Reference) {
             // search for reference in collectedData
-            const apiPage = collectedData.pageDataByPageName.get(token.text);
+            const apiPage = collectedData.apiToPage.get(token.text);
             if (apiPage !== undefined) {
               tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName, pageKind: apiPage.kind });
             } else {
@@ -452,7 +526,7 @@ function createClassPageJson(collectedData: CollectedData, classItem: ApiClass):
           const token: ExcerptToken = apiMethod.excerptTokens[i];
           if (token.kind === ExcerptTokenKind.Reference) {
             // search for reference in collectedData
-            const apiPage = collectedData.pageDataByPageName.get(token.text);
+            const apiPage = collectedData.apiToPage.get(token.text);
             if (apiPage !== undefined) {
               tableRowJson.typeTokens.push({ text: token.text, hyperlinkedPage: apiPage.pageName, pageKind: apiPage.kind });
             } else {
@@ -486,7 +560,7 @@ function createClassPageJson(collectedData: CollectedData, classItem: ApiClass):
 /**
  * Renders the doc node (likely a DocComment's DocSection) without the inline tag
  *
- * @param docNode Doc node from which to remove the inline tag
+ * @param docNode - Doc node from which to remove the inline tag
  */
 function renderDocNodeWithoutInlineTag(docSection?: DocSection): string {
   let result = '';
@@ -504,10 +578,10 @@ function renderDocNodeWithoutInlineTag(docSection?: DocSection): string {
 }
 
 /**
- * Finds an inline tag by name from the provided doc node
+ * Finds an inline tag by name from the provided doc comment
  *
- * @param tagName Name of the inline tag
- * @param docNode Doc node to search
+ * @param tagName - Name of the inline tag
+ * @param docComment - Doc comment to search
  */
 function findInlineTagByName(tagName: string, docComment: DocComment): DocInlineTag | undefined {
   if (docComment instanceof DocInlineTag) {
@@ -525,10 +599,24 @@ function findInlineTagByName(tagName: string, docComment: DocComment): DocInline
 }
 
 /**
+ * Gets the block tag by name
+ *
+ * @param docComment - doc comment to search
+ */
+function getBlockTagByName(tagName: string, docComment: DocComment): DocSection | undefined {
+  for (const customBlock of docComment.customBlocks) {
+    if (customBlock.blockTag.tagName === tagName.toLowerCase()) {
+      return customBlock.content;
+    }
+  }
+  return undefined;
+}
+
+/**
  * Loads api items into the page data object.
  *
- * @param collectedData Map of strings to PageData
- * @param apiItem The apiItem to inspect
+ * @param collectedData - Map of strings to PageData
+ * @param apiItem - The apiItem to inspect
  */
 function collectPageData(collectedData: CollectedData, apiItem: ApiItem, kind: PageKind): void {
   if (apiItem instanceof ApiDocumentedItem) {
@@ -553,7 +641,7 @@ function collectPageData(collectedData: CollectedData, apiItem: ApiItem, kind: P
               pageData = collectedData.pageDataByPageName.get(pageName);
             }
 
-            // collectedData.apiToPage.set(apiItem.displayName, { pageName, kind });
+            collectedData.apiToPage.set(apiItem.displayName, { pageName, kind });
 
             pageData!.apiItems.push(apiItem);
           }

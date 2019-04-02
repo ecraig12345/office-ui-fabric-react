@@ -157,7 +157,8 @@
             }
           ],
           "descriptionHtml": "Optional accessibility label (aria-label) attribute that will be stamped on to the element. If none is specified, the arai-label attribute will contain the column name\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "calculatedWidth",
@@ -167,7 +168,8 @@
             }
           ],
           "descriptionHtml": "Internal only value.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -177,17 +179,21 @@
             }
           ],
           "descriptionHtml": "An optional class name to stick on the column cell within each row.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "columnActionsMode",
           "typeTokens": [
             {
-              "text": "ColumnActionsMode"
+              "text": "ColumnActionsMode",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Defines how the column's header should render.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "ColumnActionsMode.clickable"
         },
         {
           "name": "currentWidth",
@@ -197,7 +203,8 @@
             }
           ],
           "descriptionHtml": "Internal only value. Remembers the actual witdh of the column on any case. On the other hand, calculatedWidth is only saved when it's defined by user, not for justified calculations.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "data",
@@ -207,7 +214,8 @@
             }
           ],
           "descriptionHtml": "Arbitrary data passthrough which can be used by the caller.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "fieldName",
@@ -217,7 +225,8 @@
             }
           ],
           "descriptionHtml": "The field to pull the text value from for the column. This can be null if a custom onRender method is provided.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "filterAriaLabel",
@@ -227,7 +236,8 @@
             }
           ],
           "descriptionHtml": "ARIA label for the status of this column when filtered.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "groupAriaLabel",
@@ -237,7 +247,8 @@
             }
           ],
           "descriptionHtml": "ARIA label for the status of this column when grouped.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "headerClassName",
@@ -247,7 +258,8 @@
             }
           ],
           "descriptionHtml": "An optional class name to stick on the column cell within each header.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "iconClassName",
@@ -257,7 +269,8 @@
             }
           ],
           "descriptionHtml": "Class name to add to the Icon component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "iconName",
@@ -267,7 +280,8 @@
             }
           ],
           "descriptionHtml": "Optional iconName to use for the column header.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isCollapsable",
@@ -277,7 +291,8 @@
             }
           ],
           "descriptionHtml": "If specified will allow the column to be collapsed when rendered in justified layout.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "isCollapsible",
@@ -287,7 +302,8 @@
             }
           ],
           "descriptionHtml": "If specified will allow the column to be collapsed when rendered in justified layout.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isFiltered",
@@ -297,7 +313,8 @@
             }
           ],
           "descriptionHtml": "Determines if the column is filtered, and if so shows a filter icon.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isGrouped",
@@ -307,7 +324,8 @@
             }
           ],
           "descriptionHtml": "If set will show a grouped icon next to the column header name.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isIconOnly",
@@ -317,7 +335,8 @@
             }
           ],
           "descriptionHtml": "Whether or not only the icon is used in the column header. Set this to true so the column name and dropdown chevron are not displayed.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isMenuOpen",
@@ -327,7 +346,8 @@
             }
           ],
           "descriptionHtml": "Indicates whether a dropdown menu is open so that the appropriate ARIA attributes are rendered.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isMultiline",
@@ -337,7 +357,8 @@
             }
           ],
           "descriptionHtml": "Determines if the column can render multi-line text.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isPadded",
@@ -347,7 +368,8 @@
             }
           ],
           "descriptionHtml": "If set, will add additional LTR padding-right to column and cells.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isResizable",
@@ -357,7 +379,8 @@
             }
           ],
           "descriptionHtml": "Determines if the column can be resized.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isRowHeader",
@@ -367,7 +390,8 @@
             }
           ],
           "descriptionHtml": "Optional flag on whether the column is a header for the given row. There should be only one column with row header set to true.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "isSorted",
@@ -377,7 +401,8 @@
             }
           ],
           "descriptionHtml": "Determines if the column is currently sorted. Renders a sort arrow in the column header.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isSortedDescending",
@@ -387,7 +412,8 @@
             }
           ],
           "descriptionHtml": "Determines if the arrow is pointed down (descending) or up.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "key",
@@ -397,7 +423,8 @@
             }
           ],
           "descriptionHtml": "A unique key for identifying the column.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "maxWidth",
@@ -407,7 +434,8 @@
             }
           ],
           "descriptionHtml": "Maximum width for the column, if stretching is allowed in justified scenarios.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "minWidth",
@@ -417,7 +445,8 @@
             }
           ],
           "descriptionHtml": "Minimum width for the column.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "name",
@@ -427,7 +456,8 @@
             }
           ],
           "descriptionHtml": "Name to render on the column header.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onColumnClick",
@@ -466,14 +496,17 @@
               "text": ": "
             },
             {
-              "text": "IColumn"
+              "text": "IColumn",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ") => void"
             }
           ],
           "descriptionHtml": "If provided, will be executed when the user clicks on the column header.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onColumnContextMenu",
@@ -488,7 +521,9 @@
               "text": "?: "
             },
             {
-              "text": "IColumn"
+              "text": "IColumn",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ", "
@@ -519,7 +554,8 @@
             }
           ],
           "descriptionHtml": "If provided, will be executed when the user accesses the contextmenu on a column header.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onColumnResize",
@@ -535,7 +571,8 @@
             }
           ],
           "descriptionHtml": "If provided, will be executed when the column is resized with the column's current width. Prefer this callback over `DetailsList` `onColumnResize` if you require the `IColumn` to report its width after every resize event. Consider debouncing the callback if resize events occur frequently.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRender",
@@ -562,22 +599,23 @@
               "text": "?: "
             },
             {
-              "text": "IColumn"
+              "text": "IColumn",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ") => any"
             }
           ],
           "descriptionHtml": "If provided uses this method to render custom cell content, rather than the default text rendering.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderDivider",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
@@ -590,7 +628,8 @@
             }
           ],
           "descriptionHtml": "If provider, can be used to render a custom column header divider\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "sortAscendingAriaLabel",
@@ -600,7 +639,8 @@
             }
           ],
           "descriptionHtml": "ARIA label for the sort order of this column when sorted ascending.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "sortDescendingAriaLabel",
@@ -610,7 +650,8 @@
             }
           ],
           "descriptionHtml": "ARIA label for the sort order of this column when sorted descending.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -628,7 +669,8 @@
             }
           ],
           "descriptionHtml": "Specifies the source column index\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "-1"
         },
         {
           "name": "targetIndex",
@@ -638,7 +680,8 @@
             }
           ],
           "descriptionHtml": "Specifies the target column index\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "-1"
         }
       ]
     },
@@ -656,7 +699,8 @@
             }
           ],
           "descriptionHtml": "Specifies the number fixed columns from right\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "0"
         },
         {
           "name": "frozenColumnCountFromStart",
@@ -666,7 +710,8 @@
             }
           ],
           "descriptionHtml": "Specifies the number fixed columns from left(0th index)\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "0"
         },
         {
           "name": "handleColumnReorder",
@@ -688,7 +733,8 @@
             }
           ],
           "descriptionHtml": "Callback to handle the column reorder draggedIndex is the source column index, that need to be placed in targetIndex Deprecated, use `onColumnDrop` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "onColumnDragStart",
@@ -704,7 +750,8 @@
             }
           ],
           "descriptionHtml": "Callback to handle the column dragstart draggedStarted indicates that the column drag has been started on DetailsHeader\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onColumnDrop",
@@ -719,14 +766,17 @@
               "text": ": "
             },
             {
-              "text": "IColumnDragDropDetails"
+              "text": "IColumnDragDropDetails",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ") => void"
             }
           ],
           "descriptionHtml": "Callback to handle the column reorder draggedIndex is the source column index, that need to be placed in targetIndex\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onDragEnd",
@@ -741,14 +791,17 @@
               "text": ": "
             },
             {
-              "text": "ColumnDragEndLocation"
+              "text": "ColumnDragEndLocation",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ") => void"
             }
           ],
           "descriptionHtml": "Callback to handle the column reorder\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -757,7 +810,9 @@
       "name": "IDetailsFooterBaseProps",
       "extendsTokens": [
         {
-          "text": "IDetailsItemProps"
+          "text": "IDetailsItemProps",
+          "hyperlinkedPage": "DetailsList",
+          "pageKind": "Components"
         },
         {
           "text": " "
@@ -771,7 +826,9 @@
       "name": "IDetailsFooterProps",
       "extendsTokens": [
         {
-          "text": "IDetailsFooterBaseProps"
+          "text": "IDetailsFooterBaseProps",
+          "hyperlinkedPage": "DetailsList",
+          "pageKind": "Components"
         },
         {
           "text": " "
@@ -783,14 +840,17 @@
           "name": "columns",
           "typeTokens": [
             {
-              "text": "IColumn"
+              "text": "IColumn",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "Column metadata\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "selection",
@@ -800,7 +860,8 @@
             }
           ],
           "descriptionHtml": "Selection from utilities\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "selectionMode",
@@ -810,7 +871,8 @@
             }
           ],
           "descriptionHtml": "Selection mode\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -819,13 +881,17 @@
       "name": "IDetailsGroupDividerProps",
       "extendsTokens": [
         {
-          "text": "IGroupDividerProps"
+          "text": "IGroupDividerProps",
+          "hyperlinkedPage": "GroupedList",
+          "pageKind": "Components"
         },
         {
           "text": ", "
         },
         {
-          "text": "IDetailsItemProps"
+          "text": "IDetailsItemProps",
+          "hyperlinkedPage": "DetailsList",
+          "pageKind": "Components"
         },
         {
           "text": " "
@@ -839,7 +905,9 @@
       "name": "IDetailsGroupRenderProps",
       "extendsTokens": [
         {
-          "text": "IGroupRenderProps"
+          "text": "IGroupRenderProps",
+          "hyperlinkedPage": "GroupedList",
+          "pageKind": "Components"
         },
         {
           "text": " "
@@ -851,15 +919,15 @@
           "name": "onRenderFooter",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IDetailsGroupDividerProps"
+              "text": "IDetailsGroupDividerProps",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ">"
@@ -872,15 +940,15 @@
           "name": "onRenderHeader",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IDetailsGroupDividerProps"
+              "text": "IDetailsGroupDividerProps",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ">"
@@ -917,7 +985,9 @@
           "text": ", "
         },
         {
-          "text": "IDetailsItemProps"
+          "text": "IDetailsItemProps",
+          "hyperlinkedPage": "DetailsList",
+          "pageKind": "Components"
         },
         {
           "text": " "
@@ -933,7 +1003,8 @@
             }
           ],
           "descriptionHtml": "ariaLabel for the entire header\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabelForSelectAllCheckbox",
@@ -943,7 +1014,8 @@
             }
           ],
           "descriptionHtml": "ariaLabel for the header checkbox that selects or deselects everything\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabelForSelectionColumn",
@@ -953,7 +1025,8 @@
             }
           ],
           "descriptionHtml": "ariaLabel for the selection column\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabelForToggleAllGroupsButton",
@@ -963,7 +1036,8 @@
             }
           ],
           "descriptionHtml": "ariaLabel for expand/collapse group button\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -973,27 +1047,34 @@
             }
           ],
           "descriptionHtml": "Overriding class name\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "collapseAllVisibility",
           "typeTokens": [
             {
-              "text": "CollapseAllVisibility"
+              "text": "CollapseAllVisibility",
+              "hyperlinkedPage": "GroupedList",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Whether to collapse for all visibility\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "columnReorderOptions",
           "typeTokens": [
             {
-              "text": "IColumnReorderOptions"
+              "text": "IColumnReorderOptions",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Column reordering options\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "columnReorderProps",
@@ -1003,7 +1084,8 @@
             }
           ],
           "descriptionHtml": "Column reordering options\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -1022,7 +1104,8 @@
             }
           ],
           "descriptionHtml": "Ref to the component itself\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isAllCollapsed",
@@ -1032,17 +1115,21 @@
             }
           ],
           "descriptionHtml": "Whether or not all is collapsed\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "layoutMode",
           "typeTokens": [
             {
-              "text": "DetailsListLayoutMode"
+              "text": "DetailsListLayoutMode",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Layout mode - fixedColumns or justified\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "minimumPixelsForDrag",
@@ -1052,7 +1139,8 @@
             }
           ],
           "descriptionHtml": "Minimum pixels to be moved before dragging is registered\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onColumnAutoResized",
@@ -1067,7 +1155,9 @@
               "text": ": "
             },
             {
-              "text": "IColumn"
+              "text": "IColumn",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ", "
@@ -1080,7 +1170,8 @@
             }
           ],
           "descriptionHtml": "Callback for when column is automatically resized\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onColumnClick",
@@ -1119,14 +1210,17 @@
               "text": ": "
             },
             {
-              "text": "IColumn"
+              "text": "IColumn",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ") => void"
             }
           ],
           "descriptionHtml": "Callback for when the column is clicked\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onColumnContextMenu",
@@ -1141,7 +1235,9 @@
               "text": ": "
             },
             {
-              "text": "IColumn"
+              "text": "IColumn",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ", "
@@ -1172,7 +1268,8 @@
             }
           ],
           "descriptionHtml": "Callback for when the column needs to show a context menu\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onColumnIsSizingChanged",
@@ -1187,7 +1284,9 @@
               "text": ": "
             },
             {
-              "text": "IColumn"
+              "text": "IColumn",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ", "
@@ -1200,7 +1299,8 @@
             }
           ],
           "descriptionHtml": "Callback for when column sizing has changed\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onColumnResized",
@@ -1215,7 +1315,9 @@
               "text": ": "
             },
             {
-              "text": "IColumn"
+              "text": "IColumn",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ", "
@@ -1234,15 +1336,14 @@
             }
           ],
           "descriptionHtml": "Callback for when column is resized\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderColumnHeaderTooltip",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
@@ -1255,7 +1356,8 @@
             }
           ],
           "descriptionHtml": "Callback to render a tooltip for the column header\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onToggleCollapseAll",
@@ -1271,7 +1373,8 @@
             }
           ],
           "descriptionHtml": "Callback for when collapse all is toggled\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "selectAllVisibility",
@@ -1281,7 +1384,8 @@
             }
           ],
           "descriptionHtml": "Select all button visibility\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -1306,7 +1410,8 @@
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -1318,7 +1423,8 @@
             }
           ],
           "descriptionHtml": "Theme from the Higher Order Component\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -1327,7 +1433,9 @@
       "name": "IDetailsHeaderProps",
       "extendsTokens": [
         {
-          "text": "IDetailsHeaderBaseProps"
+          "text": "IDetailsHeaderBaseProps",
+          "hyperlinkedPage": "DetailsList",
+          "pageKind": "Components"
         },
         {
           "text": " "
@@ -1339,14 +1447,17 @@
           "name": "columns",
           "typeTokens": [
             {
-              "text": "IColumn"
+              "text": "IColumn",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "Column metadata\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "selection",
@@ -1356,7 +1467,8 @@
             }
           ],
           "descriptionHtml": "Selection from utilities\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "selectionMode",
@@ -1366,7 +1478,8 @@
             }
           ],
           "descriptionHtml": "Selection mode\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -1380,37 +1493,46 @@
           "name": "cellStyleProps",
           "typeTokens": [
             {
-              "text": "ICellStyleProps"
+              "text": "ICellStyleProps",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Rules for rendering column cells.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "checkboxVisibility",
           "typeTokens": [
             {
-              "text": "CheckboxVisibility"
+              "text": "CheckboxVisibility",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": " | undefined"
             }
           ],
           "descriptionHtml": "Checkbox visibility\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "columns",
           "typeTokens": [
             {
-              "text": "IColumn"
+              "text": "IColumn",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "Column metadata\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "groupNestingDepth",
@@ -1420,7 +1542,8 @@
             }
           ],
           "descriptionHtml": "Nesting depth of a grouping\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "indentWidth",
@@ -1430,7 +1553,8 @@
             }
           ],
           "descriptionHtml": "How much to indent\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "selection",
@@ -1443,7 +1567,8 @@
             }
           ],
           "descriptionHtml": "Selection from utilities\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "selectionMode",
@@ -1456,7 +1581,8 @@
             }
           ],
           "descriptionHtml": "Selection mode\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "viewport",
@@ -1469,7 +1595,8 @@
             }
           ],
           "descriptionHtml": "View port of the virtualized list\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -1478,7 +1605,9 @@
       "name": "IDetailsList",
       "extendsTokens": [
         {
-          "text": "IList"
+          "text": "IList",
+          "hyperlinkedPage": "List",
+          "pageKind": "Components"
         },
         {
           "text": " "
@@ -1530,7 +1659,8 @@
             }
           ],
           "descriptionHtml": "Scroll to and focus the item at the given index. focusIndex will call scrollToIndex on the specified index.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "forceUpdate",
@@ -1540,7 +1670,8 @@
             }
           ],
           "descriptionHtml": "Ensures that the list content is updated. Call this in cases where the list prop updates don't change, but the list still needs to be re-evaluated. For example, if a sizer bar is adjusted and causes the list width to change, you can call this to force a re-evaluation. Be aware that this can be an expensive operation and should be done sparingly.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getStartItemIndexInView",
@@ -1550,7 +1681,8 @@
             }
           ],
           "descriptionHtml": "Get the start index of the page that is currently in view\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -1567,7 +1699,9 @@
           "text": "<"
         },
         {
-          "text": "IDetailsList"
+          "text": "IDetailsList",
+          "hyperlinkedPage": "DetailsList",
+          "pageKind": "Components"
         },
         {
           "text": ">"
@@ -1592,7 +1726,8 @@
             }
           ],
           "descriptionHtml": "A text summary of the table set via aria-label.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabelForGrid",
@@ -1602,7 +1737,8 @@
             }
           ],
           "descriptionHtml": "Aria label for grid in details list.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabelForListHeader",
@@ -1612,7 +1748,8 @@
             }
           ],
           "descriptionHtml": "The aria-label attribute to stamp out on the list header\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabelForSelectAllCheckbox",
@@ -1622,7 +1759,8 @@
             }
           ],
           "descriptionHtml": "The aria-label attribute to stamp out on select all checkbox for the list\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabelForSelectionColumn",
@@ -1632,17 +1770,21 @@
             }
           ],
           "descriptionHtml": "An ARIA label for the name of the selection column, for localization.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "cellStyleProps",
           "typeTokens": [
             {
-              "text": "ICellStyleProps"
+              "text": "ICellStyleProps",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Props impacting the render style of cells. Since these have an impact on calculated column widths, they are handled separately from normal theme styling, but they are passed to the styling system.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "checkboxCellClassName",
@@ -1652,17 +1794,21 @@
             }
           ],
           "descriptionHtml": "Optional class name to add to the cell of a checkbox\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "checkboxVisibility",
           "typeTokens": [
             {
-              "text": "CheckboxVisibility"
+              "text": "CheckboxVisibility",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Controls the visibility of selection check box.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "CheckboxVisibility.onHover"
         },
         {
           "name": "checkButtonAriaLabel",
@@ -1672,7 +1818,8 @@
             }
           ],
           "descriptionHtml": "Check button aria label for details list.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -1682,30 +1829,37 @@
             }
           ],
           "descriptionHtml": "Optional class name to add to the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "columnReorderOptions",
           "typeTokens": [
             {
-              "text": "IColumnReorderOptions"
+              "text": "IColumnReorderOptions",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Options for column re-order using drag and drop\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "columns",
           "typeTokens": [
             {
-              "text": "IColumn"
+              "text": "IColumn",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "Given column defitions. If none are provided, default columns will be created based on the item's properties.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "compact",
@@ -1715,7 +1869,8 @@
             }
           ],
           "descriptionHtml": "Boolean value to indicate if the component should render in compact mode. Set to false by default\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -1727,24 +1882,30 @@
               "text": "<"
             },
             {
-              "text": "IDetailsList"
+              "text": "IDetailsList",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IDetailsList interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "constrainMode",
           "typeTokens": [
             {
-              "text": "ConstrainMode"
+              "text": "ConstrainMode",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Controls how the list contrains overflow.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "disableSelectionZone",
@@ -1754,7 +1915,8 @@
             }
           ],
           "descriptionHtml": "Whether or not to disable the built-in SelectionZone, so the host component can provide its own.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dragDropEvents",
@@ -1764,7 +1926,8 @@
             }
           ],
           "descriptionHtml": "Map of callback functions related to row drag and drop functionality.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "enableShimmer",
@@ -1774,7 +1937,8 @@
             }
           ],
           "descriptionHtml": "If set to true and we provide an empty array, it will render 10 lines of whatever provided in onRenderMissingItem.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "enterModalSelectionOnTouch",
@@ -1784,20 +1948,24 @@
             }
           ],
           "descriptionHtml": "Whether or not the selection zone should enter modal state on touch.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getGroupHeight",
           "typeTokens": [
             {
-              "text": "IGroupedListProps"
+              "text": "IGroupedListProps",
+              "hyperlinkedPage": "GroupedList",
+              "pageKind": "Components"
             },
             {
               "text": "['getGroupHeight']"
             }
           ],
           "descriptionHtml": "Optional function to override default group height calculation used by list virtualization.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getKey",
@@ -1819,7 +1987,8 @@
             }
           ],
           "descriptionHtml": "Optional callback to get the item key, to be used in the selection and on render.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getRowAriaDescribedBy",
@@ -1835,7 +2004,8 @@
             }
           ],
           "descriptionHtml": "Optional callback to get the aria-describedby IDs (space separated strings) of the elements that describe the item.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getRowAriaLabel",
@@ -1851,30 +2021,37 @@
             }
           ],
           "descriptionHtml": "Optional callback to get the aria-label string for a given item.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "groupProps",
           "typeTokens": [
             {
-              "text": "IDetailsGroupRenderProps"
+              "text": "IDetailsGroupRenderProps",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Optional override properties to render groups. The definition for IGroupRenderProps can be found under the GroupedList component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "groups",
           "typeTokens": [
             {
-              "text": "IGroup"
+              "text": "IGroup",
+              "hyperlinkedPage": "GroupedList",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "Optional grouping instructions. The definition for IGroup can be found under the GroupedList component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "indentWidth",
@@ -1884,7 +2061,8 @@
             }
           ],
           "descriptionHtml": "Optional override for the indent width used for group nesting.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "initialFocusedIndex",
@@ -1894,7 +2072,8 @@
             }
           ],
           "descriptionHtml": "Optional default focused index to set focus to once the items have rendered and the index exists.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isHeaderVisible",
@@ -1904,7 +2083,8 @@
             }
           ],
           "descriptionHtml": "Controls the visibility of the details header.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "true"
         },
         {
           "name": "items",
@@ -1914,27 +2094,34 @@
             }
           ],
           "descriptionHtml": "The items to render.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "layoutMode",
           "typeTokens": [
             {
-              "text": "DetailsListLayoutMode"
+              "text": "DetailsListLayoutMode",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Controls how the columns are adjusted.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "listProps",
           "typeTokens": [
             {
-              "text": "IListProps"
+              "text": "IListProps",
+              "hyperlinkedPage": "List",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Optional properties to pass through to the list components being rendered.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "minimumPixelsForDrag",
@@ -1944,7 +2131,8 @@
             }
           ],
           "descriptionHtml": "The minimum mouse move distance to interpret the action as drag event.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "5"
         },
         {
           "name": "onActiveItemChanged",
@@ -1990,7 +2178,8 @@
             }
           ],
           "descriptionHtml": "Callback for when an item in the list becomes active by clicking anywhere inside the row or navigating to it with keyboard.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onColumnHeaderClick",
@@ -2029,14 +2218,17 @@
               "text": "?: "
             },
             {
-              "text": "IColumn"
+              "text": "IColumn",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ") => void"
             }
           ],
           "descriptionHtml": "Callback for when the user clicks on the column header.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onColumnHeaderContextMenu",
@@ -2051,7 +2243,9 @@
               "text": "?: "
             },
             {
-              "text": "IColumn"
+              "text": "IColumn",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ", "
@@ -2082,7 +2276,8 @@
             }
           ],
           "descriptionHtml": "Callback for when the user asks for a contextual menu (usually via right click) from a column header.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onColumnResize",
@@ -2097,7 +2292,9 @@
               "text": "?: "
             },
             {
-              "text": "IColumn"
+              "text": "IColumn",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ", "
@@ -2116,7 +2313,8 @@
             }
           ],
           "descriptionHtml": "Callback fired on column resize\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onDidUpdate",
@@ -2138,7 +2336,8 @@
             }
           ],
           "descriptionHtml": "Callback for when the details list has been updated. Useful for telemetry tracking externally.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onItemContextMenu",
@@ -2172,7 +2371,8 @@
             }
           ],
           "descriptionHtml": "Callback for when the context menu of an item has been accessed. If undefined or false are returned, ev.preventDefault() will be called.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onItemInvoked",
@@ -2206,49 +2406,52 @@
             }
           ],
           "descriptionHtml": "Callback for when a given row has been invoked (by pressing enter while it is selected.)\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderDetailsFooter",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IDetailsFooterProps"
+              "text": "IDetailsFooterProps",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "An override to render the details footer.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderDetailsHeader",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IDetailsHeaderProps"
+              "text": "IDetailsHeaderProps",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "An override to render the details header.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderItemColumn",
@@ -2275,7 +2478,9 @@
               "text": "?: "
             },
             {
-              "text": "IColumn"
+              "text": "IColumn",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ") => "
@@ -2291,7 +2496,8 @@
             }
           ],
           "descriptionHtml": "If provided, will be the \"default\" item column renderer method. This affects cells within the rows; not the rows themselves. If a column definition provides its own onRender method, that will be used instead of this.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderMissingItem",
@@ -2312,7 +2518,9 @@
               "text": "?: "
             },
             {
-              "text": "IDetailsRowProps"
+              "text": "IDetailsRowProps",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ") => "
@@ -2328,28 +2536,30 @@
             }
           ],
           "descriptionHtml": "Callback for what to render when the item is missing.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderRow",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IDetailsRowProps"
+              "text": "IDetailsRowProps",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "If provided, will allow the caller to override the default row rendering.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRowDidMount",
@@ -2371,7 +2581,8 @@
             }
           ],
           "descriptionHtml": "Callback for when a given row has been mounted. Useful for identifying when a row has been rendered on the page.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRowWillUnmount",
@@ -2393,7 +2604,8 @@
             }
           ],
           "descriptionHtml": "Callback for when a given row has been unmounted. Useful for identifying when a row has been removed from the page.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onShouldVirtualize",
@@ -2408,14 +2620,17 @@
               "text": ": "
             },
             {
-              "text": "IListProps"
+              "text": "IListProps",
+              "hyperlinkedPage": "List",
+              "pageKind": "Components"
             },
             {
               "text": ") => boolean"
             }
           ],
           "descriptionHtml": "Optional callback to determine whether the list should be rendered in full, or virtualized. Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists. The default implementation will virtualize when this callback is not provided.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rowElementEventMap",
@@ -2455,7 +2670,8 @@
             }
           ],
           "descriptionHtml": "Event names and corresponding callbacks that will be registered to rendered row elements.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "selection",
@@ -2465,7 +2681,8 @@
             }
           ],
           "descriptionHtml": "Optional selection model to track selection state.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "selectionMode",
@@ -2475,7 +2692,8 @@
             }
           ],
           "descriptionHtml": "Controls how/if the details list manages selection. Options include none, single, multiple\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "selectionPreservedOnEmptyClick",
@@ -2485,7 +2703,8 @@
             }
           ],
           "descriptionHtml": "By default, selection is cleared when clicking on an empty (non-focusable) section of the screen. Setting this value to true overrides that behavior and maintains selection.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "selectionZoneProps",
@@ -2495,7 +2714,8 @@
             }
           ],
           "descriptionHtml": "Addition props to pass through to the selection zone created by default.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "setKey",
@@ -2505,7 +2725,8 @@
             }
           ],
           "descriptionHtml": "A key that uniquely identifies the given items. If provided, the selection will be reset when the key changes.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "shouldApplyApplicationRole",
@@ -2515,7 +2736,8 @@
             }
           ],
           "descriptionHtml": "Boolean value to indicate if the role application should be applied on details list. Set to false by default\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -2533,14 +2755,17 @@
               "text": ", "
             },
             {
-              "text": "IDetailsListStyles"
+              "text": "IDetailsListStyles",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Style function to be passed in to override the themed or default styles\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -2552,7 +2777,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by the Higher Order Component\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "usePageCache",
@@ -2562,7 +2788,8 @@
             }
           ],
           "descriptionHtml": "Boolean value to enable render page caching. This is an experimental performance optimization that is off by default.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "useReducedRowRenderer",
@@ -2572,7 +2799,8 @@
             }
           ],
           "descriptionHtml": "Rerender DetailsRow only when props changed. Might cause regression when depending on external updates.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "viewport",
@@ -2582,7 +2810,8 @@
             }
           ],
           "descriptionHtml": "Viewport, provided by the withViewport decorator.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -2652,7 +2881,9 @@
           "text": "<"
         },
         {
-          "text": "IDetailsListProps"
+          "text": "IDetailsListProps",
+          "hyperlinkedPage": "DetailsList",
+          "pageKind": "Components"
         },
         {
           "text": ", 'onRenderItemColumn'>"
@@ -2669,7 +2900,9 @@
           "text": "<"
         },
         {
-          "text": "IDetailsRow"
+          "text": "IDetailsRow",
+          "hyperlinkedPage": "DetailsList",
+          "pageKind": "Components"
         },
         {
           "text": ">"
@@ -2678,7 +2911,9 @@
           "text": ", "
         },
         {
-          "text": "IDetailsItemProps"
+          "text": "IDetailsItemProps",
+          "hyperlinkedPage": "DetailsList",
+          "pageKind": "Components"
         },
         {
           "text": " "
@@ -2712,7 +2947,8 @@
             }
           ],
           "descriptionHtml": "Optional pre-rendered content per column. Preferred over onRender or onRenderItemColumn if provided.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "checkboxCellClassName",
@@ -2722,7 +2958,8 @@
             }
           ],
           "descriptionHtml": "Class name for the checkbox cell\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "checkButtonAriaLabel",
@@ -2732,7 +2969,8 @@
             }
           ],
           "descriptionHtml": "Check button's aria label\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -2742,17 +2980,21 @@
             }
           ],
           "descriptionHtml": "Overriding class name\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "collapseAllVisibility",
           "typeTokens": [
             {
-              "text": "CollapseAllVisibility"
+              "text": "CollapseAllVisibility",
+              "hyperlinkedPage": "GroupedList",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Collapse all visibility\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "compact",
@@ -2762,7 +3004,8 @@
             }
           ],
           "descriptionHtml": "Whether to render in compact mode\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -2774,14 +3017,17 @@
               "text": "<"
             },
             {
-              "text": "IDetailsRow"
+              "text": "IDetailsRow",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Ref of the component\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dragDropEvents",
@@ -2791,7 +3037,8 @@
             }
           ],
           "descriptionHtml": "Handling drag and drop events\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dragDropHelper",
@@ -2801,7 +3048,8 @@
             }
           ],
           "descriptionHtml": "Helper for the drag and drop\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "eventsToRegister",
@@ -2841,7 +3089,8 @@
             }
           ],
           "descriptionHtml": "A list of events to register\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getRowAriaDescribedBy",
@@ -2857,7 +3106,8 @@
             }
           ],
           "descriptionHtml": "Callback for getting the row aria-describedby\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "getRowAriaLabel",
@@ -2873,7 +3123,8 @@
             }
           ],
           "descriptionHtml": "Callback for getting the row aria label\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "item",
@@ -2883,7 +3134,8 @@
             }
           ],
           "descriptionHtml": "Data source for this component\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "itemIndex",
@@ -2893,7 +3145,8 @@
             }
           ],
           "descriptionHtml": "Index of the collection of items of the DetailsList\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onDidMount",
@@ -2915,7 +3168,8 @@
             }
           ],
           "descriptionHtml": "Callback for did mount for parent\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderCheck",
@@ -2930,7 +3184,9 @@
               "text": ": "
             },
             {
-              "text": "IDetailsRowCheckProps"
+              "text": "IDetailsRowCheckProps",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ") => "
@@ -2946,7 +3202,8 @@
             }
           ],
           "descriptionHtml": "Callback for rendering a checkbox\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onWillUnmount",
@@ -2968,7 +3225,8 @@
             }
           ],
           "descriptionHtml": "Callback for will mount for parent\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "rowFieldsAs",
@@ -3011,7 +3269,8 @@
             }
           ],
           "descriptionHtml": "DOM element into which to render row field\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "shimmer",
@@ -3021,7 +3280,8 @@
             }
           ],
           "descriptionHtml": "Whether to render shimmer\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -3039,14 +3299,17 @@
               "text": ", "
             },
             {
-              "text": "IDetailsRowStyles"
+              "text": "IDetailsRowStyles",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Overriding styles to this row\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -3058,7 +3321,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by styled() function\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "useReducedRowRenderer",
@@ -3068,7 +3332,8 @@
             }
           ],
           "descriptionHtml": "Rerender DetailsRow only when props changed. Might cause regression when depending on external updates.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         }
       ]
     },
@@ -3105,7 +3370,8 @@
             }
           ],
           "descriptionHtml": "Is any selected - also true for isSelectionModal\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "canSelect",
@@ -3115,7 +3381,8 @@
             }
           ],
           "descriptionHtml": "Can this checkbox be selectable\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "checkClassName",
@@ -3125,7 +3392,8 @@
             }
           ],
           "descriptionHtml": "The classname to be passed down to Check component\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -3135,7 +3403,8 @@
             }
           ],
           "descriptionHtml": "Optional className to attach to the slider root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "compact",
@@ -3145,7 +3414,8 @@
             }
           ],
           "descriptionHtml": "Is this in compact mode?\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isHeader",
@@ -3155,7 +3425,8 @@
             }
           ],
           "descriptionHtml": "Is the check part of the header in a DetailsList\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isSelected",
@@ -3165,7 +3436,8 @@
             }
           ],
           "descriptionHtml": "Deprecated, use `selected` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "isVisible",
@@ -3175,7 +3447,8 @@
             }
           ],
           "descriptionHtml": "Whether or not this checkbox is visible\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "selected",
@@ -3185,7 +3458,8 @@
             }
           ],
           "descriptionHtml": "Whether or not this check is selected\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -3203,14 +3477,17 @@
               "text": ", "
             },
             {
-              "text": "IDetailsRowCheckStyles"
+              "text": "IDetailsRowCheckStyles",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Style override\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -3222,7 +3499,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by High-Order Component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -3269,7 +3547,9 @@
       "name": "IDetailsRowProps",
       "extendsTokens": [
         {
-          "text": "IDetailsRowBaseProps"
+          "text": "IDetailsRowBaseProps",
+          "hyperlinkedPage": "DetailsList",
+          "pageKind": "Components"
         },
         {
           "text": " "
@@ -3281,14 +3561,17 @@
           "name": "columns",
           "typeTokens": [
             {
-              "text": "IColumn"
+              "text": "IColumn",
+              "hyperlinkedPage": "DetailsList",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "Column metadata\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "selection",
@@ -3298,7 +3581,8 @@
             }
           ],
           "descriptionHtml": "Selection from utilities\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "selectionMode",
@@ -3308,7 +3592,8 @@
             }
           ],
           "descriptionHtml": "Selection mode\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },

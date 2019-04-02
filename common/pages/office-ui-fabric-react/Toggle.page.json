@@ -51,7 +51,8 @@
             }
           ],
           "descriptionHtml": "Text for screen-reader to announce as the name of the toggle.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "as",
@@ -82,7 +83,8 @@
             }
           ],
           "descriptionHtml": "Render the root element as another type.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "checked",
@@ -92,7 +94,8 @@
             }
           ],
           "descriptionHtml": "Checked state of the toggle. If you are maintaining state yourself, use this property. Otherwise refer to `defaultChecked`.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -104,14 +107,17 @@
               "text": "<"
             },
             {
-              "text": "IToggle"
+              "text": "IToggle",
+              "hyperlinkedPage": "Toggle",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IToggle interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "defaultChecked",
@@ -121,7 +127,8 @@
             }
           ],
           "descriptionHtml": "Initial state of the toggle. If you want the toggle to maintain its own state, use this. Otherwise refer to `checked`.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "disabled",
@@ -131,7 +138,8 @@
             }
           ],
           "descriptionHtml": "Optional disabled flag.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "inlineLabel",
@@ -141,17 +149,21 @@
             }
           ],
           "descriptionHtml": "Whether the label (not the onText/offText) should be positioned inline with the toggle control. Left (right in RTL) side when on/off text provided VS right (left in RTL) side when no on/off text. Caution: when not providing on/off text user may get confused in differentiating the on/off states of the toggle.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "keytipProps",
           "typeTokens": [
             {
-              "text": "IKeytipProps"
+              "text": "IKeytipProps",
+              "hyperlinkedPage": "Keytip",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Optional keytip for this toggle\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "label",
@@ -161,7 +173,8 @@
             }
           ],
           "descriptionHtml": "A label for the toggle.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "offAriaLabel",
@@ -171,7 +184,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "offText",
@@ -181,7 +195,8 @@
             }
           ],
           "descriptionHtml": "Text to display when toggle is OFF. Caution: when not providing on/off text user may get confused in differentiating the on/off states of the toggle.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onAriaLabel",
@@ -191,7 +206,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "onChange",
@@ -231,7 +247,8 @@
             }
           ],
           "descriptionHtml": "Callback issued when the value changes.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onChanged",
@@ -247,7 +264,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "onText",
@@ -257,7 +275,8 @@
             }
           ],
           "descriptionHtml": "Text to display when toggle is ON. Caution: when not providing on/off text user may get confused in differentiating the on/off states of the toggle.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -269,20 +288,25 @@
               "text": "<"
             },
             {
-              "text": "IToggleStyleProps"
+              "text": "IToggleStyleProps",
+              "hyperlinkedPage": "Toggle",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IToggleStyles"
+              "text": "IToggleStyles",
+              "hyperlinkedPage": "Toggle",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional styles for the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -294,7 +318,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -312,7 +337,8 @@
             }
           ],
           "descriptionHtml": "Component is checked.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -322,7 +348,8 @@
             }
           ],
           "descriptionHtml": "Root element class name.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "disabled",
@@ -332,7 +359,8 @@
             }
           ],
           "descriptionHtml": "Component is disabled.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "inlineLabel",
@@ -342,7 +370,8 @@
             }
           ],
           "descriptionHtml": "Whether label should be positioned inline with the toggle.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onOffMissing",
@@ -352,7 +381,8 @@
             }
           ],
           "descriptionHtml": "Whether the user did not specify a on/off text. Influencing only when inlineLabel is used.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -364,7 +394,8 @@
             }
           ],
           "descriptionHtml": "Theme values.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -382,7 +413,8 @@
             }
           ],
           "descriptionHtml": "Container for the toggle pill and the text next to it.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "label",
@@ -392,7 +424,8 @@
             }
           ],
           "descriptionHtml": "Label element above the toggle.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "pill",
@@ -402,7 +435,8 @@
             }
           ],
           "descriptionHtml": "Pill, rendered as a button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "root",
@@ -412,7 +446,8 @@
             }
           ],
           "descriptionHtml": "Root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "text",
@@ -422,7 +457,8 @@
             }
           ],
           "descriptionHtml": "Text next to the pill.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "thumb",
@@ -432,7 +468,8 @@
             }
           ],
           "descriptionHtml": "Thumb inside of the pill.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

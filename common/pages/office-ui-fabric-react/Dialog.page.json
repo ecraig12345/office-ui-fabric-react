@@ -70,7 +70,8 @@
             }
           ],
           "descriptionHtml": "Optional override class name\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "closeButtonAriaLabel",
@@ -80,7 +81,8 @@
             }
           ],
           "descriptionHtml": "Label to be passed to to aria-label of close button\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "Close"
         },
         {
           "name": "componentRef",
@@ -92,14 +94,17 @@
               "text": "<"
             },
             {
-              "text": "IDialogContent"
+              "text": "IDialogContent",
+              "hyperlinkedPage": "Dialog",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IDialogContent interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isMultiline",
@@ -109,7 +114,8 @@
             }
           ],
           "descriptionHtml": "Is inside a multiline wrapper\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onDismiss",
@@ -143,7 +149,8 @@
             }
           ],
           "descriptionHtml": "A callback function for when the Dialog is dismissed from the close button or light dismiss, before the animation completes.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "responsiveMode",
@@ -153,7 +160,8 @@
             }
           ],
           "descriptionHtml": "Responsive mode passed in from decorator.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "showCloseButton",
@@ -163,7 +171,8 @@
             }
           ],
           "descriptionHtml": "Show an 'x' close button in the upper-right corner\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -175,20 +184,25 @@
               "text": "<"
             },
             {
-              "text": "IDialogContentStyleProps"
+              "text": "IDialogContentStyleProps",
+              "hyperlinkedPage": "Dialog",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IDialogContentStyles"
+              "text": "IDialogContentStyles",
+              "hyperlinkedPage": "Dialog",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "subText",
@@ -198,7 +212,8 @@
             }
           ],
           "descriptionHtml": "The subtext to display in the dialog\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "subTextId",
@@ -208,7 +223,8 @@
             }
           ],
           "descriptionHtml": "The Id for subText container\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -220,7 +236,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "title",
@@ -239,7 +256,8 @@
             }
           ],
           "descriptionHtml": "The title text to display at the top of the dialog.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "titleId",
@@ -249,30 +267,37 @@
             }
           ],
           "descriptionHtml": "The Id for title container\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "topButtonsProps",
           "typeTokens": [
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "Other top buttons that will show up next to the close button\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "type",
           "typeTokens": [
             {
-              "text": "DialogType"
+              "text": "DialogType",
+              "hyperlinkedPage": "Dialog",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "The type of Dialog to display.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "DialogType.normal"
         }
       ]
     },
@@ -290,7 +315,8 @@
             }
           ],
           "descriptionHtml": "Accept custom classNames\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "hidden",
@@ -330,7 +356,8 @@
             }
           ],
           "descriptionHtml": "Is inside a multiline wrapper\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -342,7 +369,8 @@
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -370,7 +398,8 @@
             }
           ],
           "descriptionHtml": "Style for the content element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "header",
@@ -474,7 +503,8 @@
             }
           ],
           "descriptionHtml": "Optional override class name\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -486,14 +516,17 @@
               "text": "<"
             },
             {
-              "text": "IDialogFooter"
+              "text": "IDialogFooter",
+              "hyperlinkedPage": "Dialog",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Gets the component ref.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -505,20 +538,25 @@
               "text": "<"
             },
             {
-              "text": "IDialogFooterStyleProps"
+              "text": "IDialogFooterStyleProps",
+              "hyperlinkedPage": "Dialog",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IDialogFooterStyles"
+              "text": "IDialogFooterStyles",
+              "hyperlinkedPage": "Dialog",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -530,7 +568,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -548,7 +587,8 @@
             }
           ],
           "descriptionHtml": "Optional override class name\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -560,7 +600,8 @@
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -588,7 +629,8 @@
             }
           ],
           "descriptionHtml": "Style for the actions element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "actionsRight",
@@ -650,7 +692,8 @@
             }
           ],
           "descriptionHtml": "Optional id for aria-DescribedBy\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "ariaLabelledById",
@@ -660,7 +703,8 @@
             }
           ],
           "descriptionHtml": "Optional id for aria-LabelledBy\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -670,7 +714,8 @@
             }
           ],
           "descriptionHtml": "Optional class name to be added to the root class\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -682,14 +727,17 @@
               "text": "<"
             },
             {
-              "text": "IDialog"
+              "text": "IDialog",
+              "hyperlinkedPage": "Dialog",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IDialog interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "containerClassName",
@@ -699,7 +747,8 @@
             }
           ],
           "descriptionHtml": "Optional override for container class\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "contentClassName",
@@ -709,17 +758,21 @@
             }
           ],
           "descriptionHtml": "Optional override content class\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "dialogContentProps",
           "typeTokens": [
             {
-              "text": "IDialogContentProps"
+              "text": "IDialogContentProps",
+              "hyperlinkedPage": "Dialog",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Props to be passed through to Dialog Content\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "hidden",
@@ -729,7 +782,8 @@
             }
           ],
           "descriptionHtml": "Whether the dialog is hidden.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "true"
         },
         {
           "name": "isBlocking",
@@ -739,7 +793,8 @@
             }
           ],
           "descriptionHtml": "Whether the dialog can be light dismissed by clicking outside the dialog (on the overlay).\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": "false"
         },
         {
           "name": "isDarkOverlay",
@@ -749,7 +804,8 @@
             }
           ],
           "descriptionHtml": "Whether the overlay is dark themed.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": "true"
         },
         {
           "name": "isOpen",
@@ -759,7 +815,8 @@
             }
           ],
           "descriptionHtml": "Whether the dialog is displayed. Deprecated, use `hidden` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": "false"
         },
         {
           "name": "maxWidth",
@@ -775,7 +832,8 @@
             }
           ],
           "descriptionHtml": "Sets the maximum width for the dialog. It limits the width property to be larger than the value specified in max-width.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "minWidth",
@@ -791,17 +849,21 @@
             }
           ],
           "descriptionHtml": "Sets the minimum width of the dialog. It limits the width property to be not smaller than the value specified in min-width.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "modalProps",
           "typeTokens": [
             {
-              "text": "IModalProps"
+              "text": "IModalProps",
+              "hyperlinkedPage": "Modal",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Props to be passed through to Modal\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onDismiss",
@@ -835,7 +897,8 @@
             }
           ],
           "descriptionHtml": "A callback function for when the Dialog is dismissed from the close button or light dismiss. Can also be specified separately in content and modal.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onDismissed",
@@ -845,7 +908,8 @@
             }
           ],
           "descriptionHtml": "A callback function which is called after the Dialog is dismissed and the animation is complete.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "onLayerDidMount",
@@ -855,7 +919,8 @@
             }
           ],
           "descriptionHtml": "A callback function for when the Dialog content is mounted on the overlay layer\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "onLayerMounted",
@@ -865,7 +930,8 @@
             }
           ],
           "descriptionHtml": "Deprecated at 0.81.2, use `onLayerDidMount` instead.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -877,20 +943,25 @@
               "text": "<"
             },
             {
-              "text": "IDialogStyleProps"
+              "text": "IDialogStyleProps",
+              "hyperlinkedPage": "Dialog",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IDialogStyles"
+              "text": "IDialogStyles",
+              "hyperlinkedPage": "Dialog",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Call to provide customized styling that will layer on top of the variant rules\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "subText",
@@ -900,7 +971,8 @@
             }
           ],
           "descriptionHtml": "The subtext to display in the dialog.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "theme",
@@ -912,7 +984,8 @@
             }
           ],
           "descriptionHtml": "Theme provided by HOC.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "title",
@@ -931,30 +1004,37 @@
             }
           ],
           "descriptionHtml": "The title text to display at the top of the dialog.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "topButtonsProps",
           "typeTokens": [
             {
-              "text": "IButtonProps"
+              "text": "IButtonProps",
+              "hyperlinkedPage": "Button",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "Other top buttons that will show up next to the close button\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "type",
           "typeTokens": [
             {
-              "text": "DialogType"
+              "text": "DialogType",
+              "hyperlinkedPage": "Dialog",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "The type of Dialog to display.\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": "DialogType.normal"
         }
       ]
     },
@@ -972,7 +1052,8 @@
             }
           ],
           "descriptionHtml": "Accept custom classNames\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "containerClassName",
@@ -982,7 +1063,8 @@
             }
           ],
           "descriptionHtml": "Optional override for container class\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "contentClassName",
@@ -992,7 +1074,8 @@
             }
           ],
           "descriptionHtml": "Optional override content class\n\n",
-          "deprecated": true
+          "deprecated": true,
+          "defaultValue": ""
         },
         {
           "name": "dialogDefaultMaxWidth",
@@ -1011,7 +1094,8 @@
             }
           ],
           "descriptionHtml": "Default max-width for the dialog box.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "'340px'"
         },
         {
           "name": "dialogDefaultMinWidth",
@@ -1030,7 +1114,8 @@
             }
           ],
           "descriptionHtml": "Default min-width for the dialog box.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "'288px'"
         },
         {
           "name": "hidden",
@@ -1040,7 +1125,8 @@
             }
           ],
           "descriptionHtml": "Whether the dialog is hidden.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": "false"
         },
         {
           "name": "theme",
@@ -1052,7 +1138,8 @@
             }
           ],
           "descriptionHtml": "Accept theme prop.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -1080,7 +1167,8 @@
             }
           ],
           "descriptionHtml": "Style for the root element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }

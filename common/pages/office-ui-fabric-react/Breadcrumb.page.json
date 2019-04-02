@@ -41,7 +41,8 @@
             }
           ],
           "descriptionHtml": "Url to navigate to when this breadcrumb is clicked.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "isCurrentItem",
@@ -51,7 +52,8 @@
             }
           ],
           "descriptionHtml": "If this breadcrumb item is the item the user is currently on, if set to true, aria-current=\"page\" will be applied to this breadcrumb link\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "key",
@@ -61,7 +63,8 @@
             }
           ],
           "descriptionHtml": "Arbitrary unique string associated with the breadcrumb\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onClick",
@@ -100,14 +103,17 @@
               "text": "?: "
             },
             {
-              "text": "IBreadcrumbItem"
+              "text": "IBreadcrumbItem",
+              "hyperlinkedPage": "Breadcrumb",
+              "pageKind": "Components"
             },
             {
               "text": ") => void"
             }
           ],
           "descriptionHtml": "Callback issued when the breadcrumb is selected.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "text",
@@ -117,7 +123,8 @@
             }
           ],
           "descriptionHtml": "Text to display to the user for the breadcrumb\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     },
@@ -154,7 +161,8 @@
             }
           ],
           "descriptionHtml": "Aria label to place on the navigation landmark for breadcrumb\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "className",
@@ -164,7 +172,8 @@
             }
           ],
           "descriptionHtml": "Optional root classname for the root breadcrumb element.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "componentRef",
@@ -176,14 +185,17 @@
               "text": "<"
             },
             {
-              "text": "IBreadcrumb"
+              "text": "IBreadcrumb",
+              "hyperlinkedPage": "Breadcrumb",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Optional callback to access the IBreadcrumb interface. Use this instead of ref for accessing the public methods and properties of the component.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "dividerAs",
@@ -195,27 +207,33 @@
               "text": "<"
             },
             {
-              "text": "IDividerAsProps"
+              "text": "IDividerAsProps",
+              "hyperlinkedPage": "Breadcrumb",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Render a custom divider in place of the default chevron `>`\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "items",
           "typeTokens": [
             {
-              "text": "IBreadcrumbItem"
+              "text": "IBreadcrumbItem",
+              "hyperlinkedPage": "Breadcrumb",
+              "pageKind": "Components"
             },
             {
               "text": "[]"
             }
           ],
           "descriptionHtml": "Collection of breadcrumbs to render\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "maxDisplayedItems",
@@ -225,7 +243,8 @@
             }
           ],
           "descriptionHtml": "The maximum number of breadcrumbs to display before coalescing. If not specified, all breadcrumbs will be rendered.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onReduceData",
@@ -253,28 +272,30 @@
             }
           ],
           "descriptionHtml": "Method to call when reducing the length of the breadcrumb. Return undefined to never reduce breadcrumb length\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "onRenderItem",
           "typeTokens": [
             {
-              "text": "IRenderFunction",
-              "hyperlinkedPage": "IRenderFunction",
-              "pageKind": "References"
+              "text": "IRenderFunction"
             },
             {
               "text": "<"
             },
             {
-              "text": "IBreadcrumbItem"
+              "text": "IBreadcrumbItem",
+              "hyperlinkedPage": "Breadcrumb",
+              "pageKind": "Components"
             },
             {
               "text": ">"
             }
           ],
           "descriptionHtml": "Method to call when trying to render an item.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "overflowAriaLabel",
@@ -284,7 +305,8 @@
             }
           ],
           "descriptionHtml": "Optional name to use for aria label on overflow button.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "overflowIndex",
@@ -294,7 +316,8 @@
             }
           ],
           "descriptionHtml": "Optional index where overflow items will be collapsed. Defaults to 0.\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         },
         {
           "name": "styles",
@@ -306,13 +329,17 @@
               "text": "<"
             },
             {
-              "text": "IBreadcrumbStyleProps"
+              "text": "IBreadcrumbStyleProps",
+              "hyperlinkedPage": "Breadcrumb",
+              "pageKind": "Components"
             },
             {
               "text": ", "
             },
             {
-              "text": "IBreadcrumbStyles"
+              "text": "IBreadcrumbStyles",
+              "hyperlinkedPage": "Breadcrumb",
+              "pageKind": "Components"
             },
             {
               "text": ">"
@@ -458,7 +485,9 @@
       "name": "IDividerAsProps",
       "extendsTokens": [
         {
-          "text": "IIconProps"
+          "text": "IIconProps",
+          "hyperlinkedPage": "Icon",
+          "pageKind": "Components"
         },
         {
           "text": " "
@@ -470,11 +499,14 @@
           "name": "item",
           "typeTokens": [
             {
-              "text": "IBreadcrumbItem"
+              "text": "IBreadcrumbItem",
+              "hyperlinkedPage": "Breadcrumb",
+              "pageKind": "Components"
             }
           ],
           "descriptionHtml": "Optional breadcrumb item corresponds to left of the divider to be passed for custom rendering. For overflowed items, it will be last item in the list\n",
-          "deprecated": false
+          "deprecated": false,
+          "defaultValue": ""
         }
       ]
     }
