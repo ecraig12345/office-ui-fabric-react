@@ -52,7 +52,6 @@ export interface IFileExampleItem {
 
 export interface IAnnouncedBulkOperationsExampleState {
   items: IFileExampleItem[];
-  columns: IColumn[];
   numberOfItems: number;
 }
 
@@ -83,13 +82,12 @@ export class AnnouncedBulkOperationsExample extends React.Component<{}, IAnnounc
 
     this.state = {
       items: _items,
-      columns: _columns,
       numberOfItems: 0
     };
   }
 
   public render(): JSX.Element {
-    const { items, columns, numberOfItems } = this.state;
+    const { items, numberOfItems } = this.state;
     const stackTokens: IStackTokens = { childrenGap: 10 };
 
     return (
@@ -104,7 +102,7 @@ export class AnnouncedBulkOperationsExample extends React.Component<{}, IAnnounc
           <DetailsList
             setKey="items"
             items={items}
-            columns={columns}
+            columns={_columns}
             selection={this._selection}
             selectionPreservedOnEmptyClick={true}
             onItemInvoked={this._onItemInvoked}
