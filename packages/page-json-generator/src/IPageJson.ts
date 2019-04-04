@@ -8,6 +8,7 @@ export interface ITokenJson {
 
 export interface ITableRowJson {
   name: string;
+  kind?: 'Method' | 'Property';
   typeTokens: ITokenJson[];
   defaultValue?: string;
   descriptionHtml: string;

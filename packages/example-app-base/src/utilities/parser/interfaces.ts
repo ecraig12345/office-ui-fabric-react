@@ -6,6 +6,7 @@ export interface IProperty {
   title: string;
   propertyType: PropertyType;
   property: IInterfaceProperty[] | IEnumProperty[];
+  methods?: IMethod[];
 }
 
 /**
@@ -44,7 +45,15 @@ export interface IEnumProperty {
   value: string;
 }
 
+export interface IMethod {
+  name: string;
+  // signature
+  typeTokens: ILinkToken[];
+  description: string;
+}
+
 export enum PropertyType {
   enum = 0,
-  interface = 1
+  interface = 1,
+  class = 2
 }

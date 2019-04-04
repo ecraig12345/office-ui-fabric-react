@@ -438,7 +438,8 @@ function createClassPageJson(collectedData: CollectedData, classItem: ApiClass):
           name: apiProperty.name,
           typeTokens: [],
           descriptionHtml: '',
-          deprecated: false
+          deprecated: false,
+          kind: 'Property'
         };
 
         if (classItem.tsdocComment) {
@@ -493,7 +494,8 @@ function createClassPageJson(collectedData: CollectedData, classItem: ApiClass):
           name: apiMethod.name,
           typeTokens: [],
           descriptionHtml: '',
-          deprecated: false
+          deprecated: false,
+          kind: 'Method'
         };
 
         for (let i: number = apiMethod.excerpt.tokenRange.startIndex; i < apiMethod.excerpt.tokenRange.endIndex; ++i) {

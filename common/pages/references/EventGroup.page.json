@@ -35,7 +35,8 @@
             }
           ],
           "descriptionHtml": "Declare an event as being supported by this instance of EventGroup.\n",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         },
         {
           "name": "dispose",
@@ -54,7 +55,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         },
         {
           "name": "isDeclared",
@@ -100,7 +102,8 @@
             }
           ],
           "descriptionHtml": "Check to see if the target has declared support of the given event.\n",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         },
         {
           "name": "isObserved",
@@ -146,7 +149,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         },
         {
           "name": "off",
@@ -222,7 +226,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         },
         {
           "name": "on",
@@ -298,7 +303,8 @@
             }
           ],
           "descriptionHtml": "On the target, attach an event whose handler will be called in the context of the parent of this instance of EventGroup.\n",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         },
         {
           "name": "onAll",
@@ -365,7 +371,8 @@
             }
           ],
           "descriptionHtml": "On the target, attach a set of events, where the events object is a name to function mapping.\n",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         },
         {
           "name": "raise",
@@ -420,7 +427,8 @@
             }
           ],
           "descriptionHtml": "Trigger the given event in the context of this instance of EventGroup.\n",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         },
         {
           "name": "raise",
@@ -490,7 +498,8 @@
             }
           ],
           "descriptionHtml": "For IE8, bubbleEvent is ignored here and must be dealt with by the handler. Events raised here by default have bubbling set to false and cancelable set to true. This applies also to built-in events being raised manually here on HTMLElements, which may lead to unexpected behavior if it differs from the defaults.\n",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         },
         {
           "name": "stopPropagation",
@@ -524,7 +533,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         }
       ]
     }

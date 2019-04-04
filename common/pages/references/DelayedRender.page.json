@@ -48,7 +48,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         },
         {
           "name": "componentWillUnmount",
@@ -67,7 +68,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         },
         {
           "name": "defaultProps",
@@ -84,6 +86,7 @@
           ],
           "descriptionHtml": "",
           "deprecated": false,
+          "kind": "Property",
           "defaultValue": ""
         },
         {
@@ -112,7 +115,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         }
       ]
     }

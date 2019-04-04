@@ -23,7 +23,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         }
       ]
     }

@@ -50,7 +50,8 @@
             }
           ],
           "descriptionHtml": "Measures execution time of the given syncronous function. If the same logic is executed multiple times, each individual measurement will be collected as well the overall numbers.\n\n",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         },
         {
           "name": "reset",
@@ -72,7 +73,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         },
         {
           "name": "setPeriodicReset",
@@ -94,7 +96,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         },
         {
           "name": "summary",
@@ -105,6 +108,7 @@
           ],
           "descriptionHtml": "",
           "deprecated": false,
+          "kind": "Property",
           "defaultValue": ""
         }
       ]

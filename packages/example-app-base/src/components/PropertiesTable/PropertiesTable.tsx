@@ -13,12 +13,14 @@ import { SelectionMode } from 'office-ui-fabric-react/lib/Selection';
 import { Stack } from 'office-ui-fabric-react/lib/Stack';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import './PropertiesTable.scss';
-import { IInterfaceProperty, IEnumProperty, ILinkToken } from '../../utilities/parser/index';
+import { IInterfaceProperty, IEnumProperty, ILinkToken, IMethod } from '../../utilities/parser/index';
 
 export interface IPropertiesTableProps {
   title?: string;
   properties: IInterfaceProperty[] | IEnumProperty[];
+  methods?: IMethod[];
   renderAsEnum?: boolean;
+  renderAsClass?: boolean;
   key?: string;
   name?: string;
   description?: string;
@@ -27,7 +29,9 @@ export interface IPropertiesTableProps {
 
 export interface IPropertiesTableState {
   properties: IInterfaceProperty[] | IEnumProperty[];
+  methods?: IMethod[];
   isEnum: boolean;
+  isClass: boolean;
 }
 
 export const XSMALL_GAP_SIZE = 2.5;
@@ -86,6 +90,8 @@ const createRenderCellInterface = (propertyName: 'name' | 'description' | 'defau
 
 const createRenderCellType = (propertyName: 'typeTokens') => (item: IInterfaceProperty) => renderCellType(item[propertyName]);
 
+const createRenderCellSignature = (propertyName: 'typeTokens') => (item: IMethod) => renderCellType(item[propertyName]);
+
 const DEFAULT_COLUMNS: IColumn[] = [
   {
     key: 'name',
@@ -119,6 +125,42 @@ const DEFAULT_COLUMNS: IColumn[] = [
     isResizable: true,
     isMultiline: true,
     onRender: createRenderCellInterface('defaultValue')
+  },
+  {
+    key: 'description',
+    name: 'Description',
+    fieldName: 'description',
+    minWidth: 300,
+    maxWidth: 400,
+    isCollapsible: false,
+    isResizable: true,
+    isMultiline: true,
+    onRender: createRenderCellInterface('description')
+  }
+];
+
+const METHOD_COLUMNS: IColumn[] = [
+  {
+    key: 'name',
+    name: 'Name',
+    fieldName: 'name',
+    minWidth: 150,
+    maxWidth: 250,
+    isCollapsible: false,
+    isRowHeader: true,
+    isResizable: true,
+    onRender: createRenderCellInterface('name')
+  },
+  {
+    key: 'signature',
+    name: 'Signature',
+    fieldName: 'signature',
+    minWidth: 200,
+    maxWidth: 300,
+    isCollapsible: false,
+    isResizable: true,
+    isMultiline: true,
+    onRender: createRenderCellSignature('typeTokens')
   },
   {
     key: 'description',
@@ -231,7 +273,23 @@ export class PropertiesTable extends React.Component<IPropertiesTableProps, IPro
 
       this.state = {
         properties,
-        isEnum: !!props.renderAsEnum
+        isEnum: true,
+        isClass: !!props.renderAsClass
+      };
+    } else if (props.renderAsClass) {
+      const members = (props.properties as IInterfaceProperty[])
+        .sort((a: IInterfaceProperty, b: IInterfaceProperty) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0))
+        .map((prop: IInterfaceProperty, index: number) => assign({}, prop, { key: index }));
+
+      const methods = (props.methods as IMethod[])
+        .sort((a: IMethod, b: IMethod) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0))
+        .map((prop: IMethod, index: number) => assign({}, prop, { key: index }));
+
+      this.state = {
+        properties: members,
+        isEnum: !!props.renderAsEnum,
+        isClass: true,
+        methods: methods
       };
     } else {
       const properties = (props.properties as IInterfaceProperty[])
@@ -240,14 +298,15 @@ export class PropertiesTable extends React.Component<IPropertiesTableProps, IPro
 
       this.state = {
         properties,
-        isEnum: !!props.renderAsEnum
+        isEnum: !!props.renderAsEnum,
+        isClass: !!props.renderAsClass
       };
     }
   }
 
   public render(): JSX.Element | null {
     const { description, extendsTokens } = this.props;
-    const { properties, isEnum } = this.state;
+    const { properties, isEnum, isClass } = this.state;
 
     return (
       <Stack gap={MEDIUM_GAP_SIZE}>
@@ -266,11 +325,55 @@ export class PropertiesTable extends React.Component<IPropertiesTableProps, IPro
         ) : (
           this._renderTitle()
         )}
+        {isClass ? (
+          this._renderClass()
+        ) : (
+          <DetailsList
+            selectionMode={SelectionMode.none}
+            layoutMode={DetailsListLayoutMode.justified}
+            items={properties}
+            columns={isEnum ? ENUM_COLUMNS : DEFAULT_COLUMNS}
+            onRenderRow={this._onRenderRow}
+          />
+        )}
+      </Stack>
+    );
+  }
+
+  private _renderClass(): JSX.Element | undefined {
+    const { properties, methods } = this.state;
+
+    return methods ? (
+      <Stack gap={MEDIUM_GAP_SIZE}>
+        <Stack gap={SMALL_GAP_SIZE}>
+          <Text variant={'medium'}>Members</Text>
+          <DetailsList
+            selectionMode={SelectionMode.none}
+            layoutMode={DetailsListLayoutMode.justified}
+            items={properties}
+            columns={DEFAULT_COLUMNS}
+            onRenderRow={this._onRenderRow}
+          />
+        </Stack>
+        <Stack gap={SMALL_GAP_SIZE}>
+          <Text variant={'medium'}>Methods</Text>
+          <DetailsList
+            selectionMode={SelectionMode.none}
+            layoutMode={DetailsListLayoutMode.justified}
+            items={methods}
+            columns={METHOD_COLUMNS}
+            onRenderRow={this._onRenderRow}
+          />
+        </Stack>
+      </Stack>
+    ) : (
+      <Stack gap={SMALL_GAP_SIZE}>
+        <Text variant={'medium'}>Members</Text>
         <DetailsList
           selectionMode={SelectionMode.none}
           layoutMode={DetailsListLayoutMode.justified}
           items={properties}
-          columns={isEnum ? ENUM_COLUMNS : DEFAULT_COLUMNS}
+          columns={DEFAULT_COLUMNS}
           onRenderRow={this._onRenderRow}
         />
       </Stack>

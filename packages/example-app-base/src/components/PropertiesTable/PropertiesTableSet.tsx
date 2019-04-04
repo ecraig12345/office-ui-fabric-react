@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IProperty, PropertyType, IInterfaceProperty, IEnumProperty } from '../../utilities/parser/index';
+import { IProperty, PropertyType, IInterfaceProperty, IEnumProperty, IMethod } from '../../utilities/parser/index';
 import { ActionButton } from 'office-ui-fabric-react/lib/Button';
 import { Stack } from 'office-ui-fabric-react/lib/Stack';
 import { Text } from 'office-ui-fabric-react/lib/Text';
@@ -39,7 +39,9 @@ export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps
           description={item.description}
           extendsTokens={item.extendsTokens}
           properties={item.property}
+          methods={item.methods}
           renderAsEnum={item.propertyType === PropertyType.enum}
+          renderAsClass={item.propertyType === PropertyType.class}
         />
       );
     }
@@ -69,7 +71,9 @@ export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps
                     description={item.description}
                     extendsTokens={item.extendsTokens}
                     properties={item.property}
+                    methods={item.methods}
                     renderAsEnum={item.propertyType === PropertyType.enum}
+                    renderAsClass={item.propertyType === PropertyType.class}
                   />
                 ) : (
                   undefined
@@ -137,8 +141,7 @@ export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps
 
             break;
           }
-          case 'interface':
-          case 'class': {
+          case 'interface': {
             const interfaceMembers: IInterfaceProperty[] = [];
 
             const members: ITableRowJson[] = jsonDocs.tables[j].members as ITableRowJson[];
@@ -153,7 +156,7 @@ export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps
               });
             }
 
-            // the interface or class
+            // the interface
             if (pattern.test(jsonDocs.tables[j].name)) {
               iComponentProps.push({
                 propertyName: jsonDocs.tables[j].name,
@@ -174,6 +177,43 @@ export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps
               });
             }
 
+            break;
+          }
+          case 'class': {
+            // class members are a mix of IInterfaceProperty and IMethod
+            const classMembers: IInterfaceProperty[] = [];
+            const classMethods: IMethod[] = [];
+
+            const members: ITableRowJson[] = jsonDocs.tables[j].members as ITableRowJson[];
+            for (let k = 0; k < members.length; k++) {
+              console.log('member kind: ' + members[k].kind);
+              if (members[k].kind === 'Method') {
+                classMethods.push({
+                  description: members[k].descriptionHtml,
+                  name: members[k].name,
+                  typeTokens: members[k].typeTokens
+                });
+              } else {
+                classMembers.push({
+                  description: members[k].descriptionHtml,
+                  name: members[k].name,
+                  typeTokens: members[k].typeTokens,
+                  deprecated: members[k].deprecated,
+                  defaultValue: members[k].defaultValue || ''
+                });
+              }
+            }
+
+            // the class
+            preResults.push({
+              propertyName: jsonDocs.tables[j].name,
+              description: jsonDocs.tables[j].descriptionHtml,
+              extendsTokens: jsonDocs.tables[j].extendsTokens,
+              title: jsonDocs.tables[j].kind ? jsonDocs.tables[j].name + ' ' + jsonDocs.tables[j].kind : jsonDocs.tables[j].name,
+              propertyType: PropertyType.class,
+              property: classMembers,
+              methods: classMethods
+            });
             break;
           }
         }

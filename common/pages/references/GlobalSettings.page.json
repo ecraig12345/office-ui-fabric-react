@@ -40,7 +40,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         },
         {
           "name": "getValue",
@@ -101,7 +102,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         },
         {
           "name": "removeChangeListener",
@@ -137,7 +139,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         },
         {
           "name": "setValue",
@@ -189,7 +192,8 @@
             }
           ],
           "descriptionHtml": "",
-          "deprecated": false
+          "deprecated": false,
+          "kind": "Method"
         }
       ]
     }

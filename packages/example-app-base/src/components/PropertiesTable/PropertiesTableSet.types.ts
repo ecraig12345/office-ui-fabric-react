@@ -37,6 +37,7 @@ export interface ITableRowJson {
   descriptionHtml: string;
   deprecated: boolean;
   deprecatedMessage?: string;
+  kind?: 'Method' | 'Property';
 }
 
 export interface IEnumTableRowJson {
