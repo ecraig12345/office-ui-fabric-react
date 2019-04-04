@@ -35,9 +35,9 @@ export interface IPropertiesTableState {
 }
 
 export const XSMALL_GAP_SIZE = 2.5;
-export const SMALL_GAP_SIZE = 7.5;
-export const MEDIUM_GAP_SIZE = 15;
-export const LARGE_GAP_SIZE = 50;
+export const SMALL_GAP_SIZE = 8;
+export const MEDIUM_GAP_SIZE = 16;
+export const LARGE_GAP_SIZE = 48;
 
 const renderCell = (text: string) => {
   // When the text is passed to this function, it has had newline characters removed,
@@ -235,21 +235,23 @@ function _parseILinkTokens(extend: boolean, linkTokens?: ILinkToken[]): JSX.Elem
     } else {
       return (
         <Text variant={'small'} className="PropertiesTable-extends">
-          {linkTokens.map((token: ILinkToken, index: number) => {
-            if (token.pageKind && token.hyperlinkedPage) {
-              // TODO: change this for local builds
-              const href = '#/' + token.pageKind.toLowerCase() + '/' + token.hyperlinkedPage.toLowerCase() + '#' + token.text;
-              return (
-                <Link href={href} key={token.text + index}>
-                  {token.text}
-                </Link>
-              );
-            } else if (token.text) {
-              return token.text;
-            } else {
-              return undefined;
-            }
-          })}
+          <code>
+            {linkTokens.map((token: ILinkToken, index: number) => {
+              if (token.pageKind && token.hyperlinkedPage) {
+                // TODO: change this for local builds
+                const href = '#/' + token.pageKind.toLowerCase() + '/' + token.hyperlinkedPage.toLowerCase() + '#' + token.text;
+                return (
+                  <Link href={href} key={token.text + index}>
+                    <code>{token.text}</code>
+                  </Link>
+                );
+              } else if (token.text) {
+                return <code>{token.text}</code>;
+              } else {
+                return undefined;
+              }
+            })}
+          </code>
         </Text>
       );
     }
@@ -327,7 +329,7 @@ export class PropertiesTable extends React.Component<IPropertiesTableProps, IPro
         )}
         {isClass ? (
           this._renderClass()
-        ) : (
+        ) : properties.length >= 1 ? (
           <DetailsList
             selectionMode={SelectionMode.none}
             layoutMode={DetailsListLayoutMode.justified}
@@ -335,6 +337,8 @@ export class PropertiesTable extends React.Component<IPropertiesTableProps, IPro
             columns={isEnum ? ENUM_COLUMNS : DEFAULT_COLUMNS}
             onRenderRow={this._onRenderRow}
           />
+        ) : (
+          undefined
         )}
       </Stack>
     );
