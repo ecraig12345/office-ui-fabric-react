@@ -218,7 +218,12 @@ function _parseILinkTokens(extend: boolean, linkTokens?: ILinkToken[]): JSX.Elem
           {linkTokens.map((token: ILinkToken, index: number) => {
             if (token.pageKind && token.hyperlinkedPage) {
               // TODO: change this for local builds
-              const href = '#/' + token.pageKind.toLowerCase() + '/' + token.hyperlinkedPage.toLowerCase() + '#' + token.text;
+              let href;
+              if (token.pageKind === 'References') {
+                href = '#/components/' + token.pageKind.toLowerCase() + '/' + token.hyperlinkedPage.toLowerCase() + '#' + token.text;
+              } else {
+                href = '#/components/' + token.hyperlinkedPage.toLowerCase() + '#' + token.text;
+              }
               return (
                 <Link href={href} key={token.text + index}>
                   {token.text}
@@ -239,7 +244,12 @@ function _parseILinkTokens(extend: boolean, linkTokens?: ILinkToken[]): JSX.Elem
             {linkTokens.map((token: ILinkToken, index: number) => {
               if (token.pageKind && token.hyperlinkedPage) {
                 // TODO: change this for local builds
-                const href = '#/' + token.pageKind.toLowerCase() + '/' + token.hyperlinkedPage.toLowerCase() + '#' + token.text;
+                let href;
+                if (token.pageKind === 'References') {
+                  href = '#/components/' + token.pageKind.toLowerCase() + '/' + token.hyperlinkedPage.toLowerCase() + '#' + token.text;
+                } else {
+                  href = '#/components/' + token.hyperlinkedPage.toLowerCase() + '#' + token.text;
+                }
                 return (
                   <Link href={href} key={token.text + index}>
                     <code>{token.text}</code>

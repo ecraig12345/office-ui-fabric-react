@@ -30,8 +30,6 @@ const StylesLoadingComponent = (props: any): JSX.Element => {
   );
 };
 
-// const referencePages: any = require('../../../src/components/App/referencePage.js') || [];
-
 export const AppState: IAppState = {
   appTitle: 'Office UI Fabric',
   pages: [

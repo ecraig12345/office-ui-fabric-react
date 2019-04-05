@@ -1,10 +1,8 @@
 import * as React from 'react';
-
 // Props
 import { INavPage } from '../Nav/Nav.types';
 import { ComponentPage } from '../ComponentPage/ComponentPage';
 import { PageHeader } from '../PageHeader/PageHeader';
-
 // Giving the loading component a height so that the left nav loads in full screen and there is less flashing as the component page loads.
 const loadingPageHeight: string = 'calc(100vh - 100px)';
 const LoadingComponent = (props: any): JSX.Element => {
@@ -16,11 +14,10 @@ const LoadingComponent = (props: any): JSX.Element => {
     </div>
   );
 };
-
 export const referencePages: INavPage[] = [
   {
     title: 'AutoScroll',
-    url: '#/references/autoscroll',
+    url: '#/components/references/autoscroll',
     isFilterable: true,
     component: () => <LoadingComponent title="AutoScroll" />,
     getComponent: cb =>
@@ -28,7 +25,7 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'BaseComponent',
-    url: '#/references/basecomponent',
+    url: '#/components/references/basecomponent',
     isFilterable: true,
     component: () => <LoadingComponent title="BaseComponent" />,
     getComponent: cb =>
@@ -36,7 +33,7 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'DelayedRender',
-    url: '#/references/delayedrender',
+    url: '#/components/references/delayedrender',
     isFilterable: true,
     component: () => <LoadingComponent title="DelayedRender" />,
     getComponent: cb =>
@@ -44,7 +41,7 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'EventGroup',
-    url: '#/references/eventgroup',
+    url: '#/components/references/eventgroup',
     isFilterable: true,
     component: () => <LoadingComponent title="EventGroup" />,
     getComponent: cb =>
@@ -52,7 +49,7 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'FabricPerformance',
-    url: '#/references/fabricperformance',
+    url: '#/components/references/fabricperformance',
     isFilterable: true,
     component: () => <LoadingComponent title="FabricPerformance" />,
     getComponent: cb =>
@@ -62,7 +59,7 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'GlobalSettings',
-    url: '#/references/globalsettings',
+    url: '#/components/references/globalsettings',
     isFilterable: true,
     component: () => <LoadingComponent title="GlobalSettings" />,
     getComponent: cb =>
@@ -70,7 +67,7 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'IAnimationStyles',
-    url: '#/references/ianimationstyles',
+    url: '#/components/references/ianimationstyles',
     isFilterable: true,
     component: () => <LoadingComponent title="IAnimationStyles" />,
     getComponent: cb =>
@@ -78,7 +75,7 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'IBaseProps',
-    url: '#/references/ibaseprops',
+    url: '#/components/references/ibaseprops',
     isFilterable: true,
     component: () => <LoadingComponent title="IBaseProps" />,
     getComponent: cb =>
@@ -86,7 +83,7 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'IChangeDescription',
-    url: '#/references/ichangedescription',
+    url: '#/components/references/ichangedescription',
     isFilterable: true,
     component: () => <LoadingComponent title="IChangeDescription" />,
     getComponent: cb =>
@@ -96,7 +93,7 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'IChangeEventCallback',
-    url: '#/references/ichangeeventcallback',
+    url: '#/components/references/ichangeeventcallback',
     isFilterable: true,
     component: () => <LoadingComponent title="IChangeEventCallback" />,
     getComponent: cb =>
@@ -106,7 +103,7 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'IDisposable',
-    url: '#/references/idisposable',
+    url: '#/components/references/idisposable',
     isFilterable: true,
     component: () => <LoadingComponent title="IDisposable" />,
     getComponent: cb =>
@@ -114,7 +111,7 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'IFontFace',
-    url: '#/references/ifontface',
+    url: '#/components/references/ifontface',
     isFilterable: true,
     component: () => <LoadingComponent title="IFontFace" />,
     getComponent: cb =>
@@ -122,7 +119,7 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'IFontStyles',
-    url: '#/references/ifontstyles',
+    url: '#/components/references/ifontstyles',
     isFilterable: true,
     component: () => <LoadingComponent title="IFontStyles" />,
     getComponent: cb =>
@@ -130,7 +127,7 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'IPalette',
-    url: '#/references/ipalette',
+    url: '#/components/references/ipalette',
     isFilterable: true,
     component: () => <LoadingComponent title="IPalette" />,
     getComponent: cb =>
@@ -138,14 +135,14 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'IPoint',
-    url: '#/references/ipoint',
+    url: '#/components/references/ipoint',
     isFilterable: true,
     component: () => <LoadingComponent title="IPoint" />,
     getComponent: cb => require.ensure([], require => cb(require<any>('../../pages/References/IPointComponentPage').IPointComponentPage))
   },
   {
     title: 'IRawFontStyle',
-    url: '#/references/irawfontstyle',
+    url: '#/components/references/irawfontstyle',
     isFilterable: true,
     component: () => <LoadingComponent title="IRawFontStyle" />,
     getComponent: cb =>
@@ -153,7 +150,7 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'IRawStyleBase',
-    url: '#/references/irawstylebase',
+    url: '#/components/references/irawstylebase',
     isFilterable: true,
     component: () => <LoadingComponent title="IRawStyleBase" />,
     getComponent: cb =>
@@ -161,7 +158,7 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'IRawStyle',
-    url: '#/references/irawstyle',
+    url: '#/components/references/irawstyle',
     isFilterable: true,
     component: () => <LoadingComponent title="IRawStyle" />,
     getComponent: cb =>
@@ -169,7 +166,7 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'IRectangle',
-    url: '#/references/irectangle',
+    url: '#/components/references/irectangle',
     isFilterable: true,
     component: () => <LoadingComponent title="IRectangle" />,
     getComponent: cb =>
@@ -177,7 +174,7 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'IRenderComponent',
-    url: '#/references/irendercomponent',
+    url: '#/components/references/irendercomponent',
     isFilterable: true,
     component: () => <LoadingComponent title="IRenderComponent" />,
     getComponent: cb =>
@@ -185,14 +182,14 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'IScheme',
-    url: '#/references/ischeme',
+    url: '#/components/references/ischeme',
     isFilterable: true,
     component: () => <LoadingComponent title="IScheme" />,
     getComponent: cb => require.ensure([], require => cb(require<any>('../../pages/References/ISchemeComponentPage').ISchemeComponentPage))
   },
   {
     title: 'ISemanticColors',
-    url: '#/references/isemanticcolors',
+    url: '#/components/references/isemanticcolors',
     isFilterable: true,
     component: () => <LoadingComponent title="ISemanticColors" />,
     getComponent: cb =>
@@ -200,7 +197,7 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'ISemanticTextColors',
-    url: '#/references/isemantictextcolors',
+    url: '#/components/references/isemantictextcolors',
     isFilterable: true,
     component: () => <LoadingComponent title="ISemanticTextColors" />,
     getComponent: cb =>
@@ -210,14 +207,14 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'ISize',
-    url: '#/references/isize',
+    url: '#/components/references/isize',
     isFilterable: true,
     component: () => <LoadingComponent title="ISize" />,
     getComponent: cb => require.ensure([], require => cb(require<any>('../../pages/References/ISizeComponentPage').ISizeComponentPage))
   },
   {
     title: 'IStyleBaseArray',
-    url: '#/references/istylebasearray',
+    url: '#/components/references/istylebasearray',
     isFilterable: true,
     component: () => <LoadingComponent title="IStyleBaseArray" />,
     getComponent: cb =>
@@ -225,14 +222,14 @@ export const referencePages: INavPage[] = [
   },
   {
     title: 'ITheme',
-    url: '#/references/itheme',
+    url: '#/components/references/itheme',
     isFilterable: true,
     component: () => <LoadingComponent title="ITheme" />,
     getComponent: cb => require.ensure([], require => cb(require<any>('../../pages/References/IThemeComponentPage').IThemeComponentPage))
   },
   {
     title: 'Rectangle',
-    url: '#/references/rectangle',
+    url: '#/components/references/rectangle',
     isFilterable: true,
     component: () => <LoadingComponent title="Rectangle" />,
     getComponent: cb =>

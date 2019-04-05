@@ -17,6 +17,7 @@ const prettier = require('./tasks/prettier');
 const bundleSizeCollect = require('./tasks/bundle-size-collect');
 const checkForModifiedFiles = require('./tasks/check-for-modified-files');
 const generateVersionFiles = require('./tasks/generate-version-files');
+const generateReferencePages = require('./tasks/generate-reference-pages');
 
 let packageJson;
 
@@ -51,6 +52,7 @@ registerTask('prettier', prettier);
 registerTask('bundle-size-collect', bundleSizeCollect);
 registerTask('check-for-modified-files', checkForModifiedFiles);
 registerTask('generate-version-files', generateVersionFiles);
+registerTask('generate-reference-pages', generateReferencePages);
 
 task('ts', parallel('ts:commonjs', 'ts:esm', condition('ts:amd', () => argv().production && !argv().min && !argv().prdeploy)));
 
@@ -78,6 +80,7 @@ task('build-jest-serializer-merge-styles', series('ts', 'jest'));
 task('build-commonjs-only', series('clean', 'ts:commonjs-only'));
 task('code-style', series('prettier', 'tslint'));
 task('update-api', series('clean', 'copy', 'sass', 'ts', 'update-api-extractor'));
+task('generate-reference-pages', series('generate-reference-pages'));
 task('dev', series('clean', 'copy', 'sass', 'webpack-dev-server'));
 
 // Utility functions
