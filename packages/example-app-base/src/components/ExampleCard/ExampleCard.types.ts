@@ -1,4 +1,4 @@
-import { IStyle } from 'office-ui-fabric-react/lib/Styling';
+import { IStyle, ITheme } from 'office-ui-fabric-react/lib/Styling';
 import { IStyleFunctionOrObject } from 'office-ui-fabric-react/lib/Utilities';
 
 export interface IExampleCardProps {
@@ -20,11 +20,15 @@ export interface IExampleCardProps {
   isScrollable?: boolean;
   /** JS string used in the example card's "Export to CodePen" button */
   codepenJS?: string;
+
+  /** Theme provided by higher-order component. */
+  theme?: ITheme;
+
   /** Optional override styles */
   styles?: IStyleFunctionOrObject<IExampleCardStyleProps, IExampleCardStyles>;
 }
 
-export type IExampleCardStyleProps = Pick<IExampleCardProps, 'isRightAligned' | 'isScrollable'> & {
+export type IExampleCardStyleProps = Pick<IExampleCardProps, 'isRightAligned' | 'isScrollable' | 'theme'> & {
   isCodeVisible?: boolean;
 };
 

@@ -69,10 +69,10 @@ export class FeedbackListBase extends React.Component<IFeedbackListProps, IFeedb
   }
 
   public render(): JSX.Element | null {
-    const { styles } = this.props;
+    const { styles, theme } = this.props;
     const { openIssues, closedIssues } = this.state;
 
-    const classNames = (this._classNames = getClassNames(styles, {}));
+    const classNames = (this._classNames = getClassNames(styles, { theme }));
 
     return (
       <div className={classNames.root}>

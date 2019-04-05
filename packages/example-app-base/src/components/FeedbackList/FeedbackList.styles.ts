@@ -1,6 +1,6 @@
 import { IStyleFunction } from 'office-ui-fabric-react/lib/Utilities';
 import { IFeedbackListStyleProps, IFeedbackListStyles } from './FeedbackList.types';
-import { getFocusStyle, getTheme, DefaultFontStyles, FontSizes, FontWeights } from 'office-ui-fabric-react/lib/Styling';
+import { getFocusStyle, getTheme, FontWeights } from 'office-ui-fabric-react/lib/Styling';
 
 const globalClassNames = {
   pivot: 'FeedbackList-pivot',
@@ -11,7 +11,7 @@ const globalClassNames = {
 };
 
 export const getStyles: IStyleFunction<IFeedbackListStyleProps, IFeedbackListStyles> = props => {
-  const theme = getTheme();
+  const { theme = getTheme() } = props;
   return {
     pivot: [{ paddingTop: 20 }, globalClassNames.pivot],
     issueList: [
@@ -47,7 +47,7 @@ export const getStyles: IStyleFunction<IFeedbackListStyleProps, IFeedbackListSty
       }
     ],
     itemName: [
-      DefaultFontStyles.xLarge,
+      theme.fonts.xLarge,
       {
         whiteSpace: 'nowrap',
         overflow: 'hidden',
@@ -56,11 +56,11 @@ export const getStyles: IStyleFunction<IFeedbackListStyleProps, IFeedbackListSty
     ],
     itemLabel: [
       {
-        fontSize: FontSizes.medium,
+        fontSize: theme.fonts.medium.fontSize,
         fontWeight: FontWeights.bold
       },
       globalClassNames.listElement
     ],
-    timeStamp: [{ fontSize: FontSizes.medium }, globalClassNames.timeStamp]
+    timeStamp: [{ fontSize: theme.fonts.medium.fontSize }, globalClassNames.timeStamp]
   };
 };

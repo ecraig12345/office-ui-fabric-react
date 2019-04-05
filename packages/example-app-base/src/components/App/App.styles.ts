@@ -1,4 +1,4 @@
-import { DefaultPalette } from 'office-ui-fabric-react/lib/Styling';
+import { getTheme } from 'office-ui-fabric-react/lib/Styling';
 import { IStyleFunction } from 'office-ui-fabric-react/lib/Utilities';
 import { IAppStyleProps, IAppStyles } from './App.types';
 import { ResponsiveMode } from 'office-ui-fabric-react/lib/utilities/decorators/withResponsiveMode';
@@ -18,7 +18,7 @@ const headerHeight = 50;
 const navWidth = 300;
 
 export const getStyles: IStyleFunction<IAppStyleProps, IAppStyles> = props => {
-  const { responsiveMode = ResponsiveMode.xLarge } = props;
+  const { responsiveMode, theme = getTheme() } = props;
   const isLargeDown = responsiveMode <= ResponsiveMode.large;
   return {
     root: [
@@ -62,8 +62,8 @@ export const getStyles: IStyleFunction<IAppStyleProps, IAppStyles> = props => {
         width: navWidth,
         top: headerHeight,
         bottom: 0,
-        borderRight: `1px solid ${DefaultPalette.neutralLight}`,
-        background: DefaultPalette.white,
+        borderRight: `1px solid ${theme.palette.neutralLight}`,
+        background: theme.palette.white,
         boxSizing: 'border-box',
         overflowX: 'hidden',
         overflowY: 'auto',
@@ -96,8 +96,8 @@ export const getStyles: IStyleFunction<IAppStyleProps, IAppStyles> = props => {
         fontSize: 10,
         textTransform: 'upppercase',
         float: 'right',
-        background: DefaultPalette.neutralTertiaryAlt,
-        color: DefaultPalette.white,
+        background: theme.palette.neutralTertiaryAlt,
+        color: theme.palette.white,
         lineHeight: 'normal',
         display: 'inline',
         verticalAlign: 'middle',
@@ -112,20 +112,20 @@ export const getStyles: IStyleFunction<IAppStyleProps, IAppStyles> = props => {
     ],
     linkFlairStarted: [
       {
-        background: DefaultPalette.yellowLight,
-        color: DefaultPalette.black
+        background: theme.palette.yellowLight,
+        color: theme.palette.black
       },
       globalClassNames.linkFlairStarted
     ],
     linkFlairBeta: [
       {
-        background: DefaultPalette.greenLight
+        background: theme.palette.greenLight
       },
       globalClassNames.linkFlairBeta
     ],
     linkFlairRelease: [
       {
-        background: DefaultPalette.green
+        background: theme.palette.green
       },
       globalClassNames.linkFlairRelease
     ]

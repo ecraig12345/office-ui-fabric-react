@@ -49,7 +49,7 @@ export class ExampleCardBase extends React.Component<IExampleCardProps, IExample
   }
 
   public render(): JSX.Element {
-    const { title, code, children, styles, isRightAligned = false, isScrollable = true, codepenJS } = this.props;
+    const { title, code, children, styles, isRightAligned = false, isScrollable = true, codepenJS, theme } = this.props;
     const { isCodeVisible, schemeIndex, themeIndex } = this.state;
 
     return (
@@ -69,7 +69,7 @@ export class ExampleCardBase extends React.Component<IExampleCardProps, IExample
               : [];
           }
 
-          const styleProps: IExampleCardStyleProps = { isRightAligned, isScrollable, isCodeVisible };
+          const styleProps: IExampleCardStyleProps = { isRightAligned, isScrollable, isCodeVisible, theme };
           const classNames = (this._classNames = getClassNames(styles, styleProps));
           const dropdownStyles = getDropdownStyles(styleProps);
 

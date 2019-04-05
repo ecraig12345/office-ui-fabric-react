@@ -23,11 +23,11 @@ export class AppBase extends React.Component<IAppProps, IAppState> {
   private _classNames: IProcessedStyleSet<IAppStyles>;
 
   public render(): JSX.Element {
-    const { appDefinition, styles, responsiveMode = ResponsiveMode.xLarge } = this.props;
+    const { appDefinition, styles, responsiveMode = ResponsiveMode.xLarge, theme } = this.props;
     const { customizations } = appDefinition;
     const { isMenuVisible } = this.state;
 
-    const classNames = (this._classNames = getClassNames(styles, { responsiveMode }));
+    const classNames = (this._classNames = getClassNames(styles, { responsiveMode, theme }));
 
     const isLargeDown = responsiveMode <= ResponsiveMode.large;
 
@@ -44,6 +44,7 @@ export class AppBase extends React.Component<IAppProps, IAppState> {
       <Fabric className={classNames.root}>
         <div className={classNames.header}>
           <Header
+            isLargeDown={isLargeDown}
             title={appDefinition.appTitle}
             sideLinks={appDefinition.headerLinks}
             isMenuVisible={isMenuVisible}

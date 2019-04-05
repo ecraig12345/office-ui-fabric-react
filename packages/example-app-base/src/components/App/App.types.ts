@@ -1,4 +1,4 @@
-import { IStyle } from 'office-ui-fabric-react/lib/Styling';
+import { IStyle, ITheme } from 'office-ui-fabric-react/lib/Styling';
 import { IStyleFunctionOrObject } from 'office-ui-fabric-react/lib/Utilities';
 import { IWithResponsiveModeState } from 'office-ui-fabric-react/lib/utilities/decorators/withResponsiveMode';
 import { INavLink, INavLinkGroup } from 'office-ui-fabric-react/lib/Nav';
@@ -34,11 +34,15 @@ export interface IAppDefinition {
 
 export interface IAppProps extends IWithResponsiveModeState {
   appDefinition: IAppDefinition;
+
+  /** Theme provided by higher-order component. */
+  theme?: ITheme;
+
   /** Optional override styles */
   styles?: IStyleFunctionOrObject<IAppStyleProps, IAppStyles>;
 }
 
-export type IAppStyleProps = Pick<IAppProps, 'responsiveMode'>;
+export type IAppStyleProps = Required<Pick<IAppProps, 'responsiveMode'>> & Pick<IAppProps, 'theme'>;
 
 export interface IAppStyles {
   root: IStyle;

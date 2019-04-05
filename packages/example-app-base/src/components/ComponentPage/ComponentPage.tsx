@@ -10,6 +10,9 @@ import { getStyles } from './ComponentPage.styles';
 
 const getClassNames = classNamesFunction<IComponentPageStyleProps, IComponentPageStyles>();
 
+/**
+ * Extended section interface used internally for de-duplicating section rendering code.
+ */
 interface IExtendedComponentPageSection extends IComponentPageSection {
   /** URL for editing the section markdown */
   editUrl?: string;
@@ -38,9 +41,9 @@ export class ComponentPageBase extends React.PureComponent<IComponentPageProps> 
   }
 
   public render() {
-    const { componentName, className, otherSections, styles } = this.props;
+    const { componentName, className, otherSections, styles, theme } = this.props;
 
-    const classNames = (this._classNames = getClassNames(styles, {}));
+    const classNames = (this._classNames = getClassNames(styles, { theme }));
 
     return (
       <div className={css(classNames.root, className)}>
@@ -88,7 +91,7 @@ export class ComponentPageBase extends React.PureComponent<IComponentPageProps> 
     ].filter(section => !!section) as Array<{ title: string }>;
 
     return (
-      <Stack horizontal maxWidth="100%" wrap tokens={{ childrenGap: '5 40' }} className={classNames.navigation}>
+      <Stack horizontal maxWidth="100%" wrap tokens={{ childrenGap: '5px 40px' }} className={classNames.navigation}>
         {sections.map(section => (
           <Link key={section.title} href={this._baseUrl + '#' + _idFromSectionTitle(section.title)} styles={{ root: classNames.navLink }}>
             {section.title}

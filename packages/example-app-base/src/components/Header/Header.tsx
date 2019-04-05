@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import { ContextualMenu, DirectionalHint, IContextualMenuItem } from 'office-ui-fabric-react/lib/ContextualMenu';
 import { FocusZone, FocusZoneDirection } from 'office-ui-fabric-react/lib/FocusZone';
-import { ResponsiveMode, withResponsiveMode } from 'office-ui-fabric-react/lib/utilities/decorators/withResponsiveMode';
 import { getRTL, setRTL, classNamesFunction, styled } from 'office-ui-fabric-react/lib/Utilities';
 import { Icon, IIconStyles } from 'office-ui-fabric-react/lib/Icon';
 
@@ -22,7 +21,6 @@ const iconStyles: Partial<IIconStyles> = {
 
 const getClassNames = classNamesFunction<IHeaderStyleProps, IHeaderStyles>();
 
-@withResponsiveMode
 export class HeaderBase extends React.Component<IHeaderProps, IHeaderState> {
   private _isRTLEnabled: boolean;
 
@@ -36,14 +34,13 @@ export class HeaderBase extends React.Component<IHeaderProps, IHeaderState> {
   }
 
   public render(): JSX.Element {
-    const { title, styles, responsiveMode = ResponsiveMode.xLarge } = this.props;
+    const { title, styles, isLargeDown = false, theme } = this.props;
     const { contextMenu } = this.state;
-    const isLargeDown = responsiveMode <= ResponsiveMode.large;
 
     // For screen sizes large down, hide the side links.
     const sideLinks = isLargeDown ? [] : this.props.sideLinks;
 
-    const classNames = getClassNames(styles, {});
+    const classNames = getClassNames(styles, { theme });
 
     return (
       <div>
