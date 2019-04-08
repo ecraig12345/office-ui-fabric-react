@@ -2,6 +2,7 @@ import * as React from 'react';
 import { App as AppBase, IAppDefinition, IAppProps } from '@uifabric/example-app-base';
 import { DetailsListBasicExample } from 'office-ui-fabric-react/lib/components/DetailsList/examples/DetailsList.Basic.Example';
 import { AppCustomizations } from './customizations/customizations';
+import { referencePages } from './referencePage';
 
 export const AppDefinition: IAppDefinition = {
   appTitle: 'Fabric - React',
@@ -521,6 +522,10 @@ export const AppDefinition: IAppDefinition = {
         }
       ],
       name: 'Accessibility'
+    },
+    {
+      name: 'References',
+      links: [...referencePages]
     }
   ],
 

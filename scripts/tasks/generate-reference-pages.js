@@ -44,4 +44,31 @@ export const referencePages: INavPage[] = [` +
       '];';
     fs.writeFileSync(path.resolve(__dirname, '../../apps/fabric-website/src/components/App/referencePage.tsx'), content);
   });
+
+  fs.readdir(path.resolve(__dirname, '../../apps/fabric-website-resources/src/components/pages/References'), (err, files) => {
+    if (err) {
+      console.log('read dir error: ' + err);
+    }
+
+    let pageNames = files;
+    let referencePages = [];
+    for (let file of files) {
+      let reference = file.replace('Page.tsx', '');
+      referencePages.push(`
+      {
+        component: require<any>('./components/pages/References/${reference}Page').${reference}Page,
+        key: '${reference}',
+        name: '${reference}',
+        url: '#/examples/references/${reference.toLowerCase()}'
+      }`);
+    }
+    const content =
+      `
+      import { IAppLink } from '@uifabric/example-app-base';
+
+export const referencePages: IAppLink[] = [` +
+      referencePages.toString() +
+      '];';
+    fs.writeFileSync(path.resolve(__dirname, '../../apps/fabric-website-resources/src/referencePage.tsx'), content);
+  });
 };
