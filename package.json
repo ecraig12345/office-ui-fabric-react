@@ -47,10 +47,10 @@
         "node ./scripts/lint-staged/tslint",
         "git add"
       ],
-      "*.js": [
-        "node ./scripts/lint-staged/prettier",
-        "git add"
-      ]
+      "*.{js,jsx,json,scss,html,md,yml}": [
+        "node ./scripts/lint-staged/prettier",
+        "git add"
+      ]
     },
     "ignore": [
       "common/scripts/*.js",
