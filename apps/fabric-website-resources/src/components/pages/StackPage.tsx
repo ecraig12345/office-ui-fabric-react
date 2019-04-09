@@ -5,7 +5,7 @@ import { StackPageProps } from 'office-ui-fabric-react/lib/components/Stack/Stac
 
 export const StackPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Stack.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/Stack.page.json')}
     {...{ ...StackPageProps, ...props }}
   />
 );

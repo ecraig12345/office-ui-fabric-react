@@ -4,7 +4,7 @@ import { DemoPage } from '../DemoPage';
 
 export const ActivityItemPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/ActivityItem.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/ActivityItem.page.json')}
     {...{ ...ActivityItemPageProps, ...props }}
   />
 );

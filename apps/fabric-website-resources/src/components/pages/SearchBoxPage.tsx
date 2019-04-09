@@ -5,7 +5,7 @@ import { SearchBoxPageProps } from 'office-ui-fabric-react/lib/components/Search
 
 export const SearchBoxPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/SearchBox.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/SearchBox.page.json')}
     {...{ ...SearchBoxPageProps, ...props }}
   />
 );

@@ -4,7 +4,7 @@ import { ComboBoxPageProps } from 'office-ui-fabric-react/lib/components/ComboBo
 
 export const ComboBoxPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/ComboBox.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/ComboBox.page.json')}
     {...{ ...ComboBoxPageProps, ...props }}
   />
 );

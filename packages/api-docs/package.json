@@ -1,7 +1,7 @@
 {
-  "name": "@uifabric/page-json-generator",
+  "name": "@uifabric/api-docs",
   "version": "1.0.0",
-  "description": "A build task that transforms .api.json files into page.json files",
+  "description": "A package that transforms .api.json files into page.json files",
   "main": "lib-commonjs/index.js",
   "typings": "lib/index.d.ts",
   "private": true,

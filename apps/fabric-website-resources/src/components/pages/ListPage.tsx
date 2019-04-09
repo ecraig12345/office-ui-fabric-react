@@ -4,8 +4,5 @@ import { ListPageProps } from 'office-ui-fabric-react/lib/components/List/List.d
 import { DemoPage } from '../DemoPage';
 
 export const ListPage = (props: { isHeaderVisible: boolean }) => (
-  <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/List.page.json')}
-    {...{ ...ListPageProps, ...props }}
-  />
+  <DemoPage jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/List.page.json')} {...{ ...ListPageProps, ...props }} />
 );

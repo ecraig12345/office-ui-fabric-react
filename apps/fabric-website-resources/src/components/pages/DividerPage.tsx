@@ -5,7 +5,7 @@ import { DividerPageProps } from 'office-ui-fabric-react/lib/components/Divider/
 
 export const DividerPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Divider.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/Divider.page.json')}
     {...{ ...DividerPageProps, ...props }}
   />
 );

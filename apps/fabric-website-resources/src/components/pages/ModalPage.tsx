@@ -5,7 +5,7 @@ import { ModalPageProps } from 'office-ui-fabric-react/lib/components/Modal/Moda
 
 export const ModalPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Modal.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/Modal.page.json')}
     {...{ ...ModalPageProps, ...props }}
   />
 );

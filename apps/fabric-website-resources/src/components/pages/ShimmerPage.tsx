@@ -5,7 +5,7 @@ import { ShimmerPageProps } from 'office-ui-fabric-react/lib/components/Shimmer/
 
 export const ShimmerPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Shimmer.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/Shimmer.page.json')}
     {...{ ...ShimmerPageProps, ...props }}
   />
 );

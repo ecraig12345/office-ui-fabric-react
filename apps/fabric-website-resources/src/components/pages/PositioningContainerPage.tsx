@@ -6,7 +6,7 @@ import { PositioningContainerPageProps } from 'office-ui-fabric-react/lib/compon
 
 export const PositioningContainerPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/PositioningContainer.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/PositioningContainer.page.json')}
     {...{ ...PositioningContainerPageProps, ...props }}
   />
 );

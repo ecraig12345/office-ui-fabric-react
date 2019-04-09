@@ -4,7 +4,7 @@ import { LayerPageProps } from 'office-ui-fabric-react/lib/components/Layer/Laye
 
 export const LayerPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Layer.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/Layer.page.json')}
     {...{ ...LayerPageProps, ...props }}
   />
 );

@@ -5,7 +5,7 @@ import { PanelPageProps } from 'office-ui-fabric-react/lib/components/Panel/Pane
 
 export const PanelPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Panel.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/Panel.page.json')}
     {...{ ...PanelPageProps, ...props }}
   />
 );

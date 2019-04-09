@@ -431,8 +431,8 @@
       "shouldPublish": false
     },
     {
-      "packageName": "@uifabric/page-json-generator",
-      "projectFolder": "packages/page-json-generator"
+      "packageName": "@uifabric/api-docs",
+      "projectFolder": "packages/api-docs"
       // "shouldPublish": false
     },
     {

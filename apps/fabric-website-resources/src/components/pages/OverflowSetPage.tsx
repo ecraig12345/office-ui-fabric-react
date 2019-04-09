@@ -5,7 +5,7 @@ import { OverflowSetPageProps } from 'office-ui-fabric-react/lib/components/Over
 
 export const OverflowSetPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/OverflowSet.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/OverflowSet.page.json')}
     {...{ ...OverflowSetPageProps, ...props }}
   />
 );

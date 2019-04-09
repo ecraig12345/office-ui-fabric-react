@@ -5,7 +5,7 @@ import { PickersPageProps } from 'office-ui-fabric-react/lib/components/pickers/
 
 export const PickersPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Pickers.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/Pickers.page.json')}
     {...{ ...PickersPageProps, ...props }}
   />
 );

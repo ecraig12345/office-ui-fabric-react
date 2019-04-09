@@ -5,7 +5,7 @@ import { DocumentCardPageProps } from 'office-ui-fabric-react/lib/components/Doc
 
 export const DocumentCardPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/DocumentCard.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/DocumentCard.page.json')}
     {...{ ...DocumentCardPageProps, ...props }}
   />
 );

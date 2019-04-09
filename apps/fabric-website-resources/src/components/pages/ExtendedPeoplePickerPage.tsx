@@ -7,7 +7,7 @@ import { DropdownPageProps } from 'office-ui-fabric-react/lib/components/Dropdow
 
 export const ExtendedPeoplePickerPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/ExtendedPeoplePicker.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/ExtendedPeoplePicker.page.json')}
     {...{ ...DropdownPageProps, ...props }}
   />
 );

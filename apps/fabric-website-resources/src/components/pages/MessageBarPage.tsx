@@ -5,7 +5,7 @@ import { MessageBarPageProps } from 'office-ui-fabric-react/lib/components/Messa
 
 export const MessageBarPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/MessageBar.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/MessageBar.page.json')}
     {...{ ...MessageBarPageProps, ...props }}
   />
 );

@@ -5,7 +5,7 @@ import { FocusTrapZonePageProps } from 'office-ui-fabric-react/lib/components/Fo
 
 export const FocusTrapZonePage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/FocusTrapZone.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/FocusTrapZone.page.json')}
     {...{ ...FocusTrapZonePageProps, ...props }}
   />
 );

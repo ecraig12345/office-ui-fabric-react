@@ -5,7 +5,7 @@ import { SpinButtonPageProps } from 'office-ui-fabric-react/lib/components/SpinB
 
 export const SpinButtonPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/SpinButton.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/SpinButton.page.json')}
     {...{ ...SpinButtonPageProps, ...props }}
   />
 );

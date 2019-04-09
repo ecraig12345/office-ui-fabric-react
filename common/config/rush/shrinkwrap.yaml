@@ -24,7 +24,7 @@ dependencies:
   '@rush-temp/merge-styles': 'file:projects/merge-styles.tgz'
   '@rush-temp/migration': 'file:projects/migration.tgz'
   '@rush-temp/office-ui-fabric-react': 'file:projects/office-ui-fabric-react.tgz'
-  '@rush-temp/page-json-generator': 'file:projects/page-json-generator.tgz'
+  '@rush-temp/api-docs': 'file:projects/api-docs.tgz'
   '@rush-temp/pr-deploy-site': 'file:projects/pr-deploy-site.tgz'
   '@rush-temp/prettier-rules': 'file:projects/prettier-rules.tgz'
   '@rush-temp/react-cards': 'file:projects/react-cards.tgz'
@@ -15324,17 +15324,17 @@ packages:
       integrity: sha512-AnsiywlniDVd06J3PgKvMFGqyI/Bc0+iGVyKlMT+9ULeO/xQciMxnlfUEY0PEh47vEn65xbCtF2ELM04tOQLrw==
       tarball: 'file:projects/office-ui-fabric-react.tgz'
     version: 0.0.0
-  'file:projects/page-json-generator.tgz':
+  'file:projects/api-docs.tgz':
     dependencies:
       '@microsoft/api-extractor-model': 7.0.27
       '@microsoft/node-core-library': 3.9.0
       '@microsoft/tsdoc': 0.12.8
       '@types/node': 8.10.39
     dev: false
-    name: '@rush-temp/page-json-generator'
+    name: '@rush-temp/api-docs'
     resolution:
       integrity: sha512-GMEAd51mGpwD4vuANr6Hh3vGvTcmRiVwFGbyprIaY2RGFcFhWQHNgO7z5HZ6JXyELMAGGGx/8Pbc04ZeVsTKpQ==
-      tarball: 'file:projects/page-json-generator.tgz'
+      tarball: 'file:projects/api-docs.tgz'
     version: 0.0.0
   'file:projects/pr-deploy-site.tgz':
     dev: false
@@ -15634,7 +15634,7 @@ specifiers:
   '@rush-temp/merge-styles': 'file:./projects/merge-styles.tgz'
   '@rush-temp/migration': 'file:./projects/migration.tgz'
   '@rush-temp/office-ui-fabric-react': 'file:./projects/office-ui-fabric-react.tgz'
-  '@rush-temp/page-json-generator': 'file:./projects/page-json-generator.tgz'
+  '@rush-temp/api-docs': 'file:./projects/api-docs.tgz'
   '@rush-temp/pr-deploy-site': 'file:./projects/pr-deploy-site.tgz'
   '@rush-temp/prettier-rules': 'file:./projects/prettier-rules.tgz'
   '@rush-temp/react-cards': 'file:./projects/react-cards.tgz'

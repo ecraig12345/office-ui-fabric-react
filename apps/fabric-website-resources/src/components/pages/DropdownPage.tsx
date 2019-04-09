@@ -5,7 +5,7 @@ import { DropdownPageProps } from 'office-ui-fabric-react/lib/components/Dropdow
 
 export const DropdownPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Dropdown.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/Dropdown.page.json')}
     {...{ ...DropdownPageProps, ...props }}
   />
 );

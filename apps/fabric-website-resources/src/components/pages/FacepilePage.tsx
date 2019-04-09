@@ -5,7 +5,7 @@ import { FacepilePageProps } from 'office-ui-fabric-react/lib/components/Facepil
 
 export const FacepilePage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Facepile.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/Facepile.page.json')}
     {...{ ...FacepilePageProps, ...props }}
   />
 );

@@ -4,7 +4,7 @@ import { DialogPageProps } from 'office-ui-fabric-react/lib/components/Dialog/Di
 
 export const DialogPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Dialog.page.json')}
+    jsonDocs={require('@uifabric/api-docs/lib/pages/office-ui-fabric-react/Dialog.page.json')}
     {...{ ...DialogPageProps, ...props }}
   />
 );
