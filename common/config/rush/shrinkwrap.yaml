@@ -1,9 +1,10 @@
 dependencies:
-  '@microsoft/api-extractor': 7.0.34
+  '@microsoft/api-extractor': 7.0.27
+  '@microsoft/api-extractor-model': 7.0.27
   '@microsoft/load-themed-styles': 1.8.39
   '@microsoft/loader-load-themed-styles': 1.7.107
   '@microsoft/node-core-library': 3.9.0
-  '@microsoft/tsdoc': 0.12.7
+  '@microsoft/tsdoc': 0.12.8
   '@rush-temp/azure-themes': 'file:projects/azure-themes.tgz'
   '@rush-temp/build': 'file:projects/build.tgz'
   '@rush-temp/charting': 'file:projects/charting.tgz'
@@ -202,35 +203,26 @@ packages:
     dev: false
     resolution:
       integrity: sha512-xKnPpXG/pvK1B90JkwwxSGii90rQGKtzcMt2gI5G6+M0REXaq6rOHsGC2ay6/d0Uje7zzvSzjEzfR3ENhFlrfA==
-  /@microsoft/api-extractor-model/7.0.28:
-    dependencies:
-      '@microsoft/node-core-library': 3.13.0
-      '@microsoft/tsdoc': 0.12.8
-      '@types/node': 8.5.8
-    dev: false
-    resolution:
-      integrity: sha512-kZJaWwdu3z5A1DugJpOZ9dI5+DjIEhqQJwHn2/kLTpsKT7gOyqNRbGHlDGG8xSiJ6/m994+cwh3qSGYDC17dtw==
-  /@microsoft/api-extractor/7.0.23:
+  /@microsoft/api-extractor-model/7.0.26:
     dependencies:
       '@microsoft/node-core-library': 3.12.0
-      '@microsoft/ts-command-line': 4.2.3
-      '@microsoft/tsdoc': 0.12.7
+      '@microsoft/tsdoc': 0.12.8
       '@types/node': 8.5.8
-      '@types/z-schema': 3.16.31
-      colors: 1.2.5
-      lodash: 4.17.11
-      resolve: 1.8.1
-      source-map: 0.6.1
-      typescript: 3.1.6
-      z-schema: 3.18.4
     dev: false
-    hasBin: true
     resolution:
-      integrity: sha512-qSkDDNwd0XxSWqEjN4eAAE3tk18WMN7mh8whs/xxX0F62FJ3NGtQIKxy/JfmnlQj5+c6gpZJz2vHy2dA5lyMbg==
-  /@microsoft/api-extractor/7.0.34:
+      integrity: sha512-nks8YHN9I5bnDUM8A+gHpqljR/YgAKTSqhGhAeaR0/+5qk9zQextsRq/jcp8qd2C+h+3FsDtk3GtN3Ht7Enhpg==
+  /@microsoft/api-extractor-model/7.0.27:
     dependencies:
-      '@microsoft/api-extractor-model': 7.0.28
-      '@microsoft/node-core-library': 3.13.0
+      '@microsoft/node-core-library': 3.12.1
+      '@microsoft/tsdoc': 0.12.8
+      '@types/node': 8.5.8
+    dev: false
+    resolution:
+      integrity: sha512-Em3G7SahN8ilClhj3+iQ71ykS/jUtfdcqunbjVXLfXcfdWMpv3paMp55MuVi0OmCI6ZnJydOgU4pcTIkCVLD9w==
+  /@microsoft/api-extractor/7.0.27:
+    dependencies:
+      '@microsoft/api-extractor-model': 7.0.26
+      '@microsoft/node-core-library': 3.12.0
       '@microsoft/ts-command-line': 4.2.3
       '@microsoft/tsdoc': 0.12.8
       colors: 1.2.5
@@ -241,7 +233,7 @@ packages:
     dev: false
     hasBin: true
     resolution:
-      integrity: sha512-ceucgU81an59N2PjhCBfSN71fZK0YRUiL6T1DoypQOiAPnx0vkYuD56lmc3DLcpATgCu7NL8qgilVUWIoSYtDA==
+      integrity: sha512-8zrNyYca93V51ECt/smIB97WDxZUjWF73A8LGo+VNlALFfnwMWKzzEeQCQnWSxQvPo5YJptqbYEm3Xt/umwFiQ==
   /@microsoft/load-themed-styles/1.8.39:
     dev: false
     resolution:
@@ -278,7 +270,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-9T2dEXmmxZqnqcpHuIB8mTAOM/DNSi/QcAwKYDjvZvkd+PGT5lCUXjM9GL7SaR2NPa3UrWDGgFhNoqLqLfEPbw==
-  /@microsoft/node-core-library/3.13.0:
+  /@microsoft/node-core-library/3.12.1:
     dependencies:
       '@types/fs-extra': 5.0.4
       '@types/jju': 1.4.1
@@ -290,7 +282,7 @@ packages:
       z-schema: 3.18.4
     dev: false
     resolution:
-      integrity: sha512-mnsL/1ikVWHl8sPNssavaAgtUaIM3hkQ8zeySuApU5dNmsMPzovJPfx9m5JGiMvs1v5QNAIVeiS9jnWwe/7anw==
+      integrity: sha512-aOrkt3/vDrBKy99ZfkzrKkwNkwa0D05j65NH+aqxEFVMRyuVC1w9WEIYO2K9EoUwwarVklnd74MxXmQ6aPdqCA==
   /@microsoft/node-core-library/3.9.0:
     dependencies:
       '@types/fs-extra': 5.0.4
@@ -313,10 +305,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-SIs4q7RcG7efBbh5Ffrf6V4jVLxWihD4NDRY3+gPiOG8CYawBzE22tTEloZ1yj/FBvBZQkQ0GYwXoPhn6ElYXA==
-  /@microsoft/tsdoc/0.12.7:
-    dev: false
-    resolution:
-      integrity: sha512-0bqNlQT8aR4Iq9xx/OsY579Zeqon9uTZDIuvl+XXu16TPPN2sASeKojwm366jA2MjgXd9iyTWpJM5/P1QJ4Dxg==
   /@microsoft/tsdoc/0.12.8:
     dev: false
     resolution:
@@ -1070,13 +1058,14 @@ packages:
     dev: false
     resolution:
       integrity: sha1-LrHQCl5Ow/pYx2r94S4YK2bcXBw=
-  /@uifabric/azure-themes/0.1.3:
+  /@uifabric/azure-themes/0.1.3/react-dom@16.6.3+react@16.6.3:
     dependencies:
       '@uifabric/merge-styles': 6.15.1
       '@uifabric/set-version': 1.1.3
-      office-ui-fabric-react: 6.129.4
+      office-ui-fabric-react: /office-ui-fabric-react/6.129.4/react-dom@16.6.3+react@16.6.3
       tslib: 1.9.3
     dev: false
+    id: registry.npmjs.org/@uifabric/azure-themes/0.1.3
     resolution:
       integrity: sha512-tsgPxts/lvg/2EaHIn2iN7nLVJ6fpqxCEVJpmQrrGy89q0tzvxj95RGV4YAeU/oQYHS2evsshhY0k0Mr09MGJA==
   /@uifabric/charting/0.28.5/react-dom@16.6.3+react@16.6.3:
@@ -1088,7 +1077,7 @@ packages:
       '@types/d3-selection': 1.3.0
       '@types/d3-shape': 1.2.8
       '@types/d3-time-format': 2.1.0
-      '@uifabric/icons': 6.3.0
+      '@uifabric/icons': /@uifabric/icons/6.3.0/react-dom@16.6.3+react@16.6.3
       '@uifabric/set-version': 1.1.3
       d3-array: 1.2.1
       d3-axis: 1.0.8
@@ -1117,7 +1106,7 @@ packages:
       '@types/d3-selection': 1.3.0
       '@types/d3-shape': 1.3.1
       '@types/d3-time-format': 2.1.1
-      '@uifabric/icons': 6.4.0
+      '@uifabric/icons': /@uifabric/icons/6.4.0/react-dom@16.6.3+react@16.6.3
       '@uifabric/set-version': 1.1.3
       d3-array: 1.2.1
       d3-axis: 1.0.8
@@ -1160,18 +1149,18 @@ packages:
   /@uifabric/experiments/6.52.0/react-dom@16.6.3+react@16.6.3:
     dependencies:
       '@microsoft/load-themed-styles': 1.8.55
-      '@uifabric/azure-themes': 0.1.3
+      '@uifabric/azure-themes': /@uifabric/azure-themes/0.1.3/react-dom@16.6.3+react@16.6.3
       '@uifabric/charting': /@uifabric/charting/0.28.5/react-dom@16.6.3+react@16.6.3
       '@uifabric/file-type-icons': /@uifabric/file-type-icons/6.4.1/react-dom@16.6.3+react@16.6.3
-      '@uifabric/fluent-theme': 0.13.3
+      '@uifabric/fluent-theme': /@uifabric/fluent-theme/0.13.3/react-dom@16.6.3+react@16.6.3
       '@uifabric/foundation': /@uifabric/foundation/0.6.0/react-dom@16.6.3+react@16.6.3
-      '@uifabric/icons': 6.3.0
+      '@uifabric/icons': /@uifabric/icons/6.3.0/react-dom@16.6.3+react@16.6.3
       '@uifabric/merge-styles': 6.15.1
       '@uifabric/set-version': 1.1.3
-      '@uifabric/styling': 6.41.0
-      '@uifabric/theme-samples': 0.1.4
+      '@uifabric/styling': /@uifabric/styling/6.41.0/react-dom@16.6.3+react@16.6.3
+      '@uifabric/theme-samples': /@uifabric/theme-samples/0.1.4/react-dom@16.6.3+react@16.6.3
       '@uifabric/utilities': /@uifabric/utilities/6.28.1/react-dom@16.6.3+react@16.6.3
-      '@uifabric/variants': 6.14.0
+      '@uifabric/variants': /@uifabric/variants/6.14.0/react-dom@16.6.3+react@16.6.3
       deep-assign: 2.0.0
       office-ui-fabric-react: /office-ui-fabric-react/6.129.4/react-dom@16.6.3+react@16.6.3
       prop-types: 15.6.2
@@ -1188,7 +1177,7 @@ packages:
   /@uifabric/file-type-icons/6.4.1/react-dom@16.6.3+react@16.6.3:
     dependencies:
       '@uifabric/set-version': 1.1.3
-      '@uifabric/styling': 6.41.0
+      '@uifabric/styling': /@uifabric/styling/6.41.0/react-dom@16.6.3+react@16.6.3
       react: 16.6.3
       react-dom: /react-dom/16.6.3/react@16.6.3
       tslib: 1.9.3
@@ -1199,21 +1188,22 @@ packages:
       react-dom: '>=16.3.2-0 <17.0.0'
     resolution:
       integrity: sha512-T6wGiA/RjLqRE+P5RRObpcRJ+ejh4ZwZX584GgEymOCcU7kjzWSZR7imTA65FbUMUhXxR68b3oiWgPSaCAXE8w==
-  /@uifabric/fluent-theme/0.13.3:
+  /@uifabric/fluent-theme/0.13.3/react-dom@16.6.3+react@16.6.3:
     dependencies:
       '@uifabric/merge-styles': 6.15.1
       '@uifabric/set-version': 1.1.3
-      '@uifabric/styling': 6.41.0
-      '@uifabric/variants': 6.14.0
-      office-ui-fabric-react: 6.129.4
+      '@uifabric/styling': /@uifabric/styling/6.41.0/react-dom@16.6.3+react@16.6.3
+      '@uifabric/variants': /@uifabric/variants/6.14.0/react-dom@16.6.3+react@16.6.3
+      office-ui-fabric-react: /office-ui-fabric-react/6.129.4/react-dom@16.6.3+react@16.6.3
       tslib: 1.9.3
     dev: false
+    id: registry.npmjs.org/@uifabric/fluent-theme/0.13.3
     resolution:
       integrity: sha512-LcqCs72pfHgctQSIW8Wh+3o7/WZ2g6KMrDanRn6XvTmV99z0saQbattxvlMv/ziMQAwIJfHqogacPVgvAHjxsg==
   /@uifabric/foundation/0.6.0/react-dom@16.6.3+react@16.6.3:
     dependencies:
       '@uifabric/set-version': 1.1.3
-      '@uifabric/styling': 6.41.0
+      '@uifabric/styling': /@uifabric/styling/6.41.0/react-dom@16.6.3+react@16.6.3
       '@uifabric/utilities': /@uifabric/utilities/6.28.1/react-dom@16.6.3+react@16.6.3
       react: 16.6.3
       react-dom: /react-dom/16.6.3/react@16.6.3
@@ -1228,7 +1218,7 @@ packages:
   /@uifabric/foundation/0.7.1/react-dom@16.6.3+react@16.6.3:
     dependencies:
       '@uifabric/set-version': 1.1.3
-      '@uifabric/styling': 6.42.0
+      '@uifabric/styling': /@uifabric/styling/6.42.0/react-dom@16.6.3+react@16.6.3
       '@uifabric/utilities': /@uifabric/utilities/6.29.4/react-dom@16.6.3+react@16.6.3
       react: 16.6.3
       react-dom: /react-dom/16.6.3/react@16.6.3
@@ -1240,20 +1230,22 @@ packages:
       react-dom: ^0.14.9 || ^15.0.1-0 || ^16.0.0-0
     resolution:
       integrity: sha512-YrdaJXAe4x7whaj7/x1fhFsBGao0vAec6mVIAYCvC09AK+puEYDahIloVWA6vLTRlWzzOZWsvN3S3Z1tzfhIRw==
-  /@uifabric/icons/6.3.0:
+  /@uifabric/icons/6.3.0/react-dom@16.6.3+react@16.6.3:
     dependencies:
       '@uifabric/set-version': 1.1.3
-      '@uifabric/styling': 6.41.0
+      '@uifabric/styling': /@uifabric/styling/6.41.0/react-dom@16.6.3+react@16.6.3
       tslib: 1.9.3
     dev: false
+    id: registry.npmjs.org/@uifabric/icons/6.3.0
     resolution:
       integrity: sha512-jMCa/liL7YCvu0xJRudQsU3oR1O7NuCwkFe392y4ZEXFlTsPpe1LeE4iZr6UbhJLHiEWKw5Uep8pMCuAcCXQdg==
-  /@uifabric/icons/6.4.0:
+  /@uifabric/icons/6.4.0/react-dom@16.6.3+react@16.6.3:
     dependencies:
       '@uifabric/set-version': 1.1.3
-      '@uifabric/styling': 6.42.0
+      '@uifabric/styling': /@uifabric/styling/6.42.0/react-dom@16.6.3+react@16.6.3
       tslib: 1.9.3
     dev: false
+    id: registry.npmjs.org/@uifabric/icons/6.4.0
     resolution:
       integrity: sha512-pbKu3OnWaRIeDqMFhicDrrcqicxNqoHpJpknZR9N2xxoPnYMnt2ZOhBNnAxoVVcxHlWkFNg0rvFrOAQGn+S5/Q==
   /@uifabric/merge-styles/6.15.1:
@@ -1276,47 +1268,38 @@ packages:
     dev: false
     resolution:
       integrity: sha512-IYpwVIuN7MJOeiWzZzr9AmFSvA5zc6gJn4fNHtEFIQnNB8WVWIcYrvx8Tbf7wWj9MvhdHYp70F054zZlHbL/Ag==
-  /@uifabric/styling/6.41.0:
+  /@uifabric/styling/6.41.0/react-dom@16.6.3+react@16.6.3:
     dependencies:
       '@microsoft/load-themed-styles': 1.8.55
       '@uifabric/merge-styles': 6.15.1
       '@uifabric/set-version': 1.1.3
-      '@uifabric/utilities': 6.28.1
+      '@uifabric/utilities': /@uifabric/utilities/6.28.1/react-dom@16.6.3+react@16.6.3
       tslib: 1.9.3
     dev: false
+    id: registry.npmjs.org/@uifabric/styling/6.41.0
     resolution:
       integrity: sha512-BDYpErXhMFEeQ3Unqyh+euRsjllqIHsGPOJQv7VB8lsAEUUoWkWp3l9HMZbphLaxcS56mOoI0Ouxik3aWGyjeg==
-  /@uifabric/styling/6.42.0:
+  /@uifabric/styling/6.42.0/react-dom@16.6.3+react@16.6.3:
     dependencies:
       '@microsoft/load-themed-styles': 1.8.62
       '@uifabric/merge-styles': 6.15.2
       '@uifabric/set-version': 1.1.3
-      '@uifabric/utilities': 6.29.4
+      '@uifabric/utilities': /@uifabric/utilities/6.29.4/react-dom@16.6.3+react@16.6.3
       tslib: 1.9.3
     dev: false
+    id: registry.npmjs.org/@uifabric/styling/6.42.0
     resolution:
       integrity: sha512-lkekxjSFptzwZmJPX6RDz0vtGB9IslCJ/aMTK9aQP5xRAkHd1o008fXiE7WNceFdmKhSkWazxU0AOT+6ktV3Vg==
-  /@uifabric/theme-samples/0.1.4:
+  /@uifabric/theme-samples/0.1.4/react-dom@16.6.3+react@16.6.3:
     dependencies:
       '@uifabric/set-version': 1.1.3
-      '@uifabric/variants': 6.14.0
-      office-ui-fabric-react: 6.129.4
+      '@uifabric/variants': /@uifabric/variants/6.14.0/react-dom@16.6.3+react@16.6.3
+      office-ui-fabric-react: /office-ui-fabric-react/6.129.4/react-dom@16.6.3+react@16.6.3
       tslib: 1.9.3
     dev: false
+    id: registry.npmjs.org/@uifabric/theme-samples/0.1.4
     resolution:
       integrity: sha512-IfX8oRXCwuSfU2HxKPlWCOSBYDcR5ljoZWN/+Isgk6k3pfgD5UQF+aY0eAcj0TbRXF3N6Ok/eNbLZIUAr8fO6w==
-  /@uifabric/utilities/6.28.1:
-    dependencies:
-      '@uifabric/merge-styles': 6.15.1
-      '@uifabric/set-version': 1.1.3
-      prop-types: 15.6.2
-      tslib: 1.9.3
-    dev: false
-    peerDependencies:
-      react: '>=16.3.2-0 <17.0.0'
-      react-dom: '>=16.3.2-0 <17.0.0'
-    resolution:
-      integrity: sha512-33THWLBWwQW24lZQXE4VgdKNi/EEDe05dUlmRxvgZyD9p/e7RiRY9Bc0jhMAv70uU+Fsx5WBUwg8wX6WjCzwTQ==
   /@uifabric/utilities/6.28.1/react-dom@16.6.3+react@16.6.3:
     dependencies:
       '@uifabric/merge-styles': 6.15.1
@@ -1332,18 +1315,6 @@ packages:
       react-dom: '>=16.3.2-0 <17.0.0'
     resolution:
       integrity: sha512-33THWLBWwQW24lZQXE4VgdKNi/EEDe05dUlmRxvgZyD9p/e7RiRY9Bc0jhMAv70uU+Fsx5WBUwg8wX6WjCzwTQ==
-  /@uifabric/utilities/6.29.4:
-    dependencies:
-      '@uifabric/merge-styles': 6.15.2
-      '@uifabric/set-version': 1.1.3
-      prop-types: 15.7.2
-      tslib: 1.9.3
-    dev: false
-    peerDependencies:
-      react: '>=16.3.2-0 <17.0.0'
-      react-dom: '>=16.3.2-0 <17.0.0'
-    resolution:
-      integrity: sha512-ESyMQfJrIGy1uM0HQApW0gvKpQCZBWLLoQTGZIq8Z4ZcTUEYN4Te+6oImtn0dxI1CIK6fbQNtLvZb5fX82+jMA==
   /@uifabric/utilities/6.29.4/react-dom@16.6.3+react@16.6.3:
     dependencies:
       '@uifabric/merge-styles': 6.15.2
@@ -1359,12 +1330,13 @@ packages:
       react-dom: '>=16.3.2-0 <17.0.0'
     resolution:
       integrity: sha512-ESyMQfJrIGy1uM0HQApW0gvKpQCZBWLLoQTGZIq8Z4ZcTUEYN4Te+6oImtn0dxI1CIK6fbQNtLvZb5fX82+jMA==
-  /@uifabric/variants/6.14.0:
+  /@uifabric/variants/6.14.0/react-dom@16.6.3+react@16.6.3:
     dependencies:
       '@uifabric/set-version': 1.1.3
-      office-ui-fabric-react: 6.129.4
+      office-ui-fabric-react: /office-ui-fabric-react/6.129.4/react-dom@16.6.3+react@16.6.3
       tslib: 1.9.3
     dev: false
+    id: registry.npmjs.org/@uifabric/variants/6.14.0
     resolution:
       integrity: sha512-RZyGrkl9gWvp9n0/+4j6yif9GdqP0WI5izjhMtWG7b+pNyJIVasP8fjtFZrjQj6WHaYlOMfSgnjbi1mjkZA8hg==
   /@webassemblyjs/ast/1.8.3:
@@ -9974,29 +9946,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-o2fRSjmGC8lTwFr2bKp2h6+fFqQ+ggtDIk/St3JWF/UYud70wnos081AkGeIRdKt0EpnxlHsDJZ0ab/3+Tndrw==
-  /office-ui-fabric-react/6.129.4:
-    dependencies:
-      '@microsoft/load-themed-styles': 1.8.55
-      '@uifabric/icons': 6.3.0
-      '@uifabric/merge-styles': 6.15.1
-      '@uifabric/set-version': 1.1.3
-      '@uifabric/styling': 6.41.0
-      '@uifabric/utilities': 6.28.1
-      prop-types: 15.6.2
-      tslib: 1.9.3
-    dev: false
-    peerDependencies:
-      react: '>=16.3.2-0 <17.0.0'
-      react-dom: '>=16.3.2-0 <17.0.0'
-    resolution:
-      integrity: sha512-xbxohL+b4UkrtLXNg1Tr3GKhjfU81TIYWdjK6pk+0oYUrTcolcDd3HbMf3CVs80fSPRy1KKW1g6LJlCPRowCcQ==
   /office-ui-fabric-react/6.129.4/react-dom@16.6.3+react@16.6.3:
     dependencies:
       '@microsoft/load-themed-styles': 1.8.55
-      '@uifabric/icons': 6.3.0
+      '@uifabric/icons': /@uifabric/icons/6.3.0/react-dom@16.6.3+react@16.6.3
       '@uifabric/merge-styles': 6.15.1
       '@uifabric/set-version': 1.1.3
-      '@uifabric/styling': 6.41.0
+      '@uifabric/styling': /@uifabric/styling/6.41.0/react-dom@16.6.3+react@16.6.3
       '@uifabric/utilities': /@uifabric/utilities/6.28.1/react-dom@16.6.3+react@16.6.3
       prop-types: 15.6.2
       react: 16.6.3
@@ -10013,10 +9969,10 @@ packages:
     dependencies:
       '@microsoft/load-themed-styles': 1.8.62
       '@uifabric/foundation': /@uifabric/foundation/0.7.1/react-dom@16.6.3+react@16.6.3
-      '@uifabric/icons': 6.4.0
+      '@uifabric/icons': /@uifabric/icons/6.4.0/react-dom@16.6.3+react@16.6.3
       '@uifabric/merge-styles': 6.15.2
       '@uifabric/set-version': 1.1.3
-      '@uifabric/styling': 6.42.0
+      '@uifabric/styling': /@uifabric/styling/6.42.0/react-dom@16.6.3+react@16.6.3
       '@uifabric/utilities': /@uifabric/utilities/6.29.4/react-dom@16.6.3+react@16.6.3
       prop-types: 15.7.2
       react: 16.6.3
@@ -14899,7 +14855,7 @@ packages:
     version: 0.0.0
   'file:projects/build.tgz':
     dependencies:
-      '@microsoft/api-extractor': 7.0.23
+      '@microsoft/api-extractor': 7.0.27
       '@microsoft/load-themed-styles': 1.8.39
       '@microsoft/loader-load-themed-styles': 1.7.107
       async: 2.6.1
@@ -14962,7 +14918,7 @@ packages:
     dev: false
     name: '@rush-temp/build'
     resolution:
-      integrity: sha512-UeiyyuvWUIYlmKsCas6/GccuGNNEYZ9rEhBzOEGjbpcwmW+WvX7J6U9k0D3qU1S7HIiaYAZCWUdftXDYJkkrRA==
+      integrity: sha512-zsEXQJaTJT7WgQGAa+V2POm8z7OsziPhreviqz++1fDAWV7Puklw24XZIlvTqYcwUhrlcksblXh3URLtlmlqIA==
       tarball: 'file:projects/build.tgz'
     version: 0.0.0
   'file:projects/charting.tgz':
@@ -15370,14 +15326,14 @@ packages:
     version: 0.0.0
   'file:projects/page-json-generator.tgz':
     dependencies:
-      '@microsoft/api-extractor': 7.0.23
+      '@microsoft/api-extractor-model': 7.0.27
       '@microsoft/node-core-library': 3.9.0
-      '@microsoft/tsdoc': 0.12.7
+      '@microsoft/tsdoc': 0.12.8
       '@types/node': 8.10.39
     dev: false
     name: '@rush-temp/page-json-generator'
     resolution:
-      integrity: sha512-TL5/aYMzJOJ1UFQtvpjj2slTZGbz5AlTR2EowKJgZjm0DhC9e6v/Q8nty7XxUWBy6kieok+l5CJpcSVpR/OJ3Q==
+      integrity: sha512-GMEAd51mGpwD4vuANr6Hh3vGvTcmRiVwFGbyprIaY2RGFcFhWQHNgO7z5HZ6JXyELMAGGGx/8Pbc04ZeVsTKpQ==
       tarball: 'file:projects/page-json-generator.tgz'
     version: 0.0.0
   'file:projects/pr-deploy-site.tgz':
@@ -15653,11 +15609,12 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  '@microsoft/api-extractor': ~7.0.23
+  '@microsoft/api-extractor': 7.0.27
+  '@microsoft/api-extractor-model': 7.0.27
   '@microsoft/load-themed-styles': ^1.7.13
   '@microsoft/loader-load-themed-styles': ^1.6.0
   '@microsoft/node-core-library': ~3.9.0
-  '@microsoft/tsdoc': 0.12.7
+  '@microsoft/tsdoc': 0.12.8
   '@rush-temp/azure-themes': 'file:./projects/azure-themes.tgz'
   '@rush-temp/build': 'file:./projects/build.tgz'
   '@rush-temp/charting': 'file:./projects/charting.tgz'

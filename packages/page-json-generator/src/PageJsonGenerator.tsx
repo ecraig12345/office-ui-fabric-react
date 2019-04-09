@@ -28,7 +28,7 @@ import {
   ApiPropertySignature,
   ExcerptToken,
   ExcerptTokenKind
-} from '@microsoft/api-extractor';
+} from '@microsoft/api-extractor-model';
 import { FileSystem, JsonFile } from '@microsoft/node-core-library';
 import { IPageJson, ITableJson, ITableRowJson, IEnumTableRowJson } from './IPageJson';
 import { generateTsxFile } from './TsxFileGenerator';

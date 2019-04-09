@@ -27,8 +27,8 @@
     "@uifabric/tslint-rules": ">=1.0.1 <2.0.0"
   },
   "dependencies": {
-    "@microsoft/tsdoc": "0.12.7",
-    "@microsoft/api-extractor": "~7.0.23",
+    "@microsoft/tsdoc": "0.12.8",
+    "@microsoft/api-extractor-model": "7.0.27",
     "@microsoft/node-core-library": "~3.9.0"
   }
 }
