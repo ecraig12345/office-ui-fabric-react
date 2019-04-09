@@ -5,7 +5,7 @@ import { TogglePageProps } from 'office-ui-fabric-react/lib/components/Toggle/To
 
 export const TogglePage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/Toggle.page.json')}
+    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Toggle.page.json')}
     {...{ ...TogglePageProps, ...props }}
   />
 );

@@ -4,7 +4,7 @@ import { ColorPickerPageProps } from 'office-ui-fabric-react/lib/components/Colo
 
 export const ColorPickerPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/ColorPicker.page.json')}
+    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/ColorPicker.page.json')}
     {...{ ...ColorPickerPageProps, ...props }}
   />
 );

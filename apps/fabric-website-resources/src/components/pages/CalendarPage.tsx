@@ -4,7 +4,7 @@ import { DemoPage } from '../DemoPage';
 
 export const CalendarPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/Calendar.page.json')}
+    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Calendar.page.json')}
     {...{ ...CalendarPageProps, ...props }}
   />
 );

@@ -6,7 +6,7 @@ import { MarqueeSelectionPageProps } from 'office-ui-fabric-react/lib/components
 
 export const MarqueeSelectionPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/MarqueeSelection.page.json')}
+    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/MarqueeSelection.page.json')}
     {...{ ...MarqueeSelectionPageProps, ...props }}
   />
 );

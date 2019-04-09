@@ -6,7 +6,7 @@ import { TeachingBubblePageProps } from 'office-ui-fabric-react/lib/components/T
 export const TeachingBubblePage = (props: { isHeaderVisible: boolean }) => (
   <LayerHost>
     <DemoPage
-      jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/TeachingBubble.page.json')}
+      jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/TeachingBubble.page.json')}
       {...{ ...TeachingBubblePageProps, ...props }}
     />
   </LayerHost>

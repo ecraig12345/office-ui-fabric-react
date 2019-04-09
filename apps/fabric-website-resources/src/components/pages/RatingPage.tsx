@@ -5,7 +5,7 @@ import { RatingPageProps } from 'office-ui-fabric-react/lib/components/Rating/Ra
 
 export const RatingPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/Rating.page.json')}
+    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Rating.page.json')}
     {...{ ...RatingPageProps, ...props }}
   />
 );

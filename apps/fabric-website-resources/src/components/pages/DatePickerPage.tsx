@@ -5,7 +5,7 @@ import { DatePickerPageProps } from 'office-ui-fabric-react/lib/components/DateP
 
 export const DatePickerPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/DatePicker.page.json')}
+    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/DatePicker.page.json')}
     {...{ ...DatePickerPageProps, ...props }}
   />
 );

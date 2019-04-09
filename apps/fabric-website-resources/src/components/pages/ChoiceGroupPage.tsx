@@ -4,7 +4,7 @@ import { ChoiceGroupPageProps } from 'office-ui-fabric-react/lib/components/Choi
 
 export const ChoiceGroupPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/ChoiceGroup.page.json')}
+    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/ChoiceGroup.page.json')}
     {...{ ...ChoiceGroupPageProps, ...props }}
   />
 );

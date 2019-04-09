@@ -4,7 +4,7 @@ import { PeoplePickerPageProps } from 'office-ui-fabric-react/lib/components/pic
 
 export const PeoplePickerPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/PeoplePicker.page.json')}
+    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/PeoplePicker.page.json')}
     {...{ ...PeoplePickerPageProps, ...props }}
   />
 );

@@ -5,7 +5,7 @@ import { SelectedPeopleListPageProps } from 'office-ui-fabric-react/lib/componen
 
 export const SelectedPeopleListPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/SelectedPeopleList.page.json')}
+    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/SelectedPeopleList.page.json')}
     {...{ ...SelectedPeopleListPageProps, ...props }}
   />
 );

@@ -4,5 +4,8 @@ import { TextPageProps } from 'office-ui-fabric-react/lib/components/Text/Text.d
 import { DemoPage } from '../DemoPage';
 
 export const TextPage = (props: { isHeaderVisible: boolean }) => (
-  <DemoPage jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/Text.page.json')} {...{ ...TextPageProps, ...props }} />
+  <DemoPage
+    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Text.page.json')}
+    {...{ ...TextPageProps, ...props }}
+  />
 );

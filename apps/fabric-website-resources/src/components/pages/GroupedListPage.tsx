@@ -5,7 +5,7 @@ import { GroupedListPageProps } from 'office-ui-fabric-react/lib/components/Grou
 
 export const GroupedListPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/GroupedList.page.json')}
+    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/GroupedList.page.json')}
     {...{ ...GroupedListPageProps, ...props }}
   />
 );

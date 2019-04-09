@@ -5,7 +5,7 @@ import { ContextualMenuPageProps } from 'office-ui-fabric-react/lib/components/C
 
 export const ContextualMenuPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/ContextualMenu.page.json')}
+    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/ContextualMenu.page.json')}
     {...{ ...ContextualMenuPageProps, ...props }}
   />
 );

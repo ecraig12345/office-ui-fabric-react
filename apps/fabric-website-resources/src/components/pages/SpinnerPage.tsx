@@ -5,7 +5,7 @@ import { SpinnerPageProps } from 'office-ui-fabric-react/lib/components/Spinner/
 
 export const SpinnerPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/Spinner.page.json')}
+    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Spinner.page.json')}
     {...{ ...SpinnerPageProps, ...props }}
   />
 );

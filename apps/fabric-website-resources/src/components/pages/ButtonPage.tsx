@@ -60,7 +60,7 @@ export class ButtonPage extends React.Component<IButtonDemoPageProps, IButtonDem
 
     return (
       <DemoPage
-        jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/Button.page.json')}
+        jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Button.page.json')}
         {...{
           ...ButtonPageProps({ areButtonsDisabled, areButtonsChecked }),
           ...this.props,

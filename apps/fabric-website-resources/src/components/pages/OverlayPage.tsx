@@ -5,7 +5,7 @@ import { OverlayPageProps } from 'office-ui-fabric-react/lib/components/Overlay/
 
 export const OverlayPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/Overlay.page.json')}
+    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Overlay.page.json')}
     {...{ ...OverlayPageProps, ...props }}
   />
 );

@@ -5,7 +5,7 @@ import { PersonaPageProps } from 'office-ui-fabric-react/lib/components/Persona/
 
 export const PersonaPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/Persona.page.json')}
+    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Persona.page.json')}
     {...{ ...PersonaPageProps, ...props }}
   />
 );

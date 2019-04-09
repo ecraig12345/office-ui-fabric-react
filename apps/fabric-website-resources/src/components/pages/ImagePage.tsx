@@ -4,5 +4,8 @@ import { DemoPage } from '../DemoPage';
 import { ImagePageProps } from 'office-ui-fabric-react/lib/components/Image/Image.doc';
 
 export const ImagePage = (props: { isHeaderVisible: boolean }) => (
-  <DemoPage jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/Image.page.json')} {...{ ...ImagePageProps, ...props }} />
+  <DemoPage
+    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Image.page.json')}
+    {...{ ...ImagePageProps, ...props }}
+  />
 );

@@ -5,7 +5,7 @@ import { ScrollablePanePageProps } from 'office-ui-fabric-react/lib/components/S
 
 export const ScrollablePanePage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/ScrollablePane.page.json')}
+    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/ScrollablePane.page.json')}
     {...{ ...ScrollablePanePageProps, ...props }}
   />
 );

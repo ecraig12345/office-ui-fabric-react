@@ -6,7 +6,7 @@ import { ResizeGroupPageProps } from 'office-ui-fabric-react/lib/components/Resi
 export const ResizeGroupPage = (props: { isHeaderVisible: boolean }) => (
   <LayerHost>
     <DemoPage
-      jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/ResizeGroup.page.json')}
+      jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/ResizeGroup.page.json')}
       {...{ ...ResizeGroupPageProps, ...props }}
     />
   </LayerHost>

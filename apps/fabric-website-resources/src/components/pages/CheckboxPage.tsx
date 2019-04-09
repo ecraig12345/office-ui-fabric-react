@@ -5,7 +5,7 @@ import { CheckboxPageProps } from 'office-ui-fabric-react/lib/components/Checkbo
 
 export const CheckboxPage = (props: { isHeaderVisible: boolean }) => (
   <DemoPage
-    jsonDocs={require('../../../../../common/pages/office-ui-fabric-react/Checkbox.page.json')}
+    jsonDocs={require('@uifabric/page-json-generator/lib/pages/office-ui-fabric-react/Checkbox.page.json')}
     {...{ ...CheckboxPageProps, ...props }}
   />
 );
