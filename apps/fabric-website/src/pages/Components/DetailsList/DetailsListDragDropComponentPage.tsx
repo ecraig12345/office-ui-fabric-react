@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { DetailsListDragDropPage } from '@uifabric/fabric-website-resources/lib/components/pages/DetailsList/DetailsListDragDropPage';
+import { pageStyles } from '../../Page.styles';
 
-export class DetailsListDragDropComponentPage extends React.Component<any, any> {
-  public render(): JSX.Element {
-    return <DetailsListDragDropPage isHeaderVisible={false} />;
-  }
-}
+export const DetailsListDragDropComponentPage: React.StatelessComponent = () => {
+  return <DetailsListDragDropPage styles={pageStyles.demoPage} isHeaderVisible={false} />;
+};

@@ -1,5 +1,6 @@
 import { IStyle, ITheme } from 'office-ui-fabric-react/lib/Styling';
 import { IStyleFunctionOrObject } from 'office-ui-fabric-react/lib/Utilities';
+import { IDetailsListStyleProps } from 'office-ui-fabric-react/lib/DetailsList';
 
 export interface IPropertiesTableSetProps {
   /**
@@ -38,4 +39,11 @@ export interface IPropertiesTableSetStyles {
   tableRoot: IStyle;
   /** Styles for each table header */
   tableHeader: IStyle;
+  subComponentStyles: IPropertiesTableSetSubComponentStyles;
+}
+
+export interface IPropertiesTableSetSubComponentStyles {
+  // TODO: remove anys after TS 3 upgrade
+  // tslint:disable:no-any
+  list: IStyleFunctionOrObject<IDetailsListStyleProps, any>;
 }

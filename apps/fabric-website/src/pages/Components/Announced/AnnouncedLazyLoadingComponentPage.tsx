@@ -1,17 +1,11 @@
 import * as React from 'react';
 import { AnnouncedLazyLoadingPage } from '@uifabric/fabric-website-resources/lib/components/pages/Announced/AnnouncedLazyLoadingPage';
-import { PageHeader } from '../../../components/PageHeader/PageHeader';
-import { ComponentPage } from '../../../components/ComponentPage/ComponentPage';
-const pageStyles: any = require('../../PageStyles.module.scss');
+import { pageStyles } from '../../Page.styles';
 
-export class AnnouncedLazyLoadingComponentPage extends React.Component<any, any> {
-  public render(): JSX.Element {
-    return (
-      <div className={pageStyles.basePage}>
-        <ComponentPage>
-          <AnnouncedLazyLoadingPage isHeaderVisible={false} />
-        </ComponentPage>
-      </div>
-    );
-  }
-}
+export const AnnouncedLazyLoadingComponentPage: React.StatelessComponent = () => {
+  return (
+    <div className={pageStyles.basePage}>
+      <AnnouncedLazyLoadingPage styles={pageStyles.demoPage} isHeaderVisible={false} />
+    </div>
+  );
+};

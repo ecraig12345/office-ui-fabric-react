@@ -1,9 +1,12 @@
-import { IDemoPageProps } from './DemoPage.types';
-import { ComponentPage, ExampleCard, PropertiesTableSet, PageMarkdown, FeedbackList } from '@uifabric/example-app-base';
 import * as React from 'react';
+import { ComponentPage, ExampleCard, PropertiesTableSet, PageMarkdown, FeedbackList } from '@uifabric/example-app-base';
+import { styled, classNamesFunction } from '@uifabric/utilities';
+import { IDemoPageProps, IDemoPageStyles, IDemoPageStyleProps } from './DemoPage.types';
 import { ComponentStatus } from '../ComponentStatus/ComponentStatus';
 
-export const DemoPage: React.StatelessComponent<IDemoPageProps> = demoPageProps => {
+const getClassNames = classNamesFunction<IDemoPageStyleProps, IDemoPageStyles>();
+
+const DemoPageBase: React.StatelessComponent<IDemoPageProps> = demoPageProps => {
   const {
     implementationExamples,
     exampleKnobs,
@@ -14,17 +17,20 @@ export const DemoPage: React.StatelessComponent<IDemoPageProps> = demoPageProps 
     dos,
     donts,
     componentStatus,
+    styles,
     // Passing the extra props to ComponentPage like this helps to keep the prop names in sync
     ...componentPageProps
   } = demoPageProps;
+  const { subComponentStyles } = getClassNames(styles);
   return (
     <ComponentPage
       {...componentPageProps}
+      styles={subComponentStyles.componentPage}
       implementationExampleCards={
         implementationExamples && (
           <div>
             {implementationExamples.map(example => (
-              <ExampleCard title={example.title} code={example.code} key={example.title}>
+              <ExampleCard title={example.title} code={example.code} key={example.title} styles={subComponentStyles.exampleCards}>
                 {example.view}
               </ExampleCard>
             ))}
@@ -39,7 +45,7 @@ export const DemoPage: React.StatelessComponent<IDemoPageProps> = demoPageProps 
               examples.map(example => {
                 const { view, ...cardProps } = example;
                 return (
-                  <ExampleCard key={cardProps.title} {...cardProps}>
+                  <ExampleCard key={cardProps.title} {...cardProps} styles={subComponentStyles.exampleCards}>
                     {view}
                   </ExampleCard>
                 );
@@ -57,3 +63,13 @@ export const DemoPage: React.StatelessComponent<IDemoPageProps> = demoPageProps 
     />
   );
 };
+
+// No override styles needed
+const getStyles = () => ({});
+
+export const DemoPage: React.StatelessComponent<IDemoPageProps> = styled<IDemoPageProps, IDemoPageStyleProps, IDemoPageStyles>(
+  DemoPageBase,
+  getStyles,
+  undefined,
+  { scope: 'DemoPage' }
+);

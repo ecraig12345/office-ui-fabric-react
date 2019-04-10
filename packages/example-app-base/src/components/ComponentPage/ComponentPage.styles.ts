@@ -6,9 +6,9 @@ const globalClassNames = {
   root: 'ComponentPage',
   body: 'ComponentPage-body',
   header: 'ComponentPage-header',
+  headerLink: 'ComponentPage-navLink',
   title: 'ComponentPage-title',
   navigation: 'ComponentPage-navigation',
-  navLink: 'ComponentPage-navLink',
   subHeading: 'ComponentPage-subHeading',
   overviewSection: 'ComponentPage-overviewSection',
   overviewText: 'ComponentPage-overview',
@@ -42,7 +42,7 @@ const sectionStyles: IRawStyle = {
 export const getStyles: IStyleFunction<IComponentPageStyleProps, IComponentPageStyles> = props => {
   const { theme = getTheme() } = props;
   return {
-    ...globalClassNames,
+    body: globalClassNames.body,
     root: [
       {
         backgroundColor: theme.palette.white,
@@ -59,6 +59,15 @@ export const getStyles: IStyleFunction<IComponentPageStyleProps, IComponentPageS
       },
       globalClassNames.header
     ],
+    headerLink: [
+      theme.fonts.large,
+      {
+        color: theme.palette.white,
+        textDecoration: 'none',
+        selectors: { '&:hover': { color: theme.palette.neutralLight } }
+      },
+      globalClassNames.headerLink
+    ],
     title: [
       theme.fonts.xxLarge,
       {
@@ -73,15 +82,6 @@ export const getStyles: IStyleFunction<IComponentPageStyleProps, IComponentPageS
       globalClassNames.title
     ],
     navigation: globalClassNames.navigation,
-    navLink: [
-      theme.fonts.large,
-      {
-        color: theme.palette.white,
-        textDecoration: 'none',
-        selectors: { '&:hover': { color: theme.palette.neutralLight } }
-      },
-      globalClassNames.navLink
-    ],
     subHeading: [
       theme.fonts.xxLarge,
       {
@@ -122,6 +122,8 @@ export const getStyles: IStyleFunction<IComponentPageStyleProps, IComponentPageS
       },
       globalClassNames.overviewText
     ],
+    overviewHeading: globalClassNames.overviewHeading,
+    usageSection: globalClassNames.usageSection,
     usageHeading: [
       {
         marginTop: 10,
@@ -135,6 +137,7 @@ export const getStyles: IStyleFunction<IComponentPageStyleProps, IComponentPageS
       globalClassNames.usageHeading
     ],
     variantsSection: [sectionStyles, globalClassNames.variantsSection],
+    variantsTitle: globalClassNames.variantsTitle,
     variantsList: [
       {
         paddingLeft: ulLeftPadding,
@@ -154,6 +157,7 @@ export const getStyles: IStyleFunction<IComponentPageStyleProps, IComponentPageS
       },
       globalClassNames.bestPracticesSection
     ],
+    doSections: globalClassNames.doSections,
     dosDontsSection: [
       {
         width: '100%',
@@ -208,6 +212,7 @@ export const getStyles: IStyleFunction<IComponentPageStyleProps, IComponentPageS
     dontsLine: {
       backgroundColor: '#e74856'
     },
+    dontsSection: globalClassNames.dontsSection,
     statusSection: [
       sectionStyles,
       {

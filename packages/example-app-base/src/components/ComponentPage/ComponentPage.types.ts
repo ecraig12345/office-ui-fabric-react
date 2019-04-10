@@ -100,9 +100,9 @@ export interface IComponentPageStyles {
   root: IStyle;
   body: IStyle;
   header: IStyle;
+  headerLink: IStyle;
   title: IStyle;
   navigation: IStyle;
-  navLink: IStyle;
   subHeading: IStyle;
   overviewSection: IStyle;
   overviewText: IStyle;

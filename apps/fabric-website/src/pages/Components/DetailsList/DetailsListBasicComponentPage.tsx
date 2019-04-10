@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { DetailsListBasicPage } from '@uifabric/fabric-website-resources/lib/components/pages/DetailsList/DetailsListBasicPage';
+import { pageStyles } from '../../Page.styles';
 
-export class DetailsListBasicComponentPage extends React.Component<any, any> {
-  public render(): JSX.Element {
-    return <DetailsListBasicPage isHeaderVisible={false} />;
-  }
-}
+export const DetailsListBasicComponentPage: React.StatelessComponent = () => {
+  return <DetailsListBasicPage styles={pageStyles.demoPage} isHeaderVisible={false} />;
+};

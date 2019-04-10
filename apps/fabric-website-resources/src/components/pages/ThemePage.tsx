@@ -2,6 +2,7 @@ import * as React from 'react';
 import { classNamesFunction } from 'office-ui-fabric-react/lib/Utilities';
 import { IPalette, ISemanticColors, loadTheme } from 'office-ui-fabric-react/lib/Styling';
 import { DemoPage } from '../DemoPage';
+import { IDemoPageProps } from '../DemoPage.types';
 import { ThemePageProps } from 'office-ui-fabric-react/lib/components/Theme/Theme.doc';
 import { IThemePageStyleProps, IThemePageStyles, IThemePageState } from 'office-ui-fabric-react/lib/components/Theme/ThemePage.types';
 import { defaultPalette, defaultSemanticColors } from 'office-ui-fabric-react/lib/components/Theme/defaultTheme';
@@ -14,12 +15,8 @@ import { IColor } from 'office-ui-fabric-react/lib/utilities/color/interfaces';
 
 const getClassNames = classNamesFunction<IThemePageStyleProps, IThemePageStyles>();
 
-export interface IThemePageProps {
-  isHeaderVisible?: boolean;
-}
-
-export class ThemePage extends React.Component<IThemePageProps, IThemePageState> {
-  constructor(props: IThemePageProps) {
+export class ThemePage extends React.Component<Partial<IDemoPageProps>, IThemePageState> {
+  constructor(props: Partial<IDemoPageProps>) {
     super(props);
 
     this._onPickerDismiss = this._onPickerDismiss.bind(this);

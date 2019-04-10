@@ -10,7 +10,7 @@ import { Highlight } from '../Highlight/Highlight';
 import { AppCustomizationsContext, IAppCustomizations, IExampleCardCustomizations } from '../../utilities/customizations';
 import { CodepenComponent } from '../CodepenComponent/CodepenComponent';
 import { IExampleCardProps, IExampleCardStyleProps, IExampleCardStyles } from './ExampleCard.types';
-import { getStyles, getDropdownStyles } from './ExampleCard.styles';
+import { getStyles } from './ExampleCard.styles';
 
 export interface IExampleCardState {
   isCodeVisible?: boolean;
@@ -71,7 +71,8 @@ export class ExampleCardBase extends React.Component<IExampleCardProps, IExample
 
           const styleProps: IExampleCardStyleProps = { isRightAligned, isScrollable, isCodeVisible, theme };
           const classNames = (this._classNames = getClassNames(styles, styleProps));
-          const dropdownStyles = getDropdownStyles(styleProps);
+          const { subComponentStyles } = classNames;
+          const { codeButtons: codeButtonStyles } = subComponentStyles;
 
           const exampleCardContent = (
             <div className={classNames.example} data-is-scrollable={isScrollable}>
@@ -84,23 +85,32 @@ export class ExampleCardBase extends React.Component<IExampleCardProps, IExample
               <div className={classNames.header}>
                 <span className={classNames.title}>{title}</span>
                 <div className={classNames.toggleButtons}>
-                  {codepenJS && <CodepenComponent jsContent={codepenJS} buttonClassName={classNames.codeButton} />}
+                  {codepenJS && <CodepenComponent jsContent={codepenJS} buttonStyles={subComponentStyles.codeButtons} />}
 
                   {exampleCardCustomizations && (
-                    <Dropdown defaultSelectedKey={0} onChange={this._onThemeChange} options={this._themeOptions} styles={dropdownStyles} />
+                    <Dropdown
+                      defaultSelectedKey={0}
+                      onChange={this._onThemeChange}
+                      options={this._themeOptions}
+                      styles={subComponentStyles.dropdowns}
+                    />
                   )}
 
                   {exampleCardCustomizations && (
-                    <Dropdown defaultSelectedKey={0} onChange={this._onSchemeChange} options={_schemeOptions} styles={dropdownStyles} />
+                    <Dropdown
+                      defaultSelectedKey={0}
+                      onChange={this._onSchemeChange}
+                      options={_schemeOptions}
+                      styles={subComponentStyles.dropdowns}
+                    />
                   )}
 
                   {code && (
                     <CommandButton
-                      iconProps={{
-                        iconName: 'Embed'
-                      }}
+                      iconProps={{ iconName: 'Embed' }}
                       onClick={this._onToggleCodeClick}
-                      className={classNames.codeButton}
+                      // TODO: fix once button has full styling support
+                      styles={typeof codeButtonStyles === 'function' ? codeButtonStyles({}) : codeButtonStyles}
                     >
                       {isCodeVisible ? 'Hide code' : 'Show code'}
                     </CommandButton>

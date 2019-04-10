@@ -1,6 +1,7 @@
 import { IStyleFunction } from 'office-ui-fabric-react/lib/Utilities';
-import { IFeedbackListStyleProps, IFeedbackListStyles } from './FeedbackList.types';
 import { getFocusStyle, getTheme, FontWeights } from 'office-ui-fabric-react/lib/Styling';
+import { IPivotStyles } from 'office-ui-fabric-react/lib/Pivot';
+import { IFeedbackListStyleProps, IFeedbackListStyles } from './FeedbackList.types';
 
 const globalClassNames = {
   pivot: 'FeedbackList-pivot',
@@ -12,8 +13,10 @@ const globalClassNames = {
 
 export const getStyles: IStyleFunction<IFeedbackListStyleProps, IFeedbackListStyles> = props => {
   const { theme = getTheme() } = props;
+  const pivotStyles: Partial<IPivotStyles> = {
+    root: [{ paddingTop: 20 }, globalClassNames.pivot]
+  };
   return {
-    pivot: [{ paddingTop: 20 }, globalClassNames.pivot],
     issueList: [
       {
         maxHeight: 400,
@@ -61,6 +64,9 @@ export const getStyles: IStyleFunction<IFeedbackListStyleProps, IFeedbackListSty
       },
       globalClassNames.listElement
     ],
-    timeStamp: [{ fontSize: theme.fonts.medium.fontSize }, globalClassNames.timeStamp]
+    timeStamp: [{ fontSize: theme.fonts.medium.fontSize }, globalClassNames.timeStamp],
+    subComponentStyles: {
+      pivot: pivotStyles
+    }
   };
 };

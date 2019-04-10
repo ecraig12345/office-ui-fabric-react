@@ -38,7 +38,7 @@ export const getStyles: IStyleFunction<IAppStyleProps, IAppStyles> = props => {
       },
       globalClassNames.root
     ],
-    header: [
+    headerContainer: [
       {
         position: 'absolute',
         top: 0,
@@ -48,13 +48,6 @@ export const getStyles: IStyleFunction<IAppStyleProps, IAppStyles> = props => {
       },
       globalClassNames.header
     ],
-    nav: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0
-    },
     leftNavContainer: [
       {
         position: 'absolute',
@@ -71,9 +64,6 @@ export const getStyles: IStyleFunction<IAppStyleProps, IAppStyles> = props => {
       },
       globalClassNames.leftNav
     ],
-    panelNavContainer: {
-      top: headerHeight
-    },
     content: [
       {
         position: 'absolute',
@@ -128,6 +118,19 @@ export const getStyles: IStyleFunction<IAppStyleProps, IAppStyles> = props => {
         background: theme.palette.green
       },
       globalClassNames.linkFlairRelease
-    ]
+    ],
+    subComponentStyles: {
+      header: {},
+      nav: {
+        root: {
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0
+        }
+      },
+      navPanel: { root: { top: headerHeight } }
+    }
   };
 };

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { ContextualMenu, DirectionalHint, IContextualMenuItem } from 'office-ui-fabric-react/lib/ContextualMenu';
 import { FocusZone, FocusZoneDirection } from 'office-ui-fabric-react/lib/FocusZone';
 import { getRTL, setRTL, classNamesFunction, styled } from 'office-ui-fabric-react/lib/Utilities';
-import { Icon, IIconStyles } from 'office-ui-fabric-react/lib/Icon';
+import { Icon } from 'office-ui-fabric-react/lib/Icon';
 
 import { IHeaderProps, IHeaderStyleProps, IHeaderStyles } from './Header.types';
 import { getStyles } from './Header.styles';
@@ -14,10 +14,6 @@ export interface IHeaderState {
     items: IContextualMenuItem[];
   };
 }
-
-const iconStyles: Partial<IIconStyles> = {
-  root: { fontSize: 18 }
-};
 
 const getClassNames = classNamesFunction<IHeaderStyleProps, IHeaderStyles>();
 
@@ -41,13 +37,14 @@ export class HeaderBase extends React.Component<IHeaderProps, IHeaderState> {
     const sideLinks = isLargeDown ? [] : this.props.sideLinks;
 
     const classNames = getClassNames(styles, { theme });
+    const { subComponentStyles } = classNames;
 
     return (
       <div>
         <div className={classNames.root}>
           {isLargeDown && (
             <button className={classNames.button} onClick={this._onMenuClick}>
-              <Icon iconName="GlobalNavButton" styles={iconStyles} />
+              <Icon iconName="GlobalNavButton" styles={subComponentStyles.icons} />
             </button>
           )}
           <div className={classNames.title}>{title}</div>
@@ -61,7 +58,7 @@ export class HeaderBase extends React.Component<IHeaderProps, IHeaderState> {
                 ))
                 .concat([
                   <button key="headerButton" className={classNames.button} onClick={this._onGearClick}>
-                    <Icon iconName="Settings" styles={iconStyles} />
+                    <Icon iconName="Settings" styles={subComponentStyles.icons} />
                   </button>
                 ])}
             </FocusZone>

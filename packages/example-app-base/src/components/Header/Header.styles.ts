@@ -1,6 +1,7 @@
 import { IRawStyle, getTheme, getFocusStyle } from 'office-ui-fabric-react/lib/Styling';
 import { IStyleFunction } from 'office-ui-fabric-react/lib/Utilities';
 import { IHeaderStyleProps, IHeaderStyles } from './Header.types';
+import { IIconStyles } from 'office-ui-fabric-react';
 
 const globalClassNames = {
   root: 'Header',
@@ -18,6 +19,8 @@ export const getStyles: IStyleFunction<IHeaderStyleProps, IHeaderStyles> = props
     color: theme.palette.white,
     borderRadius: 0
   };
+
+  const iconStyles: IIconStyles = { root: { fontSize: 18 } };
 
   return {
     root: [
@@ -72,6 +75,9 @@ export const getStyles: IStyleFunction<IHeaderStyleProps, IHeaderStyles> = props
         float: 'right'
       },
       globalClassNames.buttons
-    ]
+    ],
+    subComponentStyles: {
+      icons: iconStyles
+    }
   };
 };

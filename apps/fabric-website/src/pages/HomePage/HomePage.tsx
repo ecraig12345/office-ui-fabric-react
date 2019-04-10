@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { css, getId } from 'office-ui-fabric-react/lib/Utilities';
-import { Dropdown, IDropdownOption, DropdownMenuItemType } from 'office-ui-fabric-react/lib/Dropdown';
 import * as stylesImport from './HomePage.module.scss';
 import { getParameterByName, updateUrlParameter } from '../../utilities/location';
 import { ActionButton } from 'office-ui-fabric-react/lib/Button';
@@ -10,8 +9,6 @@ const styles: any = stylesImport;
 
 const corePackageData = require('office-ui-fabric-core/package.json');
 const reactPackageData = require('office-ui-fabric-react/package.json');
-
-const versionLinkId = getId('versionLink');
 
 // Update as new Fabric versions are released
 const fabricVersionOptions: IContextualMenuItem[] = [

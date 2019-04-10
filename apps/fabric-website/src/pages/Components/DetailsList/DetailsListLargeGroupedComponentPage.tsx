@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { DetailsListLargeGroupedPage } from '@uifabric/fabric-website-resources/lib/components/pages/DetailsList/DetailsListLargeGroupedPage';
+import { pageStyles } from '../../Page.styles';
 
-export class DetailsListLargeGroupedComponentPage extends React.Component<any, any> {
-  public render(): JSX.Element {
-    return <DetailsListLargeGroupedPage isHeaderVisible={false} />;
-  }
-}
+export const DetailsListLargeGroupedComponentPage: React.StatelessComponent = () => {
+  return <DetailsListLargeGroupedPage styles={pageStyles.demoPage} isHeaderVisible={false} />;
+};

@@ -138,6 +138,7 @@ class PropertiesTableBase extends React.PureComponent<IPropertiesTableProps> {
           items={this._properties}
           groups={this._groups}
           columns={renderAsEnum ? ENUM_COLUMNS : DEFAULT_COLUMNS}
+          styles={classNames.subComponentStyles.list}
         />
       </div>
     );

@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { DetailsListCustomFooterPage } from '@uifabric/fabric-website-resources/lib/components/pages/DetailsList/DetailsListCustomFooterPage';
+import { pageStyles } from '../../Page.styles';
 
-export class DetailsListCustomFooterComponentPage extends React.Component<any, any> {
-  public render(): JSX.Element {
-    return <DetailsListCustomFooterPage isHeaderVisible={false} />;
-  }
-}
+export const DetailsListCustomFooterComponentPage: React.StatelessComponent = () => {
+  return <DetailsListCustomFooterPage styles={pageStyles.demoPage} isHeaderVisible={false} />;
+};

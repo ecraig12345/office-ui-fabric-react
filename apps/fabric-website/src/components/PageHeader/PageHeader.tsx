@@ -20,6 +20,9 @@ export interface IPageHeaderProps extends IBaseProps {
    */
   links?: IPageHeaderLinkProps[];
 
+  /** Use the default set of links for a component page */
+  useDefaultComponentLinks?: boolean;
+
   /**
    * Background color for the header.
    * @default '#333333''
@@ -79,7 +82,15 @@ export class PageHeader extends BaseComponent<IPageHeaderProps, IPageHeaderState
   }
 
   public render(): JSX.Element {
-    let { pageTitle, links, backgroundColor, backgroundImage } = this.props;
+    let { pageTitle, links, backgroundColor, backgroundImage, useDefaultComponentLinks } = this.props;
+    if (!links && useDefaultComponentLinks) {
+      links = [
+        { text: 'Overview', location: 'Overview' },
+        { text: 'Best Practices', location: 'BestPractices' },
+        { text: 'Variants', location: 'Variants' },
+        { text: 'Implementation', location: 'Implementation' }
+      ];
+    }
     let { isAttached } = this.state;
     let inPageNav;
     let backgroundStyle = {
