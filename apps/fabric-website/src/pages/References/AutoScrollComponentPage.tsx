@@ -10,7 +10,7 @@ export class AutoScrollComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="AutoScroll" backgroundColor="#038387" />
-          <AutoScrollPage isHeaderVisible={false} />
+          <AutoScrollPage />
         </ComponentPage>
       </div>
     );

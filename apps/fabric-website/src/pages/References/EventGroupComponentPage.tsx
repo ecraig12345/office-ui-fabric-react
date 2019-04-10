@@ -10,7 +10,7 @@ export class EventGroupComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="EventGroup" backgroundColor="#038387" />
-          <EventGroupPage isHeaderVisible={false} />
+          <EventGroupPage />
         </ComponentPage>
       </div>
     );

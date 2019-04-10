@@ -10,7 +10,7 @@ export class IRenderComponentComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="IRenderComponent" backgroundColor="#038387" />
-          <IRenderComponentPage isHeaderVisible={false} />
+          <IRenderComponentPage />
         </ComponentPage>
       </div>
     );

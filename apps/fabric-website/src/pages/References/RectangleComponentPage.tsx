@@ -10,7 +10,7 @@ export class RectangleComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="Rectangle" backgroundColor="#038387" />
-          <RectanglePage isHeaderVisible={false} />
+          <RectanglePage />
         </ComponentPage>
       </div>
     );

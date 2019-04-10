@@ -32,6 +32,29 @@ export const referencePages: INavPage[] = [
       require.ensure([], require => cb(require<any>('../../pages/References/BaseComponentComponentPage').BaseComponentComponentPage))
   },
   {
+    title: 'Check',
+    url: '#/components/references/check',
+    isFilterable: true,
+    component: () => <LoadingComponent title="Check" />,
+    getComponent: cb => require.ensure([], require => cb(require<any>('../../pages/References/CheckComponentPage').CheckComponentPage))
+  },
+  {
+    title: 'DateRangeType',
+    url: '#/components/references/daterangetype',
+    isFilterable: true,
+    component: () => <LoadingComponent title="DateRangeType" />,
+    getComponent: cb =>
+      require.ensure([], require => cb(require<any>('../../pages/References/DateRangeTypeComponentPage').DateRangeTypeComponentPage))
+  },
+  {
+    title: 'DayOfWeek',
+    url: '#/components/references/dayofweek',
+    isFilterable: true,
+    component: () => <LoadingComponent title="DayOfWeek" />,
+    getComponent: cb =>
+      require.ensure([], require => cb(require<any>('../../pages/References/DayOfWeekComponentPage').DayOfWeekComponentPage))
+  },
+  {
     title: 'DelayedRender',
     url: '#/components/references/delayedrender',
     isFilterable: true,
@@ -56,6 +79,14 @@ export const referencePages: INavPage[] = [
       require.ensure([], require =>
         cb(require<any>('../../pages/References/FabricPerformanceComponentPage').FabricPerformanceComponentPage)
       )
+  },
+  {
+    title: 'FirstWeekOfYear',
+    url: '#/components/references/firstweekofyear',
+    isFilterable: true,
+    component: () => <LoadingComponent title="FirstWeekOfYear" />,
+    getComponent: cb =>
+      require.ensure([], require => cb(require<any>('../../pages/References/FirstWeekOfYearComponentPage').FirstWeekOfYearComponentPage))
   },
   {
     title: 'GlobalSettings',

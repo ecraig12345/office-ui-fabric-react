@@ -6,7 +6,7 @@ export function generateTsxFile(pageName: string): void {
 
   import { PropertiesTableSet } from '@uifabric/example-app-base';
 
-  export const ${pageName}Page = (props: { isHeaderVisible: boolean }) => (
+  export const ${pageName}Page = () => (
     <PropertiesTableSet jsonDocs={require('@uifabric/api-docs/lib/pages/references/${pageName}.page.json')} />
   );`;
 
@@ -27,7 +27,7 @@ export function generateTsxFile(pageName: string): void {
         <div className={pageStyles.basePage}>
           <ComponentPage>
             <PageHeader pageTitle="${pageName}" backgroundColor="#038387" />
-            <${pageName}Page isHeaderVisible={false} />
+            <${pageName}Page />
           </ComponentPage>
         </div>
       );

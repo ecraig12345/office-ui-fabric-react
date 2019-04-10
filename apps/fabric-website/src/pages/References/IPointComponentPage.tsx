@@ -10,7 +10,7 @@ export class IPointComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="IPoint" backgroundColor="#038387" />
-          <IPointPage isHeaderVisible={false} />
+          <IPointPage />
         </ComponentPage>
       </div>
     );

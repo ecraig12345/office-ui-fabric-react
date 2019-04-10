@@ -10,7 +10,7 @@ export class GlobalSettingsComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="GlobalSettings" backgroundColor="#038387" />
-          <GlobalSettingsPage isHeaderVisible={false} />
+          <GlobalSettingsPage />
         </ComponentPage>
       </div>
     );

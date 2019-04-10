@@ -110,11 +110,11 @@ export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps
     let results: Array<IProperty> = [];
     const iComponentProps: Array<IProperty> = [];
     const preResults: Array<IProperty> = [];
-    const pattern: RegExp = /(I.*?Props)/;
 
     const { jsonDocs } = this.props;
 
     if (jsonDocs) {
+      const propsName: string = `I${jsonDocs.name}Props`;
       for (let j = 0; j < jsonDocs.tables.length; j++) {
         switch (jsonDocs.tables[j].kind) {
           case 'enum': {
@@ -157,7 +157,7 @@ export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps
             }
 
             // the interface
-            if (pattern.test(jsonDocs.tables[j].name)) {
+            if (propsName === jsonDocs.tables[j].name) {
               iComponentProps.push({
                 propertyName: jsonDocs.tables[j].name,
                 description: jsonDocs.tables[j].descriptionHtml,

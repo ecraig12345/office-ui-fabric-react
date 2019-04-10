@@ -10,7 +10,7 @@ export class IRawFontStyleComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="IRawFontStyle" backgroundColor="#038387" />
-          <IRawFontStylePage isHeaderVisible={false} />
+          <IRawFontStylePage />
         </ComponentPage>
       </div>
     );

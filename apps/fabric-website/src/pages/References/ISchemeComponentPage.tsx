@@ -10,7 +10,7 @@ export class ISchemeComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="IScheme" backgroundColor="#038387" />
-          <ISchemePage isHeaderVisible={false} />
+          <ISchemePage />
         </ComponentPage>
       </div>
     );

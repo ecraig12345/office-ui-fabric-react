@@ -10,7 +10,7 @@ export class IFontFaceComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="IFontFace" backgroundColor="#038387" />
-          <IFontFacePage isHeaderVisible={false} />
+          <IFontFacePage />
         </ComponentPage>
       </div>
     );

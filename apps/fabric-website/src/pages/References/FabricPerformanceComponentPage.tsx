@@ -10,7 +10,7 @@ export class FabricPerformanceComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="FabricPerformance" backgroundColor="#038387" />
-          <FabricPerformancePage isHeaderVisible={false} />
+          <FabricPerformancePage />
         </ComponentPage>
       </div>
     );

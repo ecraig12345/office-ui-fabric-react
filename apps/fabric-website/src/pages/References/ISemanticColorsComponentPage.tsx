@@ -10,7 +10,7 @@ export class ISemanticColorsComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="ISemanticColors" backgroundColor="#038387" />
-          <ISemanticColorsPage isHeaderVisible={false} />
+          <ISemanticColorsPage />
         </ComponentPage>
       </div>
     );

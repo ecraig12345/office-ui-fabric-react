@@ -10,7 +10,7 @@ export class IBasePropsComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="IBaseProps" backgroundColor="#038387" />
-          <IBasePropsPage isHeaderVisible={false} />
+          <IBasePropsPage />
         </ComponentPage>
       </div>
     );

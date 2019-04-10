@@ -14,6 +14,24 @@ export const referencePages: IAppLink[] = [
     url: '#/examples/references/basecomponent'
   },
   {
+    component: require<any>('./components/pages/References/CheckPage').CheckPage,
+    key: 'Check',
+    name: 'Check',
+    url: '#/examples/references/check'
+  },
+  {
+    component: require<any>('./components/pages/References/DateRangeTypePage').DateRangeTypePage,
+    key: 'DateRangeType',
+    name: 'DateRangeType',
+    url: '#/examples/references/daterangetype'
+  },
+  {
+    component: require<any>('./components/pages/References/DayOfWeekPage').DayOfWeekPage,
+    key: 'DayOfWeek',
+    name: 'DayOfWeek',
+    url: '#/examples/references/dayofweek'
+  },
+  {
     component: require<any>('./components/pages/References/DelayedRenderPage').DelayedRenderPage,
     key: 'DelayedRender',
     name: 'DelayedRender',
@@ -30,6 +48,12 @@ export const referencePages: IAppLink[] = [
     key: 'FabricPerformance',
     name: 'FabricPerformance',
     url: '#/examples/references/fabricperformance'
+  },
+  {
+    component: require<any>('./components/pages/References/FirstWeekOfYearPage').FirstWeekOfYearPage,
+    key: 'FirstWeekOfYear',
+    name: 'FirstWeekOfYear',
+    url: '#/examples/references/firstweekofyear'
   },
   {
     component: require<any>('./components/pages/References/GlobalSettingsPage').GlobalSettingsPage,

@@ -10,7 +10,7 @@ export class DelayedRenderComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="DelayedRender" backgroundColor="#038387" />
-          <DelayedRenderPage isHeaderVisible={false} />
+          <DelayedRenderPage />
         </ComponentPage>
       </div>
     );

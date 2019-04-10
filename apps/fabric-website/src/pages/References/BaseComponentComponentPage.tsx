@@ -10,7 +10,7 @@ export class BaseComponentComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="BaseComponent" backgroundColor="#038387" />
-          <BaseComponentPage isHeaderVisible={false} />
+          <BaseComponentPage />
         </ComponentPage>
       </div>
     );

@@ -10,7 +10,7 @@ export class IPaletteComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="IPalette" backgroundColor="#038387" />
-          <IPalettePage isHeaderVisible={false} />
+          <IPalettePage />
         </ComponentPage>
       </div>
     );

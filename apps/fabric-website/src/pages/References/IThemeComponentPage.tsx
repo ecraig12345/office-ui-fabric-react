@@ -10,7 +10,7 @@ export class IThemeComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="ITheme" backgroundColor="#038387" />
-          <IThemePage isHeaderVisible={false} />
+          <IThemePage />
         </ComponentPage>
       </div>
     );

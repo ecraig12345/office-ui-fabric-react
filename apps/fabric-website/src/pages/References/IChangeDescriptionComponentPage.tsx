@@ -10,7 +10,7 @@ export class IChangeDescriptionComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="IChangeDescription" backgroundColor="#038387" />
-          <IChangeDescriptionPage isHeaderVisible={false} />
+          <IChangeDescriptionPage />
         </ComponentPage>
       </div>
     );

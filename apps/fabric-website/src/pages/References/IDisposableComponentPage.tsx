@@ -10,7 +10,7 @@ export class IDisposableComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="IDisposable" backgroundColor="#038387" />
-          <IDisposablePage isHeaderVisible={false} />
+          <IDisposablePage />
         </ComponentPage>
       </div>
     );

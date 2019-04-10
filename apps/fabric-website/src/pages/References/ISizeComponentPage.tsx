@@ -10,7 +10,7 @@ export class ISizeComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="ISize" backgroundColor="#038387" />
-          <ISizePage isHeaderVisible={false} />
+          <ISizePage />
         </ComponentPage>
       </div>
     );

@@ -150,7 +150,7 @@ function createPageJsonFiles(collectedData: CollectedData, options: IPageJsonOpt
 
       const pageData: PageData = collectedData.pageDataByPageName.get(pageName)!;
 
-      const pageJson: IPageJson = { tables: [] };
+      const pageJson: IPageJson = { tables: [], name: pageName };
       for (const apiItem of pageData.apiItems) {
         switch (apiItem.kind) {
           case ApiItemKind.Interface: {
@@ -613,11 +613,12 @@ function collectPageData(collectedData: CollectedData, apiItem: ApiItem, kind: P
 
             if (pageData === undefined) {
               console.log('Warning: Unrecognized page name: ' + pageName);
-              collectedData.pageDataByPageName.set(pageName, new PageData(pageName, kind));
+              collectedData.pageDataByPageName.set(pageName, new PageData(pageName, PageKind.References));
               pageData = collectedData.pageDataByPageName.get(pageName);
+              collectedData.apiToPage.set(apiItem.displayName, { pageName, kind: PageKind.References });
+            } else {
+              collectedData.apiToPage.set(apiItem.displayName, { pageName, kind: PageKind.Components });
             }
-
-            collectedData.apiToPage.set(apiItem.displayName, { pageName, kind });
 
             pageData!.apiItems.push(apiItem);
           }

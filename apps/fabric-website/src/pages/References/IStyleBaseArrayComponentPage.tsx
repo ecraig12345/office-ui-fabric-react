@@ -10,7 +10,7 @@ export class IStyleBaseArrayComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="IStyleBaseArray" backgroundColor="#038387" />
-          <IStyleBaseArrayPage isHeaderVisible={false} />
+          <IStyleBaseArrayPage />
         </ComponentPage>
       </div>
     );

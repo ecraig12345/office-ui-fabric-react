@@ -56,4 +56,5 @@ export interface ITableJson {
 
 export interface IPageJson {
   tables: ITableJson[];
+  name: string;
 }

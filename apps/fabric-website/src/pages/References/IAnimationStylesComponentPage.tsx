@@ -10,7 +10,7 @@ export class IAnimationStylesComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="IAnimationStyles" backgroundColor="#038387" />
-          <IAnimationStylesPage isHeaderVisible={false} />
+          <IAnimationStylesPage />
         </ComponentPage>
       </div>
     );

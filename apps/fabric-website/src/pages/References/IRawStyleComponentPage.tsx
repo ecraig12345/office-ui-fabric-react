@@ -10,7 +10,7 @@ export class IRawStyleComponentPage extends React.Component<any, any> {
       <div className={pageStyles.basePage}>
         <ComponentPage>
           <PageHeader pageTitle="IRawStyle" backgroundColor="#038387" />
-          <IRawStylePage isHeaderVisible={false} />
+          <IRawStylePage />
         </ComponentPage>
       </div>
     );
