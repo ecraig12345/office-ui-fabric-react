@@ -5,13 +5,9 @@ const BUNDLE_NAME = 'office-ui-fabric-react';
 const IS_PRODUCTION = process.argv.indexOf('--production') > -1;
 
 let entry = {
-  [BUNDLE_NAME]: './lib/index.bundle.js'
+  [BUNDLE_NAME]: './lib/index.bundle.js',
+  'demo-app': './lib/index.js'
 };
-
-// In production builds, produce the demo-app bundle.
-if (IS_PRODUCTION) {
-  entry['demo-app'] = './lib/index.js';
-}
 
 module.exports = resources.createConfig(BUNDLE_NAME, IS_PRODUCTION, {
   entry,
