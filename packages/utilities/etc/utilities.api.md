@@ -141,7 +141,7 @@ declare class Customizations {
 }
 
 // @public
-declare class Customizer extends BaseComponent<ICustomizerProps> {
+declare class Customizer extends React.Component<ICustomizerProps> {
     // (undocumented)
     componentDidMount(): void;
     // (undocumented)
@@ -851,6 +851,12 @@ declare function resetIds(counter?: number): void;
 
 // @public
 declare function resetMemoizations(): void;
+
+// @public
+declare const safeRequestAnimationFrame: (component: React.Component<{}, {}, any>) => (cb: Function) => void;
+
+// @public
+declare const safeSetTimeout: (component: React.Component<{}, {}, any>) => (cb: Function, duration: number) => void;
 
 // @public
 declare function setBaseUrl(baseUrl: string): void;

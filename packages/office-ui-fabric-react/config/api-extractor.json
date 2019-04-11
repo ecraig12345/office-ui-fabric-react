@@ -13,15 +13,7 @@
     "missingReleaseTags": "allow"
   },
   "messages": {
-    "compilerMessageReporting": {
-      "default": {
-        "logLevel": "warning"
-      }
-    },
     "tsdocMessageReporting": {
-      "tsdoc-unsupported-tag": {
-        "logLevel": "none"
-      },
       "tsdoc-undefined-tag": {
         "logLevel": "none"
       }

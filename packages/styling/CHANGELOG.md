@@ -1,6 +1,20 @@
 # Change Log - @uifabric/styling
 
-This log was last generated on Wed, 27 Mar 2019 12:34:02 GMT and should not be manually modified.
+This log was last generated on Thu, 11 Apr 2019 12:37:10 GMT and should not be manually modified.
+
+## 6.45.3
+Thu, 11 Apr 2019 12:37:10 GMT
+
+### Patches
+
+- Documentation: add @docCategory inline tags
+
+## 6.45.2
+Tue, 02 Apr 2019 00:38:15 GMT
+
+### Patches
+
+- Use ^ ranges instead of >=
 
 ## 6.45.1
 Wed, 27 Mar 2019 12:34:02 GMT

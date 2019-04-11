@@ -12,7 +12,7 @@ import { Link } from 'office-ui-fabric-react/lib/Link';
 import { SelectionMode } from 'office-ui-fabric-react/lib/Selection';
 import { Stack } from 'office-ui-fabric-react/lib/Stack';
 import { Text } from 'office-ui-fabric-react/lib/Text';
-import './PropertiesTable.scss';
+import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import { IInterfaceProperty, IEnumProperty, ILinkToken, IMethod } from '../../utilities/parser/index';
 
 export interface IPropertiesTableProps {
@@ -387,6 +387,13 @@ export class PropertiesTable extends React.Component<IPropertiesTableProps, IPro
       }
     };
 
+    const deprecatedRowStyles = mergeStyles([
+      {
+        background: '#ffffcc'
+      },
+      'DetailsRow-deprecated'
+    ]);
+
     if (item.deprecated === true) {
       const deprecatedStyles: Partial<IDetailsRowStyles> = {
         root: {
@@ -400,7 +407,7 @@ export class PropertiesTable extends React.Component<IPropertiesTableProps, IPro
       };
 
       return (
-        <div className="DetailsRow-deprecated">
+        <div className={deprecatedRowStyles}>
           Warning. This API is now obsolete.
           {defaultRender!({
             ...props,

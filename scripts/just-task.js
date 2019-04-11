@@ -18,6 +18,7 @@ const bundleSizeCollect = require('./tasks/bundle-size-collect');
 const checkForModifiedFiles = require('./tasks/check-for-modified-files');
 const generateVersionFiles = require('./tasks/generate-version-files');
 const generateReferencePages = require('./tasks/generate-reference-pages');
+const perfTest = require('./tasks/perf-test');
 
 let packageJson;
 
@@ -53,6 +54,7 @@ registerTask('bundle-size-collect', bundleSizeCollect);
 registerTask('check-for-modified-files', checkForModifiedFiles);
 registerTask('generate-version-files', generateVersionFiles);
 registerTask('generate-reference-pages', generateReferencePages);
+registerTask('perf-test', perfTest);
 
 task('ts', parallel('ts:commonjs', 'ts:esm', condition('ts:amd', () => argv().production && !argv().min && !argv().prdeploy)));
 

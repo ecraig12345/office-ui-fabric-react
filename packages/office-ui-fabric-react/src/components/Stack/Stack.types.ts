@@ -52,7 +52,7 @@ export interface IStackSlots {
  */
 export interface IStackProps
   extends IStackSlots,
-    IStyleableComponentProps<IStackProps, IStackStyles, IStackTokens>,
+    IStyleableComponentProps<IStackProps, IStackTokens, IStackStyles>,
     React.HTMLAttributes<HTMLElement> {
   /**
    * Defines how to render the Stack.
@@ -134,7 +134,9 @@ export interface IStackProps
 /**
  * {@docCategory Stack}
  */
-export interface IStackTokens {}
+export interface IStackTokens {
+  childrenGap?: number | string;
+}
 
 /**
  * {@docCategory Stack}

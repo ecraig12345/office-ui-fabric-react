@@ -51,6 +51,12 @@ export interface IDropdownProps extends ISelectableDroppableTextProps<IDropdown,
   /**
    * Optional custom renderer for placeholder text
    */
+  onRenderPlaceholder?: IRenderFunction<IDropdownProps>;
+
+  /**
+   * Optional custom renderer for placeholder text
+   * @deprecated Use `onRenderPlaceholder`
+   */
   onRenderPlaceHolder?: IRenderFunction<IDropdownProps>;
 
   /**

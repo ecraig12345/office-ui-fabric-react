@@ -8,7 +8,13 @@ import { IPlainCardProps } from './PlainCard/PlainCard.types';
 /**
  * {@docCategory HoverCard}
  */
-export interface IHoverCard {}
+export interface IHoverCard {
+  /**
+   * Public `dismiss` method to be used through `componentRef` of the HoverCard.
+   * Boolean argument controls if the dismiss happens with a timeout delay.
+   */
+  dismiss: (withTimeOut?: boolean) => void;
+}
 
 /**
  * HoverCard component props.

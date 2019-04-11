@@ -6,20 +6,9 @@ import { IStyleFunctionOrObject } from '../../Utilities';
 /**
  * {@docCategory Announced}
  */
-export interface IAnnounced {}
-
-/**
- * {@docCategory Announced}
- */
 export interface IAnnouncedProps extends React.Props<AnnouncedBase>, React.HTMLAttributes<HTMLDivElement> {
   /** Call to provide customized styling that will layer on top of the variant rules. */
   styles?: IStyleFunctionOrObject<{}, IAnnouncedStyles>;
-
-  /**
-   * Optional callback to access the IAnnounced interface. Use this instead of ref for accessing
-   * the public methods and properties of the component.
-   */
-  componentRef?: (component: IAnnounced) => void;
 
   /**
    * The status message provided as screen reader output

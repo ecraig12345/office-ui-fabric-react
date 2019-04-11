@@ -62,12 +62,20 @@ export interface IStackItemProps extends IStackItemSlots, IStyleableComponentPro
    * @defaultvalue true
    */
   verticalFill?: boolean;
+
+  /**
+   * Defines order of the StackItem.
+   * @defaultvalue 0
+   */
+  order?: number | string;
 }
 
 /**
  * {@docCategory Stack}
  */
-export interface IStackItemTokens {}
+export interface IStackItemTokens {
+  margin?: number | string;
+}
 
 /**
  * {@docCategory Stack}
