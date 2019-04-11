@@ -96,6 +96,59 @@ export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps
     );
   }
 
+  public componentDidMount(): void {
+    window.addEventListener('hashchange', this._onHashChange);
+  }
+
+  public componentWillUnmount(): void {
+    window.removeEventListener('hashchange', this._onHashChange);
+  }
+
+  public componentDidUpdate(prevProps: IPropertiesTableSetProps, prevState: IPropertiesTableSetState): void {
+    if (prevState.showSeeMore === false && this.state.showSeeMore === true) {
+      const hash = this._extractAnchorLink(window.location.hash);
+      const el = document.getElementById(hash);
+
+      if (el) {
+        // update scroll position
+        window.scrollTo({ top: el.offsetTop - 128 /* header */, behavior: 'smooth' });
+      }
+    }
+  }
+
+  private _onHashChange = (): void => {
+    const { properties, showSeeMore } = this.state;
+
+    const hash = this._extractAnchorLink(window.location.hash);
+    const el = document.getElementById(hash);
+
+    if (el) {
+      // update scroll position
+      window.scrollTo({ top: el.offsetTop - 128 /* header */, behavior: 'smooth' });
+    }
+
+    if (!showSeeMore) {
+      const section = properties.filter(x => x.propertyName === hash)[0];
+      if (section) {
+        this.setState({
+          showSeeMore: true
+        });
+      }
+    }
+  };
+
+  private _extractAnchorLink = (path: string): string => {
+    const split = path.split('#');
+    const cleanedSplit = split.filter(value => {
+      if (value === '') {
+        return false;
+      } else {
+        return true;
+      }
+    });
+    return cleanedSplit[cleanedSplit.length - 1];
+  };
+
   private _onRenderText(): JSX.Element {
     return <Text variant="xLarge">See more</Text>;
   }
@@ -186,7 +239,6 @@ export class PropertiesTableSet extends React.Component<IPropertiesTableSetProps
 
             const members: ITableRowJson[] = jsonDocs.tables[j].members as ITableRowJson[];
             for (let k = 0; k < members.length; k++) {
-              console.log('member kind: ' + members[k].kind);
               if (members[k].kind === 'Method') {
                 classMethods.push({
                   description: members[k].descriptionHtml,
