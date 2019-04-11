@@ -47,13 +47,7 @@ export class TopNavBase extends React.Component<ITopNavProps, ITopNavState> {
                 onClick={this._openNavPanel}
               />
               {this._renderMicrosoftLogo()}
-              <Panel
-                className="ms-App-topNavPanel"
-                isOpen={isNavOpen}
-                isLightDismiss={true}
-                type={PanelType.smallFixedNear}
-                onDismiss={this._closeNavPanel}
-              >
+              <Panel isOpen={isNavOpen} isLightDismiss type={PanelType.smallFixedNear} onDismiss={this._closeNavPanel}>
                 <FocusZone>{this._renderLinkList(pages, true)}</FocusZone>
               </Panel>
             </>

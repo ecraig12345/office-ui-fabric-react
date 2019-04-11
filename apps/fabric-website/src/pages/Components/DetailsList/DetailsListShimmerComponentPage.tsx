@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { DetailsListShimmerPage } from '@uifabric/fabric-website-resources/lib/components/pages/DetailsList/DetailsListShimmerPage';
+import { pageStyles } from '../../Page.styles';
 
-export class DetailsListShimmerComponentPage extends React.Component<any, any> {
-  public render(): JSX.Element {
-    return <DetailsListShimmerPage isHeaderVisible={false} />;
-  }
-}
+export const DetailsListShimmerComponentPage: React.StatelessComponent = () => {
+  return <DetailsListShimmerPage styles={pageStyles.demoPage} isHeaderVisible={false} />;
+};

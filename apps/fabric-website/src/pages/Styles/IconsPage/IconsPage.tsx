@@ -5,7 +5,7 @@ import { IconGrid } from '../../../components/IconGrid/IconGrid';
 import { PageHeader } from '../../../components/PageHeader/PageHeader';
 import * as stylesImport from './IconsPage.module.scss';
 const styles: any = stylesImport;
-const pageStyles: any = require('../../PageStyles.module.scss');
+import { pageStyles } from '../../Page.styles';
 
 const iconData = require('office-ui-fabric-core/src/data/icons.json');
 

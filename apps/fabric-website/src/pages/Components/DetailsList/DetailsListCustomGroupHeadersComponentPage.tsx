@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { DetailsListCustomGroupHeadersPage } from '@uifabric/fabric-website-resources/lib/components/pages/DetailsList/DetailsListCustomGroupHeadersPage';
+import { pageStyles } from '../../Page.styles';
 
-export class DetailsListCustomGroupHeadersComponentPage extends React.Component<any, any> {
-  public render(): JSX.Element {
-    return <DetailsListCustomGroupHeadersPage isHeaderVisible={false} />;
-  }
-}
+export const DetailsListCustomGroupHeadersComponentPage: React.StatelessComponent = () => {
+  return <DetailsListCustomGroupHeadersPage styles={pageStyles.demoPage} isHeaderVisible={false} />;
+};

@@ -1,39 +1,14 @@
 import * as React from 'react';
 import { FacepilePage } from '@uifabric/fabric-website-resources/lib/components/pages/FacepilePage';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
-import { ComponentPage } from '../../components/ComponentPage/ComponentPage';
-const pageStyles: any = require('../PageStyles.module.scss');
+import { pageStyles } from '../Page.styles';
 
-export class FacepileComponentPage extends React.Component<any, any> {
-  public render(): JSX.Element {
+export const FacepileComponentPage: React.StatelessComponent = () =>  {
+
     return (
       <div className={pageStyles.basePage}>
-        <ComponentPage>
-          <PageHeader
-            pageTitle="Facepile"
-            backgroundColor="#038387"
-            links={[
-              {
-                text: 'Overview',
-                location: 'Overview'
-              },
-              {
-                text: 'Best Practices',
-                location: 'BestPractices'
-              },
-              {
-                text: 'Variants',
-                location: 'Variants'
-              },
-              {
-                text: 'Implementation',
-                location: 'Implementation'
-              }
-            ]}
-          />
-          <FacepilePage isHeaderVisible={false} />
-        </ComponentPage>
+        <PageHeader pageTitle="Facepile" backgroundColor="#038387" useDefaultComponentLinks />
+        <FacepilePage styles={pageStyles.demoPage} isHeaderVisible={false} />
       </div>
-    );
-  }
-}
+  );
+};

@@ -15,7 +15,8 @@
    * path segment in the "$schema" field for all your Rush config files.  This will ensure
    * correct error-underlining and tab-completion for editors such as VS Code.
    */
-  "rushVersion": "5.6.0",
+  "rushVersion": "5.6.2",
+
   /**
    * The next field selects which package manager should be installed and determines its version.
    * Rush installs its own local copy of the package manager to ensure that your build process
@@ -25,8 +26,7 @@
    * for details about these alternatives.
    */
   "pnpmVersion": "2.19.2",
-  // "npmVersion": "5.4.0",
-  // "yarnVersion": "1.9.4",
+
   /**
    * Options that are only used when the PNPM package manager is selected
    */
@@ -43,6 +43,7 @@
      */
     "strictPeerDependencies": true
   },
+
   "repository": {
     /**
      * This setting is sometimes needed when using "rush change" with multiple Git remotes.
@@ -51,6 +52,7 @@
      */
     "url": "https://github.com/OfficeDev/office-ui-fabric-react.git"
   },
+
   /**
    * Event hooks are customized script actions that Rush executes when specific events occur
    */
@@ -74,6 +76,7 @@
      */
     "postRushBuild": []
   },
+
   /**
    * Older releases of the NodeJS engine may be missing features required by your system.
    * Other releases may have bugs.  In particular, the "latest" version will not be a
@@ -83,6 +86,7 @@
    * for your repo.
    */
   "nodeSupportedVersionRange": ">=8.9.0 <9.0.0 || >=10.9.0 <11.0.0",
+
   /**
    * If you would like the version specifiers for your dependencies to be consistent, then
    * uncomment this line. This is effectively similar to running "rush check" before any
@@ -95,6 +99,7 @@
    * section of the common-versions.json.
    */
   "ensureConsistentVersions": false,
+
   /**
    * Large monorepos can become intimidating for newcomers if project folder paths don't follow
    * a consistent and recognizable pattern.  When the system allows nested folder trees,
@@ -120,6 +125,7 @@
    */
   // "projectFolderMinDepth": 2,
   // "projectFolderMaxDepth": 2,
+
   /**
    * This feature helps you to review and approve new packages before they are introduced
    * to your monorepo.  For example, you may be concerned about licensing, code quality,
@@ -155,33 +161,36 @@
   //    */
   //   // "ignoredNpmScopes": [ "@types" ]
   // },
+
   /**
    * If you use Git as your version control system, this section has some additional
    * optional features you can use.
    */
-  "gitPolicy": {
-    /**
-     * Work at a big company?  Tired of finding Git commits at work with unprofessional Git
-     * emails such as "beer-lover@my-college.edu"?  Rush can validate people's Git email address
-     * before they get started.
-     *
-     * Define a list of regular expressions describing allowable e-mail patterns for Git commits.
-     * They are case-insensitive anchored JavaScript RegExps.  Example: ".*@example\.com"
-     *
-     * IMPORTANT: Because these are regular expressions encoded as JSON string literals,
-     * RegExp escapes need two backspashes, and ordinary periods should be "\\.".
-     */
-    // "allowedEmailRegExps": [
-    //   "[^@]+@users\\.noreply\\.github\\.com",
-    //   "travis@example\\.org"
-    // ],
-    /**
-     * When Rush reports that the address is malformed, the notice can include an example
-     * of a recommended email.  Make sure it conforms to one of the allowedEmailRegExps
-     * expressions.
-     */
-    // "sampleEmail": "mrexample@users.noreply.github.com"
-  },
+  // "gitPolicy": {
+  //   /**
+  //    * Work at a big company?  Tired of finding Git commits at work with unprofessional Git
+  //    * emails such as "beer-lover@my-college.edu"?  Rush can validate people's Git email address
+  //    * before they get started.
+  //    *
+  //    * Define a list of regular expressions describing allowable e-mail patterns for Git commits.
+  //    * They are case-insensitive anchored JavaScript RegExps.  Example: ".*@example\.com"
+  //    *
+  //    * IMPORTANT: Because these are regular expressions encoded as JSON string literals,
+  //    * RegExp escapes need two backspashes, and ordinary periods should be "\\.".
+  //    */
+  //   "allowedEmailRegExps": [
+  //     "[^@]+@users\\.noreply\\.github\\.com",
+  //     "travis@example\\.org"
+  //   ],
+
+  //   /**
+  //    * When Rush reports that the address is malformed, the notice can include an example
+  //    * of a recommended email.  Make sure it conforms to one of the allowedEmailRegExps
+  //    * expressions.
+  //    */
+  //   "sampleEmail": "mrexample@users.noreply.github.com"
+  // },
+
   /**
    * Installation variants allow you to maintain a parallel set of configuration files that can be
    * used to build the entire monorepo with an alternate set of dependencies.  For example, suppose
@@ -212,6 +221,19 @@
     //   "description": "Build this repo using the previous release of the SDK"
     // }
   ],
+
+  /**
+   * If a warning message includes any substrings listed here, it should be treated as a standard
+   * log message rather than a warning. This prevents inconsequential warning messages caused by
+   * external packages from breaking incremental builds (packages marked as "success with warnings"
+   * will be rebuilt on each rush build).
+   */
+  "suppressedWarnings": [
+    // This warning comes from certain npm packages with C++ bindings and has been very hard to track down,
+    // so we're suppressing it to fix incremental build.
+    "DeprecationWarning: Using a domain property in MakeCallback is deprecated."
+  ],
+
   /**
    * Rush can collect anonymous telemetry about everyday developer activity such as
    * success/failure of installs, builds, and other operations.  You can use this to identify
@@ -221,10 +243,12 @@
    * in the "eventHooks" section.
    */
   // "telemetryEnabled": false,
+
   /**
    * Allows creation of hotfix changes. This feature is experimental so it is disabled by default.
    */
   // "hotfixChangeEnabled": false,
+
   /**
    * (Required) This is the inventory of projects to be managed by Rush.
    *

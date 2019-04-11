@@ -5,7 +5,7 @@ import { PageHeader } from '../../../components/PageHeader/PageHeader';
 import { Table } from '../../../components/Table/Table';
 import * as stylesImport from './ColorsPage.module.scss';
 const styles: any = stylesImport;
-const pageStyles: any = require('../../PageStyles.module.scss');
+import { pageStyles } from '../../Page.styles';
 
 const accentColorsData = require('../../../data/colors-accent.json');
 const colorClassesData = require('../../../data/colors-classes.json');
@@ -37,20 +37,19 @@ export class ColorsPage extends React.Component<any, any> {
         <div className={css(pageStyles.u_maxTextWidth, styles.overview)}>
           <h2 id="Overview">Overview</h2>
           <p>
-            Fabric includes 9 theme colors and 11 neutral colors. Each has helper classes for text, background, border,
-            and hover states. When selecting colors, refer to the{' '}
+            Fabric includes 9 theme colors and 11 neutral colors. Each has helper classes for text, background, border, and hover states.
+            When selecting colors, refer to the{' '}
             <a
               className={styles.colorsPageLink}
-              href={
-                'https://static2.sharepointonline.com/files/fabric/fabric-website/files/coloraccessibility_29sep2016.pdf'
-              }
+              href={'https://static2.sharepointonline.com/files/fabric/fabric-website/files/coloraccessibility_29sep2016.pdf'}
             >
               color accessibility guidance (PDF)
             </a>{' '}
             to ensure that your text can be ready by everyone. If you need to customize your theme, see the{' '}
             <a className={styles.colorsPageLink} href={'#/styles/themegenerator'}>
               Theme generator
-            </a>.
+            </a>
+            .
           </p>
         </div>
         <h2 id="implementation">Implementation</h2>

@@ -1,39 +1,13 @@
 import * as React from 'react';
 import { CoachmarkPage } from '@uifabric/fabric-website-resources/lib/components/pages/CoachmarkPage';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
-import { ComponentPage } from '../../components/ComponentPage/ComponentPage';
-const pageStyles: any = require('../PageStyles.module.scss');
+import { pageStyles } from '../Page.styles';
 
-export class CoachmarkComponentPage extends React.Component<any, any> {
-  public render(): JSX.Element {
-    return (
-      <div className={pageStyles.basePage}>
-        <ComponentPage>
-          <PageHeader
-            pageTitle="Coachmark"
-            backgroundColor="#038387"
-            links={[
-              {
-                text: 'Overview',
-                location: 'Overview'
-              },
-              {
-                text: 'Best Practices',
-                location: 'BestPractices'
-              },
-              {
-                text: 'Variants',
-                location: 'Variants'
-              },
-              {
-                text: 'Implementation',
-                location: 'Implementation'
-              }
-            ]}
-          />
-          <CoachmarkPage isHeaderVisible={false} />
-        </ComponentPage>
-      </div>
-    );
-  }
-}
+export const CoachmarkComponentPage: React.StatelessComponent = () => {
+  return (
+    <div className={pageStyles.basePage}>
+      <PageHeader pageTitle="Coachmark" backgroundColor="#038387" useDefaultComponentLinks />
+      <CoachmarkPage styles={pageStyles.demoPage} isHeaderVisible={false} />
+    </div>
+  );
+};

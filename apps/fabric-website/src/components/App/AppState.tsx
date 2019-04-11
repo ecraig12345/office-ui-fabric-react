@@ -1,8 +1,6 @@
 import * as React from 'react';
 
-// Props
 import { INavPage } from '../Nav/Nav.types';
-import { ComponentPage } from '../ComponentPage/ComponentPage';
 import { PageHeader } from '../PageHeader/PageHeader';
 
 export interface IAppState {
@@ -15,9 +13,7 @@ const loadingPageHeight: string = 'calc(100vh - 100px)';
 const LoadingComponent = (props: any): JSX.Element => {
   return (
     <div style={{ height: loadingPageHeight }}>
-      <ComponentPage>
-        <PageHeader pageTitle={props.title} backgroundColor="#038387" />
-      </ComponentPage>
+      <PageHeader pageTitle={props.title} backgroundColor="#038387" />
     </div>
   );
 };

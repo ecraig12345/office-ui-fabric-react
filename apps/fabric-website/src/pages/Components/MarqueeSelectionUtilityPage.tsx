@@ -1,35 +1,30 @@
 import * as React from 'react';
 import { MarqueeSelectionPage } from '@uifabric/fabric-website-resources/lib/components/pages/MarqueeSelectionPage';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
-import { ComponentPage } from '../../components/ComponentPage/ComponentPage';
-const pageStyles: any = require('../PageStyles.module.scss');
+import { pageStyles } from '../Page.styles';
 
-export class MarqueeSelectionUtilityPage extends React.Component<any, any> {
-  public render(): JSX.Element {
-    return (
-      <div className={pageStyles.basePage}>
-        <ComponentPage>
-          <PageHeader
-            pageTitle="MarqueeSelection"
-            backgroundColor="#038387"
-            links={[
-              {
-                text: 'Overview',
-                location: 'Overview'
-              },
-              {
-                text: 'Variants',
-                location: 'Variants'
-              },
-              {
-                text: 'Implementation',
-                location: 'Implementation'
-              }
-            ]}
-          />
-          <MarqueeSelectionPage isHeaderVisible={false} />
-        </ComponentPage>
-      </div>
-    );
-  }
-}
+export const MarqueeSelectionUtilityPage: React.StatelessComponent = () => {
+  return (
+    <div className={pageStyles.basePage}>
+      <PageHeader
+        pageTitle="MarqueeSelection"
+        backgroundColor="#038387"
+        links={[
+          {
+            text: 'Overview',
+            location: 'Overview'
+          },
+          {
+            text: 'Variants',
+            location: 'Variants'
+          },
+          {
+            text: 'Implementation',
+            location: 'Implementation'
+          }
+        ]}
+      />
+      <MarqueeSelectionPage styles={pageStyles.demoPage} isHeaderVisible={false} />
+    </div>
+  );
+};

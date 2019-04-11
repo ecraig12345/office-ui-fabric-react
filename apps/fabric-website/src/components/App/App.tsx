@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
+import { Customizer } from 'office-ui-fabric-react/lib/Utilities';
 import { ActionButton } from 'office-ui-fabric-react/lib/Button';
 import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
 import AttachedScrollUtility from '../../utilities/AttachedScrollUtility';
@@ -8,6 +9,7 @@ import { hasUHF } from '../../utilities/location';
 import { Nav } from '../Nav/Nav';
 import { AppState } from './AppState';
 import './App.scss';
+import { componentPageStyles } from '../../pages/Page.styles';
 
 export interface IAppProps extends React.Props<App> {}
 
@@ -65,12 +67,14 @@ export class App extends React.Component<IAppProps, any> {
   public render(): JSX.Element {
     return (
       <Fabric className="App">
-        {this._renderLeftNav()}
-        <div className="App-wrapper">
-          <div className="App-content" data-is-scrollable="true" ref={el => (this._appContent = el)} data-app-content-div="true">
-            {this.props.children}
+        <Customizer scopedSettings={{ ComponentPage: componentPageStyles }}>
+          {this._renderLeftNav()}
+          <div className="App-wrapper">
+            <div className="App-content" data-is-scrollable="true" ref={el => (this._appContent = el)} data-app-content-div="true">
+              {this.props.children}
+            </div>
           </div>
-        </div>
+        </Customizer>
       </Fabric>
     );
   }
