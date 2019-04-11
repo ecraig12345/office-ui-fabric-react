@@ -617,7 +617,7 @@ function collectPageData(collectedData: CollectedData, apiItem: ApiItem, kind: P
               pageData = collectedData.pageDataByPageName.get(pageName);
               collectedData.apiToPage.set(apiItem.displayName, { pageName, kind: PageKind.References });
             } else {
-              collectedData.apiToPage.set(apiItem.displayName, { pageName, kind: PageKind.Components });
+              collectedData.apiToPage.set(apiItem.displayName, { pageName, kind: pageData.kind });
             }
 
             pageData!.apiItems.push(apiItem);

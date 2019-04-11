@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css, getDocument } from 'office-ui-fabric-react/lib/Utilities';
 import { Link } from 'office-ui-fabric-react/lib/Link';
-import { MessageBar } from 'office-ui-fabric-react/lib/MessageBar';
 import { EditSection } from '../EditSection/index';
 import './ComponentPage.scss';
 import { IComponentPageProps, IComponentPageSection } from './ComponentPage.types';
