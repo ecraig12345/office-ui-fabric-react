@@ -34,3 +34,7 @@ export interface IPageJson {
   tables: ITableJson[];
   name: string;
 }
+
+export interface IReferencesList {
+  pages: string[];
+}

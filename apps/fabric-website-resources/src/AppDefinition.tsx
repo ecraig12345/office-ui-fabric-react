@@ -1,8 +1,27 @@
 import * as React from 'react';
-import { App as AppBase, IAppDefinition, IAppProps } from '@uifabric/example-app-base';
+import { App as AppBase, IAppDefinition, IAppProps, IAppLink, PropertiesTableSet } from '@uifabric/example-app-base';
 import { DetailsListBasicExample } from 'office-ui-fabric-react/lib/components/DetailsList/examples/DetailsList.Basic.Example';
 import { AppCustomizations } from './customizations/customizations';
-import { referencePages } from './referencePage';
+
+export interface IReferencesList {
+  pages: string[];
+}
+
+function loadReferences(): IAppLink[] {
+  const pageList: IReferencesList = require('@uifabric/api-docs/lib/pages/references/list.json');
+
+  const myPages: IAppLink[] = [];
+  pageList.pages.forEach(pageName => {
+    myPages.push({
+      component: () => <PropertiesTableSet jsonDocs={require('@uifabric/api-docs/lib/pages/references/' + pageName + '.page.json')} />,
+      key: pageName,
+      name: pageName,
+      url: '#/examples/references/' + pageName.toLowerCase()
+    });
+  });
+
+  return myPages;
+}
 
 export const AppDefinition: IAppDefinition = {
   appTitle: 'Fabric - React',
@@ -531,7 +550,7 @@ export const AppDefinition: IAppDefinition = {
     },
     {
       name: 'References',
-      links: [...referencePages]
+      links: loadReferences()
     }
   ],
 

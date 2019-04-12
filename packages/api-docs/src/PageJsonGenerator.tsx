@@ -30,7 +30,7 @@ import {
   ExcerptTokenKind
 } from '@microsoft/api-extractor-model';
 import { FileSystem, JsonFile } from '@microsoft/node-core-library';
-import { IPageJson, ITableJson, ITableRowJson, IEnumTableRowJson } from './IPageJson';
+import { IPageJson, ITableJson, ITableRowJson, IEnumTableRowJson, IReferencesList } from './IPageJson';
 import { generateTsxFile } from './TsxFileGenerator';
 
 /**
@@ -143,6 +143,8 @@ function generateTsxFiles(collectedData: CollectedData): void {
 function createPageJsonFiles(collectedData: CollectedData, options: IPageJsonOptions): void {
   const kind = options.kind;
 
+  const referencesList: IReferencesList = { pages: [] };
+
   collectedData.pageDataByPageName.forEach((value: PageData, pageName: string) => {
     if (value.kind === kind) {
       const pageJsonPath: string = path.join(options.pageJsonFolderPath, pageName + '.page.json');
@@ -173,9 +175,19 @@ function createPageJsonFiles(collectedData: CollectedData, options: IPageJsonOpt
         }
       }
 
+      if (value.kind === 'References') {
+        referencesList.pages.push(value.pageName);
+      }
+
       JsonFile.save(pageJson, pageJsonPath);
     }
   });
+
+  if (kind === 'References') {
+    const listJsonPath: string = path.join(options.pageJsonFolderPath, 'list.json');
+    referencesList.pages = referencesList.pages.sort();
+    JsonFile.save(referencesList, listJsonPath);
+  }
 }
 
 function renderDefaultValue(section: DocNodeContainer): string {
