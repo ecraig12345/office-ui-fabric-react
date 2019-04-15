@@ -31,7 +31,6 @@ import {
 } from '@microsoft/api-extractor-model';
 import { FileSystem, JsonFile } from '@microsoft/node-core-library';
 import { IPageJson, ITableJson, ITableRowJson, IEnumTableRowJson, IReferencesList } from './IPageJson';
-import { generateTsxFile } from './TsxFileGenerator';
 
 /**
  * Options that define the information necessary to find the api.json file
@@ -122,16 +121,7 @@ export function generateJson(options: IPageJsonOptions[]): void {
   // create files
   for (const option of options) {
     createPageJsonFiles(collectedData, option);
-    generateTsxFiles(collectedData);
   }
-}
-
-function generateTsxFiles(collectedData: CollectedData): void {
-  collectedData.pageDataByPageName.forEach((value: PageData, pageName: string) => {
-    if (value.kind === PageKind.References) {
-      generateTsxFile(pageName);
-    }
-  });
 }
 
 /**
