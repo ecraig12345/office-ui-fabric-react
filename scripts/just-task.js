@@ -17,6 +17,7 @@ const prettier = require('./tasks/prettier');
 const bundleSizeCollect = require('./tasks/bundle-size-collect');
 const checkForModifiedFiles = require('./tasks/check-for-modified-files');
 const generateVersionFiles = require('./tasks/generate-version-files');
+const postbuild = require('./tasks/postbuild');
 
 let packageJson;
 
@@ -51,6 +52,7 @@ registerTask('prettier', prettier);
 registerTask('bundle-size-collect', bundleSizeCollect);
 registerTask('check-for-modified-files', checkForModifiedFiles);
 registerTask('generate-version-files', generateVersionFiles);
+registerTask('postbuild', postbuild);
 
 task('ts', parallel('ts:commonjs', 'ts:esm', condition('ts:amd', () => argv().production && !argv().min && !argv().prdeploy)));
 
@@ -61,6 +63,7 @@ task(
     'copy',
     'sass',
     parallel(
+      'postbuild',
       condition('tslint', () => !argv().min && !argv().prdeploy),
       condition('jest', () => !argv().min && !argv().prdeploy),
       series(

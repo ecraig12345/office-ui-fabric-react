@@ -16,6 +16,9 @@
      * instead of the latest version.
      */
     // "some-package": "1.2.3"
+    // Listing a package here also forces it to be listed as a direct dependency in the generated
+    // common/temp/package.json. This can sometimes be necessary to prevent unmet peer dep errors
+    // (that's why most of these packages are here).
     "@types/webpack-env": "1.13.0",
     "css-loader": "^0.28.7",
     "enzyme": "^3.4.1",
@@ -23,6 +26,7 @@
     "react": "~16.6.3",
     "react-dom": "~16.6.3",
     "style-loader": "^0.21.0",
+    "typescript": "2.8.4",
     "webpack": "4.29.5",
     "webpack-cli": "3.2.3",
     "webpack-dev-server": "3.1.14"

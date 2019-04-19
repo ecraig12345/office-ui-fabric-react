@@ -1,0 +1,51 @@
+{
+  "name": "@uifabric/just-scripts",
+  "version": "0.0.1",
+  "description": "@uifabric/just-scripts Package",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "main": "lib-commonjs/index.js",
+  "module": "lib/index.js",
+  "sideEffects": false,
+  "typings": "lib/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "npx just build",
+    "test": "npx just test",
+    "just": "npx just",
+    "clean": "npx just clean",
+    "start": "npx just start",
+    "start-test": "npx just start-test",
+    "update-snapshots": "npx just jest -u",
+    "upgrade-stack": "npx just upgrade-stack"
+  },
+  "dependencies": {
+    "@types/node": "^8.10.29",
+    "@microsoft/api-extractor": "~7.0.23",
+    "@microsoft/load-themed-styles": "^1.7.13",
+    "@microsoft/loader-load-themed-styles": "^1.6.0",
+    "autoprefixer": "^7.1.5",
+    "fs-extra": "^7.0.1",
+    "glob": "^7.1.2",
+    "just-scripts": "~0.10.1",
+    "just-task": "~0.8.0",
+    "just-scripts-utils": "~0.6.1",
+    "jest": "^23.1.0",
+    "node-sass": "^4.5.3",
+    "postcss": "^6.0.9",
+    "ts-jest": "^22.4.6",
+    "webpack": "4.29.5"
+  },
+  "devDependencies": {
+    "@types/jest": "23.0.0",
+    "typescript": "2.8.4"
+  },
+  "peerDependencies": {
+    "typescript": ">=2.8.4"
+  },
+  "just": {
+    "stack": "just-stack-single-lib"
+  }
+}

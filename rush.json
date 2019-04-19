@@ -449,6 +449,10 @@
       "packageName": "a11y-tests",
       "projectFolder": "apps/a11y-tests",
       "shouldPublish": false
+    },
+    {
+      "packageName": "@uifabric/just-scripts",
+      "projectFolder": "packages/just-scripts"
     }
   ]
 }
