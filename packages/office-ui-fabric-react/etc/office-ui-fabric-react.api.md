@@ -5091,24 +5091,17 @@ export interface IMessageBarProps extends React.HTMLAttributes<HTMLElement> {
 
 // @public (undocumented)
 export interface IMessageBarState {
-    // (undocumented)
-    expandSingleLine?: boolean;
-    // (undocumented)
-    labelId?: string;
-    // (undocumented)
-    showContent?: boolean;
+    isExpanded?: boolean;
 }
 
 // @public (undocumented)
-export interface IMessageBarStyleProps {
+export interface IMessageBarStyleProps extends Required<Pick<IMessageBarProps, 'theme'>>, Pick<IMessageBarProps, 'className' | 'messageBarType' | 'truncated' | 'isMultiline'> {
     actions?: boolean;
-    className?: string;
     expandSingleLine?: boolean;
-    isMultiline?: boolean;
-    messageBarType?: MessageBarType;
+    hasOnDismiss?: boolean;
+    isExpanded?: boolean;
+    // @deprecated (undocumented)
     onDismiss?: boolean;
-    theme: ITheme;
-    truncated?: boolean;
 }
 
 // @public (undocumented)
@@ -7677,7 +7670,7 @@ export class MemberListPeoplePicker extends BasePickerListBelow<IPersonaProps, I
 export const MessageBar: React_2.StatelessComponent<IMessageBarProps>;
 
 // @public (undocumented)
-export class MessageBarBase extends BaseComponent<IMessageBarProps, IMessageBarState> {
+export class MessageBarBase extends React.Component<IMessageBarProps, IMessageBarState> {
     constructor(props: IMessageBarProps);
     // (undocumented)
     static defaultProps: IMessageBarProps;
