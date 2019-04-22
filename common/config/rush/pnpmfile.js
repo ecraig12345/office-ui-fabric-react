@@ -28,13 +28,6 @@ module.exports = {
  * The return value is the updated object.
  */
 function readPackage(packageJson, context) {
-  if (packageJson.name === 'resemblejs' && packageJson.peerDependencies) {
-    // resemblejs requests canvas as a peer dependency, but our use case doesn't require canvas
-    // (and attempting to install it causes node-gyp build errors).
-    // So remove the peer dependency.
-    delete packageJson.peerDependencies['canvas'];
-  }
-
   // Example: Suppose the karma types have a missing dependency on typings from the log4js package.
   // if (packageJson.name === '@types/karma') {
   //   context.log('Fixed up dependencies for @types/karma');

@@ -27,6 +27,6 @@
     "@uifabric/tslint-rules": ">=1.0.1 <2.0.0"
   },
   "dependencies": {
-    "tslib": "^1.7.1"
+    "tslib": "1.9.3"
   }
 }

@@ -20,16 +20,16 @@
     "update-snapshots": "node ../../scripts/just.js jest -u"
   },
   "devDependencies": {
-    "@types/node": "^8.10.29",
+    "@types/node": "~8.10.38",
     "@types/jest": "23.0.0",
-    "@types/semver": "^5.5.0",
+    "@types/semver": "~5.5.0",
     "@uifabric/prettier-rules": ">=1.0.1 <2.0.0",
     "@uifabric/tslint-rules": ">=1.0.1 <2.0.0"
   },
   "dependencies": {
-    "semver": "^5.6.0",
-    "tslib": "^1.7.1",
-    "riceburn": "^1.2.0",
+    "semver": "~5.6.0",
+    "tslib": "1.9.3",
+    "riceburn": "~1.2.0",
     "typescript": "2.8.4"
   },
   "disabledTasks": [

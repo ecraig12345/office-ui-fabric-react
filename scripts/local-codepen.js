@@ -1,24 +1,11 @@
+// @ts-check
+
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const path = require('path');
 const fs = require('fs');
-const commandLineArgs = require('command-line-args');
 
-const optionDefinitions = [
-  {
-    name: 'webpackConfig',
-    alias: 'w',
-    type: String
-  }
-];
-
-const options = commandLineArgs(optionDefinitions);
-let webpackConfigFilePath = 'webpack.codepen.config.js';
-
-if (options && options.webpackConfig) {
-  webpackConfigFilePath = options.webpackConfig;
-}
-
+const webpackConfigFilePath = 'webpack.codepen.config.js';
 const configPath = path.resolve(process.cwd(), webpackConfigFilePath);
 
 if (fs.existsSync(configPath)) {
