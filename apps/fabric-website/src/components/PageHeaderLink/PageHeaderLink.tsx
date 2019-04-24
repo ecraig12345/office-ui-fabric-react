@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Animate } from '../../utilities/animation/Animate';
-import WindowWidthUtility from '../../utilities/WindowWidthUtility';
+import { currentFabricBreakpoint } from '@uifabric/example-app-base/lib/utilities/index';
 
 export interface IPageHeaderLink {
   text: string;
@@ -42,7 +42,7 @@ export class PageHeaderLink extends React.Component<IPageHeaderLink, {}> {
   }
 
   private _getBreakpoint() {
-    let breakpoint = WindowWidthUtility.currentFabricBreakpoint();
+    let breakpoint = currentFabricBreakpoint();
     if (this.currentBreakpoint !== breakpoint) {
       this.currentBreakpoint = breakpoint;
       this.scrollDistance = this._setScrollDistance();

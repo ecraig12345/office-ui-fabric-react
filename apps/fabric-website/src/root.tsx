@@ -13,7 +13,7 @@ import { App } from './components/App/App';
 import { AppState } from './components/App/AppState';
 import FluentMessageBar from './components/FluentMessageBar/FluentMessageBar';
 import { HomePage } from './pages/HomePage/HomePage';
-import WindowWidthUtility from './utilities/WindowWidthUtility';
+import { currentFabricBreakpoint } from '@uifabric/example-app-base/lib/utilities/index';
 import { isLocal, hasUHF } from './utilities/location';
 
 import { handleRedirects } from './redirects';
@@ -62,7 +62,7 @@ function _routerDidMount(): void {
 }
 
 function _getBreakpoint(): void {
-  currentBreakpoint = WindowWidthUtility.currentFabricBreakpoint();
+  currentBreakpoint = currentFabricBreakpoint();
   scrollDistance = _setScrollDistance();
 }
 
