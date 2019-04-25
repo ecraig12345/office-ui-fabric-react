@@ -14,7 +14,7 @@ export interface IMarkdownResources {
 export interface IMarkdownProps {
   resources?: IMarkdownResources;
   className?: string;
-  children: string;
+  children?: React.ReactNode;
 
   /** Theme provided by higher-order component. */
   theme?: ITheme;

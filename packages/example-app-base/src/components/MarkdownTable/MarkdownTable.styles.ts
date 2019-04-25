@@ -42,7 +42,7 @@ export const getStyles = (props: IMarkdownTableStyleProps): IMarkdownTableStyles
         width: '100%',
         overflowX: 'auto',
         marginBottom: 20
-        // TODO: add background gradient styles
+        // TODO: add background gradient styles (see Page.module.scss)
       }
     ],
 
