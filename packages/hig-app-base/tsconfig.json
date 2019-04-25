@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "lib",
+    "target": "es5",
+    "module": "commonjs",
+    "jsx": "react",
+    "declaration": true,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "preserveConstEnums": true,
+    "noUnusedLocals": true,
+    "noImplicitThis": true,
+    "types": ["node", "webpack-env"],
+    "paths": {
+      "@uifabric/example-app-base/lib/*": ["./src/*"],
+      "@uifabric/example-app-base": ["./src"]
+    }
+  },
+  "include": ["src", "../example-app-base/src/components/PlatformPicker"]
+}

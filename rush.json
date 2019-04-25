@@ -345,6 +345,11 @@
       "versionPolicyName": "lockedMajor"
     },
     {
+      "packageName": "@uifabric/fabric-website-new",
+      "projectFolder": "apps/fabric-website-new",
+      "shouldPublish": false
+    },
+    {
       "packageName": "@uifabric/icons",
       "projectFolder": "packages/icons",
       "versionPolicyName": "lockedMajor"

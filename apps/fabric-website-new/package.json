@@ -1,0 +1,58 @@
+{
+  "name": "@uifabric/fabric-website-new",
+  "version": "6.1.0",
+  "description": "Reusable React components for building experiences for Office 365.",
+  "main": "lib-commonjs/index.js",
+  "module": "lib/index.js",
+  "sideEffects": true,
+  "typings": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OfficeDev/office-ui-fabric-react"
+  },
+  "scripts": {
+    "build": "node ../../scripts/just.js build",
+    "just": "node ../../scripts/just.js",
+    "clean": "node ../../scripts/just.js clean",
+    "code-style": "node ../../scripts/just.js code-style",
+    "start": "node ../../scripts/just.js dev",
+    "production": "node --max_old_space_size=8192 ../../scripts/just.js build --production",
+    "dogfood": "node --max_old_space_size=8192 ../../scripts/just.js build --dogfood",
+    "startuhf": "node ../../scripts/just.js dev --webpackConfig webpack.uhf.serve.config.js"
+  },
+  "disabledTasks": [
+    "build-codepen-examples",
+    "verify-api-extractor",
+    "jest"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/es6-promise": "0.0.32",
+    "@types/node": "^8.10.29",
+    "@types/react": "16.3.16",
+    "@types/react-dom": "16.0.5",
+    "@types/resemblejs": "~1.3.28",
+    "@types/webpack-env": "1.13.0",
+    "@uifabric/prettier-rules": "^1.0.1",
+    "@uifabric/tslint-rules": "^1.0.1",
+    "office-ui-fabric-core": "9.6.1-fluent2",
+    "react": "~16.6.3",
+    "react-dom": "~16.6.3",
+    "request": "^2.88.0",
+    "write-file-webpack-plugin": "^4.1.0",
+    "yargs": "^6.5.0"
+  },
+  "dependencies": {
+    "@microsoft/load-themed-styles": "^1.7.13",
+    "@uifabric/example-app-base": "^6.14.3",
+    "@uifabric/experiments": "^6.74.2",
+    "@uifabric/fabric-website": "^6.13.5",
+    "@uifabric/fluent-theme": "^0.16.6",
+    "@uifabric/icons": "^6.5.1",
+    "color-check": "0.0.2",
+    "es6-promise": "^4.1.0",
+    "express": "^4.16.4",
+    "office-ui-fabric-react": "^6.169.0",
+    "tslib": "^1.7.1"
+  }
+}
