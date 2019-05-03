@@ -3,6 +3,7 @@ import { IPageSectionProps, Markdown } from '@uifabric/example-app-base/lib/inde
 import { ControlsAreaPage, IControlsPageProps } from '../ControlsAreaPage';
 import { ProgressIndicatorPageProps } from './ProgressIndicatorPage.doc';
 import { Platforms } from '../../../interfaces/Platforms';
+import { websiteRepoUrl } from '../../../utilities/index';
 
 export const ProgressIndicatorPage: React.StatelessComponent<IControlsPageProps> = props => {
   const { platform } = props;
@@ -23,8 +24,7 @@ function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
       return [
         {
           sectionName: 'Implementation',
-          editUrl:
-            'https://github.com/OfficeDev/office-ui-fabric-react/tree/master/apps/fabric-website/src/pages/Controls/ProgressIndicatorPage/docs/ios/ProgressIndicatorImplementation.md',
+          editUrl: websiteRepoUrl + '/src/pages/Controls/ProgressIndicatorPage/docs/ios/ProgressIndicatorImplementation.md',
           content: (
             <Markdown>
               {

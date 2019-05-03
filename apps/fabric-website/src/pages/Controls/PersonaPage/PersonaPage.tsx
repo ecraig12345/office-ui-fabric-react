@@ -3,8 +3,9 @@ import { IPageSectionProps, Markdown } from '@uifabric/example-app-base/lib/inde
 import { ControlsAreaPage, IControlsPageProps } from '../ControlsAreaPage';
 import { PersonaPageProps } from './PersonaPage.doc';
 import { Platforms } from '../../../interfaces/Platforms';
+import { oufrRepoUrl } from '../../../utilities/index';
 
-const baseUrl = 'https://github.com/OfficeDev/office-ui-fabric-react/tree/master/apps/fabric-website/src/pages/Controls/PersonaPage/';
+const baseUrl = oufrRepoUrl + '/src/pages/Controls/PersonaPage/';
 
 export const PersonaPage: React.StatelessComponent<IControlsPageProps> = props => {
   const { platform } = props;

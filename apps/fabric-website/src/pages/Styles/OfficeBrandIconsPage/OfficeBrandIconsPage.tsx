@@ -7,9 +7,9 @@ import { IStylesPageProps, StylesAreaPage } from '../StylesAreaPage';
 import { OfficeBrandIconsPageProps } from './OfficeBrandIconsPage.doc';
 import { Platforms } from '../../../interfaces/Platforms';
 import * as styles from './OfficeBrandIconsPage.module.scss';
+import { websiteRepoUrl } from '../../../utilities/index';
 
-const baseUrl =
-  'https://github.com/OfficeDev/office-ui-fabric-react/tree/master/apps/fabric-website/src/pages/Styles/OfficeBrandIconsPage/docs';
+const baseUrl = websiteRepoUrl + '/src/pages/Styles/OfficeBrandIconsPage/docs';
 const fabricCDN = 'https://static2.sharepointonline.com/files/fabric/assets';
 
 const productIcons = require('@uifabric/fabric-website/lib/data/brand-icons-products.json');

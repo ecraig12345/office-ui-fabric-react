@@ -5,11 +5,12 @@ import { IStylesPageProps, StylesAreaPage } from '../StylesAreaPage';
 import { TypographyPageProps, sizeUsage, weightUsage } from './TypographyPage.doc';
 import * as styles from './TypographyPage.module.scss';
 import { Platforms } from '../../../interfaces/Platforms';
+import { websiteRepoUrl } from '../../../utilities/index';
 
 const typeSizes = require('office-ui-fabric-core/src/data/type-sizes.json');
 const typeWeights = require('office-ui-fabric-core/src/data/type-weights.json');
 
-const baseUrl = 'https://github.com/OfficeDev/office-ui-fabric-react/tree/master/apps/fabric-website/src/pages/Styles/TypographyPage/docs';
+const baseUrl = websiteRepoUrl + '/src/pages/Styles/TypographyPage/docs';
 
 export const TypographyPage: React.StatelessComponent<IStylesPageProps> = props => {
   const { platform } = props;

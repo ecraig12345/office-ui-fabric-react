@@ -3,8 +3,9 @@ import { IPageSectionProps, Markdown } from '@uifabric/example-app-base/lib/inde
 import { ControlsAreaPage, IControlsPageProps } from '../ControlsAreaPage';
 import { DatePickerPageProps } from './DatePickerPage.doc';
 import { Platforms } from '../../../interfaces/Platforms';
+import { websiteRepoUrl } from '../../../utilities/index';
 
-const baseUrl = 'https://github.com/OfficeDev/office-ui-fabric-react/tree/master/apps/fabric-website/src/pages/Controls/DatePickerPage/';
+const baseUrl = websiteRepoUrl + '/src/pages/Controls/DatePickerPage/';
 
 export const DatePickerPage: React.StatelessComponent<IControlsPageProps> = props => {
   const { platform } = props;

@@ -5,8 +5,9 @@ import { IStylesPageProps, StylesAreaPage } from '../StylesAreaPage';
 import { FabricIconsPageProps } from './FabricIconsPage.doc';
 import * as styles from './FabricIconsPage.module.scss';
 import { Platforms } from '../../../interfaces/Platforms';
+import { websiteRepoUrl } from '../../../utilities/index';
 
-const baseUrl = 'https://github.com/OfficeDev/office-ui-fabric-react/tree/master/apps/fabric-website/src/pages/Styles/FabricIconsPage/docs';
+const baseUrl = websiteRepoUrl + '/src/pages/Styles/FabricIconsPage/docs';
 const iconData = require('office-ui-fabric-core/src/data/icons.json');
 
 export const FabricIconsPage: React.StatelessComponent<IStylesPageProps> = props => {

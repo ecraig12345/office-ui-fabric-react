@@ -1,6 +1,7 @@
 import { TFabricPlatformPageProps } from '../../../interfaces/Platforms';
+import { websiteRepoUrl } from '../../../utilities/index';
 
-const componentUrl = 'https://github.com/OfficeDev/office-ui-fabric-react/tree/master/apps/fabric-website/src/pages/Overviews/ControlsPage';
+const componentUrl = websiteRepoUrl + '/src/pages/Overviews/ControlsPage';
 
 export const ControlsPageProps: TFabricPlatformPageProps = {
   web: {

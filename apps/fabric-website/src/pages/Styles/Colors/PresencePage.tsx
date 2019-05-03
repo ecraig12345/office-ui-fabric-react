@@ -3,8 +3,9 @@ import { Markdown, ColorPalette, IPageSectionProps } from '@uifabric/example-app
 import { IStylesPageProps, StylesAreaPage } from '../StylesAreaPage';
 import { ColorsPresencePageProps } from './PresencePage.doc';
 import { Platforms } from '../../../interfaces/Platforms';
+import { websiteRepoUrl } from '../../../utilities/index';
 
-const baseUrl = 'https://github.com/OfficeDev/office-ui-fabric-react/tree/master/apps/fabric-website/src/pages/Styles/Colors/docs';
+const baseUrl = websiteRepoUrl + '/src/pages/Styles/Colors/docs';
 
 export const ColorsPresencePage: React.StatelessComponent<IStylesPageProps> = props => {
   const { platform } = props;

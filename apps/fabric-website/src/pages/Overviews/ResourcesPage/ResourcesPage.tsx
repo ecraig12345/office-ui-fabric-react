@@ -2,8 +2,9 @@ import * as React from 'react';
 import { Markdown, withPlatform, Page, IPageProps, IPageSectionProps } from '@uifabric/example-app-base/lib/index2';
 import { ResourcesPageProps } from './ResourcesPage.doc';
 import { Platforms } from '../../../interfaces/Platforms';
+import { websiteRepoUrl } from '../../../utilities/index';
 
-const baseUrl = 'https://github.com/OfficeDev/office-ui-fabric-react/tree/master/apps/fabric-website/src/pages/Overviews/ResourcesPage/';
+const baseUrl = websiteRepoUrl + '/src/pages/Overviews/ResourcesPage/';
 
 export interface IResourcesPageProps extends IPageProps<Platforms> {}
 

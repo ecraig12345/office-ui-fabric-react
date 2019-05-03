@@ -1,8 +1,9 @@
 import { TFabricPlatformPageProps } from '../../../interfaces/Platforms';
+import { websiteRepoUrl } from '../../../utilities/index';
 
 const title = 'Elevation';
 const related = require('!raw-loader!@uifabric/fabric-website/src/pages/Styles/ElevationPage/docs/ElevationRelated.md') as string;
-const componentUrl = 'https://github.com/OfficeDev/office-ui-fabric-react/tree/master/apps/fabric-website/src/pages/Styles/ElevationPage';
+const componentUrl = websiteRepoUrl + '/src/pages/Styles/ElevationPage';
 
 export const ElevationPageProps: TFabricPlatformPageProps = {
   web: {
