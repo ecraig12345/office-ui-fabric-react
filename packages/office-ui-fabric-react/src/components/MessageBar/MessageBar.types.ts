@@ -25,7 +25,8 @@ export interface IMessageBarProps extends React.HTMLAttributes<HTMLElement> {
   messageBarType?: MessageBarType;
 
   /**
-   * The actions you want to show on the other side.
+   * Actions to show on the right side of the message bar.
+   * It's recommended to use `MessageBarButton`s wrapped in a `div` or fragment for this param.
    */
   actions?: JSX.Element;
 
@@ -36,21 +37,19 @@ export interface IMessageBarProps extends React.HTMLAttributes<HTMLElement> {
   ariaLabel?: string;
 
   /**
-   * Whether the message bar has a dismiss button and its callback.
-   * If null, we don't show a dismiss button.
-   * @defaultvalue null
+   * Callback for the dismiss button. The dismiss button is only shown if this callback is provided.
    */
   onDismiss?: (ev?: React.MouseEvent<HTMLButtonElement | BaseButton | HTMLAnchorElement | HTMLDivElement | Button>) => any;
 
   /**
-   * Determines if the message bar is multi lined.
+   * Determines if the message bar can display multiple lines of text.
    * If false, and the text overflows over buttons or to another line, it is clipped.
    * @defaultvalue true
    */
   isMultiline?: boolean;
 
   /**
-   * Aria label on dismiss button if onDismiss is defined.
+   * Aria label on dismiss button if `onDismiss` is defined.
    */
   dismissButtonAriaLabel?: string;
 
@@ -63,7 +62,7 @@ export interface IMessageBarProps extends React.HTMLAttributes<HTMLElement> {
   truncated?: boolean;
 
   /**
-   * Aria label on overflow button if truncated is defined.
+   * Aria label on the expand button if `truncated` is true.
    */
   overflowButtonAriaLabel?: string;
 
@@ -86,22 +85,9 @@ export interface IMessageBarProps extends React.HTMLAttributes<HTMLElement> {
 /**
  * {@docCategory MessageBar}
  */
-export interface IMessageBarStyleProps {
-  /**
-   * Theme (provided through customization).
-   */
-  theme: ITheme;
-
-  /**
-   * Additional CSS class(es).
-   */
-  className?: string;
-
-  /**
-   * Type of the MessageBar.
-   */
-  messageBarType?: MessageBarType;
-
+export interface IMessageBarStyleProps
+  extends Required<Pick<IMessageBarProps, 'theme'>>,
+    Pick<IMessageBarProps, 'className' | 'messageBarType' | 'isMultiline'> {
   /**
    * Whether the MessageBar contains a dismiss button.
    */
@@ -111,11 +97,6 @@ export interface IMessageBarStyleProps {
    * Whether the text is truncated.
    */
   truncated?: boolean;
-
-  /**
-   * Whether the MessageBar is rendered in multi line (as opposed to single line) mode.
-   */
-  isMultiline?: boolean;
 
   /**
    * Whether the single line MessageBar is being expanded.
@@ -163,22 +144,22 @@ export interface IMessageBarStyles {
   innerText?: IStyle;
 
   /**
-   * Style set for the optional dismiss button.
+   * Style set for the optional dismiss IconButton.
    */
   dismissal?: IStyle;
 
   /**
-   * Style set for the icon used to expand and collapse the MessageBar.
+   * Style set for the IconButton used to expand and collapse the MessageBar.
    */
   expand?: IStyle;
 
   /**
-   * Style set for the element containing the dismiss button.
+   * Style set for the element containing the dismiss button in single-line mode.
    */
   dismissSingleLine?: IStyle;
 
   /**
-   * Style set for the element containing the expand icon.
+   * Style set for the element containing the expand button in single-line mode.
    */
   expandSingleLine?: IStyle;
 
