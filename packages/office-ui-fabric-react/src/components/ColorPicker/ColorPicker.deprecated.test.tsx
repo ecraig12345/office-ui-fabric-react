@@ -42,6 +42,12 @@ describe('ColorPicker deprecated', () => {
     expect(onColorChanged).toHaveBeenCalledTimes(1);
   });
 
+  // TODO: test with onChange too?
+
+  // It's actually incorrect to respect the user's input when color (as opposed to defaultColor)
+  // is specified, but we need to keep that behavior until v7 to preserve compatibility.
+  // In v7, we should instead test that if color is specified, user input is NOT respected
+  // (unless of course the props are updated in response).
   it('allows updating text fields when color is specified', () => {
     let updatedColor: string | undefined;
     const onColorChanged = jest.fn((ev: any, color: IColor) => {

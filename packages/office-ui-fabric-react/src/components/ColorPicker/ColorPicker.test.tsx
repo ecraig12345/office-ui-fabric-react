@@ -27,15 +27,28 @@ describe('ColorPicker', () => {
   });
 
   it('renders correctly', () => {
-    const component = renderer.create(<ColorPicker color="#abcdef" />);
+    const component = renderer.create(<ColorPicker defaultColor="#abcdef" />);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  it('defaults to white if no color provided', () => {
+    wrapper = mount(<ColorPicker componentRef={colorPickerRef} />);
+
+    expect(colorPicker!.color.hex).toEqual('ffffff');
   });
 
   it('uses provided color string', () => {
     wrapper = mount(<ColorPicker color="#abcdef" onChange={noOp} componentRef={colorPickerRef} />);
 
     expect(colorPicker!.color.hex).toEqual('abcdef');
+  });
+
+  it('uses provided color object', () => {
+    const color = getColorFromString('#abcdef');
+    wrapper = mount(<ColorPicker color={color} onChange={noOp} componentRef={colorPickerRef} />);
+
+    expect(colorPicker!.color).toEqual(color);
   });
 
   it('uses provided color object', () => {
@@ -55,6 +68,32 @@ describe('ColorPicker', () => {
     expect(onChange).toHaveBeenCalledTimes(0);
   });
 
+  it('uses provided defaultColor string', () => {
+    wrapper = mount(<ColorPicker defaultColor="#abcdef" componentRef={colorPickerRef} />);
+
+    expect(colorPicker!.color.hex).toEqual('abcdef');
+  });
+
+  it('uses provided defaultColor object', () => {
+    const color = getColorFromString('#abcdef');
+    wrapper = mount(<ColorPicker defaultColor={color} componentRef={colorPickerRef} />);
+
+    expect(colorPicker!.color).toEqual(color);
+  });
+
+  it('defaults to white if color is invalid', () => {
+    wrapper = mount(<ColorPicker defaultColor="foo" componentRef={colorPickerRef} />);
+
+    expect(colorPicker!.color.hex).toEqual('ffffff');
+  });
+
+  it('ignores defaultColor prop change', () => {
+    wrapper = mount(<ColorPicker defaultColor="#abcdef" componentRef={colorPickerRef} />);
+
+    wrapper.setProps({ defaultColor: '#AEAEAE' });
+    expect(colorPicker!.color.hex).toEqual('abcdef');
+  });
+
   it('ignores invalid updates to color prop', () => {
     const onChange = jest.fn();
     wrapper = mount(<ColorPicker color="#abcdef" onChange={onChange} componentRef={colorPickerRef} />);
@@ -65,7 +104,7 @@ describe('ColorPicker', () => {
   });
 
   it('hides alpha control slider', () => {
-    wrapper = mount(<ColorPicker color="#FFFFFF" alphaSliderHidden={true} />);
+    wrapper = mount(<ColorPicker defaultColor="#FFFFFF" alphaSliderHidden={true} />);
 
     const alphaSlider = wrapper.find('.is-alpha');
     const tableHeaders = wrapper.find('thead td');
@@ -78,7 +117,7 @@ describe('ColorPicker', () => {
   });
 
   it('renders default RGBA/Hex strings', () => {
-    wrapper = mount(<ColorPicker color="#FFFFFF" />);
+    wrapper = mount(<ColorPicker defaultColor="#FFFFFF" />);
 
     const tableHeaders = wrapper.find('thead td');
     const textHeaders = [
@@ -99,7 +138,7 @@ describe('ColorPicker', () => {
 
     wrapper = mount(
       <ColorPicker
-        color="#FFFFFF"
+        defaultColor="#FFFFFF"
         hexLabel={textHeaders[0]}
         redLabel={textHeaders[1]}
         greenLabel={textHeaders[2]}
@@ -120,7 +159,7 @@ describe('ColorPicker', () => {
     const inputClassName = 'input-tab-test';
     wrapper = mount(
       <ColorPicker
-        color={`#${colorStringValue}`}
+        defaultColor={`#${colorStringValue}`}
         onChange={colorChangeSpy}
         componentRef={colorPickerRef}
         styles={{ input: inputClassName }}
@@ -149,7 +188,7 @@ describe('ColorPicker', () => {
       updatedColor = color.str;
     });
 
-    wrapper = mount(<ColorPicker onChange={onChange} color="#000000" componentRef={colorPickerRef} />);
+    wrapper = mount(<ColorPicker onChange={onChange} defaultColor="#000000" componentRef={colorPickerRef} />);
 
     const inputs = wrapper.getDOMNode().querySelectorAll('.ms-ColorPicker-input input');
 
@@ -219,7 +258,7 @@ describe('ColorPicker', () => {
       updatedColor = color.str;
     });
 
-    wrapper = mount(<ColorPicker onChange={onChange} color="#000000" alphaSliderHidden componentRef={colorPickerRef} />);
+    wrapper = mount(<ColorPicker onChange={onChange} defaultColor="#000000" alphaSliderHidden componentRef={colorPickerRef} />);
 
     const inputs = wrapper.getDOMNode().querySelectorAll('.ms-ColorPicker-input input');
 
@@ -242,4 +281,137 @@ describe('ColorPicker', () => {
     expect(onChange).toHaveBeenCalledTimes(2);
     expect(colorPicker!.color.str).toBe('#00ff00');
   });
+
+  it('rejects rgb input too long', () => {
+    const onChange = jest.fn();
+    wrapper = mount(<ColorPicker onChange={onChange} defaultColor="#000000" componentRef={colorPickerRef} />);
+
+    const redInput = wrapper.getDOMNode().querySelectorAll('.ms-ColorPicker-input input')[1];
+
+    // input shoud be totally ignored
+    ReactTestUtils.Simulate.input(redInput, mockEvent('1234'));
+    expect(onChange).toHaveBeenCalledTimes(0);
+    expect(colorPicker!.state.editingColor).toBeFalsy();
+    expect(colorPicker!.color.r).toEqual(0);
+    // still totally ignored on blur
+    ReactTestUtils.Simulate.blur(redInput);
+    expect(onChange).toHaveBeenCalledTimes(0);
+    expect(colorPicker!.color.r).toEqual(0);
+  });
+
+  it('rejects invalid hex input', () => {
+    const onChange = jest.fn();
+    wrapper = mount(<ColorPicker onChange={onChange} defaultColor="#000000" componentRef={colorPickerRef} />);
+
+    const hexInput = wrapper.getDOMNode().querySelectorAll('.ms-ColorPicker-input input')[0];
+
+    // input too long => totally ignored
+    ReactTestUtils.Simulate.input(hexInput, mockEvent('1234567'));
+    expect(onChange).toHaveBeenCalledTimes(0);
+    expect(colorPicker!.state.editingColor).toBeFalsy();
+    expect(colorPicker!.color.hex).toEqual('000000');
+    // still totally ignored on blur
+    ReactTestUtils.Simulate.blur(hexInput);
+    expect(onChange).toHaveBeenCalledTimes(0);
+    expect(colorPicker!.color.hex).toEqual('000000');
+
+    // input with invalid characters => totally ignored
+    ReactTestUtils.Simulate.input(hexInput, mockEvent('foo'));
+    expect(onChange).toHaveBeenCalledTimes(0);
+    expect(colorPicker!.state.editingColor).toBeFalsy();
+    expect(colorPicker!.color.hex).toEqual('000000');
+    // still totally ignored on blur
+    ReactTestUtils.Simulate.blur(hexInput);
+    expect(onChange).toHaveBeenCalledTimes(0);
+    expect(colorPicker!.color.hex).toEqual('000000');
+  });
+
+  it('reverts empty rgb input to previous value on blur', () => {
+    const onChange = jest.fn();
+    // #1fffff is red=31
+    wrapper = mount(<ColorPicker onChange={onChange} defaultColor="#1fffff" componentRef={colorPickerRef} />);
+
+    const redInput = wrapper.getDOMNode().querySelectorAll('.ms-ColorPicker-input input')[1] as HTMLInputElement;
+
+    ReactTestUtils.Simulate.input(redInput, mockEvent(''));
+    expect(onChange).toHaveBeenCalledTimes(0);
+    expect(redInput.value).toEqual('');
+    expect(colorPicker!.state.editingColor).toEqual({ component: 'r', value: '' });
+    expect(colorPicker!.color.r).toEqual(31);
+
+    ReactTestUtils.Simulate.blur(redInput);
+    expect(onChange).toHaveBeenCalledTimes(0);
+    expect(redInput.value).toEqual('31');
+    expect(colorPicker!.state.editingColor).toBeFalsy();
+    expect(colorPicker!.color.r).toEqual(31);
+  });
+
+  it('reverts empty hex input to previous value on blur', () => {
+    const onChange = jest.fn();
+    wrapper = mount(<ColorPicker onChange={onChange} defaultColor="#1fffff" componentRef={colorPickerRef} />);
+
+    const hexInput = wrapper.getDOMNode().querySelectorAll('.ms-ColorPicker-input input')[0] as HTMLInputElement;
+
+    ReactTestUtils.Simulate.input(hexInput, mockEvent(''));
+    expect(onChange).toHaveBeenCalledTimes(0);
+    expect(hexInput.value).toEqual('');
+    expect(colorPicker!.state.editingColor).toEqual({ component: 'hex', value: '' });
+    expect(colorPicker!.color.hex).toEqual('1fffff');
+
+    ReactTestUtils.Simulate.blur(hexInput);
+    expect(onChange).toHaveBeenCalledTimes(0);
+    expect(hexInput.value).toEqual('1fffff');
+    expect(colorPicker!.state.editingColor).toBeFalsy();
+    expect(colorPicker!.color.hex).toEqual('1fffff');
+  });
+
+  it('corrects invalid rgb on blur', () => {
+    let updatedColor: string | undefined;
+    const onChange = jest.fn((ev: any, color: IColor) => {
+      updatedColor = color.str;
+    });
+
+    wrapper = mount(<ColorPicker onChange={onChange} defaultColor="#000000" componentRef={colorPickerRef} />);
+
+    const redInput = wrapper.getDOMNode().querySelectorAll('.ms-ColorPicker-input input')[1] as HTMLInputElement;
+
+    ReactTestUtils.Simulate.input(redInput, mockEvent('355'));
+    expect(onChange).toHaveBeenCalledTimes(0);
+    expect(redInput.value).toEqual('355');
+    expect(colorPicker!.state.editingColor).toEqual({ component: 'r', value: '355' });
+    expect(colorPicker!.color.r).toEqual(0);
+
+    ReactTestUtils.Simulate.blur(redInput);
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(redInput.value).toEqual('255');
+    expect(updatedColor).toEqual('#ff0000');
+    expect(colorPicker!.state.editingColor).toBeFalsy();
+    expect(colorPicker!.color.r).toEqual(255);
+  });
+
+  it('corrects invalid hex on blur', () => {
+    let updatedColor: string | undefined;
+    const onChange = jest.fn((ev: any, color: IColor) => {
+      updatedColor = color.str;
+    });
+
+    wrapper = mount(<ColorPicker onChange={onChange} defaultColor="#000000" componentRef={colorPickerRef} />);
+
+    const hexInput = wrapper.getDOMNode().querySelectorAll('.ms-ColorPicker-input input')[0] as HTMLInputElement;
+
+    ReactTestUtils.Simulate.input(hexInput, mockEvent('1234'));
+    expect(onChange).toHaveBeenCalledTimes(0);
+    expect(hexInput.value).toEqual('1234');
+    expect(colorPicker!.state.editingColor).toEqual({ component: 'hex', value: '1234' });
+    expect(colorPicker!.color.hex).toEqual('000000');
+
+    ReactTestUtils.Simulate.blur(hexInput);
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(hexInput.value).toEqual('123');
+    expect(updatedColor).toEqual('#123');
+    expect(colorPicker!.state.editingColor).toBeFalsy();
+    expect(colorPicker!.color.str).toEqual('#123');
+  });
+
+  it('handles rgb input after clearing field', () => {});
 });

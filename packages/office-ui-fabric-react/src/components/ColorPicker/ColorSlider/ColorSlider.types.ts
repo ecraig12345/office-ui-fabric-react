@@ -4,7 +4,10 @@ import { IBaseProps, IRefObject, IStyleFunctionOrObject } from '../../../Utiliti
 /**
  * {@docCategory ColorPicker}
  */
-export interface IColorSlider {}
+export interface IColorSlider {
+  /** Gets the current value of the color slider. */
+  value: number;
+}
 
 /**
  * {@docCategory ColorPicker}
@@ -17,33 +20,57 @@ export interface IColorSliderProps extends IBaseProps<IColorSlider> {
 
   /**
    * Minimum value of the slider.
+   * @deprecated Will always be 0.
    */
   minValue?: number;
 
   /**
    * Maximum value of the slider.
+   * @deprecated Will always be 359 for a hue slider or 100 for an alpha slider.
    */
   maxValue?: number;
 
   /**
-   * Current value of the slider.
+   * Current value of the slider. Only provide this if the slider is a controlled component where you
+   * are maintaining its current state; otherwise, use the `defaultValue` property.
    */
   value?: number;
 
   /**
+   * Default value of the slider. Only provide this if the slider is an uncontrolled component;
+   * otherwise, use the `value` property. Updates to this property will be ignored.
+   */
+  defaultValue?: number;
+
+  /**
+   * A hue slider will display a gradient of all hues and have max value 359.
+   * An alpha slider will display a gray checkered pattern in the background and have max value 100.
+   * @defaultvalue hue
+   */
+  type?: 'alpha' | 'hue';
+
+  /**
+   * CSS color to display in a transparency gradient over the slider.
+   * Only relevant for alpha sliders.
+   */
+  backgroundColor?: string;
+
+  /**
    * CSS-compatible string for the color of the thumb element.
+   * @deprecated Not used. Use `styles.sliderThumb` instead.
    */
   thumbColor?: string;
 
   /**
    * Custom style for the overlay element.
+   * @deprecated Use `styles.sliderOverlay` instead.
    */
-  overlayStyle?: any;
+  overlayStyle?: React.CSSProperties;
 
   /**
-   * Callback issued when the value changes.
+   * Callback for when the value changes.
    */
-  onChange?: (event: React.MouseEvent<HTMLElement>, newValue?: number) => void;
+  onChange?: (event: React.SyntheticEvent<HTMLElement>, newValue?: number) => void;
 
   /**
    * Deprecated, use `onChange` instead.
@@ -52,8 +79,9 @@ export interface IColorSliderProps extends IBaseProps<IColorSlider> {
   onChanged?: (newValue: number) => void;
 
   /**
-   * If true, the slider represents an alpha slider.
-   * Otherwise, the slider represents a hue slider.
+   * If true, the slider represents an alpha slider (max value 100).
+   * Otherwise, the slider represents a hue slider (max value 359).
+   * @deprecated Use `type`
    */
   isAlpha?: boolean;
 
