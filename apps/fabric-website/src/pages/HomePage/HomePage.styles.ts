@@ -8,6 +8,7 @@ const CONTENT_WIDTH = 1536;
 const GlobalClassNames: { [key in keyof IHomePageStyles]: string } = {
   root: 'ms-HomePage',
   heroSection: 'ms-HomePage-heroSection',
+  // WARNING: Website release tests rely on this class being present
   heroTitle: 'ms-HomePage-heroTitle',
   platformCardsSection: 'ms-HomePage-platformCardsSection',
   platformsSection: 'ms-HomePage-platformsSection',

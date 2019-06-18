@@ -28,7 +28,7 @@ function _otherSections(platform: Platforms): IPageSectionProps[] {
           content: (
             <Link href="#/styles/web/colors/products" className={styles.cardLink}>
               <div className={styles.cardContent}>
-                <MarkdownHeader as="h2" id="colors" className={styles.cardTitle}>
+                <MarkdownHeader as="h2" id="colors" className={styles.cardTitle} data-automation-id="colors-card">
                   Colors
                 </MarkdownHeader>
                 <Icon iconName="Color" className={styles.cardIcon} />

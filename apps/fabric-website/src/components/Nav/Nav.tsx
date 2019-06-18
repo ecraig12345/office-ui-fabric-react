@@ -82,7 +82,7 @@ export class Nav extends React.Component<INavProps, INavState> {
       <>
         {searchablePageTitle && this._renderSearchBox(searchablePageTitle)}
         <FocusZone>
-          <nav className={styles.nav} role="navigation">
+          <nav className={styles.nav} role="navigation" data-automation-id="page-nav">
             {list}
           </nav>
         </FocusZone>

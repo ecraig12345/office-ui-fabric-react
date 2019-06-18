@@ -125,6 +125,7 @@ export class HomePageBase extends React.Component<IHomePageProps, IHomePageState
       <section className={this._classNames.heroSection}>
         <div className={this._classNames.sectionContent}>
           <div className={this._classNames.oneHalf}>
+            {/* WARNING: Website release tests rely on this h2 being present with expected class */}
             <h2 className={this._classNames.heroTitle}>Create amazing experiences</h2>
           </div>
           <div className={this._classNames.oneFourth}>

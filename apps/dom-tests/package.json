@@ -7,7 +7,7 @@
     "build": "npx just-scripts build",
     "clean": "npx just-scripts clean",
     "code-style": "npx just-scripts code-style",
-    "jest-dom": "npx just-scripts ",
+    "jest-dom": "npx just-scripts jest-dom-with-webpack",
     "just": "npx just-scripts",
     "start": "npx just-scripts dev"
   },

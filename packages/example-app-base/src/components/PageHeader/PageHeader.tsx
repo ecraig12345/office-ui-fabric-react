@@ -44,9 +44,10 @@ const PageHeaderBase: React.StatelessComponent<IPageHeaderProps> = props => {
 
   return (
     <header className={css(styles.root, props.className)}>
-      <h1 className={styles.title}>
+      <h1 className={styles.title} data-automation-id="page-title">
         {pageTitle}
-        {pageSubTitle && <span className={styles.subTitle}>{pageSubTitle}</span>}
+        {// The space before the subtitle is mainly to ensure it's read reasonably by screen readers.
+        pageSubTitle && <span className={styles.subTitle}>{' ' + pageSubTitle}</span>}
       </h1>
     </header>
   );

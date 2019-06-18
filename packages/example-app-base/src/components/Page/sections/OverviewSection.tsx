@@ -25,7 +25,7 @@ export const OverviewSection: React.StatelessComponent<IPageSectionPropsWithSect
   return (
     <div className={className} style={style}>
       <div className={styles.sectionHeader}>
-        <h2 className={styles.subHeading} id={id}>
+        <h2 className={styles.subHeading} id={id} data-automation-id="page-overview">
           {readableSectionName || sectionName}
         </h2>
         {editUrl && <EditSection className={styles.edit} title={title} section={readableSectionName!} url={editUrl} />}
