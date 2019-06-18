@@ -9,7 +9,7 @@ import {
   ICalendarYearStyleProps,
   ICalendarYearStyles
 } from './CalendarYear.types';
-import { BaseComponent, KeyCodes, getRTL, classNamesFunction, css } from 'office-ui-fabric-react/lib/Utilities';
+import { KeyCodes, getRTL, classNamesFunction, css, initializeComponentRef } from 'office-ui-fabric-react/lib/Utilities';
 import { FocusZone } from 'office-ui-fabric-react/lib/FocusZone';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { ICalendarIconStrings } from '../Calendar.types';
@@ -385,7 +385,7 @@ class CalendarYearTitle extends React.Component<ICalendarYearHeaderProps, {}> {
   };
 }
 
-class CalendarYearHeader extends BaseComponent<ICalendarYearHeaderProps, {}> {
+class CalendarYearHeader extends React.Component<ICalendarYearHeaderProps, {}> {
   public render(): JSX.Element {
     const { styles, theme, className } = this.props;
 
@@ -415,11 +415,12 @@ class CalendarYearHeader extends BaseComponent<ICalendarYearHeaderProps, {}> {
   };
 }
 
-export class CalendarYearBase extends BaseComponent<ICalendarYearProps, ICalendarYearState> implements ICalendarYear {
+export class CalendarYearBase extends React.Component<ICalendarYearProps, ICalendarYearState> implements ICalendarYear {
   private _gridRef: CalendarYearGrid;
 
   constructor(props: ICalendarYearProps) {
     super(props);
+    initializeComponentRef(this);
     this.state = this._getState(this.props);
   }
 

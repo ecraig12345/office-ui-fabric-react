@@ -1,5 +1,15 @@
 import * as React from 'react';
-import { BaseComponent, KeyCodes, css, getId, getRTL, getRTLSafeKeyCode, format, classNamesFunction, find } from '@uifabric/utilities';
+import {
+  initializeComponentRef,
+  KeyCodes,
+  css,
+  getId,
+  getRTL,
+  getRTLSafeKeyCode,
+  format,
+  classNamesFunction,
+  find
+} from '@uifabric/utilities';
 import { FocusZone } from 'office-ui-fabric-react/lib/FocusZone';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import {
@@ -42,21 +52,18 @@ export interface ICalendarDayState {
   weeks?: IDayInfo[][];
 }
 
-export class CalendarDayBase extends BaseComponent<ICalendarDayProps, ICalendarDayState> {
+export class CalendarDayBase extends React.Component<ICalendarDayProps, ICalendarDayState> {
   private navigatedDay: HTMLElement | null;
   private days: { [key: string]: HTMLElement | null } = {};
 
   public constructor(props: ICalendarDayProps) {
     super(props);
+    initializeComponentRef(this);
 
     this.state = {
       activeDescendantId: getId(),
       weeks: this._getWeeks(props)
     };
-
-    this._onSelectNextMonth = this._onSelectNextMonth.bind(this);
-    this._onSelectPrevMonth = this._onSelectPrevMonth.bind(this);
-    this._onClose = this._onClose.bind(this);
   }
 
   public componentWillReceiveProps(nextProps: ICalendarDayProps): void {

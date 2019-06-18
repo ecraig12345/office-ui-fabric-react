@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { findDOMNode } from 'react-dom';
-import { BaseComponent, css, getRTL, getId, KeyCodes, IRenderFunction, IClassNames } from '../../Utilities';
+import { EventGroup, initializeComponentRef, css, getRTL, getId, KeyCodes, IRenderFunction, IClassNames } from '../../Utilities';
 import {
   IColumn,
   IDetailsHeaderBaseProps,
@@ -30,12 +30,13 @@ const MOUSEMOVE_PRIMARY_BUTTON = 1; // for mouse move event we are using ev.butt
 
 const NO_COLUMNS: IColumn[] = [];
 
-export class DetailsHeaderBase extends BaseComponent<IDetailsHeaderBaseProps, IDetailsHeaderState> implements IDetailsHeader {
+export class DetailsHeaderBase extends React.Component<IDetailsHeaderBaseProps, IDetailsHeaderState> implements IDetailsHeader {
   public static defaultProps = {
     selectAllVisibility: SelectAllVisibility.visible,
     collapseAllVisibility: CollapseAllVisibility.visible
   };
 
+  private _events: EventGroup;
   private _classNames: IClassNames<IDetailsHeaderStyles>;
   private _rootElement: HTMLElement | undefined;
   private _rootComponent = React.createRef<IFocusZone>();
@@ -69,6 +70,9 @@ export class DetailsHeaderBase extends BaseComponent<IDetailsHeaderBaseProps, ID
 
   constructor(props: IDetailsHeaderBaseProps) {
     super(props);
+    initializeComponentRef(this);
+    this._events = new EventGroup(this);
+
     const columnReorderProps: IColumnReorderHeaderProps | undefined =
       props.columnReorderProps || (props.columnReorderOptions && getLegacyColumnReorderProps(props.columnReorderOptions));
     this.state = {
@@ -148,6 +152,8 @@ export class DetailsHeaderBase extends BaseComponent<IDetailsHeaderBaseProps, ID
     if (this._dragDropHelper) {
       this._dragDropHelper.dispose();
     }
+
+    this._events.dispose();
   }
 
   public render(): JSX.Element {

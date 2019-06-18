@@ -13,7 +13,7 @@ import { CalendarDay } from './CalendarDay/CalendarDay';
 import { CalendarMonth } from './CalendarMonth/CalendarMonth';
 import { ICalendarDay } from './CalendarDay/CalendarDay.types';
 import { ICalendarMonth } from './CalendarMonth/CalendarMonth.types';
-import { css, BaseComponent, KeyCodes, classNamesFunction } from '@uifabric/utilities';
+import { css, initializeComponentRef, KeyCodes, classNamesFunction } from '@uifabric/utilities';
 import { IProcessedStyleSet } from '@uifabric/styling';
 
 const getClassNames = classNamesFunction<ICalendarStyleProps, ICalendarStyles>();
@@ -76,7 +76,7 @@ export interface ICalendarState {
   isDayPickerVisible?: boolean;
 }
 
-export class CalendarBase extends BaseComponent<ICalendarProps, ICalendarState> implements ICalendar {
+export class CalendarBase extends React.Component<ICalendarProps, ICalendarState> implements ICalendar {
   public static defaultProps: ICalendarProps = {
     onSelectDate: undefined,
     onDismiss: undefined,
@@ -108,6 +108,8 @@ export class CalendarBase extends BaseComponent<ICalendarProps, ICalendarState> 
 
   constructor(props: ICalendarProps) {
     super(props);
+    initializeComponentRef(this);
+
     const currentDate = props.value && !isNaN(props.value.getTime()) ? props.value : props.today || new Date();
 
     this.state = {

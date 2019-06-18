@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { AccessibilityChecker } from './AccessibilityChecker';
-import { BaseComponent } from 'office-ui-fabric-react/lib/Utilities';
+import { Async } from 'office-ui-fabric-react/lib/Utilities';
 import { BaseSlots, IThemeRules, ThemeGenerator, themeRulesStandardCreator } from 'office-ui-fabric-react/lib/ThemeGenerator';
 import { createTheme, ITheme } from 'office-ui-fabric-react/lib/Styling';
 import { FabricPalette } from './FabricPalette';
@@ -73,11 +73,18 @@ const Main = (props: IStackProps) => (
 
 let colorChangeTimeout: number;
 
-export class ThemingDesigner extends BaseComponent<{}, IThemingDesignerState> {
+export class ThemingDesigner extends React.Component<{}, IThemingDesignerState> {
+  private _async: Async;
+
   constructor(props: any) {
     super(props);
 
+    this._async = new Async(this);
     this.state = this._buildInitialState();
+  }
+
+  public componentWillUnmount() {
+    this._async.dispose();
   }
 
   public render() {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseComponent, classNamesFunction } from '../../Utilities';
+import { classNamesFunction, initializeComponentRef } from '../../Utilities';
 import { IChicletCardStyles, IChicletCardStyleProps, IChicletCardProps } from './ChicletCard.types';
 import { Image } from 'office-ui-fabric-react/lib/Image';
 
@@ -10,13 +10,18 @@ const ASSET_CDN_BASE_URL = 'https://static2.sharepointonline.com/files/fabric/as
 const PREVIEW_IMAGE_WIDTH = '198px';
 const PREVIEW_IMAGE_HEIGHT = '122px';
 
-export class ChicletCardBase extends BaseComponent<IChicletCardProps, {}> {
+export class ChicletCardBase extends React.Component<IChicletCardProps, {}> {
   public static defaultProps: IChicletCardProps = {
     imageWidth: PREVIEW_IMAGE_WIDTH,
     imageHeight: PREVIEW_IMAGE_HEIGHT
   };
 
   private _classNames: { [key in keyof IChicletCardStyles]: string };
+
+  constructor(props: IChicletCardProps) {
+    super(props);
+    initializeComponentRef(this);
+  }
 
   public render(): JSX.Element {
     const {

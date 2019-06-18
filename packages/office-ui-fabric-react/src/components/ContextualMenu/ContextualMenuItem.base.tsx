@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { hasSubmenu, getIsChecked } from '../../utilities/contextualMenu/index';
-import { BaseComponent, getRTL } from '../../Utilities';
+import { initializeComponentRef, getRTL } from '../../Utilities';
 import { Icon } from '../../Icon';
 import { IContextualMenuItemProps } from './ContextualMenuItem.types';
 
@@ -52,7 +52,12 @@ const renderSubMenuIcon = ({ item, classNames }: IContextualMenuItemProps) => {
   return null;
 };
 
-export class ContextualMenuItemBase extends BaseComponent<IContextualMenuItemProps, {}> {
+export class ContextualMenuItemBase extends React.Component<IContextualMenuItemProps, {}> {
+  constructor(props: IContextualMenuItemProps) {
+    super(props);
+    initializeComponentRef(this);
+  }
+
   public render() {
     const { item, classNames } = this.props;
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { IScrollContainerProps } from './ScrollContainer.types';
-import { BaseComponent, css } from 'office-ui-fabric-react/lib/Utilities';
+import { initializeComponentRef, Async, css } from 'office-ui-fabric-react/lib/Utilities';
 
 import * as ScrollContainerStyles from './ScrollContainer.scss';
 
@@ -25,15 +25,21 @@ export const ScrollContainerContextTypes = {
   scrollContainer: PropTypes.object.isRequired
 };
 
-export class ScrollContainer extends BaseComponent<IScrollContainerProps> implements IScrollContainer {
+export class ScrollContainer extends React.Component<IScrollContainerProps> implements IScrollContainer {
   public static childContextTypes: typeof ScrollContainerContextTypes = ScrollContainerContextTypes;
 
   private _observer: IntersectionObserver;
+  private _async: Async;
 
   private _root: HTMLDivElement;
 
   private _callbacks: IVisibleCallback[] = [];
   private _pendingElements: Element[] = [];
+
+  constructor(props: IScrollContainerProps) {
+    super(props);
+    this._async = new Async(this);
+  }
 
   public getChildContext(): IScrollContainerContext {
     return {
@@ -73,6 +79,7 @@ export class ScrollContainer extends BaseComponent<IScrollContainerProps> implem
     if (this._observer) {
       this._observer.disconnect();
     }
+    this._async.dispose();
   }
 
   private _resolveRoot = (element: HTMLDivElement): void => {

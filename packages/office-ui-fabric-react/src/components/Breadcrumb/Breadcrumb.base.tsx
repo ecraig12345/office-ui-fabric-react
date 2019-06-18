@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseComponent, getRTL, classNamesFunction, getNativeProps, htmlElementProperties } from '../../Utilities';
+import { initializeComponentRef, getRTL, classNamesFunction, getNativeProps, htmlElementProperties } from '../../Utilities';
 import { IProcessedStyleSet } from '../../Styling';
 import { FocusZone, FocusZoneDirection } from '../../FocusZone';
 import { Link } from '../../Link';
@@ -22,7 +22,7 @@ const nullFunction = (): null => null;
 /**
  * {@docCategory Breadcrumb}
  */
-export class BreadcrumbBase extends BaseComponent<IBreadcrumbProps, any> {
+export class BreadcrumbBase extends React.Component<IBreadcrumbProps, any> {
   public static defaultProps: IBreadcrumbProps = {
     items: [],
     maxDisplayedItems: 999,
@@ -35,6 +35,7 @@ export class BreadcrumbBase extends BaseComponent<IBreadcrumbProps, any> {
   constructor(props: IBreadcrumbProps) {
     super(props);
 
+    initializeComponentRef(this);
     this._validateProps(props);
   }
 

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { BaseComponent, IBaseProps } from 'office-ui-fabric-react/lib/Utilities';
 import { PrimaryButton } from 'office-ui-fabric-react/lib/Button';
 import { TextField, ITextField } from 'office-ui-fabric-react/lib/TextField';
 import * as stylesImport from './Todo.scss';
@@ -9,7 +8,7 @@ import strings from './../strings';
 /**
  * Props for TodoForm component.
  */
-export interface ITodoFormProps extends IBaseProps {
+export interface ITodoFormProps {
   /**
    * onSubmit callback triggered when the is submitted.
    * Either triggered by clicking on add button or pressed Enter key in input field.
@@ -41,7 +40,7 @@ export interface ITodoFormState {
  * TextField: https://fabricreact.azurewebsites.net/fabric-react/master/#/examples/textfield
  * Button: https://fabricreact.azurewebsites.net/fabric-react/master/#/examples/button
  */
-export default class TodoForm extends BaseComponent<ITodoFormProps, ITodoFormState> {
+export class TodoForm extends React.Component<ITodoFormProps, ITodoFormState> {
   private _textField = React.createRef<ITextField>();
 
   constructor(props: ITodoFormProps) {

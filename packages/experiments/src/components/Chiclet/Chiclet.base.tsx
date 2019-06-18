@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseComponent } from '../../Utilities';
+import { initializeComponentRef } from '../../Utilities';
 import { ChicletCard } from './ChicletCard';
 import { getOpenGraphProperties } from './OpenGraph';
 import { IChicletProps, ChicletSize } from './Chiclet.types';
@@ -9,10 +9,11 @@ export interface IChicletState {
   chicletCardProps?: IChicletCardProps;
 }
 
-export class ChicletBase extends BaseComponent<IChicletProps, IChicletState> {
+export class ChicletBase extends React.Component<IChicletProps, IChicletState> {
   constructor(props: IChicletProps) {
     super(props);
 
+    initializeComponentRef(this);
     const chicletCardProps = getOpenGraphProperties(this.props.url);
     this.state = { chicletCardProps: chicletCardProps };
   }

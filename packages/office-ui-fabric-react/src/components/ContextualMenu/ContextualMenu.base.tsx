@@ -14,22 +14,25 @@ import { divProperties, getNativeProps, shallowCompare } from '../../Utilities';
 
 import {
   assign,
-  BaseComponent,
+  Async,
   classNamesFunction,
   css,
+  EventGroup,
   getDocument,
   getFirstFocusable,
   getId,
   getLastFocusable,
   getRTL,
   getWindow,
+  initializeComponentRef,
   IRenderFunction,
   IPoint,
   KeyCodes,
   shouldWrapFocus,
   IStyleFunctionOrObject,
   isIOS,
-  isMac
+  isMac,
+  warnDeprecations
 } from '../../Utilities';
 import { hasSubmenu, getIsChecked, isItemDisabled } from '../../utilities/contextualMenu/index';
 import { withResponsiveMode, ResponsiveMode } from '../../utilities/decorators/withResponsiveMode';
@@ -83,7 +86,7 @@ export function canAnyMenuItemsCheck(items: IContextualMenuItem[]): boolean {
 const NavigationIdleDelay = 250 /* ms */;
 
 @withResponsiveMode
-export class ContextualMenuBase extends BaseComponent<IContextualMenuProps, IContextualMenuState> {
+export class ContextualMenuBase extends React.Component<IContextualMenuProps, IContextualMenuState> {
   // The default ContextualMenu properties have no items and beak, the default submenu direction is right and top.
   public static defaultProps: IContextualMenuProps = {
     items: [],
@@ -93,6 +96,8 @@ export class ContextualMenuBase extends BaseComponent<IContextualMenuProps, ICon
     beakWidth: 16
   };
 
+  private _events: EventGroup;
+  private _async: Async;
   private _host: HTMLElement;
   private _previousActiveElement: HTMLElement | null;
   private _isFocusingPreviousElement: boolean;
@@ -114,12 +119,15 @@ export class ContextualMenuBase extends BaseComponent<IContextualMenuProps, ICon
   constructor(props: IContextualMenuProps) {
     super(props);
 
+    initializeComponentRef(this);
     this.state = {
       contextualMenuItems: undefined,
       subMenuId: getId('ContextualMenu')
     };
 
-    this._warnDeprecations({
+    this._events = new EventGroup(this);
+    this._async = new Async(this);
+    warnDeprecations('ContextualMenu', props, {
       getMenuClassNames: 'styles'
     });
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseComponent, css, getRTL, classNamesFunction } from 'office-ui-fabric-react/lib/Utilities';
+import { initializeComponentRef, css, getRTL, classNamesFunction } from 'office-ui-fabric-react/lib/Utilities';
 import { FocusZone } from 'office-ui-fabric-react/lib/FocusZone';
 import {
   addYears,
@@ -26,7 +26,7 @@ export interface ICalendarMonthState {
   isYearPickerVisible?: boolean;
 }
 
-export class CalendarMonthBase extends BaseComponent<ICalendarMonthProps, ICalendarMonthState> {
+export class CalendarMonthBase extends React.Component<ICalendarMonthProps, ICalendarMonthState> {
   public static defaultProps: Partial<ICalendarMonthProps> = {
     styles: getStyles,
     strings: undefined,
@@ -42,6 +42,7 @@ export class CalendarMonthBase extends BaseComponent<ICalendarMonthProps, ICalen
   constructor(props: ICalendarMonthProps) {
     super(props);
 
+    initializeComponentRef(this);
     this.state = {
       isYearPickerVisible: false
     };

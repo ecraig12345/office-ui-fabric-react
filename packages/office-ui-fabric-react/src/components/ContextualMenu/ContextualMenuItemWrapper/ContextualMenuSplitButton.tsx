@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { buttonProperties, getNativeProps, KeyCodes, mergeAriaAttributeValues } from '../../../Utilities';
+import { Async, buttonProperties, EventGroup, getNativeProps, KeyCodes, mergeAriaAttributeValues } from '../../../Utilities';
 import { ContextualMenuItem } from '../ContextualMenuItem';
 import { IContextualMenuItem } from '../ContextualMenu.types';
 import { IMenuItemClassNames, getSplitButtonVerticalDividerClassNames } from '../ContextualMenu.classNames';
@@ -7,20 +7,34 @@ import { KeytipData } from '../../../KeytipData';
 import { isItemDisabled, hasSubmenu } from '../../../utilities/contextualMenu/index';
 import { VerticalDivider } from '../../../Divider';
 import { ContextualMenuItemWrapper } from './ContextualMenuItemWrapper';
+import { IContextualMenuItemWrapperProps } from './ContextualMenuItemWrapper.types';
 
 export interface IContextualMenuSplitButtonState {}
 
 const TouchIdleDelay = 500; /* ms */
 
 export class ContextualMenuSplitButton extends ContextualMenuItemWrapper {
+  private _async: Async;
+  private _events: EventGroup;
   private _splitButton: HTMLDivElement;
   private _lastTouchTimeoutId: number | undefined;
   private _processingTouch: boolean;
+
+  constructor(props: IContextualMenuItemWrapperProps) {
+    super(props);
+    this._async = new Async(this);
+    this._events = new EventGroup(this);
+  }
 
   public componentDidMount() {
     if (this._splitButton && 'onpointerdown' in this._splitButton) {
       this._events.on(this._splitButton, 'pointerdown', this._onPointerDown, true);
     }
+  }
+
+  public componentWillUnmount() {
+    this._async.dispose();
+    this._events.dispose();
   }
 
   public render(): JSX.Element | null {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { BaseComponent, IDisposable, css, shallowCompare, getNativeProps, divProperties } from '../../Utilities';
+import { EventGroup, initializeComponentRef, IDisposable, css, shallowCompare, getNativeProps, divProperties } from '../../Utilities';
 import { IColumn, CheckboxVisibility } from './DetailsList.types';
 import { DetailsRowCheck } from './DetailsRowCheck';
 import { GroupSpacer } from '../GroupedList/GroupSpacer';
@@ -38,7 +38,8 @@ const DEFAULT_DROPPING_CSS_CLASS = 'is-dropping';
 
 const NO_COLUMNS: IColumn[] = [];
 
-export class DetailsRowBase extends BaseComponent<IDetailsRowBaseProps, IDetailsRowState> {
+export class DetailsRowBase extends React.Component<IDetailsRowBaseProps, IDetailsRowState> {
+  private _events: EventGroup;
   private _root: HTMLElement | undefined;
   private _cellMeasurer = React.createRef<HTMLSpanElement>();
   private _focusZone = React.createRef<IFocusZone>();
@@ -51,6 +52,9 @@ export class DetailsRowBase extends BaseComponent<IDetailsRowBaseProps, IDetails
 
   constructor(props: IDetailsRowBaseProps) {
     super(props);
+
+    initializeComponentRef(this);
+    this._events = new EventGroup(this);
 
     this.state = {
       selectionState: this._getSelectionState(props),
@@ -133,6 +137,8 @@ export class DetailsRowBase extends BaseComponent<IDetailsRowBaseProps, IDetails
       this._dragDropSubscription.dispose();
       delete this._dragDropSubscription;
     }
+
+    this._events.dispose();
   }
 
   public componentWillReceiveProps(newProps: IDetailsRowBaseProps): void {

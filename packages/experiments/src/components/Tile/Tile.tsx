@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ITileProps, TileSize } from './Tile.types';
 import { Check } from 'office-ui-fabric-react/lib/Check';
 import { SELECTION_CHANGE } from 'office-ui-fabric-react/lib/Selection';
-import { ISize, css, BaseComponent, getId } from '../../Utilities';
+import { ISize, css, EventGroup, getId, initializeComponentRef } from '../../Utilities';
 import * as TileStylesModule from './Tile.scss';
 import * as SignalStylesModule from '../signals/Signal.scss';
 import * as CheckStylesModule from 'office-ui-fabric-react/lib/components/Check/Check.scss';
@@ -57,20 +57,20 @@ export const TileLayoutSizes: {
 
 /**
  * A tile provides a frame for a potentially-selectable item which displays its contents prominently.
- *
- * @export
- * @class Tile
- * @extends {React.Component<ITileProps, ITileState>}
  */
-export class Tile extends BaseComponent<ITileProps, ITileState> {
+export class Tile extends React.Component<ITileProps, ITileState> {
   private _nameId: string;
   private _activityId: string;
   private _labelId: string;
   private _descriptionId: string;
+  private _events: EventGroup;
 
   // tslint:disable-next-line:no-any
   constructor(props: ITileProps, context: any) {
     super(props, context);
+
+    initializeComponentRef(this);
+    this._events = new EventGroup(this);
 
     this._nameId = getId('Tile-name');
     this._activityId = getId('Tile-activity');
@@ -126,6 +126,10 @@ export class Tile extends BaseComponent<ITileProps, ITileState> {
         this._events.on(selection, SELECTION_CHANGE, this._onSelectionChange);
       }
     }
+  }
+
+  public componentWillUnmount() {
+    this._events.dispose();
   }
 
   public render(): JSX.Element {

@@ -3,7 +3,7 @@
  */
 
 import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
-import { BaseComponent, css } from 'office-ui-fabric-react/lib/Utilities';
+import { css, initializeComponentRef } from 'office-ui-fabric-react/lib/Utilities';
 import * as React from 'react';
 import './Accordion.scss';
 import { IAccordion, IAccordionProps } from './Accordion.types';
@@ -13,10 +13,11 @@ export interface IAccordionState {
   isContentVisible?: boolean | undefined;
 }
 
-export class Accordion extends BaseComponent<IAccordionProps, IAccordionState> implements IAccordion {
+export class Accordion extends React.Component<IAccordionProps, IAccordionState> implements IAccordion {
   constructor(props: IAccordionProps) {
     super(props);
 
+    initializeComponentRef(this);
     this.state = {
       isContentVisible: false
     };

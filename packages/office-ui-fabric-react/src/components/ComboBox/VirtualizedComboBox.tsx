@@ -1,15 +1,20 @@
 import * as React from 'react';
-import { BaseComponent } from '../../Utilities';
+import { initializeComponentRef } from '../../Utilities';
 import { ComboBox } from './ComboBox';
 import { IComboBoxProps, IComboBox, IComboBoxOption } from './ComboBox.types';
 import { IList, List } from '../../List';
 import { ISelectableOption } from '../../utilities/selectableOption/SelectableOption.types';
 
-export class VirtualizedComboBox extends BaseComponent<IComboBoxProps, {}> implements IComboBox {
+export class VirtualizedComboBox extends React.Component<IComboBoxProps, {}> implements IComboBox {
   /** The combo box element */
   private _comboBox = React.createRef<IComboBox>();
   /** The virtualized list element */
   private _list = React.createRef<IList>();
+
+  constructor(props: IComboBoxProps) {
+    super(props);
+    initializeComponentRef(this);
+  }
 
   /**
    * All selected options

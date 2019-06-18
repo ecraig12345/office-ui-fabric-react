@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './ColorsPage.global.scss';
-import { BaseComponent } from 'office-ui-fabric-react/lib/Utilities';
+import { Async } from 'office-ui-fabric-react/lib/Utilities';
 
 import { loadTheme } from 'office-ui-fabric-react/lib/Styling';
 import { CodepenComponent } from '@uifabric/example-app-base';
@@ -42,11 +42,14 @@ const codepenSamples =
   '</div>);\n  }\n}\n' +
   "ReactDOM.render(<Content />,document.getElementById('content'));";
 
-export class ColorsPage extends BaseComponent<{}, IColorsPageState> {
+export class ColorsPage extends React.Component<{}, IColorsPageState> {
   private _semanticSlotColorChangeTimeout: number;
+  private _async: Async;
 
   constructor(props: {}) {
     super(props);
+
+    this._async = new Async(this);
 
     const themeRules = themeRulesStandardCreator();
     ThemeGenerator.insureSlots(themeRules, isDark(themeRules[BaseSlots[BaseSlots.backgroundColor]].color!));
@@ -60,6 +63,8 @@ export class ColorsPage extends BaseComponent<{}, IColorsPageState> {
   }
 
   public componentWillUnmount(): void {
+    this._async.dispose();
+
     // remove temp styles
     const root = document.querySelector('.App-content') as HTMLElement;
     if (root) {

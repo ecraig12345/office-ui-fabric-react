@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseComponent, KeyCodes, css, getRTL, IRefObject } from '../../Utilities';
+import { initializeComponentRef, KeyCodes, css, getRTL, IRefObject } from '../../Utilities';
 import { ICalendarStrings, ICalendarIconStrings, ICalendarFormatDateCallbacks } from './Calendar.types';
 import { FocusZone } from '../../FocusZone';
 import {
@@ -42,7 +42,7 @@ export interface ICalendarMonthState {
   isYearPickerVisible?: boolean;
 }
 
-export class CalendarMonth extends BaseComponent<ICalendarMonthProps, ICalendarMonthState> {
+export class CalendarMonth extends React.Component<ICalendarMonthProps, ICalendarMonthState> {
   public refs: {
     [key: string]: React.ReactInstance;
     navigatedMonth: HTMLElement;
@@ -55,15 +55,11 @@ export class CalendarMonth extends BaseComponent<ICalendarMonthProps, ICalendarM
   public constructor(props: ICalendarMonthProps) {
     super(props);
 
+    initializeComponentRef(this);
     this._selectMonthCallbacks = [];
     props.strings.shortMonths.map((month, index) => {
       this._selectMonthCallbacks[index] = this._onSelectMonth.bind(this, index);
     });
-
-    this._isCurrentMonth = this._isCurrentMonth.bind(this);
-    this._onSelectNextYear = this._onSelectNextYear.bind(this);
-    this._onSelectPrevYear = this._onSelectPrevYear.bind(this);
-    this._onSelectMonth = this._onSelectMonth.bind(this);
 
     this.state = { isYearPickerVisible: false };
   }
@@ -236,9 +232,9 @@ export class CalendarMonth extends BaseComponent<ICalendarMonthProps, ICalendarM
     this._calendarYearRef = ref;
   };
 
-  private _isCurrentMonth(month: number, year: number, today: Date): boolean {
+  private _isCurrentMonth = (month: number, year: number, today: Date): boolean => {
     return today.getFullYear() === year && today.getMonth() === month;
-  }
+  };
 
   private _onKeyDown = (callback: () => void, ev: React.KeyboardEvent<HTMLElement>): void => {
     if (ev.which === KeyCodes.enter) {
