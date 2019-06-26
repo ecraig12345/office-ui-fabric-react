@@ -17,7 +17,6 @@ import { Button as NewButton, MenuButton, SplitButton, Toggle as NewToggle } fro
 
 const defaultTheme = createTheme({});
 
-// tslint:disable-next-line:typedef
 const Items = Array.from({ length: 10 }, (n, i) => ({
   key: `Item ${i}`,
   name: `Item ${i}`,
@@ -80,7 +79,7 @@ export const Scenarios: IDropdownOption[] = [
     key: 'rowsnostyles',
     text: 'DetailsRows without styles',
     data: {
-      timing: [] as number[],
+      timing: [],
       content: (
         <DetailsRowBase
           theme={defaultTheme}

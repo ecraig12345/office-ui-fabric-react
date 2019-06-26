@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Stack, Text, createItem } from 'office-ui-fabric-react';
+import { Stack, Text, Stylesheet } from 'office-ui-fabric-react';
 
 export interface ITimings {
   count: number;
@@ -19,23 +19,26 @@ const _createTimings = (): ITimings => ({
 
 const _round = (num: number, decimals: number): number => Number.parseFloat(num.toFixed(decimals));
 
+const stylesheet = Stylesheet.getInstance();
+
 export class Measurer extends React.Component<{}, {}> {
   private static _timings = _createTimings();
 
+  /** Gets timings data and resets for the next run */
   public static getTimings(): ITimings {
     const timings = Measurer._timings;
 
     Measurer._timings = _createTimings();
+    // Reset mergeStyles for true perf measurements
+    stylesheet.reset();
 
     timings.totalTime = _round(timings.latestTime - timings.initialTime, 3);
     timings.individualTime = _round(timings.totalTime / timings.count, 3);
 
-    return timings as ITimings;
+    return timings;
   }
 
-  constructor(props: {}) {
-    super(props);
-
+  public componentWillMount() {
     Measurer._timings.count++;
     if (Measurer._timings.initialTime === 0) {
       Measurer._timings.initialTime = performance.now();
@@ -51,7 +54,7 @@ export class Measurer extends React.Component<{}, {}> {
   }
 }
 
-export const MeasurerTimings = () => {
+export const MeasurerTimings: React.FunctionComponent = () => {
   const timings = Measurer.getTimings();
 
   return (

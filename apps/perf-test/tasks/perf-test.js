@@ -1,5 +1,7 @@
-const cp = require('child_process');
+// @ts-check
 const fs = require('fs');
+const open = require('open');
+const os = require('os');
 const path = require('path');
 const generateFlamegraph = require('./flamegraph/generateFlamegraph');
 
@@ -53,9 +55,23 @@ const iterations = 5000;
 //  --log-timer-events
 //  --log-source-code
 
+/**
+ * @typedef {{
+ *   scenario: string;
+ *   logfileMaster: string;
+ *   outfileMaster: string;
+ *   numTicksMaster?: string;
+ *   logfilePR: string;
+ *   outfilePR: string;
+ *   numTicksPR?: string;
+ * }} ITestResult
+ */
+
+const filePrefix = os.platform() === 'win32' ? 'file:///' : 'file://';
+
 const urlForDeployPath = process.env.BUILD_SOURCEBRANCH
   ? `http://fabricweb.z5.web.core.windows.net/pr-deploy-site/${process.env.BUILD_SOURCEBRANCH}/perf-test`
-  : 'file://' + path.resolve(__dirname, '../dist/');
+  : filePrefix + path.resolve(__dirname, '../dist/');
 
 const urlForDeploy = urlForDeployPath + '/index.html';
 
@@ -63,9 +79,9 @@ const urlForMaster = process.env.SYSTEM_PULLREQUEST_TARGETBRANCH
   ? `http://fabricweb.z5.web.core.windows.net/pr-deploy-site/refs/heads/${process.env.SYSTEM_PULLREQUEST_TARGETBRANCH}/perf-test/index.html`
   : 'http://fabricweb.z5.web.core.windows.net/pr-deploy-site/refs/heads/master/perf-test/index.html';
 
-const logPath = path.join(__dirname, '../logfiles');
-const logFilePath = path.join(logPath, '/puppeteer.log');
-const resultsPath = path.join(__dirname, '../dist');
+const logPath = path.resolve(__dirname, '../logfiles');
+const logFilePath = path.join(logPath, 'puppeteer.log');
+const resultsPath = path.resolve(__dirname, '../dist');
 
 module.exports = async function getPerfRegressions() {
   console.log('logFilePath: ' + logFilePath);
@@ -87,7 +103,7 @@ module.exports = async function getPerfRegressions() {
   }
 
   const scenarios = fs
-    .readdirSync(path.join(__dirname, '../src/scenarios'))
+    .readdirSync(path.resolve(__dirname, '../src/scenarios'))
     .filter(name => name.indexOf('scenarioList') < 0)
     .map(name => path.basename(name, '.tsx'));
 
@@ -112,6 +128,7 @@ module.exports = async function getPerfRegressions() {
   // TODO: Need to decide whether it's ok to run tests in parallel. Variance from results seems to indicate
   // not, but then again other things outside of our control will also affect CPU load and results.
   // Run tests sequentially for now, at least as a chance of getting more consistent results when run locally.
+  /** @type {ITestResult[]} */
   const testResults = [];
 
   for (const scenario of scenarios) {
@@ -197,6 +214,7 @@ async function runPerfTest(browser, baseUrl, scenarioName, logPath) {
 
 /**
  * Create test summary based on test results.
+ * @param testResults {ITestResult[]}
  */
 function createTestSummary(testResults) {
   testResults.forEach(testResult => {
@@ -230,13 +248,20 @@ function createTestSummary(testResults) {
 
   console.log('result: ' + result);
 
+  if (!process.env.BUILD_SOURCEBRANCH) {
+    // Make a file with the local results and load it in the browser
+    const resultsHtmlPath = path.join(resultsPath, 'results.html');
+    fs.writeFileSync(resultsHtmlPath, `<html><body>${result}</body></html>`);
+    open(filePrefix + resultsHtmlPath.replace(/^\//, ''));
+  }
+
   return result;
 }
 
 /**
  * Get ticks from flamegraph file.
  *
- * @param {*} resultsFile
+ * @param {string} resultsFile
  */
 function getTicks(resultsFile) {
   const numTicks = fs
@@ -282,6 +307,7 @@ function arr_diff(a1, a2) {
   return diff;
 }
 
+// @ts-ignore
 if (require.main === module) {
   // Can paste "testResults" console output here for testing.
   const results = [];
