@@ -1,6 +1,15 @@
 # Change Log - @uifabric/utilities
 
-This log was last generated on Fri, 14 Jun 2019 12:26:30 GMT and should not be manually modified.
+This log was last generated on Fri, 28 Jun 2019 21:41:58 GMT and should not be manually modified.
+
+## 7.0.4
+Fri, 28 Jun 2019 21:41:58 GMT
+
+### Patches
+
+- Adding a null check in the case a stylesheet instance is not avaiable or old.
+- The `getClassNames` function now returns memoized classnames, resulting in improved performance in high repeat scenarios (like lists rendering checks.) Reintroduction of #8761.
+- Add placeholder as TextArea property
 
 ## 7.0.3
 Fri, 14 Jun 2019 12:26:30 GMT

@@ -2,6 +2,27 @@
   "name": "@uifabric/merge-styles",
   "entries": [
     {
+      "version": "7.1.0",
+      "tag": "@uifabric/merge-styles_v7.1.0",
+      "date": "Fri, 28 Jun 2019 21:41:58 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Reducing runtime overhead on kebab parsing. Reducing some concatStyleSets overhead.",
+            "author": "David Zearing <dzearing@microsoft.com>",
+            "commit": "e1983e85a07f94c02b069b13f198ff536c19aa35"
+          }
+        ],
+        "minor": [
+          {
+            "comment": "Add `fontDisplay` to `IFontFace`",
+            "author": "Daniel Perez Alvarez <unindented@gmail.com>",
+            "commit": "f722956a4080393843b03138c188c9fe49d16c34"
+          }
+        ]
+      }
+    },
+    {
       "version": "7.0.2",
       "tag": "@uifabric/merge-styles_v7.0.2",
       "date": "Fri, 14 Jun 2019 12:26:30 GMT",

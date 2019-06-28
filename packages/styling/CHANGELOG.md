@@ -1,6 +1,14 @@
 # Change Log - @uifabric/styling
 
-This log was last generated on Wed, 26 Jun 2019 12:23:41 GMT and should not be manually modified.
+This log was last generated on Fri, 28 Jun 2019 21:41:58 GMT and should not be manually modified.
+
+## 7.1.0
+Fri, 28 Jun 2019 21:41:58 GMT
+
+### Minor changes
+
+- Semantic Slots: added successText.
+- Add `font-display: 'swap'` when registering font face'
 
 ## 7.0.3
 Wed, 26 Jun 2019 12:23:41 GMT

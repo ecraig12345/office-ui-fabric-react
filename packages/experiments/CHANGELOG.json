@@ -2,6 +2,49 @@
   "name": "@uifabric/experiments",
   "entries": [
     {
+      "version": "7.3.0",
+      "tag": "@uifabric/experiments_v7.3.0",
+      "date": "Fri, 28 Jun 2019 21:41:58 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": " Button: Removing Stack usage from vanilla Button's slots and view to improve perf.",
+            "author": "Makoto Morimoto <humbertomakotomorimoto@gmail.com>",
+            "commit": "7f0190527755b5e649cb0a3022039eca51588fd7"
+          },
+          {
+            "comment": "Chiclet: Add x-small variant",
+            "author": "staciecarroll <42977041+staciecarroll@users.noreply.github.com>",
+            "commit": "ffe5e8d2c0452863dbcdf888e504c6b0c676193b"
+          }
+        ],
+        "patch": [
+          {
+            "comment": "Button example updated.",
+            "author": "David Zearing <dzearing@microsoft.com>",
+            "commit": "e1983e85a07f94c02b069b13f198ff536c19aa35"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@uifabric/merge-styles\" from `^7.0.2` to `^7.1.0`"
+          },
+          {
+            "comment": "Updating dependency \"@uifabric/styling\" from `^7.0.3` to `^7.1.0`"
+          },
+          {
+            "comment": "Updating dependency \"@uifabric/utilities\" from `^7.0.3` to `^7.0.4`"
+          },
+          {
+            "comment": "Updating dependency \"office-ui-fabric-react\" from `^7.6.0` to `^7.6.1`"
+          },
+          {
+            "comment": "Updating dependency \"@uifabric/example-app-base\" from `^7.1.1` to `^7.1.2`"
+          }
+        ]
+      }
+    },
+    {
       "version": "7.2.3",
       "tag": "@uifabric/experiments_v7.2.3",
       "date": "Tue, 25 Jun 2019 12:26:09 GMT",

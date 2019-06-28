@@ -1,6 +1,13 @@
 # Change Log - @uifabric/fabric-website
 
-This log was last generated on Mon, 24 Jun 2019 23:11:20 GMT and should not be manually modified.
+This log was last generated on Fri, 28 Jun 2019 21:41:58 GMT and should not be manually modified.
+
+## 7.2.0
+Fri, 28 Jun 2019 21:41:58 GMT
+
+### Minor changes
+
+- making all getting started links point to microsoft rather than kenotron
 
 ## 7.1.6
 Mon, 24 Jun 2019 23:11:20 GMT
