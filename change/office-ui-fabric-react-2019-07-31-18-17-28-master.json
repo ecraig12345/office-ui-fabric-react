@@ -1,0 +1,8 @@
+{
+  "type": "patch",
+  "comment": "TextField: fix onChange issue and async tests",
+  "packageName": "office-ui-fabric-react",
+  "email": "elcraig@microsoft.com",
+  "commit": "4f0a5bb89763240421807254d5fbb739339bb341",
+  "date": "2019-08-01T01:17:28.988Z"
+}
