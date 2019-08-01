@@ -7,6 +7,7 @@ import {
   DelayedRender,
   IStyleFunctionOrObject,
   classNamesFunction,
+  getDocument,
   getId,
   getNativeProps,
   initializeComponentRef,
@@ -66,6 +67,8 @@ export class TextFieldBase extends React.Component<ITextFieldProps, ITextFieldSt
   private _textElement = React.createRef<HTMLTextAreaElement | HTMLInputElement>();
   private _classNames: IProcessedStyleSet<ITextFieldStyles>;
   private _async: Async;
+  /** True if we're in IE 11 with document.documentMode < 11 */
+  private _isOldDocMode: boolean;
 
   public constructor(props: ITextFieldProps) {
     super(props);
@@ -98,17 +101,16 @@ export class TextFieldBase extends React.Component<ITextFieldProps, ITextFieldSt
 
     this._delayedValidate = this._async.debounce(this._validate, this.props.deferredValidationTime);
     this._lastValidation = 0;
+
+    const doc = getDocument();
+    this._isOldDocMode = !!doc && typeof (doc as any).documentMode === 'number' && (doc as any).documentMode < 11;
   }
 
   /**
    * Gets the current value of the text field.
    */
   public get value(): string | undefined {
-    const value = _getValue(this.props, this.state);
-    if (typeof value === 'number') {
-      return String(value);
-    }
-    return value;
+    return _getValue(this.props, this.state);
   }
 
   public componentDidMount(): void {
@@ -161,7 +163,6 @@ export class TextFieldBase extends React.Component<ITextFieldProps, ITextFieldSt
       // TODO: #5875 added logic to trigger validation in componentWillReceiveProps and other places.
       // This seems a bit odd and hard to integrate with the new approach.
       // (Starting to think we should just put the validation logic in a separate wrapper component...?)
-      // TODO: VERIFY that debouncing prevents this from being called too many times, and the timing is right
       if (_shouldValidateAllChanges(props)) {
         this._delayedValidate(this.value);
       }
@@ -433,6 +434,7 @@ export class TextFieldBase extends React.Component<ITextFieldProps, ITextFieldSt
         {...textAreaProps}
         ref={this._textElement as React.RefObject<HTMLTextAreaElement>}
         value={this.value || ''}
+        // we MUST listen to both of these--see comment in _onInputChange
         onInput={this._onInputChange}
         onChange={this._onInputChange}
         className={this._classNames.field}
@@ -457,6 +459,7 @@ export class TextFieldBase extends React.Component<ITextFieldProps, ITextFieldSt
         {...inputProps}
         ref={this._textElement as React.RefObject<HTMLInputElement>}
         value={this.value || ''}
+        // we MUST listen to both of these--see comment in _onInputChange
         onInput={this._onInputChange}
         onChange={this._onInputChange}
         className={this._classNames.field}
@@ -471,29 +474,48 @@ export class TextFieldBase extends React.Component<ITextFieldProps, ITextFieldSt
   }
 
   private _onInputChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
-    event.persist();
-    const element: HTMLInputElement = event.target as HTMLInputElement;
-    const value: string = element.value;
-    const props = this.props;
-
-    // Avoid doing unnecessary work when the value has not changed.
-    if (value === this.value) {
+    // - Due to an IE11+onChange issue in React (https://github.com/facebook/react/issues/7027),
+    // listening to onChange can miss keystrokes if typing quickly (reported to Fabric in
+    // https://github.com/OfficeDev/office-ui-fabric-react/issues/744). So we usually listen to
+    // onInput instead. (The React issue may have been fixed, but I'm having trouble verifying
+    // because I can't repro it even with older React builds.)
+    // - BUT in IE 11 with document mode 10, the input event is missing target.value
+    // (https://github.com/OfficeDev/office-ui-fabric-react/issues/824) so we have to use onChange instead.
+    // - We also need to always have *some* handler bound to onChange to avoid React warnings about
+    // controlled inputs without onChange...but we should only actually handle one event type.
+    //   (╯°□°）╯︵ ┻━┻
+    const eventTypeToIgnore = this._isOldDocMode ? 'input' : 'change';
+    if (event.type === eventTypeToIgnore) {
       return;
     }
 
-    // ONLY is this is an uncontrolled component, update the displayed value.
-    // (Controlled components must update the `value` prop from `onChange`.)
-    if (!this._isControlled) {
-      // For uncontrolled components, wait to call onChange until after state is updated
-      this.setState({ uncontrolledValue: value }, () => {
-        if (props.onChange) {
-          props.onChange(event, value);
+    // This is so developers can access the event properties in asynchronous callbacks
+    // https://reactjs.org/docs/events.html#event-pooling
+    event.persist();
+    const element: HTMLInputElement = event.target as HTMLInputElement;
+    const value: string = element.value;
+
+    let isSameValue: boolean;
+    this.setState(
+      (prevState: ITextFieldState, props: ITextFieldProps) => {
+        const prevValue = _getValue(props, prevState) || '';
+        isSameValue = value === prevValue || typeof value !== 'string';
+        // Avoid doing unnecessary work when the value has not changed.
+        if (isSameValue) {
+          return null;
         }
-      });
-    } else if (props.onChange) {
-      // For controlled components, call onChange now
-      props.onChange(event, value);
-    }
+
+        // ONLY is this is an uncontrolled component, update the displayed value.
+        // (Controlled components must update the `value` prop from `onChange`.)
+        return this._isControlled ? null : { uncontrolledValue: value };
+      },
+      () => {
+        // Don't call onChange unless the value actually changed
+        if (!isSameValue && this.props.onChange) {
+          this.props.onChange(event, value);
+        }
+      }
+    );
   };
 
   private _validate(value: string | undefined): void {
@@ -503,7 +525,7 @@ export class TextFieldBase extends React.Component<ITextFieldProps, ITextFieldSt
     }
 
     this._latestValidateValue = value;
-    const onGetErrorMessage = this.props.onGetErrorMessage as (value: string) => string | PromiseLike<string> | undefined;
+    const onGetErrorMessage = this.props.onGetErrorMessage;
     const result = onGetErrorMessage && onGetErrorMessage(value || '');
 
     if (result !== undefined) {
@@ -540,8 +562,13 @@ export class TextFieldBase extends React.Component<ITextFieldProps, ITextFieldSt
   }
 }
 
+/** Get the value from the given state and props (converting from number to string if needed) */
 function _getValue(props: ITextFieldProps, state: ITextFieldState): string | undefined {
   const { value = state.uncontrolledValue } = props;
+  if (typeof value === 'number') {
+    // not allowed per typings, but happens anyway
+    return String(value);
+  }
   return value;
 }
 

@@ -1,10 +1,20 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
+import { mount, ReactWrapper } from 'enzyme';
 import { KeyCodes } from '../../../Utilities';
 import { mockEvent } from '../../../common/testUtilities';
 
 import { MaskedTextField } from './MaskedTextField';
+
+/**
+ * Trigger onInput and onChange, to realistically simulate actual typing.
+ */
+function mockChange(element: ReactWrapper, targetValue: string): void {
+  const eventData = mockEvent(targetValue);
+  // Fire both of these events to be realistic, since we handle both of them
+  element.simulate('input', eventData);
+  element.simulate('change', eventData);
+}
 
 describe('MaskedTextField', () => {
   it('renders correctly', () => {
@@ -31,13 +41,13 @@ describe('MaskedTextField', () => {
     // Simulate pressing the '1' key
     input.simulate('keyDown', { keyCode: KeyCodes.one });
     inputDOM.setSelectionRange(8, 8);
-    input.simulate('change', mockEvent('mask: (1___) ___ - ____'));
+    mockChange(input, 'mask: (1___) ___ - ____');
     expect(inputDOM.value).toEqual('mask: (1__) ___ - ____');
 
     // Simulate pressing the '2' key
     input.simulate('keyDown', { keyCode: KeyCodes.two });
     inputDOM.setSelectionRange(9, 9);
-    input.simulate('change', mockEvent('mask: (12__) ___ - ____'));
+    mockChange(input, 'mask: (12__) ___ - ____');
     expect(inputDOM.value).toEqual('mask: (12_) ___ - ____');
   });
 
@@ -51,13 +61,13 @@ describe('MaskedTextField', () => {
     // Simulate pressing the '1' key
     input.simulate('keyDown', { keyCode: KeyCodes.one });
     inputDOM.setSelectionRange(8, 8);
-    input.simulate('change', mockEvent('mask: (1___) ___ - ____'));
+    mockChange(input, 'mask: (1___) ___ - ____');
     expect(inputDOM.value).toEqual('mask: (1__) ___ - ____');
 
     // Replacing a character
     input.simulate('keyDown', { keyCode: KeyCodes.two });
     inputDOM.setSelectionRange(8, 8);
-    input.simulate('change', mockEvent('mask: (21__) ___ - ____'));
+    mockChange(input, 'mask: (21__) ___ - ____');
     expect(inputDOM.value).toEqual('mask: (2__) ___ - ____');
   });
 
@@ -71,13 +81,13 @@ describe('MaskedTextField', () => {
     // Simulate pressing the '1' key
     input.simulate('keyDown', { keyCode: KeyCodes.one });
     inputDOM.setSelectionRange(8, 8);
-    input.simulate('change', mockEvent('mask: (1___) ___ - ____'));
+    mockChange(input, 'mask: (1___) ___ - ____');
     expect(inputDOM.value).toEqual('mask: (1__) ___ - ____');
 
     // Simulate pressing the 'a' key
     input.simulate('keyDown', { keyCode: KeyCodes.a });
     inputDOM.setSelectionRange(9, 9);
-    input.simulate('change', mockEvent('mask: (1a__) ___ - ____'));
+    mockChange(input, 'mask: (1a__) ___ - ____');
     expect(inputDOM.value).toEqual('mask: (1__) ___ - ____');
   });
 
@@ -91,7 +101,7 @@ describe('MaskedTextField', () => {
     // Simulate backspacing the '2'
     inputDOM.setSelectionRange(9, 9);
     input.simulate('keyDown', { keyCode: KeyCodes.backspace });
-    input.simulate('change', mockEvent('mask: (13) 456 - 7890'));
+    mockChange(input, 'mask: (13) 456 - 7890');
     expect(inputDOM.value).toEqual('mask: (1_3) 456 - 7890');
   });
 
@@ -105,7 +115,7 @@ describe('MaskedTextField', () => {
     // Simulate deleting the '3'
     inputDOM.setSelectionRange(9, 9);
     input.simulate('keyDown', { keyCode: KeyCodes.del });
-    input.simulate('change', mockEvent('mask: (12) 456 - 7890'));
+    mockChange(input, 'mask: (12) 456 - 7890');
     expect(inputDOM.value).toEqual('mask: (12_) 456 - 7890');
   });
 
@@ -120,7 +130,7 @@ describe('MaskedTextField', () => {
     inputDOM.setSelectionRange(10, 10);
     input.simulate('keyDown', { keyCode: KeyCodes.backspace, ctrlKey: true });
     inputDOM.setSelectionRange(7, 7);
-    input.simulate('change', mockEvent('mask: () 456 - 7890'));
+    mockChange(input, 'mask: () 456 - 7890');
     expect(inputDOM.value).toEqual('mask: (___) 456 - 7890');
   });
 
@@ -134,7 +144,7 @@ describe('MaskedTextField', () => {
     // Simulate deleting the '123'
     inputDOM.setSelectionRange(7, 7);
     input.simulate('keyDown', { keyCode: KeyCodes.del, ctrlKey: true });
-    input.simulate('change', mockEvent('mask: () 456 - 7890'));
+    mockChange(input, 'mask: () 456 - 7890');
     expect(inputDOM.value).toEqual('mask: (___) 456 - 7890');
   });
 
@@ -149,14 +159,14 @@ describe('MaskedTextField', () => {
     // Also select the preceding '('
     inputDOM.setSelectionRange(6, 10);
     input.simulate('keyDown', { keyCode: KeyCodes.backspace });
-    input.simulate('change', mockEvent('mask:  456 - 7890'));
+    mockChange(input, 'mask:  456 - 7890');
     expect(inputDOM.value).toEqual('mask: (___) 456 - 7890');
 
     // Simulate selecting and deleting the '456'
     // also select the proceding ' '
     inputDOM.setSelectionRange(12, 16);
     input.simulate('keyDown', { keyCode: KeyCodes.del });
-    input.simulate('change', mockEvent('mask: (___) - 7890'));
+    mockChange(input, 'mask: (___) - 7890');
     expect(inputDOM.value).toEqual('mask: (___) ___ - 7890');
   });
 
@@ -170,19 +180,19 @@ describe('MaskedTextField', () => {
     // Paste a 7777 into the start of the input
     inputDOM.setSelectionRange(0, 0);
     input.simulate('paste');
-    input.simulate('change', mockEvent('7777mask: (123) 456 - 7890'));
+    mockChange(input, '7777mask: (123) 456 - 7890');
     expect(inputDOM.value).toEqual('mask: (777) 756 - 7890');
 
     // Paste a 9999 into the end
     inputDOM.setSelectionRange(22, 22);
     input.simulate('paste');
-    input.simulate('change', mockEvent('mask: (777) 756 - 78909999'));
+    mockChange(input, 'mask: (777) 756 - 78909999');
     expect(inputDOM.value).toEqual('mask: (777) 756 - 7890');
 
     // Paste invalid characters mixed with valid characters
     inputDOM.setSelectionRange(0, 0);
     input.simulate('paste');
-    input.simulate('change', mockEvent('1a2b3cmask: (777) 756 - 7890'));
+    mockChange(input, '1a2b3cmask: (777) 756 - 7890');
     expect(inputDOM.value).toEqual('mask: (123) 756 - 7890');
   });
 
@@ -196,13 +206,13 @@ describe('MaskedTextField', () => {
     // Paste a 000 over the '123'
     inputDOM.setSelectionRange(7, 10);
     input.simulate('paste');
-    input.simulate('change', mockEvent('mask: (000) 456 - 7890'));
+    mockChange(input, 'mask: (000) 456 - 7890');
     expect(inputDOM.value).toEqual('mask: (000) 456 - 7890');
 
     // Replace all characters with a paste
     inputDOM.setSelectionRange(0, 22);
     input.simulate('paste');
-    input.simulate('change', mockEvent('98765'));
+    mockChange(input, '98765');
     expect(inputDOM.value).toEqual('mask: (987) 65_ - ____');
   });
 
@@ -217,14 +227,14 @@ describe('MaskedTextField', () => {
     inputDOM.setSelectionRange(8, 14);
     input.simulate('keyDown', { keyCode: KeyCodes.six });
     inputDOM.setSelectionRange(9, 9);
-    input.simulate('change', mockEvent('mask: (166 - 7890'));
+    mockChange(input, 'mask: (166 - 7890');
     expect(inputDOM.value).toEqual('mask: (16_) __6 - 7890');
 
     // Replace all text with '9'
     inputDOM.setSelectionRange(0, 22);
     input.simulate('keyDown', { keyCode: KeyCodes.nine });
     inputDOM.setSelectionRange(1, 1);
-    input.simulate('change', mockEvent('9'));
+    mockChange(input, '9');
     expect(inputDOM.value).toEqual('mask: (9__) ___ - ____');
   });
 
@@ -248,7 +258,7 @@ describe('MaskedTextField', () => {
     inputDOM.setSelectionRange(22, 22);
     input.simulate('keyDown', { keyCode: KeyCodes.one });
     inputDOM.setSelectionRange(23, 23);
-    input.simulate('change', mockEvent('mask: (123) 456 - 78901'));
+    mockChange(input, 'mask: (123) 456 - 78901');
     expect(inputDOM.value).toEqual('mask: (123) 456 - 7890');
     expect(onChangeValue).toEqual('mask: (123) 456 - 7890');
   });

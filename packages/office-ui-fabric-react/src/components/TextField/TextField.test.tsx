@@ -1,4 +1,3 @@
-import { Promise } from 'es6-promise';
 import * as React from 'react';
 import * as ReactTestUtils from 'react-dom/test-utils';
 import * as renderer from 'react-test-renderer';
@@ -6,7 +5,7 @@ import { mount, ReactWrapper } from 'enzyme';
 import { renderToStaticMarkup } from 'react-dom/server';
 
 import { resetIds, setWarningCallback, IRefObject, resetControlledWarnings } from '../../Utilities';
-import { delay, mountAttached } from '../../common/testUtilities';
+import { mountAttached, mockEvent } from '../../common/testUtilities';
 
 import { TextField } from './TextField';
 import { TextFieldBase, ITextFieldState } from './TextField.base';
@@ -33,25 +32,39 @@ function sharedBeforeEach() {
 }
 
 function sharedAfterEach() {
-  jest.useRealTimers();
   if (wrapper) {
     wrapper.unmount();
     wrapper = undefined;
   }
+  if ((setTimeout as any).mock) {
+    jest.useRealTimers();
+  }
   textField = undefined;
 }
 
-function mockEvent(targetValue: string = ''): ReactTestUtils.SyntheticEventData {
-  const target: EventTarget = { value: targetValue } as HTMLInputElement;
-  return { target };
+/**
+ * Hack for forcing Jest to run pending promises
+ * https://github.com/facebook/jest/issues/2157#issuecomment-279171856
+ */
+function flushPromises() {
+  return new Promise<void>(resolve => setImmediate(resolve));
 }
 
-/** Sledgehammer to try and run all pending stuff */
-function runEverythingAsync() {
-  jest.runAllImmediates();
-  jest.runAllTicks();
-  jest.runAllTimers();
+/**
+ * Trigger onInput and onChange, to realistically simulate actual typing.
+ */
+function mockChange(element: ReactWrapper, targetValue: string): void {
+  const eventData = mockEvent(targetValue);
+  // Fire both of these events to be realistic, since we handle both of them
+  element.simulate('input', eventData);
+  element.simulate('change', eventData);
 }
+// function mockChange(element: HTMLElement, targetValue: string): void {
+//   const eventData = mockEvent(targetValue);
+//   // Fire both of these events to be realistic, since we handle both of them
+//   ReactTestUtils.Simulate.input(element, eventData);
+//   ReactTestUtils.Simulate.change(element, eventData);
+// }
 
 describe('TextField snapshots', () => {
   beforeEach(sharedBeforeEach);
@@ -266,7 +279,10 @@ describe('TextField basic props', () => {
 }); // end basic props
 
 describe('TextField with error message', () => {
-  beforeEach(sharedBeforeEach);
+  beforeEach(() => {
+    sharedBeforeEach();
+    jest.useFakeTimers();
+  });
   afterEach(sharedAfterEach);
 
   const errorMessage = 'The string is too long, should not exceed 3 characters.';
@@ -291,100 +307,116 @@ describe('TextField with error message', () => {
     }
   }
 
+  it('should not validate on mount when validateOnLoad is false', () => {
+    const validator = jest.fn((value: string) => (value.length > 3 ? errorMessage : ''));
+
+    wrapper = mount(<TextField defaultValue="invalid value" onGetErrorMessage={validator} validateOnLoad={false} />);
+    expect(validator).toHaveBeenCalledTimes(0);
+  });
+
+  it('should validate on mount when validateOnLoad is true', () => {
+    const validator = jest.fn((value: string) => (value.length > 3 ? errorMessage : ''));
+
+    wrapper = mount(<TextField defaultValue="invalid value" onGetErrorMessage={validator} validateOnLoad={true} />);
+    jest.runAllTimers();
+    expect(validator).toHaveBeenCalledTimes(1);
+  });
+
   it('should render error message when onGetErrorMessage returns a string', () => {
-    function validator(value: string): string {
-      return value.length > 3 ? errorMessage : '';
-    }
+    const validator = jest.fn((value: string) => (value.length > 3 ? errorMessage : ''));
 
-    jest.useFakeTimers();
-    wrapper = mount(<TextField defaultValue="whatever value" onGetErrorMessage={validator} deferredValidationTime={5} />);
-    runEverythingAsync();
+    wrapper = mount(<TextField onGetErrorMessage={validator} validateOnLoad={false} />);
 
-    const inputDOM = wrapper.getDOMNode().querySelector('input');
-    ReactTestUtils.Simulate.change(inputDOM!, mockEvent('the input value'));
-    runEverythingAsync();
+    mockChange(wrapper.find('input'), 'also invalid');
+    jest.runAllTimers();
 
-    assertErrorMessage(wrapper!.getDOMNode(), errorMessage);
+    expect(validator).toHaveBeenCalledTimes(1);
+    assertErrorMessage(wrapper.getDOMNode(), errorMessage);
   });
 
   it('should render error message when onGetErrorMessage returns a JSX.Element', () => {
-    function validator(value: string): string | JSX.Element {
-      return value.length > 3 ? errorMessageJSX : '';
-    }
+    const validator = jest.fn((value: string) => (value.length > 3 ? errorMessageJSX : ''));
 
-    jest.useFakeTimers();
-    wrapper = mount(<TextField defaultValue="whatever value" onGetErrorMessage={validator} deferredValidationTime={5} />);
-    runEverythingAsync();
+    wrapper = mount(<TextField onGetErrorMessage={validator} validateOnLoad={false} />);
 
-    const inputDOM = wrapper.getDOMNode().querySelector('input');
-    ReactTestUtils.Simulate.change(inputDOM as Element, mockEvent('the input value'));
-    runEverythingAsync();
+    mockChange(wrapper.find('input'), 'also invalid');
+    jest.runAllTimers();
 
-    assertErrorMessage(wrapper!.getDOMNode(), errorMessageJSX);
+    expect(validator).toHaveBeenCalledTimes(1);
+    assertErrorMessage(wrapper.getDOMNode(), errorMessageJSX);
   });
 
-  // disabling due to inconsistent behavior
-  xit('should render error message when onGetErrorMessage returns a Promise<string>', () => {
-    function validator(value: string): Promise<string> {
-      return Promise.resolve(value.length > 3 ? errorMessage : '');
-    }
+  it('should render error message when onGetErrorMessage returns a Promise<string>', () => {
+    const validator = jest.fn((value: string) => Promise.resolve(value.length > 3 ? errorMessage : ''));
 
-    wrapper = mount(<TextField defaultValue="whatever value" onGetErrorMessage={validator} deferredValidationTime={5} />);
+    wrapper = mount(<TextField onGetErrorMessage={validator} validateOnLoad={false} />);
 
-    const inputDOM = wrapper.getDOMNode().querySelector('input');
-    ReactTestUtils.Simulate.change(inputDOM as Element, mockEvent('the input value'));
+    mockChange(wrapper.find('input'), 'also invalid');
 
-    // TODO: make this work with fake timers not real timers
-    return delay(20).then(() => assertErrorMessage(wrapper!.getDOMNode(), errorMessage));
+    // Extra rounds of running everything to account for the debounced validator and the promise...
+    jest.runAllTimers();
+    return flushPromises().then(() => {
+      jest.runAllTimers();
+
+      expect(validator).toHaveBeenCalledTimes(1);
+      assertErrorMessage(wrapper!.getDOMNode(), errorMessage);
+    });
   });
 
-  // disabling due to inconsistent behavior
-  xit('should render error message when onGetErrorMessage returns a Promise<JSX.Element>', () => {
-    function validator(value: string): Promise<string | JSX.Element> {
-      return Promise.resolve(value.length > 3 ? errorMessageJSX : '');
-    }
+  it('should render error message when onGetErrorMessage returns a Promise<JSX.Element>', () => {
+    const validator = jest.fn((value: string) => Promise.resolve(value.length > 3 ? errorMessageJSX : ''));
 
-    wrapper = mount(<TextField defaultValue="whatever value" onGetErrorMessage={validator} deferredValidationTime={5} />);
+    wrapper = mount(<TextField onGetErrorMessage={validator} validateOnLoad={false} />);
 
-    const inputDOM = wrapper.getDOMNode().querySelector('input');
-    ReactTestUtils.Simulate.change(inputDOM as Element, mockEvent('the input value'));
+    mockChange(wrapper.find('input'), 'also invalid');
 
-    // TODO: make this work with fake timers not real timers
-    return delay(20).then(() => assertErrorMessage(wrapper!.getDOMNode(), errorMessageJSX));
+    jest.runAllTimers();
+    return flushPromises().then(() => {
+      jest.runAllTimers();
+
+      expect(validator).toHaveBeenCalledTimes(1);
+      assertErrorMessage(wrapper!.getDOMNode(), errorMessageJSX);
+    });
   });
 
   it('should render error message on first render when onGetErrorMessage returns a string', () => {
-    jest.useFakeTimers();
-    wrapper = mount(<TextField defaultValue="whatever value" onGetErrorMessage={() => errorMessage} />);
-    runEverythingAsync();
+    const validator = jest.fn(() => errorMessage);
+    wrapper = mount(<TextField defaultValue="invalid value" onGetErrorMessage={validator} />);
+    jest.runAllTimers();
 
-    assertErrorMessage(wrapper!.getDOMNode(), errorMessage);
+    expect(validator).toHaveBeenCalledTimes(1);
+    assertErrorMessage(wrapper.getDOMNode(), errorMessage);
   });
 
-  // disabling due to inconsistent behavior
-  xit('should render error message on first render when onGetErrorMessage returns a Promise<string>', () => {
-    wrapper = mount(<TextField defaultValue="whatever value" onGetErrorMessage={() => Promise.resolve(errorMessage)} />);
+  it('should render error message on first render when onGetErrorMessage returns a Promise<string>', () => {
+    const validator = jest.fn(() => Promise.resolve(errorMessage));
+    wrapper = mount(<TextField defaultValue="invalid value" onGetErrorMessage={validator} />);
 
-    // TODO: make this work with fake timers not real timers
-    return delay(20).then(() => assertErrorMessage(wrapper!.getDOMNode(), errorMessage));
+    jest.runAllTimers();
+    return flushPromises().then(() => {
+      jest.runAllTimers();
+
+      expect(validator).toHaveBeenCalledTimes(1);
+      assertErrorMessage(wrapper!.getDOMNode(), errorMessage);
+    });
   });
 
   it('should not render error message when onGetErrorMessage return an empty string', () => {
-    jest.useFakeTimers();
-    wrapper = mount(<TextField defaultValue="whatever value" onGetErrorMessage={() => ''} />);
-    runEverythingAsync();
+    const validator = jest.fn(() => '');
+    wrapper = mount(<TextField defaultValue="invalid value" onGetErrorMessage={validator} />);
+    jest.runAllTimers();
 
-    assertErrorMessage(wrapper!.getDOMNode(), /* exist */ false);
+    expect(validator).toHaveBeenCalledTimes(1);
+    assertErrorMessage(wrapper.getDOMNode(), /* exist */ false);
   });
 
   it('should not render error message when no value is provided', () => {
     let actualValue: string | undefined = undefined;
 
-    jest.useFakeTimers();
     wrapper = mount(<TextField onGetErrorMessage={(value: string) => (actualValue = value)} />);
-    runEverythingAsync();
+    jest.runAllTimers();
 
-    assertErrorMessage(wrapper!.getDOMNode(), /* exist */ false);
+    assertErrorMessage(wrapper.getDOMNode(), /* exist */ false);
     expect(actualValue).toEqual('');
   });
 
@@ -393,160 +425,113 @@ describe('TextField with error message', () => {
       return value.length > 3 ? errorMessage : '';
     }
 
-    jest.useFakeTimers();
-
     wrapper = mount(<TextField value="initial value" onChange={noOp} onGetErrorMessage={validator} />);
+    jest.runAllTimers();
 
-    runEverythingAsync();
     assertErrorMessage(wrapper.getDOMNode(), errorMessage);
 
     wrapper.setProps({ value: '' });
-    runEverythingAsync();
+    jest.runAllTimers();
 
     assertErrorMessage(wrapper.getDOMNode(), /* exist */ false);
   });
 
   it('should not validate when receiving props when validating only on focus in', () => {
-    let validationCallCount = 0;
-    const validatorSpy = (value: string) => {
-      validationCallCount++;
-      return value.length > 3 ? errorMessage : '';
-    };
-
-    jest.useFakeTimers();
+    const validator = jest.fn((value: string) => (value.length > 3 ? errorMessage : ''));
 
     wrapper = mount(
-      <TextField
-        validateOnFocusIn
-        value="initial value"
-        onChange={noOp}
-        onGetErrorMessage={validatorSpy}
-        validateOnLoad={false}
-        deferredValidationTime={0}
-      />
+      <TextField validateOnFocusIn value="initial value" onChange={noOp} onGetErrorMessage={validator} validateOnLoad={false} />
     );
-    runEverythingAsync();
-    expect(validationCallCount).toEqual(0);
+    jest.runAllTimers();
+    expect(validator).toHaveBeenCalledTimes(0);
     assertErrorMessage(wrapper.getDOMNode(), false);
 
     wrapper.setProps({ value: 'failValidationValue' });
-    runEverythingAsync();
+    jest.runAllTimers();
 
-    expect(validationCallCount).toEqual(0);
+    expect(validator).toHaveBeenCalledTimes(0);
     assertErrorMessage(wrapper.getDOMNode(), false);
   });
 
   it('should not validate when receiving props when validating only on focus out', () => {
-    let validationCallCount = 0;
-    const validatorSpy = (value: string) => {
-      validationCallCount++;
-      return value.length > 3 ? errorMessage : '';
-    };
-
-    jest.useFakeTimers();
+    const validator = jest.fn((value: string) => (value.length > 3 ? errorMessage : ''));
 
     wrapper = mount(
-      <TextField
-        validateOnFocusOut
-        value="initial value"
-        onChange={noOp}
-        onGetErrorMessage={validatorSpy}
-        validateOnLoad={false}
-        deferredValidationTime={0}
-      />
+      <TextField validateOnFocusOut value="initial value" onChange={noOp} onGetErrorMessage={validator} validateOnLoad={false} />
     );
-    runEverythingAsync();
-    expect(validationCallCount).toEqual(0);
+    jest.runAllTimers();
+    expect(validator).toHaveBeenCalledTimes(0);
     assertErrorMessage(wrapper.getDOMNode(), false);
 
     wrapper.setProps({ value: 'failValidationValue' });
-    runEverythingAsync();
+    jest.runAllTimers();
 
-    expect(validationCallCount).toEqual(0);
+    expect(validator).toHaveBeenCalledTimes(0);
     assertErrorMessage(wrapper.getDOMNode(), false);
   });
 
   it('should trigger validation only on focus', () => {
-    let validationCallCount = 0;
-    const validatorSpy = (value: string) => {
-      validationCallCount++;
-      return value.length > 3 ? errorMessage : '';
-    };
+    const validator = jest.fn((value: string) => (value.length > 3 ? errorMessage : ''));
 
-    wrapper = mount(<TextField defaultValue="initial value" onGetErrorMessage={validatorSpy} validateOnFocusIn />);
+    wrapper = mount(<TextField defaultValue="initial value" onGetErrorMessage={validator} validateOnFocusIn />);
 
-    const inputDOM = wrapper.getDOMNode().querySelector('input') as Element;
-    ReactTestUtils.Simulate.input(inputDOM, mockEvent('the input value'));
-    expect(validationCallCount).toEqual(1);
+    const input = wrapper.find('input');
+    mockChange(input, 'also invalid');
+    expect(validator).toHaveBeenCalledTimes(1);
 
-    ReactTestUtils.Simulate.focus(inputDOM);
-    expect(validationCallCount).toEqual(2);
+    input.simulate('focus');
+    expect(validator).toHaveBeenCalledTimes(2);
 
-    ReactTestUtils.Simulate.input(inputDOM, mockEvent('the input '));
-    ReactTestUtils.Simulate.input(inputDOM, mockEvent('the input value'));
-    ReactTestUtils.Simulate.focus(inputDOM);
-    expect(validationCallCount).toEqual(3);
+    mockChange(input, 'the input ');
+    mockChange(input, 'also invalid');
+    input.simulate('focus');
+    expect(validator).toHaveBeenCalledTimes(3);
   });
 
   it('should trigger validation only on blur', () => {
-    let validationCallCount = 0;
-    const validatorSpy = (value: string) => {
-      validationCallCount++;
-      return value.length > 3 ? errorMessage : '';
-    };
+    const validator = jest.fn((value: string) => (value.length > 3 ? errorMessage : ''));
 
-    wrapper = mount(<TextField defaultValue="initial value" onGetErrorMessage={validatorSpy} validateOnFocusOut />);
+    wrapper = mount(<TextField defaultValue="initial value" onGetErrorMessage={validator} validateOnFocusOut />);
 
-    const inputDOM = wrapper.getDOMNode().querySelector('input') as Element;
-    ReactTestUtils.Simulate.input(inputDOM, mockEvent('the input value'));
-    expect(validationCallCount).toEqual(1);
+    const input = wrapper.find('input');
+    mockChange(input, 'also invalid');
+    expect(validator).toHaveBeenCalledTimes(1);
 
-    ReactTestUtils.Simulate.blur(inputDOM);
-    expect(validationCallCount).toEqual(2);
+    input.simulate('blur');
+    expect(validator).toHaveBeenCalledTimes(2);
 
-    ReactTestUtils.Simulate.input(inputDOM, mockEvent('the input va'));
-    ReactTestUtils.Simulate.input(inputDOM, mockEvent('the input value'));
+    mockChange(input, 'the input va');
+    mockChange(input, 'also invalid');
 
-    ReactTestUtils.Simulate.blur(inputDOM);
-    expect(validationCallCount).toEqual(3);
+    input.simulate('blur');
+    expect(validator).toHaveBeenCalledTimes(3);
   });
 
   it('should trigger validation on both blur and focus', () => {
-    let validationCallCount = 0;
-    const validatorSpy = (value: string) => {
-      validationCallCount++;
-      return value.length > 3 ? errorMessage : '';
-    };
+    const validator = jest.fn((value: string) => (value.length > 3 ? errorMessage : ''));
 
-    wrapper = mount(<TextField defaultValue="initial value" onGetErrorMessage={validatorSpy} validateOnFocusOut validateOnFocusIn />);
+    wrapper = mount(<TextField defaultValue="initial value" onGetErrorMessage={validator} validateOnFocusOut validateOnFocusIn />);
 
-    const inputDOM = wrapper.getDOMNode().querySelector('input') as Element;
-    ReactTestUtils.Simulate.input(inputDOM, mockEvent('value before focus'));
-    expect(validationCallCount).toEqual(1);
+    const input = wrapper.find('input');
+    mockChange(input, 'value before focus');
+    expect(validator).toHaveBeenCalledTimes(1);
 
-    ReactTestUtils.Simulate.focus(inputDOM);
-    expect(validationCallCount).toEqual(2);
+    input.simulate('focus');
+    expect(validator).toHaveBeenCalledTimes(2);
 
-    ReactTestUtils.Simulate.input(inputDOM, mockEvent('value before foc'));
-    ReactTestUtils.Simulate.input(inputDOM, mockEvent('value before focus'));
-    ReactTestUtils.Simulate.focus(inputDOM);
-    expect(validationCallCount).toEqual(3);
+    mockChange(input, 'value before foc');
+    mockChange(input, 'value before focus');
+    input.simulate('focus');
+    expect(validator).toHaveBeenCalledTimes(3);
 
-    ReactTestUtils.Simulate.input(inputDOM, mockEvent('value before blur'));
-    ReactTestUtils.Simulate.blur(inputDOM);
-    expect(validationCallCount).toEqual(4);
+    mockChange(input, 'value before blur');
+    input.simulate('blur');
+    expect(validator).toHaveBeenCalledTimes(4);
 
-    ReactTestUtils.Simulate.input(inputDOM, mockEvent('value before bl'));
-    ReactTestUtils.Simulate.input(inputDOM, mockEvent('value before blur'));
-    ReactTestUtils.Simulate.blur(inputDOM);
-    expect(validationCallCount).toEqual(5);
-  });
-
-  it('should not trigger validation on component mount', () => {
-    const validatorSpy = jest.fn();
-    wrapper = mount(<TextField defaultValue="initial value" onGetErrorMessage={validatorSpy} validateOnLoad={false} />);
-
-    expect(validatorSpy).toHaveBeenCalledTimes(0);
+    mockChange(input, 'value before bl');
+    mockChange(input, 'value before blur');
+    input.simulate('blur');
+    expect(validator).toHaveBeenCalledTimes(5);
   });
 }); // end error message
 
@@ -642,7 +627,7 @@ describe('TextField controlled vs uncontrolled usage', () => {
     wrapper.setProps({ value: undefined, onChange: noOp });
 
     expect(warnFn).toHaveBeenCalledTimes(1);
-    const inputDOM = wrapper!.getDOMNode().querySelector('input');
+    const inputDOM = wrapper.getDOMNode().querySelector('input');
     expect(textField!.value).toEqual(undefined);
     expect(inputDOM!.value).toEqual('');
   });
@@ -678,8 +663,9 @@ describe('TextField onChange', () => {
   function simulateAndVerifyChange(changeValue: string, calls: number, expectedValue?: string) {
     expectedValue = typeof expectedValue === 'string' ? expectedValue : changeValue;
 
-    const inputDOM = wrapper!.getDOMNode().querySelector('input')!;
-    ReactTestUtils.Simulate.change(inputDOM, mockEvent(changeValue));
+    const input = wrapper!.find('input');
+    const inputDOM = input.getDOMNode() as HTMLInputElement;
+    mockChange(input, changeValue);
 
     expect(onChange).toHaveBeenCalledTimes(calls);
     expect(textField!.value).toEqual(expectedValue);
@@ -688,21 +674,6 @@ describe('TextField onChange', () => {
 
   beforeEach(() => {
     onChange = jest.fn();
-  });
-
-  it('should be called for input change and apply edits if uncontrolled (not strict)', () => {
-    wrapper = mount(<TextField componentRef={textFieldRef} defaultValue={initialValue} onChange={onChange} />);
-
-    expect(onChange).toHaveBeenCalledTimes(0);
-    simulateAndVerifyChange('value change', 1);
-    simulateAndVerifyChange('', 2);
-  });
-
-  it('should not be called when initial value is undefined and input change is an empty string (not strict)', () => {
-    wrapper = mount(<TextField componentRef={textFieldRef} onChange={onChange} />);
-
-    expect(onChange).toHaveBeenCalledTimes(0);
-    simulateAndVerifyChange('', 0);
   });
 
   it('should be called for input change and apply edits if uncontrolled', () => {
@@ -742,16 +713,16 @@ describe('TextField onChange', () => {
     const wrapperOne = mount(<TextField onChange={onChangeSpy} />);
     const wrapperTwo = mount(<TextField onChange={onChangeSpy} />);
 
-    const inputDOMOne = wrapperOne.getDOMNode().querySelector('input') as Element;
-    const inputDOMTwo = wrapperTwo.getDOMNode().querySelector('input') as Element;
+    const inputOne = wrapperOne.find('input');
+    const inputTwo = wrapperTwo.find('input');
 
     const valueOne = 'textfield one';
     const valueTwo = 'textfield two';
 
-    ReactTestUtils.Simulate.input(inputDOMOne, mockEvent(valueOne));
+    mockChange(inputOne, valueOne);
     expect(textFieldTarget!.value).toEqual(valueOne);
 
-    ReactTestUtils.Simulate.change(inputDOMTwo, mockEvent(valueTwo));
+    mockChange(inputTwo, valueTwo);
     expect(textFieldTarget!.value).toEqual(valueTwo);
   });
 }); // end on change
