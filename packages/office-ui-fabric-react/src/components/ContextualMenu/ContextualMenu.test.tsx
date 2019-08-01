@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Promise } from 'es6-promise';
 import * as ReactTestUtils from 'react-dom/test-utils';
 import { KeyCodes } from '../../Utilities';
 import { FocusZoneDirection } from '../../FocusZone';
@@ -713,16 +712,12 @@ describe('ContextualMenu', () => {
         expect(linkSelfTarget.getAttribute('rel')).toBeNull();
       });
 
-      describe('when the target is _blank and there is no rel specified', () => {
-        it('should default a rel to prevent clickjacking', () => {
-          expect(linkBlankTarget.getAttribute('rel')).toEqual('nofollow noopener noreferrer');
-        });
+      it('when the target is _blank and no rel is specified, defaults a rel to prevent clickjacking', () => {
+        expect(linkBlankTarget.getAttribute('rel')).toEqual('nofollow noopener noreferrer');
       });
 
-      describe('when the target is _blank and there is a rel specified', () => {
-        it('should use the specified rel', () => {
-          expect(linkBlankTargetAndRel.getAttribute('rel')).toEqual('test');
-        });
+      it('when the target is _blank and rel is specified, uses the specified rel', () => {
+        expect(linkBlankTargetAndRel.getAttribute('rel')).toEqual('test');
       });
     });
 
@@ -740,7 +735,7 @@ describe('ContextualMenu', () => {
     expect(menuList).toBeNull();
   });
 
-  it('correctly focuses the first element', done => {
+  it('correctly focuses the first element', () => {
     const items: IContextualMenuItem[] = [
       {
         text: 'TestText 1',
@@ -755,7 +750,7 @@ describe('ContextualMenu', () => {
 
     ReactTestUtils.renderIntoDocument<IContextualMenuProps>(<ContextualMenu items={items} />);
 
-    new Promise<any>(resolve => {
+    return new Promise<any>(resolve => {
       let focusedItem;
       for (let i = 0; i < 20; i++) {
         focusedItem = document.querySelector('.testkey1')!.firstChild;
@@ -764,12 +759,11 @@ describe('ContextualMenu', () => {
         }
       }
       expect(document.activeElement).toEqual(focusedItem);
-      done();
       resolve();
-    }).catch(done());
+    });
   });
 
-  it('will not focus the first element when shouldFocusOnMount is false', done => {
+  it('will not focus the first element when shouldFocusOnMount is false', () => {
     const items: IContextualMenuItem[] = [
       {
         text: 'TestText 1',
@@ -783,7 +777,7 @@ describe('ContextualMenu', () => {
     ];
 
     ReactTestUtils.renderIntoDocument<IContextualMenuProps>(<ContextualMenu items={items} shouldFocusOnMount={true} />);
-    new Promise(resolve => {
+    return new Promise(resolve => {
       let focusedItem;
       for (let i = 0; i < 20; i++) {
         focusedItem = document.querySelector('.testkey1')!.firstChild;
@@ -792,12 +786,11 @@ describe('ContextualMenu', () => {
         }
       }
       expect(document.activeElement).not.toEqual(focusedItem);
-      done();
       resolve();
-    }).catch(done);
+    });
   });
 
-  it('Hover correctly focuses the second element', done => {
+  it('Hover correctly focuses the second element', () => {
     const items: IContextualMenuItem[] = [
       {
         text: 'TestText 1',
@@ -813,7 +806,7 @@ describe('ContextualMenu', () => {
 
     ReactTestUtils.renderIntoDocument<IContextualMenuProps>(<ContextualMenu items={items} />);
 
-    new Promise<any>(resolve => {
+    return new Promise<any>(resolve => {
       let focusedItem;
       for (let i = 0; i < 20; i++) {
         focusedItem = document.querySelector('.testkey2')!.firstChild;
@@ -829,9 +822,8 @@ describe('ContextualMenu', () => {
         }
       }
       expect(document.activeElement).toEqual(focusedItem);
-      done();
       resolve();
-    }).catch(done());
+    });
   });
 
   it('merges callout classNames', () => {

@@ -22,6 +22,7 @@ export function expectMissing(wrapper: ReactWrapper<any, any>, className: string
   expectNodes(wrapper, className, 0);
 }
 
+/** @deprecated Use fake timers and `jest.runAllTimers()` instead */
 export function delay(millisecond: number): Promise<void> {
   return new Promise<void>(resolve => setTimeout(resolve, millisecond));
 }
