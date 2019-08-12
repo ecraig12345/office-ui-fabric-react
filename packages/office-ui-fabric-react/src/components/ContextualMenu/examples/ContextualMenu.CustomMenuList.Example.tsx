@@ -2,9 +2,8 @@ import * as React from 'react';
 import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
 import { SearchBox } from 'office-ui-fabric-react/lib/SearchBox';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
-import './ContextualMenuExample.scss';
 import { IContextualMenuListProps, IContextualMenuItem } from 'office-ui-fabric-react/lib/ContextualMenu';
-import { IRenderFunction } from '@uifabric/utilities';
+import { IRenderFunction } from 'office-ui-fabric-react/lib/Utilities';
 
 const ITEMS: IContextualMenuItem[] = [
   {
@@ -56,12 +55,7 @@ const ITEMS: IContextualMenuItem[] = [
   }
 ];
 
-export class ContextualMenuWithCustomMenuListExample extends React.Component<
-  {},
-  {
-    items: IContextualMenuItem[];
-  }
-> {
+export class ContextualMenuWithCustomMenuListExample extends React.Component<{}, { items: IContextualMenuItem[] }> {
   constructor(props: {}) {
     super(props);
 
@@ -114,9 +108,7 @@ export class ContextualMenuWithCustomMenuListExample extends React.Component<
       });
     }
 
-    this.setState((prevState, props) => ({
-      items: filteredItems
-    }));
+    this.setState({ items: filteredItems });
   };
 
   private _renderMenuList = (menuListProps: IContextualMenuListProps, defaultRender: IRenderFunction<IContextualMenuListProps>) => {
@@ -129,7 +121,7 @@ export class ContextualMenuWithCustomMenuListExample extends React.Component<
             onAbort={this._onAbort}
             onChange={this._onChange}
             styles={{
-              root: [{ margin: '8px' }]
+              root: { margin: 8 }
             }}
           />
         </div>

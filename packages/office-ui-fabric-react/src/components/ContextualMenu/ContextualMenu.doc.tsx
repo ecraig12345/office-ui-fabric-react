@@ -10,11 +10,9 @@ import { ContextualMenuSectionExample } from './examples/ContextualMenu.Section.
 import { ContextualMenuCheckmarksExample } from './examples/ContextualMenu.Checkmarks.Example';
 import { ContextualMenuDirectionalExample } from './examples/ContextualMenu.Directional.Example';
 import { ContextualMenuCustomizationExample } from './examples/ContextualMenu.Customization.Example';
-import { ContextualMenuCustomizationWithNoWrapExample } from './examples/ContextualMenu.CustomizationWithNoWrap.Example';
 import { ContextualMenuWithScrollBarExample } from './examples/ContextualMenu.ScrollBar.Example';
 import { ContextualMenuWithCustomMenuItemExample } from './examples/ContextualMenu.CustomMenuItem.Example';
 import { ContextualMenuWithCustomMenuListExample } from './examples/ContextualMenu.CustomMenuList.Example';
-import { ContextualMenuHeaderExample } from './examples/ContextualMenu.Header.Example';
 import { ContextualMenuPersistedExample } from './examples/ContextualMenu.Persisted.Example';
 
 const ContextualMenuBasicExampleCode = require('!raw-loader!office-ui-fabric-react/src/components/ContextualMenu/examples/ContextualMenu.Basic.Example.tsx') as string;
@@ -27,11 +25,9 @@ const ContextualMenuSectionExampleCode = require('!raw-loader!office-ui-fabric-r
 const ContextualMenuCheckmarksExampleCode = require('!raw-loader!office-ui-fabric-react/src/components/ContextualMenu/examples/ContextualMenu.Checkmarks.Example.tsx') as string;
 const ContextualMenuDirectionalExampleCode = require('!raw-loader!office-ui-fabric-react/src/components/ContextualMenu/examples/ContextualMenu.Directional.Example.tsx') as string;
 const ContextualMenuCustomizationExampleCode = require('!raw-loader!office-ui-fabric-react/src/components/ContextualMenu/examples/ContextualMenu.Customization.Example.tsx') as string;
-const ContextualMenuCustomizationWithNoWrapExampleCode = require('!raw-loader!office-ui-fabric-react/src/components/ContextualMenu/examples/ContextualMenu.CustomizationWithNoWrap.Example.tsx') as string;
 const ContextualMenuWithScrollBarExampleCode = require('!raw-loader!office-ui-fabric-react/src/components/ContextualMenu/examples/ContextualMenu.ScrollBar.Example.tsx') as string;
 const ContextualMenuWithCustomMenuItemExampleCode = require('!raw-loader!office-ui-fabric-react/src/components/ContextualMenu/examples/ContextualMenu.CustomMenuItem.Example.tsx') as string;
 const ContextualMenuCustomMenuListExampleCode = require('!raw-loader!office-ui-fabric-react/src/components/ContextualMenu/examples/ContextualMenu.CustomMenuList.Example.tsx') as string;
-const ContextualMenuHeaderExampleCode = require('!raw-loader!office-ui-fabric-react/src/components/ContextualMenu/examples/ContextualMenu.Header.Example.tsx') as string;
 
 export const ContextualMenuPageProps: IDocPageProps = {
   title: 'ContextualMenu',
@@ -61,17 +57,17 @@ export const ContextualMenuPageProps: IDocPageProps = {
       view: <ContextualMenuIconSecondaryTextExample />
     },
     {
-      title: 'ContextualMenu with submenus',
+      title: 'ContextualMenu with submenus and split buttons',
       code: ContextualMenuSubmenuExampleCode,
       view: <ContextualMenuSubmenuExample />
     },
     {
-      title: 'ContextualMenu with section headers',
+      title: 'ContextualMenu with sections',
       code: ContextualMenuSectionExampleCode,
       view: <ContextualMenuSectionExample />
     },
     {
-      title: 'ContextualMenu with checkable menu items and toggleable split button',
+      title: 'ContextualMenu with checkable menu items',
       code: ContextualMenuCheckmarksExampleCode,
       view: <ContextualMenuCheckmarksExample />
     },
@@ -86,29 +82,19 @@ export const ContextualMenuPageProps: IDocPageProps = {
       view: <ContextualMenuCustomizationExample />
     },
     {
-      title: 'ContextualMenu with customized submenus and noWrap attributes',
-      code: ContextualMenuCustomizationWithNoWrapExampleCode,
-      view: <ContextualMenuCustomizationWithNoWrapExample />
-    },
-    {
       title: 'ContextualMenu with a scroll bar and fixed direction',
       code: ContextualMenuWithScrollBarExampleCode,
       view: <ContextualMenuWithScrollBarExample />
     },
     {
-      title: 'ContextualMenu with custom rendered menu items',
+      title: 'ContextualMenu with custom menu item renderer',
       code: ContextualMenuWithCustomMenuItemExampleCode,
       view: <ContextualMenuWithCustomMenuItemExample />
     },
     {
-      title: 'ContextualMenu with custom rendered menu list that renders a search box to filter menu items',
+      title: 'ContextualMenu with search box to filter menu items',
       code: ContextualMenuCustomMenuListExampleCode,
       view: <ContextualMenuWithCustomMenuListExample />
-    },
-    {
-      title: 'ContextualMenu with header',
-      code: ContextualMenuHeaderExampleCode,
-      view: <ContextualMenuHeaderExample />
     }
   ],
   overview: require<string>('!raw-loader!office-ui-fabric-react/src/components/ContextualMenu/docs/ContextualMenuOverview.md'),
