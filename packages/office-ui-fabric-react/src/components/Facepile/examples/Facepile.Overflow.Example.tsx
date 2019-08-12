@@ -1,85 +1,64 @@
 import * as React from 'react';
-import { IFacepileProps, Facepile, OverflowButtonType } from 'office-ui-fabric-react/lib/Facepile';
+import { Facepile, OverflowButtonType } from 'office-ui-fabric-react/lib/Facepile';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { Slider } from 'office-ui-fabric-react/lib/Slider';
-import { facepilePersonas } from './FacepileExampleData';
-import './Facepile.Examples.scss';
-
-const facepileProps: IFacepileProps = {
-  personas: facepilePersonas,
-  maxDisplayablePersonas: 5,
-  overflowButtonType: OverflowButtonType.downArrow,
-  overflowButtonProps: {
-    ariaLabel: 'More users',
-    onClick: (ev: React.MouseEvent<HTMLButtonElement>) => alert('overflow icon clicked')
-  },
-  ariaDescription: 'To move through the items use left and right arrow keys.'
-};
+import { Stack } from 'office-ui-fabric-react/lib/Stack';
+import { facepilePersonas } from 'office-ui-fabric-react/lib/components/Facepile/examples/FacepileExampleData';
 
 export interface IFacepileOverflowExampleState {
-  displayedPersonas: any;
+  displayedPersonas: number;
   overflowButtonType: OverflowButtonType;
 }
 
-export class FacepileOverflowExample extends React.Component<{}, IFacepileOverflowExampleState> {
-  constructor(props: {}) {
-    super(props);
+const controlStyles = {
+  root: { width: 200, marginTop: 0 },
+  label: { paddingTop: 0 }
+};
 
-    this.state = {
-      displayedPersonas: 5,
-      overflowButtonType: OverflowButtonType.none
-    };
-  }
+export const FacepileOverflowExample: React.FunctionComponent = () => {
+  const [displayedPersonas, setDisplayedPersonas] = React.useState<number>(5);
+  const [overflowButtonType, setOverflowButtonType] = React.useState<OverflowButtonType>(OverflowButtonType.none);
 
-  public render(): JSX.Element {
-    const { displayedPersonas, overflowButtonType } = this.state;
-    facepileProps.maxDisplayablePersonas = displayedPersonas;
-    facepileProps.overflowButtonType = overflowButtonType;
-
-    return (
-      <div className={'ms-FacepileExample'}>
-        <Facepile {...facepileProps} />
-        <div className={'control'}>
-          <Slider
-            label="Number of Personas:"
-            min={1}
-            max={5}
-            step={1}
-            showValue={true}
-            value={this.state.displayedPersonas}
-            onChange={this._onChangePersonaNumber}
-          />
-          <Dropdown
-            label="Overflow Button Type:"
-            selectedKey={this.state.overflowButtonType}
-            options={[
-              { key: OverflowButtonType.none, text: OverflowButtonType[OverflowButtonType.none] },
-              { key: OverflowButtonType.descriptive, text: OverflowButtonType[OverflowButtonType.descriptive] },
-              { key: OverflowButtonType.downArrow, text: OverflowButtonType[OverflowButtonType.downArrow] },
-              { key: OverflowButtonType.more, text: OverflowButtonType[OverflowButtonType.more] }
-            ]}
-            onChange={this._onChangeType}
-          />
-        </div>
-      </div>
-    );
-  }
-
-  private _onChangePersonaNumber = (value: number): void => {
-    this.setState(
-      (prevState: IFacepileOverflowExampleState): IFacepileOverflowExampleState => {
-        prevState.displayedPersonas = value;
-        return prevState;
-      }
-    );
-  };
-
-  private _onChangeType = (event: React.FormEvent<HTMLDivElement>, value: IDropdownOption): void => {
-    this.setState(
-      (prevState: IFacepileOverflowExampleState): IFacepileOverflowExampleState => {
-        prevState.overflowButtonType = value.key as OverflowButtonType;
-        return prevState;
-      }
-    );
-  };
-}
+  return (
+    <div>
+      <Facepile
+        personas={facepilePersonas}
+        maxDisplayablePersonas={displayedPersonas}
+        overflowButtonType={overflowButtonType}
+        overflowButtonProps={{
+          ariaLabel: 'More users',
+          onClick: (ev: React.MouseEvent<HTMLButtonElement>) => alert('overflow icon clicked')
+        }}
+        ariaDescription="To move through the items use left and right arrow keys."
+        styles={{ root: { marginBottom: 30 } }}
+      />
+      <Stack horizontal verticalAlign="start" tokens={{ childrenGap: 40 }}>
+        <Slider
+          label="Number of Personas:"
+          min={1}
+          max={5}
+          step={1}
+          showValue={true}
+          value={displayedPersonas}
+          onChange={setDisplayedPersonas}
+          styles={controlStyles}
+        />
+        <Dropdown
+          label="Overflow Button Type:"
+          selectedKey={overflowButtonType}
+          options={[
+            { key: OverflowButtonType.none, text: OverflowButtonType[OverflowButtonType.none] },
+            { key: OverflowButtonType.descriptive, text: OverflowButtonType[OverflowButtonType.descriptive] },
+            { key: OverflowButtonType.downArrow, text: OverflowButtonType[OverflowButtonType.downArrow] },
+            { key: OverflowButtonType.more, text: OverflowButtonType[OverflowButtonType.more] }
+          ]}
+          // tslint:disable-next-line:jsx-no-lambda
+          onChange={(event: React.FormEvent<HTMLDivElement>, value: IDropdownOption) => {
+            setOverflowButtonType(value.key as OverflowButtonType);
+          }}
+          styles={controlStyles}
+        />
+      </Stack>
+    </div>
+  );
+};

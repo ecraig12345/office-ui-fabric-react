@@ -1,103 +1,77 @@
 import * as React from 'react';
-import { Checkbox } from 'office-ui-fabric-react/lib/Checkbox';
+import { Toggle } from 'office-ui-fabric-react/lib/Toggle';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
-import { Facepile, IFacepilePersona, IFacepileProps } from 'office-ui-fabric-react/lib/Facepile';
+import { Facepile } from 'office-ui-fabric-react/lib/Facepile';
 import { PersonaSize } from 'office-ui-fabric-react/lib/Persona';
 import { Slider } from 'office-ui-fabric-react/lib/Slider';
-import { facepilePersonas } from './FacepileExampleData';
-import './Facepile.Examples.scss';
+import { Stack } from 'office-ui-fabric-react/lib/Stack';
+import { facepilePersonas } from 'office-ui-fabric-react/lib/components/Facepile/examples/FacepileExampleData';
 
 export interface IFacepileBasicExampleState {
-  numberOfFaces: any;
+  numberOfFaces: number;
   imagesFadeIn: boolean;
   personaSize: PersonaSize;
 }
 
-export class FacepileBasicExample extends React.Component<{}, IFacepileBasicExampleState> {
-  constructor(props: {}) {
-    super(props);
+const controlStyles = {
+  root: { width: 200, marginTop: 0 },
+  label: { paddingTop: 0 }
+};
 
-    this.state = {
-      numberOfFaces: 3,
-      imagesFadeIn: true,
-      personaSize: PersonaSize.size32
-    };
-  }
+export const FacepileBasicExample: React.FunctionComponent = () => {
+  // tslint:disable:jsx-no-lambda
+  const [numberOfFaces, setNumberOfFaces] = React.useState<number>(3);
+  const [imagesFadeIn, setImagesFadeIn] = React.useState<boolean>(false);
+  const [personaSize, setPersonaSize] = React.useState<PersonaSize>(PersonaSize.size32);
 
-  public render(): JSX.Element {
-    const { numberOfFaces, personaSize } = this.state;
-    const facepileProps: IFacepileProps = {
-      personaSize: personaSize,
-      personas: facepilePersonas.slice(0, numberOfFaces),
-      overflowPersonas: facepilePersonas.slice(numberOfFaces),
-      getPersonaProps: (persona: IFacepilePersona) => {
-        return {
-          imageShouldFadeIn: this.state.imagesFadeIn
-        };
-      },
-      ariaDescription: 'To move through the items use left and right arrow keys.'
-    };
+  return (
+    <div>
+      <Facepile
+        personaSize={personaSize}
+        personas={facepilePersonas.slice(0, numberOfFaces)}
+        overflowPersonas={facepilePersonas.slice(numberOfFaces)}
+        getPersonaProps={() => ({
+          imageShouldFadeIn: imagesFadeIn
+        })}
+        ariaDescription="To move through the items use left and right arrow keys."
+        styles={{ root: { marginBottom: 30 } }}
+      />
 
-    return (
-      <div className="ms-FacepileExample">
-        <Facepile {...facepileProps} />
-        <div className="control">
-          <Slider
-            label="Number of Personas:"
-            min={1}
-            max={5}
-            step={1}
-            showValue={true}
-            value={numberOfFaces}
-            onChange={this._onChangePersonaNumber}
-          />
-          <Dropdown
-            label="Persona Size:"
-            selectedKey={this.state.personaSize}
-            options={[
-              { key: PersonaSize.size16, text: PersonaSize[PersonaSize.size16] },
-              { key: PersonaSize.size24, text: PersonaSize[PersonaSize.size24] },
-              { key: PersonaSize.size28, text: PersonaSize[PersonaSize.size28] },
-              { key: PersonaSize.size32, text: PersonaSize[PersonaSize.size32] },
-              { key: PersonaSize.size40, text: PersonaSize[PersonaSize.size40] }
-            ]}
-            onChange={this._onChangePersonaSize}
-          />
-          <Checkbox
-            styles={{ root: { margin: '10px 0' } }}
-            label="Fade In"
-            checked={this.state.imagesFadeIn}
-            onChange={this._onChangeFadeIn}
-          />
-        </div>
-      </div>
-    );
-  }
-
-  private _onChangeFadeIn = (ev: React.FormEvent<HTMLElement | HTMLInputElement>, checked: boolean): void => {
-    this.setState(
-      (prevState: IFacepileBasicExampleState): IFacepileBasicExampleState => {
-        prevState.imagesFadeIn = checked!;
-        return prevState;
-      }
-    );
-  };
-
-  private _onChangePersonaNumber = (value: number): void => {
-    this.setState(
-      (prevState: IFacepileBasicExampleState): IFacepileBasicExampleState => {
-        prevState.numberOfFaces = value;
-        return prevState;
-      }
-    );
-  };
-
-  private _onChangePersonaSize = (event: React.FormEvent<HTMLDivElement>, value: IDropdownOption): void => {
-    this.setState(
-      (prevState: IFacepileBasicExampleState): IFacepileBasicExampleState => {
-        prevState.personaSize = value.key as PersonaSize;
-        return prevState;
-      }
-    );
-  };
-}
+      <Stack horizontal verticalAlign="start" tokens={{ childrenGap: 40 }}>
+        <Slider
+          label="Number of Personas:"
+          min={1}
+          max={5}
+          step={1}
+          showValue={true}
+          value={numberOfFaces}
+          onChange={setNumberOfFaces}
+          styles={controlStyles}
+        />
+        <Dropdown
+          label="Persona Size:"
+          selectedKey={personaSize}
+          options={[
+            { key: PersonaSize.size16, text: PersonaSize[PersonaSize.size16] },
+            { key: PersonaSize.size24, text: PersonaSize[PersonaSize.size24] },
+            { key: PersonaSize.size28, text: PersonaSize[PersonaSize.size28] },
+            { key: PersonaSize.size32, text: PersonaSize[PersonaSize.size32] },
+            { key: PersonaSize.size40, text: PersonaSize[PersonaSize.size40] }
+          ]}
+          onChange={(event: React.FormEvent<HTMLDivElement>, value: IDropdownOption) => {
+            setPersonaSize(value.key as PersonaSize);
+          }}
+          styles={controlStyles}
+        />
+        <Toggle
+          label="Fade In"
+          checked={imagesFadeIn}
+          onChange={(ev: React.FormEvent<HTMLElement | HTMLInputElement>, checked: boolean) => {
+            setImagesFadeIn(checked);
+          }}
+          styles={controlStyles}
+        />
+      </Stack>
+    </div>
+  );
+};
