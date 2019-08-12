@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { ButtonPageProps } from 'office-ui-fabric-react/lib/components/Button/Button.doc';
 import { DemoPage } from '../DemoPage';
-import { Checkbox, ICheckboxStyles } from 'office-ui-fabric-react/lib/Checkbox';
+import { Toggle, IToggleStyles } from 'office-ui-fabric-react/lib/Toggle';
 import { IStyleSet } from 'office-ui-fabric-react/lib/Styling';
 
-const checkboxStyles: Partial<IStyleSet<ICheckboxStyles>> = {
+const toggleStyles: Partial<IStyleSet<IToggleStyles>> = {
   root: { margin: '10px 0' }
 };
 
@@ -42,8 +42,8 @@ export class ButtonPage extends React.Component<IButtonDemoPageProps, IButtonDem
     const { areButtonsDisabled, areButtonsChecked } = this.state;
     return (
       <>
-        <Checkbox styles={checkboxStyles} label="Disable buttons" checked={areButtonsDisabled} onChange={this._onDisabledChanged} />
-        <Checkbox styles={checkboxStyles} label="Mark as checked" checked={areButtonsChecked} onChange={this._onToggledChanged} />
+        <Toggle styles={toggleStyles} label="Disable buttons" inlineLabel checked={areButtonsDisabled} onChange={this._onDisabledChanged} />
+        <Toggle styles={toggleStyles} label="Mark as checked" inlineLabel checked={areButtonsChecked} onChange={this._onToggledChanged} />
       </>
     );
   }
