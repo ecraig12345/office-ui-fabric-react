@@ -6,11 +6,11 @@ import {
   DocumentCardLogo,
   DocumentCardStatus,
   IDocumentCardLogoProps,
+  IDocumentCardStyles,
   IDocumentCardActivityPerson
 } from 'office-ui-fabric-react/lib/DocumentCard';
 import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
-import { TestImages } from '../../../common/TestImages';
-import { IDocumentCardStyles } from '../DocumentCard.types';
+import { TestImages } from 'office-ui-fabric-react/lib/common/TestImages';
 
 const conversationTileClass = mergeStyles({ height: 182 });
 
@@ -25,7 +25,7 @@ const people: IDocumentCardActivityPerson[] = [
   { name: 'Kat Larrson', profileImageSrc: TestImages.personaFemale }
 ];
 
-export const DocumentCardConversationExample: React.StatelessComponent = () => {
+export const DocumentCardConversationExample: React.FunctionComponent = () => {
   const logoProps: IDocumentCardLogoProps = {
     logoIcon: 'OutlookLogo'
   };

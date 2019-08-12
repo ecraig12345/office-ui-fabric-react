@@ -9,7 +9,7 @@ import {
   IDocumentCardActivityPerson
 } from 'office-ui-fabric-react/lib/DocumentCard';
 import { ImageFit } from 'office-ui-fabric-react/lib/Image';
-import { TestImages } from '../../../common/TestImages';
+import { TestImages } from 'office-ui-fabric-react/lib/common/TestImages';
 
 const people: IDocumentCardActivityPerson[] = [
   { name: 'Annie Lindqvist', profileImageSrc: TestImages.personaFemale },
@@ -18,7 +18,7 @@ const people: IDocumentCardActivityPerson[] = [
   { name: 'Christian Bergqvist', profileImageSrc: '', initials: 'CB' }
 ];
 
-export const DocumentCardImageExample: React.StatelessComponent = () => {
+export const DocumentCardImageExample: React.FunctionComponent = () => {
   const cardStyles: IDocumentCardStyles = {
     root: { display: 'inline-block', marginRight: 20, marginBottom: 20, width: 320 }
   };
