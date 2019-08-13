@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseComponent, memoizeFunction } from 'office-ui-fabric-react/lib/Utilities';
+import { memoizeFunction } from 'office-ui-fabric-react/lib/Utilities';
 import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import { ResizeGroup } from 'office-ui-fabric-react/lib/ResizeGroup';
 
@@ -7,7 +7,7 @@ const leftRightBoxClassName = mergeStyles({
   display: 'flex',
   justifyContent: 'space-between',
   whiteSpace: 'nowrap'
-}) as string;
+});
 
 const getNumberedBoxClassName = memoizeFunction((backgroundColor: string) => {
   return mergeStyles({
@@ -20,7 +20,7 @@ const getNumberedBoxClassName = memoizeFunction((backgroundColor: string) => {
     marginLeft: '10px',
     marginRight: '10px',
     backgroundColor
-  }) as string;
+  });
 });
 
 interface IBoxWithLabelProps {
@@ -34,7 +34,7 @@ interface ILeftRightBoxSetProps {
   cacheKey: string;
 }
 
-const BoxWithLabel: React.StatelessComponent<IBoxWithLabelProps> = (props: IBoxWithLabelProps) => (
+const BoxWithLabel: React.FunctionComponent<IBoxWithLabelProps> = (props: IBoxWithLabelProps) => (
   <div className={getNumberedBoxClassName(props.backgroundColor)}>{props.label}</div>
 );
 
@@ -46,7 +46,7 @@ function renderBoxWithLabels(count: number, backgroundColor: string): JSX.Elemen
   return result;
 }
 
-const LeftRightBoxSet: React.StatelessComponent<ILeftRightBoxSetProps> = (props: ILeftRightBoxSetProps) => (
+const LeftRightBoxSet: React.FunctionComponent<ILeftRightBoxSetProps> = (props: ILeftRightBoxSetProps) => (
   <div className={leftRightBoxClassName}>
     <div>{renderBoxWithLabels(props.leftCount, 'orange')}</div>
     <div>{renderBoxWithLabels(props.rightCount, 'green')}</div>
@@ -69,16 +69,14 @@ function onReduceData(props: ILeftRightBoxSetProps): ILeftRightBoxSetProps | und
   return { ...result, cacheKey: `${result.leftCount + result.rightCount}` };
 }
 
-export class FlexBoxResizeGroupExample extends BaseComponent<{}, {}> {
-  public render(): JSX.Element {
-    const data: ILeftRightBoxSetProps = { leftCount: 5, rightCount: 5, cacheKey: '10' };
-    return (
-      <ResizeGroup
-        data={data}
-        // tslint:disable-next-line:jsx-no-lambda
-        onRenderData={(scaledData: ILeftRightBoxSetProps) => <LeftRightBoxSet {...scaledData} />}
-        onReduceData={onReduceData}
-      />
-    );
-  }
-}
+export const FlexBoxResizeGroupExample: React.FunctionComponent = () => {
+  const data: ILeftRightBoxSetProps = { leftCount: 5, rightCount: 5, cacheKey: '10' };
+  return (
+    <ResizeGroup
+      data={data}
+      // tslint:disable-next-line:jsx-no-lambda
+      onRenderData={(scaledData: ILeftRightBoxSetProps) => <LeftRightBoxSet {...scaledData} />}
+      onReduceData={onReduceData}
+    />
+  );
+};

@@ -3,12 +3,10 @@ import { BaseComponent } from 'office-ui-fabric-react/lib/Utilities';
 import { CommandBarButton } from 'office-ui-fabric-react/lib/Button';
 import { ResizeGroup } from 'office-ui-fabric-react/lib/ResizeGroup';
 import { OverflowSet } from 'office-ui-fabric-react/lib/OverflowSet';
-import { Checkbox } from 'office-ui-fabric-react/lib/Checkbox';
+import { Toggle } from 'office-ui-fabric-react/lib/Toggle';
+import { Stack } from 'office-ui-fabric-react/lib/Stack';
 import { IContextualMenuItem } from 'office-ui-fabric-react/lib/ContextualMenu';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
-
-import * as stylesImport from './ResizeGroup.Example.scss';
-const styles: any = stylesImport;
 
 export interface IOverflowData {
   primary: IContextualMenuItem[];
@@ -16,51 +14,17 @@ export interface IOverflowData {
   cacheKey?: string;
 }
 
-function generateData(count: number, cachingEnabled: boolean, checked: boolean): IOverflowData {
-  const icons = ['Add', 'Share', 'Upload'];
-  const dataItems = [];
-  let cacheKey = '';
-  for (let index = 0; index < count; index++) {
-    const item = {
-      key: `item${index}`,
-      name: `Item ${index}`,
-      icon: icons[index % icons.length],
-      checked: checked
-    };
-
-    cacheKey = cacheKey + item.key;
-    dataItems.push(item);
-  }
-
-  let result: IOverflowData = {
-    primary: dataItems,
-    overflow: [] as any[]
-  };
-
-  if (cachingEnabled) {
-    result = { ...result, cacheKey };
-  }
-
-  return result;
-}
-
 export interface IResizeGroupOverflowSetExampleState {
-  short: boolean;
   numberOfItems: number;
   buttonsChecked: boolean;
   cachingEnabled: boolean;
   onGrowDataEnabled: boolean;
 }
 
-function computeCacheKey(primaryControls: IContextualMenuItem[]): string {
-  return primaryControls.reduce((acc, current) => acc + current.key, '');
-}
-
 export class ResizeGroupOverflowSetExample extends BaseComponent<{}, IResizeGroupOverflowSetExampleState> {
   constructor(props: {}) {
     super(props);
     this.state = {
-      short: false,
       buttonsChecked: false,
       cachingEnabled: false,
       onGrowDataEnabled: false,
@@ -69,10 +33,10 @@ export class ResizeGroupOverflowSetExample extends BaseComponent<{}, IResizeGrou
   }
 
   public render(): JSX.Element {
-    const { numberOfItems, cachingEnabled, buttonsChecked, short, onGrowDataEnabled } = this.state;
+    const { numberOfItems, cachingEnabled, buttonsChecked, onGrowDataEnabled } = this.state;
     const dataToRender = generateData(numberOfItems, cachingEnabled, buttonsChecked);
     return (
-      <div className={short ? styles.resizeIsShort : 'notResized'}>
+      <div>
         <ResizeGroup
           role="tabpanel"
           aria-label="Resize Group with an Overflow Set"
@@ -98,27 +62,26 @@ export class ResizeGroupOverflowSetExample extends BaseComponent<{}, IResizeGrou
             );
           }}
         />
-        <div className={styles.settingsGroup}>
-          <Checkbox label="Enable caching" onChange={this._onCachingEnabledChanged} checked={cachingEnabled} />
-          <Checkbox label="Set onGrowData" onChange={this._onGrowDataEnabledChanged} checked={onGrowDataEnabled} />
-          <Checkbox label="Buttons checked" onChange={this._onButtonsCheckedChanged} checked={buttonsChecked} />
-          <div className={styles.itemCountDropdown}>
-            <Dropdown
-              label="Number of items to render"
-              selectedKey={numberOfItems.toString()}
-              onChange={this._onNumberOfItemsChanged}
-              options={[
-                { key: '20', text: '20' },
-                { key: '30', text: '30' },
-                { key: '40', text: '40' },
-                { key: '50', text: '50' },
-                { key: '75', text: '75' },
-                { key: '100', text: '100' },
-                { key: '200', text: '200' }
-              ]}
-            />
-          </div>
-        </div>
+        <Stack horizontal wrap tokens={{ childrenGap: 40 }} styles={{ root: { marginTop: 20 } }}>
+          <Toggle label="Enable caching" onChange={this._onCachingEnabledChanged} checked={cachingEnabled} />
+          <Toggle label="Set onGrowData" onChange={this._onGrowDataEnabledChanged} checked={onGrowDataEnabled} />
+          <Toggle label="Buttons checked" onChange={this._onButtonsCheckedChanged} checked={buttonsChecked} />
+          <Dropdown
+            label="Number of items to render"
+            selectedKey={numberOfItems.toString()}
+            onChange={this._onNumberOfItemsChanged}
+            options={[
+              { key: '20', text: '20' },
+              { key: '30', text: '30' },
+              { key: '40', text: '40' },
+              { key: '50', text: '50' },
+              { key: '75', text: '75' },
+              { key: '100', text: '100' },
+              { key: '200', text: '200' }
+            ]}
+            styles={{ root: { width: 180 } }}
+          />
+        </Stack>
       </div>
     );
   }
@@ -168,4 +131,36 @@ export class ResizeGroupOverflowSetExample extends BaseComponent<{}, IResizeGrou
   private _onNumberOfItemsChanged = (event: React.FormEvent<HTMLDivElement>, option: IDropdownOption): void => {
     this.setState({ numberOfItems: parseInt(option.text, 10) });
   };
+}
+
+function generateData(count: number, cachingEnabled: boolean, checked: boolean): IOverflowData {
+  const icons = ['Add', 'Share', 'Upload'];
+  const dataItems = [];
+  let cacheKey = '';
+  for (let index = 0; index < count; index++) {
+    const item = {
+      key: `item${index}`,
+      name: `Item ${index}`,
+      icon: icons[index % icons.length],
+      checked: checked
+    };
+
+    cacheKey = cacheKey + item.key;
+    dataItems.push(item);
+  }
+
+  let result: IOverflowData = {
+    primary: dataItems,
+    overflow: [] as any[]
+  };
+
+  if (cachingEnabled) {
+    result = { ...result, cacheKey };
+  }
+
+  return result;
+}
+
+function computeCacheKey(primaryControls: IContextualMenuItem[]): string {
+  return primaryControls.reduce((acc, current) => acc + current.key, '');
 }
