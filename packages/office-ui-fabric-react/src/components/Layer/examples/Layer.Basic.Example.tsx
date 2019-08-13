@@ -1,80 +1,60 @@
 import * as React from 'react';
-import * as styles from './Layer.Example.scss';
-import { AnimationClassNames } from 'office-ui-fabric-react/lib/Styling';
-import { BaseComponent, css } from 'office-ui-fabric-react/lib/Utilities';
+import { AnimationClassNames, mergeStyleSets, getTheme } from 'office-ui-fabric-react/lib/Styling';
+import { css } from 'office-ui-fabric-react/lib/Utilities';
 import { Layer } from 'office-ui-fabric-react/lib/Layer';
 import { Toggle } from 'office-ui-fabric-react/lib/Toggle';
 
-interface ILayerBasicExampleContext {
-  message?: string;
-}
+// tslint:disable:jsx-no-lambda
 
-const LayerBasicExampleContext = React.createContext<ILayerBasicExampleContext>({ message: undefined });
-
-interface ILayerContentExampleState {
-  time: string;
-}
-
-class LayerContentExample extends BaseComponent<{}, ILayerContentExampleState> {
-  public state = {
-    time: new Date().toLocaleTimeString()
-  };
-
-  public componentDidMount() {
-    this._async.setInterval(() => {
-      this.setState({
-        time: new Date().toLocaleTimeString()
-      });
-    }, 1000);
+const theme = getTheme();
+const classNames = mergeStyleSets({
+  content: {
+    backgroundColor: theme.palette.neutralPrimary,
+    color: theme.palette.white,
+    lineHeight: '50px',
+    padding: '0 20px',
+    display: 'flex'
+  },
+  textContent: {
+    flexGrow: '1'
   }
+});
 
-  public render() {
-    return (
-      <LayerBasicExampleContext.Consumer>
-        {value => (
-          <div className={css(styles.content, AnimationClassNames.scaleUpIn100)}>
-            <div className={styles.textContent}>{value.message}</div>
-            <div>{this.state.time}</div>
-          </div>
-        )}
-      </LayerBasicExampleContext.Consumer>
-    );
-  }
-}
+const LayerContentExample: React.FunctionComponent = () => {
+  const [time, setTime] = React.useState<string>(new Date().toLocaleTimeString());
 
-interface ILayerBasicExampleState {
-  showLayer: boolean;
-}
+  React.useEffect(() => {
+    const interval = setInterval(() => setTime(new Date().toLocaleTimeString()));
+    return () => clearInterval(interval);
+  }, []);
 
-export class LayerBasicExample extends BaseComponent<{}, ILayerBasicExampleState> {
-  public state = {
-    showLayer: false
-  };
+  return (
+    <div className={css(classNames.content, AnimationClassNames.scaleUpIn100)}>
+      <div className={classNames.textContent}>Hello world</div>
+      <div>{time}</div>
+    </div>
+  );
+};
 
-  public render() {
-    const { showLayer } = this.state;
-    return (
-      <LayerBasicExampleContext.Provider
-        value={{
-          message: 'Hello world.'
-        }}
-      >
-        <div>
-          <Toggle label="Wrap the content box below in a Layer" inlineLabel checked={showLayer} onChange={this._onChange} />
+export const LayerBasicExample: React.FunctionComponent = () => {
+  const [showLayer, setShowLayer] = React.useState<boolean>(false);
 
-          {showLayer ? (
-            <Layer>
-              <LayerContentExample />
-            </Layer>
-          ) : (
-            <LayerContentExample />
-          )}
-        </div>
-      </LayerBasicExampleContext.Provider>
-    );
-  }
+  return (
+    <div>
+      <Toggle
+        label="Wrap the content box below in a Layer"
+        inlineLabel
+        checked={showLayer}
+        onChange={(ev: any, checked?: boolean) => setShowLayer(!!checked)}
+      />
 
-  private _onChange = (ev: React.FormEvent<HTMLElement | HTMLInputElement>, checked: boolean): void => {
-    this.setState({ showLayer: checked });
-  };
-}
+      {showLayer ? (
+        <Layer>
+          <LayerContentExample />
+        </Layer>
+      ) : (
+        <LayerContentExample />
+      )}
+    </div>
+  );
+};

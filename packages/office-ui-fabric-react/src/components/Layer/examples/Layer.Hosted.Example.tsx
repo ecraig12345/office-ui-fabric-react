@@ -1,18 +1,50 @@
 import * as React from 'react';
 import { Toggle } from 'office-ui-fabric-react/lib/Toggle';
 import { Layer, LayerHost } from 'office-ui-fabric-react/lib/Layer';
-import { AnimationClassNames, mergeStyles } from 'office-ui-fabric-react/lib/Styling';
+import { AnimationClassNames, mergeStyleSets, getTheme, IStyleSet } from 'office-ui-fabric-react/lib/Styling';
 import { getId, css } from 'office-ui-fabric-react/lib/Utilities';
 import { IToggleStyles } from 'office-ui-fabric-react/lib/Toggle';
-import { IStyleSet } from 'office-ui-fabric-react/lib/Styling';
-import * as styles from './Layer.Example.scss';
 
 const toggleStyles: Partial<IStyleSet<IToggleStyles>> = {
   root: { margin: '10px 0' }
 };
 
-const rootClass = mergeStyles({
-  selectors: { p: { marginTop: 30 } }
+const theme = getTheme();
+const classNames = mergeStyleSets({
+  root: {
+    selectors: { p: { marginTop: 30 } }
+  },
+  content: {
+    backgroundColor: theme.palette.neutralPrimary,
+    color: theme.palette.white,
+    lineHeight: '50px',
+    padding: '0 20px',
+    display: 'flex'
+  },
+  customHost: {
+    selectors: {
+      '&.ms-LayerHost': {
+        height: 100,
+        padding: 20,
+        background: 'rgba(255, 0, 0, 0.2)',
+        border: '1px dashed ' + theme.palette.black,
+        position: 'relative'
+      },
+      ':before': {
+        position: 'absolute',
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, -50%)',
+        content: 'I am a LayerHost with id=layerhost1'
+      }
+    }
+  },
+  nonLayered: {
+    backgroundColor: theme.palette.neutralTertiaryAlt,
+    lineHeight: '50px',
+    padding: '0 20px',
+    margin: '8px 0'
+  }
 });
 
 export interface ILayerHostedExampleState {
@@ -33,13 +65,13 @@ export class LayerHostedExample extends React.Component<{}, ILayerHostedExampleS
 
   public render(): JSX.Element {
     const { showLayer, showLayerNoId, showHost } = this.state;
-    const content = <div className={css(styles.content, AnimationClassNames.scaleUpIn100)}>This is example layer content.</div>;
+    const content = <div className={css(classNames.content, AnimationClassNames.scaleUpIn100)}>This is example layer content.</div>;
 
     return (
-      <div className={rootClass}>
+      <div className={classNames.root}>
         <Toggle label="Show host" inlineLabel checked={showHost} onChange={this._onChangeToggle} />
 
-        {showHost && <LayerHost id={this._layerHostId} className={styles.customHost} />}
+        {showHost && <LayerHost id={this._layerHostId} className={classNames.customHost} />}
 
         <p>
           In some cases, you may need to contain layered content within an area. Create an instance of a LayerHost along with an id, and
@@ -63,7 +95,7 @@ export class LayerHostedExample extends React.Component<{}, ILayerHostedExampleS
           content
         )}
 
-        <div className={styles.nonLayered}>I am normally below the content.</div>
+        <div className={classNames.nonLayered}>I am normally below the content.</div>
 
         <p>If you do not specify a hostId, the hosted layer will default to being fixed to the page by default.</p>
 

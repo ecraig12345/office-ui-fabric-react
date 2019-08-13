@@ -1,8 +1,8 @@
-import { Customizer, getId } from '@uifabric/utilities';
+import * as React from 'react';
 import { Toggle } from 'office-ui-fabric-react/lib/Toggle';
 import { LayerHost } from 'office-ui-fabric-react/lib/Layer';
 import { Panel } from 'office-ui-fabric-react/lib/Panel';
-import * as React from 'react';
+import { Customizer, getId } from 'office-ui-fabric-react/lib/Utilities';
 
 export interface ILayerCustomizedExampleState {
   showPanel: boolean;
