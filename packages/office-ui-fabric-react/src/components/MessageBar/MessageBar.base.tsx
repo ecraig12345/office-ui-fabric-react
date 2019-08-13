@@ -1,5 +1,15 @@
 import * as React from 'react';
-import { BaseComponent, DelayedRender, getId, classNamesFunction, getNativeProps, htmlElementProperties } from '../../Utilities';
+import {
+  css,
+  DelayedRender,
+  getId,
+  classNamesFunction,
+  getNativeProps,
+  htmlElementProperties,
+  initializeComponentRef,
+  warnDeprecations,
+  warnMutuallyExclusive
+} from '../../Utilities';
 import { IconButton } from '../../Button';
 import { Icon } from '../../Icon';
 import { IMessageBarProps, IMessageBarStyleProps, IMessageBarStyles, MessageBarType } from './MessageBar.types';
@@ -7,44 +17,77 @@ import { IMessageBarProps, IMessageBarStyleProps, IMessageBarStyles, MessageBarT
 const getClassNames = classNamesFunction<IMessageBarStyleProps, IMessageBarStyles>();
 
 export interface IMessageBarState {
-  labelId?: string;
-  showContent?: boolean;
-  expandSingleLine?: boolean;
+  /**
+   * Whether a truncated single-line MessageBar has been expanded.
+   * Only applies for MessageBars with `isMultiline: false` and `showExpandButton: true`
+   * (or deprecated `truncated: true`).
+   */
+  isExpanded?: boolean;
 }
 
-export class MessageBarBase extends BaseComponent<IMessageBarProps, IMessageBarState> {
+const ICON_MAP = {
+  [MessageBarType.info]: 'Info',
+  [MessageBarType.warning]: 'Info',
+  [MessageBarType.error]: 'ErrorBadge',
+  [MessageBarType.blocked]: 'Blocked2',
+  [MessageBarType.remove]: 'Blocked', // TODO remove deprecated value at >= 1.0.0
+  [MessageBarType.severeWarning]: 'Warning',
+  [MessageBarType.success]: 'Completed'
+};
+
+const COMPONENT_NAME = 'MessageBar';
+
+export class MessageBarBase extends React.Component<IMessageBarProps, IMessageBarState> {
   public static defaultProps: IMessageBarProps = {
     messageBarType: MessageBarType.info,
-    onDismiss: undefined,
     isMultiline: true
   };
 
-  private ICON_MAP = {
-    [MessageBarType.info]: 'Info',
-    [MessageBarType.warning]: 'Info',
-    [MessageBarType.error]: 'ErrorBadge',
-    [MessageBarType.blocked]: 'Blocked2',
-    [MessageBarType.remove]: 'Blocked', // TODO remove deprecated value at >= 1.0.0
-    [MessageBarType.severeWarning]: 'Warning',
-    [MessageBarType.success]: 'Completed'
-  };
-
+  private _labelId: string;
   private _classNames: { [key in keyof IMessageBarStyles]: string };
 
   constructor(props: IMessageBarProps) {
     super(props);
 
+    initializeComponentRef(this);
+
+    if (process.env.NODE_ENV !== 'production') {
+      warnDeprecations(COMPONENT_NAME, props, {
+        ariaLabel: 'aria-label',
+        overflowButtonAriaLabel: 'expandButtonAriaLabel',
+        truncated: 'showExpandButton'
+      });
+      warnMutuallyExclusive(COMPONENT_NAME, props, {
+        showExpandButton: 'actions',
+        truncated: 'actions'
+      });
+    }
+
+    this._labelId = getId(COMPONENT_NAME);
+
     this.state = {
-      labelId: getId('MessageBar'),
-      showContent: false,
-      expandSingleLine: false
+      isExpanded: false
     };
   }
 
   public render(): JSX.Element {
-    const { isMultiline } = this.props;
+    const { theme, className, messageBarType, onDismiss, actions, truncated, isMultiline, showExpandButton } = this.props;
+    const { isExpanded } = this.state;
 
-    this._classNames = this._getClassNames();
+    this._classNames = getClassNames(this.props.styles!, {
+      theme: theme!,
+      messageBarType: messageBarType || MessageBarType.info,
+      hasOnDismiss: !!onDismiss,
+      onDismiss: !!onDismiss,
+      hasActions: !!actions,
+      actions: !!actions,
+      showExpandButton: truncated || showExpandButton,
+      truncated: truncated || showExpandButton,
+      isMultiline: isMultiline,
+      expandSingleLine: isExpanded,
+      isExpanded: isExpanded,
+      className
+    });
 
     return isMultiline ? this._renderMultiLine() : this._renderSingleLine();
   }
@@ -61,7 +104,7 @@ export class MessageBarBase extends BaseComponent<IMessageBarProps, IMessageBarS
       return (
         <IconButton
           disabled={false}
-          className={this._classNames.dismissal}
+          className={css(this._classNames.dismissal, this._classNames.dismissButton)}
           onClick={this.props.onDismiss}
           iconProps={{ iconName: 'Clear' }}
           ariaLabel={this.props.dismissButtonAriaLabel}
@@ -78,18 +121,20 @@ export class MessageBarBase extends BaseComponent<IMessageBarProps, IMessageBarS
     return null;
   }
 
-  private _getExpandSingleLine(): JSX.Element | null {
-    if (!this.props.actions && this.props.truncated) {
+  private _getExpandButton(): JSX.Element | null {
+    const props = this.props;
+    const classNames = this._classNames;
+    if (!props.actions && (props.truncated || props.showExpandButton)) {
       return (
-        <div className={this._classNames.expandSingleLine}>
+        <div className={classNames.expandSingleLine}>
           <IconButton
             disabled={false}
-            className={this._classNames.expand}
-            onClick={this._onClick}
-            iconProps={{ iconName: this.state.expandSingleLine ? 'DoubleChevronUp' : 'DoubleChevronDown' }}
-            ariaLabel={this.props.overflowButtonAriaLabel}
-            aria-expanded={this.state.expandSingleLine}
-            aria-controls={this.state.labelId}
+            className={css(classNames.expand, classNames.expandButton)}
+            onClick={this._onExpandClick}
+            iconProps={{ iconName: this.state.isExpanded ? 'DoubleChevronUp' : 'DoubleChevronDown' }}
+            ariaLabel={props.expandButtonAriaLabel || props.overflowButtonAriaLabel}
+            aria-expanded={this.state.isExpanded}
+            aria-controls={this._labelId}
           />
         </div>
       );
@@ -100,7 +145,7 @@ export class MessageBarBase extends BaseComponent<IMessageBarProps, IMessageBarS
   private _getIconSpan(): JSX.Element {
     return (
       <div className={this._classNames.iconContainer} aria-hidden>
-        <Icon iconName={this.ICON_MAP[this.props.messageBarType!]} className={this._classNames.icon} />
+        <Icon iconName={ICON_MAP[this.props.messageBarType!]} className={this._classNames.icon} />
       </div>
     );
   }
@@ -129,7 +174,7 @@ export class MessageBarBase extends BaseComponent<IMessageBarProps, IMessageBarS
           <div className={this._classNames.content}>
             {this._getIconSpan()}
             {this._renderInnerText()}
-            {this._getExpandSingleLine()}
+            {this._getExpandButton()}
             {this._getActionsDiv()}
             {this._getDismissSingleLine()}
           </div>
@@ -142,7 +187,7 @@ export class MessageBarBase extends BaseComponent<IMessageBarProps, IMessageBarS
     const nativeProps = getNativeProps(this.props, htmlElementProperties, ['className']);
 
     return (
-      <div className={this._classNames.text} id={this.state.labelId}>
+      <div className={this._classNames.text} id={this._labelId}>
         <span className={this._classNames.innerText} role="status" aria-live={this._getAnnouncementPriority()} {...nativeProps}>
           <DelayedRender>
             <span>{this.props.children}</span>
@@ -150,22 +195,6 @@ export class MessageBarBase extends BaseComponent<IMessageBarProps, IMessageBarS
         </span>
       </div>
     );
-  }
-
-  private _getClassNames(): { [key in keyof IMessageBarStyles]: string } {
-    const { theme, className, messageBarType, onDismiss, actions, truncated, isMultiline } = this.props;
-    const { expandSingleLine } = this.state;
-
-    return getClassNames(this.props.styles!, {
-      theme: theme!,
-      messageBarType: messageBarType || MessageBarType.info,
-      onDismiss: onDismiss !== undefined,
-      actions: actions !== undefined,
-      truncated: truncated,
-      isMultiline: isMultiline,
-      expandSingleLine: expandSingleLine,
-      className
-    });
   }
 
   private _getAnnouncementPriority(): 'assertive' | 'polite' {
@@ -178,7 +207,7 @@ export class MessageBarBase extends BaseComponent<IMessageBarProps, IMessageBarS
     return 'polite';
   }
 
-  private _onClick = (ev: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
-    this.setState({ expandSingleLine: !this.state.expandSingleLine });
+  private _onExpandClick = () => {
+    this.setState({ isExpanded: !this.state.isExpanded });
   };
 }

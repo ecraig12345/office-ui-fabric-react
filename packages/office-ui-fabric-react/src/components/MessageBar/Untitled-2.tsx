@@ -81,11 +81,6 @@ export interface IMessageBarProps extends React.HTMLAttributes<HTMLElement> {
   /**
    * Aria label on the expand button if `truncated` is true.
    */
-  expandButtonAriaLabel?: string;
-
-  /**
-   * @deprecated Use `expandButtonAriaLabel`
-   */
   overflowButtonAriaLabel?: string;
 
   /**
@@ -107,33 +102,46 @@ export interface IMessageBarProps extends React.HTMLAttributes<HTMLElement> {
 /**
  * {@docCategory MessageBar}
  */
-export interface IMessageBarStyleProps
-  extends Required<Pick<IMessageBarProps, 'theme'>>,
-    Pick<IMessageBarProps, 'className' | 'messageBarType' | 'truncated' | 'isMultiline' | 'showExpandButton'> {
+export interface IMessageBarStyleProps {
+  /**
+   * Theme (provided through customization).
+   */
+  theme: ITheme;
+
+  /**
+   * Additional CSS class(es).
+   */
+  className?: string;
+
+  /**
+   * Type of the MessageBar.
+   */
+  messageBarType?: MessageBarType;
+
   /**
    * Whether the MessageBar contains a dismiss button.
    */
-  hasOnDismiss?: boolean;
+  onDismiss?: boolean;
 
   /**
-   * Whether the truncated (single-line) MessageBar has been expanded.
-   * Only applies for MessageBars with `truncated: true`.
+   * Whether the text is truncated.
    */
-  isExpanded?: boolean;
+  truncated?: boolean;
+
+  /**
+   * Whether the MessageBar is rendered in multi line (as opposed to single line) mode.
+   */
+  isMultiline?: boolean;
+
+  /**
+   * Whether the single line MessageBar is being expanded.
+   */
+  expandSingleLine?: boolean;
 
   /**
    * Whether the MessageBar contains any action elements.
    */
-  hasActions?: boolean;
-
-  /** @deprecated Use `hasOnDismiss` */
-  onDismiss?: boolean;
-  /** @deprected Use `isExpanded` */
-  expandSingleLine?: boolean;
-  /** @deprecated Use `hasActions */
   actions?: boolean;
-  /** @deprecated Use `showExpandButton` */
-  truncated?: boolean;
 }
 
 /**
@@ -173,22 +181,16 @@ export interface IMessageBarStyles {
   /**
    * Style set for the optional dismiss IconButton.
    */
-  dismissButton?: IStyle;
-
-  /** @deprecated Use `dismissButton` */
   dismissal?: IStyle;
 
   /**
    * Style set for the IconButton used to expand and collapse the MessageBar.
    */
-  expandButton?: IStyle;
-
-  /** @deprecated Use `expandButton` */
   expand?: IStyle;
 
   /**
    * Style set for the element containing the dismiss button.
-   * Only applies in single-line mode (`showExpandButton` is true and `isMultiline` is false).
+   * Only applies in single-line mode.
    */
   dismissSingleLine?: IStyle;
 
