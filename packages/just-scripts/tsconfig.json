@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "lib",
+    "noUnusedLocals": true,
+    "strict": true,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "typeRoots": [
+      "node_modules",
+      "typings"
+    ]
+  },
+  "include": ["src"]
+}
