@@ -5,7 +5,9 @@ import { IRefObject, IStyleFunctionOrObject } from '../../Utilities';
 /**
  * {@docCategory Rating}
  */
-export interface IRating {}
+export interface IRating {
+  rating: number;
+}
 
 /**
  * Rating component props.
@@ -131,6 +133,7 @@ export interface IRatingStyles {
   ratingStarIsLarge: IStyle;
   rootIsSmall: IStyle;
   rootIsLarge: IStyle;
+  /** Styles for the hidden label */
   labelText: IStyle;
   ratingFocusZone: IStyle;
 }
