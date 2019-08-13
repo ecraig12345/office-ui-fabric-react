@@ -3,7 +3,7 @@ import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
 import { Callout } from 'office-ui-fabric-react/lib/Callout';
 import { CommandBar, ICommandBarItemProps } from 'office-ui-fabric-react/lib/CommandBar';
 import { getId } from 'office-ui-fabric-react/lib/Utilities';
-import './CalloutExample.scss';
+import { mergeStyleSets, getTheme, FontWeights } from 'office-ui-fabric-react/lib/Styling';
 
 export interface ICalloutNestedExampleProps {
   items: ICommandBarItemProps[];
@@ -13,12 +13,36 @@ export interface ICalloutNestedExampleState {
   isCalloutVisible: boolean;
 }
 
+const theme = getTheme();
+const classNames = mergeStyleSets({
+  header: { padding: '18px 24px 12px' },
+  title: [
+    theme.fonts.xLarge,
+    {
+      margin: 0,
+      color: theme.palette.neutralPrimary,
+      fontWeight: FontWeights.semilight
+    }
+  ],
+  inner: {
+    height: '100%',
+    padding: '0 24px 20px'
+  },
+  subText: [
+    theme.fonts.small,
+    {
+      margin: 0,
+      color: theme.palette.neutralPrimary
+    }
+  ]
+});
+
 export class CalloutNestedExample extends React.Component<ICalloutNestedExampleProps, ICalloutNestedExampleState> {
   public state: ICalloutNestedExampleState = {
     isCalloutVisible: false
   };
 
-  private _menuButtonElement: HTMLElement | null;
+  private _targetRef = React.createRef<HTMLDivElement>();
   // Use getId() to ensure that the callout title ID is unique on the page.
   // (It's also okay to use a plain string without getId() and manually ensure its uniqueness.)
   private _titleId: string = getId('callout-label');
@@ -27,42 +51,41 @@ export class CalloutNestedExample extends React.Component<ICalloutNestedExampleP
     const { isCalloutVisible } = this.state;
 
     return (
-      <div className="ms-CalloutExample">
-        <div className="ms-CalloutBasicExample-buttonArea" ref={menuButton => (this._menuButtonElement = menuButton)}>
-          <DefaultButton onClick={this._onDismiss} text={isCalloutVisible ? 'Hide callout' : 'Show callout'} />
+      <div>
+        <div ref={this._targetRef}>
+          <DefaultButton onClick={this._onShowHideCallout} text={isCalloutVisible ? 'Hide callout' : 'Show callout'} />
         </div>
-        {isCalloutVisible ? (
+        {isCalloutVisible && (
           <div>
             <Callout
               role="alertdialog"
               ariaLabelledBy={this._titleId}
-              className="ms-CalloutExample-callout"
               gapSpace={0}
-              target={this._menuButtonElement}
-              onDismiss={this._onDismiss}
+              target={this._targetRef.current}
+              onDismiss={this._onShowHideCallout}
               setInitialFocus={true}
+              styles={{ root: { maxWidth: 300 } }}
             >
-              <div className="ms-CalloutExample-header">
-                <p className="ms-CalloutExample-title" id={this._titleId}>
+              <div className={classNames.header}>
+                <p className={classNames.title} id={this._titleId}>
                   Callout title here
                 </p>
               </div>
-              <div className="ms-CalloutExample-inner">
-                <div className="ms-CalloutExample-content">
-                  <p className="ms-CalloutExample-subText">
-                    Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.
-                  </p>
-                </div>
+              <div className={classNames.inner}>
+                <p className={classNames.subText}>
+                  Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.
+                </p>
               </div>
+
               <CommandBar items={this.props.items} />
             </Callout>
           </div>
-        ) : null}
+        )}
       </div>
     );
   }
 
-  private _onDismiss = () => {
+  private _onShowHideCallout = () => {
     this.setState({
       isCalloutVisible: !this.state.isCalloutVisible
     });

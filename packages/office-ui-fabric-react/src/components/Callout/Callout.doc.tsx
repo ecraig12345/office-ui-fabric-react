@@ -43,7 +43,7 @@ export const CalloutPageProps: IDocPageProps = {
       view: <CalloutDirectionalExample />
     },
     {
-      title: 'Callout with cover',
+      title: 'Callout that can cover its target',
       code: CalloutCoverExampleCode,
       view: <CalloutCoverExample />
     }
