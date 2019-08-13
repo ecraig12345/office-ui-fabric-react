@@ -18,16 +18,16 @@ const GlobalClassNames = {
   warning: 'ms-MessageBar--warning',
   multiline: 'ms-MessageBar-multiline',
   singleline: 'ms-MessageBar-singleline',
-  dismissalSingleLine: 'ms-MessageBar-dismissalSingleLine',
-  expandingSingleLine: 'ms-MessageBar-expandingSingleLine',
+  singleLineWithDismiss: 'ms-MessageBar-dismissalSingleLine',
+  isExpanded: 'ms-MessageBar-expandingSingleLine',
   content: 'ms-MessageBar-content',
   iconContainer: 'ms-MessageBar-icon',
   text: 'ms-MessageBar-text',
   innerText: 'ms-MessageBar-innerText',
   dismissSingleLine: 'ms-MessageBar-dismissSingleLine',
   expandSingleLine: 'ms-MessageBar-expandSingleLine',
-  dismissal: 'ms-MessageBar-dismissal',
-  expand: 'ms-MessageBar-expand',
+  dismissButton: 'ms-MessageBar-dismissal',
+  expandButton: 'ms-MessageBar-expand',
   actions: 'ms-MessageBar-actions',
   actionsSingleline: 'ms-MessageBar-actionsSingleLine'
 };
@@ -64,7 +64,15 @@ const getIconColor = (messageBarType: MessageBarType | undefined, palette: IPale
 };
 
 export const getStyles = (props: IMessageBarStyleProps): IMessageBarStyles => {
-  const { theme, className, messageBarType, onDismiss, truncated, isMultiline, expandSingleLine } = props;
+  const {
+    theme,
+    className,
+    messageBarType,
+    hasOnDismiss = props.onDismiss,
+    showExpandButton = props.truncated,
+    isMultiline,
+    isExpanded = props.expandSingleLine
+  } = props;
   const { semanticColors, palette, fonts } = theme;
 
   const SmallScreenSelector = getScreenSelector(0, ScreenWidthMaxSmall);
@@ -84,7 +92,7 @@ export const getStyles = (props: IMessageBarStyleProps): IMessageBarStyles => {
     }
   };
 
-  const dismissalAndExpandStyle: IStyle = {
+  const dismissAndExpandButtonStyle: IStyle = {
     flexShrink: 0,
     width: 32,
     height: 32,
@@ -110,8 +118,8 @@ export const getStyles = (props: IMessageBarStyleProps): IMessageBarStyles => {
       messageBarType === MessageBarType.success && classNames.success,
       messageBarType === MessageBarType.warning && classNames.warning,
       isMultiline ? classNames.multiline : classNames.singleline,
-      !isMultiline && onDismiss && classNames.dismissalSingleLine,
-      !isMultiline && truncated && classNames.expandingSingleLine,
+      !isMultiline && hasOnDismiss && classNames.singleLineWithDismiss,
+      !isMultiline && showExpandButton && classNames.isExpanded,
       {
         background: getRootBackground(messageBarType, palette, semanticColors),
         color: palette.neutralPrimary,
@@ -177,7 +185,7 @@ export const getStyles = (props: IMessageBarStyleProps): IMessageBarStyles => {
           }
         }
       },
-      !onDismiss && {
+      !hasOnDismiss && {
         marginRight: 12
       }
     ],
@@ -191,7 +199,7 @@ export const getStyles = (props: IMessageBarStyleProps): IMessageBarStyles => {
           }
         }
       },
-      truncated && {
+      showExpandButton && {
         overflow: 'visible',
         whiteSpace: 'pre-wrap'
       },
@@ -201,7 +209,7 @@ export const getStyles = (props: IMessageBarStyleProps): IMessageBarStyles => {
         whiteSpace: 'nowrap'
       },
       !isMultiline &&
-        !truncated && {
+        !showExpandButton && {
           selectors: {
             [SmallScreenSelector]: {
               overflow: 'visible',
@@ -209,15 +217,17 @@ export const getStyles = (props: IMessageBarStyleProps): IMessageBarStyles => {
             }
           }
         },
-      expandSingleLine && {
+      isExpanded && {
         overflow: 'visible',
         whiteSpace: 'pre-wrap'
       }
     ],
-    dismissSingleLine: [classNames.dismissSingleLine],
-    expandSingleLine: [classNames.expandSingleLine],
-    dismissal: [classNames.dismissal, dismissalAndExpandStyle],
-    expand: [classNames.expand, dismissalAndExpandStyle],
+    dismissSingleLine: classNames.dismissSingleLine,
+    expandSingleLine: classNames.expandSingleLine,
+    dismissButton: [classNames.dismissButton, dismissAndExpandButtonStyle],
+    dismissal: [classNames.dismissButton, dismissAndExpandButtonStyle],
+    expand: [classNames.expandButton, dismissAndExpandButtonStyle],
+    expandButton: [classNames.expandButton, dismissAndExpandButtonStyle],
     actions: [
       isMultiline ? classNames.actions : classNames.actionsSingleline,
       {
@@ -237,7 +247,7 @@ export const getStyles = (props: IMessageBarStyleProps): IMessageBarStyles => {
       isMultiline && {
         marginBottom: 8
       },
-      onDismiss &&
+      hasOnDismiss &&
         !isMultiline && {
           marginRight: 0
         }

@@ -26,7 +26,7 @@ export interface IMessageBarProps extends React.HTMLAttributes<HTMLElement> {
 
   /**
    * Actions to show on the right side of the message bar.
-   * It's recommended to use `MessageBarButton`s wrapped in a `div` or fragment for this param.
+   * It's recommended to use `MessageBarButton`s wrapped in a `div` for this param.
    */
   actions?: JSX.Element;
 
@@ -44,6 +44,10 @@ export interface IMessageBarProps extends React.HTMLAttributes<HTMLElement> {
   /**
    * Determines if the message bar can display multiple lines of text.
    * If false, and the text overflows over buttons or to another line, it is clipped.
+   *
+   * By default, when `isMultiline` is false, there's no expand button available to view the
+   * whole text. An expand button can be shown by setting `showExpandButton: true` (this should
+   * be used sparingly).
    * @defaultvalue true
    */
   isMultiline?: boolean;
@@ -54,15 +58,33 @@ export interface IMessageBarProps extends React.HTMLAttributes<HTMLElement> {
   dismissButtonAriaLabel?: string;
 
   /**
-   * Determines if the message bar text is truncated.
-   * If true, a button will render to toggle between a single line view and multiline view.
-   * This prop is for single line message bars with no buttons only in a limited space scenario.
+   * When `isMultiline` is false, this setting determines whether an expand button is shown
+   * (this should be used sparingly).
+   *
+   * This setting is mutually exclusive with `actions` and `isMultiline: true`, and will be
+   * ignored if either of those is set.
    * @defaultvalue false
+   */
+  showExpandButton?: boolean;
+
+  /**
+   * Determines if the message bar text is truncated (this should be used sparingly).
+   * If true, a button will render to toggle between a single line view and multiline view.
+   *
+   * This setting is mutually exclusive with `actions` and `isMultiline: true`, and will be
+   * ignored if either of those is set.
+   * @defaultvalue false
+   * @deprecated Use `showExpandButton`
    */
   truncated?: boolean;
 
   /**
    * Aria label on the expand button if `truncated` is true.
+   */
+  expandButtonAriaLabel?: string;
+
+  /**
+   * @deprecated Use `expandButtonAriaLabel`
    */
   overflowButtonAriaLabel?: string;
 
@@ -87,25 +109,26 @@ export interface IMessageBarProps extends React.HTMLAttributes<HTMLElement> {
  */
 export interface IMessageBarStyleProps
   extends Required<Pick<IMessageBarProps, 'theme'>>,
-    Pick<IMessageBarProps, 'className' | 'messageBarType' | 'isMultiline'> {
+    Pick<IMessageBarProps, 'className' | 'messageBarType' | 'isMultiline' | 'showExpandButton'> {
   /**
    * Whether the MessageBar contains a dismiss button.
    */
+  hasOnDismiss?: boolean;
+  /** @deprecated Use `hasOnDismiss` */
   onDismiss?: boolean;
 
-  /**
-   * Whether the text is truncated.
-   */
+  /** @deprecated Use `showExpandButton` */
   truncated?: boolean;
 
   /**
-   * Whether the single line MessageBar is being expanded.
+   * Whether the truncated (single-line) MessageBar has been expanded.
+   * Only applies for MessageBars with `truncated: true`.
    */
+  isExpanded?: boolean;
+  /** @deprected Use `isExpanded` */
   expandSingleLine?: boolean;
 
-  /**
-   * Whether the MessageBar contains any action elements.
-   */
+  /** @deprecated No longer used */
   actions?: boolean;
 }
 
@@ -146,15 +169,22 @@ export interface IMessageBarStyles {
   /**
    * Style set for the optional dismiss IconButton.
    */
+  dismissButton?: IStyle;
+
+  /** @deprecated Use `dismissButton` */
   dismissal?: IStyle;
 
   /**
    * Style set for the IconButton used to expand and collapse the MessageBar.
    */
+  expandButton?: IStyle;
+
+  /** @deprecated Use `expandButton` */
   expand?: IStyle;
 
   /**
-   * Style set for the element containing the dismiss button in single-line mode.
+   * Style set for the element containing the dismiss button.
+   * Only applies in single-line mode (`showExpandButton` is true and `isMultiline` is false).
    */
   dismissSingleLine?: IStyle;
 

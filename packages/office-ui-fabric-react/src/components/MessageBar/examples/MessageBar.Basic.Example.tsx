@@ -31,16 +31,16 @@ export const MessageBarBasicExample: React.StatelessComponent = () => (
 
     <StackItem>
       <Label>
-        Blocked MessageBar - single line, with dismiss button and truncated text. Truncation is not available if you use action buttons or
-        multiline and should be used sparingly.
+        Blocked MessageBar - single line, with dismiss button and expand button to show the rest of the text. Showing an expand button
+        should be used sparingly and is not available if <code>actions</code> are provided.
       </Label>
       <MessageBar
         messageBarType={MessageBarType.blocked}
         isMultiline={false}
         onDismiss={log('test')}
         dismissButtonAriaLabel="Close"
-        truncated={true}
-        overflowButtonAriaLabel="See more"
+        showExpandButton={true}
+        expandButtonAriaLabel="See more"
       >
         Blocked lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi luctus, purus a lobortis tristique, odio augue pharetra
         metus, ac placerat nunc mi nec dui. Vestibulum aliquam et nunc semper scelerisque. Curabitur vitae orci nec quam condimentum
