@@ -6,5 +6,8 @@ import { useConst } from './useConst';
  * @param prefix - Optional prefix for the ID
  */
 export function useId(prefix?: string): string {
+  // The getId call is intentionally done within an initializer function (not directly) because
+  // calling getId has the side effect of updating the global constant for the next ID value.
+  // While this isn't likely to cause problems in practice, it's better to avoid the extra updates.
   return useConst(() => getId(prefix));
 }
