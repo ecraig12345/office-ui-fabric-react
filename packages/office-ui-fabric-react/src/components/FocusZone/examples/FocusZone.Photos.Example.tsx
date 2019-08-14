@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { FocusZone } from 'office-ui-fabric-react/lib/FocusZone';
 import { Image } from 'office-ui-fabric-react/lib/Image';
-import { getId } from 'office-ui-fabric-react/lib/Utilities';
+import { getId, useConst } from 'office-ui-fabric-react/lib/Utilities';
 import { mergeStyleSets, getTheme } from 'office-ui-fabric-react/lib/Styling';
 
 const theme = getTheme();
@@ -47,10 +47,10 @@ interface IPhoto {
 
 export const FocusZonePhotosExample: React.FunctionComponent = () => {
   //  Initialize the items when the component is first rendered (same array will be reused)
-  const [items] = React.useState(() => _getItems());
+  const items = useConst(() => _getItems());
   return (
     <FocusZone as="ul" className={classNames.photoList}>
-      {items.map((item: IPhoto, index) => (
+      {items.map((item: IPhoto, index: number) => (
         <li
           key={item.id}
           className={classNames.photoCell}
