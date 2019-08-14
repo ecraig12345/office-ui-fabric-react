@@ -1,7 +1,12 @@
 import * as React from 'react';
 import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
-import { DatePicker, DayOfWeek, IDatePickerStrings } from '@uifabric/date-time';
-import './DatePicker.Examples.scss';
+import { DatePicker, IDatePickerStrings } from '@uifabric/date-time';
+import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
+
+const controlClass = mergeStyles({
+  marginBottom: 15,
+  maxWidth: 300
+});
 
 const DayPickerStrings: IDatePickerStrings = {
   months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -17,55 +22,31 @@ const DayPickerStrings: IDatePickerStrings = {
   prevYearRangeAriaLabel: 'Previous year range',
   nextYearRangeAriaLabel: 'Next year range',
   closeButtonAriaLabel: 'Close',
-
   isRequiredErrorMessage: 'Start date is required.',
   invalidInputErrorMessage: 'Invalid date format.'
 };
 
-export interface IDatePickerInputExampleState {
-  firstDayOfWeek?: DayOfWeek;
-  value?: Date | null;
-}
+export const DatePickerInputExample: React.FunctionComponent = () => {
+  // tslint:disable:jsx-no-lambda
+  const [value, setValue] = React.useState<Date | null | undefined>();
 
-export class DatePickerInputExample extends React.Component<{}, IDatePickerInputExampleState> {
-  constructor(props: {}) {
-    super(props);
-
-    this.state = {
-      firstDayOfWeek: DayOfWeek.Sunday,
-      value: null
-    };
-  }
-
-  public render(): JSX.Element {
-    const { firstDayOfWeek, value } = this.state;
-    const desc = 'This field is required. One of the support input formats is year dash month dash day.';
-    return (
-      <div className="docs-DatePickerExample">
-        <p>
-          Text input allowed by default when use keyboard navigation. Mouse click the TextField will popup DatePicker, click the TextField
-          again will dismiss the DatePicker and allow text input.
-        </p>
-        <DatePicker
-          label="Start date"
-          isRequired={false}
-          allowTextInput={true}
-          ariaLabel={desc}
-          firstDayOfWeek={firstDayOfWeek}
-          strings={DayPickerStrings}
-          value={value!}
-          onSelectDate={this._onSelectDate}
-        />
-        <DefaultButton onClick={this._onClick} text="Clear" />
-      </div>
-    );
-  }
-
-  private _onSelectDate = (date: Date | null | undefined): void => {
-    this.setState({ value: date });
-  };
-
-  private _onClick = (): void => {
-    this.setState({ value: null });
-  };
-}
+  return (
+    <div>
+      <p>
+        Text input is allowed by default when using keyboard navigation. Clicking the TextField will pop up the DatePicker. Clicking the
+        TextField again will dismiss the DatePicker and allow text input.
+      </p>
+      <DatePicker
+        label="Start date"
+        isRequired={false}
+        allowTextInput={true}
+        ariaLabel="This field is required. One of the support input formats is year dash month dash day."
+        strings={DayPickerStrings}
+        value={value!}
+        onSelectDate={setValue}
+        className={controlClass}
+      />
+      <DefaultButton onClick={() => setValue(null)} text="Clear" />
+    </div>
+  );
+};

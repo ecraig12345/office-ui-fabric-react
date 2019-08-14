@@ -1,49 +1,41 @@
 import * as React from 'react';
 import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
-import { DatePicker, DayOfWeek, IDatePickerStrings } from 'office-ui-fabric-react/lib/DatePicker';
-import './DatePicker.Examples.scss';
+import { DatePicker, IDatePickerStrings } from 'office-ui-fabric-react/lib/DatePicker';
+import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
+
+const controlClass = mergeStyles({
+  marginBottom: 15,
+  maxWidth: 300
+});
 
 const DayPickerStrings: IDatePickerStrings = {
   months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-
   shortMonths: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-
   days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-
   shortDays: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-
   goToToday: 'Go to today',
   prevMonthAriaLabel: 'Go to previous month',
   nextMonthAriaLabel: 'Go to next month',
   prevYearAriaLabel: 'Go to previous year',
   nextYearAriaLabel: 'Go to next year',
   closeButtonAriaLabel: 'Close date picker',
-
   isRequiredErrorMessage: 'Start date is required.',
-
   invalidInputErrorMessage: 'Invalid date format.'
 };
 
 export interface IDatePickerFormatExampleState {
-  firstDayOfWeek?: DayOfWeek;
   value?: Date | null;
 }
 
 export class DatePickerFormatExample extends React.Component<{}, IDatePickerFormatExampleState> {
-  public constructor(props: {}) {
-    super(props);
-
-    this.state = {
-      firstDayOfWeek: DayOfWeek.Sunday,
-      value: null
-    };
-  }
+  public state: IDatePickerFormatExampleState = {
+    value: null
+  };
 
   public render(): JSX.Element {
-    const { firstDayOfWeek, value } = this.state;
-    const desc = 'This field is required. One of the support input formats is year dash month dash day.';
+    const { value } = this.state;
     return (
-      <div className="docs-DatePickerExample">
+      <div>
         <p>
           Applications can customize how dates are formatted and parsed. Formatted dates can be ambiguous, so the control will avoid parsing
           the formatted strings of dates selected using the UI when text input is allowed. In this example, we are formatting and parsing
@@ -53,15 +45,15 @@ export class DatePickerFormatExample extends React.Component<{}, IDatePickerForm
           label="Start date"
           isRequired={false}
           allowTextInput={true}
-          ariaLabel={desc}
-          firstDayOfWeek={firstDayOfWeek}
+          ariaLabel="This field is required. One of the support input formats is year dash month dash day."
           strings={DayPickerStrings}
           value={value!}
           onSelectDate={this._onSelectDate}
           formatDate={this._onFormatDate}
           parseDateFromString={this._onParseDateFromString}
+          className={controlClass}
         />
-        <DefaultButton onClick={this._onClick} text="Clear" />
+        <DefaultButton onClick={this._onClearClick} text="Clear" />
         <div>{(this.state.value || '').toString()}</div>
       </div>
     );
@@ -71,7 +63,7 @@ export class DatePickerFormatExample extends React.Component<{}, IDatePickerForm
     this.setState({ value: date });
   };
 
-  private _onClick = (): void => {
+  private _onClearClick = (): void => {
     this.setState({ value: null });
   };
 

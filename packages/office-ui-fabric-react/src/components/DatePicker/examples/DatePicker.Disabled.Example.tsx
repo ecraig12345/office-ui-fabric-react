@@ -1,16 +1,17 @@
 import * as React from 'react';
-import { DatePicker, DayOfWeek, IDatePickerStrings } from 'office-ui-fabric-react/lib/DatePicker';
-import './DatePicker.Examples.scss';
+import { DatePicker, IDatePickerStrings } from 'office-ui-fabric-react/lib/DatePicker';
+import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
+
+const controlClass = mergeStyles({
+  marginBottom: 15,
+  maxWidth: 300
+});
 
 const DayPickerStrings: IDatePickerStrings = {
   months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-
   shortMonths: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-
   days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-
   shortDays: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-
   goToToday: 'Go to today',
   prevMonthAriaLabel: 'Go to previous month',
   nextMonthAriaLabel: 'Go to next month',
@@ -19,41 +20,25 @@ const DayPickerStrings: IDatePickerStrings = {
   closeButtonAriaLabel: 'Close date picker'
 };
 
-export interface IDatePickerDisabledExampleState {
-  firstDayOfWeek?: DayOfWeek;
-}
+export const DatePickerDisabledExample: React.FunctionComponent = () => {
+  return (
+    <div>
+      <DatePicker
+        strings={DayPickerStrings}
+        placeholder="Select a date..."
+        ariaLabel="Select a date"
+        disabled={true}
+        className={controlClass}
+      />
 
-export class DatePickerDisabledExample extends React.Component<{}, IDatePickerDisabledExampleState> {
-  public constructor(props: {}) {
-    super(props);
-
-    this.state = {
-      firstDayOfWeek: DayOfWeek.Sunday
-    };
-  }
-
-  public render() {
-    const { firstDayOfWeek } = this.state;
-
-    return (
-      <div className="docs-DatePickerExample">
-        <DatePicker
-          firstDayOfWeek={firstDayOfWeek}
-          strings={DayPickerStrings}
-          placeholder="Select a date..."
-          ariaLabel="Select a date"
-          disabled={true}
-        />
-
-        <DatePicker
-          label="Disabled (with label)"
-          firstDayOfWeek={firstDayOfWeek}
-          strings={DayPickerStrings}
-          placeholder="Select a date..."
-          ariaLabel="Select a date"
-          disabled={true}
-        />
-      </div>
-    );
-  }
-}
+      <DatePicker
+        label="Disabled (with label)"
+        strings={DayPickerStrings}
+        placeholder="Select a date..."
+        ariaLabel="Select a date"
+        disabled={true}
+        className={controlClass}
+      />
+    </div>
+  );
+};
