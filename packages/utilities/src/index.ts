@@ -36,6 +36,8 @@ export * from './customizations/mergeSettings';
 export * from './dom';
 export * from './extendComponent';
 export * from './focus';
+export * from './hooks/useId';
+export * from './hooks/useConst';
 export * from './hoist';
 export * from './hoistStatics';
 export * from './initializeComponentRef';
