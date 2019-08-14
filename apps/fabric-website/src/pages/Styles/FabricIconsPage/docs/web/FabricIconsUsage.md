@@ -24,7 +24,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 
-const MyIcon = () => <Icon iconName="CompassNW" className="ms-IconExample" />;
+const MyIcon = () => <Icon iconName="CompassNW" className="my-class" />;
 
 ReactDOM.render(<MyIcon />, document.body.firstChild);
 ```
