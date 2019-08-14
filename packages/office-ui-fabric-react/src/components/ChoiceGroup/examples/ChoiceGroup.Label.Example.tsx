@@ -6,9 +6,10 @@ import { getId } from 'office-ui-fabric-react/lib/Utilities';
 export const ChoiceGroupLabelExample: React.FunctionComponent = () => {
   // Use getId() to ensure that the label ID is unique on the page. Notes:
   // - It's also okay to use a plain string without getId() and manually ensure its uniqueness.
-  // - In a function component, we get the ID inside React.useMemo() so that it will stay the same.
-  //   (In a class component, you'd create the ID in the constructor and save it in a private member.)
-  const labelId = React.useMemo(() => getId('labelElement'), []);
+  // - In a function component, we generate the ID inside an initializer function passed to
+  //   React.useState() so that it will stay the same. (In a class component, you'd create the ID
+  //   in the constructor and save it in a private member.)
+  const [labelId] = React.useState(() => getId('labelElement'));
 
   return (
     <div>
