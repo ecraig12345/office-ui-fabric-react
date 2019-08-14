@@ -1,0 +1,8 @@
+{
+  "type": "minor",
+  "comment": "Add useConst and useId hooks",
+  "packageName": "@uifabric/utilities",
+  "email": "elcraig@microsoft.com",
+  "commit": "e7599f7bf533630f088c9a82705ab0518ba99f04",
+  "date": "2019-08-14T22:36:24.725Z"
+}

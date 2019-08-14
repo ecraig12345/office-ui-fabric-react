@@ -1,0 +1,8 @@
+{
+  "type": "patch",
+  "comment": "Use useId in ChoiceGroup example",
+  "packageName": "office-ui-fabric-react",
+  "email": "elcraig@microsoft.com",
+  "commit": "e7599f7bf533630f088c9a82705ab0518ba99f04",
+  "date": "2019-08-14T22:36:17.794Z"
+}
