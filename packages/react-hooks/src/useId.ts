@@ -1,9 +1,13 @@
-import { getId } from '../object';
+import { getId } from '@uifabric/utilities';
 import { useConst } from './useConst';
 
 /**
- * Hook to generate a unique id in the global scope (spanning across duplicate copies of the same library).
+ * Hook to generate a unique ID in the global scope (spanning across duplicate copies of the same library).
+ *
  * @param prefix - Optional prefix for the ID
+ * @returns The ID
+ *
+ * {@docCategory Hooks}
  */
 export function useId(prefix?: string): string {
   // The getId call is intentionally done within an initializer function (not directly) because

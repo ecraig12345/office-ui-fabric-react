@@ -1,14 +1,15 @@
 import * as path from 'path';
 import { generateJson } from './PageJsonGenerator';
 
-// Generate JSON for office-ui-fabric-react, react-cards, styling, utilities, and merge-styles
+// Generate JSON for office-ui-fabric-react, react-cards, styling, utilities, merge-styles, and react-hooks
 export function generatePageJsonFiles(): void {
   generateJson([
     {
       apiJsonPaths: [
         path.resolve(__dirname, '../../../packages/styling/dist/styling.api.json'),
         path.resolve(__dirname, '../../../packages/utilities/dist/utilities.api.json'),
-        path.resolve(__dirname, '../../../packages/merge-styles/dist/merge-styles.api.json')
+        path.resolve(__dirname, '../../../packages/merge-styles/dist/merge-styles.api.json'),
+        path.resolve(__dirname, '../../../packages/react-hooks/dist/react-hooks.api.json')
       ],
       pageJsonFolderPath: path.join(__dirname, '../lib/pages/references'),
       pageNames: [],

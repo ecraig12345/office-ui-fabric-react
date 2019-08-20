@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ChoiceGroup, IChoiceGroupOption } from 'office-ui-fabric-react/lib/ChoiceGroup';
 import { Label } from 'office-ui-fabric-react/lib/Label';
-import { useId } from 'office-ui-fabric-react/lib/Utilities';
+import { useId } from '@uifabric/react-hooks';
 
 export const ChoiceGroupLabelExample: React.FunctionComponent = () => {
   // Use useId() to ensure that the label ID is unique on the page. It's also okay to use a plain

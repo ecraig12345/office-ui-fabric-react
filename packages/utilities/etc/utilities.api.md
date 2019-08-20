@@ -1147,12 +1147,6 @@ export const trProperties: string[];
 export function unhoistMethods(source: any, methodNames: string[]): void;
 
 // @public
-export function useConst<T>(initialValue: T | (() => T)): T;
-
-// @public
-export function useId(prefix?: string): string;
-
-// @public
 export function values<T>(obj: any): T[];
 
 // @public

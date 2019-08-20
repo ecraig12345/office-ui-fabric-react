@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { FocusZone } from 'office-ui-fabric-react/lib/FocusZone';
 import { Image } from 'office-ui-fabric-react/lib/Image';
-import { getId, useConst } from 'office-ui-fabric-react/lib/Utilities';
+import { getId } from 'office-ui-fabric-react/lib/Utilities';
+import { useConst } from '@uifabric/react-hooks';
 import { mergeStyleSets, getTheme } from 'office-ui-fabric-react/lib/Styling';
 
 const theme = getTheme();
