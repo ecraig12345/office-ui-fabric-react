@@ -126,7 +126,8 @@ export const categories: { Other?: ICategory; [name: string]: ICategory } = {
     Themes: {}
   },
   Experimental: {
-    Card: {}
+    Card: {},
+    Hooks: {}
   },
   References: {}
   // The "Other" category can be useful for local development, but it currently can also cause
