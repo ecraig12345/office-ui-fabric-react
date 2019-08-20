@@ -153,6 +153,10 @@ function readFileCallback(error, data, templateName, outputFilePath, callback, r
         console.warn(`Could not determine appropriate version of ${package} from @uifabric/experiments package.json`);
       }
     }
+    view.typesReactPeerDep = experimentsPackageJson.peerDependencies['@types/react'];
+    view.typesReactDomPeerDep = experimentsPackageJson.peerDependencies['@types/react-dom'];
+    view.reactPeerDep = experimentsPackageJson.peerDependencies.react;
+    view.reactDomPeerDep = experimentsPackageJson.peerDependencies['react-dom'];
   }
 
   const fileData = mustache.render(data, view);
@@ -176,7 +180,6 @@ function makePackage(error) {
     return;
   }
 
-  fs.mkdirSync(`${packagePath}/.vscode`);
   fs.mkdirSync(`${packagePath}/config`);
   fs.mkdirSync(`${packagePath}/src`);
   fs.mkdirSync(`${packagePath}/src/common`);
