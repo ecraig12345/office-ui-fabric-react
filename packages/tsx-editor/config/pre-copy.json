@@ -1,5 +1,19 @@
 {
   "copyTo": {
-    "dist": ["./index.html", "react/umd/react.development.js", "react-dom/umd/react-dom.development.js"]
+    "dist": ["./index.html", "react/umd/react.development.js", "react-dom/umd/react-dom.development.js"],
+    "dist/example-src": [
+      "office-ui-fabric-react/src/common/TestImages.ts",
+      "office-ui-fabric-react/src/components/ExtendedPicker/examples/PeopleExampleData.ts",
+      "office-ui-fabric-react/src/components/Facepile/examples/FacepileExampleData.ts",
+      "office-ui-fabric-react/src/components/pickers/PeoplePicker/examples/PeoplePickerExampleData.ts",
+      "office-ui-fabric-react/src/utilities/exampleData.ts"
+    ],
+    "dist/example-types": [
+      "office-ui-fabric-react/lib/common/TestImages.d.ts",
+      "office-ui-fabric-react/lib/components/ExtendedPicker/examples/PeopleExampleData.d.ts",
+      "office-ui-fabric-react/lib/components/Facepile/examples/FacepileExampleData.d.ts",
+      "office-ui-fabric-react/lib/components/pickers/PeoplePicker/examples/PeoplePickerExampleData.d.ts",
+      "office-ui-fabric-react/lib/utilities/exampleData.d.ts"
+    ]
   }
 }
