@@ -1,0 +1,8 @@
+{
+  "type": "patch",
+  "comment": "Remove some relative imports from examples",
+  "packageName": "@uifabric/experiments",
+  "email": "elcraig@microsoft.com",
+  "commit": "bded08c678dd9cc5da341f9430afe5a191f0be43",
+  "date": "2019-08-24T02:30:28.061Z"
+}

@@ -1,8 +1,41 @@
-import { PersonaPresence } from 'office-ui-fabric-react/lib/Persona';
-import { IExtendedPersonaProps } from 'office-ui-fabric-react/lib/SelectedItemsList';
-import { TestImages } from 'office-ui-fabric-react/lib/common/TestImages';
+import { TestImages } from './testImages';
 
-export const people: (IExtendedPersonaProps & { key: string | number })[] = [
+/**
+ * For use in this package only.
+ * Partial mirror of IExtendedPersonaProps avoid a circular dependency.
+ * If the real interface changes and this one starts causing compiler errors, update it.
+ * @internal
+ */
+export interface IExampleExtendedPersonaProps {
+  imageUrl?: string;
+  imageInitials?: string;
+  text?: string;
+  secondaryText?: string;
+  tertiaryText?: string;
+  optionalText?: string;
+  presence?: number;
+  isValid: boolean;
+  canExpand?: boolean;
+}
+
+/**
+ * For use in this package only.
+ * Mirror of PersonaPresence avoid a circular dependency.
+ * If the real enum changes and this one starts causing compiler errors, update it.
+ * @internal
+ */
+enum PersonaPresence {
+  none = 0,
+  offline = 1,
+  online = 2,
+  away = 3,
+  dnd = 4,
+  blocked = 5,
+  busy = 6
+}
+
+/** Sample people and groups @internal */
+export const people: (IExampleExtendedPersonaProps & { key: string | number })[] = [
   {
     key: 1,
     imageUrl: TestImages.personaFemale,
@@ -459,8 +492,11 @@ export const people: (IExtendedPersonaProps & { key: string | number })[] = [
   }
 ];
 
-export const mru: IExtendedPersonaProps[] = people.slice(0, 5);
+/** @internal */
+export const mru = people.slice(0, 5);
 
-export const groupOne: IExtendedPersonaProps[] = people.slice(6, 10);
+/** @internal */
+export const groupOne = people.slice(6, 10);
 
-export const groupTwo: IExtendedPersonaProps[] = people.slice(11, 16);
+/** @internal */
+export const groupTwo = people.slice(11, 16);

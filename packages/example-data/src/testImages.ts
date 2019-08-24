@@ -1,5 +1,6 @@
 const baseProductionCdnUrl = 'https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/';
 
+/** @internal */
 export const TestImages = {
   choiceGroupBarUnselected: baseProductionCdnUrl + 'choicegroup-bar-unselected.png',
   choiceGroupBarSelected: baseProductionCdnUrl + 'choicegroup-bar-selected.png',
