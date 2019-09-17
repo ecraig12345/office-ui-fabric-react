@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "target": "es5",
+    "module": "commonjs",
+    "declaration": true,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "noUnusedLocals": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "preserveConstEnums": true,
+    "lib": ["es5", "dom"],
+    "types": [],
+    "paths": {
+      "@uifabric/monaco-bundle/lib/*": ["./src/*"],
+      "@uifabric/monaco-bundle": ["./src"]
+    }
+  },
+  "include": ["src"]
+}

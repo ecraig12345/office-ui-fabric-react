@@ -1,0 +1,27 @@
+{
+  "name": "@uifabric/monaco-bundle",
+  "version": "0.1.0",
+  "description": "Bundle of Monaco for easy consumption without additional loaders.",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "sideEffects": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OfficeDev/office-ui-fabric-react"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "just-scripts build",
+    "clean": "just-scripts clean",
+    "just": "just-scripts"
+  },
+  "devDependencies": {
+    "@uifabric/build": "^7.0.0",
+    "monaco-editor": "0.17.1",
+    "resolve": "^1.7.1",
+    "webpack-bundle-analyzer": "^3.0.4"
+  },
+  "dependencies": {
+    "tslib": "^1.7.1"
+  }
+}

@@ -1,7 +1,9 @@
-import * as monaco from 'monaco-editor';
+import * as monaco from '@uifabric/monaco-bundle';
 import * as React from 'react';
 import { IEditorProps, ITextModel } from './Editor.types';
 import { codeFontFamily } from './TypeScriptSnippet';
+
+import '@uifabric/monaco-bundle/dist/typescript';
 
 const typescript = monaco.languages.typescript;
 const typescriptDefaults = typescript.typescriptDefaults;
