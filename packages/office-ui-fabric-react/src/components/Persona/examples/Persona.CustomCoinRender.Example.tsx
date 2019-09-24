@@ -1,6 +1,12 @@
 import * as React from 'react';
-import { IPersonaProps, IPersonaSharedProps, Persona, PersonaSize, PersonaPresence } from 'office-ui-fabric-react/lib/Persona';
-import { Stack } from 'office-ui-fabric-react/lib/Stack';
+import {
+  IPersonaProps,
+  IPersonaSharedProps,
+  Persona,
+  PersonaSize,
+  PersonaPresence,
+  IPersonaStyles
+} from 'office-ui-fabric-react/lib/Persona';
 import { TestImages } from '@uifabric/example-data';
 import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 
@@ -8,6 +14,7 @@ const customCoinClass = mergeStyles({
   borderRadius: 20,
   display: 'block'
 });
+const personaStyles: Partial<IPersonaStyles> = { root: { marginTop: 10 } };
 
 const examplePersona: IPersonaSharedProps = {
   imageInitials: 'TR',
@@ -18,8 +25,8 @@ const examplePersona: IPersonaSharedProps = {
 
 export const PersonaCustomCoinRenderExample: React.FunctionComponent = () => {
   return (
-    <Stack tokens={{ childrenGap: 10 }}>
-      <div>Custom render function in place of persona coin's image</div>
+    <div>
+      Custom render function in place of persona coin's image
       <Persona
         {...examplePersona}
         size={PersonaSize.size72}
@@ -28,8 +35,9 @@ export const PersonaCustomCoinRenderExample: React.FunctionComponent = () => {
         imageAlt="Custom Coin Image"
         imageUrl={TestImages.personaMale}
         coinSize={72}
+        styles={personaStyles}
       />
-    </Stack>
+    </div>
   );
 };
 

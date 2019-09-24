@@ -3,6 +3,13 @@ import { ChoiceGroup, IChoiceGroupOption } from 'office-ui-fabric-react/lib/Choi
 import { Label } from 'office-ui-fabric-react/lib/Label';
 import { useId } from '@uifabric/react-hooks';
 
+const options: IChoiceGroupOption[] = [
+  { key: 'A', text: 'Option A' },
+  { key: 'B', text: 'Option B' },
+  { key: 'C', text: 'Option C', disabled: true },
+  { key: 'D', text: 'Option D' }
+];
+
 export const ChoiceGroupLabelExample: React.FunctionComponent = () => {
   // Use the useId() hook to ensure that the label ID is unique on the page. Notes:
   // - It's also okay to use a plain string and manually ensure its uniqueness.
@@ -15,30 +22,7 @@ export const ChoiceGroupLabelExample: React.FunctionComponent = () => {
       <Label id={labelId} required={true}>
         Custom label
       </Label>
-      <ChoiceGroup
-        defaultSelectedKey="B"
-        options={[
-          {
-            key: 'A',
-            text: 'Option A'
-          },
-          {
-            key: 'B',
-            text: 'Option B'
-          },
-          {
-            key: 'C',
-            text: 'Option C',
-            disabled: true
-          },
-          {
-            key: 'D',
-            text: 'Option D'
-          }
-        ]}
-        onChange={_onChange}
-        ariaLabelledBy={labelId}
-      />
+      <ChoiceGroup defaultSelectedKey="B" options={options} onChange={_onChange} ariaLabelledBy={labelId} />
     </div>
   );
 };

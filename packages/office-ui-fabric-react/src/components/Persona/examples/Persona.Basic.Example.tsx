@@ -1,35 +1,36 @@
 import * as React from 'react';
 import { IPersonaSharedProps, Persona, PersonaSize, PersonaPresence } from 'office-ui-fabric-react/lib/Persona';
-import { Checkbox } from 'office-ui-fabric-react/lib/Checkbox';
+import { Toggle } from 'office-ui-fabric-react/lib/Toggle';
 import { Label } from 'office-ui-fabric-react/lib/Label';
 import { Stack } from 'office-ui-fabric-react/lib/Stack';
 import { TestImages } from '@uifabric/example-data';
+import { useToggle } from '@uifabric/react-hooks';
+
+const examplePersona: IPersonaSharedProps = {
+  imageUrl: TestImages.personaFemale,
+  imageInitials: 'AL',
+  text: 'Annie Lindqvist',
+  secondaryText: 'Software Engineer',
+  tertiaryText: 'In a meeting',
+  optionalText: 'Available at 4:00pm'
+};
 
 export const PersonaBasicExample: React.FunctionComponent = () => {
-  const [renderDetails, updateRenderDetails] = React.useState(true);
-  const onChange = (ev: any, checked: boolean | undefined) => {
-    updateRenderDetails(!!checked);
-  };
-
-  const examplePersona: IPersonaSharedProps = {
-    imageUrl: TestImages.personaFemale,
-    imageInitials: 'AL',
-    text: 'Annie Lindqvist',
-    secondaryText: 'Software Engineer',
-    tertiaryText: 'In a meeting',
-    optionalText: 'Available at 4:00pm'
-  };
+  const [renderDetails, toggleRenderDetails] = useToggle(true);
 
   return (
     <Stack tokens={{ childrenGap: 10 }}>
-      <Checkbox label="Include persona details" checked={renderDetails} onChange={onChange} />
+      <Toggle label="Include persona details" inlineLabel checked={renderDetails} onChange={toggleRenderDetails} />
 
       <Label>Size 8 Persona, with no presence</Label>
       <Persona {...examplePersona} size={PersonaSize.size8} hidePersonaDetails={!renderDetails} />
+
       <Label>Size 8 Persona, with presence</Label>
       <Persona {...examplePersona} size={PersonaSize.size8} presence={PersonaPresence.offline} hidePersonaDetails={!renderDetails} />
+
       <Label>Size 24 Persona</Label>
       <Persona {...examplePersona} size={PersonaSize.size24} presence={PersonaPresence.online} hidePersonaDetails={!renderDetails} />
+
       <Label>Size 32 Persona</Label>
       <Persona {...examplePersona} size={PersonaSize.size32} presence={PersonaPresence.online} hidePersonaDetails={!renderDetails} />
 

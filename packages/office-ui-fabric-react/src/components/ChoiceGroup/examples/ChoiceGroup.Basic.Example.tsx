@@ -1,30 +1,19 @@
 import * as React from 'react';
 import { ChoiceGroup, IChoiceGroupOption } from 'office-ui-fabric-react/lib/ChoiceGroup';
 
+const options: IChoiceGroupOption[] = [
+  { key: 'A', text: 'Option A' },
+  { key: 'B', text: 'Option B' },
+  { key: 'C', text: 'Option C', disabled: true },
+  { key: 'D', text: 'Option D' }
+];
+
 export const ChoiceGroupBasicExample: React.FunctionComponent = () => {
   return (
     <ChoiceGroup
       className="defaultChoiceGroup"
       defaultSelectedKey="B"
-      options={[
-        {
-          key: 'A',
-          text: 'Option A'
-        },
-        {
-          key: 'B',
-          text: 'Option B'
-        },
-        {
-          key: 'C',
-          text: 'Option C',
-          disabled: true
-        },
-        {
-          key: 'D',
-          text: 'Option D'
-        }
-      ]}
+      options={options}
       onChange={_onChange}
       label="Pick one"
       required={true}

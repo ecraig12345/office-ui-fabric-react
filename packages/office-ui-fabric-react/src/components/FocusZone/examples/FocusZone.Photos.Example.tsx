@@ -5,38 +5,6 @@ import { getId } from 'office-ui-fabric-react/lib/Utilities';
 import { useConst } from '@uifabric/react-hooks';
 import { mergeStyleSets, getTheme } from 'office-ui-fabric-react/lib/Styling';
 
-const theme = getTheme();
-const classNames = mergeStyleSets({
-  photoList: {
-    display: 'inline-block',
-    border: '1px solid ' + theme.palette.neutralTertiary,
-    padding: 10,
-    lineHeight: 0,
-    overflow: 'hidden'
-  },
-  photoCell: {
-    position: 'relative',
-    display: 'inline-block',
-    padding: 2,
-    boxSizing: 'border-box',
-    selectors: {
-      '&:focus': {
-        outline: 'none'
-      },
-      '&:focus:after': {
-        content: '""',
-        position: 'absolute',
-        right: 4,
-        left: 4,
-        top: 4,
-        bottom: 4,
-        border: '1px solid ' + theme.palette.white,
-        outline: '2px solid ' + theme.palette.themePrimary
-      }
-    }
-  }
-});
-
 const MAX_COUNT = 20;
 
 interface IPhoto {
@@ -47,8 +15,10 @@ interface IPhoto {
 }
 
 export const FocusZonePhotosExample: React.FunctionComponent = () => {
-  //  Initialize the items when the component is first rendered (same array will be reused)
+  // Initialize the items when the component is first rendered (same array will be reused)
   const items = useConst(_getItems);
+  const classNames = useConst(_getClassNames);
+
   return (
     <FocusZone as="ul" className={classNames.photoList}>
       {items.map((item: IPhoto, index: number) => (
@@ -82,4 +52,38 @@ function _getItems(): IPhoto[] {
   }
 
   return items;
+}
+
+function _getClassNames() {
+  const theme = getTheme();
+  return mergeStyleSets({
+    photoList: {
+      display: 'inline-block',
+      border: '1px solid ' + theme.palette.neutralTertiary,
+      padding: 10,
+      lineHeight: 0,
+      overflow: 'hidden'
+    },
+    photoCell: {
+      position: 'relative',
+      display: 'inline-block',
+      padding: 2,
+      boxSizing: 'border-box',
+      selectors: {
+        '&:focus': {
+          outline: 'none'
+        },
+        '&:focus:after': {
+          content: '""',
+          position: 'absolute',
+          right: 4,
+          left: 4,
+          top: 4,
+          bottom: 4,
+          border: '1px solid ' + theme.palette.white,
+          outline: '2px solid ' + theme.palette.themePrimary
+        }
+      }
+    }
+  });
 }

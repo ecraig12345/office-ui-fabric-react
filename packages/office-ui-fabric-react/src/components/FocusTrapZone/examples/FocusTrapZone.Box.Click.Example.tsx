@@ -3,48 +3,34 @@ import * as React from 'react';
 import { FocusTrapZone } from 'office-ui-fabric-react/lib/FocusTrapZone';
 import { Link } from 'office-ui-fabric-react/lib/Link';
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
-import { Toggle, IToggle } from 'office-ui-fabric-react/lib/Toggle';
+import { Toggle } from 'office-ui-fabric-react/lib/Toggle';
 import { Stack } from 'office-ui-fabric-react/lib/Stack';
+import { useToggle } from '@uifabric/react-hooks';
 
-export interface IFocusTrapZoneBoxClickExampleState {
-  useTrapZone: boolean;
-}
+const stackTokens = { childrenGap: 15 };
+const textFieldStyles = { root: { width: 300 } };
 
-export class FocusTrapZoneBoxClickExample extends React.Component<{}, IFocusTrapZoneBoxClickExampleState> {
-  public state: IFocusTrapZoneBoxClickExampleState = { useTrapZone: false };
+export const FocusTrapZoneBoxClickExample: React.FunctionComponent = () => {
+  const [useTrapZone, toggleUseTrapZone] = useToggle(false);
 
-  private _toggle = React.createRef<IToggle>();
+  const stackStyles = React.useMemo(
+    () => ({
+      root: { border: `2px dashed ${useTrapZone ? '#ababab' : 'transparent'}`, padding: 10 }
+    }),
+    [useTrapZone]
+  );
 
-  public render() {
-    const { useTrapZone } = this.state;
+  return (
+    <FocusTrapZone disabled={!useTrapZone} isClickableOutsideFocusTrap={true} forceFocusInsideTrap={false}>
+      <Stack horizontalAlign="start" tokens={stackTokens} styles={stackStyles}>
+        <Toggle label="Use trap zone" checked={useTrapZone} onChange={toggleUseTrapZone} onText="On (toggle to exit)" offText="Off" />
 
-    return (
-      <FocusTrapZone disabled={!useTrapZone} isClickableOutsideFocusTrap={true} forceFocusInsideTrap={false}>
-        <Stack
-          horizontalAlign="start"
-          tokens={{ childrenGap: 15 }}
-          styles={{
-            root: { border: `2px dashed ${useTrapZone ? '#ababab' : 'transparent'}`, padding: 10 }
-          }}
-        >
-          <Toggle
-            label="Use trap zone"
-            componentRef={this._toggle}
-            checked={useTrapZone}
-            onChange={this._onFocusTrapZoneToggleChanged}
-            onText="On (toggle to exit)"
-            offText="Off"
-          />
-          <TextField label="Input inside trap zone" styles={{ root: { width: 300 } }} />
-          <Link href="https://bing.com" target="_blank">
-            Hyperlink inside trap zone
-          </Link>
-        </Stack>
-      </FocusTrapZone>
-    );
-  }
+        <TextField label="Input inside trap zone" styles={textFieldStyles} />
 
-  private _onFocusTrapZoneToggleChanged = (ev: React.MouseEvent<HTMLElement>, checked?: boolean): void => {
-    this.setState({ useTrapZone: !!checked });
-  };
-}
+        <Link href="https://bing.com" target="_blank">
+          Hyperlink inside trap zone
+        </Link>
+      </Stack>
+    </FocusTrapZone>
+  );
+};
