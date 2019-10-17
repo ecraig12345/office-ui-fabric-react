@@ -36,7 +36,7 @@ export interface IFocusZone {
  * FocusZone component props.
  * {@docCategory FocusZone}
  */
-export interface IFocusZoneProps extends React.HTMLAttributes<HTMLElement | FocusZone> {
+export interface IFocusZoneProps<T = HTMLElement> extends React.HTMLAttributes<T | FocusZone> {
   /**
    * Optional callback to access the IFocusZone interface. Use this instead of ref for accessing
    * the public methods and properties of the component.
@@ -67,14 +67,14 @@ export interface IFocusZoneProps extends React.HTMLAttributes<HTMLElement | Focu
 
   /**
    * Element type the root element will use. Default is "div".
-   * @deprecated Use 'as' instead.
+   * @deprecated Use `as` instead.
    */
   elementType?: any /* TODO should be `keyof React.ReactHTML`, tracking with https://github.com/Microsoft/TypeScript/issues/30050 */;
 
   /**
    * A component that should be used as the root element of the FocusZone component.
    */
-  as?: React.ReactType;
+  as?: React.ElementType;
 
   /**
    * If set, will cycle to the beginning of the targets once the user navigates to the

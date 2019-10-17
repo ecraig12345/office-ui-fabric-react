@@ -13,7 +13,6 @@ import {
   getParent,
   getPreviousElement,
   getRTL,
-  htmlElementProperties,
   initializeComponentRef,
   isElementFocusSubZone,
   isElementFocusZone,
@@ -199,9 +198,10 @@ export class FocusZone extends React.Component<IFocusZoneProps> implements IFocu
 
   public render() {
     const { rootProps, ariaDescribedBy, ariaLabelledBy, className } = this.props;
-    const divProps = getNativeProps(this.props, htmlElementProperties);
 
     const Tag = this.props.as || this.props.elementType || 'div';
+
+    const nativeProps = getNativeProps(this.props, typeof Tag === 'string' ? (Tag as keyof React.ReactHTML) : 'div');
 
     // Note, right before rendering/reconciling proceeds, we need to record if focus
     // was in the zone before the update. This helper will track this and, if focus
@@ -214,7 +214,7 @@ export class FocusZone extends React.Component<IFocusZoneProps> implements IFocu
       <Tag
         aria-labelledby={ariaLabelledBy}
         aria-describedby={ariaDescribedBy}
-        {...divProps}
+        {...nativeProps}
         {
           // root props has been deprecated and should get removed.
           // it needs to be marked as "any" since root props expects a div element, but really Tag can

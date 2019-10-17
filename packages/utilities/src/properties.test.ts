@@ -1,5 +1,7 @@
-import { getNativeProps, divProperties } from './properties';
 import * as React from 'react';
+import { getNativeProps, divProperties } from './properties';
+
+// tslint:disable:no-any no-string-literal
 
 describe('getNativeProps', () => {
   it('can pass through data tags', () => {
@@ -9,7 +11,6 @@ describe('getNativeProps', () => {
       },
       divProperties
     );
-    // tslint:disable-next-line:no-any
     expect((result as any)['data-automation-id']).toEqual(1);
   });
 
@@ -20,7 +21,6 @@ describe('getNativeProps', () => {
       },
       divProperties
     );
-    // tslint:disable-next-line:no-any
     expect((result as any)['aria-label']).toEqual(1);
   });
 
@@ -41,7 +41,6 @@ describe('getNativeProps', () => {
     expect(result.className).toEqual('foo');
     expect(typeof result.onClick).toEqual('function');
 
-    // tslint:disable-next-line:no-string-literal no-any
     expect(typeof (result as any)['onClickCapture']).toEqual('function');
   });
 
@@ -55,15 +54,26 @@ describe('getNativeProps', () => {
     );
 
     expect(result.className).toEqual('hi');
-    // tslint:disable-next-line:no-any
-    expect((result as any)['foobar']).toEqual(undefined); // tslint:disable-line:no-string-literal
+    expect((result as any)['foobar']).toEqual(undefined);
   });
 
   it('can exclude properties', () => {
-    // tslint:disable-next-line:no-any
     let result = getNativeProps<any>({ a: 1, b: 2 }, ['a', 'b'], ['b']);
 
     expect(result.a).toBeDefined();
     expect(result.b).toBeUndefined();
+  });
+
+  it('works with tag names', () => {
+    const props = { className: 'foo', value: 'foo', bar: 'nope' };
+    const inputResult = getNativeProps<any>(props, 'input');
+    expect(inputResult.value).toBeDefined();
+    expect(inputResult.className).toBeDefined();
+    expect(inputResult.bar).toBeUndefined();
+
+    const divResult = getNativeProps<any>(props, 'div');
+    expect(divResult.className).toBeDefined();
+    expect(divResult.value).toBeUndefined();
+    expect(divResult.bar).toBeUndefined();
   });
 });

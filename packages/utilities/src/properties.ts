@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { filteredAssign } from './object';
 
 /**
@@ -375,21 +376,46 @@ export const imageProperties = imgProperties;
  */
 export const divProperties = htmlElementProperties;
 
+const propsByTag: { [key: string]: string[] } = {
+  label: labelProperties,
+  audio: audioProperties,
+  video: videoProperties,
+  ol: olProperties,
+  li: liProperties,
+  anchor: anchorProperties,
+  button: buttonProperties,
+  input: inputProperties,
+  textarea: textAreaProperties,
+  select: selectProperties,
+  table: tableProperties,
+  th: thProperties,
+  td: tdProperties,
+  colgroup: colGroupProperties,
+  col: colProperties,
+  form: formProperties,
+  iframe: iframeProperties,
+  img: imgProperties
+};
+
 /**
- * Gets native supported props for an html element provided the allowance set. Use one of the property
- * sets defined (divProperties, buttonPropertes, etc) to filter out supported properties from a given
- * props set. Note that all data- and aria- prefixed attributes will be allowed.
- * NOTE: getNativeProps should always be applied first when adding props to a react component. The
- * non-native props should be applied second. This will prevent getNativeProps from overriding your custom props.
- * For example, if props passed to getNativeProps has an onClick function and getNativeProps is added to
- * the component after an onClick function is added, then the getNativeProps onClick will override it.
+ * Gets supported native props for an HTML element. Use the tag name or one of the property sets
+ * (`divProperties`, `buttonPropertes`, etc) to filter out supported properties from a given
+ * props set. Note that all `data-` and `aria-` prefixed attributes will be allowed.
+ *
+ * NOTE: `getNativeProps` should always be applied first when adding props to a react component. The
+ * non-native props should be applied second. This will prevent `getNativeProps` from overriding your custom props.
+ * For example, if props passed to `getNativeProps` has an `onClick` function and `getNativeProps` is added to
+ * the component after an `onClick` function is added, then the `getNativeProps` `onClick` will override it.
  *
  * @public
  * @param props - The unfiltered input props
- * @param allowedPropsNames-  The array of allowed propnames.
+ * @param allowedProps - The tag name to allow props for, OR the list of allowed props
+ * @param excludedPropNames - Exclude these props from the result
  * @returns The filtered props
  */
-export function getNativeProps<T>(props: {}, allowedPropNames: string[], excludedPropNames?: string[]): T {
+export function getNativeProps<T>(props: {}, allowProps: string[] | keyof React.ReactHTML, excludedPropNames?: string[]): T {
+  const allowedPropNames = Array.isArray(allowProps) ? allowProps : propsByTag[allowProps.toLowerCase()] || htmlElementProperties;
+
   // It'd be great to properly type this while allowing 'aria-` and 'data-' attributes like TypeScript does for JSX attributes,
   // but that ability is hardcoded into the TS compiler with no analog in TypeScript typings.
   // Then we'd be able to enforce props extends native props (including aria- and data- attributes), and then return native props.
