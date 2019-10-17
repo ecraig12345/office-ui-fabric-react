@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { classNamesFunction, initializeComponentRef } from '../../Utilities';
+import { classNamesFunction, initializeComponentRef, KeyCodes } from '../../Utilities';
 import { IColorPickerProps, IColorPickerStyleProps, IColorPickerStyles, IColorPicker } from './ColorPicker.types';
 import { TextField } from '../../TextField';
 import { ColorRectangle } from './ColorRectangle/ColorRectangle';
@@ -23,6 +23,7 @@ import { updateA } from '../../utilities/color/updateA';
 import { updateH } from '../../utilities/color/updateH';
 import { correctRGB } from '../../utilities/color/correctRGB';
 import { correctHex } from '../../utilities/color/correctHex';
+import { clamp } from '../../utilities/color/clamp';
 
 type IRGBHex = Pick<IColor, 'r' | 'g' | 'b' | 'a' | 'hex'>;
 
@@ -53,6 +54,7 @@ export class ColorPickerBase extends React.Component<IColorPickerProps, IColorPi
   private _textChangeHandlers: {
     [K in keyof IRGBHex]: (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue?: string) => void
   };
+  private _textKeyHandlers: { [K in keyof IRGB]: (event: React.KeyboardEvent<HTMLInputElement>) => void };
   private _textLabels: { [K in keyof IRGBHex]?: string };
 
   constructor(props: IColorPickerProps) {
@@ -65,8 +67,12 @@ export class ColorPickerBase extends React.Component<IColorPickerProps, IColorPi
     };
 
     this._textChangeHandlers = {} as any;
+    this._textKeyHandlers = {} as any;
     for (const component of colorComponents) {
       this._textChangeHandlers[component] = this._onTextChange.bind(this, component);
+      if (component !== 'hex') {
+        this._textKeyHandlers[component] = this._onKeyDown.bind(this, component);
+      }
     }
     this._textLabels = {
       r: props.redLabel,
@@ -152,6 +158,7 @@ export class ColorPickerBase extends React.Component<IColorPickerProps, IColorPi
                         className={classNames.input}
                         onChange={this._textChangeHandlers[comp]}
                         onBlur={this._onBlur}
+                        onKeyDown={comp === 'hex' ? undefined : this._textKeyHandlers[comp]}
                         value={this._getDisplayValue(comp)}
                         spellCheck={false}
                         ariaLabel={this._textLabels[comp]}
@@ -296,6 +303,28 @@ export class ColorPickerBase extends React.Component<IColorPickerProps, IColorPi
           this.props.onChange(ev, newColor);
         }
       });
+    }
+  }
+
+  private _onKeyDown(component: keyof IRGB, event: React.KeyboardEvent<HTMLInputElement>): void {
+    const valueStr = this._getDisplayValue(component);
+    const oldValue = Number(valueStr);
+    const max = component === 'a' ? MAX_COLOR_ALPHA : MAX_COLOR_RGB;
+    // don't allow arrows while out of range or nothing valid entered
+    if (!valueStr || clamp(oldValue, max) !== oldValue) {
+      return;
+    }
+
+    let value = oldValue;
+    if (event.which === KeyCodes.down) {
+      value--;
+    } else if (event.which === KeyCodes.up) {
+      value++;
+    }
+    value = clamp(value, max);
+
+    if (value !== oldValue) {
+      this.setState({ editingColor: { component, value: String(value) } });
     }
   }
 }
