@@ -1,0 +1,8 @@
+{
+  "type": "minor",
+  "comment": "Remove separate doc page for PositioningContainer, since it should only ever be used by Coachmark",
+  "packageName": "office-ui-fabric-react",
+  "email": "elcraig@microsoft.com",
+  "commit": "d0fadd0d0b91fdf4934b87682defcf2d263008dd",
+  "date": "2019-11-06T08:27:09.102Z"
+}
