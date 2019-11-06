@@ -54,6 +54,8 @@ export const SiteDefinition: ISiteDefinition<Platforms> = {
     { from: '#/styles/utilities', to: '#/styles/web' },
     { from: '#/controls/web/fluent-theme', to: '#/styles/web/fabric-7' },
     { from: '#/styles/web/fluent-theme', to: '#/styles/web/fabric-7' },
+    { from: '#/controls/web/autofill', to: '#/controls/web/references/autofill' },
+    { from: '#/controls/web/positioningcontainer', to: '#/controls/web/coachmark ' },
     { from: '#/examples', to: '#/controls/web' }
   ],
   messageBars: [
