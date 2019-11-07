@@ -4,7 +4,7 @@ import { Stack } from 'office-ui-fabric-react/lib/Stack';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { ApiReferencesTable, MEDIUM_GAP_SIZE, LARGE_GAP_SIZE } from './ApiReferencesTable';
 import { IApiReferencesTableProps, IApiInterfaceProperty, IMethod, IApiReferencesTableSetProps } from './ApiReferencesTableSet.types';
-import { IEnumTableRowJson, ITableRowJson, ITableJson } from 'office-ui-fabric-react/lib/common/DocPage.types';
+import { IEnumTableRowJson, ITableRowJson, ITableJson, ILinkToken } from 'office-ui-fabric-react/lib/common/DocPage.types';
 import { extractAnchorLink } from '../../utilities/extractAnchorLink';
 import { jumpToAnchor } from '../../utilities/index2';
 
@@ -212,11 +212,24 @@ function _generateTableProps(
   table: ITableJson,
   extraInfo: Required<Pick<IApiReferencesTableProps, 'properties' | 'renderAs'>> & Partial<IApiReferencesTableProps>
 ): IApiReferencesTableProps {
+  const { extendsTokens, kind, name } = table;
   return {
-    title: table.kind && table.kind !== 'typeAlias' ? table.name + ' ' + table.kind : table.name,
-    name: table.name,
+    title: kind && kind !== 'typeAlias' ? name + ' ' + kind : name,
+    name: name,
     description: table.description,
-    extendsTokens: table.extendsTokens,
+    extendsTokens:
+      extendsTokens &&
+      (Array.isArray(extendsTokens[0])
+        ? // Flatten the extends tokens if it's a 2D array (new API)
+          (extendsTokens as ILinkToken[][]).reduce((result: ILinkToken[], curr: ILinkToken[], index: number) => {
+            result.push(...curr);
+            if (index < extendsTokens.length - 1) {
+              result.push({ text: ', ' }); // add commas to join
+            }
+            return result;
+          }, [])
+        : // Or use as-is if 1D (old API)
+          (extendsTokens as ILinkToken[])),
     properties: [],
     deprecated: table.deprecated,
     deprecatedMessage: table.deprecatedMessage,

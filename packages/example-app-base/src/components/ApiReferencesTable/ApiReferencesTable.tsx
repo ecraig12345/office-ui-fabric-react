@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { IRenderFunction } from 'office-ui-fabric-react/lib/Utilities';
-import { mergeStyles, getTheme } from 'office-ui-fabric-react/lib/Styling';
+import { mergeStyleSets, getTheme, FontWeights } from 'office-ui-fabric-react/lib/Styling';
 import {
   DetailsList,
   DetailsRow,
@@ -29,14 +29,25 @@ export const SMALL_GAP_SIZE = 8;
 export const MEDIUM_GAP_SIZE = 16;
 export const LARGE_GAP_SIZE = 48;
 
+const theme = getTheme();
 const DEPRECATED_COLOR = '#FFF1CC';
-const rootClass = mergeStyles({
-  selectors: {
-    // Switch code blocks to a nicer font family and smaller size (monospace fonts tend to be large)
-    code: { fontFamily: codeFontFamily, fontSize: '11px' }
+const classNames = mergeStyleSets({
+  root: {
+    selectors: {
+      // Switch code blocks to a nicer font family and smaller size (monospace fonts tend to be large)
+      code: { fontFamily: codeFontFamily, fontSize: '11px' }
+    }
+  },
+  required: {
+    fontWeight: FontWeights.bold,
+    color: theme.palette.red
+  },
+  deprecated: {
+    backgroundColor: DEPRECATED_COLOR,
+    padding: 10,
+    borderRadius: 2
   }
 });
-const theme = getTheme();
 const rowStyles: Partial<IDetailsRowStyles> = {
   root: {
     color: theme.semanticColors.bodyText,
@@ -52,7 +63,7 @@ const rowStyles: Partial<IDetailsRowStyles> = {
   }
 };
 
-const renderDeprecatedMessage = (deprecated?: boolean, deprecatedMessage?: string) => {
+const renderDeprecatedMessage = (deprecatedMessage?: string) => {
   deprecatedMessage = (deprecatedMessage || '').trim();
   if (deprecatedMessage) {
     // Ensure the messsage is formatted as a sentence
@@ -61,31 +72,28 @@ const renderDeprecatedMessage = (deprecated?: boolean, deprecatedMessage?: strin
       deprecatedMessage += '.';
     }
   }
-  return deprecated ? (
-    <Text
-      block
-      variant="small"
-      styles={{
-        root: {
-          backgroundColor: DEPRECATED_COLOR,
-          padding: 10,
-          borderRadius: 2
-        }
-      }}
-    >
+  return (
+    <Text block variant="small" className={classNames.deprecated}>
       Warning: this API is now obsolete. {deprecatedMessage && _extractCodeBlocks(deprecatedMessage)}
     </Text>
-  ) : (
-    undefined
   );
 };
 
-const referencesTableCell = (text: string, deprecated?: boolean, deprecatedMessage?: string) => {
+type ReferencesTableCellOptions = Pick<IApiInterfaceProperty, 'deprecated' | 'deprecatedMessage' | 'required'>;
+
+const referencesTableCell = (text: string, options: ReferencesTableCellOptions = {}) => {
+  const { deprecated, deprecatedMessage, required } = options;
   return (
     <>
-      {deprecated && renderDeprecatedMessage(deprecated, deprecatedMessage)}
+      {deprecated && renderDeprecatedMessage(deprecatedMessage)}
       <Text block variant="small" style={{ marginTop: deprecated ? '1em' : undefined }}>
         {_extractCodeBlocks(text)}
+        {required && (
+          <span aria-label="required" title="required" className={classNames.required}>
+            {' '}
+            *
+          </span>
+        )}
       </Text>
     </>
   );
@@ -252,10 +260,10 @@ export class ApiReferencesTable extends React.Component<IApiReferencesTableProps
       (!this._isTypeAlias && !hasProperties && !hasMethods ? '(No properties)' : undefined);
 
     return (
-      <Stack className={rootClass} tokens={{ childrenGap: MEDIUM_GAP_SIZE }}>
+      <Stack className={classNames.root} tokens={{ childrenGap: MEDIUM_GAP_SIZE }}>
         <Stack tokens={{ childrenGap: SMALL_GAP_SIZE }}>
           {this._renderTitle()}
-          {renderDeprecatedMessage(deprecated, deprecatedMessage)}
+          {deprecated && renderDeprecatedMessage(deprecatedMessage)}
           {(description || (extendsTokens && extendsTokens.length > 0)) && (
             <Stack tokens={{ childrenGap: XSMALL_GAP_SIZE }}>
               {description && <Markdown>{description}</Markdown>}
@@ -293,7 +301,10 @@ export class ApiReferencesTable extends React.Component<IApiReferencesTableProps
 
     // For description only, render a message if the property is deprecated.
     if (property === 'description') {
-      return referencesTableCell(text, item.deprecated, item.deprecatedMessage);
+      return referencesTableCell(text, { deprecated: item.deprecated, deprecatedMessage: item.deprecatedMessage });
+    }
+    if (property === 'name' && (item as IApiInterfaceProperty).required) {
+      return referencesTableCell(text, { required: true });
     }
     return referencesTableCell(text);
   };

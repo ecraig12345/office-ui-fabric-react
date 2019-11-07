@@ -32,13 +32,13 @@ export function generatePageJsonFiles(options: IPageJsonOptions): void {
   // Warn if any requested page names didn't correspond to a docCategory found in the API info
   const requestedPages = ([] as string[]).concat(...Object.values(pageGroups));
   for (const pageName of requestedPages) {
-    if (!pageJsonByName[pageName]) {
+    if (!pageJsonByName.has(pageName)) {
       console.warn('Warning: no API items found for expected @docCategory ' + pageName);
     }
   }
 
   // Write the files
-  for (const [pageName, pageJson] of Object.entries(pageJsonByName)) {
+  for (const [pageName, pageJson] of pageJsonByName.entries()) {
     const pageJsonPath = path.join(outputRoot, pageJson.group || '', pageName + '.page.json');
 
     console.log('Writing ' + pageJsonPath);

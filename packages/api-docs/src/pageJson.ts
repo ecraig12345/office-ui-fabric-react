@@ -3,6 +3,7 @@ import { findInlineTagByName } from './rendering';
 import { ICollectedData } from './types-private';
 import { ITableJson, IPageJson, PageGroups } from './types';
 import { createTableJson } from './tableJson';
+import { addInheritedMembers } from './tableJsonInheritance';
 
 const supportedApiItems = [ApiItemKind.Interface, ApiItemKind.Enum, ApiItemKind.Class, ApiItemKind.TypeAlias];
 
@@ -10,23 +11,22 @@ const supportedApiItems = [ApiItemKind.Interface, ApiItemKind.Enum, ApiItemKind.
  * Given `apiModel` with API package info already loaded into it, generate page data for each
  * `docCategory` tag (page name) and the APIs within it.
  */
-export function generatePageJson(
-  apiModel: ApiModel,
-  pageGroups: PageGroups = {},
-  fallbackGroup?: string
-): { [pageName: string]: IPageJson } {
+export function generatePageJson(apiModel: ApiModel, pageGroups: PageGroups = {}, fallbackGroup?: string): Map<string, IPageJson> {
   const collectedData = initPageData(apiModel, pageGroups, fallbackGroup);
 
-  const result: { [pageName: string]: IPageJson } = {};
+  const result = new Map<string, IPageJson>();
   for (const [pageName, pageData] of collectedData.pagesByName.entries()) {
-    result[pageName] = {
+    result.set(pageName, {
       tables: pageData.apiItems
         .map((apiItem: ApiItem) => createTableJson(collectedData, apiItem))
         .filter((table: ITableJson | undefined) => !!table) as ITableJson[],
       name: pageName,
       group: pageData.group
-    };
+    });
   }
+
+  addInheritedMembers({ ...collectedData, pageJsonByName: result });
+
   return result;
 }
 

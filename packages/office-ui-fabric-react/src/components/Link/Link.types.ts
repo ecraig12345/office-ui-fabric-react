@@ -2,7 +2,7 @@ import * as React from 'react';
 import { LinkBase } from './Link.base';
 
 import { IStyle, ITheme } from '../../Styling';
-import { IRefObject, IStyleFunctionOrObject } from '../../Utilities';
+import { IRefObject, IStyleFunctionOrObject, Omit } from '../../Utilities';
 import { IKeytipProps } from '../../Keytip';
 
 /**
@@ -14,7 +14,7 @@ export interface ILink {
 }
 
 /**
- * {@docCategory Link}
+ * @deprecated No longer used
  */
 export interface ILinkHTMLAttributes<T> extends React.HTMLAttributes<T> {
   // Shared
@@ -40,19 +40,48 @@ export interface ILinkHTMLAttributes<T> extends React.HTMLAttributes<T> {
   name?: string;
   value?: string | string[] | number;
 
-  // Any other props for HTMLElements or a React component passed to as=
-  [index: string]: any;
+  // Any other props for HTMLElements or a React component passed to as
+  [key: string]: any;
 }
 
 /**
+ * Types which should be included when calculating allowed props for a Link.
  * {@docCategory Link}
  */
-export interface ILinkProps extends ILinkHTMLAttributes<HTMLAnchorElement | HTMLButtonElement | HTMLElement | LinkBase> {
+export type LinkPropsFor = HTMLAnchorElement | HTMLButtonElement | HTMLElement | LinkBase;
+
+/**
+ * Link component props.
+ * Native props for `<a>` and `<button>` are supported even if not included in the list below.
+ * {@docCategory Link}
+ */
+export interface ILinkProps
+  extends React.HTMLAttributes<LinkPropsFor>,
+    React.AnchorHTMLAttributes<LinkPropsFor>,
+    Omit<React.ButtonHTMLAttributes<LinkPropsFor>, 'type'> {
   /**
    * Optional callback to access the ILink interface. Use this instead of ref for accessing
    * the public methods and properties of the component.
    */
   componentRef?: IRefObject<ILink>;
+
+  /**
+   * URL the link points to. If not provided, the link renders as a button (unless that behavior is
+   * overridden using `as`).
+   */
+  href?: string;
+
+  /**
+   * Where to display the linked URL. Common values are `_blank` (a new tab or window),
+   * `_self` (the current window/context), `_parent`, and `_top`.
+   */
+  target?: string;
+
+  /**
+   * Relationship to the linked URL (can be a space-separated list).
+   * Most common values are `noreferrer` and/or `noopener`.
+   */
+  rel?: string;
 
   /**
    * Whether the link is disabled
@@ -72,12 +101,15 @@ export interface ILinkProps extends ILinkHTMLAttributes<HTMLAnchorElement | HTML
   /**
    * A component that should be used as the root element of the link returned from the Link component.
    */
-  as?: string | React.ComponentClass | React.StatelessComponent;
+  as?: string | React.ComponentType;
 
   /**
    * Optional keytip for this Link
    */
   keytipProps?: IKeytipProps;
+
+  /** Any other props for elements or a React component passed to `as` */
+  [key: string]: any;
 }
 
 /**

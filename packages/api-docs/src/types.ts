@@ -41,13 +41,14 @@ export interface ITableJson {
   name: string;
   description?: string;
   /**
-   * Any types the item extends, translated to an array of text elements and links to other types.
+   * List of types the item extends, translated to arrays of text elements and links to other types.
    * For classes and interfaces only.
    *
-   * Example: `Readonly<IFoo>` might translate to:
-   * `[{ text: 'Readonly<' }, { text: 'IFoo', linkedPage: 'Foo', linkedPageGroup: 'components' }, { text: '>' }]`
+   * Example: `class Bar extends Readonly<IFoo>` might translate to:
+   * `[[{ text: 'Readonly<' }, { text: 'IFoo', linkedPage: 'Foo', linkedPageGroup: 'components' }, { text: '>' }]]`
    */
-  extendsTokens?: ILinkToken[];
+  extendsTokens?: ILinkToken[][];
+  extendsNames?: string[];
   members?: ITableRowJson[] | IEnumTableRowJson[];
   deprecated?: boolean;
   deprecatedMessage?: string;
@@ -70,12 +71,17 @@ export interface ITableRowJson {
   description?: string;
   deprecated?: boolean;
   deprecatedMessage?: string;
+  required?: boolean;
+  /**
+   * Reference to the type this property is inherited from (if any).
+   */
+  inheritedFrom?: ILinkToken;
 }
 
 /**
  * Enum member row for API reference tables.
  */
-export type IEnumTableRowJson = Omit<ITableRowJson, 'kind' | 'typeTokens' | 'defaultValue'> & {
+export type IEnumTableRowJson = Omit<ITableRowJson, 'kind' | 'typeTokens' | 'defaultValue' | 'required' | 'inheritedFrom'> & {
   value: string;
 };
 

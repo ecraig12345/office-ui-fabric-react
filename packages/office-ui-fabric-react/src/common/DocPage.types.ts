@@ -122,12 +122,13 @@ export interface ITableRowJson {
   description: string;
   deprecated: boolean;
   deprecatedMessage?: string;
+  required?: boolean;
 }
 
 /**
  * Enum member row for API reference tables.
  */
-export type IEnumTableRowJson = Omit<ITableRowJson, 'kind' | 'typeTokens' | 'defaultValue'> & {
+export type IEnumTableRowJson = Omit<ITableRowJson, 'kind' | 'typeTokens' | 'defaultValue' | 'required'> & {
   value: string;
 };
 
@@ -142,8 +143,9 @@ export interface ITableJson {
   /**
    * Any types the item extends, translated to an array of text elements and links to other types.
    * For classes and interfaces only.
+   * 1D array version is deprecated.
    */
-  extendsTokens: ILinkToken[];
+  extendsTokens: ILinkToken[][] | ILinkToken[];
   description: string;
   members: ITableRowJson[] | IEnumTableRowJson[];
   deprecated?: boolean;

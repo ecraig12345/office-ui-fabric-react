@@ -1,5 +1,7 @@
 // @ts-check
 
+// module.exports = require('../../packages/api-docs/lib/tasks/apiExtractorCustomTask');
+
 const path = require('path');
 const { apiExtractorVerifyTask, apiExtractorUpdateTask } = require('just-scripts');
 

@@ -1,7 +1,80 @@
-import { ApiDeclaredItem, ExcerptToken, IExcerptTokenRange } from '@microsoft/api-extractor-model';
+import {
+  ApiDeclaredItem,
+  ExcerptToken,
+  IExcerptTokenRange,
+  ApiItemKind,
+  ApiPropertySignature,
+  ApiMethodSignature,
+  ApiEnumMember,
+  ApiItem,
+  ApiProperty,
+  ApiConstructor,
+  ApiMethod
+} from '@microsoft/api-extractor-model';
 import { ICollectedData } from './types-private';
-import { ITableRowJson } from './types';
-import { renderDocNodeWithoutInlineTag, getBlockTagByName, renderNodes, getTokenHyperlinks } from './rendering';
+import { ITableRowJson, IEnumTableRowJson } from './types';
+import { renderDocNodeWithoutInlineTag, getBlockTagByName, renderNodes, getTokenHyperlinks, renderTokens } from './rendering';
+
+export function getTableRowJson(collectedData: ICollectedData, apiItem: ApiItem): ITableRowJson | undefined {
+  let tableRowJson: ITableRowJson | undefined;
+
+  switch (apiItem.kind) {
+    case ApiItemKind.Property:
+    case ApiItemKind.PropertySignature: {
+      const apiProperty = apiItem as ApiPropertySignature | ApiProperty;
+      tableRowJson = getBasicTableRowJson(
+        collectedData,
+        apiProperty,
+        'property',
+        apiProperty.excerptTokens,
+        apiProperty.propertyTypeExcerpt.tokenRange
+      );
+    }
+
+    case ApiItemKind.Constructor:
+    case ApiItemKind.Method:
+    case ApiItemKind.MethodSignature: {
+      const apiMethod = apiItem as ApiMethod | ApiMethodSignature | ApiConstructor;
+      tableRowJson = getBasicTableRowJson(collectedData, apiMethod, 'method', apiMethod.excerptTokens, apiMethod.excerpt.tokenRange);
+
+      if (apiMethod.kind === ApiItemKind.Constructor) {
+        // The constructor is similar to a method, but we have to manually add the name.
+        tableRowJson.name = 'constructor';
+      }
+    }
+
+    case ApiItemKind.Function:
+      break;
+    case ApiItemKind.Class:
+      break;
+  }
+
+  // For property or method signatures, check if it's required based on the text of the declaration
+  // (item.excerpt.text). It's required if there's no ? after the name.
+  if (
+    tableRowJson &&
+    (apiItem.kind === ApiItemKind.PropertySignature || apiItem.kind === ApiItemKind.MethodSignature) &&
+    /^\w+[:(]/.test((apiItem as ApiDeclaredItem).excerpt.text)
+  ) {
+    tableRowJson.required = true;
+  }
+
+  return tableRowJson;
+}
+
+export function getEnumTableRowJson(collectedData: ICollectedData, apiItem: ApiDeclaredItem & { name?: string }): IEnumTableRowJson {
+  const apiEnumMember = apiItem as ApiEnumMember;
+
+  const { name, description, deprecated, deprecatedMessage } = getBasicTableRowJson(collectedData, apiEnumMember);
+
+  return {
+    name,
+    description,
+    deprecated,
+    deprecatedMessage,
+    value: renderTokens(apiEnumMember.excerptTokens, apiEnumMember.excerpt.tokenRange)
+  };
+}
 
 /**
  * Generate an ITableRowJson for a class/interface/enum member with the name, description,
@@ -9,16 +82,19 @@ import { renderDocNodeWithoutInlineTag, getBlockTagByName, renderNodes, getToken
  * @param typeTokens - Optional list of tokens which includes the item type info.
  * @param typeTokenRange - Specific location of the item type within `typeTokens`.
  */
-export function getTableRowJson(
+function getBasicTableRowJson(
   collectedData: ICollectedData,
   apiItem: ApiDeclaredItem & { name?: string },
+  kind?: ITableRowJson['kind'],
   typeTokens?: readonly ExcerptToken[],
   typeTokenRange?: Readonly<IExcerptTokenRange>
 ): ITableRowJson {
   const { tsdocComment } = apiItem;
+
   const tableRowJson: ITableRowJson = {
     name: apiItem.name || '',
     typeTokens: [],
+    kind,
     description: (tsdocComment && renderDocNodeWithoutInlineTag(tsdocComment.summarySection)) || undefined
   };
 

@@ -5247,10 +5247,10 @@ export interface ILink {
     focus(): void;
 }
 
-// @public (undocumented)
+// @public @deprecated (undocumented)
 export interface ILinkHTMLAttributes<T> extends React.HTMLAttributes<T> {
     // (undocumented)
-    [index: string]: any;
+    [key: string]: any;
     // (undocumented)
     autoFocus?: boolean;
     // (undocumented)
@@ -5287,13 +5287,17 @@ export interface ILinkHTMLAttributes<T> extends React.HTMLAttributes<T> {
     value?: string | string[] | number;
 }
 
-// @public (undocumented)
-export interface ILinkProps extends ILinkHTMLAttributes<HTMLAnchorElement | HTMLButtonElement | HTMLElement | LinkBase> {
-    as?: string | React.ComponentClass | React.StatelessComponent;
+// @public
+export interface ILinkProps extends React.HTMLAttributes<LinkPropsFor>, React.AnchorHTMLAttributes<LinkPropsFor>, Omit<React.ButtonHTMLAttributes<LinkPropsFor>, 'type'> {
+    [key: string]: any;
+    as?: string | React.ComponentType;
     componentRef?: IRefObject<ILink>;
     disabled?: boolean;
+    href?: string;
     keytipProps?: IKeytipProps;
+    rel?: string;
     styles?: IStyleFunctionOrObject<ILinkStyleProps, ILinkStyles>;
+    target?: string;
     theme?: ITheme;
 }
 
@@ -7955,6 +7959,9 @@ export class LinkBase extends BaseComponent<ILinkProps, any> implements ILink {
     // (undocumented)
     render(): JSX.Element;
 }
+
+// @public
+export type LinkPropsFor = HTMLAnchorElement | HTMLButtonElement | HTMLElement | LinkBase;
 
 // @public
 export class List<T = any> extends React.Component<IListProps<T>, IListState<T>> implements IList {

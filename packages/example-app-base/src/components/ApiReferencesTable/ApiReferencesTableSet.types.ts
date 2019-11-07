@@ -60,6 +60,7 @@ export interface IApiBaseItem {
 export interface IApiInterfaceProperty extends IApiBaseItem {
   typeTokens: ILinkToken[];
   defaultValue?: string;
+  required?: boolean;
 }
 
 export interface IApiEnumProperty extends IApiBaseItem {

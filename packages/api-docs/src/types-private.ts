@@ -1,4 +1,5 @@
 import { ApiItem, ApiModel } from '@microsoft/api-extractor-model';
+import { IPageJson } from './types';
 
 /**
  * A page and its associated API items.
@@ -24,4 +25,9 @@ export interface ICollectedData {
    * Entries are the same objects from `pagesByName`, but each page may appear multiple times.
    */
   readonly pagesByApi: Map<string, IPageData>;
+}
+
+export interface ICompleteCollectedData extends ICollectedData {
+  /** Mapping from page name to page.json data */
+  readonly pageJsonByName: Map<string, IPageJson>;
 }
