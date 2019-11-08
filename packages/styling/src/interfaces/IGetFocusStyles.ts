@@ -38,8 +38,37 @@ export interface IGetFocusStylesOptions {
   outlineColor?: string;
 
   /**
+   * Options for when to apply the focus styles.
+   * `'focus'` applies styles only when the `:focus` pseudo-selector is active.
+   * `'focusVisible'` applies styles only when focus is visible.
+   * `'both'` (the default) requires both of the above conditions.
+   * `'none'` unconditionally applies the styles.
+   * @default 'both'
+   */
+  focusType?: 'focus' | 'focusVisible' | 'both' | 'none';
+
+  /**
    * If the styles should apply on `:focus` pseudo element.
    * @defaultvalue true
+   * @deprecated Use `focusType` instead (this is ignored if `focusType` is provided)
    */
   isFocusedOnly?: boolean;
+
+  /**
+   * If false (the default), the returned styles will
+   * Whether the returned styles should apply
+   * Whether to require the `:focus` pseudo-element selectors
+   */
+  omitFocusSelector?: boolean;
+
+  /**
+   * Whether to only apply a bottom border (instead of an all-around border).
+   * @default false
+   */
+  borderBottomOnly?: boolean;
+
+  /**
+   * Additional styles to apply to the `:after` pseudo-element when focused.
+   */
+  additionalStyles?: IRawStyle;
 }

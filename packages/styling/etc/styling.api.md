@@ -323,6 +323,8 @@ export { IFontWeight }
 
 // @public (undocumented)
 export interface IGetFocusStylesOptions {
+    additionalStyles?: IRawStyle;
+    borderBottomOnly?: boolean;
     borderColor?: string;
     highContrastStyle?: IRawStyle;
     inset?: number;

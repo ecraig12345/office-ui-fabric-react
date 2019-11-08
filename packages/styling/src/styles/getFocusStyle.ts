@@ -59,8 +59,12 @@ function _getFocusStyleInternal(theme: ITheme, options: IGetFocusStylesOptions =
     highContrastStyle,
     borderColor = theme.palette.white,
     outlineColor = theme.palette.neutralSecondary,
-    isFocusedOnly = true
+    borderBottomOnly,
+    isFocusedOnly = true,
+    additionalStyles = {}
   } = options;
+
+  const { selectors: additionalSelectors = {}, ...otherStyles } = additionalStyles;
 
   return {
     // Clear browser-specific focus styles and use 'transparent' as placeholder for focus style.
@@ -84,11 +88,13 @@ function _getFocusStyleInternal(theme: ITheme, options: IGetFocusStylesOptions =
         top: inset + 1,
         bottom: inset + 1,
         right: inset + 1,
-        border: `${width}px solid ${borderColor}`,
+        [borderBottomOnly ? 'borderBottom' : 'border']: `${width}px solid ${borderColor}`,
         outline: `${width}px solid ${outlineColor}`,
         zIndex: ZIndexes.FocusStyle,
+        ...otherStyles,
         selectors: {
-          [HighContrastSelector]: highContrastStyle
+          [HighContrastSelector]: highContrastStyle,
+          ...additionalSelectors
         }
       }
     }
