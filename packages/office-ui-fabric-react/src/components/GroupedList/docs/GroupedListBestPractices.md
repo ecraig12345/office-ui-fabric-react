@@ -1,5 +1,3 @@
-GroupedList allows rendering a set of items as multiple lists with various grouping properties.
-
 ### My list is not re-rendering when I mutate its items! What should I do?
 
 To determine if the List within GroupedList should re-render its contents, the component performs a referential equality check within its `shouldComponentUpdate` method.

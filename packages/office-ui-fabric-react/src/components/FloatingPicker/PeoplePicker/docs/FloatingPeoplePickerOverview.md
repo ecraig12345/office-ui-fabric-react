@@ -1,1 +1,1 @@
-FloatingPeoplePicker are used to pick recipients but do not need a well or necessarily keep track of selected people
+The FloatingPeoplePicker is used to pick recipients but does not need a "well" and may not keep track of selected people.
