@@ -1,0 +1,8 @@
+{
+  "type": "patch",
+  "comment": "Doc overview cleanup",
+  "packageName": "office-ui-fabric-react",
+  "email": "elcraig@microsoft.com",
+  "commit": "9d2b2a87b4a7983b4cefc257e5a20918094d01f9",
+  "date": "2019-12-06T05:09:14.810Z"
+}
