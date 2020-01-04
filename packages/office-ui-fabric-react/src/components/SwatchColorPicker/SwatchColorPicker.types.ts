@@ -7,17 +7,17 @@ import { IColorCellProps, IColorPickerGridCellStyleProps, IColorPickerGridCellSt
  */
 export interface ISwatchColorPickerProps {
   /**
-   * Number of columns for the swatch color picker
+   * Number of columns for the swatch color picker.
    */
   columnCount: number;
 
   /**
-   * ID for the swatch color picker's root element. Also used as a prefix for the IDs of color cells.
+   * ID for the swatch color grid's root element. Also used as a prefix for the IDs of color cells.
    */
   id?: string;
 
   /**
-   * Additional class name to provide on the root element
+   * Additional class name to provide on the grid's root element.
    */
   className?: string;
 
@@ -28,9 +28,19 @@ export interface ISwatchColorPickerProps {
   cellShape?: 'circle' | 'square';
 
   /**
-   * The ID of color cell that is currently selected
+   * The ID of color cell that is *currently* selected. Only provide this if using as a controlled
+   * component where you are maintaining its current state; otherwise, use `defaultSelectedId`.
+   *
+   * NOTE: Currently, even if this prop is used, the component will still allow updates. To make
+   * the component fully controlled, set `isControlled: true` (will be fixed in a future version).
    */
   selectedId?: string;
+
+  /**
+   * The ID of color cell that is initially selected. Only provide this if using the component
+   * as uncontrolled; otherwise, use `selectedId`.
+   */
+  defaultSelectedId?: string;
 
   /**
    * The color cells that will be made available to the user.
@@ -75,6 +85,11 @@ export interface ISwatchColorPickerProps {
    * Whether the control is disabled.
    */
   disabled?: boolean;
+
+  /**
+   * ID of the element providing label text for the control.
+   */
+  ariaLabelledBy?: string;
 
   /**
    * Position this grid is in the parent set (index in a parent menu, for example)

@@ -1,16 +1,27 @@
-import * as React from 'react';
 import { IStyle, ITheme } from '../../Styling';
 import { IStyleFunctionOrObject } from '../../Utilities';
+import { IGridCellProps } from '../../utilities/grid/GridCell.types';
 
 /**
  * {@docCategory SwatchColorPicker}
  */
-export interface IColorPickerGridCellProps {
-  /**
-   * Item to render
-   */
-  item: IColorCellProps;
-
+export interface IColorPickerGridCellProps
+  extends Pick<
+    IGridCellProps<IColorCellProps>,
+    | 'item'
+    | 'disabled'
+    | 'label'
+    | 'index'
+    | 'selected'
+    | 'onClick'
+    | 'onHover'
+    | 'onFocus'
+    | 'onMouseEnter'
+    | 'onMouseMove'
+    | 'onMouseLeave'
+    | 'onWheel'
+    | 'onKeyDown'
+  > {
   /**
    * Used as a PREFIX for the cell's ID (the cell will not have this literal string as its ID).
    * @deprecated Deprecated due to misleading name. Use `idPrefix` instead.
@@ -23,19 +34,9 @@ export interface IColorPickerGridCellProps {
   idPrefix?: string;
 
   /**
-   * Tooltip and aria label for this item
-   */
-  label?: string;
-
-  /**
    * The CSS-compatible string to describe the color
    */
   color?: string;
-
-  /**
-   * Index for this option
-   */
-  index?: number;
 
   /**
    * The theme object to use for styling.
@@ -47,17 +48,6 @@ export interface IColorPickerGridCellProps {
    * @default `true` (render as circle)
    */
   circle?: boolean;
-
-  /**
-   * Whether this cell should be disabled
-   * @default false
-   */
-  disabled?: boolean;
-
-  /**
-   * Whether this cell is currently selected
-   */
-  selected: boolean;
 
   /**
    * Height of the cell, in pixels
@@ -78,34 +68,9 @@ export interface IColorPickerGridCellProps {
   borderWidth?: number;
 
   /**
-   * Handler for when a color cell is clicked.
-   */
-  onClick?: (item: IColorCellProps) => void;
-
-  onHover?: (item?: IColorCellProps) => void;
-
-  onFocus?: (item: IColorCellProps) => void;
-
-  /**
    * Custom styles for the component.
    */
   styles?: IStyleFunctionOrObject<IColorPickerGridCellStyleProps, IColorPickerGridCellStyles>;
-
-  /**
-   * Mouse enter handler. Returns true if the event should be processed, false otherwise.
-   */
-  onMouseEnter?: (ev: React.MouseEvent<HTMLButtonElement>) => boolean;
-
-  /**
-   * Mouse move handler. Returns true if the event should be processed, false otherwise.
-   */
-  onMouseMove?: (ev: React.MouseEvent<HTMLButtonElement>) => boolean;
-
-  onMouseLeave?: (ev: React.MouseEvent<HTMLButtonElement>) => void;
-
-  onWheel?: (ev: React.MouseEvent<HTMLButtonElement>) => void;
-
-  onKeyDown?: (ev: React.KeyboardEvent<HTMLButtonElement>) => void;
 }
 
 /**

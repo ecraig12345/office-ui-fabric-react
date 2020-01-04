@@ -50,6 +50,11 @@ export interface IGridProps extends React.TableHTMLAttributes<HTMLTableElement> 
   onBlur?: () => void;
 
   /**
+   * ID of the element providing label text for the control.
+   */
+  ariaLabelledBy?: string;
+
+  /**
    * Position this grid is in the parent set (index in a parent menu, for example)
    */
   ariaPosInSet?: number;

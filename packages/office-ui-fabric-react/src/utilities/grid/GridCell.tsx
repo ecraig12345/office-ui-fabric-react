@@ -4,15 +4,16 @@ import { IGridCellProps } from './GridCell.types';
 import { CommandButton } from '../../Button';
 
 export class GridCell<T, P extends IGridCellProps<T>> extends React.Component<P, {}> {
-  public static defaultProps = {
-    disabled: false,
-    id: getId('gridCell')
-  };
+  private _id: string;
+
+  constructor(props: P) {
+    super(props);
+    this._id = props.id || getId('gridCell');
+  }
 
   public render(): JSX.Element {
     const {
       item,
-      id,
       className,
       role,
       selected,
@@ -27,7 +28,7 @@ export class GridCell<T, P extends IGridCellProps<T>> extends React.Component<P,
 
     return (
       <CommandButton
-        id={id}
+        id={this._id}
         data-index={index}
         data-is-focusable={true}
         disabled={disabled}
@@ -52,7 +53,7 @@ export class GridCell<T, P extends IGridCellProps<T>> extends React.Component<P,
   }
 
   private _onClick = (): void => {
-    const { onClick, disabled, item } = this.props as P;
+    const { onClick, disabled, item } = this.props;
 
     if (onClick && !disabled) {
       onClick(item);
@@ -60,7 +61,7 @@ export class GridCell<T, P extends IGridCellProps<T>> extends React.Component<P,
   };
 
   private _onMouseEnter = (ev: React.MouseEvent<HTMLButtonElement>): void => {
-    const { onHover, disabled, item, onMouseEnter } = this.props as P;
+    const { onHover, disabled, item, onMouseEnter } = this.props;
 
     const didUpdateOnEnter = onMouseEnter && onMouseEnter(ev);
 
@@ -70,7 +71,7 @@ export class GridCell<T, P extends IGridCellProps<T>> extends React.Component<P,
   };
 
   private _onMouseMove = (ev: React.MouseEvent<HTMLButtonElement>): void => {
-    const { onHover, disabled, item, onMouseMove } = this.props as P;
+    const { onHover, disabled, item, onMouseMove } = this.props;
 
     const didUpdateOnMove = onMouseMove && onMouseMove(ev);
 
@@ -80,7 +81,7 @@ export class GridCell<T, P extends IGridCellProps<T>> extends React.Component<P,
   };
 
   private _onMouseLeave = (ev: React.MouseEvent<HTMLButtonElement>): void => {
-    const { onHover, disabled, onMouseLeave } = this.props as P;
+    const { onHover, disabled, onMouseLeave } = this.props;
 
     const didUpdateOnLeave = onMouseLeave && onMouseLeave(ev);
 
@@ -90,7 +91,7 @@ export class GridCell<T, P extends IGridCellProps<T>> extends React.Component<P,
   };
 
   private _onFocus = (): void => {
-    const { onFocus, disabled, item } = this.props as P;
+    const { onFocus, disabled, item } = this.props;
 
     if (onFocus && !disabled) {
       onFocus(item);

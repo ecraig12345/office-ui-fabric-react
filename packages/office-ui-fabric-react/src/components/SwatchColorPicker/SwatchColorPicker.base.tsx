@@ -1,18 +1,17 @@
 import * as React from 'react';
 import {
-  Async,
   classNamesFunction,
   findIndex,
-  KeyCodes,
   getId,
   warnMutuallyExclusive,
-  warnConditionallyRequiredProps
+  warnConditionallyRequiredProps,
+  memoizeFunction,
+  warnDeprecations
 } from '../../Utilities';
 import { ISwatchColorPickerProps, ISwatchColorPickerStyleProps, ISwatchColorPickerStyles } from './SwatchColorPicker.types';
 import { Grid } from '../../utilities/grid/Grid';
 import { IColorCellProps } from './ColorPickerGridCell.types';
 import { ColorPickerGridCell } from './ColorPickerGridCell';
-import { memoizeFunction, warnDeprecations } from '@uifabric/utilities';
 
 export interface ISwatchColorPickerState {
   selectedIndex?: number;
@@ -23,20 +22,15 @@ const getClassNames = classNamesFunction<ISwatchColorPickerStyleProps, ISwatchCo
 const COMPONENT_NAME = 'SwatchColorPicker';
 
 export class SwatchColorPickerBase extends React.Component<ISwatchColorPickerProps, ISwatchColorPickerState> {
-  public static defaultProps = {
+  public static defaultProps: Partial<ISwatchColorPickerProps> = {
     cellShape: 'circle',
     disabled: false,
     shouldFocusCircularNavigate: true,
     cellMargin: 10
-  } as ISwatchColorPickerProps;
+  };
 
   private _id: string;
   private _cellFocused: boolean;
-
-  private navigationIdleTimeoutId: number | undefined;
-  private isNavigationIdle: boolean;
-  private readonly navigationIdleDelay: number = 250 /* ms */;
-  private async: Async;
 
   // Add an index to each color cells. Memoizes this so that color cells do not re-render on every update.
   private _getItemsWithIndex = memoizeFunction((items: IColorCellProps[]) => {
@@ -52,7 +46,8 @@ export class SwatchColorPickerBase extends React.Component<ISwatchColorPickerPro
 
     if (process.env.NODE_ENV !== 'production') {
       warnMutuallyExclusive(COMPONENT_NAME, props, {
-        focusOnHover: 'onHover'
+        focusOnHover: 'onHover',
+        defaultSelectedId: 'selectedId'
       });
 
       warnConditionallyRequiredProps(COMPONENT_NAME, props, ['focusOnHover'], 'mouseLeaveParentSelector', !!props.mouseLeaveParentSelector);
@@ -63,12 +58,9 @@ export class SwatchColorPickerBase extends React.Component<ISwatchColorPickerPro
       });
     }
 
-    this.isNavigationIdle = true;
-    this.async = new Async(this);
-
     let selectedIndex: number | undefined;
     if (props.selectedId) {
-      selectedIndex = this._getSelectedIndex(props.colorCells, props.selectedId);
+      selectedIndex = this._getSelectedIndex(props.colorCells, props.selectedId || props.defaultSelectedId);
     }
 
     this.state = {
@@ -76,11 +68,11 @@ export class SwatchColorPickerBase extends React.Component<ISwatchColorPickerPro
     };
   }
 
-  // tslint:disable-next-line function-name
-  public UNSAFE_componentWillReceiveProps(newProps: ISwatchColorPickerProps): void {
-    if (newProps.selectedId !== undefined) {
+  public componentDidUpdate(prevProps: Readonly<ISwatchColorPickerProps>): void {
+    const { selectedId, colorCells } = this.props;
+    if (selectedId !== undefined && selectedId !== prevProps.selectedId) {
       this.setState({
-        selectedIndex: this._getSelectedIndex(newProps.colorCells, newProps.selectedId)
+        selectedIndex: this._getSelectedIndex(colorCells, selectedId)
       });
     }
   }
@@ -90,24 +82,14 @@ export class SwatchColorPickerBase extends React.Component<ISwatchColorPickerPro
       this._cellFocused = false;
       this.props.onCellFocused();
     }
-    this.async.dispose();
   }
 
   public render(): JSX.Element | null {
-    const {
-      colorCells,
-      columnCount,
-      positionInSet,
-      setSize,
-      shouldFocusCircularNavigate,
-      className,
-      doNotContainWithinFocusZone,
-      styles,
-      cellMargin
-    } = this.props;
+    const props = this.props;
+    const { colorCells, columnCount, className, styles, cellMargin } = props;
 
     const classNames = getClassNames(styles!, {
-      theme: this.props.theme!,
+      theme: props.theme!,
       className,
       cellMargin
     });
@@ -117,22 +99,13 @@ export class SwatchColorPickerBase extends React.Component<ISwatchColorPickerPro
     }
     return (
       <Grid
-        {...this.props}
+        {...props}
         id={this._id}
         items={this._getItemsWithIndex(colorCells)}
-        columnCount={columnCount}
         onRenderItem={this._renderOption}
-        ariaPosInSet={positionInSet}
-        ariaSetSize={setSize}
-        shouldFocusCircularNavigate={shouldFocusCircularNavigate}
-        doNotContainWithinFocusZone={doNotContainWithinFocusZone}
         onBlur={this._onSwatchColorPickerBlur}
-        theme={this.props.theme!}
-        styles={{
-          root: classNames.root,
-          tableCell: classNames.tableCell,
-          focusedContainer: classNames.focusedContainer
-        }}
+        theme={props.theme!}
+        styles={classNames}
       />
     );
   }
@@ -154,7 +127,10 @@ export class SwatchColorPickerBase extends React.Component<ISwatchColorPickerPro
    * @param selectedId - The selected item's id to find
    * @returns - The index of the selected item's id, -1 if there was no match
    */
-  private _getSelectedIndex(items: IColorCellProps[], selectedId: string): number | undefined {
+  private _getSelectedIndex(items: IColorCellProps[], selectedId?: string): number | undefined {
+    if (selectedId === undefined) {
+      return undefined;
+    }
     const selectedIndex = findIndex(items, item => item.id === selectedId);
     return selectedIndex >= 0 ? selectedIndex : undefined;
   }
@@ -184,8 +160,6 @@ export class SwatchColorPickerBase extends React.Component<ISwatchColorPickerPro
         onMouseEnter={this._onMouseEnter}
         onMouseMove={this._onMouseMove}
         onMouseLeave={this._onMouseLeave}
-        onWheel={this._onWheel}
-        onKeyDown={this._onKeyDown}
         height={props.cellHeight}
         width={props.cellWidth}
         borderWidth={props.cellBorderWidth}
@@ -198,10 +172,10 @@ export class SwatchColorPickerBase extends React.Component<ISwatchColorPickerPro
    */
   private _onMouseEnter = (ev: React.MouseEvent<HTMLButtonElement>): boolean => {
     if (!this.props.focusOnHover) {
-      return !this.isNavigationIdle || !!this.props.disabled;
+      return !!this.props.disabled;
     }
 
-    if (this.isNavigationIdle && !this.props.disabled) {
+    if (!this.props.disabled) {
       ev.currentTarget.focus();
     }
 
@@ -213,14 +187,13 @@ export class SwatchColorPickerBase extends React.Component<ISwatchColorPickerPro
    */
   private _onMouseMove = (ev: React.MouseEvent<HTMLButtonElement>): boolean => {
     if (!this.props.focusOnHover) {
-      return !this.isNavigationIdle || !!this.props.disabled;
+      return !!this.props.disabled;
     }
 
     const targetElement = ev.currentTarget as HTMLElement;
 
-    // If navigation is idle and the targetElement is the focused element bail out
-    // if (!this.isNavigationIdle || (document && targetElement === (document.activeElement as HTMLElement))) {
-    if (this.isNavigationIdle && !(document && targetElement === (document.activeElement as HTMLElement))) {
+    // If the targetElement is the focused element bail out
+    if (typeof document !== 'undefined' && targetElement !== (document.activeElement as HTMLElement)) {
       targetElement.focus();
     }
 
@@ -230,14 +203,14 @@ export class SwatchColorPickerBase extends React.Component<ISwatchColorPickerPro
   /**
    * Callback passed to the GridCell that will manage Hover/Focus updates
    */
-  private _onMouseLeave = (ev: React.MouseEvent<HTMLButtonElement>): void => {
+  private _onMouseLeave = (ev: React.MouseEvent<HTMLButtonElement>): boolean => {
     const parentSelector = this.props.mouseLeaveParentSelector;
 
-    if (!this.props.focusOnHover || !parentSelector || !this.isNavigationIdle || this.props.disabled) {
-      return;
+    if (!this.props.focusOnHover || !parentSelector || this.props.disabled) {
+      return false;
     }
 
-    // Get the elements that math the given selector
+    // Get the elements that match the given selector
     const elements = document.querySelectorAll(parentSelector);
 
     // iterate over the elements return to make sure it is a parent of the target and focus it
@@ -258,42 +231,12 @@ export class SwatchColorPickerBase extends React.Component<ISwatchColorPickerPro
           (elements[index] as HTMLElement).focus();
         }
 
+        // TODO: should this return true?
         break;
       }
     }
-  };
 
-  /**
-   * Callback to make sure we don't update the hovered element during mouse wheel
-   */
-  private _onWheel = (): void => {
-    this.setNavigationTimeout();
-  };
-
-  /**
-   * Callback that
-   */
-  private _onKeyDown = (ev: React.KeyboardEvent<HTMLButtonElement>): void => {
-    if (ev.which === KeyCodes.up || ev.which === KeyCodes.down || ev.which === KeyCodes.left || ev.which === KeyCodes.right) {
-      this.setNavigationTimeout();
-    }
-  };
-
-  /**
-   * Sets a timeout so we won't process any mouse "hover" events
-   * while navigating (via mouseWheel or arrowKeys)
-   */
-  private setNavigationTimeout = () => {
-    if (!this.isNavigationIdle && this.navigationIdleTimeoutId !== undefined) {
-      this.async.clearTimeout(this.navigationIdleTimeoutId);
-      this.navigationIdleTimeoutId = undefined;
-    } else {
-      this.isNavigationIdle = false;
-    }
-
-    this.navigationIdleTimeoutId = this.async.setTimeout(() => {
-      this.isNavigationIdle = true;
-    }, this.navigationIdleDelay);
+    return false;
   };
 
   /**

@@ -9,57 +9,48 @@ export interface IGridCellProps<T> {
   item: T;
 
   /**
-   * Arbitrary unique string associated with this option
+   * Arbitrary unique string associated with the cell.
    */
   id: string;
 
   /**
-   * Optional, if the this option should be diabled
+   * Whether the cell should be disabled.
    */
   disabled?: boolean;
 
   /**
-   * Optional, if the cell is currently selected
+   * Whether the cell is currently selected.
    */
   selected?: boolean;
 
-  /**
-   * The on click handler
-   */
   onClick?: (item: T) => void;
 
   /**
-   * The render callback to handle rendering the item
+   * Callback to handle rendering the item.
    */
   onRenderItem: (item: T) => JSX.Element;
 
-  /**
-   * Optional, the onHover handler
-   */
   onHover?: (item?: T) => void;
 
-  /**
-   * Optional, the onFocus handler
-   */
   onFocus?: (item: T) => void;
 
   /**
-   * The accessible role for this option
+   * The accessible role for this cell.
    */
   role?: string;
 
   /**
-   * Optional, className(s) to apply
+   * Class name(s) to apply
    */
   className?: string;
 
   /**
-   * Optional, the CSS class used for when the cell is disabled
+   * CSS classes used when the cell is disabled.
    */
   cellDisabledStyle?: string[];
 
   /**
-   * Optional, the CSS class used for when the cell is selected
+   * CSS classes used when the cell is selected.
    */
   cellIsSelectedStyle?: string[];
 
@@ -69,16 +60,13 @@ export interface IGridCellProps<T> {
   index?: number;
 
   /**
-   * The label for this item.
-   * Visible text if this item is a header,
-   * tooltip if is this item is normal
+   * Tooltip and aria label for this cell.
    */
   label?: string;
 
   /**
    * Method to provide the classnames to style a button.
-   * The default value for this prop is the getClassnames func
-   * defined in BaseButton.classnames.
+   * The default value for this prop is the `getClassNames` func defined in `BaseButton.classnames`.
    */
   getClassNames?: (
     theme: ITheme,
@@ -93,29 +81,23 @@ export interface IGridCellProps<T> {
   ) => IButtonClassNames;
 
   /**
-   * Optional, mouseEnter handler.
-   * @returns true if the event should be processed, false otherwise
+   * Mouse enter handler. Returns true if the event should be processed, false otherwise.
    */
   onMouseEnter?: (ev: React.MouseEvent<HTMLButtonElement>) => boolean;
 
   /**
-   * Optional, mouseMove handler
-   * @returns true if the event should be processed, false otherwise
+   * Mouse move handler. Returns true if the event should be processed, false otherwise.
    */
   onMouseMove?: (ev: React.MouseEvent<HTMLButtonElement>) => boolean;
 
   /**
-   * Optional, mouseLeave handler
+   * Mouse leave handler. Returns true if the event should be processed, false otherwise.
    */
-  onMouseLeave?: (ev: React.MouseEvent<HTMLButtonElement>) => void;
+  onMouseLeave?: (ev: React.MouseEvent<HTMLButtonElement>) => boolean;
 
-  /**
-   * Optional, onWheel handler
-   */
+  /** @deprecated Not used */
   onWheel?: (ev: React.MouseEvent<HTMLButtonElement>) => void;
 
-  /**
-   * Optional, onkeydown handler
-   */
+  /** @deprecated Not used */
   onKeyDown?: (ev: React.KeyboardEvent<HTMLButtonElement>) => void;
 }

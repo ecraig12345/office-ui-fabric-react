@@ -85,8 +85,6 @@ export class ColorPickerGridCellBase extends React.PureComponent<IColorPickerGri
       onMouseEnter,
       onMouseMove,
       onMouseLeave,
-      onWheel,
-      onKeyDown,
       height,
       width,
       borderWidth
@@ -122,8 +120,6 @@ export class ColorPickerGridCellBase extends React.PureComponent<IColorPickerGri
         onMouseEnter={onMouseEnter}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
-        onWheel={onWheel}
-        onKeyDown={onKeyDown}
       />
     );
   }
