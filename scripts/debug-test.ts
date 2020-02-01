@@ -1,0 +1,16 @@
+import path from 'path';
+import { findConfig } from './find-config';
+import { findGitRoot } from './monorepo/findGitRoot';
+
+const configPath = findConfig('jest.config.js');
+const rootPath = findGitRoot();
+
+if (!configPath || !rootPath) {
+  console.log(
+    'Unable to find jest.config.js relative to currently opened file. Run debug-test from an open source file in a jest enabled project.'
+  );
+} else {
+  const jestCli = require.resolve('jest-cli/bin/jest.js');
+  process.chdir(path.dirname(configPath));
+  require(jestCli);
+}
