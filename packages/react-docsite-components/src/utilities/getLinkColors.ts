@@ -14,7 +14,7 @@ export function getLinkColors(rest: string, hover: string, focus?: string): IRaw
       '& a.ms-Link': {
         color: rest,
         selectors: {
-          '&:link': {
+          '&:link, &:visited': {
             color: rest,
           },
           '&:active, &:hover, &:active:hover': {
