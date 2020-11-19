@@ -6,6 +6,7 @@ import {
   IColorSwatch,
   IColorPaletteTheme,
   IPageSectionProps,
+  MarkdownParagraph,
 } from '@fluentui/react-docsite-components/lib/index2';
 import { IStylesPageProps, StylesAreaPage } from '../StylesAreaPage';
 import { ColorsProductsPageProps } from './ProductsPage.doc';
@@ -67,7 +68,7 @@ export class ColorsProductsPage extends React.Component<IStylesPageProps, IColor
                 {activeAppColorPalette && (
                   <>
                     <MarkdownHeader as="h2">{activeAppColorPalette.name}</MarkdownHeader>
-                    <p>{activeAppColorPalette.notes}</p>
+                    <MarkdownParagraph>{activeAppColorPalette.notes}</MarkdownParagraph>
                     <ColorPalette colors={activeAppColorPalette.colors} />
                   </>
                 )}

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link, mergeStyles } from '@fluentui/react';
+import { mergeStyles } from '@fluentui/react';
 import { DefaultButton } from '@fluentui/react/lib/compat/Button';
 import {
   trackEvent,
@@ -9,6 +9,8 @@ import {
   Page,
   IPageProps,
   IPageSectionProps,
+  MarkdownLink,
+  MarkdownParagraph,
 } from '@fluentui/react-docsite-components/lib/index2';
 import { SiteDefinition } from '../../SiteDefinition/index';
 import { topNavHeight, mediaQuery } from '../../styles/constants';
@@ -54,15 +56,18 @@ export class NotFoundPage extends React.Component<INotFoundPageProps, {}> {
       sectionName: 'Sorry, the page you requested cannot be found.',
       content: (
         <div>
-          <p>The URL may be misspelled or the page you are looking for is no longer available.</p>
+          <MarkdownParagraph>
+            The URL may be misspelled or the page you are looking for is no longer available.
+          </MarkdownParagraph>
           <ul>
             <li>
-              <Link href="#/" onClick={ev => this._onInternalLinkClick(ev, '#/')}>
+              <MarkdownLink href="#/" onClick={ev => this._onInternalLinkClick(ev, '#/')}>
                 Fluent UI Home
-              </Link>
+              </MarkdownLink>
             </li>
             {this._getAreaLink()}
           </ul>
+          <br />
           {this._renderBackButton()}
         </div>
       ),
@@ -78,9 +83,9 @@ export class NotFoundPage extends React.Component<INotFoundPageProps, {}> {
 
       return (
         <li>
-          <Link href={url} onClick={ev => this._onInternalLinkClick(ev, url)}>
+          <MarkdownLink href={url} onClick={ev => this._onInternalLinkClick(ev, url)}>
             {title}
-          </Link>
+          </MarkdownLink>
         </li>
       );
     }
@@ -90,9 +95,9 @@ export class NotFoundPage extends React.Component<INotFoundPageProps, {}> {
   private _renderBackButton = (): JSX.Element => {
     if (window.history.length > 1) {
       return (
-        <p>
+        <MarkdownParagraph>
           <DefaultButton onClick={this._onGoBackClick}>Go back</DefaultButton>
-        </p>
+        </MarkdownParagraph>
       );
     }
   };

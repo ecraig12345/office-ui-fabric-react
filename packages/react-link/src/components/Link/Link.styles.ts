@@ -86,13 +86,7 @@ export const getStyles = (props: ILinkStyleProps): ILinkStyles => {
         {
           color: linkDisabledColor,
           cursor: 'default',
-        },
-        {
-          selectors: {
-            '&:link, &:visited': {
-              pointerEvents: 'none',
-            },
-          },
+          pointerEvents: 'none',
         },
       ],
       !isDisabled && {

@@ -48,11 +48,7 @@
   &.disabled {
     color: var($semanticColorsDisabledText);
     cursor: default;
-
-    &link,
-    &:visited {
-      pointer-events: none;
-    }
+    pointer-events: none;
   }
 
   &:not(.disabled) {

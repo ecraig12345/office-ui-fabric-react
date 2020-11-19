@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { IStyle, ITheme } from '@fluentui/react/lib/Styling';
-import { IStyleFunctionOrObject } from '@fluentui/react/lib/Utilities';
+import { IStyleFunctionOrObject, ICustomizations } from '@fluentui/react/lib/Utilities';
 import { IDropdownStyleProps } from '@fluentui/react/lib/Dropdown';
 import { IPackageGroup } from '@fluentui/react-monaco-editor';
 
@@ -46,6 +46,12 @@ export interface IExampleCardProps {
    * `@fluentui/react-monaco-editor/lib/utilities/defaultSupportedPackages`.
    */
   editorSupportedPackages?: IPackageGroup[];
+
+  /**
+   * Customizations to apply to the example content (not the rest of the card).
+   * These will be shallowly merged with the customizations provided by AppCustomizationsContext.
+   */
+  customizations?: ICustomizations;
 }
 
 export type IExampleCardStyleProps = Pick<IExampleCardProps, 'isRightAligned' | 'isScrollable' | 'theme'> & {

@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { css, Link } from '@fluentui/react';
+import { css } from '@fluentui/react';
 import {
   Page,
   PlatformContext,
   INavPage,
   IPageSectionProps,
   IPageProps,
+  MarkdownLink,
 } from '@fluentui/react-docsite-components/lib/index2';
 import * as PageStyles from '@fluentui/react-docsite-components/lib/components/Page/Page.module.scss';
 import { SiteDefinition } from '../../../SiteDefinition/index';
@@ -47,7 +48,7 @@ function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
                   const url = page.url || (page.pages && page.pages[0] && page.pages[0].url);
                   return url ? (
                     <li key={url} className={css(PageStyles.uThird)}>
-                      <Link href={url}>{page.title}</Link>
+                      <MarkdownLink href={url}>{page.title}</MarkdownLink>
                     </li>
                   ) : null;
                 })}

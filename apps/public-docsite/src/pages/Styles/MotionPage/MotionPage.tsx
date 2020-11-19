@@ -8,6 +8,7 @@ import {
   Table,
   Video,
   MarkdownCode,
+  MarkdownParagraph,
 } from '@fluentui/react-docsite-components/lib/index2';
 import { IStylesPageProps, StylesAreaPage } from '../StylesAreaPage';
 import { MotionPageProps } from './MotionPage.doc';
@@ -57,7 +58,9 @@ function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
               </Markdown>
 
               <MarkdownHeader as="h3">Delete & Slide</MarkdownHeader>
-              <p>This pattern for deleting an object from the view and how the remaining objects realign themselves.</p>
+              <MarkdownParagraph>
+                This pattern for deleting an object from the view and how the remaining objects realign themselves.
+              </MarkdownParagraph>
               <Video source="https://static2.sharepointonline.com/files/fabric/fabric-website/video/deleteslide.mp4" />
               <PatternTable
                 rows={[
@@ -79,7 +82,9 @@ function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
               />
 
               <MarkdownHeader as="h3">Slide & Add</MarkdownHeader>
-              <p>This pattern for adding an object to a view, and how the other objects react to the new element.</p>
+              <MarkdownParagraph>
+                This pattern for adding an object to a view, and how the other objects react to the new element.
+              </MarkdownParagraph>
               <Video source="https://static2.sharepointonline.com/files/fabric/fabric-website/video/slideadd.mp4" />
               <PatternTable
                 rows={[
@@ -101,10 +106,10 @@ function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
               />
 
               <MarkdownHeader as="h3">Drill In</MarkdownHeader>
-              <p>
+              <MarkdownParagraph>
                 This pattern handles the transition from one view into another. Some elements persist, some leave the
                 view, and new ones enter as well.
-              </p>
+              </MarkdownParagraph>
               <Video source="https://static2.sharepointonline.com/files/fabric/fabric-website/video/drillin.mp4" />
               <PatternTable
                 rows={[
@@ -126,10 +131,10 @@ function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
               />
 
               <MarkdownHeader as="h3">Drill In with Continuity</MarkdownHeader>
-              <p>
+              <MarkdownParagraph>
                 This pattern handles the transition from one view into another. Some elements persist, some leave the
                 view, and new ones enter as well.
-              </p>
+              </MarkdownParagraph>
               <Video source="https://static2.sharepointonline.com/files/fabric/fabric-website/video/drillinwithcontinuity.mp4" />
               <PatternTable
                 rows={[
@@ -158,10 +163,10 @@ function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
               />
 
               <MarkdownHeader as="h3">Tabs & Pivots</MarkdownHeader>
-              <p>
+              <MarkdownParagraph>
                 This pattern describes the transition from selecting one tab to another. Includes the selection state
                 that travels across the tab set. Also describes the tab content coming in and out as well.
-              </p>
+              </MarkdownParagraph>
               <Video source="https://static2.sharepointonline.com/files/fabric/fabric-website/video/tabspivots.mp4" />
               <PatternTable
                 rows={[
@@ -204,10 +209,10 @@ function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
               </Markdown>
 
               <MarkdownHeader as="h3">Fade</MarkdownHeader>
-              <p>
+              <MarkdownParagraph>
                 The most basic and fundamental animation for adding and removing objects. Use fades as the default
                 choice.
-              </p>
+              </MarkdownParagraph>
               <AnimationDetailGrid>
                 <AnimationDetail
                   animation="Fade in"
@@ -222,10 +227,10 @@ function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
               </AnimationDetailGrid>
 
               <MarkdownHeader as="h3">Scale</MarkdownHeader>
-              <p>
+              <MarkdownParagraph>
                 A more dramatic animation than fading, scaling draws the eye and implies a sense of depth. Use these
                 animations sparingly where more emphasis is needed.
-              </p>
+              </MarkdownParagraph>
               <AnimationDetailGrid>
                 <AnimationDetail
                   animation="Scale down in"
@@ -240,11 +245,11 @@ function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
               </AnimationDetailGrid>
 
               <MarkdownHeader as="h3">Slide</MarkdownHeader>
-              <p>
+              <MarkdownParagraph>
                 Use sliding animations for when there is an obvious directionality to the entrance and exit of an
                 object. These animations help users build a mental model of where the object can be found when it isn’t
                 visible.
-              </p>
+              </MarkdownParagraph>
               <AnimationDetailGrid>
                 <AnimationDetail
                   animation="Slide up in"

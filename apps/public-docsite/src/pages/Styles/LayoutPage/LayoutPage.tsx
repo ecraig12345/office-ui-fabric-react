@@ -6,6 +6,7 @@ import {
   MarkdownHeader,
   Markdown,
   MarkdownLink,
+  MarkdownParagraph,
 } from '@fluentui/react-docsite-components/lib/index2';
 import { IStylesPageProps, StylesAreaPage } from '../StylesAreaPage';
 import { LayoutPageProps } from './LayoutPage.doc';
@@ -34,7 +35,7 @@ function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
           sectionName: 'Breakpoints',
           content: (
             <>
-              <p>The grid and utilities use this common set of six breakpoints.</p>
+              <MarkdownParagraph>The grid and utilities use this common set of six breakpoints.</MarkdownParagraph>
               <Table content={breakpointsData} />
             </>
           ),
@@ -43,11 +44,11 @@ function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
           sectionName: 'Grid',
           content: (
             <>
-              <p>
+              <MarkdownParagraph>
                 Fabric Core comes with a mobile-first, 12-column, responsive grid that you can use to create flexible
                 layouts for a variety of screen sizes and device types.
-              </p>
-              <p>
+              </MarkdownParagraph>
+              <MarkdownParagraph>
                 <strong>Note that this grid is only available via Fabric Core CSS.</strong> If you're not using Fabric
                 Core, Fluent UI React's <MarkdownLink href="#/controls/web/stack">Stack</MarkdownLink> can cover some of
                 the same use cases, or you can use{' '}
@@ -55,7 +56,7 @@ function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
                   CSS grid
                 </MarkdownLink>
                 .
-              </p>
+              </MarkdownParagraph>
               <div
                 className="ms-Grid"
                 aria-label="Example Fabric Core grid where every row has a different number of columns."
@@ -171,11 +172,11 @@ function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
               </Markdown>
 
               <MarkdownHeader as="h4">Visibility</MarkdownHeader>
-              <p>
+              <MarkdownParagraph>
                 Some designs call for certain content to be shown or hidden depending on the screen size. You can
                 achieve this using Fabric Core's responsive visibility classes. These allow you to show or hide content
                 at a specific screen size, or across a whole range of sizes.
-              </p>
+              </MarkdownParagraph>
               <Table content={visibilityData} responsive={true} />
 
               <CodeSnippet language="html">

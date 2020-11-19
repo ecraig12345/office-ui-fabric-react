@@ -15,20 +15,7 @@ export const LinkPageProps: IDocPageProps = {
       code: LinkBasicExampleCode,
       view: <LinkBasicExample />,
       styles: ({ theme }) => {
-        // UHF overrides. :( These are here rather than in the example because they're not necessary
-        // under normal circumstances, and including them in the example makes it more confusing.
-        return {
-          root: {
-            selectors: {
-              '.ms-Link': {
-                margin: 0,
-                padding: 0,
-                overflow: 'inherit',
-                textOverflow: 'inherit',
-              },
-            },
-          },
-        };
+        const { semanticColors } = theme!;
       },
     },
   ],

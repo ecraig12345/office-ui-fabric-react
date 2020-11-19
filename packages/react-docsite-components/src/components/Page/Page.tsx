@@ -20,6 +20,7 @@ import {
 import { IPageProps, IPageSectionProps } from './Page.types';
 import * as styles from './Page.module.scss';
 import { getLinkColors } from '../../utilities/getLinkColors';
+import { IExampleCardProps } from '../ExampleCard/index';
 
 const SECTION_STAGGER_INTERVAL = 0.05;
 /** Section key/id prefix for sections which don't have a title */
@@ -34,6 +35,38 @@ const linkCustomizations: Partial<ILinkProps> = {
     const { semanticColors } = props.theme;
     return {
       root: getLinkColors(semanticColors.link, semanticColors.linkHovered),
+    };
+  },
+};
+const exampleCardCustomizations: Partial<IExampleCardProps> = {
+  styles: props => {
+    const { semanticColors } = props.theme!;
+    // UHF overrides. :( These are here rather than in the example because they're not necessary
+    // under normal circumstances, and including them in the example makes it more confusing.
+    return {
+      root: {
+        selectors: {
+          '.ms-Link': {
+            color: semanticColors.link,
+            margin: 0,
+            padding: 0,
+            overflow: 'inherit',
+            textOverflow: 'inherit',
+            selectors: {
+              '&:link, &:visited, &:focus': {
+                color: semanticColors.link,
+              },
+              '&:active, &:hover, &:active:hover': {
+                color: semanticColors.linkHovered,
+              },
+            },
+          },
+          '.ms-Link.is-disabled': {
+            pointerEvents: 'none',
+            cursor: 'default',
+          },
+        },
+      },
     };
   },
 };

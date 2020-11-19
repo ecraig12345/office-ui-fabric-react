@@ -1,7 +1,15 @@
 import * as React from 'react';
-import { Icon, Link } from '@fluentui/react';
+import { Icon } from '@fluentui/react';
 import { getFileTypeIconProps } from '@fluentui/react-file-type-icons';
-import { Markdown, MarkdownHeader, IPageSectionProps } from '@fluentui/react-docsite-components/lib/index2';
+import { Icon } from 'office-ui-fabric-react';
+import { getFileTypeIconProps } from '@uifabric/file-type-icons';
+import {
+  Markdown,
+  MarkdownHeader,
+  IPageSectionProps,
+  MarkdownLink,
+  MarkdownParagraph,
+} from '@fluentui/react-docsite-components/lib/index2';
 import { IStylesPageProps, StylesAreaPage } from '../StylesAreaPage';
 import { FileTypeIconsPageProps } from './FileTypeIconsPage.doc';
 import { Platforms } from '../../../interfaces/Platforms';
@@ -43,18 +51,19 @@ function _otherSections(platform: Platforms): IPageSectionProps<Platforms>[] {
               <div className="ms-Grid">
                 <div className="ms-Grid-row">
                   <div className="ms-Grid-col ms-sm12 ms-lg6">
-                    <p>
-                      Use file type icons to indicate to users that they are creating a new file of that type. Make sure
-                      that a file of the type that the icon represents loads when the user selects the icon. For
-                      example, do not use a Word .docx icon to open a .txt file. File type icons should always represent
-                      Microsoft Office files.
-                      <br />
-                      <br />
-                      If you are looking for icons for command bars, navigation, status indicators, or similar, check
-                      out the <Link href="#/styles/web/icons">Fluent UI icons page</Link>. Alternatively, if you're
-                      looking for brand logos, or the icons of apps themselves, check out the{' '}
-                      <Link href="#/styles/web/office-brand-icons">Fluent UI brand icons page</Link>.
-                    </p>
+                    <MarkdownParagraph>
+                      Use file type icons to indicate to a person that they are creating or interacting with a file of
+                      that type. The icon should always match the type of the file. For example, do not use a Word .docx
+                      icon to open a .txt file. Only use Microsoft Office file type icons to represent Microsoft Office
+                      files.
+                    </MarkdownParagraph>
+                    <MarkdownParagraph>
+                      If you're looking for icons for command bars, navigation, status indicators, or similar, check out
+                      the <MarkdownLink href="#/styles/web/icons">Fluent UI icons page</MarkdownLink>. Alternatively, if
+                      you're looking for brand logos, or the icons of apps themselves, check out the{' '}
+                      <MarkdownLink href="#/styles/web/office-brand-icons">Fluent UI brand icons page</MarkdownLink>.
+                    </MarkdownParagraph>
+                    >
                   </div>
                   <div className="ms-Grid-col ms-sm12 ms-lg6">
                     <ul className={styles.exampleIcons}>

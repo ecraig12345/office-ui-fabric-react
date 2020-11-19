@@ -1,13 +1,6 @@
 import * as React from 'react';
-import {
-  IStyleFunctionOrObject,
-  ITheme,
-  IStyle,
-  styled,
-  classNamesFunction,
-  IRawStyle,
-  DefaultPalette,
-} from '@fluentui/react';
+import { ITheme, IStyle, IRawStyle, DefaultPalette } from '@fluentui/react/lib/Styling';
+import { IStyleFunctionOrObject, classNamesFunction, styled } from '@fluentui/react/lib/Utilities';
 import { NeutralColors, SharedColors } from '@fluentui/theme';
 import { baseCodeStyle, getStyles } from './CodeSnippet.styles';
 

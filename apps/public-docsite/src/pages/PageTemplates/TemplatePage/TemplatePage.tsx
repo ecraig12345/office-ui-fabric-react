@@ -94,13 +94,7 @@ function _otherSections(platform: Platforms): IPageSectionProps[] {
           // editUrl: '',
 
           // Define the content using any React node you want.
-          content: (
-            <div>
-              <p>
-                This can be any React node you want. This section is also using a custom <code>className</code>.
-              </p>
-            </div>
-          ),
+          content: <div>This can be any React node you want. This section is also using a custom className.</div>,
 
           // Optionally wrap the section with a className. Use the `css` utility from Fluent UI to concatenate
           // classNames that may be falsey.
