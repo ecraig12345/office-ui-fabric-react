@@ -7,19 +7,28 @@ import { styled, classNamesFunction, IRawStyle } from '@fluentui/react';
 import { ICodeSnippetStyleProps, ICodeSnippetStyles, ICodeSnippetProps } from './CodeSnippet';
 import { getStyles, baseCodeStyle } from './CodeSnippet.styles';
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-const SyntaxHighlighter = require<any>('react-syntax-highlighter/dist/esm/prism-light').default;
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-ignore
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/prism-light';
 
 // Import languages from SyntaxHighlighter
-const ts = require<any>('react-syntax-highlighter/dist/esm/languages/prism/tsx').default;
-const scss = require<any>('react-syntax-highlighter/dist/esm/languages/prism/scss').default;
-const md = require<any>('react-syntax-highlighter/dist/esm/languages/prism/markdown').default;
-const bash = require<any>('react-syntax-highlighter/dist/esm/languages/prism/bash').default;
-const markup = require<any>('react-syntax-highlighter/dist/esm/languages/prism/markup').default;
-/* eslint-enable @typescript-eslint/no-explicit-any */
+// @ts-ignore
+import ts from 'react-syntax-highlighter/dist/esm/languages/prism/tsx';
+// @ts-ignore
+import scss from 'react-syntax-highlighter/dist/esm/languages/prism/scss';
+// @ts-ignore
+import md from 'react-syntax-highlighter/dist/esm/languages/prism/markdown';
+// @ts-ignore
+import bash from 'react-syntax-highlighter/dist/esm/languages/prism/bash';
+// @ts-ignore
+import markup from 'react-syntax-highlighter/dist/esm/languages/prism/markup';
 
 // Import SyntaxHighlighter styles
-const style: { [key: string]: IRawStyle } = require('react-syntax-highlighter/dist/styles/prism/prism').default;
+// @ts-ignore
+import prismStyle from 'react-syntax-highlighter/dist/styles/prism/prism';
+/* eslint-enable @typescript-eslint/ban-ts-comment */
+
+const style: { [key: string]: IRawStyle } = prismStyle;
 
 // Register languages
 SyntaxHighlighter.registerLanguage('tsx', ts);

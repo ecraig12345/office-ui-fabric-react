@@ -11,19 +11,29 @@ import {
 import { NeutralColors, SharedColors } from '@fluentui/theme';
 import { baseCodeStyle, getStyles } from './CodeSnippet.styles';
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-const SyntaxHighlighter = require<any>('react-syntax-highlighter/dist/esm/light').default;
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// The type definitions for this package are incorrect and don't contain these files
+// @ts-ignore
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/light';
 
 // Import languages from SyntaxHighlighter
-const ts = require<any>('react-syntax-highlighter/dist/esm/languages/hljs/typescript').default;
-const scss = require<any>('react-syntax-highlighter/dist/esm/languages/hljs/scss').default;
-const md = require<any>('react-syntax-highlighter/dist/esm/languages/hljs/markdown').default;
-const bash = require<any>('react-syntax-highlighter/dist/esm/languages/hljs/bash').default;
-const xml = require<any>('react-syntax-highlighter/dist/esm/languages/hljs/xml').default;
-/* eslint-enable @typescript-eslint/no-explicit-any */
+// @ts-ignore
+import ts from 'react-syntax-highlighter/dist/esm/languages/hljs/typescript';
+// @ts-ignore
+import scss from 'react-syntax-highlighter/dist/esm/languages/hljs/scss';
+// @ts-ignore
+import md from 'react-syntax-highlighter/dist/esm/languages/hljs/markdown';
+// @ts-ignore
+import bash from 'react-syntax-highlighter/dist/esm/languages/hljs/bash';
+// @ts-ignore
+import xml from 'react-syntax-highlighter/dist/esm/languages/hljs/xml';
 
 // Import SyntaxHighlighter styles
-const style: { [key: string]: IRawStyle } = require('react-syntax-highlighter/dist/styles/hljs/github').default;
+// @ts-ignore
+import githubStyle from 'react-syntax-highlighter/dist/styles/hljs/github';
+/* eslint-enable @typescript-eslint/ban-ts-comment */
+
+const style: { [key: string]: IRawStyle } = githubStyle;
 
 // Register languages
 SyntaxHighlighter.registerLanguage('typescript', ts);

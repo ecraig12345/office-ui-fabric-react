@@ -3,15 +3,21 @@ import { IRawStyle, mergeStyles } from '@fluentui/react/lib/Styling';
 import { css } from '@fluentui/react/lib/Utilities';
 import { CODE_FONT_FAMILY } from './consts';
 
-// react-syntax-highlighter has typings, but they're wrong aside from the props and missing many paths...
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { SyntaxHighlighterProps } from 'react-syntax-highlighter';
-const SyntaxHighlighter = require<{
-  default: React.ComponentType<SyntaxHighlighterProps> & { registerLanguage: (lang: string, func: any) => void };
-}>('react-syntax-highlighter/dist/esm/prism-light').default;
-const ts = require<any>('react-syntax-highlighter/dist/esm/languages/prism/tsx').default;
-const style: { [key: string]: IRawStyle } = require('react-syntax-highlighter/dist/styles/prism/vs').default;
-/* eslint-enable @typescript-eslint/no-explicit-any */
+import vsStyle from 'react-syntax-highlighter/dist/styles/prism/vs';
+// react-syntax-highlighter has typings, but they're missing many paths...
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-ignore
+import SyntaxHighlighterPrism from 'react-syntax-highlighter/dist/esm/prism-light';
+// @ts-ignore
+import ts from 'react-syntax-highlighter/dist/esm/languages/prism/tsx';
+/* eslint-enable @typescript-eslint/ban-ts-comment */
+
+const SyntaxHighlighter: React.ComponentType<SyntaxHighlighterProps> & {
+  registerLanguage: (lang: string, func: Function) => void;
+} = SyntaxHighlighterPrism;
+
+const style: { [key: string]: IRawStyle } = vsStyle;
 
 // Register languages
 SyntaxHighlighter.registerLanguage('tsx', ts);
