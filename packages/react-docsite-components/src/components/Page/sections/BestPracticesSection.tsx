@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { EditSection } from '../../EditSection/index';
 import { css } from '@fluentui/react';
-import { getEditUrl, pascalize } from '../../../utilities/index2';
+import { getEditUrl, pascalize } from '../../../utilities/index';
 import { Markdown, MarkdownHeader } from '../../Markdown/index';
 import { IPageSectionPropsWithSectionName } from '../Page.types';
 import * as styles from '../Page.module.scss';

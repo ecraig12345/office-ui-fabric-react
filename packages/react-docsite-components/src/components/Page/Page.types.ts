@@ -55,7 +55,7 @@ export interface IPageProps<TPlatforms extends string = string> {
   design?: string;
 
   /** (6) Array of examples, displayed in the order defined. */
-  examples?: IExample[];
+  examples?: IPageExample[];
 
   /** Knobs that applies to all the examples. */
   exampleKnobs?: React.ReactNode;
@@ -114,7 +114,7 @@ export interface IPageProps<TPlatforms extends string = string> {
   platform?: TPlatforms;
 }
 
-export interface IExample extends IExampleCardProps {
+export interface IPageExample extends IExampleCardProps {
   /** Working example of the example */
   view: React.ReactNode;
 }

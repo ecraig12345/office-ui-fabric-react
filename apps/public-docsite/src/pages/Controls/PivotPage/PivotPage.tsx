@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IPageSectionProps, Markdown } from '@fluentui/react-docsite-components/lib/index2';
+import { IPageSectionProps, Markdown } from '@fluentui/react-docsite-components';
 import { ControlsAreaPage, IControlsPageProps } from '../ControlsAreaPage';
 import { PivotPageProps } from './PivotPage.doc';
 import { Platforms } from '../../../interfaces/Platforms';

@@ -2,13 +2,7 @@ import * as React from 'react';
 import { CollapsibleSection } from '@fluentui/react-experiments';
 import { css, FocusZone, Icon, IIconProps, ISearchBoxStyles, Link, SearchBox, getFocusStyle } from '@fluentui/react';
 import { IButtonStyles, IconButton } from '@fluentui/react/lib/compat/Button';
-import {
-  isPageActive,
-  hasActiveChild,
-  INavPage,
-  INavProps,
-  NavSortType,
-} from '@fluentui/react-docsite-components/lib/index2';
+import { isPageActive, hasActiveChild, INavPage, INavProps, NavSortType } from '@fluentui/react-docsite-components';
 import { theme } from '@fluentui/react-docsite-components/lib/styles/theme';
 import { getItem, setItem } from '@fluentui/utilities/lib/sessionStorage';
 import * as styles from './Nav.module.scss';

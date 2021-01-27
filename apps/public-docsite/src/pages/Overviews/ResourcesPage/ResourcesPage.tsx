@@ -1,11 +1,5 @@
 import * as React from 'react';
-import {
-  Markdown,
-  PlatformContext,
-  Page,
-  IPageProps,
-  IPageSectionProps,
-} from '@fluentui/react-docsite-components/lib/index2';
+import { Markdown, PlatformContext, Page, IPageProps, IPageSectionProps } from '@fluentui/react-docsite-components';
 import { ResourcesPageProps } from './ResourcesPage.doc';
 import { Platforms } from '../../../interfaces/Platforms';
 

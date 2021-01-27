@@ -1,15 +1,26 @@
 import * as React from 'react';
 import { CommandButton } from '@fluentui/react/lib/compat/Button';
-import { Dropdown, IDropdownOption } from '@fluentui/react/lib/Dropdown';
-import { styled, Theme, ThemeProvider, classNamesFunction, css, warn, memoizeFunction } from '@fluentui/react';
-import { ISchemeNames, IProcessedStyleSet } from '@fluentui/react/lib/Styling';
-import { IStackComponent, Stack } from '@fluentui/react/lib/Stack';
+import {
+  classNamesFunction,
+  css,
+  Dropdown,
+  IDropdownOption,
+  IProcessedStyleSet,
+  ISchemeNames,
+  IStackComponent,
+  memoizeFunction,
+  Stack,
+  styled,
+  Theme,
+  ThemeProvider,
+  warn,
+} from '@fluentui/react';
 import { AppThemesContext, IAppThemes, IExampleCardTheme } from '../../utilities/theme';
-import { CodepenComponent, CONTENT_ID } from '../CodepenComponent/CodepenComponent';
+import { CodepenComponent, CODEPEN_CONTENT_ID } from '../CodepenComponent/CodepenComponent';
 import { IExampleCardProps, IExampleCardStyleProps, IExampleCardStyles } from './ExampleCard.types';
 import { getStyles } from './ExampleCard.styles';
 import { EditorWrapper, SUPPORTED_PACKAGES, IMonacoTextModel, transformExample } from '@fluentui/react-monaco-editor';
-import { getQueryParam } from '../../utilities/index2';
+import { getQueryParam } from '../../utilities/index';
 
 export interface IExampleCardState {
   /** only used if props.isCodeVisible and props.onToggleEditor are undefined */
@@ -237,7 +248,7 @@ export class ExampleCardBase extends React.Component<IExampleCardProps, IExample
   private _transformCode(code: string): string | undefined {
     return transformExample({
       tsCode: code,
-      id: CONTENT_ID,
+      id: CODEPEN_CONTENT_ID,
       supportedPackages: SUPPORTED_PACKAGES,
     }).output;
   }

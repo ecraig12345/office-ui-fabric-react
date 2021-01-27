@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ColorPalette, IColorSwatch, MarkdownHeader } from '@fluentui/react-docsite-components/lib/index2';
+import { ColorPalette, IColorSwatch, MarkdownHeader } from '@fluentui/react-docsite-components';
 import { SharePointNeutrals, SharePointThemes } from './sharePointThemes';
 
 export class SharePoint extends React.Component<{}, { activeThemeName?: string }> {

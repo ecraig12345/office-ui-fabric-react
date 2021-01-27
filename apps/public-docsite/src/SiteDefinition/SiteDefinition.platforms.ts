@@ -1,4 +1,4 @@
-import { IPlatform } from '@fluentui/react-docsite-components/lib/index2';
+import { IPlatform } from '@fluentui/react-docsite-components';
 import { Platforms } from '../interfaces/Platforms';
 
 export const platforms: { [x in Platforms]?: IPlatform } = {

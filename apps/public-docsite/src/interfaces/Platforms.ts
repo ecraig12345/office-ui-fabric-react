@@ -1,4 +1,4 @@
-import { TPlatformPageProps } from '@fluentui/react-docsite-components/lib/index2';
+import { TPlatformPageProps } from '@fluentui/react-docsite-components';
 
 export enum Platforms {
   /** 'default' will be used when there are no platforms for the relevant page/area. */

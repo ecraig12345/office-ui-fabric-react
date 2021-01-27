@@ -1,19 +1,26 @@
 import * as React from 'react';
 import { AppThemesContext } from '../../utilities/theme';
-import { classNamesFunction, css, styled, ThemeProvider } from '@fluentui/react';
+import {
+  classNamesFunction,
+  css,
+  styled,
+  ThemeProvider,
+  Fabric,
+  INavLink,
+  Nav,
+  IProcessedStyleSet,
+  Panel,
+  PanelType,
+} from '@fluentui/react';
 import { ExampleStatus, IAppProps, IAppStyleProps, IAppStyles } from './App.types';
-import { Fabric } from '@fluentui/react/lib/Fabric';
 import { getStyles } from './App.styles';
 import { Header } from '../Header/Header';
-import { INavLink, Nav } from '@fluentui/react/lib/Nav';
-import { IProcessedStyleSet } from '@fluentui/react/lib/Styling';
-import { Panel, PanelType } from '@fluentui/react/lib/Panel';
 import {
   ResponsiveMode,
   withResponsiveMode,
 } from '@fluentui/react-internal/lib/utilities/decorators/withResponsiveMode';
 import { showOnlyExamples } from '../../utilities/showOnlyExamples';
-import { getQueryParam } from '../../utilities/index2';
+import { getQueryParam } from '../../utilities/index';
 
 export interface IAppState {
   isMenuVisible: boolean;

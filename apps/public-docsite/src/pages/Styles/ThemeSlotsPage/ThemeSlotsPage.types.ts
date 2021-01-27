@@ -1,5 +1,5 @@
 import { ITheme, IStyle, IStyleFunctionOrObject } from '@fluentui/react';
-import { IPageProps } from '@fluentui/react-docsite-components/lib/index2';
+import { IPageProps } from '@fluentui/react-docsite-components';
 import { Platforms } from '../../../interfaces/Platforms';
 
 export interface IThemeSlotsPageProps extends IPageProps<Platforms> {

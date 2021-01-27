@@ -6,7 +6,7 @@ import {
   MarkdownHeader,
   Markdown,
   MarkdownLink,
-} from '@fluentui/react-docsite-components/lib/index2';
+} from '@fluentui/react-docsite-components';
 import { IStylesPageProps, StylesAreaPage } from '../StylesAreaPage';
 import { LayoutPageProps } from './LayoutPage.doc';
 import * as styles from './LayoutPage.module.scss';

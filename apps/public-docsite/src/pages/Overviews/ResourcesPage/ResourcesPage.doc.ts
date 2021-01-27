@@ -1,4 +1,4 @@
-import { IPageProps } from '@fluentui/react-docsite-components/lib/index2';
+import { IPageProps } from '@fluentui/react-docsite-components';
 
 export const ResourcesPageProps: IPageProps = {
   title: 'Resources',

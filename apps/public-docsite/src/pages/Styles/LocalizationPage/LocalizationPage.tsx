@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Markdown, MarkdownHeader, IPageSectionProps } from '@fluentui/react-docsite-components/lib/index2';
+import { Markdown, MarkdownHeader, IPageSectionProps } from '@fluentui/react-docsite-components';
 import { Table, ITableContent } from '../../../components/Table/Table';
 import { IStylesPageProps, StylesAreaPage } from '../StylesAreaPage';
 import { LocalizationPageProps } from './LocalizationPage.doc';

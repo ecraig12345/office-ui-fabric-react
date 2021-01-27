@@ -8,7 +8,7 @@ import {
   Table,
   Video,
   MarkdownCode,
-} from '@fluentui/react-docsite-components/lib/index2';
+} from '@fluentui/react-docsite-components';
 import { IStylesPageProps, StylesAreaPage } from '../StylesAreaPage';
 import { MotionPageProps } from './MotionPage.doc';
 import { Platforms } from '../../../interfaces/Platforms';

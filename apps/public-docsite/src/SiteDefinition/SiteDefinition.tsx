@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ISiteDefinition, LoadingComponent } from '@fluentui/react-docsite-components/lib/index2';
+import { ISiteDefinition, LoadingComponent } from '@fluentui/react-docsite-components';
 import { ControlsPages, ResourcesPages, StylesPages, GetStartedPages } from './SiteDefinition.pages/index';
 import { Platforms } from '../interfaces/Platforms';
 import { platforms } from './SiteDefinition.platforms';

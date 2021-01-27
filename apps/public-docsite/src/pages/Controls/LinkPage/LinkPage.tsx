@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { IPageSectionProps } from '@fluentui/react-docsite-components/lib/index2';
+import { IPageSectionProps, ImplementationSection } from '@fluentui/react-docsite-components';
 import { ControlsAreaPage, IControlsPageProps } from '../ControlsAreaPage';
 import { LinkPageProps } from './LinkPage.doc';
 import { Platforms } from '../../../interfaces/Platforms';
-import { ImplementationSection } from '@fluentui/react-docsite-components/lib/index2';
 import { ApiKind } from '@fluentui/react-internal/lib/common/DocPage.types';
 
 /* eslint-disable @fluentui/max-len */

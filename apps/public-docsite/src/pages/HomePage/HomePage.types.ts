@@ -1,5 +1,5 @@
 import { ITheme, IStyle, IStyleFunctionOrObject } from '@fluentui/react';
-import { IPageProps } from '@fluentui/react-docsite-components/lib/index2';
+import { IPageProps } from '@fluentui/react-docsite-components';
 
 export interface IHomePageProps extends IPageProps {
   theme?: ITheme;

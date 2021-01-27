@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Pivot, PivotItem } from '@fluentui/react';
 import { IconGrid } from '../../../components/IconGrid/IconGrid';
-import { IPageSectionProps } from '@fluentui/react-docsite-components/lib/index2';
+import { IPageSectionProps } from '@fluentui/react-docsite-components';
 import { IStylesPageProps, StylesAreaPage } from '../StylesAreaPage';
 import { FabricIconsPageProps } from './FabricIconsPage.doc';
 import * as styles from './FabricIconsPage.module.scss';

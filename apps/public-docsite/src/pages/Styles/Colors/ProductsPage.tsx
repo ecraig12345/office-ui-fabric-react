@@ -6,7 +6,7 @@ import {
   IColorSwatch,
   IColorPaletteTheme,
   IPageSectionProps,
-} from '@fluentui/react-docsite-components/lib/index2';
+} from '@fluentui/react-docsite-components';
 import { IStylesPageProps, StylesAreaPage } from '../StylesAreaPage';
 import { ColorsProductsPageProps } from './ProductsPage.doc';
 

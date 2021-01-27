@@ -9,8 +9,9 @@ import {
   ISiteDefinition,
   currentFabricBreakpoint,
   handleRedirects,
-} from '@fluentui/react-docsite-components/lib/index2';
-import { Route, Router } from '@fluentui/react-docsite-components';
+  Route,
+  Router,
+} from '@fluentui/react-docsite-components';
 import { Site } from '../components/Site/index';
 import { hasUHF, isLocal } from './location';
 

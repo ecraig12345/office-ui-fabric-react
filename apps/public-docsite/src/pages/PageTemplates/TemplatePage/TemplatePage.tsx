@@ -1,12 +1,6 @@
 import * as React from 'react';
 import { css } from '@fluentui/react';
-import {
-  Markdown,
-  PlatformContext,
-  Page,
-  IPageProps,
-  IPageSectionProps,
-} from '@fluentui/react-docsite-components/lib/index2';
+import { Markdown, PlatformContext, Page, IPageProps, IPageSectionProps } from '@fluentui/react-docsite-components';
 import { getSubTitle } from '../../../utilities/index';
 import { TemplatePageProps } from './TemplatePage.doc';
 

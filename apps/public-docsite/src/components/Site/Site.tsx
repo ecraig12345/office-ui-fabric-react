@@ -21,10 +21,11 @@ import {
   removeAnchorLink,
   SiteMessageBar,
   getQueryParam,
-} from '@fluentui/react-docsite-components/lib/index2';
+  AppThemesContext,
+  extractAnchorLink,
+} from '@fluentui/react-docsite-components';
 import { Nav } from '../Nav/index';
 import { AppThemes } from './AppThemes';
-import { AppThemesContext, extractAnchorLink } from '@fluentui/react-docsite-components/lib/index';
 import { getItem, setItem } from '@fluentui/utilities/lib/sessionStorage';
 import * as styles from './Site.module.scss';
 import { appMaximumWidthLg } from '../../styles/constants';

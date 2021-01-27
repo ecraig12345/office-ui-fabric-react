@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { ExampleCard } from '../../ExampleCard/index';
-import { IExample, IPageSectionPropsWithSectionName } from '../Page.types';
+import { IPageExample, IPageSectionPropsWithSectionName } from '../Page.types';
 import * as styles from '../Page.module.scss';
 
 export interface IExamplesSectionProps extends IPageSectionPropsWithSectionName {
   exampleKnobs?: React.ReactNode;
   // TODO: There seems to be a disparity between this type and IPageSectionProps as used in Page.tsx.
   //        Making optional for now to workaround.
-  examples?: IExample[];
+  examples?: IPageExample[];
 }
 
 export const ExamplesSection: React.FunctionComponent<IExamplesSectionProps> = props => {
@@ -25,7 +25,7 @@ export const ExamplesSection: React.FunctionComponent<IExamplesSectionProps> = p
       <div>
         {exampleKnobs && <div className={styles.subSection}>{exampleKnobs}</div>}
         {examples &&
-          examples.map((example: IExample) => {
+          examples.map((example: IPageExample) => {
             const { view, ...exampleProps } = example;
             return (
               <div key={example.title + '-key'} className={styles.subSection}>

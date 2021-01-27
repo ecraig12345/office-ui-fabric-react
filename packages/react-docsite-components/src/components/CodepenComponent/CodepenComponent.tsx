@@ -4,7 +4,7 @@ import { IStyleFunction, classNamesFunction, styled } from '@fluentui/react/lib/
 import { ICodepenProps, ICodepenStyleProps, ICodepenStyles } from './CodepenComponent.types';
 
 /** ID to render the example into */
-export const CONTENT_ID = 'content';
+export const CODEPEN_CONTENT_ID = 'content';
 
 const getStyles: IStyleFunction<ICodepenStyleProps, ICodepenStyles> = () => ({});
 
@@ -48,7 +48,7 @@ const CodepenComponentBase: React.FunctionComponent<ICodepenProps> = props => {
       jsContentStr.indexOf('window.FluentUIExampleData') !== -1
         ? script('@fluentui/example-data@7/dist/example-data.js')
         : '',
-      `<div id="${CONTENT_ID}"></div>`,
+      `<div id="${CODEPEN_CONTENT_ID}"></div>`,
     ]
       .filter(line => !!line)
       .join('\n');

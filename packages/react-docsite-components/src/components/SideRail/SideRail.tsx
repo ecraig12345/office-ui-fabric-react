@@ -8,7 +8,7 @@ import {
   classNamesFunction,
   styled,
 } from '@fluentui/react';
-import { isPageActive, removeAnchorLink, jumpToAnchor } from '../../utilities/index2';
+import { isPageActive, removeAnchorLink, jumpToAnchor } from '../../utilities/index';
 import { MarkdownHeader } from '../Markdown/index';
 import { ISideRailProps, ISideRailLink, ISideRailStyles, ISideRailStyleProps } from './SideRail.types';
 import { getStyles } from './SideRail.styles';

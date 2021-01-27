@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { INavPage, LoadingComponent } from '@fluentui/react-docsite-components/lib/index2';
+import { INavPage, LoadingComponent } from '@fluentui/react-docsite-components';
 import { stylesPagesWeb } from './index';
 
 export const StylesPages: INavPage = {

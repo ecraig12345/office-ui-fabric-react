@@ -1,12 +1,6 @@
 import * as React from 'react';
 import { css, Link } from '@fluentui/react';
-import {
-  Page,
-  PlatformContext,
-  INavPage,
-  IPageSectionProps,
-  IPageProps,
-} from '@fluentui/react-docsite-components/lib/index2';
+import { Page, PlatformContext, INavPage, IPageSectionProps, IPageProps } from '@fluentui/react-docsite-components';
 import * as PageStyles from '@fluentui/react-docsite-components/lib/components/Page/Page.module.scss';
 import { SiteDefinition } from '../../../SiteDefinition/index';
 import { getSubTitle } from '../../../utilities/index';

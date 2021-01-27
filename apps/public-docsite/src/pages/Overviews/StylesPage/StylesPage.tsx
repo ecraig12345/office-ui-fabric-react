@@ -6,7 +6,7 @@ import {
   IPageProps,
   IPageSectionProps,
   MarkdownHeader,
-} from '@fluentui/react-docsite-components/lib/index2';
+} from '@fluentui/react-docsite-components';
 import { getSubTitle } from '../../../utilities/index';
 import * as styles from './StylesPage.module.scss';
 import { Platforms } from '../../../interfaces/Platforms';

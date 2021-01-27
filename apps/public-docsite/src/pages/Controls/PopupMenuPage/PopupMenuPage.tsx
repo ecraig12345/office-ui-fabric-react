@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IPageSectionProps } from '@fluentui/react-docsite-components/lib/index2';
+import { IPageSectionProps } from '@fluentui/react-docsite-components';
 import { ControlsAreaPage, IControlsPageProps } from '../ControlsAreaPage';
 import { PopupMenuPageProps } from './PopupMenuPage.doc';
 import { Platforms } from '../../../interfaces/Platforms';

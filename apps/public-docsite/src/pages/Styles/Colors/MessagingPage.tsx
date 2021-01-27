@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Markdown, IPageSectionProps, ColorPalette } from '@fluentui/react-docsite-components/lib/index2';
+import { Markdown, IPageSectionProps, ColorPalette } from '@fluentui/react-docsite-components';
 import { IStylesPageProps, StylesAreaPage } from '../StylesAreaPage';
 import { ColorsMessagingPageProps } from './MessagingPage.doc';
 import { Platforms } from '../../../interfaces/Platforms';

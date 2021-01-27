@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Page, IPageProps, PlatformContext } from '@fluentui/react-docsite-components/lib/index2';
+import { Page, IPageProps, PlatformContext } from '@fluentui/react-docsite-components';
 import { getSubTitle } from '../../utilities/index';
 import { Platforms } from '../../interfaces/Platforms';
 import { IPageJson } from '@fluentui/react-internal/lib/common/DocPage.types';

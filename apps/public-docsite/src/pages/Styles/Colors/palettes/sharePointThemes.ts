@@ -1,4 +1,4 @@
-import { IColorPaletteTheme } from '@fluentui/react-docsite-components/lib/index2';
+import { IColorPaletteTheme } from '@fluentui/react-docsite-components';
 
 export const SharePointThemes: IColorPaletteTheme[] = [
   {

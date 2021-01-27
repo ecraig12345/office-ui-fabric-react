@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css, FocusZone, Panel, PanelType, ScreenWidthMinUhfMobile, on } from '@fluentui/react';
 import { IconButton } from '@fluentui/react/lib/compat/Button';
-import { hasActiveChild, removeAnchorLink } from '../../utilities/index2';
+import { hasActiveChild, removeAnchorLink } from '../../utilities/index';
 import { INavPage } from '../Nav/Nav.types';
 import { Badge } from '../Badge/index';
 import { ITopNavProps } from './TopNav.types';
