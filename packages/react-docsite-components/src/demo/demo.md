@@ -3,7 +3,7 @@
 ```tsx
 import * as React from 'react';
 import { Link, ILinkProps } from '@fluentui/react/lib/Link';
-import { removeAnchorLink } from '../../utilities/index2';
+import { removeAnchorLink } from '../../utilities/index';
 
 export const MarkdownLink: React.FunctionComponent<ILinkProps> = props => {
   let href = props.href;

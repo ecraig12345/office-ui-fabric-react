@@ -50,7 +50,7 @@ function basicPreset() {
   // Build only commonjs (not other TS variants) but still run other tasks
   option('commonjs');
 
-  option('cached', { default: false } as any);
+  option('cached', { default: true } as any);
 
   option('registry', { default: 'https://registry.npmjs.org' } as any);
 

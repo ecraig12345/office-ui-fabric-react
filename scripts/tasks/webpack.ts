@@ -26,7 +26,7 @@ export function webpackDevServer(
      */
     webpackConfig: string;
     /**
-     * @default false
+     * @default true
      */
     cached: boolean;
   }> = {},

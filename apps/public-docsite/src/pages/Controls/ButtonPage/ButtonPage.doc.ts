@@ -1,6 +1,6 @@
 import { ButtonPageProps as ExternalProps } from '@fluentui/react-examples/lib/react/Button/Button.doc';
 import { Platforms } from '../../../interfaces/Platforms';
-import { TPlatformPageProps } from '@fluentui/react-docsite-components/lib/index2';
+import { TPlatformPageProps } from '@fluentui/react-docsite-components';
 
 const related = require('!raw-loader?esModule=false!@fluentui/public-docsite/src/pages/Controls/ButtonPage/docs/ButtonRelated.md') as string;
 const componentUrl =

@@ -1,0 +1,8 @@
+{
+  "type": "prerelease",
+  "comment": "Export all components from index instead of index2",
+  "packageName": "@fluentui/react-docsite-components",
+  "email": "elcraig@microsoft.com",
+  "dependentChangeType": "patch",
+  "date": "2021-01-30T01:48:42.185Z"
+}
