@@ -1,0 +1,8 @@
+{
+  "type": "prerelease",
+  "comment": "Remove some webpack-style imports",
+  "packageName": "@fluentui/react-monaco-editor",
+  "email": "elcraig@microsoft.com",
+  "dependentChangeType": "patch",
+  "date": "2021-01-30T01:57:49.979Z"
+}
