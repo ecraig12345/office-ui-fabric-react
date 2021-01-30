@@ -89,8 +89,11 @@ export class ApiReferencesTable extends React.Component<IApiReferencesTableProps
     super(props);
 
     const { renderAs } = props;
+    // eslint-disable-next-line deprecation/deprecation
     this._isEnum = !!(renderAs === 'enum' || props.renderAsEnum);
+    // eslint-disable-next-line deprecation/deprecation
     this._isClass = !!(renderAs === 'class' || props.renderAsClass);
+    // eslint-disable-next-line deprecation/deprecation
     this._isTypeAlias = !!(renderAs === 'typeAlias' || props.renderAsTypeAlias);
   }
 

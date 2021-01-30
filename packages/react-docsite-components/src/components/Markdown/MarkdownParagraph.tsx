@@ -1,12 +1,6 @@
 import * as React from 'react';
-import {
-  IClassNames,
-  IStyleFunction,
-  classNamesFunction,
-  styled,
-  IStyleFunctionOrObject,
-} from '@fluentui/react/lib/Utilities';
-import { ITheme, IStyle } from '@fluentui/react/lib/Styling';
+import { IStyleFunction, classNamesFunction, styled, IStyleFunctionOrObject } from '@fluentui/react/lib/Utilities';
+import { ITheme, IStyle, IProcessedStyleSet } from '@fluentui/react/lib/Styling';
 
 export interface IMarkdownParagraphProps {
   styles?: IStyleFunctionOrObject<IMarkdownParagraphStyleProps, IMarkdownParagraphStyles>;
@@ -42,7 +36,7 @@ const getClassNames = classNamesFunction<IMarkdownParagraphStyleProps, IMarkdown
 
 const MarkdownParagraphBase: React.FunctionComponent<IMarkdownParagraphProps> = props => {
   const { children, theme } = props;
-  const classNames: IClassNames<IMarkdownParagraphStyles> = getClassNames(props.styles, {
+  const classNames: IProcessedStyleSet<IMarkdownParagraphStyles> = getClassNames(props.styles, {
     theme: theme!,
     isTodo: typeof children === 'string' && children.indexOf('TODO') === 0,
   });

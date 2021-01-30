@@ -51,6 +51,7 @@ export interface IApiProperty {
 /**
  * Props for a table about a top-level API object such as a class, interface, enum, or type alias.
  */
+// eslint-disable-next-line deprecation/deprecation
 export interface IApiReferencesTableProps extends IApiProperty {
   /**
    * Resolve a token's page name and group to props for an actual link.

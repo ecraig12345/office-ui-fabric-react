@@ -92,6 +92,7 @@ export class ExampleCardBase extends React.Component<IExampleCardProps, IExample
       styles,
       isRightAligned = false,
       isScrollable = true,
+      // eslint-disable-next-line deprecation/deprecation
       codepenJS,
       theme,
       isCodeVisible = this.state.isCodeVisible,
@@ -262,6 +263,7 @@ export class ExampleCardBase extends React.Component<IExampleCardProps, IExample
       const latestCode = monacoModel ? monacoModel.getValue() : this.state.latestCode;
       return this._transformCode(latestCode) || this._transformedInitialCode;
     }
+    // eslint-disable-next-line deprecation/deprecation
     return this.props.codepenJS || '';
   };
 
