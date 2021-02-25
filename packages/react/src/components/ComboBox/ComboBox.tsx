@@ -574,13 +574,6 @@ class ComboBoxInternal extends React.Component<IComboBoxInternalProps, IComboBox
           id={this._id + '-input'}
           className={this._classNames.input}
           type="text"
-          onFocus={this._onFocus}
-          onBlur={this._onBlur}
-          onKeyDown={this._onInputKeyDown}
-          onKeyUp={this._onInputKeyUp}
-          onClick={this._onAutofillClick}
-          onTouchStart={this._onTouchStart}
-          onInputValueChange={this._onInputChange}
           aria-expanded={isOpen}
           aria-autocomplete={this._getAriaAutoCompleteValue()}
           role="combobox"
@@ -597,7 +590,6 @@ class ComboBoxInternal extends React.Component<IComboBoxInternalProps, IComboBox
           spellCheck={false}
           defaultVisibleValue={this._currentVisibleValue}
           suggestedDisplayValue={suggestedDisplayValue}
-          updateValueInWillReceiveProps={this._onUpdateValueInAutofillWillReceiveProps}
           shouldSelectFullInputValueInComponentDidUpdate={
             this._onShouldSelectFullInputValueInAutofillComponentDidUpdate
           }
@@ -606,6 +598,16 @@ class ComboBoxInternal extends React.Component<IComboBoxInternalProps, IComboBox
           placeholder={placeholder}
           tabIndex={tabIndex}
           {...autofill}
+          // These callbacks are core to the functionality of ComboBox and should not be overridden
+          // (but most of the implementations will call the custom callbacks too if provided)
+          onFocus={this._onFocus}
+          onBlur={this._onBlur}
+          onKeyDown={this._onInputKeyDown}
+          onKeyUp={this._onInputKeyUp}
+          onClick={this._onAutofillClick}
+          onTouchStart={this._onTouchStart}
+          onInputValueChange={this._onInputChange}
+          updateValueInWillReceiveProps={this._onUpdateValueInAutofillWillReceiveProps}
         />
         <IconButton
           className={'ms-ComboBox-CaretDown-button'}
@@ -747,15 +749,17 @@ class ComboBoxInternal extends React.Component<IComboBoxInternalProps, IComboBox
    * Handler for typing changes on the input
    * @param updatedValue - the newly changed value
    */
-  private _onInputChange = (updatedValue: string): void => {
+  private _onInputChange = (updatedValue?: string, composing?: boolean): void => {
     if (this.props.disabled) {
       this._handleInputWhenDisabled(null /* event */);
       return;
     }
 
+    this.props.autofill?.onInputValueChange?.(updatedValue, composing);
+
     this.props.allowFreeform
-      ? this._processInputChangeWithFreeform(updatedValue)
-      : this._processInputChangeWithoutFreeform(updatedValue);
+      ? this._processInputChangeWithFreeform(updatedValue || '')
+      : this._processInputChangeWithoutFreeform(updatedValue || '');
   };
 
   /**
@@ -765,62 +769,43 @@ class ComboBoxInternal extends React.Component<IComboBoxInternalProps, IComboBox
   private _processInputChangeWithFreeform(updatedValue: string): void {
     const { currentOptions } = this.props.hoisted;
     let newCurrentPendingValueValidIndex = -1;
-
-    // if the new value is empty, see if we have an exact match and then set the pending info
-    if (updatedValue === '') {
-      const items = currentOptions
-        .map((item, index) => ({ ...item, index }))
-        .filter(option => isNormalOption(option) && getPreviewText(option) === updatedValue);
-
-      // if we found a match remember the index
-      if (items.length === 1) {
-        newCurrentPendingValueValidIndex = items[0].index;
-      }
-
-      this._setPendingInfo(updatedValue, newCurrentPendingValueValidIndex, updatedValue);
-      return;
-    }
-
     // Remember the original value and then make the value lowercase for comparison
-    const originalUpdatedValue: string = updatedValue;
+    const originalUpdatedValue = updatedValue;
     updatedValue = updatedValue.toLocaleLowerCase();
-
     let newSuggestedDisplayValue = '';
 
-    // If autoComplete is on, attempt to find a match from the available options
-    if (this.props.autoComplete === 'on') {
-      // If autoComplete is on, attempt to find a match where the text of an option starts with the updated value
-      const items = currentOptions
-        .map((item, index) => ({ ...item, index }))
-        .filter(
-          option =>
-            isNormalOption(option) &&
-            getPreviewText(option)
-              .toLocaleLowerCase()
-              .indexOf(updatedValue) === 0,
-        );
-      if (items.length > 0) {
-        // use ariaLabel as the value when the option is set
-        const text: string = getPreviewText(items[0]);
-
-        // If the user typed out the complete option text, we don't need any suggested display text anymore
-        newSuggestedDisplayValue = text.toLocaleLowerCase() !== updatedValue ? text : '';
-
-        // remember the index of the match we found
-        newCurrentPendingValueValidIndex = items[0].index;
+    // If autoComplete is off or the new value is empty, attempt to find a match only when the value
+    // is exactly equal to the text of an option.
+    if (this.props.autoComplete !== 'on' || updatedValue === '') {
+      const indices: number[] = [];
+      currentOptions.forEach((option, index) => {
+        if (isNormalOption(option) && getPreviewText(option).toLocaleLowerCase() === updatedValue) {
+          indices.push(index);
+        }
+      });
+      // if we found a match remember the index
+      if (indices.length === 1) {
+        newCurrentPendingValueValidIndex = indices[0];
       }
     } else {
-      // If autoComplete is off, attempt to find a match only when the value is exactly equal to the text of an option
-      const items = currentOptions
-        .map((item, index) => ({ ...item, index }))
-        .filter(option => isNormalOption(option) && getPreviewText(option).toLocaleLowerCase() === updatedValue);
-
-      // if we found a match remember the index
-      if (items.length === 1) {
-        newCurrentPendingValueValidIndex = items[0].index;
+      // If autoComplete is on, attempt to find a match where the text of an option starts with the updated value
+      const items: [string, number][] = [];
+      currentOptions.forEach((option, index) => {
+        if (isNormalOption(option)) {
+          const previewText = getPreviewText(option);
+          if (previewText.toLocaleLowerCase().indexOf(updatedValue) === 0) {
+            items.push([previewText, index]);
+          }
+        }
+      });
+      if (items.length > 0) {
+        const [text, index] = items[0];
+        // If the user typed out the complete option text, we don't need any suggested display text anymore
+        newSuggestedDisplayValue = text.toLocaleLowerCase() !== updatedValue ? text : '';
+        // remember the index of the match we found
+        newCurrentPendingValueValidIndex = index;
       }
     }
-
     // Set the updated state
     this._setPendingInfo(originalUpdatedValue, newCurrentPendingValueValidIndex, newSuggestedDisplayValue);
   }
@@ -833,55 +818,53 @@ class ComboBoxInternal extends React.Component<IComboBoxInternalProps, IComboBox
     const { currentOptions } = this.props.hoisted;
     const { currentPendingValue, currentPendingValueValidIndex } = this.state;
 
-    if (this.props.autoComplete === 'on') {
-      // If autoComplete is on while allow freeform is off,
-      // we will remember the key press and build up a string to attempt to match
-      // as long as characters are typed within a the timeout span of each other,
-      // otherwise we will clear the string and start building a new one on the next keypress.
-      // Also, only do this processing if we have a non-empty value
-      if (updatedValue !== '') {
-        // If we have a pending autocomplete clearing task,
-        // we know that the user is typing with key press happening
-        // within the timeout of each other so remove the clearing task
-        // and continue building the pending value with the updated value
-        if (this._autoCompleteTimeout) {
-          this._async.clearTimeout(this._autoCompleteTimeout);
-          this._autoCompleteTimeout = undefined;
-          updatedValue = normalizeToString(currentPendingValue) + updatedValue;
-        }
-
-        const originalUpdatedValue: string = updatedValue;
-        updatedValue = updatedValue.toLocaleLowerCase();
-
-        // If autoComplete is on, attempt to find a match where the text of an option starts with the updated value
-        const items = currentOptions
-          .map((item, i) => ({ ...item, index: i }))
-
-          .filter(option => isNormalOption(option) && option.text.toLocaleLowerCase().indexOf(updatedValue) === 0);
-
-        // If we found a match, update the state
-        if (items.length > 0) {
-          this._setPendingInfo(originalUpdatedValue, items[0].index, getPreviewText(items[0]));
-        }
-
-        // Schedule a timeout to clear the pending value after the timeout span
-        this._autoCompleteTimeout = this._async.setTimeout(() => {
-          this._autoCompleteTimeout = undefined;
-        }, ReadOnlyPendingAutoCompleteTimeout);
-        return;
+    // If autoComplete is on while allow freeform is off,
+    // we will remember the key press and build up a string to attempt to match
+    // as long as characters are typed within a the timeout span of each other,
+    // otherwise we will clear the string and start building a new one on the next keypress.
+    // Also, only do this processing if we have a non-empty value.
+    if (this.props.autoComplete === 'on' && updatedValue !== '') {
+      // If we have a pending autocomplete clearing task,
+      // we know that the user is typing with key press happening
+      // within the timeout of each other so remove the clearing task
+      // and continue building the pending value with the updated value
+      if (this._autoCompleteTimeout) {
+        this._async.clearTimeout(this._autoCompleteTimeout);
+        updatedValue = (currentPendingValue || '') + updatedValue;
       }
+
+      // Schedule a timeout to clear the pending value after the timeout span
+      this._autoCompleteTimeout = this._async.setTimeout(() => {
+        this._autoCompleteTimeout = undefined;
+      }, ReadOnlyPendingAutoCompleteTimeout);
+
+      const originalUpdatedValue: string = updatedValue;
+      updatedValue = updatedValue.toLocaleLowerCase();
+
+      // If autoComplete is on, attempt to find a match where the text of an option starts with the updated value
+      const items: [IComboBoxOption, number][] = [];
+      currentOptions.forEach((option, index) => {
+        if (isNormalOption(option) && option.text.toLocaleLowerCase().indexOf(updatedValue) === 0) {
+          items.push([option, index]);
+        }
+      });
+
+      // If we found a match, update the state
+      if (items.length > 0) {
+        const [option, index] = items[0];
+        this._setPendingInfo(originalUpdatedValue, index, getPreviewText(option));
+      }
+    } else {
+      // If autoComplete is off or the updated value was empty:
+      // Remember we are not allowing freeform, so at this point, if we have a pending valid value index
+      // use that; otherwise use the selectedIndex.
+      const pendingIndex =
+        currentPendingValueValidIndex >= 0 ? currentPendingValueValidIndex : this._getFirstSelectedIndex();
+
+      // Since we are not allowing freeform, we need to set both the pending and suggested values/index
+      // to allow us to select all content in the input to give the illusion that we are readonly (e.g. freeform off)
+      this._setPendingInfoFromIndex(pendingIndex);
     }
-
-    // If we get here, either autoComplete is on or we did not find a match with autoComplete on.
-    // Remember we are not allowing freeform, so at this point, if we have a pending valid value index
-    // use that; otherwise use the selectedIndex
-    const index = currentPendingValueValidIndex >= 0 ? currentPendingValueValidIndex : this._getFirstSelectedIndex();
-
-    // Since we are not allowing freeform, we need to
-    // set both the pending and suggested values/index
-    // to allow us to select all content in the input to
-    // give the illusion that we are readonly (e.g. freeform off)
-    this._setPendingInfoFromIndex(index);
   }
 
   private _getFirstSelectedIndex(): number {
@@ -1024,7 +1007,9 @@ class ComboBoxInternal extends React.Component<IComboBoxInternalProps, IComboBox
    * Focus (and select) the content of the input
    * and set the focused state
    */
-  private _onFocus = (): void => {
+  private _onFocus = (event?: React.FocusEvent<Autofill | HTMLInputElement>): void => {
+    this.props.autofill?.onFocus?.(event as any);
+
     this._autofill.current?.inputElement?.select();
 
     if (!this._hasFocus()) {
@@ -1066,6 +1051,8 @@ class ComboBoxInternal extends React.Component<IComboBoxInternalProps, IComboBox
    */
   // eslint-disable-next-line deprecation/deprecation
   private _onBlur = (event: React.FocusEvent<HTMLElement | Autofill | BaseButton | Button>): void => {
+    this.props.autofill?.onBlur?.(event as any);
+
     // Do nothing if the blur is coming from something
     // inside the comboBox root or the comboBox menu since
     // it we are not really blurring from the whole comboBox
@@ -1778,7 +1765,7 @@ class ComboBoxInternal extends React.Component<IComboBoxInternalProps, IComboBox
    * Handle keydown on the input
    * @param ev - The keyboard event that was fired
    */
-  private _onInputKeyDown = (ev: React.KeyboardEvent<HTMLElement | Autofill>): void => {
+  private _onInputKeyDown = (ev: React.KeyboardEvent<Autofill | HTMLInputElement>): void => {
     const {
       disabled,
       allowFreeform,
@@ -1795,6 +1782,8 @@ class ComboBoxInternal extends React.Component<IComboBoxInternalProps, IComboBox
       this._handleInputWhenDisabled(ev);
       return;
     }
+
+    this.props.autofill?.onKeyDown?.(ev);
 
     let index = this._getPendingSelectedIndex(false /* includeCurrentPendingValue */);
 
@@ -1965,7 +1954,7 @@ class ComboBoxInternal extends React.Component<IComboBoxInternalProps, IComboBox
    * Handle keyup on the input
    * @param ev - the keyboard event that was fired
    */
-  private _onInputKeyUp = (ev: React.KeyboardEvent<HTMLElement | Autofill>): void => {
+  private _onInputKeyUp = (ev: React.KeyboardEvent<HTMLInputElement | Autofill>): void => {
     const { disabled, allowFreeform, autoComplete } = this.props;
     const isOpen = this.state.isOpen;
 
@@ -1984,6 +1973,8 @@ class ComboBoxInternal extends React.Component<IComboBoxInternalProps, IComboBox
       this._handleInputWhenDisabled(ev);
       return;
     }
+
+    this.props.autofill?.onKeyUp?.(ev);
 
     // eslint-disable-next-line deprecation/deprecation
     switch (ev.which) {
@@ -2098,7 +2089,9 @@ class ComboBoxInternal extends React.Component<IComboBoxInternalProps, IComboBox
   /**
    * Click handler for the autofill.
    */
-  private _onAutofillClick = (): void => {
+  private _onAutofillClick = (ev: React.MouseEvent<Autofill | HTMLInputElement, MouseEvent>): void => {
+    this.props.autofill?.onClick?.(ev);
+
     const { disabled, allowFreeform } = this.props;
     if (allowFreeform && !disabled) {
       this.focus(this.state.isOpen || this._processingTouch);
@@ -2107,7 +2100,8 @@ class ComboBoxInternal extends React.Component<IComboBoxInternalProps, IComboBox
     }
   };
 
-  private _onTouchStart: () => void = () => {
+  private _onTouchStart = (ev: React.TouchEvent<Autofill | HTMLInputElement>) => {
+    this.props.autofill?.onTouchStart?.(ev);
     if (this._comboBoxWrapper.current && !('onpointerdown' in this._comboBoxWrapper)) {
       this._handleTouchAndPointerEvent();
     }
