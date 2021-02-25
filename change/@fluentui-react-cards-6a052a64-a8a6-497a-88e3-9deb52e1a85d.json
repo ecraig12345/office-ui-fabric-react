@@ -1,0 +1,7 @@
+{
+  "type": "prerelease",
+  "comment": "Bump WIP converged packages to 9-alpha",
+  "packageName": "@fluentui/react-cards",
+  "email": "elcraig@microsoft.com",
+  "dependentChangeType": "patch"
+}

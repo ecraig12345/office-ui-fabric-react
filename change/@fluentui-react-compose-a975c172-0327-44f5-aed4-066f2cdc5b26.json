@@ -1,0 +1,7 @@
+{
+  "type": "prerelease",
+  "comment": "Change version to 1-alpha",
+  "packageName": "@fluentui/react-compose",
+  "email": "elcraig@microsoft.com",
+  "dependentChangeType": "patch"
+}
