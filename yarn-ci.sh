@@ -13,7 +13,10 @@ while [ $attempt -le $MAX_RETRIES ]; do
 
   # `timeout` is in GNU coreutils. These are installed by default on Linux but not on Mac.
   # https://www.gnu.org/software/coreutils/manual/html_node/timeout-invocation.html#index-timeout
-  timeout -k "$((MAX_TIME+1))m" "${MAX_TIME}m" npx midgard-yarn install
+  # ecraig12345/yarn#verbose-scripts-debug is a fork of midgard-yarn which adds an option for verbose
+  # logging of postinstall scripts. This will help with debugging if postinstall scripts cause hangs.
+  # Source: https://github.com/ecraig12345/yarn/tree/verbose-scripts
+  timeout -k "$((MAX_TIME+1))m" "${MAX_TIME}m" npx ecraig12345/yarn#verbose-scripts-compiled install --verbose-scripts
   result=$?
 
   if [ $result = 0 ]; then
