@@ -1,0 +1,8 @@
+{
+  "type": "none",
+  "comment": "Update webpack config API (no output changes)",
+  "packageName": "@fluentui/react-monaco-editor",
+  "email": "elcraig@microsoft.com",
+  "dependentChangeType": "none",
+  "date": "2021-01-23T04:52:02.823Z"
+}

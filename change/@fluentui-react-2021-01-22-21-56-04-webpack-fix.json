@@ -1,0 +1,8 @@
+{
+  "type": "prerelease",
+  "comment": "Remove manifest.json from dist build (will add back if anyone is using it)",
+  "packageName": "@fluentui/react",
+  "email": "elcraig@microsoft.com",
+  "dependentChangeType": "patch",
+  "date": "2021-01-23T05:56:04.960Z"
+}

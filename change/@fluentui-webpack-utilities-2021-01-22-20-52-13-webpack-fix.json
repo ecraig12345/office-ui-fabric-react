@@ -1,0 +1,8 @@
+{
+  "type": "prerelease",
+  "comment": "[BREAKING] Remove ManifestServicePlugin (will add back if anyone is using it)",
+  "packageName": "@fluentui/webpack-utilities",
+  "email": "elcraig@microsoft.com",
+  "dependentChangeType": "patch",
+  "date": "2021-01-23T04:52:13.301Z"
+}

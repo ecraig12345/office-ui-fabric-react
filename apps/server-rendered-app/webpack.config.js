@@ -1,22 +1,13 @@
-let path = require('path');
+// @ts-check
+
 const resources = require('../../scripts/webpack/webpack-resources');
 
 const BUNDLE_NAME = 'test-app';
-const IS_PRODUCTION = process.argv.indexOf('--production') > -1;
 
-module.exports = resources.createConfig(
-  BUNDLE_NAME,
-  true,
-  {
-    mode: 'production',
-
-    entry: {
-      [BUNDLE_NAME]: './lib/index.js',
-    },
-    externals: {
-      react: 'React',
-      'react-dom': 'ReactDOM',
-    },
-  },
-  true,
-);
+module.exports = resources.createBundleConfig({
+  isProduction: true,
+  onlyProduction: true,
+  bundleName: BUNDLE_NAME,
+  // use the default output config rather than adding var config
+  output: {},
+});

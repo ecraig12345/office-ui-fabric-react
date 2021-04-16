@@ -39,7 +39,6 @@ module.exports = function(env, argv) {
     }),
     // Rest of the site
     ...resources.createConfig(
-      entryPointName,
       isProductionArg,
       addMonacoWebpackConfig({
         entry: {

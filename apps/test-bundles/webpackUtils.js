@@ -46,7 +46,6 @@ function createWebpackConfig(entries) {
     }
 
     return resources.createConfig(
-      entryName,
       true,
       {
         entry: {

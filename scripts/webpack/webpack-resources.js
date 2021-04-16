@@ -8,6 +8,7 @@
  * @typedef {WebpackEntryObject['something']} WebpackEntryItem Item in an entry object
  * @typedef {import("webpack").ModuleOptions} WebpackModule
  * @typedef {import("webpack").Configuration['output']} WebpackOutput
+ * @typedef {import("webpack").RuleSetRule} WebpackRuleSetRule
  */
 /** */
 const webpack = require('webpack');
@@ -28,6 +29,7 @@ console.log(`Webpack version: ${webpackVersion}`);
 
 const gitRoot = findGitRoot();
 
+/** @type {WebpackRuleSetRule} */
 const cssRule = {
   test: /\.css$/,
   include: /node_modules/,
@@ -62,7 +64,8 @@ function shouldPrepend(config) {
 }
 
 /**
- * Prepends the entrys point with a react 16-compatible polyfill, but only for packages that have react as a dependency
+ * Prepends the entry point with a react 16-compatible polyfill, but only for packages that have
+ * react and the polyfill as dependencies.
  * @param {WebpackEntry} entry
  * @param {WebpackConfig} config
  */
@@ -112,8 +115,7 @@ module.exports = {
   ],
 
   /**
-   * @param {string} bundleName - Name for the bundle file. Usually either the unscoped name, or
-   * the scoped name with a - instead of / between the parts.
+   * Create a basic webpack config, no assumptions about React externals.
    * @param {boolean} isProduction - whether it's a production build.
    * @param {Partial<WebpackConfig>} customConfig - partial custom webpack config, merged into each full config object.
    * @param {boolean} [onlyProduction] - whether to only generate the production config.
@@ -121,7 +123,7 @@ module.exports = {
    * @param {boolean} [profile] - whether to profile the bundle using webpack-bundle-analyzer.
    * @returns {WebpackConfig[]} array of configs.
    */
-  createConfig(bundleName, isProduction, customConfig, onlyProduction, excludeSourceMaps, profile) {
+  createConfig(isProduction, customConfig, onlyProduction, excludeSourceMaps, profile) {
     const packageName = path.basename(process.cwd());
 
     /** @type {WebpackModule} */
@@ -191,7 +193,7 @@ module.exports = {
   },
 
   /**
-   * Creates a standard bundle config for a package.
+   * Creates a standard bundle config for a package, including using React and ReactDOM as externals.
    * @param {object} options
    * @param {string|WebpackOutput} options.output - If a string, name for the output varible.
    * If an object, full custom `output` config.
@@ -213,8 +215,9 @@ module.exports = {
       customConfig = {},
     } = options;
 
+    const isUMD = !!output && typeof output === 'object' && output.libraryTarget === 'umd';
+
     return module.exports.createConfig(
-      bundleName,
       isProduction,
       merge(
         {
@@ -230,10 +233,28 @@ module.exports = {
                 }
               : output,
 
-          externals: {
-            react: 'React',
-            'react-dom': 'ReactDOM',
-          },
+          externals: isUMD
+            ? // This config is only valid/necessary for UMD bundles
+              // https://webpack.js.org/configuration/externals/#object
+              {
+                react: {
+                  commonjs: 'react',
+                  commonjs2: 'react', // also required but not documented
+                  amd: 'react',
+                  root: 'React',
+                },
+                'react-dom': {
+                  commonjs: 'react-dom',
+                  commonjs2: 'react-dom',
+                  amd: 'react-dom',
+                  root: 'ReactDOM',
+                },
+              }
+            : // Otherwise use this basic config which only refers to globals
+              {
+                react: 'React',
+                'react-dom': 'ReactDOM',
+              },
 
           resolve: {
             alias: getResolveAlias(true /*useLib*/),

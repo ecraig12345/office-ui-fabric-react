@@ -1,4 +1,15 @@
 {
   "extends": ["plugin:@fluentui/eslint-plugin/react--legacy"],
-  "root": true
+  "root": true,
+  "overrides": [
+    {
+      "files": ["server/*.js"],
+      "rules": {
+        "@fluentui/no-global-react": "off",
+        "no-console": "off",
+        // all files under server allow devDeps references
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": ["**"] }]
+      }
+    }
+  ]
 }

@@ -1,7 +1,8 @@
+// @ts-check
 const resources = require('../../scripts/webpack/webpack-resources');
 const getResolveAlias = require('../../scripts/webpack/getResolveAlias');
 
-module.exports = resources.createConfig('ssr-tests', false, {
+module.exports = resources.createConfig(false, {
   entry: './test/test.js',
 
   output: {

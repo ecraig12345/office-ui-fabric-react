@@ -6,15 +6,13 @@ const { renderStatic } = require('@fluentui/merge-styles/lib-commonjs/server');
 const { configureLoadStyles } = require('@microsoft/load-themed-styles');
 const { initializeIcons } = require('@fluentui/font-icons-mdl2');
 
-const ReactMinScripts =
-  `<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/react/16.8.6/umd/react.production.min.js"></script>` +
-  `<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.6/umd/react-dom.production.min.js"></script>`;
-
-const ReactScripts =
-  `<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/react/16.8.6/umd/react.development.js"></script>` +
-  `<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.6/umd/react-dom.development.js"></script>`;
-
-const AppScript = `<script type="text/javascript" src="test-app.min.js"></script>`;
+const scripts = [
+  '//cdnjs.cloudflare.com/ajax/libs/react/16.8.6/umd/react.production.min.js',
+  '//cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.6/umd/react-dom.production.min.js',
+  'test-app.min.js',
+]
+  .map(src => `<script type="text/javascript" src="${src}"></script>`)
+  .join('\n');
 
 initializeIcons();
 
@@ -52,39 +50,9 @@ function renderIsomorphic() {
     `</head>` +
     `<body>` +
     `<div id='content'>${html}</div>` +
-    ReactMinScripts +
-    AppScript +
+    scripts +
     `</body>` +
     `</head>`
-  );
-}
-
-function renderClientOnly() {
-  return (
-    `<!doctype html>` +
-    `<head>` +
-    `<title>Server side rendering test</title>` +
-    ReactMinScripts +
-    `</head>` +
-    `<body>` +
-    `<div id='content'></div>` +
-    `<script type='text/javascript' src='test-app.min.js'></script>` +
-    `</body>`
-  );
-}
-
-function hydrateButton() {
-  return (
-    `<button id='rehydrate'>Rehydrate!</button>` +
-    `<script type='text/javascript'>` +
-    `var rehydrate = document.querySelector('#rehydrate');` +
-    `rehydrate.addEventListener('click', function() {` +
-    `var script = document.createElement('script');` +
-    `script.setAttribute('type', 'text/javascript');` +
-    `script.setAttribute('src', 'test-app.min.js');` +
-    `document.head.appendChild(script);` +
-    `});` +
-    `</script>`
   );
 }
 
