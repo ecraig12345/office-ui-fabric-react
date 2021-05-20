@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Async, css, mergeStyles, Customizer, ICustomizations, ILinkProps } from '@fluentui/react';
+import { Async, css, Customizer, ICustomizations, ILinkProps } from '@fluentui/react';
 import { slugify } from '../../utilities/index2';
 import { PageHeader } from '../PageHeader/index';
 import { Markdown } from '../Markdown/index';
@@ -19,7 +19,6 @@ import {
 } from './sections/index';
 import { IPageProps, IPageSectionProps } from './Page.types';
 import * as styles from './Page.module.scss';
-import { sideRailWidth } from '../../styles/constants';
 import { getLinkColors } from '../../utilities/getLinkColors';
 
 const SECTION_STAGGER_INTERVAL = 0.05;
@@ -264,15 +263,7 @@ export class Page extends React.Component<IPageProps, IPageState> {
         pageTitle={title}
         pageSubTitle={subTitle}
         versionSwitcherDefinition={versionSwitcherDefinition}
-        className={mergeStyles(
-          showSideRail
-            ? {
-                '@media only screen and (min-width: 1360px)': {
-                  width: `calc(100% - ${sideRailWidth}px)`,
-                },
-              }
-            : { width: '100%' },
-        )}
+        className={css(showSideRail && styles.showSideRail)}
       />
     ) : null;
   };

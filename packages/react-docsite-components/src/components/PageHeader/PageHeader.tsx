@@ -13,7 +13,11 @@ import {
   ScreenWidthMaxLarge,
   FontSizes,
 } from '@fluentui/react';
-import { appPaddingSm, appPaddingLg, contentWidth, pageHeaderFullHeight } from '../../styles/constants';
+import { appPaddingSm, appPaddingLg, contentWidth } from '../../styles/constants';
+
+const pageHeaderFullHeight = 136;
+/** Minimum width for "full size" display of page including the right side nav */
+const ScreenWidthMinFullSize = 1360;
 
 const getStyles: IStyleFunction<IPageHeaderStyleProps, IPageHeaderStyles> = props => {
   const { className, pageTitle, theme } = props;
@@ -28,12 +32,13 @@ const getStyles: IStyleFunction<IPageHeaderStyleProps, IPageHeaderStyles> = prop
         justifyContent: 'space-between',
         marginBottom: appPaddingSm,
         position: 'relative',
+        // note: lack of upper bound is intentional
         [getScreenSelector(ScreenWidthMinUhfMobile, undefined)]: {
           marginBottom: 0,
           padding: `${appPaddingLg}px 0`,
           minHeight: pageHeaderFullHeight,
         },
-        [getScreenSelector(1360, undefined)]: {
+        [getScreenSelector(ScreenWidthMinFullSize, undefined)]: {
           maxWidth: contentWidth + appPaddingSm * 2,
         },
       },

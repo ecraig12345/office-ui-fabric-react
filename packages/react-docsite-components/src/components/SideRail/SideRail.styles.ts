@@ -75,12 +75,6 @@ export const getStyles: IStyleFunction<ISideRailStyleProps, ISideRailStyles> = p
     jumpLinkActive: {
       borderLeftColor: theme!.palette.themePrimary,
     },
-    jumpLinkSection: {
-      selectors: {
-        '@media screen and (max-width: 1360px)': {
-          display: 'none',
-        },
-      },
-    },
+    jumpLinkSection: {},
   };
 };

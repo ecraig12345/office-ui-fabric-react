@@ -4,6 +4,8 @@
 $PageSubHeadMargin: 20px;
 $PageParagraphMargin: 1.2em;
 $usageListPadding: 24px;
+// Minimum width for "full size" display of page including the right side nav
+$ScreenWidthMinFullSize: 1360px;
 
 .Page {
   position: relative;
@@ -198,7 +200,7 @@ $usageListPadding: 24px;
   position: relative !important; // scrollbars sets position via style prop.
 }
 
-@media only screen and (min-width: 1360px) {
+@media only screen and (min-width: $ScreenWidthMinFullSize) {
   .main {
     display: flex;
     flex-direction: row;
