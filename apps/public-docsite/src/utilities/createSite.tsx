@@ -111,7 +111,8 @@ export function createSite<TPlatforms extends string>(
     const renderSite = (props: {}) => <Site siteDefinition={siteDefinition} hasUHF={hasUHF} {...props} />;
 
     ReactDOM.render(
-      <ThemeProvider>
+      // Ensure correct fonts are used throughout the page
+      <ThemeProvider applyTo="body">
         <Router>
           <Route component={renderSite}>{_getSiteRoutes()}</Route>
         </Router>

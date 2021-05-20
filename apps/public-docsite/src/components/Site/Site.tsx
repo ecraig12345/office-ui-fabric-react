@@ -178,7 +178,8 @@ export class Site<TPlatforms extends string = string> extends React.Component<
       <PlatformContext.Provider value={platform}>
         <AppThemesContext.Provider value={AppThemes}>
           {theme ? (
-            <ThemeProvider theme={theme}>
+            // prevent white background from being applied with theme
+            <ThemeProvider theme={theme} applyTo="none">
               <SiteContent />
             </ThemeProvider>
           ) : (
