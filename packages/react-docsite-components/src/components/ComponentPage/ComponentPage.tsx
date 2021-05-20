@@ -55,11 +55,11 @@ export class ComponentPageBase extends React.PureComponent<IComponentPageProps> 
   }
 
   public render() {
-    const { componentName, className, otherSections, styles, theme } = this.props;
+    const { componentName, className, otherSections, styles, theme, title } = this.props;
 
     const onlyExamples = this._showOnlyExamples;
 
-    const classNames = (this._styles = getClassNames(styles, { theme }));
+    const classNames = (this._styles = getClassNames(styles, { theme, title }));
 
     return onlyExamples ? (
       this._getVariants()
@@ -107,7 +107,7 @@ export class ComponentPageBase extends React.PureComponent<IComponentPageProps> 
     ].filter(section => !!section) as Array<{ title: string }>;
 
     return (
-      <Stack horizontal wrap tokens={{ childrenGap: '5px 40px', maxWidth: '100%' }} className={classNames.navigation}>
+      <div className={classNames.navigation}>
         {sections.map(section => (
           <Link
             key={section.title}
@@ -117,7 +117,7 @@ export class ComponentPageBase extends React.PureComponent<IComponentPageProps> 
             {section.title}
           </Link>
         ))}
-      </Stack>
+      </div>
     );
   }
 

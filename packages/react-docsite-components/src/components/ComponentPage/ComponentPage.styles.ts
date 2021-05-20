@@ -1,5 +1,6 @@
-import { ScreenWidthMinUhfMobile, getTheme } from '@fluentui/react/lib/Styling';
+import { ScreenWidthMinUhfMobile, getTheme, getScreenSelector } from '@fluentui/react/lib/Styling';
 import { IStyleFunction } from '@fluentui/react/lib/Utilities';
+import { ScreenWidthMaxLarger, ScreenWidthMaxUhfMobile } from '../../styles/constants';
 import { IComponentPageStyleProps, IComponentPageStyles } from './ComponentPage.types';
 
 const globalClassNames = {
@@ -11,7 +12,6 @@ const globalClassNames = {
   navigation: 'ComponentPage-navigation',
   subHeading: 'ComponentPage-subHeading',
   overviewSection: 'ComponentPage-overviewSection',
-  overviewText: 'ComponentPage-overview',
   overviewHeading: 'ComponentPage-overviewSectionHeader',
   usageSection: 'CompnentPage-usage',
   usageHeading: 'ComponentPage-usageHeader',
@@ -30,10 +30,17 @@ const globalClassNames = {
 
 const componentPageColor = '#0f8387';
 const componentPagePadding = 50;
-const ulLeftPadding = 18;
+const componentPagePaddingLarge = 30;
+const componentPagePaddingMobile = 20;
+
+/** `< 768px` */
+const mobileOnlyQuery = getScreenSelector(undefined, ScreenWidthMaxUhfMobile);
+/** `768px <= width < 1200px` */
+const largerOnlyQuery = getScreenSelector(ScreenWidthMinUhfMobile, ScreenWidthMaxLarger);
 
 export const getStyles: IStyleFunction<IComponentPageStyleProps, IComponentPageStyles> = props => {
-  const { theme = getTheme() } = props;
+  const { theme = getTheme(), title = '' } = props;
+  const mobileTitleSizeMultiplier = title.length > 14 ? 0.75 : 1;
   return {
     body: globalClassNames.body,
     root: [
@@ -46,9 +53,17 @@ export const getStyles: IStyleFunction<IComponentPageStyleProps, IComponentPageS
     header: [
       {
         backgroundColor: componentPageColor,
-        minHeight: 245,
+        // maxWidth: '100%',
         padding: componentPagePadding,
         paddingBottom: 0,
+        [mobileOnlyQuery]: {
+          padding: componentPagePaddingMobile,
+          paddingBottom: 0,
+        },
+        [largerOnlyQuery]: {
+          padding: componentPagePaddingLarge,
+          paddingBottom: 0,
+        },
       },
       globalClassNames.header,
     ],
@@ -57,7 +72,14 @@ export const getStyles: IStyleFunction<IComponentPageStyleProps, IComponentPageS
       {
         color: theme.palette.white,
         textDecoration: 'none',
-        selectors: { '&:hover': { color: theme.palette.neutralLight } },
+        display: 'inline-block',
+        paddingRight: 40,
+        paddingBottom: '2em',
+        '&:hover': { color: theme.palette.neutralLight },
+        [mobileOnlyQuery]: {
+          paddingRight: 20,
+          paddingBottom: '1em',
+        },
       },
       globalClassNames.headerLink,
     ],
@@ -69,8 +91,23 @@ export const getStyles: IStyleFunction<IComponentPageStyleProps, IComponentPageS
         color: theme.palette.white,
         display: 'inline-block',
         width: '100%',
+        // long titles (including long single-word component names) must wrap, not disappear
+        overflowWrap: 'break-word',
         marginTop: componentPagePadding,
         marginBottom: componentPagePadding,
+        [mobileOnlyQuery]: {
+          // reduce likelihood of long titles wrapping
+          fontSize: 36 * mobileTitleSizeMultiplier,
+          lineHeight: 48 * mobileTitleSizeMultiplier,
+          marginTop: componentPagePaddingMobile,
+          marginBottom: componentPagePaddingMobile,
+        },
+        [largerOnlyQuery]: {
+          fontSize: 60,
+          lineHeight: 72,
+          marginTop: componentPagePaddingLarge,
+          marginBottom: componentPagePaddingLarge,
+        },
       },
       globalClassNames.title,
     ],
@@ -84,41 +121,32 @@ export const getStyles: IStyleFunction<IComponentPageStyleProps, IComponentPageS
         selectors: {
           // Set font here to be more specific
           h2: [theme.fonts.xLarge, { fontSize: 36, margin: 0 }],
+          [mobileOnlyQuery]: {
+            marginBottom: 12,
+            h2: { fontSize: 24 },
+          },
+          [largerOnlyQuery]: {
+            marginBottom: 16,
+            h2: { fontSize: 28 },
+          },
         },
       },
       globalClassNames.subHeading,
     ],
     section: {
       padding: componentPagePadding,
+      [mobileOnlyQuery]: {
+        padding: componentPagePaddingMobile,
+      },
+      [largerOnlyQuery]: {
+        padding: componentPagePaddingLarge,
+      },
     },
     overviewSection: [
       {
         maxWidth: '60em',
       },
       globalClassNames.overviewSection,
-    ],
-    overviewText: [
-      {
-        fontSize: theme.fonts.small.fontSize,
-        // This is meant to be a ratio, so it has to be in quotes so it's not interpreted as pixels
-        lineHeight: '1.5',
-        marginBottom: -6, // Trim padding off last paragraph
-        selectors: {
-          p: {
-            margin: 0,
-            padding: '16px 0',
-          },
-          ul: { paddingLeft: ulLeftPadding },
-          li: [
-            theme.fonts.small,
-            {
-              marginBottom: 16,
-            },
-          ],
-          'ul li': { listStyle: 'disc' },
-        },
-      },
-      globalClassNames.overviewText,
     ],
     overviewHeading: [
       {
@@ -130,7 +158,7 @@ export const getStyles: IStyleFunction<IComponentPageStyleProps, IComponentPageS
       },
       globalClassNames.overviewHeading,
     ],
-    // These are for the actual "Best practices" heading/text (rarely shown).
+    // These are for the actual "Best practices" heading/text.
     // The wrapper for this section plus dos/don'ts is bestPracticesSection.
     usageSection: [
       {
@@ -141,15 +169,6 @@ export const getStyles: IStyleFunction<IComponentPageStyleProps, IComponentPageS
     usageHeading: globalClassNames.usageHeading,
     variantsSection: globalClassNames.variantsSection,
     variantsTitle: globalClassNames.variantsTitle,
-    variantsList: [
-      {
-        paddingLeft: ulLeftPadding,
-        selectors: {
-          li: { listStyle: 'disc' },
-        },
-      },
-      globalClassNames.variantsList,
-    ],
     implementationSection: globalClassNames.implementationSection,
     feedbackSection: globalClassNames.feedbackSection,
     bestPracticesSection: [
@@ -167,7 +186,7 @@ export const getStyles: IStyleFunction<IComponentPageStyleProps, IComponentPageS
         verticalAlign: 'top',
         marginBottom: 20,
         selectors: {
-          ul: { paddingLeft: ulLeftPadding },
+          ul: { paddingLeft: 18 },
           li: {
             listStyle: 'disc',
             marginBottom: 20,
@@ -175,6 +194,12 @@ export const getStyles: IStyleFunction<IComponentPageStyleProps, IComponentPageS
               'ul li': {
                 listStyle: 'circle',
                 marginBottom: 0,
+              },
+              [mobileOnlyQuery]: {
+                marginBottom: 10,
+              },
+              [largerOnlyQuery]: {
+                marginBottom: 15,
               },
             },
           },
@@ -202,6 +227,14 @@ export const getStyles: IStyleFunction<IComponentPageStyleProps, IComponentPageS
         height: 8,
         margin: '12px 0 40px',
         border: 0,
+        [mobileOnlyQuery]: {
+          height: 4,
+          margin: '8px 0 20px',
+        },
+        [largerOnlyQuery]: {
+          height: 6,
+          margin: '10px 0 20px',
+        },
       },
       globalClassNames.dosDontsLine,
     ],
