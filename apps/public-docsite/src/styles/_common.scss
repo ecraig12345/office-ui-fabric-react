@@ -43,6 +43,8 @@ $contentInGrid: 12px; // Content in a grid wrapped div needs extra padding to al
 // Screen sizes that align with UHF breakpoints
 // They differ from Fabric Core breakpoints
 $uhf-screen-min-mobile: 768px;
-$uhf-screen-max-mobile: ($uhf-screen-min-mobile - 0.001);
+// Note: using 0.1 because anything smaller seems to be rounded, causing weird rendering if the
+// window is exactly 768px wide
+$uhf-screen-max-mobile: ($uhf-screen-min-mobile - 0.1);
 $uhf-screen-min-lg: 1084px;
-$uhf-screen-max-lg: ($uhf-screen-min-lg - 0.001);
+$uhf-screen-max-lg: ($uhf-screen-min-lg - 0.1);

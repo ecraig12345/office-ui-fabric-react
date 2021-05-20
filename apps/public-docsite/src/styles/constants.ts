@@ -52,8 +52,10 @@ export const appMaximumWidthLg =
 export const queryUhfMobileMin = `@media screen and (min-width: ${ScreenWidthMinUhfMobile}px)`;
 export const queryXLargeMin = `@media screen and (min-width: ${ScreenWidthMinXLarge}px)`;
 
-export const ScreenWidthMaxUhfMobile = ScreenWidthMinUhfMobile - 0.001;
-export const ScreenWidthMaxXLarge = ScreenWidthMinXLarge - 0.001;
+// Note: using 0.1 because anything smaller seems to be rounded, causing weird rendering if the
+// window is exactly 768px wide
+export const ScreenWidthMaxUhfMobile = ScreenWidthMinUhfMobile - 0.1;
+export const ScreenWidthMaxXLarge = ScreenWidthMinXLarge - 0.1;
 
 export const mediaQuery = {
   minMobile: `@media only screen and (min-width: ${ScreenWidthMinUhfMobile}px)`,
