@@ -1,8 +1,16 @@
-export const appPaddingSm = 28;
-export const appPaddingMd = 40;
+import { ScreenWidthMinUhfMobile } from '@fluentui/react/lib/Styling';
+
+// General use padding for consistency.
 export const appPaddingLg = 52;
+export const appPaddingMd = 40;
+export const appPaddingSm = 28;
+
+// Component variables
+/** Target width for content area to show large breakpoint width for examples */
 export const contentWidth = 1024;
-export const pageHeaderFullHeight = 136;
-export const uhfScreenMaxLg = 1083;
-export const sideRailPaddingLeft = appPaddingMd - 8;
-export const sideRailWidth = 182 + sideRailPaddingLeft;
+export const contentPadding = appPaddingSm;
+
+/** 767.9px */
+// Note: using 0.1 because anything smaller seems to be rounded, causing weird rendering if the
+// window is exactly 768px wide
+export const ScreenWidthMaxUhfMobile = ScreenWidthMinUhfMobile - 0.1;

@@ -1,61 +1,37 @@
 import { ScreenWidthMinUhfMobile, ScreenWidthMinXLarge } from '@fluentui/react/lib/Styling';
+import {
+  appPaddingLg,
+  appPaddingMd,
+  appPaddingSm,
+  contentWidth,
+  ScreenWidthMaxUhfMobile,
+} from '@fluentui/react-docsite-components/lib/styles/constants';
 
-// Padding matches padding used by UHF at the same (lg / sm) UHF breakpoints
-export const appPaddingLeftLg = 32;
-export const appPaddingRightLg = 32;
-export const appPaddingLeftSm = 24;
-export const appPaddingRightSm = 24;
-
-// General use padding for consistency.
-export const appPaddingLg = 52;
-export const appPaddingMd = 40;
-export const appPaddingSm = 28;
+export * from '@fluentui/react-docsite-components/lib/styles/constants';
 
 export const appPadding = {
   large: appPaddingLg,
   medium: appPaddingMd,
   small: appPaddingSm,
-  leftLarge: appPaddingLeftLg,
-  rightLarge: appPaddingRightLg,
-  leftSmall: appPaddingLeftSm,
-  rightSmall: appPaddingRightSm,
 };
 
-export const contentPaddingSmall = 16;
-export const contentPaddingLg = 32;
-export const contentPaddingXl = 40;
-export const contentPaddingBottom = 100;
-
-// Component variables
-export const contentWidth = 1024; // Target width for content area to show large breakpoint width for examples;
-export const contentPadding = appPaddingSm;
-
-export const PageHeaderFullHeight = 136;
-
-export const navWidthSm = 252;
-export const navWidthLg = 302;
-export const navPadding = appPaddingSm;
+const navWidthLg = 302;
 export const topNavHeight = 52;
 
 // We want the text to appear the same distance from the body and the nav. It include 8 padding already.
-export const sideRailPaddingLeft = appPaddingMd - 8;
-export const sideRailWidth = 182 + sideRailPaddingLeft;
+const sideRailPaddingLeft = appPaddingMd - 8;
+const sideRailWidth = 182 + sideRailPaddingLeft;
 
-export const CodeBlockToggleButtonHeight = 28;
-
+// Padding matches padding used by UHF at the same (lg / sm) UHF breakpoints
+const uhfPaddingLg = 32;
+const contentPadding = appPaddingSm;
 // Left padding + Nav + Body and Content Padding + Content + SideRail + Right padding.
-export const appMaximumWidthSm =
-  appPaddingLeftLg + navWidthSm + appPaddingMd + contentPadding * 2 + contentWidth + sideRailWidth + appPaddingRightLg;
 export const appMaximumWidthLg =
-  appPaddingLeftLg + navWidthLg + appPaddingMd + contentPadding * 2 + contentWidth + sideRailWidth + appPaddingRightLg;
-
-export const queryUhfMobileMin = `@media screen and (min-width: ${ScreenWidthMinUhfMobile}px)`;
-export const queryXLargeMin = `@media screen and (min-width: ${ScreenWidthMinXLarge}px)`;
+  uhfPaddingLg + navWidthLg + appPaddingMd + contentPadding * 2 + contentWidth + sideRailWidth + uhfPaddingLg;
 
 // Note: using 0.1 because anything smaller seems to be rounded, causing weird rendering if the
 // window is exactly 768px wide
-export const ScreenWidthMaxUhfMobile = ScreenWidthMinUhfMobile - 0.1;
-export const ScreenWidthMaxXLarge = ScreenWidthMinXLarge - 0.1;
+const ScreenWidthMaxXLarge = ScreenWidthMinXLarge - 0.1;
 
 export const mediaQuery = {
   minMobile: `@media only screen and (min-width: ${ScreenWidthMinUhfMobile}px)`,
