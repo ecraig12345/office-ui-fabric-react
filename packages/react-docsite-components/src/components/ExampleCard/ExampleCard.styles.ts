@@ -1,4 +1,11 @@
-import { AnimationVariables, IRawStyle, getTheme, HighContrastSelector } from '@fluentui/react/lib/Styling';
+import {
+  AnimationVariables,
+  IRawStyle,
+  getTheme,
+  HighContrastSelector,
+  FontSizes,
+  FontWeights,
+} from '@fluentui/react/lib/Styling';
 import { IStyleFunction } from '@fluentui/react/lib/Utilities';
 import { IDropdownStyles } from '@fluentui/react/lib/Dropdown';
 import { IButtonStyles } from '@fluentui/react/lib/Button';
@@ -114,8 +121,11 @@ export const getStyles: IStyleFunction<IExampleCardStyleProps, IExampleCardStyle
       globalClassNames.header,
     ],
     title: [
-      theme.fonts.medium,
+      theme.fonts.large,
       {
+        fontSize: FontSizes.size20,
+        fontWeight: FontWeights.semibold,
+        color: NeutralColors.gray130,
         display: 'inline-flex',
         flexGrow: 1,
         flexShrink: 1,

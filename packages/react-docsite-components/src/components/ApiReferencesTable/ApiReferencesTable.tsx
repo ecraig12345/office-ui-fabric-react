@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { mergeStyles, getTheme } from '@fluentui/react/lib/Styling';
+import { mergeStyleSets, getTheme, FontSizes, FontWeights } from '@fluentui/react/lib/Styling';
 import {
   DetailsList,
   DetailsRow,
@@ -24,6 +24,7 @@ import {
 import { Markdown } from '../Markdown/index';
 import { codeFontFamily } from '../CodeSnippet/CodeSnippet.styles';
 import { titleCase } from '../../utilities/string';
+import { NeutralColors } from '@fluentui/theme';
 
 // TODO: remove
 export { IApiReferencesTableProps };
@@ -68,12 +69,24 @@ const deprecatedTextStyles: Partial<ITextStyles> = {
 };
 
 const theme = getTheme();
-const rootClass = mergeStyles({
-  selectors: {
+const classNames = mergeStyleSets({
+  root: {
     // Switch code blocks to a nicer font family and smaller size (monospace fonts tend to be large)
     code: { fontFamily: codeFontFamily, fontSize: '11px' },
-    // Fix margins around Members/Methods h4 and control font size
-    h4: { margin: '16px 0 -8px 0', fontSize: '16px' },
+    h4: {
+      // Fix margins around Members/Methods h4 and control font size
+      margin: '16px 0 -8px 0',
+      fontSize: FontSizes.size16,
+      fontWeight: FontWeights.semibold,
+      color: NeutralColors.gray130,
+    },
+  },
+  title: {
+    marginTop: 0,
+    fontSize: FontSizes.size20,
+    fontWeight: FontWeights.semibold,
+    color: NeutralColors.gray130,
+    lineHeight: '1', // quotes to prevent interpretation as px
   },
 });
 
@@ -109,7 +122,7 @@ export class ApiReferencesTable extends React.Component<IApiReferencesTableProps
       (!this._isTypeAlias && !hasProperties && !hasMethods ? '(No properties)' : undefined);
 
     return (
-      <Stack className={rootClass} tokens={gapTokens.medium}>
+      <Stack className={classNames.root} tokens={gapTokens.medium}>
         <Stack tokens={gapTokens.small}>
           {this._renderTitle()}
           {deprecated && _renderDeprecatedMessage(deprecatedMessage)}
@@ -184,7 +197,7 @@ export class ApiReferencesTable extends React.Component<IApiReferencesTableProps
 
     return title ? (
       // This heading must be programmatically focusable for simulating jumping to an anchor
-      <Text variant="xLarge" as="h3" styles={{ root: { marginTop: 0 } }} id={name} tabIndex={-1}>
+      <Text variant="xLarge" as="h3" className={classNames.title} id={name} tabIndex={-1}>
         {title}
       </Text>
     ) : undefined;

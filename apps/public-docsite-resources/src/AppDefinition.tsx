@@ -4,10 +4,7 @@ import { DetailsListBasicExample } from '@fluentui/react-examples/lib/react/Deta
 import { mergeStyles } from '@fluentui/react/lib/Styling';
 import { AppThemes } from './theme/AppThemes';
 
-const propertiesTableMargins = mergeStyles({
-  marginLeft: '40px',
-  marginRight: '40px',
-});
+const propertiesTableMargins = mergeStyles({ margin: 40 });
 
 function loadReferences(): IAppLink[] {
   const requireContext = require.context('@fluentui/api-docs/lib/pages/references', false, /\w+\.page\.json$/);

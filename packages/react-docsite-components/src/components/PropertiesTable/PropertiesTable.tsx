@@ -149,7 +149,7 @@ class PropertiesTableBase extends React.PureComponent<IPropertiesTableProps> {
 
     return (
       <div className={classNames.tableRoot}>
-        <h2 className={classNames.tableHeader}>{title}</h2>
+        <h3 className={classNames.tableHeader}>{title}</h3>
         <DetailsList
           selectionMode={SelectionMode.none}
           layoutMode={DetailsListLayoutMode.justified}
