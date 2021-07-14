@@ -1,6 +1,17 @@
 import * as React from 'react';
 import { CollapsibleSection } from '@fluentui/react-experiments';
-import { css, FocusZone, Icon, IIconProps, ISearchBoxStyles, Link, SearchBox, getFocusStyle } from '@fluentui/react';
+import {
+  css,
+  FocusZone,
+  Icon,
+  IIconProps,
+  ISearchBoxStyles,
+  Link,
+  SearchBox,
+  getFocusStyle,
+  ThemeContext,
+  ITheme,
+} from '@fluentui/react';
 import { IButtonStyles, IconButton } from '@fluentui/react/lib/Button';
 import {
   isPageActive,
@@ -9,7 +20,6 @@ import {
   INavProps,
   NavSortType,
 } from '@fluentui/react-docsite-components/lib/index2';
-import { theme } from '@fluentui/react-docsite-components/lib/styles/theme';
 import { getItem, setItem } from '@fluentui/utilities/lib/sessionStorage';
 import * as styles from './Nav.module.scss';
 import { isLocal } from '../../utilities/index';
@@ -224,76 +234,82 @@ export class Nav extends React.Component<INavProps, INavState> {
   }
 
   private _renderSearchBox = (pageTitle: string) => {
-    const { searchQuery, defaultSortState } = this.state;
-
-    const searchBoxStyles: ISearchBoxStyles = {
-      iconContainer: {
-        marginRight: 8,
-      },
-    };
-
-    const sortButtonStyles: IButtonStyles = {
-      root: {
-        ...getFocusStyle(theme, 1),
-      },
-      rootExpanded: {
-        background: theme.palette.neutralLighter,
-      },
-      icon: {
-        position: 'absolute',
-        margin: 0,
-      },
-    };
-
-    const menuIconProps: IIconProps = {
-      styles: {
-        root: { fontSize: 16 },
-      },
-    };
-
     return (
-      <div className={styles.searchBoxWrapper}>
-        <SearchBox
-          className={styles.searchBox}
-          placeholder={`Search ${pageTitle}`}
-          value={searchQuery}
-          onChange={this._onSearchQueryChanged}
-          onClick={this._onSearchBoxClick}
-          underlined={true}
-          styles={searchBoxStyles}
-          ariaLabel={`Search ${pageTitle}`}
-        />
-        <IconButton
-          className={styles.filterButton}
-          title="Sort list"
-          iconProps={{
-            iconName:
-              defaultSortState === NavSortType.alphabetized
-                ? 'Ascending'
-                : defaultSortState === NavSortType.categories
-                ? 'GroupedList'
-                : undefined,
-          }}
-          styles={sortButtonStyles}
-          menuIconProps={{ iconName: '' }}
-          menuProps={{
-            items: [
-              {
-                key: 'categories',
-                text: 'Categories',
-                iconProps: { iconName: 'GroupedList', ...menuIconProps },
-                onClick: this._setSortTypeCategories,
-              },
-              {
-                key: 'alphabetized',
-                text: 'Alphabetical',
-                iconProps: { iconName: 'Ascending', ...menuIconProps },
-                onClick: this._setSortTypeAlphabetized,
-              },
-            ],
-          }}
-        />
-      </div>
+      <ThemeContext.Consumer>
+        {(theme: ITheme) => {
+          const { searchQuery, defaultSortState } = this.state;
+
+          const searchBoxStyles: ISearchBoxStyles = {
+            iconContainer: {
+              marginRight: 8,
+            },
+          };
+
+          const sortButtonStyles: IButtonStyles = {
+            root: {
+              ...getFocusStyle(theme, 1),
+            },
+            rootExpanded: {
+              background: theme.palette.neutralLighter,
+            },
+            icon: {
+              position: 'absolute',
+              margin: 0,
+            },
+          };
+
+          const menuIconProps: IIconProps = {
+            styles: {
+              root: { fontSize: 16 },
+            },
+          };
+
+          return (
+            <div className={styles.searchBoxWrapper}>
+              <SearchBox
+                className={styles.searchBox}
+                placeholder={`Search ${pageTitle}`}
+                value={searchQuery}
+                onChange={this._onSearchQueryChanged}
+                onClick={this._onSearchBoxClick}
+                underlined={true}
+                styles={searchBoxStyles}
+                ariaLabel={`Search ${pageTitle}`}
+              />
+              <IconButton
+                className={styles.filterButton}
+                title="Sort list"
+                iconProps={{
+                  iconName:
+                    defaultSortState === NavSortType.alphabetized
+                      ? 'Ascending'
+                      : defaultSortState === NavSortType.categories
+                      ? 'GroupedList'
+                      : undefined,
+                }}
+                styles={sortButtonStyles}
+                menuIconProps={{ iconName: '' }}
+                menuProps={{
+                  items: [
+                    {
+                      key: 'categories',
+                      text: 'Categories',
+                      iconProps: { iconName: 'GroupedList', ...menuIconProps },
+                      onClick: this._setSortTypeCategories,
+                    },
+                    {
+                      key: 'alphabetized',
+                      text: 'Alphabetical',
+                      iconProps: { iconName: 'Ascending', ...menuIconProps },
+                      onClick: this._setSortTypeAlphabetized,
+                    },
+                  ],
+                }}
+              />
+            </div>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   };
 
