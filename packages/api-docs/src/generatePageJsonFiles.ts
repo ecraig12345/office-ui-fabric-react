@@ -63,7 +63,10 @@ export function generatePageJsonFiles(options: IPageJsonOptions): void {
 
     console.log('Writing ' + pageJsonPath);
     const json = min ? JSON.stringify(pageJson) : JSON.stringify(pageJson, null, 2);
-    fse.writeFileSync(pageJsonPath, json);
+    // Replace any _2 suffixes (added to types that collide with built-in type names) just before
+    // writing the file. There are lots of other places we could do this, but this is the easiest
+    // way to ensure we catch everything.
+    fse.writeFileSync(pageJsonPath, json.replace(/(\w+)_2\b/g, '$1'));
   }
 }
 

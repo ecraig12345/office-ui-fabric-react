@@ -24,7 +24,7 @@ export interface IAvailableDateOptions extends IRestrictedDatesOptions {
   initialDate: Date;
   /** Ideal available date */
   targetDate: Date;
-  /** Direction of search (`1` - search in future / `-1` search in past) */
+  /** Direction of search (`1` to search in future, `-1` to search in past) */
   direction: number;
 }
 

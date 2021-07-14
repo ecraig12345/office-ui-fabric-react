@@ -223,7 +223,7 @@ const ApiDetailsList: React.FunctionComponent<IApiDetailsListProps> = React.memo
           return a.required ? -1 : 1;
         }
         // Ensure the constructor is first if handling methods.
-        if (itemKind === 'method' && a.name === 'constructor') {
+        if (itemKind === 'method' && (a.name === '(constructor)' || a.name === '(call signature)')) {
           return -1;
         }
         return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
@@ -345,7 +345,7 @@ function _referencesTableCell(
     <>
       {deprecated && _renderDeprecatedMessage(deprecatedMessage)}
       <Text block variant="small" style={{ marginTop: deprecated ? '1em' : undefined }}>
-        {_extractCodeBlocks(text)}
+        {_formatMarkdown(text)}
         {required && <em> (required)</em>}
       </Text>
     </>
@@ -363,7 +363,7 @@ function _renderDeprecatedMessage(deprecatedMessage?: string) {
   }
   return (
     <Text block variant="small" styles={deprecatedTextStyles}>
-      Warning: this API is now obsolete. {deprecatedMessage && _extractCodeBlocks(deprecatedMessage)}
+      Warning: this API is now obsolete. {deprecatedMessage && _formatMarkdown(deprecatedMessage)}
     </Text>
   );
 }
@@ -393,28 +393,62 @@ function _renderLinkTokens(
 }
 
 /**
- * Loops through text and places code blocks in code elements
+ * Loops through text and does very basic markdown formatting:
+ * - places code blocks in code elements
+ * - adds line breaks for `\n\n` and before apparent list items
+ * - formats bold and italic elements (nesting not supported)
  */
-function _extractCodeBlocks(text: string): React.ReactNode[] {
+function _formatMarkdown(text: string): React.ReactNode[] {
   // Unescape some characters
   text = (text || '').replace(/\\([@<>{}])/g, '$1');
+  const lines = text.split(/\n\n/g);
+  // The line break elements need keys. Start with something high enough that collisions with
+  // the index-based key used for code below is unlikely.
+  let brKey = 10000;
+  const br = () => <br key={brKey++} />;
 
-  const result: React.ReactNode[] = [];
-  let index = 0;
-  let inCodeBlock = false;
-  while (index < text.length) {
-    let sectionEnd = text.indexOf('`', index);
-    if (sectionEnd === -1) {
-      sectionEnd = text.length;
+  const segments: React.ReactNode[] = [];
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    let index = 0;
+    let inCodeBlock = false;
+    while (index < line.length) {
+      let sectionEnd = line.indexOf('`', index);
+      if (sectionEnd === -1) {
+        sectionEnd = line.length;
+      }
+      const sectionContent = line.substring(index, sectionEnd);
+      if (inCodeBlock) {
+        segments.push(<code key={index}>{sectionContent}</code>);
+      } else {
+        segments.push(sectionContent);
+      }
+      inCodeBlock = !inCodeBlock;
+      index = sectionEnd + 1;
     }
-    const sectionContent = text.substring(index, sectionEnd);
-    if (inCodeBlock) {
-      result.push(<code key={index}>{sectionContent}</code>);
-    } else {
-      result.push(sectionContent);
+    if (i !== lines.length - 1) {
+      segments.push(br(), br());
     }
-    inCodeBlock = !inCodeBlock;
-    index = sectionEnd + 1;
   }
+
+  const listItemRegex = / (?=[-*] |\d+\. )/g;
+  const result: React.ReactNode[] = [];
+  for (const segment of segments) {
+    if (typeof segment === 'string' && listItemRegex.test(segment)) {
+      const listItems = segment.split(listItemRegex);
+      for (let i = 0; i < listItems.length; i++) {
+        result.push(listItems[i]);
+        if (i !== listItems.length - 1) {
+          result.push(br());
+        }
+      }
+    } else {
+      result.push(segment);
+    }
+    listItemRegex.lastIndex = 0; // otherwise it doesn't work on subsequent lines
+  }
+
   return result;
 }
+
+function _extractCodeBlocks(segments: React.ReactNode[], br: () => JSX.Element): React.ReactNode[] {}

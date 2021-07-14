@@ -10,6 +10,7 @@ import {
   ApiProperty,
   ApiConstructor,
   ApiMethod,
+  ApiCallSignature,
 } from '@microsoft/api-extractor-model';
 import { ICollectedData } from './types-private';
 import { ITableRowJson, IEnumTableRowJson } from './types';
@@ -40,8 +41,9 @@ export function createTableRowJson(collectedData: ICollectedData, apiItem: ApiIt
 
     case ApiItemKind.Constructor:
     case ApiItemKind.Method:
-    case ApiItemKind.MethodSignature: {
-      const apiMethod = apiItem as ApiMethod | ApiMethodSignature | ApiConstructor;
+    case ApiItemKind.MethodSignature:
+    case ApiItemKind.CallSignature: {
+      const apiMethod = apiItem as ApiMethod | ApiMethodSignature | ApiConstructor | ApiCallSignature;
       tableRowJson = createBasicTableRowJson(
         collectedData,
         apiMethod,
@@ -52,7 +54,9 @@ export function createTableRowJson(collectedData: ICollectedData, apiItem: ApiIt
 
       if (apiMethod.kind === ApiItemKind.Constructor) {
         // The constructor is similar to a method, but we have to manually add the name.
-        tableRowJson.name = 'constructor';
+        tableRowJson.name = '(constructor)';
+      } else if (apiMethod.kind === ApiItemKind.CallSignature) {
+        tableRowJson.name = '(call signature)';
       }
       break;
     }
@@ -130,7 +134,18 @@ function createBasicTableRowJson(
         collectedData.apiModel,
         apiItem,
         tsdocComment.deprecatedBlock.content,
-      );
+      ).replace(/^- /, ''); // remove leading - if present
+    }
+
+    if (tsdocComment.params.count) {
+      tableRowJson.description = tableRowJson.description || '';
+      for (const param of tsdocComment.params) {
+        tableRowJson.description += ` - \`${param.parameterName}\`: ${renderNodes(
+          collectedData.apiModel,
+          apiItem,
+          param.content,
+        )}`;
+      }
     }
   }
 

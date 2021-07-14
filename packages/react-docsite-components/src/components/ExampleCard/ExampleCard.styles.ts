@@ -5,12 +5,14 @@ import {
   HighContrastSelector,
   FontSizes,
   FontWeights,
+  getScreenSelector,
 } from '@fluentui/react/lib/Styling';
 import { IStyleFunction } from '@fluentui/react/lib/Utilities';
 import { IDropdownStyles } from '@fluentui/react/lib/Dropdown';
 import { IButtonStyles } from '@fluentui/react/lib/Button';
 import { IExampleCardStyles, IExampleCardStyleProps } from './ExampleCard.types';
 import { NeutralColors } from '@fluentui/theme';
+import { ScreenWidthMaxLarger } from '../../styles/constants';
 
 const globalClassNames = {
   root: 'ExampleCard',
@@ -29,6 +31,9 @@ const globalClassNames = {
   isRightAligned: 'is-right-aligned',
   isScrollable: 'is-scrollable',
 };
+
+/** `< 1200px` where title should be multiline */
+const multilineQuery = getScreenSelector(undefined, ScreenWidthMaxLarger);
 
 export const getStyles: IStyleFunction<IExampleCardStyleProps, IExampleCardStyles> = props => {
   const { isRightAligned, isScrollable, isCodeVisible, theme = getTheme() } = props;
@@ -126,10 +131,12 @@ export const getStyles: IStyleFunction<IExampleCardStyleProps, IExampleCardStyle
         fontSize: FontSizes.size20,
         fontWeight: FontWeights.semibold,
         color: NeutralColors.gray130,
-        display: 'inline-flex',
-        flexGrow: 1,
-        flexShrink: 1,
+        // display: 'inline-flex',
+        // flexGrow: 1,
+        // flexShrink: 1,
+        display: 'inline-block',
         marginBottom: 10,
+        [multilineQuery]: {},
       },
       globalClassNames.title,
     ],

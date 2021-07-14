@@ -290,7 +290,7 @@ export enum FocusZoneDirection {
   bidirectional = 2,
 
   /**
-   * React to all arrows. Navigate next item in DOM on right/down arrow keys and previous - left/up arrow keys.
+   * React to all arrows. Navigate next item in DOM on right/down arrow keys and previous on left/up arrow keys.
    * Right and Left arrow keys are swapped in RTL mode.
    */
   domOrder = 3,
